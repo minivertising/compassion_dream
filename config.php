@@ -57,7 +57,7 @@
 			$iphone_banner_gubun	= "Y";
 		}else{
 			if(stripos( $_SERVER['HTTP_USER_AGENT'], "FB" ))
-				$iphone_banner_gubun	= "Y";
+				$iphone_banner_gubun	= "Y"; 
 			else
 				$iphone_banner_gubun	= "N";
 		}
