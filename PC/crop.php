@@ -20,30 +20,23 @@
   <link rel="stylesheet" href="../lib/Jcrop/css/demos.css" type="text/css" /> -->
   <link rel="stylesheet" href="../lib/Jcrop/css/jquery.Jcrop.css" type="text/css" />
   <style type="text/css">
-    #target {
-      background-color: #ccc;
-      /*width: 80%;
-      height: 80%;*/
-      font-size: 24px;
-      display: block;
-    }
   </style>
   <script src="../lib/Jcrop/js/jquery.min.js"></script>
-  <script src="../lib/Jcrop//js/jquery.Jcrop.js"></script>
+  <script src="../lib/Jcrop/js/jquery.Jcrop.js"></script>
 </head>
 <body>
 
-  <div class="container">
-    <div class="row">
           <!-- This is the image we're attaching Jcrop to -->
-          <img src="../lib/Jcrop/css/picture.jpg" id="target" />
+          <img src="../lib/Jcrop/css/picture.jpg" id="target2" style="width:30%;height:50%"/>
 
           <input type="button" onclick="crop_download();return false;" value="Crop Image" class="btn btn-large btn-inverse" />
-   </div>
- </div>
 
+</body>
+
+</html>
  <script>
-  var $myImage = $('#target');
+ $(window).load(function(){
+ var $myImage = $('#target2');
     console.log(
       $myImage.prop("naturalWidth") +'\n'+
       $myImage.prop("naturalHeight") +'\n'+ 
@@ -54,17 +47,18 @@
       );
   var x,y,x2,y2,w,h;
   $(function(){
-    $('#target').Jcrop({
+    $('#target2').Jcrop({
       allowSelect: false,
       allowResize: false,
       // onSelect: showCoords,
       onSelect: updateCoords,
-      setSelect: [ 0, 0, 400, 210 ]
-      
-      // trueSize: [originalImageWidth, originalImageHeight],
+      setSelect: [ 0, 0, 400, 210 ],
+      trueSize: [$myImage.prop("naturalWidth"), $myImage.prop("naturalHeight")]
     });
     
   });
+ 
+ });
   function updateCoords(c)
   {
     x=c.x;
@@ -108,6 +102,3 @@
 
 
   </script>
-</body>
-
-</html>

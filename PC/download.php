@@ -8,7 +8,7 @@
 		$targ_w = $_POST['w'];
 	  $targ_h = $_POST['h'];
 		$jpeg_quality = 90;
-		$output_filename= "../lib/Jcrop/css/after.jpg";
+		$output_filename= "./after.jpg";
 
 		$src = "../lib/Jcrop/css/picture.jpg";
 		$img_r = imagecreatefromjpeg($src);
