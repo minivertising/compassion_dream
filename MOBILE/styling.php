@@ -10,7 +10,7 @@
   <script src="../lib/Cropper/js/jquery.min.js"></script>
   <script src="../lib/Cropper/js/bootstrap.min.js"></script>
   <script src="../lib/Cropper/js/cropper.js"></script>
-  <script src="../lib/Cropper/js/main.js"></script>
+  <!-- <script src="../lib/Cropper/js/main.js"></script> -->
   <style>
     .container {
       max-width: 960px;
@@ -30,7 +30,7 @@
     <div class="btn-group btn-group-crop">
     <form>
           <!--<button type="button" class="btn btn-primary" data-method="getCroppedCanvas">-->
-          <button type="button" class="btn btn-primary" data-method="getCroppedCanvas">
+          <button type="button" class="btn btn-primary" onclick="down_crop_image();return false;">
     </form>
     </div>
   </div>
@@ -51,7 +51,7 @@
     function down_crop_image()
     {
       // Upload cropped image to server if the browser supports `HTMLCanvasElement.toBlob`
-      $('#ori_image').cropper('getCroppedCanvas').toBlob(function (blob) {
+      $().cropper('getCroppedCanvas').toBlob(function (blob) {
         var formData = new FormData();
 
         formData.append('croppedImage', blob);
