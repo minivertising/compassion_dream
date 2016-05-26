@@ -18,6 +18,7 @@
 <script src="../lib/Cropper/js/bootstrap.min.js"></script>
 <script src="../lib/Cropper/js/cropper.js"></script>
 <script type="text/javascript" src="../js/m_main.js"></script>
+<script type="text/javascript" src="../js/canvas-to-blob.js"></script>
 <script type="text/javascript" src="../lib/colorbox/jquery.colorbox-min.js"></script>
 <script src="../lib/bxslider/jquery.bxslider.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>

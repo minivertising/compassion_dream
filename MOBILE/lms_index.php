@@ -83,9 +83,13 @@ function dream_next()
 	// 사진 저장할 내용 추가
 	$($ori_image).cropper('getCroppedCanvas').toBlob(function (blob) {
 	  var formData = new FormData();
+<<<<<<< HEAD
 	  blob.name = $($ori_image);
 	  console.log(blob.name);
 	  formData.append('croppedImage', blob);
+=======
+	  formData.append('croppedImage', blob, "test.jpg");
+>>>>>>> e31635b0d56efe25c36e962f7efc08163d4f2b20
 	  $.ajax('./upload.php', {
 	    method: "POST",
 	    data: formData,
