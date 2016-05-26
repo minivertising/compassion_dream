@@ -1,33 +1,18 @@
-<?php
-
-/**
- * Jcrop image cropping plugin for jQuery
- * Example cropping script
- * @copyright 2008-2009 Kelly Hallman
- * More info: http://deepliquid.com/content/Jcrop_Implementation_Theory.html
- */
-
-
-
-// If not a POST request, display page below:
-
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Live Cropping Demo</title>
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-  <!-- <link rel="stylesheet" href="../lib/Jcrop/css/main.css" type="text/css" />
-  <link rel="stylesheet" href="../lib/Jcrop/css/demos.css" type="text/css" /> -->
+  <!-- <link rel="stylesheet" href="../lib/Jcrop/css/main.css" type="text/css" /> -->
+  <!-- <link rel="stylesheet" href="../lib/Jcrop/css/demos.css" type="text/css" /> -->
   <link rel="stylesheet" href="../lib/Jcrop/css/jquery.Jcrop.css" type="text/css" />
-  <style type="text/css">
-  </style>
   <script src="../lib/Jcrop/js/jquery.min.js"></script>
   <script src="../lib/Jcrop/js/jquery.Jcrop.js"></script>
 </head>
 <body>
 
           <!-- This is the image we're attaching Jcrop to -->
-          <img src="../lib/Jcrop/css/picture.jpg" id="target2" style="width:30%;height:50%"/>
+          <img src="../lib/Jcrop/css/picture.jpg" id="target2" style="width:100%;height:100%"/>
 
           <input type="button" onclick="crop_download();return false;" value="Crop Image" class="btn btn-large btn-inverse" />
 
@@ -36,17 +21,19 @@
 </html>
  <script>
  $(window).load(function(){
+
  var $myImage = $('#target2');
-    console.log(
-      $myImage.prop("naturalWidth") +'\n'+
-      $myImage.prop("naturalHeight") +'\n'+ 
-      $myImage.prop("width") +'\n'+         
-      $myImage.prop("height") +'\n'+       
-      $myImage.prop("x") +'\n'+             
-      $myImage.prop("y")                    
-      );
+    // console.log(
+ //      $myImage.prop("naturalWidth") +'\n'+
+ //      $myImage.prop("naturalHeight") +'\n'+ 
+      // $myImage.prop("width") +'\n'+         
+      // $myImage.prop("height") +'\n'+
+ //      $myImage.prop("x") +'\n'+             
+ //      $myImage.prop("y")                    
+      // );
   var x,y,x2,y2,w,h;
   $(function(){
+    var jcrop_api;
     $('#target2').Jcrop({
       allowSelect: false,
       allowResize: false,
@@ -54,8 +41,16 @@
       onSelect: updateCoords,
       setSelect: [ 0, 0, 400, 210 ],
       trueSize: [$myImage.prop("naturalWidth"), $myImage.prop("naturalHeight")]
+    },
+    function(){
+      jcrop_api = this;
     });
-    
+    var naturalImageData = jcrop_api.getBounds();
+    var afterImageData = jcrop_api.getWidgetSize();
+    var scaleFactor = jcrop_api.getScaleFactor();
+    console.log(naturalImageData);
+    console.log(afterImageData);
+    console.log(scaleFactor);
   });
  
  });
