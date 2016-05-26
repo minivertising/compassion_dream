@@ -11,9 +11,23 @@
 <!--[if lt IE 9]><script src="./js/html5shiv.js"></script><![endif]-->
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <link href="../lib/bxslider/jquery.bxslider.css" rel="stylesheet" />
+<link href="../lib/Cropper/css/bootstrap.min.css" rel="stylesheet">
+<link href="../lib/Cropper/css/cropper.css" rel="stylesheet">
 <link rel="stylesheet" href="../lib/colorbox/colorbox.css">
 <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+<script src="../lib/Cropper/js/bootstrap.min.js"></script>
+<script src="../lib/Cropper/js/cropper.js"></script>
 <script type="text/javascript" src="../js/m_main.js"></script>
 <script type="text/javascript" src="../lib/colorbox/jquery.colorbox-min.js"></script>
 <script src="../lib/bxslider/jquery.bxslider.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+<style>
+.container {
+	max-width: 100%;
+}
+
+img {
+	max-width: 100%;
+}
+</style>
