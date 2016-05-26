@@ -7,7 +7,6 @@
 	$mimeType = $_FILES['croppedImage']['type'];                 // 업로드한 파일의 MIME Type
 	// 첨부 파일이 저장될 서버 디렉토리 지정(원하는 경로에 맞게 수정하세요)
 	// $save_dir = './images/';
-
 	// 업로드 파일 확장자 검사 (필요시 확장자 추가)
 	   if($mimeType=="html" || 
 	   $mimeType=="htm" || 
@@ -33,6 +32,7 @@
 	   // 파일명 변경 (업로드되는 파일명을 별도로 생성하고 원래 파일명을 별도의 변수에 지정하여 DB에 기록할 수 있습니다.)
 		$real_name = $file_name;     // 원래 파일명(업로드 하기 전 실제 파일명) 
 		$arr = explode(".", $real_name);	 // 원래 파일의 확장자명을 가져와서 그대로 적용 $file_exe	
+		
 		$arr1 = $arr[0];	
 		$arr2 = $arr[1];	
 		$arr3 = $arr[2];	
@@ -45,6 +45,7 @@
 		} else if($arr2 && !$arr3) { 
 			$file_exe = $arr2;					
 		}
+		
 								
 		$file_time = date("YmdHis"); 
 		$file_Name = "compassion_".$file_time.".".$file_exe;	 // 실제 업로드 될 파일명 생성	(본인이 원하는 파일명 지정 가능)	 
