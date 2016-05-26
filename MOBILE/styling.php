@@ -10,10 +10,6 @@
   <script src="../lib/Cropper/js/jquery.min.js"></script>
   <script src="../lib/Cropper/js/bootstrap.min.js"></script>
   <script src="../lib/Cropper/js/cropper.js"></script>
-<<<<<<< HEAD
-  <!-- <script src="../lib/Cropper/js/main.js"></script> -->
-=======
->>>>>>> 2a1e83305b6c0aa30a266b614650afa4afc795c7
   <style>
     .container {
       max-width: 100%;
@@ -30,13 +26,6 @@
     <div>
       <img id="ori_image" src="./images/picture.jpg" alt="Picture">
     </div>
-<<<<<<< HEAD
-    <div class="btn-group btn-group-crop">
-    <form>
-          <!--<button type="button" class="btn btn-primary" data-method="getCroppedCanvas">-->
-          <button type="button" class="btn btn-primary" onclick="down_crop_image();return false;">
-    </form>
-=======
     <div class="btn-group btn-group-crop docs-buttons">
           <a class="btn btn-primary" id="download" href="javascript:void(0);" data-method="getCroppedCanvas" download="cropped.jpg">Download</a>
         <div class="btn-group"> 
@@ -52,7 +41,6 @@
         </button>
           <input type="text" class="form-control" id="putData" placeholder="Get data to here or set data with this value">
         </div>
->>>>>>> 2a1e83305b6c0aa30a266b614650afa4afc795c7
     </div>
     <!-- <div class="input-group input-group-sm">
             <label class="input-group-addon" for="dataWidth">Width</label>
@@ -103,17 +91,7 @@
     //   $('#ori_image').cropper('getCroppedCanvas').toBlob(function (blob) {
     //     var formData = new FormData();
 
-<<<<<<< HEAD
-    function down_crop_image()
-    {
-      // Upload cropped image to server if the browser supports `HTMLCanvasElement.toBlob`
-      $().cropper('getCroppedCanvas').toBlob(function (blob) {
-        var formData = new FormData();
-
-        formData.append('croppedImage', blob);
-=======
     //     formData.append('croppedImage', blob);
->>>>>>> 2a1e83305b6c0aa30a266b614650afa4afc795c7
 
     //     $.ajax('./images/upload', {
     //       method: "POST",
