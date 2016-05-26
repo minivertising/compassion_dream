@@ -54,6 +54,7 @@
   });
  
  });
+ 
   function updateCoords(c)
   {
     x=c.x;
