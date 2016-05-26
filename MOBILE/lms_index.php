@@ -20,6 +20,7 @@ var sel_dream		= null;
 var runner_serial	= null;
 var mb_job			= null;
 var mb_image		= null;
+var $ori_image = $('#ori_image');
 $(document).ready(function() {
 	$("#cboxTopLeft").hide();
 	$("#cboxTopRight").hide();
@@ -32,7 +33,7 @@ $(document).ready(function() {
 });
 
 $(function () {
-	$('#ori_image').cropper({
+	$($ori_image).cropper({
 		viewMode: 0,
 		dragMode: 'move',
 		autoCropArea: 0.65,
@@ -44,7 +45,6 @@ $(function () {
 		built: function(){
 			var imageData;
 			var afterCropBoxData;
-			var $ori_image = $('#ori_image');
 			var imageData = $($ori_image).cropper('getImageData');
 			var afterCropBoxData = $($ori_image).cropper('getCropBoxData');
 			console.log("naturalWidth: "+imageData.naturalWidth+",  naturalHeight: "+imageData.naturalHeight); // 오리지널 사이즈
@@ -79,10 +79,22 @@ function preview_img()
 function dream_next()
 {
 	mb_job	= $("#mb_job").val();
-/*
-	사진 저장할 내용 추가
-*/
 
+	// 사진 저장할 내용 추가
+	$($ori_image).cropper('getCroppedCanvas').toBlob(function (blob) {
+	  var formData = new FormData();
+	  formData.append('croppedImage', blob);
+	  $.ajax('./upload.php', {
+	    method: "POST",
+	    data: formData,
+	    processData: false,
+	    contentType: false,
+	    success: function (data) {
+	     alert(data);
+	    }
+	  });
+	});
+	//    
 	if (mb_job == "")
 	{
 		alert("당신의 어린시절 꿈을 선택해 주세요.");
