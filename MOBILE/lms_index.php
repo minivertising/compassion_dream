@@ -44,7 +44,7 @@ $(function () {
 	$($ori_image).cropper({
 		viewMode: 0,
 		dragMode: 'move',
-		autoCropArea: 0.52,
+		//autoCropArea: 0.52,
 		aspectRatio: NaN,
 		responsive: true,
 		restore: true,
@@ -52,6 +52,8 @@ $(function () {
 		highlight: false,
 		cropBoxMovable: false,
 		cropBoxResizable: false,
+		minCropBoxWidth:1200,
+		minCropBoxHeight:630,
 		built: function(){
 			// imageData = $($ori_image).cropper('getImageData');
 			// afterCropBoxData = $($ori_image).cropper('getCropBoxData');
@@ -130,7 +132,7 @@ function dream_next()
 	mb_job	= $("#mb_job").val();
 
 	// 사진 저장할 내용 추가
-	$($ori_image).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
+	$($ori_image).cropper("setAspectRatio", 1200/630).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
 	  var formData = new FormData();
 	  formData.append('croppedImage', blob);
 	  formData.append('croppedImage', blob, "test.jpg");
