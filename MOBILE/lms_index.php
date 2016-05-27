@@ -21,6 +21,14 @@ var runner_serial	= null;
 var mb_job			= null;
 var mb_image		= null;
 var $ori_image = $('#ori_image');
+var imageData;
+var afterCropBoxData;
+var ratioWidth;
+var ratioHeight;
+var destCropWidth;
+var destCropHeight;
+var centerCropBoxWidth;
+var centerCropBoxHeight;
 $(document).ready(function() {
 	$("#cboxTopLeft").hide();
 	$("#cboxTopRight").hide();
@@ -36,36 +44,77 @@ $(function () {
 	$($ori_image).cropper({
 		viewMode: 0,
 		dragMode: 'move',
-		autoCropArea: 0.65,
-		restore: false,
+		autoCropArea: 0.52,
+		aspectRatio: NaN,
+		responsive: true,
+		restore: true,
 		guides: false,
 		highlight: false,
 		cropBoxMovable: false,
 		cropBoxResizable: false,
 		built: function(){
-			var imageData;
-			var afterCropBoxData;
-			var imageData = $($ori_image).cropper('getImageData');
-			var afterCropBoxData = $($ori_image).cropper('getCropBoxData');
-			console.log("naturalWidth: "+imageData.naturalWidth+",  naturalHeight: "+imageData.naturalHeight); // 오리지널 사이즈
-			console.log("afterImageWidth: "+imageData.width+",  afterImageHeight: "+imageData.height);
-			console.log("afterCropBoxWidth: "+afterCropBoxData.width+",  afterCropBoxHeight: "+afterCropBoxData.height);
-			// $($ori_image).cropper("setCropBoxData", {left: (imageData.width/2)/2, top: (imageData.height/2)/2, width: imageData.width/2, height: imageData.height/2});
-			var ratioWidth = imageData.width/imageData.naturalWidth;
-			if(imageData.naturalHeight < 630) {
-				var ratioHeight = 1;
-			}else{
-				var ratioHeight = imageData.height/imageData.naturalHeight;
-			}
-			//
-			var destCropWidth = (1200*ratioWidth); 
-			var destCropHeight = (630*ratioHeight);
-			//
-			var centerCropBoxWidth = (imageData.width-destCropWidth)/2;
-			var centerCropBoxHeight = (imageData.height-destCropHeight)/2;
-			$($ori_image).cropper("setCropBoxData", {left: centerCropBoxWidth, top: centerCropBoxHeight, width: destCropWidth, height: destCropHeight});
+			// imageData = $($ori_image).cropper('getImageData');
+			// afterCropBoxData = $($ori_image).cropper('getCropBoxData');
+			// console.log("naturalWidth: "+imageData.naturalWidth+",  naturalHeight: "+imageData.naturalHeight); // 오리지널 사이즈
+			// console.log("afterImageWidth: "+imageData.width+",  afterImageHeight: "+imageData.height);
+			// console.log("afterCropBoxWidth: "+afterCropBoxData.width+",  afterCropBoxHeight: "+afterCropBoxData.height);
+			// ratioWidth = imageData.width/imageData.naturalWidth;
+			// if(imageData.naturalHeight < 630) {
+			// 	ratioHeight = 1;
+			// }else{
+			// 	ratioHeight = imageData.height/imageData.naturalHeight;
+			// }
+			// //
+			// destCropWidth = (1200*ratioWidth); 
+			// destCropHeight = (630*ratioHeight);
+			// //
+			// centerCropBoxWidth = (imageData.width-destCropWidth)/2;
+			// centerCropBoxHeight = (imageData.height-destCropHeight)/2;
+			// $($ori_image).cropper("setCropBoxData", {left: centerCropBoxWidth, top: centerCropBoxHeight, width: destCropWidth, height: destCropHeight});
+		},
+		zoom: function(){
+			// console.log("zoom: "+"width "+imageData.width+" height "+imageData.height);
+		},
+		crop: function(){
+			// imageData = $($ori_image).cropper('getImageData');
+			// afterCropBoxData = $($ori_image).cropper('getCropBoxData');
+			// ratioWidth = imageData.width/imageData.naturalWidth;
+			// if(imageData.naturalHeight < 630) {
+			// 	ratioHeight = 1;
+			// }else{
+			// 	ratioHeight = imageData.height/imageData.naturalHeight;
+			// }
+			// //
+			// destCropWidth = (1200*ratioWidth); 
+			// destCropHeight = (630*ratioHeight);
+			// //
+			// centerCropBoxWidth = (imageData.width-destCropWidth)/2;
+			// centerCropBoxHeight = (imageData.height-destCropHeight)/2;
+			// $($ori_image).cropper("setCropBoxData", {left: centerCropBoxWidth, top: centerCropBoxHeight, width: destCropWidth, height: destCropHeight});
 		}
+		// cropend: function(){
+		// 	imageData = $($ori_image).cropper('getImageData');
+		// 	afterCropBoxData = $($ori_image).cropper('getCropBoxData');
+		// 	console.log("naturalWidth: "+imageData.naturalWidth+",  naturalHeight: "+imageData.naturalHeight); // 오리지널 사이즈
+		// 	console.log("afterImageWidth: "+imageData.width+",  afterImageHeight: "+imageData.height);
+		// 	console.log("afterCropBoxWidth: "+afterCropBoxData.width+",  afterCropBoxHeight: "+afterCropBoxData.height);
+		// 	// $($ori_image).cropper("setCropBoxData", {left: (imageData.width/2)/2, top: (imageData.height/2)/2, width: imageData.width/2, height: imageData.height/2});
+		// 	var ratioWidth = imageData.width/imageData.naturalWidth;
+		// 	if(imageData.naturalHeight < 630) {
+		// 		var ratioHeight = 1;
+		// 	}else{
+		// 		var ratioHeight = imageData.height/imageData.naturalHeight;
+		// 	}
+		// 	//
+		// 	var destCropWidth = (1200*ratioWidth); 
+		// 	var destCropHeight = (630*ratioHeight);
+		// 	//
+		// 	var centerCropBoxWidth = (imageData.width-destCropWidth)/2;
+		// 	var centerCropBoxHeight = (imageData.height-destCropHeight)/2;
+		// 	$($ori_image).cropper("setCropBoxData", {left: centerCropBoxWidth, top: centerCropBoxHeight, width: destCropWidth, height: destCropHeight});
+		// }
 	});
+
 });
 
 function preview_img()
@@ -81,15 +130,10 @@ function dream_next()
 	mb_job	= $("#mb_job").val();
 
 	// 사진 저장할 내용 추가
-	$($ori_image).cropper('getCroppedCanvas').toBlob(function (blob) {
+	$($ori_image).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
 	  var formData = new FormData();
-<<<<<<< HEAD
-	  blob.name = $($ori_image);
-	  console.log(blob.name);
 	  formData.append('croppedImage', blob);
-=======
 	  formData.append('croppedImage', blob, "test.jpg");
->>>>>>> e31635b0d56efe25c36e962f7efc08163d4f2b20
 	  $.ajax('./upload.php', {
 	    method: "POST",
 	    data: formData,
