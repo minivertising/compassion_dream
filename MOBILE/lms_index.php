@@ -44,14 +44,14 @@ $(function () {
 	$($ori_image).cropper({
 		viewMode: 0,
 		dragMode: 'move',
-		autoCropArea: 0.52,
+		// autoCropArea: 0.52,
 		aspectRatio: NaN,
 		responsive: true,
 		restore: true,
-		guides: false,
-		highlight: false,
-		cropBoxMovable: false,
-		cropBoxResizable: false,
+		guides: true,
+		highlight: true,
+		cropBoxMovable: true,
+		cropBoxResizable: true,
 		built: function(){
 			// imageData = $($ori_image).cropper('getImageData');
 			// afterCropBoxData = $($ori_image).cropper('getCropBoxData');
