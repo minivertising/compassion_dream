@@ -1,5 +1,6 @@
 function open_pop(param)
 {
+	// alert("op_pp");
 	$.colorbox({innerWidth:"100%", initialWidth:"95%", inline:true, opacity:"0.9", scrolling:false, reposition: false,closeButton:false, overlayClose: false, open:true, speed:0, fadeOut: 300, href:"#"+param, onComplete: function(){
 		$("#cboxContent").css("background","none");
 		$("#cboxContent").css("z-index","99999");
@@ -10,13 +11,16 @@ function open_pop(param)
 		$('#cboxLoadedContent').css('backgroundColor', "");
 		$('#cboxLoadedContent').css("z-index","99999");
 		$("#colorbox").width($("body").width());
-		//$("body").height($("#"+param).height());
+		// $("body").height($("#"+param).height());
 		$("#cboxWrapper").width($("body").width());
 		//$(".sec_main_img").hide();
 		if (param == "gift_popup2" || param == "notice_popup2")
 		{
 			$(".sec_top").hide();
 		}
+	},
+	onComplete: function(){
+		//img_crop_func();
 	},
 	onClosed: function(){
 		//del_info();
