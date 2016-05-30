@@ -34,6 +34,7 @@ function show_menu()
 
 function open_pop(param)
 {
+	// alert("open_pop");
 	if (param == "wrong_popup")
 	{
 		var pop_w	= "578px";
@@ -49,7 +50,13 @@ function open_pop(param)
 		var pop_w	= "626px";
 		var pop_h	= "880px";
 		var pop_oh	= "838px";
-	}
+	// }else if (param == "upimage_popup")
+	// {
+	// 	alert("open_pop");
+	// 	var pop_w	= "100%";
+	// 	var pop_h	= "100%";
+	// 	var pop_oh	= "100%";
+	// }
 	$.colorbox({width:pop_w, height:pop_h, inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: false, fadeOut: 300, href:"#"+param, onComplete: function(){
 		$("#cboxLoadedContent").height(pop_oh);
 		$("#cboxContent").css("background","none");

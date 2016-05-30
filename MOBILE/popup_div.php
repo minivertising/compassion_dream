@@ -11,8 +11,8 @@
       <option value="doctor">의사</option>
       <option value="teacher">선생님</option>
     </select><br />
-    <div>
-      <img id="ori_image" src="./images/picture.jpg" alt="Picture">
+    <div id="img_div" style="width:100%">
+      <img id="ori_image" src="./images/img_home_01.jpg" alt="Picture">
     </div>
     <!-- <div class="btn-group btn-group-crop docs-buttons">
       <a class="btn btn-primary" id="download" href="javascript:void(0);" data-method="getCroppedCanvas" download="cropped.jpg">Download</a>
@@ -25,8 +25,8 @@
     <!-- <div class="docs-buttons"> -->
     <div>
       <label for="inputImage" title="Upload image file">
-      <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
-      <span title="Import image with Blob URLs">Upload</span>
+        <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+        <span title="Import image with Blob URLs">Upload</span>
       </label>
 
       <a href="#" onclick="dream_next();return false;">업로드 완료
@@ -41,7 +41,7 @@
   <div id="preview_popup" class="popup_wrap" style="background:white;">
     <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
     <h2>사진 미리보기</h2>
-    <img id="uploadImg" src="./images/no_detail_img.gif" width="300" height="200">
+    <img id="uploadImg" src="./images/no_detail_img.gif">
     <a href="#" onclick="img_submit();return false;">확인</a>
   </div>
   <!--END : 사진 미리보기 팝업-->
