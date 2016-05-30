@@ -52,8 +52,6 @@ $(function () {
 		highlight: false,
 		cropBoxMovable: false,
 		cropBoxResizable: false,
-		minCropBoxWidth:1200,
-		minCropBoxHeight:630,
 		built: function(){
 			// imageData = $($ori_image).cropper('getImageData');
 			// afterCropBoxData = $($ori_image).cropper('getCropBoxData');
