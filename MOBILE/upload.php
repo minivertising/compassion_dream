@@ -57,9 +57,43 @@
 	 
 	//파일을 저장할 디렉토리 및 파일명 전체 경로
 	   $dest_url = $save_dir . $change_file_name;
-	   
+
+	// 파일 자동 회전(모바일)
+    if($file_exe == "jpg" || $file_exe == "jpeg"){
+        $image = imagecreatefromjpeg($_FILES['croppedImage']['tmp_name']);
+    }else if($file_exe == "png"){
+        $image = imagecreatefrompng($_FILES['croppedImage']['tmp_name']);
+    }else if($file_exe == "bmp" || $file_exe == "wbmp"){
+        $image = imagecreatefromwbmp($_FILES['croppedImage']['tmp_name']);
+    }else if($file_exe == "gif"){
+        $image = imagecreatefromgif($_FILES['croppedImage']['tmp_name']);
+    }
+    $exif = exif_read_data($_FILES['croppedImage']['tmp_name']);
+    if(!empty($exif['Orientation'])) {
+        switch($exif['Orientation']) {
+            case 8:
+                $image = imagerotate($image,90,0);
+                break;
+            case 3:
+                $image = imagerotate($image,180,0);
+                break;
+            case 6:
+                $image = imagerotate($image,-90,0);
+                break;
+        }
+        if($ext == "jpg" || $ext == "jpeg"){
+            imagejpeg($image,$file_info['tmp_name']);
+        }else if($ext == "png"){
+            imagepng($image,$file_info['tmp_name']);
+        }else if($ext == "bmp" || $ext == "wbmp"){
+            imagewbmp($image,$file_info['tmp_name']);
+        }else if($ext == "gif"){
+            imagegif($image,$file_info['tmp_name']);
+        }
+    }
+
 	//파일을 지정한 디렉토리에 업로드
-	   if(!move_uploaded_file($file_tmp_name, $dest_url))
+	   if(!move_uploaded_file($image, $dest_url))
 	   {
 	      die("파일을 지정한 디렉토리에 업로드하는데 실패했습니다.");
 	   }else{
