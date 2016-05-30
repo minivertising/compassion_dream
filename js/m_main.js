@@ -23,6 +23,7 @@ function open_pop(param)
 			image_crop();
 		}
 
+		$('.preview').css('overflow', 'hidden');  
 		$('.preview').css('width', '263');  
 		$('.preview').css('height', '148');  
 		$('.preview > img').css('width', 'max-width');  

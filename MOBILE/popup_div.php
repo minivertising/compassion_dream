@@ -41,7 +41,7 @@
   <div id="preview_popup" class="popup_wrap" style="background:white; width:100%; height:100%;">
     <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
     <h2>사진 미리보기</h2>
-    <div class="preview" style="width: 100%; height: 100%; overflow: hidden;">
+    <div class="preview">
     </div>
     <a href="#" onclick="dream_next();return false;">확인</a>
   </div>
