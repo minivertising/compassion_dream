@@ -51,7 +51,7 @@ function image_crop(){
 		viewMode: 0,
 		dragMode: 'move',
 		autoCropArea: 0.8,
-		aspectRatio: NaN,
+		aspectRatio: 1200/630,
 		responsive: false,
 		restore: false,
 		guides: false,
@@ -102,7 +102,6 @@ function preview_img()
 	사진 저장할 내용 추가
 */
 	open_pop('preview_popup');
-
 
 }
 

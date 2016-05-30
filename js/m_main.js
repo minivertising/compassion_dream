@@ -1,7 +1,7 @@
 function open_pop(param)
 {
 	// alert("op_pp");
-	$.colorbox({innerWidth:"100%",innerHeight: "70%", initialWidth:"95%", initialHeight: "70%", inline:true, opacity:"0.9", scrolling:false, reposition: false,closeButton:false, overlayClose: false, open:true, speed:0, fadeOut: 300, href:"#"+param, onComplete: function(){
+	$.colorbox({innerWidth:"100%",innerHeight: "70%", initialWidth:"95%", initialHeight: "70%", inline:true, opacity:"0.9", scrolling:true, reposition: false,closeButton:false, overlayClose: false, open:true, speed:0, fadeOut: 300, href:"#"+param, onComplete: function(){
 		$("#cboxContent").css("background","none");
 		$("#cboxContent").css("z-index","99999");
 		$('#cboxWrapper').css('backgroundColor', "");
@@ -18,7 +18,14 @@ function open_pop(param)
 		{
 			$(".sec_top").hide();
 		}
-		image_crop();
+
+		if(param == 'dream_sel_popup') {
+			image_crop();
+		}
+
+		$('.preview').css('width', '263');  
+		$('.preview').css('height', '148');  
+		$('.preview > img').css('width', 'max-width');  
 
 	},
 	onClosed: function(){
