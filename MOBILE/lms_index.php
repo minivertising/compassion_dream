@@ -40,6 +40,38 @@ print_r($rs);
 		$("#cboxTopCenter").hide();
 		$("#cboxBottomCenter").hide();
 	});
+	var $inputImage = $('#inputImage');
+	var URL = window.URL || window.webkitURL;
+	var blobURL;
+
+	  if (URL) {
+	    $inputImage.change(function () {
+	      var files = this.files;
+	      var file;
+
+	      if (!$ori_image.data('cropper')) {
+	        return;
+	      }
+
+	      if (files && files.length) {
+	        file = files[0];
+
+	        if (/^image\/\w+$/.test(file.type)) {
+	          blobURL = URL.createObjectURL(file);
+	          $ori_image.one('built.cropper', function () {
+	            // Revoke when load complete
+	            URL.revokeObjectURL(blobURL);
+	          }).cropper('reset').cropper('replace', blobURL);
+	          $inputImage.val('');
+	        } else {
+	          window.alert('Please choose an image file.');
+	        }
+	      }
+	    });
+	  } else {
+	    $inputImage.prop('disabled', true).parent().addClass('disabled');
+	  }
+
 
 // $(function () {
 	
@@ -61,7 +93,7 @@ function image_crop(){
 		preview: '.preview',
 			// minCropBoxWidth:1200,
 			// minCropBoxHeight:630,
-			built: function(){
+			// built: function(){
 				// alert("built");
 				// $($ori_image).cropper('setCanvasData', {
 				// 	left:0,
@@ -91,7 +123,28 @@ function image_crop(){
 			// 	centerCropBoxWidth = (imageData.width-destCropWidth)/2;
 			// 	centerCropBoxHeight = (imageData.height-destCropHeight)/2;
 			// 	$($ori_image).cropper("setCropBoxData", {left: centerCropBoxWidth, top: centerCropBoxHeight, width: destCropWidth, height: destCropHeight});
-		}
+		// },
+		build: function (e) {
+      	  console.log(e.type);
+	    },
+	    built: function (e) {
+	      console.log(e.type);
+	    },
+	    cropstart: function (e) {
+	      console.log(e.type, e.action);
+	    },
+	    cropper: function (e) {
+	      console.log(e.type, e.action);
+	    },
+	    cropend: function (e) {
+	      console.log(e.type, e.action);
+	    },
+	    crop: function (e) {
+	      console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
+	    },
+	    zoom: function (e) {
+	      console.log(e.type, e.ratio);
+   		 }
 	});
 }
 // });
@@ -130,6 +183,7 @@ function dream_next()
 		alert("당신의 어린시절 꿈을 선택해 주세요.");
 		return false;
 	}
+	
 
 	open_pop('input_popup');
 }
