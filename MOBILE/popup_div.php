@@ -41,7 +41,8 @@
   <div id="preview_popup" class="popup_wrap" style="background:white;">
     <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
     <h2>사진 미리보기</h2>
-    <img id="uploadImg" src="./images/no_detail_img.gif">
+    <div class="preview">
+    </div>
     <a href="#" onclick="img_submit();return false;">확인</a>
   </div>
   <!--END : 사진 미리보기 팝업-->

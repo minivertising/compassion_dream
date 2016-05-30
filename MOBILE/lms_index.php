@@ -1,58 +1,64 @@
 <?
-	include_once "./header.php";
-	$rs	= $_REQUEST['rs'];
-	print_r($rs);
+include_once "./header.php";
+$rs	= $_REQUEST['rs'];
+print_r($rs);
 ?>
 <body>
-  <div id="loading_div" style="display:none">
-  Loading.... 꿈이 필요한 아이와 매칭중
-  </div>
-  <div id="contents_div">
-    <a href="#" onclick="open_pop('dream_sel_popup');">지금 참여하기</a>
-<?
-	include_once "./popup_div.php";
-?>
-  </div>
+	<div id="loading_div" style="display:none">
+		Loading.... 꿈이 필요한 아이와 매칭중
+	</div>
+	<div id="contents_div">
+		<a href="#" onclick="open_pop('dream_sel_popup');">지금 참여하기</a>
+		<?
+		include_once "./popup_div.php";
+		?>
+	</div>
 </body>
 </html>
 <script type="text/javascript">
-var sel_dream		= null;
-var runner_serial	= null;
-var mb_job			= null;
-var mb_image		= null;
-var $ori_image = $('#ori_image');
-var imageData;
-var afterCropBoxData;
-var ratioWidth;
-var ratioHeight;
-var destCropWidth;
-var destCropHeight;
-var centerCropBoxWidth;
-var centerCropBoxHeight;
-$(document).ready(function() {
-	$("#cboxTopLeft").hide();
-	$("#cboxTopRight").hide();
-	$("#cboxBottomLeft").hide();
-	$("#cboxBottomRight").hide();
-	$("#cboxMiddleLeft").hide();
-	$("#cboxMiddleRight").hide();
-	$("#cboxTopCenter").hide();
-	$("#cboxBottomCenter").hide();
-});
+	var sel_dream		= null;
+	var runner_serial	= null;
+	var mb_job			= null;
+	var mb_image		= null;
+	var $ori_image = $('#ori_image');
+	var $previews = $('.preview');
+	var imageData;
+	var afterCropBoxData;
+	var ratioWidth;
+	var ratioHeight;
+	var destCropWidth;
+	var destCropHeight;
+	var centerCropBoxWidth;
+	var centerCropBoxHeight;
+	$(document).ready(function() {
+		$("#cboxTopLeft").hide();
+		$("#cboxTopRight").hide();
+		$("#cboxBottomLeft").hide();
+		$("#cboxBottomRight").hide();
+		$("#cboxMiddleLeft").hide();
+		$("#cboxMiddleRight").hide();
+		$("#cboxTopCenter").hide();
+		$("#cboxBottomCenter").hide();
+	});
 
 // $(function () {
-	function image_crop(){
-		$($ori_image).cropper({
-			viewMode: 0,
-			dragMode: 'move',
-			autoCropArea: 0.8,
-			aspectRatio: NaN,
-			responsive: false,
-			restore: false,
-			guides: false,
-			highlight: false,
-			cropBoxMovable: false,
-			cropBoxResizable: false,
+	
+
+// });
+
+function image_crop(){
+	$($ori_image).cropper({
+		viewMode: 0,
+		dragMode: 'move',
+		autoCropArea: 0.8,
+		aspectRatio: NaN,
+		responsive: false,
+		restore: false,
+		guides: false,
+		highlight: false,
+		cropBoxMovable: false,
+		cropBoxResizable: false,
+		preview: '.preview',
 			// minCropBoxWidth:1200,
 			// minCropBoxHeight:630,
 			built: function(){
@@ -85,12 +91,10 @@ $(document).ready(function() {
 			// 	centerCropBoxWidth = (imageData.width-destCropWidth)/2;
 			// 	centerCropBoxHeight = (imageData.height-destCropHeight)/2;
 			// 	$($ori_image).cropper("setCropBoxData", {left: centerCropBoxWidth, top: centerCropBoxHeight, width: destCropWidth, height: destCropHeight});
-			}
-		});
-	}
+		}
+	});
+}
 // });
-	console.log($(window).width());
-	console.log($("#img_div").height());
 
 function preview_img()
 {
@@ -98,6 +102,8 @@ function preview_img()
 	사진 저장할 내용 추가
 */
 	open_pop('preview_popup');
+
+
 }
 
 function dream_next()
@@ -106,17 +112,17 @@ function dream_next()
 alert('test');
 	// 사진 저장할 내용 추가
 	$($ori_image).cropper("setAspectRatio", 1200/630).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
-	  var formData = new FormData();
+		var formData = new FormData();
 	  // formData.append('croppedImage', blob);
 	  formData.append('croppedImage', blob, "test.jpg");
 	  $.ajax('./upload.php', {
-	    method: "POST",
-	    data: formData,
-	    processData: false,
-	    contentType: false,
-	    success: function (data) {
-	     alert(data);
-	    }
+	  	method: "POST",
+	  	data: formData,
+	  	processData: false,
+	  	contentType: false,
+	  	success: function (data) {
+	  		alert(data);
+	  	}
 	  });
 	});
 	//    
