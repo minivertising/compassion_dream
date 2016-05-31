@@ -40,6 +40,38 @@ print_r($rs);
 		$("#cboxTopCenter").hide();
 		$("#cboxBottomCenter").hide();
 	});
+	var $inputImage = $('#inputImage');
+	var URL = window.URL || window.webkitURL;
+	var blobURL;
+
+	  if (URL) {
+	    $inputImage.change(function () {
+	      var files = this.files;
+	      var file;
+
+	      if (!$ori_image.data('cropper')) {
+	        return;
+	      }
+
+	      if (files && files.length) {
+	        file = files[0];
+
+	        if (/^image\/\w+$/.test(file.type)) {
+	          blobURL = URL.createObjectURL(file);
+	          $ori_image.one('built.cropper', function () {
+	            // Revoke when load complete
+	            URL.revokeObjectURL(blobURL);
+	          }).cropper('reset').cropper('replace', blobURL);
+	          $inputImage.val('');
+	        } else {
+	          window.alert('Please choose an image file.');
+	        }
+	      }
+	    });
+	  } else {
+	    $inputImage.prop('disabled', true).parent().addClass('disabled');
+	  }
+
 
 // $(function () {
 	
@@ -51,7 +83,7 @@ function image_crop(){
 		viewMode: 0,
 		dragMode: 'move',
 		autoCropArea: 0.8,
-		aspectRatio: NaN,
+		aspectRatio: 1200/630,
 		responsive: false,
 		restore: false,
 		guides: false,
@@ -59,9 +91,10 @@ function image_crop(){
 		cropBoxMovable: false,
 		cropBoxResizable: false,
 		preview: '.preview',
+		center:true,
 			// minCropBoxWidth:1200,
 			// minCropBoxHeight:630,
-			built: function(){
+			// built: function(){
 				// alert("built");
 				// $($ori_image).cropper('setCanvasData', {
 				// 	left:0,
@@ -91,7 +124,28 @@ function image_crop(){
 			// 	centerCropBoxWidth = (imageData.width-destCropWidth)/2;
 			// 	centerCropBoxHeight = (imageData.height-destCropHeight)/2;
 			// 	$($ori_image).cropper("setCropBoxData", {left: centerCropBoxWidth, top: centerCropBoxHeight, width: destCropWidth, height: destCropHeight});
-		}
+		// },
+		build: function (e) {
+      	  console.log(e.type);
+	    },
+	    built: function (e) {
+	      console.log(e.type);
+	    },
+	    cropstart: function (e) {
+	      console.log(e.type, e.action);
+	    },
+	    cropper: function (e) {
+	      console.log(e.type, e.action);
+	    },
+	    cropend: function (e) {
+	      console.log(e.type, e.action);
+	    },
+	    crop: function (e) {
+	      console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
+	    },
+	    zoom: function (e) {
+	      console.log(e.type, e.ratio);
+   		 }
 	});
 }
 // });
@@ -103,15 +157,15 @@ function preview_img()
 */
 	open_pop('preview_popup');
 
-
 }
 
 function dream_next()
 {
 	mb_job	= $("#mb_job").val();
-alert('test');
+
 	// 사진 저장할 내용 추가
-	$($ori_image).cropper("setAspectRatio", 1200/630).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
+	//$($ori_image).cropper("setAspectRatio", 1200/630).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
+	$($ori_image).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
 		var formData = new FormData();
 	  // formData.append('croppedImage', blob);
 	  formData.append('croppedImage', blob, "test.jpg");
@@ -131,6 +185,7 @@ alert('test');
 		alert("당신의 어린시절 꿈을 선택해 주세요.");
 		return false;
 	}
+	
 
 	open_pop('input_popup');
 }
@@ -201,4 +256,4 @@ function img_submit()
 
 
 </script>
-<script src="../lib/Cropper/js/main.js"></script>
+<!-- <script src="../lib/Cropper/js/main.js"></script> -->

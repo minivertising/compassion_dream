@@ -19,6 +19,15 @@ function open_pop(param)
 			image_crop();
 		}
 
+		if(param == 'dream_sel_popup') {
+			image_crop();
+		}
+
+		$('.preview').css('overflow', 'hidden');  
+		$('.preview').css('width', '263');  
+		$('.preview').css('height', '148');  
+		$('.preview > img').css('width', 'max-width');  
+
 	},
 	onClosed: function(){
 		//del_info();
