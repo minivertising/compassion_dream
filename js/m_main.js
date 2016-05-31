@@ -47,3 +47,64 @@ function dream_next()
 
 	open_pop("upimage_popup");
 }
+
+function sns_share()
+{
+	if (media == "fb")
+	{
+		//https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer
+		//var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.belif-play.com/PC/index.php'),'sharer','toolbar=0,status=0,width=600,height=325');
+		var newWindow = window.open('https://www.facebook.com/dialog/share?display=popup&href=' + encodeURIComponent('http://www.naver.com') + '&redirect_uri=' + encodeURIComponent('http://www.naver.com'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"sns_media" : media,
+				"sns_flag"		: flag
+			}
+		});
+	}else if (media == "kt"){
+		// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+		//Kakao.Link.createTalkLinkButton({
+		Kakao.Link.sendTalkLink({
+		  //container: '#kakao-link-btn',
+		  label: "빌리의 SOS! 빌리프 친구들을 찾으면 올 봄 촉촉 화사한 기회가 내게로",
+		  image: {
+			src: 'http://www.belif-play.com/MOBILE/images/belif_share2.jpg',
+			width: '1200',
+			height: '630'
+		  },
+		  webButton: {
+			text: '빌리의 봄 소풍 at London',
+			url: 'http://www.belif-play.com/?media=kt' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+		  }
+		});
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"sns_media" : media,
+				"sns_flag"		: flag
+			}
+		});
+	}else{
+		Kakao.Story.share({
+			url: 'http://www.belif-play.com/?media=ks',
+			text: '빌리의 SOS! 빌리프 친구들을 찾으면 올 봄 촉촉 화사한 기회가 내게로'
+		});
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"sns_media" : media,
+				"sns_flag"		: flag
+			}
+		});
+	}
+}
