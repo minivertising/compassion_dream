@@ -194,7 +194,7 @@ function input_submit()
 {
 	var mb_name	= $("#mb_name").val();
 	var mb_phone	= $("#mb_phone").val();
-	mb_image		= "임시 이미지 URL"; // 이미지 경로 작업 완료되면 여기에 값 추가
+	//mb_image		= "임시 이미지 URL"; // 이미지 경로 작업 완료되면 여기에 값 추가
 
 	if (mb_name == "")
 	{
