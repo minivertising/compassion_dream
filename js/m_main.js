@@ -48,7 +48,7 @@ function dream_next()
 	open_pop("upimage_popup");
 }
 
-function sns_share()
+function sns_share(media)
 {
 	if (media == "fb")
 	{
