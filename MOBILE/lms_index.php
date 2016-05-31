@@ -175,7 +175,8 @@ function dream_next()
 	  	processData: false,
 	  	contentType: false,
 	  	success: function (data) {
-	  		alert(data);
+			mb_image	= data;
+			open_pop('input_popup');
 	  	}
 	  });
 	});
@@ -187,7 +188,6 @@ function dream_next()
 	}
 	
 
-	open_pop('input_popup');
 }
 
 function input_submit()
