@@ -163,7 +163,8 @@ function dream_next()
 	mb_job	= $("#mb_job").val();
 
 	// 사진 저장할 내용 추가
-	$($ori_image).cropper("setAspectRatio", 1200/630).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
+	// $($ori_image).cropper("setAspectRatio", 1200/630).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
+	$($ori_image).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
 		var formData = new FormData();
 	  // formData.append('croppedImage', blob);
 	  formData.append('croppedImage', blob, "test.jpg");
@@ -254,4 +255,4 @@ function img_submit()
 
 
 </script>
-<script src="../lib/Cropper/js/main.js"></script>
+<!-- <script src="../lib/Cropper/js/main.js"></script> -->
