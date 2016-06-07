@@ -39,7 +39,7 @@ switch ($_REQUEST['exec'])
 		else
 			$flag	= "N";
 
-		echo $flag;
+		echo $query;
 	break;
 
 }
