@@ -1,5 +1,6 @@
 <?php
-		//print_r($_POST);
+
+		// print_r($_POST);
 	
 		$targ_x = $_POST['x'];
 		$targ_y = $_POST['y'];
@@ -7,10 +8,14 @@
 		$targ_y2 = $_POST['y2'];
 		$targ_w = 1200;
 	  	$targ_h = 630;
+	  	$targ_dir = "./images/";
+	  	$targ_src = $_POST['target_src'];
 		$jpeg_quality = 90;
 		$output_filename = "./after.jpg";
 
-		$src = "./images/picture.jpg";
+		$src = $targ_dir.$targ_src;
+		// $src = "./images/picture.jpg";
+		// $img_r = imagecreatefromjpeg($src);
 		$img_r = imagecreatefromjpeg($src);
 		$dst_r = ImageCreateTrueColor($targ_w, $targ_h);
 
@@ -19,7 +24,7 @@
 		imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],
 		$targ_w,$targ_h,$_POST['w'],$_POST['h']);
 
-		header('Content-type: image/jpeg');
+		// header('Content-type: image/jpeg');
 		imagejpeg($dst_r, $output_filename, $jpeg_quality);
 		// imagejpeg($dst_r, null, $jpeg_quality);
 		imagedestroy($dst_r);
