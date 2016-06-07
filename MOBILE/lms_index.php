@@ -216,7 +216,7 @@ function input_submit()
 			"mb_phone"		: mb_phone,
 			"mb_job"			: mb_job,
 			"mb_image"		: mb_image,
-			"mb_serial"		: <?=$rs?>
+			"mb_serial"		: "<?=$rs?>"
 		},
 		url: "../main_exec.php",
 		beforeSend: function(response){
