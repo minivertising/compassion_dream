@@ -224,6 +224,7 @@ function input_submit()
 			$("#contents_div").hide();
 		},
 		success: function(response){
+			alert(response);
 			$("#loading_div").hide();
 			$("#contents_div").show();
 			if (response == "Y")
