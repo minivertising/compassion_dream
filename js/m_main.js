@@ -102,19 +102,34 @@ function sns_share(media)
 	}else if (media == "kt"){
 		// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
 		//Kakao.Link.createTalkLinkButton({
-		Kakao.Link.sendTalkLink({
-		  //container: '#kakao-link-btn',
-		  label: "빌리의 SOS! 빌리프 친구들을 찾으면 올 봄 촉촉 화사한 기회가 내게로",
-		  image: {
-			src: 'http://www.belif-play.com/MOBILE/images/belif_share2.jpg',
-			width: '1200',
-			height: '630'
-		  },
-		  webButton: {
-			text: '빌리의 봄 소풍 at London',
-			url: 'http://www.belif-play.com/?media=kt' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
-		  }
+		$.ajax({
+			type:"POST",
+			data:{
+				"exec"			: "url_info",
+				"mb_serial"		: mb_rs
+			},
+			url: "../main_exec.php",
+			success: function(response){
+				alert(response);
+				var img_url	= response;
+
+				Kakao.Link.sendTalkLink({
+				  //container: '#kakao-link-btn',
+				  label: "꿈 많았던 나의 어린시절을 소개합니다.\n\r아래의 링크로 확인해주세요.\n\r#블루바톤챌린지",
+				  image: {
+					src: img_url,
+					width: '1200',
+					height: '630'
+				  },
+				  webButton: {
+					text: '링크 열기',
+					url: 'http://www.mnv.kr/MOBILE/lms_index.php?rs='+mb_rs // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+				  }
+				});
+
+			}
 		});
+
 		$.ajax({
 			type   : "POST",
 			async  : false,

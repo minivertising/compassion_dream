@@ -42,5 +42,15 @@ switch ($_REQUEST['exec'])
 		echo $flag;
 	break;
 
+	case "url_info" :
+		$mb_serial			= $_REQUEST['mb_serial'];
+
+		$img_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$mb_serial."'";
+		$img_result 	= mysqli_query($my_db, $img_query);
+		$img_data	= mysqli_fetch_array($img_result);
+
+		echo $img_data['mb_image'];
+
+	break;
 }
 ?>
