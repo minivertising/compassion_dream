@@ -77,7 +77,7 @@
 			$media						= $_REQUEST['media'];
 			$_SESSION['ss_media']	= $media;
 		}else{
-			$media						= "";
+			$media						= "1313";
 			$_SESSION['ss_media']	= $media;
 		}
 	}

@@ -5,24 +5,21 @@
     <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
     <h2>DREAM RUNNER되기 1단계</h2>
     <h3>당신의 어린시절 꿈을 선택해주세요</h3>
-    <select name="mb_job" id="mb_job">
+	<a href="#" onclick="view_dream_div();return false;" id="dream_sel_link">꿈 선택 ▼</a>
+	<div  id="choice_dream" style="position:absolute;z-index:9;background:skyblue;display:none">
+	  <a href="#" onclick="checked_dream('cook');return false;" name="id_job" id="id_cook">요리사</a>
+	  <a href="#" onclick="checked_dream('doctor');return false;" name="id_job" id="id_doctor">의사</a>
+	  <a href="#" onclick="checked_dream('teacher');return false;" name="id_job" id="id_teacher">선생님</a>
+	</div>
+    <!-- <select name="mb_job" id="mb_job">
       <option value="">선택하세요</option>
       <option value="cook">요리사</option>
       <option value="doctor">의사</option>
       <option value="teacher">선생님</option>
-    </select><br />
+    </select> --><br />
     <div id="img_div" style="width:100%; height:100%;">
       <img id="ori_image" src="./images/picture.jpg" alt="Picture">
     </div>
-    <!-- <div class="btn-group btn-group-crop docs-buttons">
-      <a class="btn btn-primary" id="download" href="javascript:void(0);" data-method="getCroppedCanvas" download="cropped.jpg">Download</a>
-      <div class="btn-group"> 
-        <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
-          <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
-          <span title="Import image with Blob URLs">Upload</span>
-        </label>
-      </div> -->
-    <!-- <div class="docs-buttons"> -->
     <div>
       <label for="inputImage" title="Upload image file">
         <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
@@ -39,7 +36,7 @@
 
   <!--사진 미리보기 팝업-->
   <div id="preview_popup" class="popup_wrap" style="background:white; width:100%; height:100%;">
-    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
+    <a href="#" onclick="open_pop('dream_sel_popup');return false;">닫기</a>
     <h2>사진 미리보기</h2>
     <div class="preview">
     </div>

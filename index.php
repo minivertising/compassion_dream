@@ -13,10 +13,10 @@
 
 	if($gubun == "MOBILE")
 	{
-		Header("Location:http://www.belif-play.com/MOBILE/index.php?media=".$media."");
+		Header("Location:http://www.mnv.kr/MOBILE/index.php?media=".$media."");
 		exit;
 	}else{
-		Header("Location:http://www.belif-play.com/PC/index.php?media=".$media."");
+		Header("Location:http://www.mnv.kr/PC/index.php?media=".$media."");
 		exit;
 	}
 
