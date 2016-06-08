@@ -5,7 +5,7 @@
 
 	$mb_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$rs."'";
 	$mb_result 	= mysqli_query($my_db, $mb_query);
-	$mb_data	= mysqli_fetch_array($result);
+	$mb_data	= mysqli_fetch_array($mb_result);
 
 	$img_url		= str_replace("..","http://www.mnv.kr",$mb_data['mb_image']);
 ?>
