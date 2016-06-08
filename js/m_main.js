@@ -127,8 +127,8 @@ function sns_share(media)
 		});
 	}else{
 		Kakao.Story.share({
-			url: 'http://www.belif-play.com/?media=ks',
-			text: '빌리의 SOS! 빌리프 친구들을 찾으면 올 봄 촉촉 화사한 기회가 내게로'
+			url: 'http://www.mnv.kr/MOBILE/lms_index.php?rs='+mb_rs,
+			text: '#블루바톤챌린지'
 		});
 		$.ajax({
 			type   : "POST",

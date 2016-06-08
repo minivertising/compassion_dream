@@ -48,6 +48,7 @@
 	var flag_sel_dream	= 0;
 	var mb_rs		= '<?=$rs?>';
 	$(document).ready(function() {
+		Kakao.init('59df63251be6d99256b63b98f4948e89');
 		$("#cboxTopLeft").hide();
 		$("#cboxTopRight").hide();
 		$("#cboxBottomLeft").hide();
