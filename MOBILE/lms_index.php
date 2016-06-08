@@ -1,7 +1,5 @@
 <?
-include_once "./header.php";
-$rs	= $_REQUEST['rs'];
-print_r($_SESSION);
+	include_once "./header.php";
 ?>
 <body>
 <script>
@@ -48,6 +46,7 @@ print_r($_SESSION);
 	var centerCropBoxWidth;
 	var centerCropBoxHeight;
 	var flag_sel_dream	= 0;
+	var mb_rs		= '<?=$rs?>';
 	$(document).ready(function() {
 		$("#cboxTopLeft").hide();
 		$("#cboxTopRight").hide();
@@ -234,7 +233,7 @@ function input_submit()
 			"mb_phone"		: mb_phone,
 			"mb_job"			: sel_dream,
 			"mb_image"		: mb_image,
-			"mb_serial"		: "<?=$rs?>"
+			"mb_serial"		: mb_rs
 		},
 		url: "../main_exec.php",
 		beforeSend: function(response){
