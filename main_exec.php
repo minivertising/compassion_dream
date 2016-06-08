@@ -31,7 +31,7 @@ switch ($_REQUEST['exec'])
 		아이 매칭 로직이 추가 되어야 함.
 		*/
 
-		$query 	= "INSERT INTO ".$_gl['activator_info_table']."(mb_ipaddr,mb_name,mb_phone,mb_job,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_name."','".$mb_phone."','".$mb_job."','".$mb_image."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$serial."')";
+		$query 	= "INSERT INTO ".$_gl['activator_info_table']."(mb_ipaddr,mb_name,mb_phone,mb_job,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_name."','".$mb_phone."','".$mb_job."','".$mb_image."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
 		$result 	= mysqli_query($my_db, $query);
 
 		if ($result)
@@ -39,7 +39,7 @@ switch ($_REQUEST['exec'])
 		else
 			$flag	= "N";
 
-		echo $query;
+		echo $flag;
 	break;
 
 }

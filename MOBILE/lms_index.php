@@ -1,7 +1,7 @@
 <?
 include_once "./header.php";
 $rs	= $_REQUEST['rs'];
-print_r($rs);
+print_r($_SESSION);
 ?>
 <body>
 <script>
@@ -47,6 +47,7 @@ print_r($rs);
 	var destCropHeight;
 	var centerCropBoxWidth;
 	var centerCropBoxHeight;
+	var flag_sel_dream	= 0;
 	$(document).ready(function() {
 		$("#cboxTopLeft").hide();
 		$("#cboxTopRight").hide();
@@ -178,7 +179,7 @@ function preview_img()
 
 function dream_next()
 {
-	mb_job	= $("#mb_job").val();
+	//mb_job	= $("#mb_job").val();
 
 	// 사진 저장할 내용 추가
 	//$($ori_image).cropper("setAspectRatio", 1200/630).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
@@ -231,7 +232,7 @@ function input_submit()
 			"exec"			: "insert_info",
 			"mb_name"		: mb_name,
 			"mb_phone"		: mb_phone,
-			"mb_job"			: mb_job,
+			"mb_job"			: sel_dream,
 			"mb_image"		: mb_image,
 			"mb_serial"		: "<?=$rs?>"
 		},

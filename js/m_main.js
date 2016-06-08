@@ -40,6 +40,39 @@ function open_pop(param)
 	}});
 }
 
+// 직업선택 팝업 창 여는 함수
+function view_dream_div()
+{
+	if (flag_sel_dream == 0)
+	{
+		if (sel_dream != null)
+		{
+			$("a[name='id_job']").css("font-weight","normal");
+			$("#id_"+sel_dream).css("font-weight","bold");
+		}
+		$("#dream_sel_link").html("꿈 선택 ▲");
+		// 준우씨가 animate로 변경
+		$("#choice_dream").show();
+		flag_sel_dream	= 1;
+	}else{
+		$("#dream_sel_link").html("꿈 선택 ▼");
+		// 준우씨가 animate로 변경
+		$("#choice_dream").hide();
+		flag_sel_dream	= 0;
+	}
+}
+
+// 직업선택 시 변수 저장 함수
+function checked_dream(param)
+{
+	sel_dream	= param;
+	$("#choice_dream").hide();
+	$("#dream_sel_link").html("꿈 선택 ▼");
+	flag_sel_dream	= 0;
+
+}
+
+/*
 function dream_next()
 {
 	sel_dream		= $(":input:radio[name=dream_chk]:checked").val();
@@ -47,6 +80,7 @@ function dream_next()
 
 	open_pop("upimage_popup");
 }
+*/
 
 function sns_share(media)
 {
