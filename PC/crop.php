@@ -71,17 +71,12 @@ function readURL(input) {
             fileSrc = input.files[0].name;
             reader.readAsDataURL(input.files[0]);          
         }else{
-          var img_path = "";
-          if (input.value.indexOf("\\fakepath\\") < 0) {
-            alert("if");
-              img_path = input.value;
-          } else {
-              input.select();
-              var selectionRange = document.selection.createRange();
-              img_path = selectionRange.text.toString();
-              input.blur();
-          }
-          console.log(input.value);
+          input.select();
+          document.selection.createRange().text.toString();
+          console.log(document.selection.createRange().text.toString());
+          // $('#target').attr('src', "");
+          // $('#target').attr('src', document.selection.createRange().text.toString());
+          // crop_init();
         }
     }
     
@@ -92,6 +87,13 @@ function readURL(input) {
         // console.log(this);
         readURL(this);
     });
+
+function extractFilename(s){ 
+  // returns string containing everything from the end of the string 
+  //   that is not a back/forward slash or an empty string on error
+  //   so one can check if return_value===''
+  return (typeof s==='string' && (s=s.match(/[^\\\/]+$/)) && s[0]) || '';
+} 
 
 // $("#fileUp").change(function(){
 //   var beforeImageSrc = $('#target')[0].src;
