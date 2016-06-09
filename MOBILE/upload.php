@@ -52,7 +52,7 @@
 	$real_size = $file_size;                         // 업로드 되는 파일 크기 (byte)
 	$save_dir = '../files/'.date("Ymd").'/';
 
-	// 폴더 존재 여부 확인 후 존재하지 않으면 폴더 생성 
+	// 폴더 존재 여부 확인 후 존재하지 않으면 폴더 생성
 	if ( !is_dir($save_dir) ) {
 		if(@mkdir($save_dir, 0777)) { 
 			if(is_dir($save_dir)) { 
@@ -69,28 +69,6 @@
 	{
 		die("파일을 지정한 디렉토리에 업로드하는데 실패했습니다.");
 	}else{
-		// 이미지 리사이징
-		//if(GDRealImageResize($FilePath.$RealFileName, $FilePath.$ResizeFileName, $UploadImg["type"])){
-		if(GDRealImageResize($dest_url, $save_dir."test", $mimeType)){
-			$Extension = ".png";
-			switch($mimeType["type"]){
-				case "image/jpeg";
-					$Extension = ".jpeg";
-					break;
-				case "image/jpg";
-					$Extension = ".jpg";
-					break;
-				case "image/png";
-					$Extension = ".png";
-					break;
-			}
-			$THURL = "test".$Extension;
-			$URL = "test".$Extension;
-			unlink($dest_url);
-			$UploadImgUrl = $THURL;
-			print_r($UploadImgUrl);
-		}
-
 		echo $dest_url;
 		// echo "<meta http-equiv='refresh' content='2; url=./forms2.php'>";
 	}
@@ -102,45 +80,4 @@
 		$real_name : 원래 파일명. 예: 풍경사진.gif 
 		$real_size : 파일 크기(byte)
 	*/
-
-function GDRealImageResize($src_file, $dst_file, $type, $quality = 1){
-	//기본이미지
-	global $Extension;
-	$MaxH = 190; 
-	$MaxW = 248; 
-	$ScaleX;
-	$ScaleY;
-	$NewImagSizeX;
-	$NewImagSizeY;
-	
-	$im = GDImageLoad($src_file, $type);
-	
-	if(!$im){
-		return false ;
-	}
-	$RealImgX = imagesx($im); //넓이
-	$RealImgY = imagesy($im); //높이
-	
-	//아래에 주석을 포함한 곳에서 이미지 비율을 계산
-	$NewImagSizeY = $MaxH;
-	$NewImagSizeX = $MaxW;
-	/*$NewImagSizeY = $MaxH;
-	$NewImagSizeX = (int)(($RealImgX/$RealImgY)*$MaxH);*/
-	//$NewImagSizeX = (int)(($RealImgY/$RealImgX)*$MaxH);
-	/*$NewImagSizeX = $MaxW;
-	$NewImagSizeY = (int)(($RealImgY/$RealImgX)*$MaxW);*/
- 
-	$im2 = imagecreatetruecolor($NewImagSizeX, $NewImagSizeY);
-	imagecopyresized($im2, $im, 0, 0, 0, 0, $NewImagSizeX, $NewImagSizeY, $RealImgX, $RealImgY);
-	
-	if($type == "image/jpg" || $type == "image/jpeg"){
-		imagejpeg($im2, $dst_file.$Extension);
-	}else if($type == "image/png"){
-		imagepng($im2, $dst_file.$Extension);
-		//echo "sus";
-	}
-	imagedestroy($im);
-	imagedestroy($im2);
-	return true;
-}
 ?>
