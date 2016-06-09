@@ -72,7 +72,7 @@ function readURL(input) {
             reader.readAsDataURL(input.files[0]);          
         }else{
           input.select();
-          document.selection.createRange().text.toString();
+          extarctFilename(document.selection.createRange().text.toString());
           console.log(document.selection.createRange().text.toString());
           // $('#target').attr('src', "");
           // $('#target').attr('src', document.selection.createRange().text.toString());
