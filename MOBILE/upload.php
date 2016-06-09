@@ -65,19 +65,30 @@
 	$dest_url = $save_dir . $change_file_name;
 
 	//파일을 지정한 디렉토리에 업로드
+	// $result = move_uploaded_file($file_tmp_name, $dest_url);
 	if(!move_uploaded_file($file_tmp_name, $dest_url))
 	{
 		die("파일을 지정한 디렉토리에 업로드하는데 실패했습니다.");
 	}else{
+	// 	$src = $dest_url;
+	// 	$img_r = imagecreatefromjpeg($src);
+	// 	$dst_r = ImageCreateTrueColor(1200, 630);
+	// 	imagecopyresampled($dst_r,$img_r,0,0,0,0,
+	// 	1200,630,1200,630);
+	// 	imagejpeg($dst_r, '../files/aaa.jpg', 90);
 		echo $dest_url;
-		// echo "<meta http-equiv='refresh' content='2; url=./forms2.php'>";
+	// 	// echo $real_size;
+	// 	// echo "<meta http-equiv='refresh' content='2; url=./forms2.php'>";
 	}
+		
 
 
-	// DB에 기록할 파일 변수 (DB에 저장이 필요한 경우 아래 변수명을 기록하시면 됩니다.)
-	/*
-		$change_file_name : 실제 서버에 업로드 된 파일명. 예: file_145736478766.gif
-		$real_name : 원래 파일명. 예: 풍경사진.gif 
-		$real_size : 파일 크기(byte)
-	*/
+	// // DB에 기록할 파일 변수 (DB에 저장이 필요한 경우 아래 변수명을 기록하시면 됩니다.)
+	// /*
+	// 	$change_file_name : 실제 서버에 업로드 된 파일명. 예: file_145736478766.gif
+	// 	$real_name : 원래 파일명. 예: 풍경사진.gif 
+	// 	$real_size : 파일 크기(byte)
+	// */
+
+
 ?>
