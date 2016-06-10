@@ -5,10 +5,16 @@ switch ($_REQUEST['exec'])
 {
 	case "insert_share_info" :
 		$sns_media	= $_REQUEST['sns_media'];
-		$sns_flag		= $_REQUEST['sns_flag'];
+		$mb_serial	= $_REQUEST['mb_serial'];
 
 		$query 		= "INSERT INTO ".$_gl['share_info_table']."(sns_media, sns_ipaddr, sns_gubun, inner_media, sns_regdate) values('".$sns_media."','".$_SERVER['REMOTE_ADDR']."','".$gubun."','".$_SESSION['ss_media']."','".date("Y-m-d H:i:s")."')";
 		$result 	= mysqli_query($my_db, $query);
+
+		$mb_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$mb_serial."'";
+		$mb_result 	= mysqli_query($my_db, $mb_query);
+		$mb_data	= mysql_fetch_array($mb_result);
+
+		send_lms($mb_data['mb_phone'], $mb_serial);
 
 		if ($result)
 			$flag = "Y";
