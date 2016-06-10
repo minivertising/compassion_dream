@@ -96,7 +96,7 @@ function sns_share(media)
 			data:{
 				"exec" : "insert_share_info",
 				"sns_media" : media,
-				"sns_flag"		: flag
+				"mb_serial"  : mb_rs
 			}
 		});
 	}else if (media == "kt"){
@@ -137,7 +137,7 @@ function sns_share(media)
 			data:{
 				"exec" : "insert_share_info",
 				"sns_media" : media,
-				"sns_flag"		: flag
+				"mb_serial"  : mb_rs
 			}
 		});
 	}else{
@@ -152,7 +152,7 @@ function sns_share(media)
 			data:{
 				"exec" : "insert_share_info",
 				"sns_media" : media,
-				"sns_flag"		: flag
+				"mb_serial"  : mb_rs
 			}
 		});
 	}
