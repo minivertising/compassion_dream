@@ -245,6 +245,7 @@ function input_submit()
         },
         url: "../main_exec.php",
         beforeSend: function(response){
+			alert(response);
             $("#loading_div").show();
             $("#contents_div").hide();
         },
