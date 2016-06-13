@@ -8,6 +8,8 @@
 	$mb_data	= mysqli_fetch_array($mb_result);
 
 	$img_url		= str_replace("..","http://www.mnv.kr",$mb_data['mb_image']);
+
+
 ?>
 <!doctype html>
 <html>

@@ -57,6 +57,9 @@
 
   <!-- 매칭결과 확인 & 공유 팝업-->
   <div id="share_popup" class="popup_wrap" style="background:white;">
+    <div>
+	  <img src="#" style="width:100%" id="matching_child_pic">
+	</div>
     <a href="#" onclick="open_pop('input_popup');return false;">닫기</a>
     <a href="#" onclick="sns_share('fb');">페이스북</a>
     <a href="#" onclick="sns_share('kt');">카톡</a>

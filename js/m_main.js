@@ -72,6 +72,12 @@ function checked_dream(param)
 
 }
 
+function next_page(param)
+{
+	var prev_param	= param - 1;
+	$("#page_div"+prev_param).hide();
+	$("#page_div"+param).show();
+}
 /*
 function dream_next()
 {
@@ -84,11 +90,12 @@ function dream_next()
 
 function sns_share(media)
 {
+	alert(mb_rs);
 	if (media == "fb")
 	{
 		//https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer
 		//var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.belif-play.com/PC/index.php'),'sharer','toolbar=0,status=0,width=600,height=325');
-		var newWindow = window.open('https://www.facebook.com/dialog/share?app_id=649187078561789&display=popup&href=' + encodeURIComponent('http://www.mnv.kr/MOBILE/lms_index.php?rs='+mb_rs),'sharer','toolbar=0,status=0,width=600,height=325');
+		var newWindow = window.open('https://www.facebook.com/dialog/share?app_id=649187078561789&display=popup&href=' + encodeURIComponent('http://www.mnv.kr/MOBILE/follower_index.php?rs='+mb_rs),'sharer','toolbar=0,status=0,width=600,height=325');
 		$.ajax({
 			type   : "POST",
 			async  : false,
@@ -123,7 +130,7 @@ function sns_share(media)
 				  },
 				  webButton: {
 					text: '링크 열기',
-					url: 'http://www.mnv.kr/MOBILE/lms_index.php?rs='+mb_rs // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+					url: 'http://www.mnv.kr/MOBILE/follower_index.php?rs='+mb_rs // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
 				  }
 				});
 
@@ -142,7 +149,7 @@ function sns_share(media)
 		});
 	}else{
 		Kakao.Story.share({
-			url: 'http://www.mnv.kr/MOBILE/lms_index.php?rs='+mb_rs,
+			url: 'http://www.mnv.kr/MOBILE/follower_index.php?rs='+mb_rs,
 			text: '#블루바톤챌린지'
 		});
 		$.ajax({
