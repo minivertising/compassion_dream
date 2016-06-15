@@ -46,7 +46,7 @@
     var centerCropBoxWidth;
     var centerCropBoxHeight;
     var flag_sel_dream  = 0;
-    var mb_rs       = '<?=$rs?>';
+    var mb_rs       = null;
     $(document).ready(function() {
         Kakao.init('59df63251be6d99256b63b98f4948e89');
         $("#cboxTopLeft").hide();
@@ -240,8 +240,8 @@ function input_submit()
             "mb_name"       : mb_name,
             "mb_phone"      : mb_phone,
             "mb_job"        : sel_dream,
-            "mb_image"      : mb_image,
-            "mb_serial"     : mb_rs
+            "mb_image"      : mb_image
+            //"mb_serial"     : mb_rs
         },
         url: "../main_exec.php",
         beforeSend: function(response){
@@ -252,6 +252,7 @@ function input_submit()
         success: function(response){
             console.log(response);
             var rs_ch	= response.split("||");
+			mb_rs	= rs_ch[2];
             $("#loading_div").hide();
             $("#contents_div").show();
             if (rs_ch[0] == "Y")

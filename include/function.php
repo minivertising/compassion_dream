@@ -95,6 +95,21 @@
 	}
 */
 
+	function create_serial()
+	{
+		global $_gl;
+		global $my_db;
+
+		$serial_query 	= "SELECT serial_code FROM ".$_gl['serial_info_table']." WHERE useYN='N' limit 1";
+		$serial_result 	= mysqli_query($my_db, $serial_query);
+		$serial_data	= mysqli_fetch_array($serial_result);
+
+		$serial_query2 	= "UPDATE ".$_gl['serial_info_table']." SET useYN='Y' WHERE serial_code='".$serial_data['serial_code']."'";
+		$serial_result2 	= mysqli_query($my_db, $serial_query2);
+
+		return $serial_data['serial_code'];
+	}
+
 	// LMS 발송 
 	function send_lms($phone, $serial)
 	{

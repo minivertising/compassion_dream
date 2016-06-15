@@ -40,11 +40,13 @@
 </body>
 </html>
 <script type="text/javascript">
+    var agent = navigator.userAgent.toLowerCase();
     var sel_dream       = null;
     var runner_serial   = null;
     var mb_job          = null;
     var mb_image        = null;
     var $ori_image = $('#ori_image');
+    var $inputImage = $('#inputImage')
     var $previews = $('.preview');
     var imageData;
     var afterCropBoxData;
@@ -54,6 +56,12 @@
     var destCropHeight;
     var centerCropBoxWidth;
     var centerCropBoxHeight;
+    var URL = window.URL || window.webkitURL;
+    var realFath;
+    var convertPath;
+    var blobURL;
+    var file;
+    var files;
     var flag_sel_dream  = 0;
     var mb_rs       = '<?=$rs?>';
     $(document).ready(function() {
@@ -69,6 +77,7 @@
 
 		Ins_tracking();
     });
+	/*
     var $inputImage = $('#inputImage');
     var URL = window.URL || window.webkitURL;
     var blobURL;
@@ -100,12 +109,11 @@
       } else {
         $inputImage.prop('disabled', true).parent().addClass('disabled');
       }
+*/
 
-
-// $(function () {
-    
-
-// });
+$(function () {
+    image_crop();
+});
 
 function image_crop(){
     $($ori_image).cropper({
@@ -121,6 +129,7 @@ function image_crop(){
         cropBoxResizable: false,
         preview: '.preview',
         center:true,
+
         build: function (e) {
           console.log(e.type);
         },
@@ -155,6 +164,71 @@ function preview_img()
 
 }
 
+function readURL(input) {
+        if (input.files && input.files[0]) {
+
+            file = files[0];
+            if (/^image\/\w+$/.test(file.type)) {
+              blobURL = URL.createObjectURL(file);
+              $ori_image.one('built.cropper', function () {
+                // Revoke when load complete
+                URL.revokeObjectURL(blobURL);
+              }).cropper('reset').cropper('replace', blobURL);
+              $($inputImage).val('');
+            } else {
+              window.alert('Please choose an image file.');
+            // }
+            // var reader = new FileReader();
+            // reader.onload = function (e) {
+            //     alert("onload");
+            //     $($ori_image).attr('src', e.target.result);
+            //     image_crop();
+            }
+            // realFath = input.files[0].name;
+            // reader.readAsDataURL(input.files[0]);
+        }else if(input.value){ // 조건 수정
+            //이미지 저장후에 불러와서 $ori_image src 변경
+            console.log(realFath);
+            $.ajax({
+              method: 'POST',
+              url: 'ie_photo_upload.php',
+              data: {ieImageSrc: realFath},
+              success: function(res){
+                convertPath = res;
+                // alert(res);
+               console.log("저장 후:"+convertPath);
+               // alert(convertPath);
+               $($ori_image).attr('src', convertPath);
+               image_crop();
+              }
+            });
+			/*
+            alert("1111");
+            alert("1111");
+            alert("1111");
+            console.log("저장 후:"+convertPath);
+            // alert(convertPath);
+            $($ori_image).attr('src', convertPath);
+            image_crop();
+			*/
+        }
+    }
+    
+    $($inputImage).change(function(){
+        files = this.files;
+        // console.dir(this);
+        if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+            $($ori_image).cropper('destroy');
+            this.select();
+            realFath = document.selection.createRangeCollection()[0].text.toString();
+            this.blur();
+            // var size = getImgSize(this);
+            // console.log(size.naturalWidth);
+        }
+        readURL(this);
+    });
+
+
 function dream_next()
 {
     if (sel_dream == null)
@@ -165,30 +239,19 @@ function dream_next()
     //mb_job    = $("#mb_job").val();
 
     // 사진 저장할 내용 추가
-    $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
-      var formData = new FormData();
-      // formData.append('croppedImage', blob);
-      formData.append('croppedImage', blob, "test.jpg");
-      $.ajax('./upload2.php', {
-        method: "POST",
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function (data) {
-            // console.log(data);
-            mb_image    = data;
-            open_pop('input_popup');
-        }
-      });
+    var croppedImg = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
+    var canvasImageURL = croppedImg.toDataURL("image/jpeg");
+    $.ajax({
+      method: 'POST',
+      url: 'photo_upload.php',
+      data: {canvasurl: canvasImageURL},
+      success: function(res){
+        // console.log(res);
+        //alert(res);
+        mb_image    = res;
+        open_pop('input_popup');
+      }
     });
-    //    
-    // if (mb_job == "")
-    // {
-    //     alert("당신의 어린시절 꿈을 선택해 주세요.");
-    //     return false;
-    // }
-    
-
 }
 
 function input_submit()

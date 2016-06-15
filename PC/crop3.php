@@ -146,8 +146,13 @@ function readURL(input) {
               success: function(res){
                 convertPath = res;
                 // alert(res);
+               console.log("저장 후:"+convertPath);
+               // alert(convertPath);
+               $($ori_image).attr('src', convertPath);
+               image_crop();
               }
             });
+			/*
             alert("1111");
             alert("1111");
             alert("1111");
@@ -155,6 +160,7 @@ function readURL(input) {
             // alert(convertPath);
             $($ori_image).attr('src', convertPath);
             image_crop();
+			*/
         }
     }
     
