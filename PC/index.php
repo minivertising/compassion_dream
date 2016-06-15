@@ -1,27 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Live Cropping Demo</title>
-  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link href="../lib/Cropper/css/cropper.css" rel="stylesheet">
-  <link href="../lib/Cropper/css/bootstrap.min.css" rel="stylesheet">
-  <script src="../js/jquery-1.11.2.min.js"></script>
-  <script src="../js/jquery.form.js"></script>
-  <script src="../lib/Cropper/js/cropper.js"></script>
-  <script type="text/javascript" src="../js/canvas-to-blob.js"></script>
-</head>
+<?
+	include_once "./header.php";
+
+	$total_runner_cnt		= total_runner_info();
+	$total_pic_cnt			= total_pic_info();
+	//$total_matching_cnt	= total_matching_info();
+?>
 <body>
-    <div id="img_div" style="width:100%; height:100%;">
-      <img id="ori_image" src="./images/picture.jpg" alt="Picture">
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '649187078561789',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+    <div id="loading_div" style="display:none">
+        Loading.... 꿈이 필요한 아이와 매칭중
     </div>
-    <div>
-        <label for="inputImage" title="Upload image file">
-            <input type="file" id="inputImage" class="sr-only" name="file" accept="image/*">
-            <span title="Import image with Blob URLs">이미지 등록</span>
-        </label>
-        <a href="#" onclick="dream_next();return false;">업로드 완료</a>
-        <a href="#" onclick="preview_img();return false;">미리보기</a>
+    <div id="contents_div">
+	  <h1>블루 바톤 챌린지</h1>
+	  <h2>어린이의 꿈을 위해 달리고 있는 블루 러너 : <?=number_format($total_runner_cnt)?>명</h2>
+	  <h2>현재 공유되고 있는 어릴적 사진 수 : <?=number_format($total_pic_cnt)?>Km(1공유 1Km)</h2>
+	  <h2>123명의 어린이들이 드림러너를 통해 결연이 되었습니다.</h2>
+        <a href="#" onclick="open_pop('use_popup');">참여방법</a><br />
+        <a href="#" onclick="open_pop('dream_sel_popup');">참여하기</a>
+        <?
+        include_once "./popup_div.php";
+        ?>
     </div>
 </body>
 </html>
@@ -48,32 +62,54 @@
     var blobURL;
     var file;
     var files;
-      // if (URL) {
-      //   $inputImage.change(function () {
-          
-      //     if (!$ori_image.data('cropper')) {
-      //       return;
-      //     }
+    var flag_sel_dream  = 0;
+    var mb_rs       = '<?=$rs?>';
+    $(document).ready(function() {
+        Kakao.init('59df63251be6d99256b63b98f4948e89');
+        $("#cboxTopLeft").hide();
+        $("#cboxTopRight").hide();
+        $("#cboxBottomLeft").hide();
+        $("#cboxBottomRight").hide();
+        $("#cboxMiddleLeft").hide();
+        $("#cboxMiddleRight").hide();
+        $("#cboxTopCenter").hide();
+        $("#cboxBottomCenter").hide();
 
-      //     if (files && files.length) {
-      //       file = files[0];
+		Ins_tracking();
+    });
+	/*
+    var $inputImage = $('#inputImage');
+    var URL = window.URL || window.webkitURL;
+    var blobURL;
 
-      //       if (/^image\/\w+$/.test(file.type)) {
-      //         blobURL = URL.createObjectURL(file);
-      //         $ori_image.one('built.cropper', function () {
-      //           // Revoke when load complete
-      //           URL.revokeObjectURL(blobURL);
-      //         }).cropper('reset').cropper('replace', blobURL);
-      //         $inputImage.val('');
-      //       } else {
-      //         window.alert('Please choose an image file.');
-      //       }
-      //     }
-      //   });
-      // } else {
-      //   $inputImage.prop('disabled', true).parent().addClass('disabled');
-      // }
+      if (URL) {
+        $inputImage.change(function () {
+          var files = this.files;
+          var file;
 
+          if (!$ori_image.data('cropper')) {
+            return;
+          }
+
+          if (files && files.length) {
+            file = files[0];
+
+            if (/^image\/\w+$/.test(file.type)) {
+              blobURL = URL.createObjectURL(file);
+              $ori_image.one('built.cropper', function () {
+                // Revoke when load complete
+                URL.revokeObjectURL(blobURL);
+              }).cropper('reset').cropper('replace', blobURL);
+              $inputImage.val('');
+            } else {
+              window.alert('Please choose an image file.');
+            }
+          }
+        });
+      } else {
+        $inputImage.prop('disabled', true).parent().addClass('disabled');
+      }
+*/
 
 $(function () {
     image_crop();
@@ -118,8 +154,19 @@ function image_crop(){
     });
 }
 // });
+
+function preview_img()
+{
+/*
+    사진 저장할 내용 추가
+*/
+    open_pop('preview_popup');
+
+}
+
 function readURL(input) {
         if (input.files && input.files[0]) {
+
             file = files[0];
             if (/^image\/\w+$/.test(file.type)) {
               blobURL = URL.createObjectURL(file);
@@ -149,14 +196,6 @@ function readURL(input) {
               success: function(res){
                 convertPath = res;
                 // alert(res);
-<<<<<<< HEAD
-                console.log("저장 후:"+convertPath);
-                // alert(convertPath);
-                $($ori_image).attr('src', convertPath);
-                image_crop();
-              }
-            });
-=======
                console.log("저장 후:"+convertPath);
                // alert(convertPath);
                $($ori_image).attr('src', convertPath);
@@ -172,7 +211,6 @@ function readURL(input) {
             $($ori_image).attr('src', convertPath);
             image_crop();
 			*/
->>>>>>> d070978513089955e1319488b1855c392a9fbce7
         }
     }
     
@@ -190,41 +228,14 @@ function readURL(input) {
         readURL(this);
     });
 
-// function getImgSize(file) 
-// {
-//   var size = { 
-//     width : file.prop("width"), height : file.prop("height"), 
-//     naturalWidth : 0, naturalHeight : 0 
-//   };
-
-//   if (file.prop('naturalWidth') == undefined) {
-//     var $tmpImg = $('<img/>').attr('src', file.attr('src'));
-//     size.naturalWidth = $tmpImg[0].width;
-//     size.naturalHeight = $tmpImg[0].height;
-//   } else {
-//     size.naturalWidth = file.prop('naturalWidth');
-//     size.naturalHeight = file.prop('naturalHeight');
-//   }
-//   return size;
-// };
-
-
-function preview_img()
-{
-/*
-    사진 저장할 내용 추가
-*/
-    open_pop('preview_popup');
-
-}
 
 function dream_next()
 {
-    // if (sel_dream == null)
-    //     {
-    //         alert("당신의 어린시절 꿈을 선택해 주세요.");
-    //         return false;
-    //     }
+    if (sel_dream == null)
+        {
+            alert("당신의 어린시절 꿈을 선택해 주세요.");
+            return false;
+        }
     //mb_job    = $("#mb_job").val();
 
     // 사진 저장할 내용 추가
@@ -236,17 +247,11 @@ function dream_next()
       data: {canvasurl: canvasImageURL},
       success: function(res){
         // console.log(res);
-        alert(res);
+        //alert(res);
+        mb_image    = res;
+        open_pop('input_popup');
       }
     });
-    //    
-    // if (mb_job == "")
-    // {
-    //     alert("당신의 어린시절 꿈을 선택해 주세요.");
-    //     return false;
-    // }
-    
-
 }
 
 function input_submit()
@@ -279,15 +284,18 @@ function input_submit()
         },
         url: "../main_exec.php",
         beforeSend: function(response){
+			alert(response);
             $("#loading_div").show();
             $("#contents_div").hide();
         },
         success: function(response){
-            alert(response);
+            console.log(response);
+            var rs_ch	= response.split("||");
             $("#loading_div").hide();
             $("#contents_div").show();
-            if (response == "Y")
+            if (rs_ch[0] == "Y")
             {
+				$("#matching_child_pic").attr("src",rs_ch[1]);
                 open_pop('share_popup');
             }else {
                 alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
@@ -297,7 +305,17 @@ function input_submit()
     });
 }
 
-
+function Ins_tracking()
+{
+    $.ajax({
+        type:"POST",
+        data:{
+            "exec"          : "insert_tracking_info",
+			"media"			: "<?=$_REQUEST['media'];?>"
+        },
+        url: "../main_exec.php"
+    });
+}
 
 </script>
 <!-- <script src="../lib/Cropper/js/main.js"></script> -->

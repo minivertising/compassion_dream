@@ -1,17 +1,113 @@
 <?
 	// 유입매체 정보 입력
-	function BR_InsertTrackingInfo($media, $gubun)
+	function InsertTrackingInfo($media, $gubun)
 	{
 		global $_gl;
 		global $my_db;
 
-		$query		= "INSERT INTO ".$_gl['tracking_info_table']."(tracking_media, tracking_refferer, tracking_ipaddr, tracking_date, tracking_gubun) values('".$media."','".$_SERVER['HTTP_REFERER']."','".$_SERVER['REMOTE_ADDR']."',now(),'".$gubun."')";
-		$result		= mysqli_query($my_db, $query);
+		$log_query		= "INSERT INTO ".$_gl['tracking_info_table']."(tracking_media, tracking_refferer, tracking_ipaddr, tracking_date, tracking_gubun) values('".$media."','".$_SERVER['HTTP_REFERER']."','".$_SERVER['REMOTE_ADDR']."',now(),'".$gubun."')";
+		mysqli_query($my_db, $log_query);
+
+		return $log_query;
 	}
 
 	function _microtime()
 	{
 		return array_sum(explode(' ',microtime())); 
+	}
+
+	// 공유 횟수 카운트 함수
+	function ins_share_cnt($rs)
+	{
+		global $_gl;
+		global $my_db;
+
+		$query		= "UPDATE ".$_gl['activator_info_table']." SET mb_share_cnt=mb_share_cnt+1 WHERE mb_serial='".$rs."'";
+		$result		= mysqli_query($my_db, $query);
+
+		return $query;
+	}
+
+	// 아이 매칭 로직
+	function matching_child($job)
+	{
+		global $_gl;
+		global $my_db;
+
+		// ch_choice = Y = 결연까지 이루어진 아이, S = 공유까지 이루어진 아이, M = 매칭까지 이루어진 아이, N = 공유, 결연이 모두 이루어지지 않은 아이
+		$ch_query		= "SELECT * FROM ".$_gl['child_info_table']." WHERE ch_dream='".$job."' AND ch_choice='N' limit 1";
+		$ch_result		= mysqli_query($my_db, $ch_query);
+		$ch_data		= mysqli_fetch_array($ch_result);
+
+		$choice_query		= "UPDATE ".$_gl['child_info_table']." SET ch_choice='M' WHERE idx='".$ch_data['idx']."'";
+		$choice_result		= mysqli_query($my_db, $choice_query);
+
+		return $ch_data['idx']."||".$ch_data['ch_top_img_url'];
+	}
+
+	function sel_child_info($ch_idx)
+	{
+		global $_gl;
+		global $my_db;
+
+		$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$ch_idx."'";
+		$ch_result 	= mysqli_query($my_db, $ch_query);
+		$ch_data	= mysqli_fetch_array($ch_result);
+
+		return $ch_data;
+	}
+
+	function total_runner_info()
+	{
+		global $_gl;
+		global $my_db;
+
+		$total_runner_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE shareYN='Y'";
+		$total_runner_result 	= mysqli_query($my_db, $total_runner_query);
+		$total_runner_cnt	= mysqli_num_rows($total_runner_result);
+
+		return $total_runner_cnt;
+	}
+
+	function total_pic_info()
+	{
+		global $_gl;
+		global $my_db;
+
+		$total_pic_query 	= "SELECT SUM(mb_share_cnt) total_share_cnt FROM ".$_gl['activator_info_table']." WHERE shareYN='Y'";
+		$total_pic_result 	= mysqli_query($my_db, $total_pic_query);
+		$total_pic_cnt	= mysqli_fetch_array($total_pic_result);
+
+		return $total_pic_cnt['total_share_cnt'];
+	}
+
+/*
+	function total_matching_info()
+	{
+		global $_gl;
+		global $my_db;
+
+		$total_matching_query 	= "SELECT SUM(mb_share_cnt) total_share_cnt FROM ".$_gl['activator_info_table']." WHERE shareYN='Y'";
+		$total_matching_result 	= mysqli_query($my_db, $total_matching_query);
+		$total_matching_cnt	= mysqli_fetch_array($total_matching_result);
+
+		return $total_pic_cnt['total_share_cnt'];
+	}
+*/
+
+	function create_serial()
+	{
+		global $_gl;
+		global $my_db;
+
+		$serial_query 	= "SELECT serial_code FROM ".$_gl['serial_info_table']." WHERE useYN='N' limit 1";
+		$serial_result 	= mysqli_query($my_db, $serial_query);
+		$serial_data	= mysqli_fetch_array($serial_result);
+
+		$serial_query2 	= "UPDATE ".$_gl['serial_info_table']." SET useYN='Y' WHERE serial_code='".$serial_data['serial_code']."'";
+		$serial_result2 	= mysqli_query($my_db, $serial_query2);
+
+		return $serial_data['serial_code'];
 	}
 
 	// LMS 발송 

@@ -67,12 +67,29 @@
   </div>
   <!--END : 매칭결과 확인 & 공유 팝업-->
 
-
   <!-- 약관 팝업-->
   <div id="agree_popup" class="popup_wrap" style="background:white;">
     <a href="#" onclick="open_pop('input_popup');return false;">닫기</a>
     약관 내용
   </div>
   <!--END : 약관 팝업-->
+
+  <!-- 유의사항 팝업-->
+  <div id="notice_popup" class="popup_wrap" style="background:white;">
+    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
+    <a href="#" onclick="open_pop('use_popup');return false;">참여방법</a>
+    <a href="#" onclick="open_pop('notice_popup');return false;">유의사항</a>
+    유의사항 내용
+  </div>
+  <!--END : 유의사항 팝업-->
+
+  <!-- 참여방법 팝업-->
+  <div id="use_popup" class="popup_wrap" style="background:white;">
+    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
+    <a href="#" onclick="open_pop('use_popup');return false;">참여방법</a>
+    <a href="#" onclick="open_pop('notice_popup');return false;">유의사항</a>
+    참여방법 내용
+  </div>
+  <!--END : 참여방법 팝업-->
 
 </div>

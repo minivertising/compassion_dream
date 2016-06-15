@@ -1,5 +1,5 @@
 <?
-    include_once "./header.php";
+	include_once "./header.php";
 ?>
 <body>
 <script>
@@ -46,7 +46,7 @@
     var centerCropBoxWidth;
     var centerCropBoxHeight;
     var flag_sel_dream  = 0;
-    var mb_rs       = '<?=$rs?>';
+    var mb_rs       = null;
     $(document).ready(function() {
         Kakao.init('59df63251be6d99256b63b98f4948e89');
         $("#cboxTopLeft").hide();
@@ -57,6 +57,8 @@
         $("#cboxMiddleRight").hide();
         $("#cboxTopCenter").hide();
         $("#cboxBottomCenter").hide();
+
+		Ins_tracking();
     });
     var $inputImage = $('#inputImage');
     var URL = window.URL || window.webkitURL;
@@ -238,20 +240,24 @@ function input_submit()
             "mb_name"       : mb_name,
             "mb_phone"      : mb_phone,
             "mb_job"        : sel_dream,
-            "mb_image"      : mb_image,
-            "mb_serial"     : mb_rs
+            "mb_image"      : mb_image
+            //"mb_serial"     : mb_rs
         },
         url: "../main_exec.php",
         beforeSend: function(response){
+			alert(response);
             $("#loading_div").show();
             $("#contents_div").hide();
         },
         success: function(response){
-            alert(response);
+            console.log(response);
+            var rs_ch	= response.split("||");
+			mb_rs	= rs_ch[2];
             $("#loading_div").hide();
             $("#contents_div").show();
-            if (response == "Y")
+            if (rs_ch[0] == "Y")
             {
+				$("#matching_child_pic").attr("src",rs_ch[1]);
                 open_pop('share_popup');
             }else {
                 alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
@@ -260,24 +266,18 @@ function input_submit()
         }
     });
 }
-/*
-function readURL(input) {
-    console.log(input);
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            $('#uploadImg').attr('src', e.target.result);
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
-}
 
-function img_submit()
+function Ins_tracking()
 {
-    $("#upimage_frm").submit();
+    $.ajax({
+        type:"POST",
+        data:{
+            "exec"          : "insert_tracking_info",
+			"media"			: "<?=$_REQUEST['media'];?>"
+        },
+        url: "../main_exec.php"
+    });
 }
-*/
-
 
 </script>
 <!-- <script src="../lib/Cropper/js/main.js"></script> -->

@@ -70,16 +70,16 @@
 	else
 		$gubun = "PC";
 
-	if (!isset($_SESSION['ss_media']))
-	{
+	//if (!isset($_SESSION['ss_media']))
+	//{
 		if (isset($_REQUEST['media']))
 		{
 			$media						= $_REQUEST['media'];
 			$_SESSION['ss_media']	= $media;
-		}else{
-			$media						= "1313";
-			$_SESSION['ss_media']	= $media;
 		}
-	}
+	//}else{
+		//$media						= $_REQUEST['media'];
+		//$_SESSION['ss_media']	= $media;
+	//}
 
 ?>
