@@ -57,6 +57,44 @@
 		return $ch_data;
 	}
 
+	function total_runner_info()
+	{
+		global $_gl;
+		global $my_db;
+
+		$total_runner_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE shareYN='Y'";
+		$total_runner_result 	= mysqli_query($my_db, $total_runner_query);
+		$total_runner_cnt	= mysqli_num_rows($total_runner_result);
+
+		return $total_runner_cnt;
+	}
+
+	function total_pic_info()
+	{
+		global $_gl;
+		global $my_db;
+
+		$total_pic_query 	= "SELECT SUM(mb_share_cnt) total_share_cnt FROM ".$_gl['activator_info_table']." WHERE shareYN='Y'";
+		$total_pic_result 	= mysqli_query($my_db, $total_pic_query);
+		$total_pic_cnt	= mysqli_fetch_array($total_pic_result);
+
+		return $total_pic_cnt['total_share_cnt'];
+	}
+
+/*
+	function total_matching_info()
+	{
+		global $_gl;
+		global $my_db;
+
+		$total_matching_query 	= "SELECT SUM(mb_share_cnt) total_share_cnt FROM ".$_gl['activator_info_table']." WHERE shareYN='Y'";
+		$total_matching_result 	= mysqli_query($my_db, $total_matching_query);
+		$total_matching_cnt	= mysqli_fetch_array($total_matching_result);
+
+		return $total_pic_cnt['total_share_cnt'];
+	}
+*/
+
 	// LMS 발송 
 	function send_lms($phone, $serial)
 	{
