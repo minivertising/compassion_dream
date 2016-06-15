@@ -68,6 +68,7 @@
 	if(!move_uploaded_file($file_tmp_name, $save_full_path)){
 		die("파일을 지정한 디렉토리에 업로드하는데 실패했습니다.");
 	}else{
+		//저장후 다시 복사
 		$targ_w = $imageSize[0];
 		$targ_h = $imageSize[1];
 		$image_quality = 80;
