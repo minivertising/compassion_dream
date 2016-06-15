@@ -48,14 +48,6 @@
     var $ori_image = $('#ori_image');
     var $inputImage = $('#inputImage')
     var $previews = $('.preview');
-    var imageData;
-    var afterCropBoxData;
-    var ratioWidth;
-    var ratioHeight;
-    var destCropWidth;
-    var destCropHeight;
-    var centerCropBoxWidth;
-    var centerCropBoxHeight;
     var URL = window.URL || window.webkitURL;
     var realFath;
     var convertPath;
@@ -111,9 +103,9 @@
       }
 */
 
-$(function () {
-    image_crop();
-});
+// $(function () {
+//     image_crop();
+// });
 
 function image_crop(){
     $($ori_image).cropper({
@@ -310,8 +302,8 @@ function Ins_tracking()
     $.ajax({
         type:"POST",
         data:{
-            "exec"          : "insert_tracking_info",
-			"media"			: "<?=$_REQUEST['media'];?>"
+          "exec"          : "insert_tracking_info",
+          "media"			: "<?=$_REQUEST['media'];?>"
         },
         url: "../main_exec.php"
     });

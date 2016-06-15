@@ -22,6 +22,7 @@
 <?
 	if (isset($rs))
 	{
+// PC, MOBILE 구분 ?
 ?>
 <meta property="og:url" content="http://www.mnv.kr/MOBILE/lms_index.php?rs=<?=$mb_data['mb_serial']?>" />
 <meta property="og:image" content="<?=$img_url?>" />
@@ -34,8 +35,9 @@
 	}
 ?>
 <meta property="og:description" content="Compassion BLUE BATON CHALLENGE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" type="image/x-icon" href="./img/icon/favicon.ico" />
-<title>모바일 메인</title>
+<title>PC MAIN</title>
 <!--[if lt IE 9]><script src="./js/html5shiv.js"></script><![endif]-->
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <link href="../lib/bxslider/jquery.bxslider.css" rel="stylesheet" />
@@ -59,5 +61,4 @@
 img {
 	max-width: 100%;
 }
-
 </style>

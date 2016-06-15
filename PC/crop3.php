@@ -149,33 +149,15 @@ function readURL(input) {
               success: function(res){
                 convertPath = res;
                 // alert(res);
-<<<<<<< HEAD
                 console.log("저장 후:"+convertPath);
                 // alert(convertPath);
                 $($ori_image).attr('src', convertPath);
                 image_crop();
               }
             });
-=======
-               console.log("저장 후:"+convertPath);
-               // alert(convertPath);
-               $($ori_image).attr('src', convertPath);
-               image_crop();
-              }
-            });
-			/*
-            alert("1111");
-            alert("1111");
-            alert("1111");
-            console.log("저장 후:"+convertPath);
-            // alert(convertPath);
-            $($ori_image).attr('src', convertPath);
-            image_crop();
-			*/
->>>>>>> d070978513089955e1319488b1855c392a9fbce7
+          }
         }
-    }
-    
+        
     $($inputImage).change(function(){
         files = this.files;
         // console.dir(this);

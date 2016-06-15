@@ -37,14 +37,6 @@
     var mb_image        = null;
     var $ori_image = $('#ori_image');
     var $previews = $('.preview');
-    var imageData;
-    var afterCropBoxData;
-    var ratioWidth;
-    var ratioHeight;
-    var destCropWidth;
-    var destCropHeight;
-    var centerCropBoxWidth;
-    var centerCropBoxHeight;
     var flag_sel_dream  = 0;
     var mb_rs       = null;
     $(document).ready(function() {
@@ -112,39 +104,7 @@ function image_crop(){
         cropBoxResizable: false,
         preview: '.preview',
         center:true,
-            // minCropBoxWidth:1200,
-            // minCropBoxHeight:630,
-            // built: function(){
-                // alert("built");
-                // $($ori_image).cropper('setCanvasData', {
-                //  left:0,
-                //  top:0,
-                //  width: 300,
-                //  height: 200
-                // });
-                // $($ori_image).cropper('setCropBoxData', {
-                //  left:0,
-                //  top:0,
-                //  width: 200,
-                //  height: 100
-                // });
-            //  imageData = $($ori_image).cropper('getImageData');
-            //  afterCropBoxData = $($ori_image).cropper('getCropBoxData');
-            //  // console.log("naturalWidth: "+imageData.naturalWidth+",  naturalHeight: "+imageData.naturalHeight); // 오리지널 사이즈
-            //  // console.log("afterImageWidth: "+imageData.width+",  afterImageHeight: "+imageData.height);
-            //  // console.log("afterCropBoxWidth: "+afterCropBoxData.width+",  afterCropBoxHeight: "+afterCropBoxData.height);
-            //  ratioWidth = imageData.width/imageData.naturalWidth;
-            //  if(imageData.naturalHeight < 630) {
-            //      ratioHeight = 1;
-            //  }else{
-            //      ratioHeight = imageData.height/imageData.naturalHeight;
-            //  }
-            //  destCropWidth = (1200*ratioWidth); 
-            //  destCropHeight = (630*ratioHeight);
-            //  centerCropBoxWidth = (imageData.width-destCropWidth)/2;
-            //  centerCropBoxHeight = (imageData.height-destCropHeight)/2;
-            //  $($ori_image).cropper("setCropBoxData", {left: centerCropBoxWidth, top: centerCropBoxHeight, width: destCropWidth, height: destCropHeight});
-        // },
+
         build: function (e) {
           console.log(e.type);
         },

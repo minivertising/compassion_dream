@@ -7,7 +7,7 @@
 		$targ_w = $img_info[0];
 	  	$targ_h = $img_info[1];
 	  	$targ_dir = "./images/";
-		$jpeg_quality = 90;
+		$jpeg_quality = 85;
 		$src = $targ_src;
 		if($img_info[mime]=="image/jpeg"){
 			$img_exe = ".jpg";
