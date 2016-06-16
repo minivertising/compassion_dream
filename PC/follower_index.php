@@ -177,7 +177,7 @@ function preview_img()
 	}
 
 	function readURL(input) {
-
+alert('222');
 		if (input.files && input.files[0]) {
 			file = files[0];
 			if (/^image\/\w+$/.test(file.type)) {
