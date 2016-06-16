@@ -64,8 +64,10 @@
 
 		$total_runner_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE shareYN='Y'";
 		$total_runner_result 	= mysqli_query($my_db, $total_runner_query);
-		$total_runner_cnt	= mysqli_num_rows($total_runner_result);
-
+		if ($total_runner_result)
+			$total_runner_cnt	= mysqli_num_rows($total_runner_result);
+		else
+			$total_runner_cnt	= 0;
 		return $total_runner_cnt;
 	}
 
@@ -76,8 +78,10 @@
 
 		$total_pic_query 	= "SELECT SUM(mb_share_cnt) total_share_cnt FROM ".$_gl['activator_info_table']." WHERE shareYN='Y'";
 		$total_pic_result 	= mysqli_query($my_db, $total_pic_query);
-		$total_pic_cnt	= mysqli_fetch_array($total_pic_result);
-
+		if ($total_pic_result)
+			$total_pic_cnt	= mysqli_fetch_array($total_pic_result);
+		else
+			$total_pic_cnt	= 0;
 		return $total_pic_cnt['total_share_cnt'];
 	}
 
