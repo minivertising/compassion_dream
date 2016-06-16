@@ -76,7 +76,6 @@ Loading.... 꿈이 필요한 아이와 매칭중
 	var flag_sel_dream  = 0;
 	var mb_rs       = null;
 	var inputImageCheck;
-	console.log($inputImage);
 	$(document).ready(function() {
 		Kakao.init('59df63251be6d99256b63b98f4948e89');
 		$("#cboxTopLeft").hide();
@@ -178,13 +177,11 @@ function preview_img()
 	}
 
 	function readURL(input) {
-alert('222');
 		if (input.files && input.files[0]) {
 			file = files[0];
 			if (/^image\/\w+$/.test(file.type)) {
 				blobURL = URL.createObjectURL(file);
 				$ori_image.one('built.cropper', function () {
-							alert('111');
 								// Revoke when load complete
 								URL.revokeObjectURL(blobURL);
 							}).cropper('reset').cropper('replace', blobURL);
@@ -229,7 +226,6 @@ alert('222');
 				}
 
 				$($inputImage).change(function(){
-					alert('333');
 					inputImageCheck = "Y";
 					files = this.files;
 				// console.dir(this);
