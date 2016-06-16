@@ -120,9 +120,9 @@ switch ($_REQUEST['exec'])
 			$result 	= mysqli_query($my_db, $query);
 
 			if ($result)
-				$flag	= "Y";
+				$flag	= "Y||".$mb_serial;
 			else
-				$flag	= "N";
+				$flag	= "N||null";
 			
 			echo $flag;
 		}
