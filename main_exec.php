@@ -91,7 +91,7 @@ switch ($_REQUEST['exec'])
 		$change_file_name = $file_Name;			 // 변경된 파일명을 변수에 지정 
 		//$real_name = addslashes($real_name);		// 업로드 되는 원래 파일명(업로드 하기 전 실제 파일명) 
 		//$real_size = $file_size;                         // 업로드 되는 파일 크기 (byte)
-		$save_dir = '../files/'.date("Ymd").'/';
+		$save_dir = './files/'.date("Ymd").'/';
 
 		// 폴더 존재 여부 확인 후 존재하지 않으면 폴더 생성
 		if ( !is_dir($save_dir) ) {
@@ -101,7 +101,7 @@ switch ($_REQUEST['exec'])
 				}
 			}
 		}
-echo $data;
+
 		//파일을 저장할 디렉토리 및 파일명 전체 경로
 		$dest_url = $save_dir . $change_file_name.'.jpg';
 
