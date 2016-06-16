@@ -101,7 +101,7 @@ switch ($_REQUEST['exec'])
 				}
 			}
 		}
-
+echo $data;
 		//파일을 저장할 디렉토리 및 파일명 전체 경로
 		$dest_url = $save_dir . $change_file_name.'.jpg';
 
