@@ -18,7 +18,7 @@ function open_pop(param)
 		// $("body").height($("#"+param).height());
 		$("#cboxWrapper").width($("body").width());
 		//$(".sec_main_img").hide();
-		if (param == "dream_sel_popup")
+		if (param == "dream_sel_popup" || param == "f_dream_sel_popup")
 		{
 			image_crop();
 		}
