@@ -12,11 +12,11 @@
 		$img_url		= str_replace("..","http://www.mnv.kr",$mb_data['mb_image']);
 	}
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=yes,initial-scale=1.0, maximum-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta property="og:title" content="나의 어릴적 꿈을 소개합니다">
 <meta property="og:type" content="website" />
 <?

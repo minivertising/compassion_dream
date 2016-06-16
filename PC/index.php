@@ -6,23 +6,6 @@
 	//$total_matching_cnt	= total_matching_info();
 ?>
 <body>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '649187078561789',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
     <div id="loading_div" style="display:none">
         Loading.... 꿈이 필요한 아이와 매칭중
     </div>
@@ -39,7 +22,22 @@
     </div>
 </body>
 </html>
-<script type="text/javascript">
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '649187078561789',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
     var agent = navigator.userAgent.toLowerCase();
     var sel_dream       = null;
     var runner_serial   = null;
