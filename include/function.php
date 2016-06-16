@@ -16,7 +16,7 @@
 		return array_sum(explode(' ',microtime())); 
 	}
 
-	// 공유 횟수 카운트 함수
+	// 공유 클릭 카운트 함수
 	function ins_share_cnt($rs)
 	{
 		global $_gl;

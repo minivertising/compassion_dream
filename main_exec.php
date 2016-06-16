@@ -128,5 +128,11 @@ switch ($_REQUEST['exec'])
 		}
 
 	break;
+
+	case "insert_share_cnt" :
+		$serial	= $_REQUEST['serial'];
+
+		ins_share_cnt($serial);
+	break;
 }
 ?>

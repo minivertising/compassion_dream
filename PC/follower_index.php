@@ -1,8 +1,6 @@
 <?
 	include_once "./header.php";
 
-	ins_share_cnt($rs);
-
 	$ch_data	= sel_child_info($mb_data['mb_child']);
 
 ?>
@@ -89,7 +87,7 @@ Loading.... 꿈이 필요한 아이와 매칭중
 		$("#cboxTopCenter").hide();
 		$("#cboxBottomCenter").hide();
 
-		Ins_tracking();
+		Ins_share_cnt('<?=$rs?>');
 	});
 	/*
 		var $inputImage = $('#inputImage');
@@ -342,13 +340,13 @@ function preview_img()
 		});
 	}
 
-	function Ins_tracking()
+	function Ins_share_cnt(serial)
 	{
 		$.ajax({
 			type:"POST",
 			data:{
-				"exec"          : "insert_tracking_info",
-				"media"     : "<?=$_REQUEST['media'];?>"
+				"exec"        : "insert_share_cnt",
+				"serial"		: serial
 			},
 			url: "../main_exec.php"
 		});
