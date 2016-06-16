@@ -5,11 +5,11 @@
     <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
     <h2>DREAM RUNNER되기 1단계</h2>
     <h3>당신의 어린시절 꿈을 선택해주세요</h3>
-	<a href="#" onclick="view_dream_div('activator');return false;" id="dream_sel_link">꿈 선택 ▼</a>
+	<a href="#" onclick="view_dream_div('');return false;" id="dream_sel_link">꿈 선택 ▼</a>
 	<div  id="choice_dream" style="position:absolute;z-index:9;background:skyblue;display:none">
-	  <a href="#" onclick="checked_dream('cook');return false;" name="id_job" id="id_cook">요리사</a>
-	  <a href="#" onclick="checked_dream('doctor');return false;" name="id_job" id="id_doctor">의사</a>
-	  <a href="#" onclick="checked_dream('teacher');return false;" name="id_job" id="id_teacher">선생님</a>
+	  <a href="#" onclick="checked_dream('cook','');return false;" name="id_job" id="id_cook">요리사</a>
+	  <a href="#" onclick="checked_dream('doctor','');return false;" name="id_job" id="id_doctor">의사</a>
+	  <a href="#" onclick="checked_dream('teacher','');return false;" name="id_job" id="id_teacher">선생님</a>
 	</div>
     <!-- <select name="mb_job" id="mb_job">
       <option value="">선택하세요</option>
@@ -39,11 +39,11 @@
     <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
     <h2>DREAM RUNNER되기 1단계</h2>
     <h3>당신의 어린시절 꿈을 선택해주세요</h3>
-	<a href="#" onclick="view_dream_div('follower');return false;" id="dream_sel_link">꿈 선택 ▼</a>
+	<a href="#" onclick="view_dream_div('f_');return false;" id="f_dream_sel_link">꿈 선택 ▼</a>
 	<div  id="f_choice_dream" style="position:absolute;z-index:9;background:skyblue;display:none">
-	  <a href="#" onclick="checked_dream('cook');return false;" name="id_job" id="id_cook">요리사</a>
-	  <a href="#" onclick="checked_dream('doctor');return false;" name="id_job" id="id_doctor">의사</a>
-	  <a href="#" onclick="checked_dream('teacher');return false;" name="id_job" id="id_teacher">선생님</a>
+	  <a href="#" onclick="checked_dream('cook','f_');return false;" name="id_job" id="id_cook">요리사</a>
+	  <a href="#" onclick="checked_dream('doctor','f_');return false;" name="id_job" id="id_doctor">의사</a>
+	  <a href="#" onclick="checked_dream('teacher','f_');return false;" name="id_job" id="id_teacher">선생님</a>
 	</div>
     <!-- <select name="mb_job" id="mb_job">
       <option value="">선택하세요</option>

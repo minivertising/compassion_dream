@@ -38,10 +38,6 @@ function open_pop(param)
 // 직업선택 팝업 창 여는 함수
 function view_dream_div(param)
 {
-	var user_flag	= "";
-	if (param == "follower")
-		user_flag = "f_";
-
 	if (flag_sel_dream == 0)
 	{
 		if (sel_dream != null)
@@ -49,24 +45,24 @@ function view_dream_div(param)
 			$("a[name='id_job']").css("font-weight","normal");
 			$("#id_"+sel_dream).css("font-weight","bold");
 		}
-		$("#dream_sel_link").html("꿈 선택 ▲");
+		$("#"+param+"dream_sel_link").html("꿈 선택 ▲");
 		// 준우씨가 animate로 변경
-		$("#"+ user_flag +"choice_dream").show();
+		$("#"+ param +"choice_dream").show();
 		flag_sel_dream	= 1;
 	}else{
-		$("#dream_sel_link").html("꿈 선택 ▼");
+		$("#"+param+"dream_sel_link").html("꿈 선택 ▼");
 		// 준우씨가 animate로 변경
-		$("#"+ user_flag +"choice_dream").hide();
+		$("#"+ param +"choice_dream").hide();
 		flag_sel_dream	= 0;
 	}
 }
 
 // 직업선택 시 변수 저장 함수
-function checked_dream(param)
+function checked_dream(param, param2)
 {
 	sel_dream	= param;
-	$("#choice_dream").hide();
-	$("#dream_sel_link").html("꿈 선택 ▼");
+	$("#"+param+"choice_dream").hide();
+	$("#"+param+"dream_sel_link").html("꿈 선택 ▼");
 	flag_sel_dream	= 0;
 
 }
