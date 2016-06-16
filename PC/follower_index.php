@@ -275,7 +275,7 @@ function preview_img()
 				alert(res);
 				//mb_image    = res;
 
-				var rs_ch = response.split("||");
+				var rs_ch = res.split("||");
 				mb_rs = rs_ch[1];
 				$("#loading_div").hide();
 				$("#contents_div").show();
