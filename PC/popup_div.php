@@ -34,6 +34,40 @@
   <!-- </div> -->
   <!--END : 꿈 선택 팝업-->
 
+  <!--팔로워용 꿈 선택 팝업-->
+  <div id="f_dream_sel_popup" class="popup_wrap" style="background:white;">
+    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
+    <h2>DREAM RUNNER되기 1단계</h2>
+    <h3>당신의 어린시절 꿈을 선택해주세요</h3>
+	<a href="#" onclick="view_dream_div();return false;" id="dream_sel_link">꿈 선택 ▼</a>
+	<div  id="choice_dream" style="position:absolute;z-index:9;background:skyblue;display:none">
+	  <a href="#" onclick="checked_dream('cook');return false;" name="id_job" id="id_cook">요리사</a>
+	  <a href="#" onclick="checked_dream('doctor');return false;" name="id_job" id="id_doctor">의사</a>
+	  <a href="#" onclick="checked_dream('teacher');return false;" name="id_job" id="id_teacher">선생님</a>
+	</div>
+    <!-- <select name="mb_job" id="mb_job">
+      <option value="">선택하세요</option>
+      <option value="cook">요리사</option>
+      <option value="doctor">의사</option>
+      <option value="teacher">선생님</option>
+    </select> --><br />
+    <div id="img_div" style="width:100%; height:100%;">
+      <img id="ori_image" src="./images/picture.jpg" alt="Picture">
+    </div>
+    <div>
+      <label for="inputImage" title="Upload image file">
+        <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+        <span title="Import image with Blob URLs">Upload</span>
+      </label>
+
+      <a href="#" onclick="f_dream_next();return false;">업로드 완료
+      </a>
+      <a href="#" onclick="preview_img();return false;">미리보기</a>
+      </div>
+  </div>
+  <!-- </div> -->
+  <!--END : 팔로워용 꿈 선택 팝업-->
+
   <!--사진 미리보기 팝업-->
   <div id="preview_popup" class="popup_wrap" style="background:white; width:100%; height:100%;">
     <a href="#" onclick="open_pop('dream_sel_popup');return false;">닫기</a>
@@ -66,6 +100,18 @@
     <a href="#" onclick="sns_share('ks');">카스</a>
   </div>
   <!--END : 매칭결과 확인 & 공유 팝업-->
+
+  <!-- 팔로워용 매칭결과 확인 & 공유 팝업-->
+  <div id="f_share_popup" class="popup_wrap" style="background:white;">
+    <div>
+	  <img src="#" style="width:100%" id="matching_child_pic">
+	</div>
+    <a href="#" onclick="open_pop('input_popup');return false;">닫기</a>
+    <a href="#" onclick="sns_share('fb');">페이스북</a>
+    <a href="#" onclick="sns_share('kt');">카톡</a>
+    <a href="#" onclick="sns_share('ks');">카스</a>
+  </div>
+  <!--END : 팔로워용 매칭결과 확인 & 공유 팝업-->
 
   <!-- 약관 팝업-->
   <div id="agree_popup" class="popup_wrap" style="background:white;">

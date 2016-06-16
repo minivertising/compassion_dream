@@ -99,18 +99,35 @@
 	}
 */
 
-	function create_serial()
+	function create_serial($flag, $serial)
 	{
 		global $_gl;
 		global $my_db;
 
-		$serial_query 	= "SELECT serial_code FROM ".$_gl['serial_info_table']." WHERE useYN='N' limit 1";
-		$serial_result 	= mysqli_query($my_db, $serial_query);
-		$serial_data	= mysqli_fetch_array($serial_result);
+		if ($flag == "activator")
+		{
+			$serial_query 	= "SELECT serial_code FROM ".$_gl['serial_info_table']." WHERE useYN='N' limit 1";
+			$serial_result 	= mysqli_query($my_db, $serial_query);
+			$serial_data	= mysqli_fetch_array($serial_result);
 
-		$serial_query2 	= "UPDATE ".$_gl['serial_info_table']." SET useYN='Y' WHERE serial_code='".$serial_data['serial_code']."'";
-		$serial_result2 	= mysqli_query($my_db, $serial_query2);
+			$serial_query2 	= "UPDATE ".$_gl['serial_info_table']." SET useYN='Y' WHERE serial_code='".$serial_data['serial_code']."'";
+			$serial_result2 	= mysqli_query($my_db, $serial_query2);
+		}else{
+			// 발급되지 않은 난수코드 1개 가져오기
+			$serial_query 	= "SELECT serial_code FROM ".$_gl['serial_info_table']." WHERE useYN='N' limit 1";
+			$serial_result 	= mysqli_query($my_db, $serial_query);
+			$serial_data	= mysqli_fetch_array($serial_result);
 
+			// 부모난수코드의 idx, parent_idx 정보 가져오기
+			$p_serial_query 	= "SELECT idx, parent_idx FROM ".$_gl['serial_info_table']." WHERE serial_code='".$serial."'";
+			$p_serial_result 	= mysqli_query($my_db, $p_serial_query);
+			$p_serial_data	= mysqli_fetch_array($p_serial_result);
+
+			// 발급된 난수번호의 parent_idx 컬럼에 부모 idx 정보 UPDATE
+			$serial_query2 	= "UPDATE ".$_gl['serial_info_table']." SET useYN='Y', parent_idx='".$p_serial_data['parent_idx']."||".$p_serial_data['idx']."' WHERE serial_code='".$serial_data['serial_code']."'";
+			$serial_result2 	= mysqli_query($my_db, $serial_query2);
+
+		}
 		return $serial_data['serial_code'];
 	}
 
