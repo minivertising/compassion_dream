@@ -5,6 +5,7 @@
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <link href="../lib/Cropper/css/cropper.css" rel="stylesheet">
+  <link href="../lib/Cropper/css/bootstrap.min.css" rel="stylesheet">
   <script src="../js/jquery-1.11.2.min.js"></script>
   <script src="../js/jquery.form.js"></script>
   <script src="../lib/Cropper/js/cropper.js"></script>
@@ -15,7 +16,10 @@
       <img id="ori_image" src="./images/picture.jpg" alt="Picture">
     </div>
     <div>
-        <input type="file" id="inputImage" name="file" accept="image/*">
+        <label for="inputImage" title="Upload image file">
+            <input type="file" id="inputImage" class="sr-only" name="file" accept="image/*">
+            <span title="Import image with Blob URLs">이미지 등록</span>
+        </label>
         <a href="#" onclick="dream_next();return false;">업로드 완료</a>
         <a href="#" onclick="preview_img();return false;">미리보기</a>
     </div>
@@ -116,7 +120,6 @@ function image_crop(){
 // });
 function readURL(input) {
         if (input.files && input.files[0]) {
-
             file = files[0];
             if (/^image\/\w+$/.test(file.type)) {
               blobURL = URL.createObjectURL(file);
@@ -146,24 +149,15 @@ function readURL(input) {
               success: function(res){
                 convertPath = res;
                 // alert(res);
-               console.log("저장 후:"+convertPath);
-               // alert(convertPath);
-               $($ori_image).attr('src', convertPath);
-               image_crop();
+                console.log("저장 후:"+convertPath);
+                // alert(convertPath);
+                $($ori_image).attr('src', convertPath);
+                image_crop();
               }
             });
-			/*
-            alert("1111");
-            alert("1111");
-            alert("1111");
-            console.log("저장 후:"+convertPath);
-            // alert(convertPath);
-            $($ori_image).attr('src', convertPath);
-            image_crop();
-			*/
+          }
         }
-    }
-    
+        
     $($inputImage).change(function(){
         files = this.files;
         // console.dir(this);
