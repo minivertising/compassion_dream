@@ -260,7 +260,7 @@ function preview_img()
 		var canvasImageURL = croppedImg.toDataURL("image/jpeg");
 		$.ajax({
 			method: 'POST',
-			url: 'main_exec.php',
+			url: '../main_exec.php',
 			data: {
 				exec			: "input_follower",
 				canvasurl	: canvasImageURL
@@ -281,58 +281,6 @@ function preview_img()
 					open_pop('f_share_popup');
 				}else{
 					alert("참여자가 많아 지연되고 있습니다. 다시 참여해 주세요.");
-					location.reload();
-				}
-			}
-		});
-	}
-
-	function input_submit()
-	{
-		var mb_name = $("#mb_name").val();
-		var mb_phone    = $("#mb_phone").val();
-		//mb_image      = "임시 이미지 URL"; // 이미지 경로 작업 완료되면 여기에 값 추가
-
-		if (mb_name == "")
-		{
-			alert("이름을 입력해 주세요.");
-			return false;
-		}
-
-		if (mb_phone == "")
-		{
-			alert("전화번호를 입력해 주세요.");
-			return false;
-		}
-
-		$.ajax({
-			type:"POST",
-			data:{
-				"exec"          : "insert_info",
-				"mb_name"       : mb_name,
-				"mb_phone"      : mb_phone,
-				"mb_job"        : sel_dream,
-				"mb_image"      : mb_image
-				//"mb_serial"     : mb_rs
-			},
-			url: "../main_exec.php",
-			beforeSend: function(response){
-				alert(response);
-				$("#loading_div").show();
-				$("#contents_div").hide();
-			},
-			success: function(response){
-				console.log(response);
-				var rs_ch = response.split("||");
-				mb_rs = rs_ch[2];
-				$("#loading_div").hide();
-				$("#contents_div").show();
-				if (rs_ch[0] == "Y")
-				{
-					$("#matching_child_pic").attr("src",rs_ch[1]);
-					open_pop('share_popup');
-				}else {
-					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
 					location.reload();
 				}
 			}
