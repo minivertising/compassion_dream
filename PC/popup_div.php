@@ -51,12 +51,12 @@
       <option value="doctor">의사</option>
       <option value="teacher">선생님</option>
     </select> --><br />
-    <div id="img_div" style="width:100%; height:100%;">
-      <img id="ori_image" src="./images/picture.jpg" alt="Picture">
+    <div id="f_img_div" style="width:100%; height:100%;">
+      <img id="f_ori_image" src="./images/picture.jpg" alt="Picture">
     </div>
     <div>
       <label for="inputImage" title="Upload image file">
-        <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+        <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
         <span title="Import image with Blob URLs">Upload</span>
       </label>
 
