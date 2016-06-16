@@ -55,7 +55,7 @@
       <img id="f_ori_image" src="./images/picture.jpg" alt="Picture">
     </div>
     <div>
-      <label for="inputImage" title="Upload image file">
+      <label for="f_inputImage" title="Upload image file">
         <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
         <span title="Import image with Blob URLs">Upload</span>
       </label>

@@ -76,7 +76,7 @@ Loading.... 꿈이 필요한 아이와 매칭중
 	var flag_sel_dream  = 0;
 	var mb_rs       = null;
 	var inputImageCheck;
-	alert($inputImage);
+	console.log($inputImage);
 	$(document).ready(function() {
 		Kakao.init('59df63251be6d99256b63b98f4948e89');
 		$("#cboxTopLeft").hide();
