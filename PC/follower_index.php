@@ -66,7 +66,7 @@ Loading.... 꿈이 필요한 아이와 매칭중
 	var mb_job          = null;
 	var mb_image        = null;
 	var $ori_image = $('#f_ori_image');
-	var $inputImage = $('#f_inputImage')
+	var $inputImage = $('#f_inputImage');
 	var URL = window.URL || window.webkitURL;
 	var realFath;
 	var convertPath;
