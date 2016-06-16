@@ -47,7 +47,7 @@
 <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
 <script src="../lib/Cropper/js/bootstrap.min.js"></script>
 <script src="../lib/Cropper/js/cropper.js"></script>
-<script type="text/javascript" src="../js/m_main.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/canvas-to-blob.js"></script>
 <script type="text/javascript" src="../lib/colorbox/jquery.colorbox-min.js"></script>
 <script src="../lib/bxslider/jquery.bxslider.js"></script>
