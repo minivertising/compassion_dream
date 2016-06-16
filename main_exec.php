@@ -63,7 +63,7 @@ switch ($_REQUEST['exec'])
 		else
 			$flag	= "N||fail||N";
 
-		echo $query;
+		echo $flag;
 	break;
 
 	case "url_info" :
