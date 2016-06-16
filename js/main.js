@@ -36,8 +36,12 @@ function open_pop(param)
 }
 
 // 직업선택 팝업 창 여는 함수
-function view_dream_div()
+function view_dream_div(param)
 {
+	var user_flag	= "";
+	if (param == "follower")
+		user_flag = "f_";
+
 	if (flag_sel_dream == 0)
 	{
 		if (sel_dream != null)
@@ -47,12 +51,12 @@ function view_dream_div()
 		}
 		$("#dream_sel_link").html("꿈 선택 ▲");
 		// 준우씨가 animate로 변경
-		$("#choice_dream").show();
+		$("#"+ user_flag +"choice_dream").show();
 		flag_sel_dream	= 1;
 	}else{
 		$("#dream_sel_link").html("꿈 선택 ▼");
 		// 준우씨가 animate로 변경
-		$("#choice_dream").hide();
+		$("#"+ user_flag +"choice_dream").hide();
 		flag_sel_dream	= 0;
 	}
 }
