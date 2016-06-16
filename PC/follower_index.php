@@ -183,6 +183,7 @@ function preview_img()
 			if (/^image\/\w+$/.test(file.type)) {
 				blobURL = URL.createObjectURL(file);
 				$ori_image.one('built.cropper', function () {
+							alert('111');
 								// Revoke when load complete
 								URL.revokeObjectURL(blobURL);
 							}).cropper('reset').cropper('replace', blobURL);
