@@ -61,8 +61,8 @@ function view_dream_div(param)
 function checked_dream(param, param2)
 {
 	sel_dream	= param;
-	$("#"+param+"choice_dream").hide();
-	$("#"+param+"dream_sel_link").html("꿈 선택 ▼");
+	$("#"+param2+"choice_dream").hide();
+	$("#"+param2+"dream_sel_link").html("꿈 선택 ▼");
 	flag_sel_dream	= 0;
 
 }
