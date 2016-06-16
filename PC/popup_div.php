@@ -95,9 +95,9 @@
 	  <img src="#" style="width:100%" id="matching_child_pic">
 	</div>
     <a href="#" onclick="open_pop('input_popup');return false;">닫기</a>
-    <a href="#" onclick="sns_share('fb');">페이스북</a>
-    <a href="#" onclick="sns_share('kt');">카톡</a>
-    <a href="#" onclick="sns_share('ks');">카스</a>
+    <a href="#" onclick="sns_share('fb','act');">페이스북</a>
+    <a href="#" onclick="sns_share('kt','act');">카톡</a>
+    <a href="#" onclick="sns_share('ks','act');">카스</a>
   </div>
   <!--END : 매칭결과 확인 & 공유 팝업-->
 
@@ -107,9 +107,9 @@
 	  <img src="#" style="width:100%" id="f_matching_child_pic">
 	</div>
     <a href="#" onclick="open_pop('input_popup');return false;">닫기</a>
-    <a href="#" onclick="sns_share('fb');">페이스북</a>
-    <a href="#" onclick="sns_share('kt');">카톡</a>
-    <a href="#" onclick="sns_share('ks');">카스</a>
+    <a href="#" onclick="sns_share('fb','fol');">페이스북</a>
+    <a href="#" onclick="sns_share('kt','fol');">카톡</a>
+    <a href="#" onclick="sns_share('ks','fol');">카스</a>
   </div>
   <!--END : 팔로워용 매칭결과 확인 & 공유 팝업-->
 
