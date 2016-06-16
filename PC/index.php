@@ -108,11 +108,11 @@
         $inputImage.prop('disabled', true).parent().addClass('disabled');
       }
 */
-
+/*
 $(function () {
     image_crop();
 });
-
+*/
 function image_crop(){
     $($ori_image).cropper({
         viewMode: 0,
