@@ -3,7 +3,7 @@
 	include_once "include/function.php"; 		//함수정보
 	include_once "include/dbi.php"; 			//DB 연결정보
 
-	$query 	= "SELECT mb_child FROM ".$_gl['activator_info_table']." WHERE mb_regdate <'".date("Y-m-d",strtotime ("-3 days"));."'";
+	$query 	= "SELECT mb_child FROM ".$_gl['activator_info_table']." WHERE mb_regdate <'".date("Y-m-d",strtotime ("-3 days"))."'";
 	$result 	= mysqli_query($my_db, $query);
 
 	if ($result)
