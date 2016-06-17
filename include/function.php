@@ -62,7 +62,7 @@
 			}
 
 		}
-		return $f_query;
+		return $a_query;
 	}
 
 	// 아이 매칭 로직
