@@ -5,14 +5,12 @@
 	$ugu	= $_REQUEST['ugu'];
 	if (isset($rs))
 	{
-print_r($rs);
-		if ($ugu	= "act")
+		if ($ugu	== "act")
 		{
 			$mb_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$rs."'";
 			$mb_result 	= mysqli_query($my_db, $mb_query);
 			$mb_data	= mysqli_fetch_array($mb_result);
 		}else{
-print_r($ugu);
 			$mb_query 	= "SELECT * FROM ".$_gl['follower_info_table']." WHERE mb_serial='".$rs."'";
 			$mb_result 	= mysqli_query($my_db, $mb_query);
 			$mb_data	= mysqli_fetch_array($mb_result);
