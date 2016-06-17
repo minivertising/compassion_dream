@@ -42,13 +42,29 @@ Loading.... 꿈이 필요한 아이와 매칭중
   </div>
   <div id="page_div4" style="display:none">
     <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
+<?
+	if ($ch_data)
+	{
+?>
     <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
+<?
+	}else{
+?>
+    <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
+<?
+	}
+?>
   </div>
   <div id="page_div5" style="display:none">
     <h2>저와 함께 꿈꾸는 행복을 <?=$ch_data['ch_ko_name']?>에게 전해주실래요?</h2>
     <div>
       <img src="<?=$ch_data['ch_top_img_url']?>" style="width:100%">
     </div>
+    <a href="#">1:1 결연</a>
+    <a href="#" onclick="open_pop('f_dream_sel_popup');return false;">사진 공유</a>
+  </div>
+  <div id="page_div6" style="display:none">
+    <h2>"얘들아 내 꿈꿔~!" 내용</h2>
     <a href="#">1:1 결연</a>
     <a href="#" onclick="open_pop('f_dream_sel_popup');return false;">사진 공유</a>
   </div>

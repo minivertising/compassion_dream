@@ -270,7 +270,7 @@ function preview_img()
 					// 매칭될 아이가 없을 경우
 					mb_image	= rs_ch[1];
 					mb_rs		= rs_ch[2];
-					$("#no_matching_child_pic").attr("src",mb_image);
+					//$("#no_matching_child_pic").attr("src",mb_image);
 					open_pop('no_matching_popup');
 				}else {
 					// 에러
