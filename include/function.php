@@ -41,16 +41,19 @@
 			{
 				if ($i > 0)
 				{
+					$s_query			= "SELECT serial_code FROM ".$_gl['serial_info_table']." WHERE idx='".$val."'";
+					$s_result			= mysqli_query($my_db, $s_query);
+					$s_data				= mysqli_fetch_array($s_result);
 					if ($i == 1)
 					{
-						$a_query			= "SELECT idx FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$val."'";
+						$a_query			= "SELECT idx FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$s_data['serial_code']."'";
 						$a_result			= mysqli_query($my_db, $a_query);
 						$a_data				= mysqli_fetch_array($a_result);
 
 						$p_query			= "UPDATE ".$_gl['activator_info_table']." SET mb_f_share_cnt=mb_f_share_cnt+1 WHERE idx='".$a_data['idx']."'";
 						$p_result			= mysqli_query($my_db, $p_query);
 					}else{
-						$f_query				= "SELECT idx FROM ".$_gl['follower_info_table']." WHERE mb_serial='".$val."'";
+						$f_query				= "SELECT idx FROM ".$_gl['follower_info_table']." WHERE mb_serial='".$s_data['serial_code']."'";
 						$f_result				= mysqli_query($my_db, $f_query);
 						$f_data				= mysqli_fetch_array($f_result);
 
