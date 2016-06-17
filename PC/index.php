@@ -239,6 +239,47 @@ function preview_img()
 		// 사진 저장할 내용 추가
 		var croppedImg = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
 		var canvasImageURL = croppedImg.toDataURL("image/jpeg");
+
+		$.ajax({
+			method: 'POST',
+			url: '../main_exec.php',
+			data: {
+				exec			: "input_image",
+				canvasurl	: canvasImageURL,
+				mb_job		: sel_dream
+			},
+			beforeSend: function(response){
+				alert(response);
+				$("#loading_div").show();
+				$("#contents_div").hide();
+			},
+			success: function(res){
+				// console.log(res);
+				alert(res);
+				//mb_image    = res;
+
+				var rs_ch = res.split("||");
+				$("#loading_div").hide();
+				$("#contents_div").show();
+				if (rs_ch[0] == "Y")
+				{
+					// 매칭될 아이가 있을 경우
+					mb_image	= rs_ch[1];
+					open_pop('input_popup');
+				}else if (rs_ch[0] == "N"){
+					// 매칭될 아이가 없을 경우
+					mb_image	= rs_ch[1];
+					mb_rs		= rs_ch[2];
+					$("#matching_child_pic").attr("src",mb_image);
+					open_pop('no_matching_popup');
+				}else {
+					// 에러
+					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
+					location.reload();
+				}
+			}
+		});
+/*
 		$.ajax({
 			method: 'POST',
 			url: 'photo_upload.php',
@@ -250,6 +291,7 @@ function preview_img()
 				open_pop('input_popup');
 			}
 		});
+*/
 	}
 
 	function input_submit()

@@ -171,6 +171,18 @@
 		return $serial_data['serial_code'];
 	}
 
+	function matching_child()
+	{
+		global $_gl;
+		global $my_db;
+
+		$ch_query 		= "SELECT * FROM ".$_gl['child_info_table']." WHERE ch_choice='N'";
+		$ch_result 		= mysqli_query($my_db, $ch_query);
+		$ch_match_cnt	= mysqli_num_rows($ch_result);
+
+		return $ch_match_cnt;
+	}
+
 	// LMS 발송 
 	function send_lms($phone, $serial)
 	{
