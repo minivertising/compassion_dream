@@ -195,7 +195,7 @@ switch ($_REQUEST['exec'])
 				$result 	= mysqli_query($my_db, $query);
 
 				if ($result)
-					$flag	= "Y||".$dest_url."||".$mb_serial;
+					$flag	= "N||".$dest_url."||".$mb_serial;
 				else
 					$flag	= "E||null||null";
 			}
