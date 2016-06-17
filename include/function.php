@@ -39,21 +39,24 @@
 			$i	= 0;
 			foreach($s_arr as $key => $val)
 			{
-				if ($i == 1)
+				if ($i > 0)
 				{
-					$a_query			= "SELECT idx FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$val[$i]."'";
-					$a_result			= mysqli_query($my_db, $a_query);
-					$a_data				= mysqli_fetch_array($a_result);
+					if ($i == 1)
+					{
+						$a_query			= "SELECT idx FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$val[$i]."'";
+						$a_result			= mysqli_query($my_db, $a_query);
+						$a_data				= mysqli_fetch_array($a_result);
 
-					$p_query			= "UPDATE ".$_gl['activator_info_table']." SET mb_f_share_cnt=mb_f_share_cnt+1 WHERE idx='".$a_data['idx']."'";
-					$p_result			= mysqli_query($my_db, $p_query);
-				}else{
-					$f_query				= "SELECT idx FROM ".$_gl['follower_info_table']." WHERE mb_serial='".$val[$i]."'";
-					$f_result				= mysqli_query($my_db, $f_query);
-					$f_data				= mysqli_fetch_array($f_result);
+						$p_query			= "UPDATE ".$_gl['activator_info_table']." SET mb_f_share_cnt=mb_f_share_cnt+1 WHERE idx='".$a_data['idx']."'";
+						$p_result			= mysqli_query($my_db, $p_query);
+					}else{
+						$f_query				= "SELECT idx FROM ".$_gl['follower_info_table']." WHERE mb_serial='".$val[$i]."'";
+						$f_result				= mysqli_query($my_db, $f_query);
+						$f_data				= mysqli_fetch_array($f_result);
 
-					$p_query			= "UPDATE ".$_gl['follower_info_table']." SET mb_f_share_cnt=mb_f_share_cnt+1 WHERE idx='".$f_data['idx']."'";
-					$p_result			= mysqli_query($my_db, $p_query);
+						$p_query			= "UPDATE ".$_gl['follower_info_table']." SET mb_f_share_cnt=mb_f_share_cnt+1 WHERE idx='".$f_data['idx']."'";
+						$p_result			= mysqli_query($my_db, $p_query);
+					}
 				}
 				$i++;
 			}
