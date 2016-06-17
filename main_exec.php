@@ -35,13 +35,6 @@ switch ($_REQUEST['exec'])
 			$a_result 	= mysqli_query($my_db, $a_query);
 
 		}else{
-			$mb_query 	= "SELECT * FROM ".$_gl['follower_info_table']." WHERE mb_serial='".$mb_serial."'";
-			$mb_result 	= mysqli_query($my_db, $mb_query);
-			$mb_data	= mysqli_fetch_array($mb_result);
-
-			$ch_query 	= "UPDATE ".$_gl['child_info_table']." SET ch_choice='S' WHERE idx='".$mb_data['mb_child']."'";
-			$ch_result 	= mysqli_query($my_db, $ch_query);
-
 			$f_query 	= "UPDATE ".$_gl['follower_info_table']." SET shareYN='Y' WHERE mb_serial='".$mb_serial."'";
 			$f_result 	= mysqli_query($my_db, $f_query);
 
