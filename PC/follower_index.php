@@ -315,7 +315,7 @@ function preview_img()
 			},
 			url: "../main_exec.php",
 			success: function(res){
-				alert(res);
+				console.log(res);
 			}
 		});
 	}
