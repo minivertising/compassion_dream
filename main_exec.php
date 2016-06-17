@@ -79,8 +79,9 @@ switch ($_REQUEST['exec'])
 	break;
 
 	case "input_follower" :
-		$data	= $_REQUEST['canvasurl'];
-		$rs	= $_SESSION['ss_serial'];
+		$data			= $_REQUEST['canvasurl'];
+		$mb_child	= $_REQUEST['mb_child'];
+		$rs			= $_SESSION['ss_serial'];
 
 		list($type, $data) = explode(';', $data);
 		list(, $data)      = explode(',', $data);
@@ -116,7 +117,7 @@ switch ($_REQUEST['exec'])
 
 			$mb_serial	= create_serial("follower",$rs);
 
-			$query 	= "INSERT INTO ".$_gl['follower_info_table']."(mb_ipaddr,mb_job,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_job."','".$dest_url."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
+			$query 	= "INSERT INTO ".$_gl['follower_info_table']."(mb_ipaddr,mb_job,mb_child,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_job."','".$mb_child."','".$dest_url."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
 			$result 	= mysqli_query($my_db, $query);
 
 			if ($result)

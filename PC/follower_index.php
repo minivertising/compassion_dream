@@ -2,7 +2,6 @@
 	include_once "./header.php";
 
 	$ch_data	= sel_child_info($mb_data['mb_child']);
-print_r($ch_data);
 ?>
 <body>
 <script>
@@ -263,7 +262,8 @@ function preview_img()
 			url: '../main_exec.php',
 			data: {
 				exec			: "input_follower",
-				canvasurl	: canvasImageURL
+				canvasurl	: canvasImageURL,
+				mb_child	: "<?=$mb_data['mb_child']?>"
 			},
 			beforeSend: function(response){
 				alert(response);
