@@ -15,18 +15,37 @@ switch ($_REQUEST['exec'])
 		echo $flag;
 	break;
 	case "insert_share_info" :
-		$sns_media	= $_REQUEST['sns_media'];
-		$mb_serial	= $_REQUEST['mb_serial'];
+		$sns_media		= $_REQUEST['sns_media'];
+		$mb_serial		= $_REQUEST['mb_serial'];
+		$mb_gubun	= $_REQUEST['mb_gubun'];
 
 		$query 		= "INSERT INTO ".$_gl['share_info_table']."(sns_media, sns_ipaddr, sns_gubun, inner_media, sns_regdate) values('".$sns_media."','".$_SERVER['REMOTE_ADDR']."','".$gubun."','".$_SESSION['ss_media']."','".date("Y-m-d H:i:s")."')";
 		$result 	= mysqli_query($my_db, $query);
 
-		$mb_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$mb_serial."'";
-		$mb_result 	= mysqli_query($my_db, $mb_query);
-		$mb_data	= mysqli_fetch_array($mb_result);
+		if ($mb_gubun == "act")
+		{
+			$mb_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$mb_serial."'";
+			$mb_result 	= mysqli_query($my_db, $mb_query);
+			$mb_data	= mysqli_fetch_array($mb_result);
 
-		$ch_query 	= "UPDATE ".$_gl['child_info_table']." SET ch_choice='S' WHERE idx='".$mb_data['mb_child']."'";
-		$ch_result 	= mysqli_query($my_db, $ch_query);
+			$ch_query 	= "UPDATE ".$_gl['child_info_table']." SET ch_choice='S' WHERE idx='".$mb_data['mb_child']."'";
+			$ch_result 	= mysqli_query($my_db, $ch_query);
+
+			$a_query 	= "UPDATE ".$_gl['activator_info_table']." SET shareYN='Y' WHERE mb_serial='".$mb_serial."'";
+			$a_result 	= mysqli_query($my_db, $a_query);
+
+		}else{
+			$mb_query 	= "SELECT * FROM ".$_gl['follower_info_table']." WHERE mb_serial='".$mb_serial."'";
+			$mb_result 	= mysqli_query($my_db, $mb_query);
+			$mb_data	= mysqli_fetch_array($mb_result);
+
+			$ch_query 	= "UPDATE ".$_gl['child_info_table']." SET ch_choice='S' WHERE idx='".$mb_data['mb_child']."'";
+			$ch_result 	= mysqli_query($my_db, $ch_query);
+
+			$f_query 	= "UPDATE ".$_gl['follower_info_table']." SET shareYN='Y' WHERE mb_serial='".$mb_serial."'";
+			$f_result 	= mysqli_query($my_db, $f_query);
+
+		}
 
 		send_lms($mb_data['mb_phone'], $mb_serial);
 

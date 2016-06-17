@@ -97,6 +97,7 @@ function sns_share(media, flag)
 			data:{
 				"exec" : "insert_share_info",
 				"sns_media" : media,
+				"mb_gubun" : flag,
 				"mb_serial"  : mb_rs
 			}
 		});
@@ -138,6 +139,7 @@ function sns_share(media, flag)
 			data:{
 				"exec" : "insert_share_info",
 				"sns_media" : media,
+				"mb_gubun" : flag,
 				"mb_serial"  : mb_rs
 			}
 		});
@@ -153,6 +155,7 @@ function sns_share(media, flag)
 			data:{
 				"exec" : "insert_share_info",
 				"sns_media" : media,
+				"mb_gubun" : flag,
 				"mb_serial"  : mb_rs
 			}
 		});
