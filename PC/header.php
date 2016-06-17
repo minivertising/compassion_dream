@@ -3,7 +3,6 @@
 
 	$rs	= $_REQUEST['rs'];
 	$ugu	= $_REQUEST['ugu'];
-print_r($_REQUEST);
 	if (isset($rs))
 	{
 		if ($ugu	= "act")
@@ -17,6 +16,7 @@ print_r($_REQUEST);
 			$mb_data	= mysqli_fetch_array($mb_result);
 		}
 		$img_url		= str_replace("..","http://www.mnv.kr",$mb_data['mb_image']);
+print_r($mb_data);
 	}
 ?>
 <!DOCTYPE html>
