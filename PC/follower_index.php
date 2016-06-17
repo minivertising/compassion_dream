@@ -2,7 +2,7 @@
 	include_once "./header.php";
 
 	$ch_data	= sel_child_info($mb_data['mb_child']);
-
+print_r($ch_data);
 ?>
 <body>
 <script>
