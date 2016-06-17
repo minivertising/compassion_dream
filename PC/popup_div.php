@@ -125,6 +125,15 @@
   </div>
   <!--END : 매칭된 아이가 없을때 결과 확인 & 공유 팝업-->
 
+  <!-- 팔로워용 매칭된 아이가 없을때 확인 & 공유 팝업-->
+  <div id="f_share_no_matching_popup" class="popup_wrap" style="background:white;">
+    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
+    <a href="#" onclick="sns_share('fb','fol');">페이스북</a>
+    <a href="#" onclick="sns_share('kt','fol');">카톡</a>
+    <a href="#" onclick="sns_share('ks','fol');">카스</a>
+  </div>
+  <!--END : 팔로워용 매칭된 아이가 없을때 확인 & 공유 팝업-->
+
 
   <!-- 약관 팝업-->
   <div id="agree_popup" class="popup_wrap" style="background:white;">

@@ -312,6 +312,8 @@ function preview_img()
 				{
 					$("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
 					open_pop('f_share_popup');
+				}else if (rs_ch[0] == "N"){
+					open_pop('f_share_no_matching_popup');
 				}else {
 					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
 					location.reload();

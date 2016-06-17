@@ -135,10 +135,14 @@ switch ($_REQUEST['exec'])
 			$result 	= mysqli_query($my_db, $query);
 
 			if ($result)
-				$flag	= "Y||".$mb_serial;
-			else
-				$flag	= "N||null";
-			
+			{
+				if ($mb_child == "")
+					$flag	= "N||".$mb_serial;
+				else
+					$flag	= "Y||".$mb_serial;
+			}else{
+				$flag	= "E||null";
+			}
 			echo $flag;
 		}
 
