@@ -200,7 +200,7 @@ switch ($_REQUEST['exec'])
 					$flag	= "E||null||null";
 			}
 
-			echo $matching_childYN;
+			echo $flag;
 		}
 
 	break;
