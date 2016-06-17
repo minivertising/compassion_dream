@@ -59,7 +59,7 @@
 			}
 
 		}
-		return $s_arr;
+		return $s_arr[1];
 	}
 
 	// 아이 매칭 로직
