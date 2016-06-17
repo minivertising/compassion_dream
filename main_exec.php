@@ -149,7 +149,8 @@ switch ($_REQUEST['exec'])
 		$ugu				= $_REQUEST['ugu'];
 		$parent_idx		= $_REQUEST['parent_idx'];
 
-		ins_share_cnt($serial, $ugu,$parent_idx);
+		$result	= ins_share_cnt($serial, $ugu,$parent_idx);
+		echo $result;
 	break;
 }
 ?>

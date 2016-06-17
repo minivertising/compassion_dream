@@ -313,7 +313,10 @@ function preview_img()
 				"serial"				: serial,
 				"ugu"					: ugu
 			},
-			url: "../main_exec.php"
+			url: "../main_exec.php",
+			success: function(res){
+				alert(res);
+			}
 		});
 	}
 

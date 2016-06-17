@@ -36,7 +36,7 @@
 
 			$s_arr				= explode("||",$s_data['parent_idx']);
 
-			$i	= 1;
+			$i	= 0;
 			foreach($s_arr as $key => $val)
 			{
 				if ($i == 1)
@@ -59,6 +59,7 @@
 			}
 
 		}
+		return $s_arr;
 	}
 
 	// 아이 매칭 로직
