@@ -3,7 +3,7 @@
 
 	$rs	= $_REQUEST['rs'];
 	$ugu	= $_REQUEST['ugu'];
-
+print_r($_REQUEST);
 	if (isset($rs))
 	{
 		if ($ugu	= "act")
