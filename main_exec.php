@@ -180,7 +180,7 @@ switch ($_REQUEST['exec'])
 		{
 			die("파일을 지정한 디렉토리에 업로드하는데 실패했습니다.");
 		}else{
-			$matching_childYN	= matching_child();
+			$matching_childYN	= match_YN_child();
 			$dest_url	= ".".$dest_url;
 
 			if ($matching_childYN > 0)

@@ -171,7 +171,7 @@
 		return $serial_data['serial_code'];
 	}
 
-	function matching_child()
+	function match_YN_child()
 	{
 		global $_gl;
 		global $my_db;
