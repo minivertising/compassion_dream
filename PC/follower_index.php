@@ -86,7 +86,7 @@ Loading.... 꿈이 필요한 아이와 매칭중
 		$("#cboxTopCenter").hide();
 		$("#cboxBottomCenter").hide();
 
-		Ins_share_cnt('<?=$rs?>');
+		Ins_share_cnt('<?=$rs?>','<?=$ugu?>','');
 	});
 	/*
 		var $inputImage = $('#inputImage');
@@ -263,7 +263,20 @@ function preview_img()
 			data: {
 				exec			: "input_follower",
 				canvasurl	: canvasImageURL,
-				mb_child	: "<?=$mb_data['mb_child']?>"
+				mb_child	: "<?=$mb_data['mb_child']?>",
+<?
+	if ($ugu == "act")
+	{
+?>
+				parent_idx	: "<?=$mb_data['idx']?>",
+<?
+	}else{
+?>
+				parent_idx	: "<?=$mb_data['parent_idx']?>",
+<?
+	}
+?>
+				mb_job		: "<?=$mb_data['mb_job']?>"
 			},
 			beforeSend: function(response){
 				alert(response);
@@ -291,13 +304,14 @@ function preview_img()
 		});
 	}
 
-	function Ins_share_cnt(serial)
+	function Ins_share_cnt(serial, ugu,parent_idx)
 	{
 		$.ajax({
 			type:"POST",
 			data:{
-				"exec"        : "insert_share_cnt",
-				"serial"		: serial
+				"exec"				: "insert_share_cnt",
+				"serial"				: serial,
+				"ugu"					: ugu
 			},
 			url: "../main_exec.php"
 		});

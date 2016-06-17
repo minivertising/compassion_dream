@@ -81,6 +81,8 @@ switch ($_REQUEST['exec'])
 	case "input_follower" :
 		$data			= $_REQUEST['canvasurl'];
 		$mb_child	= $_REQUEST['mb_child'];
+		$mb_job		= $_REQUEST['mb_job'];
+		$parent_idx	= $_REQUEST['parent_idx'];
 		$rs			= $_SESSION['ss_serial'];
 
 		list($type, $data) = explode(';', $data);
@@ -117,7 +119,7 @@ switch ($_REQUEST['exec'])
 
 			$mb_serial	= create_serial("follower",$rs);
 			$dest_url	= ".".$dest_url;
-			$query 	= "INSERT INTO ".$_gl['follower_info_table']."(mb_ipaddr,mb_job,mb_child,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_job."','".$mb_child."','".$dest_url."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
+			$query 	= "INSERT INTO ".$_gl['follower_info_table']."(mb_ipaddr,mb_job,parent_idx,mb_child,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_job."','".$parent_idx."','".$mb_child."','".$dest_url."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
 			$result 	= mysqli_query($my_db, $query);
 
 			if ($result)
@@ -131,9 +133,11 @@ switch ($_REQUEST['exec'])
 	break;
 
 	case "insert_share_cnt" :
-		$serial	= $_REQUEST['serial'];
+		$serial			= $_REQUEST['serial'];
+		$ugu				= $_REQUEST['ugu'];
+		$parent_idx		= $_REQUEST['parent_idx'];
 
-		ins_share_cnt($serial);
+		ins_share_cnt($serial, $ugu,$parent_idx);
 	break;
 }
 ?>

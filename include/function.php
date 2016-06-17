@@ -17,15 +17,48 @@
 	}
 
 	// 공유 클릭 카운트 함수
-	function ins_share_cnt($rs)
+	function ins_share_cnt($rs, $ugu)
 	{
 		global $_gl;
 		global $my_db;
 
-		$query		= "UPDATE ".$_gl['activator_info_table']." SET mb_share_cnt=mb_share_cnt+1 WHERE mb_serial='".$rs."'";
-		$result		= mysqli_query($my_db, $query);
+		if ($ugu == "act")
+		{
+			$query			= "UPDATE ".$_gl['activator_info_table']." SET mb_share_cnt=mb_share_cnt+1 WHERE mb_serial='".$rs."'";
+			$result			= mysqli_query($my_db, $query);
+		}else{
+			$query			= "UPDATE ".$_gl['follower_info_table']." SET mb_share_cnt=mb_share_cnt+1 WHERE mb_serial='".$rs."'";
+			$result			= mysqli_query($my_db, $query);
 
-		return $query;
+			$s_query			= "SELECT parent_idx FROM ".$_gl['serial_info_table']." WHERE serial_code='".$rs."'";
+			$s_result			= mysqli_query($my_db, $s_query);
+			$s_data			= mysqli_fetch_array($s_result);
+
+			$s_arr				= explode("||",$s_data['parent_idx']);
+
+			$i	= 1;
+			foreach($s_arr as $key => $val)
+			{
+				if ($i == 1)
+				{
+					$a_query			= "SELECT idx FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$val[$i]."'";
+					$a_result			= mysqli_query($my_db, $a_query);
+					$a_data				= mysqli_fetch_array($a_result);
+
+					$p_query			= "UPDATE ".$_gl['activator_info_table']." SET mb_f_share_cnt=mb_f_share_cnt+1 WHERE idx='".$a_data['idx']."'";
+					$p_result			= mysqli_query($my_db, $p_query);
+				}else{
+					$f_query				= "SELECT idx FROM ".$_gl['follower_info_table']." WHERE mb_serial='".$val[$i]."'";
+					$f_result				= mysqli_query($my_db, $f_query);
+					$f_data				= mysqli_fetch_array($f_result);
+
+					$p_query			= "UPDATE ".$_gl['follower_info_table']." SET mb_f_share_cnt=mb_f_share_cnt+1 WHERE idx='".$f_data['idx']."'";
+					$p_result			= mysqli_query($my_db, $p_query);
+				}
+				$i++;
+			}
+
+		}
 	}
 
 	// 아이 매칭 로직
