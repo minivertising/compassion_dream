@@ -6,13 +6,13 @@
 
 	$query 	= "SELECT mb_child FROM activator_info WHERE mb_regdate <'".date("Y-m-d",strtotime ("-3 days"))."'";
 	$result 	= mysqli_query($my_db, $query);
-	$data	= mysqli_fetch_array($result);
 
-	if ($data)
+	if ($result)
 	{
+		$data	= mysqli_fetch_array($result);
 
-		$query 	= "UPDATE child_info SET ch_choice='N' WHERE idx='".$data['mb_child']."'";
-		$result 	= mysqli_query($my_db, $query);
+		$query2 	= "UPDATE child_info SET ch_choice='N' WHERE idx='".$data['mb_child']."'";
+		$result2 	= mysqli_query($my_db, $query2);
 	}
 
 ?>
