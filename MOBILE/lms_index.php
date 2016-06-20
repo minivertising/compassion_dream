@@ -105,7 +105,6 @@ function image_crop(){
         preview: '.preview',
         center:true,
         zoomOnWheel:false,
-        zoomOnTouch:false,
         toggleDragModeOnDblclick:false,
 
         build: function (e) {
