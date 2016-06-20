@@ -5,11 +5,11 @@
     <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
     <h2>DREAM RUNNER되기 1단계</h2>
     <h3>당신의 어린시절 꿈을 선택해주세요</h3>
-	<a href="#" onclick="view_dream_div();return false;" id="dream_sel_link">꿈 선택 ▼</a>
+	<a href="#" onclick="view_dream_div('');return false;" id="dream_sel_link">꿈 선택 ▼</a>
 	<div  id="choice_dream" style="position:absolute;z-index:9;background:skyblue;display:none">
-	  <a href="#" onclick="checked_dream('cook');return false;" name="id_job" id="id_cook">요리사</a>
-	  <a href="#" onclick="checked_dream('doctor');return false;" name="id_job" id="id_doctor">의사</a>
-	  <a href="#" onclick="checked_dream('teacher');return false;" name="id_job" id="id_teacher">선생님</a>
+	  <a href="#" onclick="checked_dream('cook','');return false;" name="id_job" id="id_cook">요리사</a>
+	  <a href="#" onclick="checked_dream('doctor','');return false;" name="id_job" id="id_doctor">의사</a>
+	  <a href="#" onclick="checked_dream('teacher','');return false;" name="id_job" id="id_teacher">선생님</a>
 	</div>
     <!-- <select name="mb_job" id="mb_job">
       <option value="">선택하세요</option>
@@ -17,7 +17,7 @@
       <option value="doctor">의사</option>
       <option value="teacher">선생님</option>
     </select> --><br />
-    <div id="img_div" style="width:100%; height:100%;">
+    <div id="img_div" style="width:80%; ">
       <img id="ori_image" src="./images/picture.jpg" alt="Picture">
     </div>
     <div>
@@ -33,6 +33,40 @@
   </div>
   <!-- </div> -->
   <!--END : 꿈 선택 팝업-->
+
+  <!--팔로워용 꿈 선택 팝업-->
+  <div id="f_dream_sel_popup" class="popup_wrap" style="background:white;">
+    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
+    <h2>DREAM RUNNER되기 1단계</h2>
+    <h3>당신의 어린시절 꿈을 선택해주세요</h3>
+	<a href="#" onclick="view_dream_div('f_');return false;" id="f_dream_sel_link">꿈 선택 ▼</a>
+	<div  id="f_choice_dream" style="position:absolute;z-index:9;background:skyblue;display:none">
+	  <a href="#" onclick="checked_dream('cook','f_');return false;" name="id_job" id="id_cook">요리사</a>
+	  <a href="#" onclick="checked_dream('doctor','f_');return false;" name="id_job" id="id_doctor">의사</a>
+	  <a href="#" onclick="checked_dream('teacher','f_');return false;" name="id_job" id="id_teacher">선생님</a>
+	</div>
+    <!-- <select name="mb_job" id="mb_job">
+      <option value="">선택하세요</option>
+      <option value="cook">요리사</option>
+      <option value="doctor">의사</option>
+      <option value="teacher">선생님</option>
+    </select> --><br />
+    <div id="f_img_div" style="width:100%; height:100%;">
+      <img id="f_ori_image" src="./images/picture.jpg" alt="Picture">
+    </div>
+    <div>
+      <label for="f_inputImage" title="Upload image file">
+        <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
+        <span title="Import image with Blob URLs">Upload</span>
+      </label>
+
+      <a href="#" onclick="f_dream_next();return false;">업로드 완료
+      </a>
+      <a href="#" onclick="preview_img();return false;">미리보기</a>
+      </div>
+  </div>
+  <!-- </div> -->
+  <!--END : 팔로워용 꿈 선택 팝업-->
 
   <!--사진 미리보기 팝업-->
   <div id="preview_popup" class="popup_wrap" style="background:white; width:100%; height:100%;">
@@ -61,11 +95,43 @@
 	  <img src="#" style="width:100%" id="matching_child_pic">
 	</div>
     <a href="#" onclick="open_pop('input_popup');return false;">닫기</a>
-    <a href="#" onclick="sns_share('fb');">페이스북</a>
-    <a href="#" onclick="sns_share('kt');">카톡</a>
-    <a href="#" onclick="sns_share('ks');">카스</a>
+    <a href="#" onclick="sns_share('fb','act');">페이스북</a>
+    <a href="#" onclick="sns_share('kt','act');">카톡</a>
+    <a href="#" onclick="sns_share('ks','act');">카스</a>
   </div>
   <!--END : 매칭결과 확인 & 공유 팝업-->
+
+  <!-- 팔로워용 매칭결과 확인 & 공유 팝업-->
+  <div id="f_share_popup" class="popup_wrap" style="background:white;">
+    <div>
+	  <img src="#" style="width:100%" id="f_matching_child_pic">
+	</div>
+    <a href="#" onclick="open_pop('input_popup');return false;">닫기</a>
+    <a href="#" onclick="sns_share('fb','fol');">페이스북</a>
+    <a href="#" onclick="sns_share('kt','fol');">카톡</a>
+    <a href="#" onclick="sns_share('ks','fol');">카스</a>
+  </div>
+  <!--END : 팔로워용 매칭결과 확인 & 공유 팝업-->
+
+  <!-- 매칭된 아이가 없을때 결과 확인 & 공유 팝업-->
+  <div id="no_matching_popup" class="popup_wrap" style="background:white;">
+    <h2>컴페션 소개 링크 공유 팝업</h2>
+    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
+    <a href="#" onclick="sns_share('fb','act');">페이스북</a>
+    <a href="#" onclick="sns_share('kt','act');">카톡</a>
+    <a href="#" onclick="sns_share('ks','act');">카스</a>
+  </div>
+  <!--END : 매칭된 아이가 없을때 결과 확인 & 공유 팝업-->
+
+  <!-- 팔로워용 매칭된 아이가 없을때 확인 & 공유 팝업-->
+  <div id="f_share_no_matching_popup" class="popup_wrap" style="background:white;">
+    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
+    <a href="#" onclick="sns_share('fb','fol');">페이스북</a>
+    <a href="#" onclick="sns_share('kt','fol');">카톡</a>
+    <a href="#" onclick="sns_share('ks','fol');">카스</a>
+  </div>
+  <!--END : 팔로워용 매칭된 아이가 없을때 확인 & 공유 팝업-->
+
 
   <!-- 약관 팝업-->
   <div id="agree_popup" class="popup_wrap" style="background:white;">

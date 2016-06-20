@@ -16,16 +16,56 @@
 		return array_sum(explode(' ',microtime())); 
 	}
 
-	// 공유 횟수 카운트 함수
-	function ins_share_cnt($rs)
+	// 공유 클릭 카운트 함수
+	function ins_share_cnt($rs, $ugu)
 	{
 		global $_gl;
 		global $my_db;
 
-		$query		= "UPDATE ".$_gl['activator_info_table']." SET mb_share_cnt=mb_share_cnt+1 WHERE mb_serial='".$rs."'";
-		$result		= mysqli_query($my_db, $query);
+		if ($ugu == "act")
+		{
+			$query			= "UPDATE ".$_gl['activator_info_table']." SET mb_share_cnt=mb_share_cnt+1 WHERE mb_serial='".$rs."'";
+			$result			= mysqli_query($my_db, $query);
+		}else{
+			$query			= "UPDATE ".$_gl['follower_info_table']." SET mb_share_cnt=mb_share_cnt+1 WHERE mb_serial='".$rs."'";
+			$result			= mysqli_query($my_db, $query);
 
-		return $query;
+			$s_query			= "SELECT parent_idx FROM ".$_gl['serial_info_table']." WHERE serial_code='".$rs."'";
+			$s_result			= mysqli_query($my_db, $s_query);
+			$s_data			= mysqli_fetch_array($s_result);
+
+			$s_arr				= explode("||",$s_data['parent_idx']);
+
+			$i	= 0;
+			foreach($s_arr as $key => $val)
+			{
+				if ($i > 0)
+				{
+					$s_query			= "SELECT serial_code FROM ".$_gl['serial_info_table']." WHERE idx='".$val."'";
+					$s_result			= mysqli_query($my_db, $s_query);
+					$s_data				= mysqli_fetch_array($s_result);
+					if ($i == 1)
+					{
+						$a_query			= "SELECT idx FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$s_data['serial_code']."'";
+						$a_result			= mysqli_query($my_db, $a_query);
+						$a_data				= mysqli_fetch_array($a_result);
+
+						$p_query			= "UPDATE ".$_gl['activator_info_table']." SET mb_f_share_cnt=mb_f_share_cnt+1 WHERE idx='".$a_data['idx']."'";
+						$p_result			= mysqli_query($my_db, $p_query);
+					}else{
+						$f_query				= "SELECT idx FROM ".$_gl['follower_info_table']." WHERE mb_serial='".$s_data['serial_code']."'";
+						$f_result				= mysqli_query($my_db, $f_query);
+						$f_data				= mysqli_fetch_array($f_result);
+
+						$p_query			= "UPDATE ".$_gl['follower_info_table']." SET mb_f_share_cnt=mb_f_share_cnt+1 WHERE idx='".$f_data['idx']."'";
+						$p_result			= mysqli_query($my_db, $p_query);
+					}
+				}
+				$i++;
+			}
+
+		}
+		return $a_query;
 	}
 
 	// 아이 매칭 로직
@@ -64,8 +104,10 @@
 
 		$total_runner_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE shareYN='Y'";
 		$total_runner_result 	= mysqli_query($my_db, $total_runner_query);
-		$total_runner_cnt	= mysqli_num_rows($total_runner_result);
-
+		if ($total_runner_result)
+			$total_runner_cnt	= mysqli_num_rows($total_runner_result);
+		else
+			$total_runner_cnt	= 0;
 		return $total_runner_cnt;
 	}
 
@@ -76,8 +118,10 @@
 
 		$total_pic_query 	= "SELECT SUM(mb_share_cnt) total_share_cnt FROM ".$_gl['activator_info_table']." WHERE shareYN='Y'";
 		$total_pic_result 	= mysqli_query($my_db, $total_pic_query);
-		$total_pic_cnt	= mysqli_fetch_array($total_pic_result);
-
+		if ($total_pic_result)
+			$total_pic_cnt	= mysqli_fetch_array($total_pic_result);
+		else
+			$total_pic_cnt	= 0;
 		return $total_pic_cnt['total_share_cnt'];
 	}
 
@@ -95,19 +139,48 @@
 	}
 */
 
-	function create_serial()
+	function create_serial($flag, $serial)
 	{
 		global $_gl;
 		global $my_db;
 
-		$serial_query 	= "SELECT serial_code FROM ".$_gl['serial_info_table']." WHERE useYN='N' limit 1";
-		$serial_result 	= mysqli_query($my_db, $serial_query);
-		$serial_data	= mysqli_fetch_array($serial_result);
+		if ($flag == "activator")
+		{
+			$serial_query 	= "SELECT serial_code FROM ".$_gl['serial_info_table']." WHERE useYN='N' limit 1";
+			$serial_result 	= mysqli_query($my_db, $serial_query);
+			$serial_data	= mysqli_fetch_array($serial_result);
 
-		$serial_query2 	= "UPDATE ".$_gl['serial_info_table']." SET useYN='Y' WHERE serial_code='".$serial_data['serial_code']."'";
-		$serial_result2 	= mysqli_query($my_db, $serial_query2);
+			$serial_query2 	= "UPDATE ".$_gl['serial_info_table']." SET useYN='Y' WHERE serial_code='".$serial_data['serial_code']."'";
+			$serial_result2 	= mysqli_query($my_db, $serial_query2);
+		}else{
+			// 발급되지 않은 난수코드 1개 가져오기
+			$serial_query 	= "SELECT serial_code FROM ".$_gl['serial_info_table']." WHERE useYN='N' limit 1";
+			$serial_result 	= mysqli_query($my_db, $serial_query);
+			$serial_data	= mysqli_fetch_array($serial_result);
 
+			// 부모난수코드의 idx, parent_idx 정보 가져오기
+			$p_serial_query 	= "SELECT idx, parent_idx FROM ".$_gl['serial_info_table']." WHERE serial_code='".$serial."'";
+			$p_serial_result 	= mysqli_query($my_db, $p_serial_query);
+			$p_serial_data	= mysqli_fetch_array($p_serial_result);
+
+			// 발급된 난수번호의 parent_idx 컬럼에 부모 idx 정보 UPDATE
+			$serial_query2 	= "UPDATE ".$_gl['serial_info_table']." SET useYN='Y', parent_idx='".$p_serial_data['parent_idx']."||".$p_serial_data['idx']."' WHERE serial_code='".$serial_data['serial_code']."'";
+			$serial_result2 	= mysqli_query($my_db, $serial_query2);
+
+		}
 		return $serial_data['serial_code'];
+	}
+
+	function match_YN_child()
+	{
+		global $_gl;
+		global $my_db;
+
+		$ch_query 		= "SELECT * FROM ".$_gl['child_info_table']." WHERE ch_choice='N'";
+		$ch_result 		= mysqli_query($my_db, $ch_query);
+		$ch_match_cnt	= mysqli_num_rows($ch_result);
+
+		return $ch_match_cnt;
 	}
 
 	// LMS 발송 
