@@ -167,55 +167,55 @@ function preview_img()
 
 	}
 
-	function readURL(input) {
+function readURL(input) {
 
-		if (input.files && input.files[0]) {
-			file = files[0];
-			if (/^image\/\w+$/.test(file.type)) {
-				blobURL = URL.createObjectURL(file);
-				$ori_image.one('built.cropper', function () {
-								// Revoke when load complete
-								URL.revokeObjectURL(blobURL);
-							}).cropper('reset').cropper('replace', blobURL);
-				$($inputImage).val('');
-			} else {
-				window.alert('Please choose an image file.');
-						// }
-						// var reader = new FileReader();
-						// reader.onload = function (e) {
-						//     alert("onload");
-						//     $($ori_image).attr('src', e.target.result);
-						//     image_crop();
-					}
-						// realFath = input.files[0].name;
-						// reader.readAsDataURL(input.files[0]);
-				}else if(input.value){ // 조건 수정 ?
-						//이미지 저장후에 불러와서 $ori_image src 변경
-						console.log(realFath);
-						$.ajax({
-							method: 'POST',
-							url: 'ie_photo_upload.php',
-							data: {ieImageSrc: realFath},
-							success: function(res){
-								convertPath = res;
-								// alert(res);
-								console.log("저장 후:"+convertPath);
-							 // alert(convertPath);
-							 $($ori_image).attr('src', convertPath);
-							 image_crop();
-							}
-						});
-			/*
-						alert("1111");
-						alert("1111");
-						alert("1111");
-						console.log("저장 후:"+convertPath);
-						// alert(convertPath);
-						$($ori_image).attr('src', convertPath);
-						image_crop();
-						*/
-					}
+	if (input.files && input.files[0]) {
+		file = files[0];
+		if (/^image\/\w+$/.test(file.type)) {
+			blobURL = URL.createObjectURL(file);
+			$ori_image.one('built.cropper', function () {
+							// Revoke when load complete
+							URL.revokeObjectURL(blobURL);
+						}).cropper('reset').cropper('replace', blobURL);
+			$($inputImage).val('');
+		} else {
+			window.alert('Please choose an image file.');
+					// }
+					// var reader = new FileReader();
+					// reader.onload = function (e) {
+					//     alert("onload");
+					//     $($ori_image).attr('src', e.target.result);
+					//     image_crop();
+		}
+					// realFath = input.files[0].name;
+					// reader.readAsDataURL(input.files[0]);
+	}else if(input.value){ // 조건 수정 ?
+			//이미지 저장후에 불러와서 $ori_image src 변경
+			console.log(realFath);
+			$.ajax({
+				method: 'POST',
+				url: 'ie_photo_upload.php',
+				data: {ieImageSrc: realFath},
+				success: function(res){
+					convertPath = res;
+					// alert(res);
+					console.log("저장 후:"+convertPath);
+				 // alert(convertPath);
+				 $($ori_image).attr('src', convertPath);
+				 image_crop();
 				}
+			});
+		/*
+					alert("1111");
+					alert("1111");
+					alert("1111");
+					console.log("저장 후:"+convertPath);
+					// alert(convertPath);
+					$($ori_image).attr('src', convertPath);
+					image_crop();
+					*/
+	}
+}
 
 				$($inputImage).change(function(){
 					inputImageCheck = "Y";
@@ -233,18 +233,18 @@ function preview_img()
 				});
 
 
-				function dream_next()
-				{
-					if (sel_dream == null)
-					{
-						alert("당신의 어린시절 꿈을 선택해 주세요.");
-						return false;
-					}
-					if (inputImageCheck !== "Y")
-					{
-						alert("이미지를 업로드해주세요.");
-						return false;
-					}
+function dream_next()
+{
+		if (sel_dream == null)
+		{
+			alert("당신의 어린시절 꿈을 선택해 주세요.");
+			return false;
+		}
+		if (inputImageCheck !== "Y")
+		{
+			alert("이미지를 업로드해주세요.");
+			return false;
+		}
 		//mb_job    = $("#mb_job").val();
 
 		// 사진 저장할 내용 추가
@@ -255,7 +255,7 @@ function preview_img()
 			method: 'POST',
 			url: '../main_exec.php',
 			data: {
-				exec			: "input_image",
+				exec		: "input_image",
 				canvasurl	: canvasImageURL,
 				mb_job		: sel_dream
 			},

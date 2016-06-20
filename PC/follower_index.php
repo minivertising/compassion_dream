@@ -142,7 +142,7 @@ Loading.... 꿈이 필요한 아이와 매칭중
 //     image_crop();
 // });
 
-function image_crop(type){
+function image_crop(){
 	$($ori_image).cropper({
 		viewMode: 0,
 		dragMode: 'move',
@@ -156,29 +156,31 @@ function image_crop(type){
 		cropBoxResizable: false,
 		preview: '.preview',
 		center:true,
-
+		zoomOnWheel:false,
+		zoomOnTouch:false,
+		toggleDragModeOnDblclick:false,
 		build: function (e) {
 			console.log(e.type);
 		},
 		built: function (e) {
 			console.log(e.type);
 		},
-	cropstart: function (e) {
-		console.log(e.type, e.action);
-	},
-	cropper: function (e) {
-		console.log(e.type, e.action);
-	},
-	cropend: function (e) {
-		console.log(e.type, e.action);
-	},
-	crop: function (e) {
-		console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
-	},
-	zoom: function (e) {
-		console.log(e.type, e.ratio);
-	}
-});
+		cropstart: function (e) {
+			console.log(e.type, e.action);
+		},
+		cropper: function (e) {
+			console.log(e.type, e.action);
+		},
+		cropend: function (e) {
+			console.log(e.type, e.action);
+		},
+		crop: function (e) {
+			console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
+		},
+		zoom: function (e) {
+			console.log(e.type, e.ratio);
+		}
+	});
 }
 // });
 
@@ -190,6 +192,15 @@ function preview_img()
 		open_pop('preview_popup');
 
 	}
+
+function zoom_action(type){
+	if(type=="up")
+	{
+		$($ori_image).cropper('zoom', 0.1);
+	}else{
+		$($ori_image).cropper('zoom', -0.1);
+	}
+}
 
 	function readURL(input) {
 		if (input.files && input.files[0]) {
