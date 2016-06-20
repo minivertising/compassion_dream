@@ -104,6 +104,9 @@ function image_crop(){
         cropBoxResizable: false,
         preview: '.preview',
         center:true,
+        zoomOnWheel:false,
+        zoomOnTouch:false,
+        toggleDragModeOnDblclick:false,
 
         build: function (e) {
           console.log(e.type);
@@ -129,6 +132,15 @@ function image_crop(){
     });
 }
 // });
+
+function zoom_action(type){
+  if(type=="up")
+  {
+    $($ori_image).cropper('zoom', 0.1);
+  }else{
+    $($ori_image).cropper('zoom', -0.1);
+  }
+}
 
 function preview_img()
 {

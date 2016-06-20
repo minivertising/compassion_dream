@@ -29,7 +29,10 @@
       <a href="#" onclick="dream_next();return false;">업로드 완료
       </a>
       <a href="#" onclick="preview_img();return false;">미리보기</a>
-      </div>
+      <br/>
+      <input type="button" id="zoomUp" value="확대+" onclick="zoom_action('up');return false;">&nbsp;
+      <input type="button" id="zoomDown" value="축소-" onclick="zoom_action('down');return false;">
+    </div>
   </div>
   <!-- </div> -->
   <!--END : 꿈 선택 팝업-->
