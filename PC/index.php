@@ -121,31 +121,42 @@ function image_crop(type){
 		cropBoxResizable: false,
 		preview: '.preview',
 		center:true,
-
+		zoomOnWheel:false,
+		zoomOnTouch:false,
+		toggleDragModeOnDblclick:false,
 		build: function (e) {
 			console.log(e.type);
 		},
 		built: function (e) {
 			console.log(e.type);
 		},
-	cropstart: function (e) {
-		console.log(e.type, e.action);
-	},
-	cropper: function (e) {
-		console.log(e.type, e.action);
-	},
-	cropend: function (e) {
-		console.log(e.type, e.action);
-	},
-	crop: function (e) {
-		console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
-	},
-	zoom: function (e) {
-		console.log(e.type, e.ratio);
-	}
-});
+		cropstart: function (e) {
+			console.log(e.type, e.action);
+		},
+		cropper: function (e) {
+			console.log(e.type, e.action);
+		},
+		cropend: function (e) {
+			console.log(e.type, e.action);
+		},
+		crop: function (e) {
+			console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
+		},
+		zoom: function (e) {
+			console.log(e.type, e.ratio);
+		}
+	});
 }
 // });
+
+function zoom_action(type){
+	if(type=="up")
+	{
+		$($ori_image).cropper('zoom', 0.1);
+	}else{
+		$($ori_image).cropper('zoom', -0.1);
+	}
+}
 
 function preview_img()
 {
