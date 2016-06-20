@@ -81,6 +81,11 @@ switch ($_REQUEST['exec'])
 				$query 	= "INSERT INTO ".$_gl['activator_info_table']."(mb_ipaddr,mb_name,mb_phone,mb_job,mb_child,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_name."','".$mb_phone."','".$mb_job."','".$child_arr[0]."','".$mb_image."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
 				$result 	= mysqli_query($my_db, $query);
 
+				if ($result)
+					$flag	= "Y||".$child_arr[1]."||".$mb_serial;
+				else
+					$flag	= "N||fail||N";
+
 			}else{
 				// 매칭된 아이가 결연 되지 않았을 경우
 				$flag	= "C||fail||".$mb_serial;
