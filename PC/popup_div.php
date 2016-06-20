@@ -17,7 +17,7 @@
       <option value="doctor">의사</option>
       <option value="teacher">선생님</option>
     </select> --><br />
-    <div id="img_div" style="width:100%; height:100%;">
+    <div id="img_div" style="width:80%; ">
       <img id="ori_image" src="./images/picture.jpg" alt="Picture">
     </div>
     <div>
@@ -115,9 +115,7 @@
 
   <!-- 매칭된 아이가 없을때 결과 확인 & 공유 팝업-->
   <div id="no_matching_popup" class="popup_wrap" style="background:white;">
-    <!-- <div>
-	  <img src="#" style="width:100%" id="no_matching_child_pic">
-	</div> -->
+    <h2>컴페션 소개 링크 공유 팝업</h2>
     <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
     <a href="#" onclick="sns_share('fb','act');">페이스북</a>
     <a href="#" onclick="sns_share('kt','act');">카톡</a>

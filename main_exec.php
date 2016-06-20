@@ -59,22 +59,45 @@ switch ($_REQUEST['exec'])
 		$mb_image			= $_REQUEST['mb_image'];
 		$media				= $_SESSION['ss_media'];
 
-		/*
-		아이 매칭 로직이 추가 되어야 함.
-		*/
-		$child_info	= matching_child($mb_job);
+		$dupli_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE mb_phone='".$mb_phone."'";
+		$dupli_result 	= mysqli_query($my_db, $dupli_query);
+		$dupli_data		= mysqli_fetch_array($dupli_result);
 
-		$mb_serial	= create_serial("activator", null);
+		if ($dupli_data)
+		{
+			// 이벤트 참여한적이 있을 경우
+			$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$dupli_data['mb_child']."'";
+			$ch_result 	= mysqli_query($my_db, $ch_query);
+			$ch_data		= mysqli_fetch_array($ch_result);
 
-		$child_arr	= explode("||",$child_info);
-		$query 	= "INSERT INTO ".$_gl['activator_info_table']."(mb_ipaddr,mb_name,mb_phone,mb_job,mb_child,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_name."','".$mb_phone."','".$mb_job."','".$child_arr[0]."','".$mb_image."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
-		$result 	= mysqli_query($my_db, $query);
+			$mb_serial	= create_serial("activator", null);
 
-		if ($result)
-			$flag	= "Y||".$child_arr[1]."||".$mb_serial;
-		else
-			$flag	= "N||fail||N";
+			if ($ch_data['ch_choice'] == "Y")
+			{
+				// 매칭된 아이가 결연 되었을 경우
+				$child_info	= matching_child($mb_job);
 
+				$child_arr	= explode("||",$child_info);
+				$query 	= "INSERT INTO ".$_gl['activator_info_table']."(mb_ipaddr,mb_name,mb_phone,mb_job,mb_child,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_name."','".$mb_phone."','".$mb_job."','".$child_arr[0]."','".$mb_image."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
+				$result 	= mysqli_query($my_db, $query);
+
+			}else{
+				// 매칭된 아이가 결연 되지 않았을 경우
+				$flag	= "C||fail||".$mb_serial;
+			}
+		}else{
+			// 이벤트 참여한적이 없을 경우
+			$child_info	= matching_child($mb_job);
+
+			$child_arr	= explode("||",$child_info);
+			$query 	= "INSERT INTO ".$_gl['activator_info_table']."(mb_ipaddr,mb_name,mb_phone,mb_job,mb_child,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_name."','".$mb_phone."','".$mb_job."','".$child_arr[0]."','".$mb_image."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
+			$result 	= mysqli_query($my_db, $query);
+
+			if ($result)
+				$flag	= "Y||".$child_arr[1]."||".$mb_serial;
+			else
+				$flag	= "N||fail||N";
+		}
 		echo $flag;
 	break;
 

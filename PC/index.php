@@ -338,7 +338,9 @@ function preview_img()
 				{
 					$("#matching_child_pic").attr("src",rs_ch[1]);
 					open_pop('share_popup');
-				}else {
+				}else if (rs_ch[0] == "C"){
+					open_pop('no_matching_popup');
+				}else{
 					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
 					location.reload();
 				}
