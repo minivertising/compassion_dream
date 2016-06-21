@@ -189,7 +189,7 @@ function preview_img()
 /*
 		사진 저장할 내용 추가
 		*/
-		open_pop('preview_popup');
+		open_pop('f_preview_popup');
 
 	}
 
