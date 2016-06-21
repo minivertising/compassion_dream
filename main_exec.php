@@ -34,13 +34,15 @@ switch ($_REQUEST['exec'])
 			$a_query 	= "UPDATE ".$_gl['activator_info_table']." SET shareYN='Y' WHERE mb_serial='".$mb_serial."'";
 			$a_result 	= mysqli_query($my_db, $a_query);
 
+			if ($mb_data['mb_lms'] == "N")
+				send_lms($mb_data['mb_phone'], $mb_serial);
+
 		}else{
 			$f_query 	= "UPDATE ".$_gl['follower_info_table']." SET shareYN='Y' WHERE mb_serial='".$mb_serial."'";
 			$f_result 	= mysqli_query($my_db, $f_query);
 
 		}
 
-		send_lms($mb_data['mb_phone'], $mb_serial);
 
 		if ($result)
 			$flag = "Y";
