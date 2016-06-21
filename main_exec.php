@@ -63,14 +63,13 @@ switch ($_REQUEST['exec'])
 		$dupli_result 	= mysqli_query($my_db, $dupli_query);
 		$dupli_data		= mysqli_fetch_array($dupli_result);
 
+		$mb_serial	= create_serial("activator", null);
 		if ($dupli_data)
 		{
 			// 이벤트 참여한적이 있을 경우
 			$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$dupli_data['mb_child']."'";
 			$ch_result 	= mysqli_query($my_db, $ch_query);
 			$ch_data		= mysqli_fetch_array($ch_result);
-
-			$mb_serial	= create_serial("activator", null);
 
 			if ($ch_data['ch_choice'] == "Y")
 			{
