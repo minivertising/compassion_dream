@@ -3,7 +3,7 @@
 		// print_r($_POST);
 
 	  	$targ_src = $_POST['ieImageSrc'];
-	  	$img_info = getimagesize($targ_src);
+	  	$img_info = getimagesize(stripslashes($targ_src));
 		$targ_w = $img_info[0];
 	  	$targ_h = $img_info[1];
 	  	$targ_dir = "./images/";
