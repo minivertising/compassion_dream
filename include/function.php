@@ -74,8 +74,17 @@
 		global $_gl;
 		global $my_db;
 
+/*
 		// ch_choice = Y = 결연까지 이루어진 아이, S = 공유까지 이루어진 아이, M = 매칭까지 이루어진 아이, N = 공유, 결연이 모두 이루어지지 않은 아이
 		$ch_query		= "SELECT * FROM ".$_gl['child_info_table']." WHERE ch_dream='".$job."' AND ch_choice='N' limit 1";
+		$ch_result		= mysqli_query($my_db, $ch_query);
+		$ch_data		= mysqli_fetch_array($ch_result);
+
+		$choice_query		= "UPDATE ".$_gl['child_info_table']." SET ch_choice='M' WHERE idx='".$ch_data['idx']."'";
+		$choice_result		= mysqli_query($my_db, $choice_query);
+*/
+		// ch_choice = Y = 결연까지 이루어진 아이, S = 공유까지 이루어진 아이, M = 매칭까지 이루어진 아이, N = 공유, 결연이 모두 이루어지지 않은 아이
+		$ch_query		= "SELECT * FROM ".$_gl['child_info_table']." WHERE ch_choice='N' limit 1";
 		$ch_result		= mysqli_query($my_db, $ch_query);
 		$ch_data		= mysqli_fetch_array($ch_result);
 
