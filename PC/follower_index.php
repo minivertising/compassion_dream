@@ -184,7 +184,7 @@ function image_crop(){
 }
 // });
 
-function preview_img()
+function f_preview_img()
 {
 /*
 		사진 저장할 내용 추가
