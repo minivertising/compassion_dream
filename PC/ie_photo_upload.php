@@ -2,9 +2,11 @@
 
 		// print_r($_POST);
 
-	  	//$targ_src = $_POST['ieImageSrc'];
-	  	$targ_src = "../files/20160621/compassion_20160621164405.jpg";
+	  	$targ_src = $_POST['ieImageSrc'];
+	  	// $targ_src = str_replace("\ ", "/", $targ_src);
+	  	// echo $targ_src;
 	  	$img_info = getimagesize($targ_src);
+		// echo $img_info;
 		$targ_w = $img_info[0];
 	  	$targ_h = $img_info[1];
 	  	$targ_dir = "./images/";
