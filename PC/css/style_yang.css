@@ -326,6 +326,16 @@ body.main{
 	padding-bottom:10px;
 	font-weight:bold;
 }
+.wrap_sec_top_sub .title .sub{
+	font-size:14px;
+}
+.wrap_sec_top_sub.match_child .title .sub span{
+	font-size:14px;
+}
+.wrap_sec_top_sub.match_child .title .sub{
+	font-size:14px;
+	letter-spacing:-1px;
+}
 
 .wrap_sec_top_sub .block_btn{
 	text-align:center;
@@ -370,6 +380,184 @@ body.main{
 }
 
 
+.wrap_sec_top_sub.input_data .title{
+	padding-top:50px;
+}
+.wrap_sec_top_sub.input_data .block_input{
+	width:480px;
+	padding:20px 80px;
+	margin:0 auto;
+	background:#eaf4ff;
+}
+
+.wrap_sec_top_sub.input_data .block_input .input_one{
+	width:100%;
+}
+
+.wrap_sec_top_sub.input_data .block_input .input_one .label,
+.wrap_sec_top_sub.input_data .block_input .input_one .input{
+	float:left;
+}
+
+
+.wrap_sec_top_sub.input_data .block_input .input_one .label{
+	width:100px;
+	padding-top:10px;
+}
+.wrap_sec_top_sub.input_data .block_input .input_one .input{
+	width:200px;
+	background:#fff;
+	padding:5px;
+	border:1px solid #ccc;
+}
+
+.wrap_sec_top_sub.input_data .block_input .input_one .input input{
+	width:100%;
+	letter-spacing:0;
+	font-size:15px;
+}
+.wrap_sec_top_sub.input_data .block_input .check{
+	border-top:1px solid #91a0af;
+	padding-top:20px;
+	margin-top:20px;
+	line-height:19px;
+	font-size:14px;
+}
+
+
+.wrap_sec_top_sub.match_child .title{
+	font-size:25px;
+	font-weight:bold;
+	line-height:35px;
+	letter-spacing:-3px;
+}
+.wrap_sec_top_sub.match_child .title span{
+	color:#1055a1;
+	font-size:30px;
+}
+
+.wrap_sec_top_sub.match_child .block_child{
+	background:#ececec;
+	padding:20px 0;
+}
+.wrap_sec_top_sub.match_child .block_child .inner_block_child{
+	width:100%;
+}
+.wrap_sec_top_sub.match_child .block_child .inner_block_child .child_pic,
+.wrap_sec_top_sub.match_child .block_child .inner_block_child .child_text{
+	float:left;
+	width:60%;
+}
+.wrap_sec_top_sub.match_child .block_child .inner_block_child .child_pic{
+	width:35%;
+	padding-left:5%;
+}
+.wrap_sec_top_sub.match_child .block_child .inner_block_child .child_pic img{
+	width:180px;
+}
+
+.wrap_sec_top_sub.match_child .block_txt{
+	text-align:center;
+	font-size:16px;
+	color:#333;
+	line-height:20px;
+	padding-top:20px;
+}
+.wrap_sec_top_sub.match_child .block_btn.howtotag{
+	text-align:center;
+}
+
+
+
+
+.wrap_sec_top_sub.match_child.follower .block_child{
+}
+.wrap_sec_top_sub.match_child.follower .block_child .inner_block_child{
+	width:100%;
+}
+
+
+.wrap_sec_top_sub.match_child.follower .block_btn.apply{
+	padding:20px 20px 40px;
+}
+.wrap_sec_top_sub.match_child.follower .example{
+	width:500px;
+	text-align:center;
+	margin:0 auto;
+}
+
+
+
+.wrap_sec_top_sub.storytelling{
+	position:relative;
+	padding:20px 0 0;
+}
+.wrap_sec_top_sub.storytelling .block_content{
+	position:relative;
+}
+
+.wrap_sec_top_sub.storytelling .block_content .arrw_left{
+	position:absolute;
+	display:block;
+	top:50%;
+	left:20px;
+	width:35px;
+}
+
+.wrap_sec_top_sub.storytelling .block_content .arrw_right{
+	position:absolute;
+	display:block;
+	top:50%;
+	right:20px;
+}
+
+.wrap_sec_top_sub.storytelling .block_content .block_btn{
+	position:absolute;
+	bottom:40px;
+	left:50%;
+	margin-left:-95px;
+}
+.wrap_sec_top_sub.storytelling .block_content .story_txt{
+	position:absolute;
+	width:100%;
+	text-align:center;
+	top:70%;
+	font-size:30px;
+	font-weight:bold;
+}
+.wrap_sec_top_sub.storytelling .block_content .story_txt p{
+	padding-bottom:15px;
+}
+
+.wrap_sec_top_sub.storytelling .block_content .dot{
+	position:absolute;
+	top:59.2%;
+	left:50%;
+	width:150px;
+	margin-left:-75px;
+	background:#1f2122;
+	border-radius:100px;
+	padding:7px 0 3px;
+	text-align:center;
+}
+
+
+
+
+.wrap_sec_top_sub.loading{
+	position:relative;
+	padding:20px 0 0;
+}
+
+.wrap_sec_top_sub.loading .block_content{
+	width:900px;
+	height:770px;
+	background:none;
+	margin:0 auto 0;
+	border-radius:20px;
+}
+
+
 
 /*popup*/
 .popup_wrap {
@@ -380,6 +568,13 @@ body.main{
 	width:750px;
 	height:640px;
 }
+.p_howto_share{
+	width:750px;
+	height:640px;
+	border-radius:20px;
+	background:#fff;
+}
+
 
 
 .popup_wrap .btn_close{
@@ -410,6 +605,20 @@ body.main{
 	margin:0 auto;
 	padding:3px 0;
 	border-radius:4px;
+}
+
+
+.p_howto_share .navi{
+	width:670px;
+	margin:0 auto;
+	padding-top:30px;
+}
+.p_howto_share .howto_img{
+	text-align:center;
+	padding-bottom:20px;
+}
+.p_howto_share .btn_block{
+	text-align:center;
 }
 
 
