@@ -223,7 +223,6 @@ function readURL(input) {
 }
 
 $($inputImage).change(function(){
-    alert("aaa");
     inputImageCheck = "Y";
     files = this.files;
 // console.dir(this);
