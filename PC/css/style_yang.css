@@ -102,6 +102,10 @@ body{
 /*  background:url(../images/bg.jpg);*/
 	width:100%;
 }
+body.bg_sub_page{
+	background:url(../images/bg_movie.jpg) repeat;
+}
+
 .img_100,
 .w_100{
 	width:100%;
@@ -293,6 +297,72 @@ body.main{
 }
 
 
+
+
+
+.wrap_sec_top_sub{
+	position:relative;
+	padding:20px 0 0;
+}
+
+.wrap_sec_top_sub .logo{
+	position: absolute;
+	top:20px;
+	left:20px;
+}
+.wrap_sec_top_sub .block_content{
+	width:900px;
+	height:770px;
+	background:#fff;
+	margin:0 auto 0;
+	border-radius:20px;
+}
+.wrap_sec_top_sub .title{
+	text-align:center;
+	padding:35px 0 20px;
+}
+.wrap_sec_top_sub .title .main{
+	font-size:30px;
+	padding-bottom:10px;
+	font-weight:bold;
+}
+
+.wrap_sec_top_sub .block_btn{
+	text-align:center;
+	padding-top:20px;
+}
+.wrap_sec_top_sub .block_input_dream{
+	width:720px;
+	margin:0 auto;
+	text-align:center;
+}
+.wrap_sec_top_sub .block_input_dream .selec_job{
+	background:#1055a1;
+}
+
+.wrap_sec_top_sub .block_input_dream .upload_pic{
+	margin-top:2px;
+}
+.wrap_sec_top_sub .block_input_dream .upload_pic .title_pic{
+	background:#1055a1;
+}
+
+.wrap_sec_top_sub .block_input_dream .upload_pic .desc{
+	background:#003f7b;
+	padding:20px 0;
+}
+
+.wrap_sec_top_sub .block_input_dream .upload_pic .desc .txt_pic{
+	padding-bottom:10px;
+}
+
+.wrap_sec_top_sub .block_input_dream .upload_pic .pic_area{
+	border:3px solid #003f7b;
+	height:265px;
+}
+
+
+
 /*popup*/
 .popup_wrap {
 	position:relative;
@@ -303,48 +373,4 @@ body.main{
 	width:500px;
 	height:500px;
 	border:1px solid #000;
-}
-/*popup 사이즈 조절*/
-.popup_wrap .p_basic.agree_1{
-}
-.popup_wrap .p_basic.input_info{
-}
-.popup_wrap .p_basic.comp_1{
-}
-
-.popup_wrap .p_basic.howto{
-}
-.popup_wrap .p_basic.gift{
-}
-
-.popup_wrap .p_basic .block_close{
-	position:absolute;
-	width:99%;
-	text-align:right;
-	padding-right:1%;
-	padding-top:5px;
-	z-index:199;
-}
-.popup_wrap .p_basic .block_content{
-	z-index:200;
-}
-
-
-.popup_wrap .p_basic .block_content .sec_title{
-	text-align:center;
-}
-.popup_wrap .p_basic .block_content .sec_input{
-}
-.popup_wrap .p_basic .block_content .sec_input.name{
-}
-.popup_wrap .p_basic .block_content .sec_input.phone{
-}
-.popup_wrap .p_basic .block_content .sec_ckeck{
-}
-
-.popup_wrap .p_basic .block_content .sec_sns{
-}
-.popup_wrap .p_basic .block_content .sec_btn{
-	text-align:center;
-	padding:10px 0;
 }
