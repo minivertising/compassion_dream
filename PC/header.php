@@ -41,7 +41,6 @@
 	}
 ?>
 <meta property="og:description" content="Compassion BLUE BATON CHALLENGE">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" type="image/x-icon" href="./img/icon/favicon.ico" />
 <title>PC MAIN</title>
 <!--[if lt IE 9]><script src="./js/html5shiv.js"></script><![endif]-->

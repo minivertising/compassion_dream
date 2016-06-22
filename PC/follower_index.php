@@ -159,27 +159,27 @@ function image_crop(){
 		zoomOnWheel:false,
 		zoomOnTouch:false,
 		toggleDragModeOnDblclick:false,
-		build: function (e) {
-			console.log(e.type);
-		},
-		built: function (e) {
-			console.log(e.type);
-		},
-		cropstart: function (e) {
-			console.log(e.type, e.action);
-		},
-		cropper: function (e) {
-			console.log(e.type, e.action);
-		},
-		cropend: function (e) {
-			console.log(e.type, e.action);
-		},
-		crop: function (e) {
-			console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
-		},
-		zoom: function (e) {
-			console.log(e.type, e.ratio);
-		}
+		// build: function (e) {
+		// 	console.log(e.type);
+		// },
+		// built: function (e) {
+		// 	console.log(e.type);
+		// },
+		// cropstart: function (e) {
+		// 	console.log(e.type, e.action);
+		// },
+		// cropper: function (e) {
+		// 	console.log(e.type, e.action);
+		// },
+		// cropend: function (e) {
+		// 	console.log(e.type, e.action);
+		// },
+		// crop: function (e) {
+		// 	console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
+		// },
+		// zoom: function (e) {
+		// 	console.log(e.type, e.ratio);
+		// }
 	});
 }
 // });
@@ -227,7 +227,7 @@ function zoom_action(type){
 			        $($ori_image).cropper('destroy');
 			        $('#f_ie_img_save').ajaxSubmit({
 			            success: function (data) {
-			                console.dir(data);
+			                // console.dir(data);
 			                $($ori_image).attr('src', data);
 			                image_crop();
 			            }
@@ -348,7 +348,7 @@ function zoom_action(type){
 			},
 			url: "../main_exec.php",
 			success: function(res){
-				console.log(res);
+				// console.log(res);
 			}
 		});
 	}
