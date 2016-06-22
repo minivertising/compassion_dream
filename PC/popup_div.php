@@ -59,11 +59,12 @@
       <img id="f_ori_image" src="./images/picture.jpg" alt="Picture">
     </div>
     <div>
-      <label for="f_inputImage" title="Upload image file">
-        <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
-        <span title="Import image with Blob URLs">Upload</span>
-      </label>
-
+      <form id="f_ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
+        <label for="f_inputImage" title="Upload image file">
+          <input type="file" id="f_inputImage" class="sr-only" name="file" accept="image/*">
+          <span title="Import image with Blob URLs">Upload</span>
+        </label>
+      </form>
       <a href="#" onclick="f_dream_next();return false;">업로드 완료
       </a>
       <a href="#" onclick="f_preview_img();return false;">미리보기</a>

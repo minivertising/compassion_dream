@@ -223,46 +223,50 @@ function zoom_action(type){
 					}
 						// realFath = input.files[0].name;
 						// reader.readAsDataURL(input.files[0]);
-				}else if(input.value){ // 조건 수정 ?
-						//이미지 저장후에 불러와서 $ori_image src 변경
-						console.log(realFath);
-						$.ajax({
-							method: 'POST',
-							url: 'ie_photo_upload.php',
-							data: {ieImageSrc: realFath},
-							success: function(res){
-								convertPath = res;
-								// alert(res);
-								console.log("저장 후:"+convertPath);
-							 // alert(convertPath);
-							 $($ori_image).attr('src', convertPath);
-							 image_crop();
-							}
-						});
-			/*
-						alert("1111");
-						alert("1111");
-						alert("1111");
-						console.log("저장 후:"+convertPath);
-						// alert(convertPath);
-						$($ori_image).attr('src', convertPath);
-						image_crop();
-						*/
-					}
-				}
+				}else if((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1)){
+			        $($ori_image).cropper('destroy');
+			        $('#f_ie_img_save').ajaxSubmit({
+			            success: function (data) {
+			                console.dir(data);
+			                $($ori_image).attr('src', data);
+			                image_crop();
+			            }
+			        });
+			            // $('#ie_img_save').ajaxForm({
+			            //     success: function (data) {
+			            //         console.dir(data);
+			            //     }
+			            // });
+			            //이미지 저장후에 불러와서 $ori_image src 변경
+			            // console.log(realFath);
+			            // $.ajax({
+			            //  method: 'POST',
+			            //  url: 'ie_photo_upload.php',
+			            //  data: {ieImageSrc: realFath},
+			            //  success: function(res){
+			            //      // convertPath = res;
+			            //      alert(res);
+			            //      // console.log("저장 후:"+convertPath);
+			            //   // // alert(convertPath);
+			            //   // $($ori_image).attr('src', convertPath);
+			            //   // image_crop();
+			            //  }
+			            // });
+			    }
+			}
 
 				$($inputImage).change(function(){
 					inputImageCheck = "Y";
 					files = this.files;
 				// console.dir(this);
-				if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
-					$($ori_image).cropper('destroy');
-					this.select();
-					realFath = document.selection.createRangeCollection()[0].text.toString();
-					this.blur();
-						// var size = getImgSize(this);
-						// console.log(size.naturalWidth);
-					}
+				// if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+				// 	$($ori_image).cropper('destroy');
+				// 	this.select();
+				// 	realFath = document.selection.createRangeCollection()[0].text.toString();
+				// 	this.blur();
+				// 		// var size = getImgSize(this);
+				// 		// console.log(size.naturalWidth);
+				// 	}
 					readURL(this);
 				});
 
