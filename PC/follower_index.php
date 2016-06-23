@@ -202,58 +202,58 @@ function zoom_action(type){
     }
 }
 
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            file = files[0];
-            if (/^image\/\w+$/.test(file.type)) {
-                blobURL = URL.createObjectURL(file);
-                $ori_image.one('built.cropper', function () {
-                                // Revoke when load complete
-                                URL.revokeObjectURL(blobURL);
-                            }).cropper('reset').cropper('replace', blobURL);
-                $($inputImage).val('');
-            } else {
-                window.alert('Please choose an image file.');
-                        // }
-                        // var reader = new FileReader();
-                        // reader.onload = function (e) {
-                        //     alert("onload");
-                        //     $($ori_image).attr('src', e.target.result);
-                        //     image_crop();
-                    }
-                        // realFath = input.files[0].name;
-                        // reader.readAsDataURL(input.files[0]);
-        }else if((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1)){
-            $($ori_image).cropper('destroy');
-            $('#f_ie_img_save').ajaxSubmit({
-                success: function (data) {
-                    // console.dir(data);
-                    $($ori_image).attr('src', data);
-                    image_crop();
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        file = files[0];
+        if (/^image\/\w+$/.test(file.type)) {
+            blobURL = URL.createObjectURL(file);
+            $ori_image.one('built.cropper', function () {
+                            // Revoke when load complete
+                            URL.revokeObjectURL(blobURL);
+                        }).cropper('reset').cropper('replace', blobURL);
+            $($inputImage).val('');
+        } else {
+            window.alert('Please choose an image file.');
+                    // }
+                    // var reader = new FileReader();
+                    // reader.onload = function (e) {
+                    //     alert("onload");
+                    //     $($ori_image).attr('src', e.target.result);
+                    //     image_crop();
                 }
-            });
-                        // $('#ie_img_save').ajaxForm({
-                        //     success: function (data) {
-                        //         console.dir(data);
-                        //     }
-                        // });
-                        //이미지 저장후에 불러와서 $ori_image src 변경
-                        // console.log(realFath);
-                        // $.ajax({
-                        //  method: 'POST',
-                        //  url: 'ie_photo_upload.php',
-                        //  data: {ieImageSrc: realFath},
-                        //  success: function(res){
-                        //      // convertPath = res;
-                        //      alert(res);
-                        //      // console.log("저장 후:"+convertPath);
-                        //   // // alert(convertPath);
-                        //   // $($ori_image).attr('src', convertPath);
-                        //   // image_crop();
-                        //  }
-                        // });
-                }
+                    // realFath = input.files[0].name;
+                    // reader.readAsDataURL(input.files[0]);
+    }else if((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1)){
+        $($ori_image).cropper('destroy');
+        $('#f_ie_img_save').ajaxSubmit({
+            success: function (data) {
+                // console.dir(data);
+                $($ori_image).attr('src', data);
+                image_crop();
             }
+        });
+            // $('#ie_img_save').ajaxForm({
+            //     success: function (data) {
+            //         console.dir(data);
+            //     }
+            // });
+            //이미지 저장후에 불러와서 $ori_image src 변경
+            // console.log(realFath);
+            // $.ajax({
+            //  method: 'POST',
+            //  url: 'ie_photo_upload.php',
+            //  data: {ieImageSrc: realFath},
+            //  success: function(res){
+            //      // convertPath = res;
+            //      alert(res);
+            //      // console.log("저장 후:"+convertPath);
+            //   // // alert(convertPath);
+            //   // $($ori_image).attr('src', convertPath);
+            //   // image_crop();
+            //  }
+            // });
+    }
+}
 
                 $($inputImage).change(function(){
                     inputImageCheck = "Y";
@@ -271,21 +271,76 @@ function zoom_action(type){
                 });
 
 
-                function f_dream_next()
-                {
-                    if (sel_dream == null)
-                    {
-                        alert("당신의 어린시절 꿈을 선택해 주세요.");
-                        return false;
-                    }
-                    if (inputImageCheck !== "Y")
-                    {
-                        alert("이미지를 업로드해주세요.");
-                        return false;
-                    }
+function f_dream_next()
+{
+    if (sel_dream == null)
+    {
+        alert("당신의 어린시절 꿈을 선택해 주세요.");
+        return false;
+    }
+    if (inputImageCheck !== "Y")
+    {
+        alert("이미지를 업로드해주세요.");
+        return false;
+    }
         //mb_job    = $("#mb_job").val();
 
+    if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
+        alert("ie8이하");
+        cropboxDataIE = $(ori_image).cropper('getData');
+        crop_image_url = $(ori_image).attr('src');
+           $.ajax({
+            method: 'POST',
+            url: '../main_exec.php',
+            data: {
+                exec            : "input_follower_IE",
+                crop_image_url  : crop_image_url,
+                cropboxData     : cropboxDataIE,
+                mb_child    : "<?=$mb_data['mb_child']?>",
+<?
+    if ($ugu == "act")
+    {
+?>
+                parent_idx  : "<?=$mb_data['idx']?>",
+<?
+    }else{
+?>
+                parent_idx  : "<?=$mb_data['parent_idx']?>",
+<?
+    }
+?>
+                mb_job      : "<?=$mb_data['mb_job']?>"
+            },
+            beforeSend: function(response){
+                alert(response);
+                $("#loading_div").show();
+                $("#contents_div").hide();
+            },
+            success: function(res){
+                // console.log(res);
+                alert(res);
+                //mb_image    = res;
+
+                var rs_ch = res.split("||");
+                mb_rs = rs_ch[1];
+                $("#loading_div").hide();
+                $("#contents_div").show();
+                if (rs_ch[0] == "Y")
+                {
+                    $("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
+                    open_pop('f_share_popup');
+                }else if (rs_ch[0] == "N"){
+                    open_pop('f_share_no_matching_popup');
+                }else {
+                    alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
+                    location.reload();
+                }
+            }
+        });
+
+    }else{
         // 사진 저장할 내용 추가
+        alert("ie9 이상 또는 ie 외 브라우저");
         var croppedImg = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
         var canvasImageURL = croppedImg.toDataURL("image/jpeg");
         $.ajax({
@@ -335,7 +390,9 @@ function zoom_action(type){
                 }
             }
         });
+        
     }
+}
 
     function Ins_share_cnt(serial, ugu,parent_idx)
     {

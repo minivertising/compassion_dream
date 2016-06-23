@@ -41,6 +41,7 @@ $total_pic_cnt      = total_pic_info();
 </html>
 <script type="text/javascript">
     var agent = navigator.userAgent.toLowerCase();
+    var trident = navigator.userAgent.match(/Trident\/(\d.\d)/i);
     var sel_dream       = null;
     var runner_serial   = null;
     var mb_job          = null;
@@ -56,6 +57,7 @@ $total_pic_cnt      = total_pic_info();
     var flag_sel_dream  = 0;
     var mb_rs       = null;
     var inputImageCheck;
+    
     $(document).ready(function() {
         Kakao.init('59df63251be6d99256b63b98f4948e89');
         $("#cboxTopLeft").hide();
@@ -68,8 +70,10 @@ $total_pic_cnt      = total_pic_info();
         $("#cboxBottomCenter").hide();
 
         Ins_tracking();
+
+      
     
-    });
+        });
     /*
         var $inputImage = $('#inputImage');
         var URL = window.URL || window.webkitURL;
@@ -241,8 +245,9 @@ $($inputImage).change(function(){
 });
 
 
-function dream_next()
-{
+function dream_next(){
+    var cropboxDataIE;
+    var crop_image_url;
         if (sel_dream == null)
         {
             alert("당신의 어린시절 꿈을 선택해 주세요.");
@@ -255,49 +260,98 @@ function dream_next()
         }
         //mb_job    = $("#mb_job").val();
 
-        // 사진 저장할 내용 추가
-        var croppedImg = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
-        var canvasImageURL = croppedImg.toDataURL("image/jpeg");
+        if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
+            alert("ie8이하");
+            cropboxDataIE = $(ori_image).cropper('getData');
+            crop_image_url = $(ori_image).attr('src');
+            // console.dir(cropboxData);
+            // console.dir(cropboxgetData);
+               $.ajax({
+                method: 'POST',
+                url: '../main_exec.php',
+                data: {
+                    exec            : "input_image_IE",
+                    crop_image_url  : crop_image_url,
+                    mb_job          : sel_dream,
+                    cropboxData     : cropboxDataIE,
+                },
+                beforeSend: function(response){
+                    alert(response);
+                    $("#loading_div").show();
+                    $("#contents_div").hide();
+                },
+                success: function(res){
+                    console.dir(res);
+                    // mb_image    = res;
 
-        $.ajax({
-            method: 'POST',
-            url: '../main_exec.php',
-            data: {
-                exec        : "input_image",
-                canvasurl   : canvasImageURL,
-                mb_job      : sel_dream
-            },
-            beforeSend: function(response){
-                alert(response);
-                $("#loading_div").show();
-                $("#contents_div").hide();
-            },
-            success: function(res){
-                // console.log(res);
-                alert(res);
-                //mb_image    = res;
-
-                var rs_ch = res.split("||");
-                $("#loading_div").hide();
-                $("#contents_div").show();
-                if (rs_ch[0] == "Y")
-                {
-                    // 매칭될 아이가 있을 경우
-                    mb_image    = rs_ch[1];
-                    open_pop('input_popup');
-                }else if (rs_ch[0] == "N"){
-                    // 매칭될 아이가 없을 경우
-                    mb_image    = rs_ch[1];
-                    mb_rs       = rs_ch[2];
-                    //$("#no_matching_child_pic").attr("src",mb_image);
-                    open_pop('no_matching_popup');
-                }else {
-                    // 에러
-                    alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
-                    location.reload();
+                    var rs_ch = res.split("||");
+                    $("#loading_div").hide();
+                    $("#contents_div").show();
+                    if (rs_ch[0] == "Y")
+                    {
+                        // 매칭될 아이가 있을 경우
+                        mb_image    = rs_ch[1];
+                        open_pop('input_popup');
+                    }else if (rs_ch[0] == "N"){
+                        // 매칭될 아이가 없을 경우
+                        mb_image    = rs_ch[1];
+                        mb_rs       = rs_ch[2];
+                        //$("#no_matching_child_pic").attr("src",mb_image);
+                        open_pop('no_matching_popup');
+                    }else {
+                        // 에러
+                        alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
+                        location.reload();
+                    }
                 }
-            }
-        });
+            });
+
+        }else{
+            alert("ie9이상 또는 ie 외 브라우저");
+            // 사진 저장할 내용 추가
+            var croppedCanvas = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
+            crop_image_url = croppedCanvas.toDataURL("image/jpeg");
+            $.ajax({
+                method: 'POST',
+                url: '../main_exec.php',
+                data: {
+                    exec            : "input_image",
+                    crop_image_url  : crop_image_url,
+                    mb_job          : sel_dream
+                },
+                beforeSend: function(response){
+                    alert(response);
+                    $("#loading_div").show();
+                    $("#contents_div").hide();
+                },
+                success: function(res){
+                    // console.log(res);
+                    alert(res);
+                    //mb_image    = res;
+
+                    var rs_ch = res.split("||");
+                    $("#loading_div").hide();
+                    $("#contents_div").show();
+                    if (rs_ch[0] == "Y")
+                    {
+                        // 매칭될 아이가 있을 경우
+                        mb_image    = rs_ch[1];
+                        open_pop('input_popup');
+                    }else if (rs_ch[0] == "N"){
+                        // 매칭될 아이가 없을 경우
+                        mb_image    = rs_ch[1];
+                        mb_rs       = rs_ch[2];
+                        //$("#no_matching_child_pic").attr("src",mb_image);
+                        open_pop('no_matching_popup');
+                    }else {
+                        // 에러
+                        alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
+                        location.reload();
+                    }
+                }
+            });
+        }
+
 /*
         $.ajax({
             method: 'POST',

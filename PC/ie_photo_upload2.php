@@ -43,7 +43,7 @@
         imagecopyresampled($vDstImg, $vImg, 0, 0, 0, 0, $aSize[0], $aSize[1], $aSize[0], $aSize[1]);
 
         // define a result image filename
-        $sResultFileName = $sTempFileName . $sExt;
+        $sResultFileName = $sTempFileName . ".jpg";
 
         // output image to file
         imagejpeg($vDstImg, $sResultFileName, 85);
