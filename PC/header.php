@@ -58,7 +58,9 @@
 <script type="text/javascript" src="../lib/colorbox/jquery.colorbox-min.js"></script>
 <script src="../lib/bxslider/jquery.bxslider.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-
+<!--[if lt IE 9]>
+<script src="../js/html5shiv.js"></script>
+<![endif]-->
 <style>
 .container {
 	max-width: 100%;
