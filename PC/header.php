@@ -58,7 +58,8 @@
 <script type="text/javascript" src="../lib/colorbox/jquery.colorbox-min.js"></script>
 <script src="../lib/bxslider/jquery.bxslider.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-<!--[if lte IE 8]><script type="text/javascript" src="../js/excanvas.js"></script><![endif]--><style>
+<!--[if lte IE 8]><script type="text/javascript" src="../js/excanvas.js"></script><script type="text/javascript" src="../js/svg2vml.js"></script><![endif]-->
+<style>
 .container {
 	max-width: 100%;
 }
