@@ -1,4 +1,80 @@
 <div style="display:none;">
+  <!--직업선택팝업--> 
+  <div id="job_popup" class="popup_wrap p_select_job">
+    <div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_close.png" /></a></div>
+    <div class="inner_p_select_job clearfix">
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('cook','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('cook','');return false;">요리사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('doctor','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('doctor','');return false;">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('teacher','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('teacher','');return false;">선생님</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#">의사</a></div>
+      </div>
+    </div>
+  </div> 
+
+
 
   <!--꿈 선택 팝업-->
   <div id="dream_sel_popup" class="popup_wrap" style="background:white;">

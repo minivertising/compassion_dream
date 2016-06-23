@@ -213,6 +213,7 @@ switch ($_REQUEST['exec'])
 		//file_put_contents($dest_url, $data);
 		if (!file_put_contents($dest_url, $data))
 		{
+			print_r($data);
 			die("파일을 지정한 디렉토리에 업로드하는데 실패했습니다.");
 		}else{
 			$matching_childYN	= match_YN_child();

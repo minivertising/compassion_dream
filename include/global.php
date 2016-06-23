@@ -12,4 +12,7 @@
 	$_gl['job']['cook']		= "요리사였어요.";
 	$_gl['job']['teacher']	= "선생님이었어요.";
 	$_gl['job']['doctor']	= "의사였어요.";
+
+	$_gl['youtube_url']				= "https://www.youtube.com/embed/Ksa-dTQNP1Q?controls=0&loop=1&playlist=Ksa-dTQNP1Q&modestbranding=1&showinfo=0&wmode=opaque&enablejsapi=1&rel=0&autoplay=1"; // 유튜브 URL
+
 ?>

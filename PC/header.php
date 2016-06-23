@@ -43,10 +43,9 @@
 <meta property="og:description" content="Compassion BLUE BATON CHALLENGE">
 <link rel="shortcut icon" type="image/x-icon" href="./img/icon/favicon.ico" />
 <title>PC MAIN</title>
-<!--[if lt IE 9]><script src="./js/html5shiv.js"></script><![endif]-->
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="../lib/bxslider/jquery.bxslider.css" rel="stylesheet" />
 <link href="../lib/Cropper/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style_yang.css" rel="stylesheet" type="text/css">
+<link href="../lib/bxslider/jquery.bxslider.css" rel="stylesheet" />
 <link href="../lib/Cropper/css/cropper.css" rel="stylesheet">
 <link rel="stylesheet" href="../lib/colorbox/colorbox.css">
 <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
@@ -58,7 +57,8 @@
 <script type="text/javascript" src="../lib/colorbox/jquery.colorbox-min.js"></script>
 <script src="../lib/bxslider/jquery.bxslider.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-<!--[if lte IE 8]><script type="text/javascript" src="../js/excanvas.js"></script><script type="text/javascript" src="../js/svg2vml.js"></script><![endif]-->
+<script src="../js/html5shiv.js"></script>
+<script type="text/javascript" src="../js/excanvas.js"></script>
 <style>
 .container {
 	max-width: 100%;

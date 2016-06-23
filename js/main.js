@@ -1,37 +1,26 @@
 function open_pop(param)
 {
-	$('.preview').css('overflow', 'hidden');
-	$('.preview').css('width', '263');
-	$('.preview').css('height', '148');
-	$('.preview > img').css('width', 'max-width');
-	// alert("op_pp");
-	$.colorbox({innerWidth:"100%",innerHeight: "100%", initialWidth:"95%", initialHeight: "100%", inline:true, opacity:"0.9", scrolling:true, reposition: false,closeButton:false, overlayClose: false, open:true, speed:0, fadeOut: 300, href:"#"+param, onComplete: function(){
+	if (param == "job_popup")
+	{
+		var pop_w	= "792px";
+		var pop_h	= "682px";
+		var pop_oh	= "640px";
+	}else if (param == "timeover_popup")
+	{
+		var pop_w	= "578px";
+		var pop_h	= "526px";
+		var pop_oh	= "484px";
+	}else if (param == "gift_popup")
+	{
+		var pop_w	= "626px";
+		var pop_h	= "880px";
+		var pop_oh	= "838px";
+	}
+	$.colorbox({width:pop_w, height:pop_h, inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: false, fadeOut: 300, href:"#"+param, onComplete: function(){
+		$("#cboxLoadedContent").height(pop_oh);
 		$("#cboxContent").css("background","none");
-		$("#cboxContent").css("z-index","99999");
-		$('#cboxWrapper').css('backgroundColor', "");
-		$('#cboxWrapper').css("z-index","99999");
-		$('.popup_wrap').css("z-index","99999");
-		$("#colorbox").css("z-index","99999");
-		$('#cboxLoadedContent').css('backgroundColor', "");
-		$('#cboxLoadedContent').css("z-index","99999");
-		$("#colorbox").width($("body").width());
-		// $("body").height($("#"+param).height());
-		$("#cboxWrapper").width($("body").width());
-		//$(".sec_main_img").hide();
-		if (param == "dream_sel_popup" || param == "f_dream_sel_popup")
-		{
-			image_crop();
-		}
-
 	},
 	onClosed: function(){
-		//del_info();
-		$("#cboxContent").css("background","#fff");
-		$(".sec_main_img").show();
-		if (param == "gift_popup2" || param == "notice_popup2")
-		{
-			$(".sec_top").show();
-		}
 	}});
 }
 
@@ -61,8 +50,11 @@ function view_dream_div(param)
 function checked_dream(param, param2)
 {
 	sel_dream	= param;
-	$("#"+param2+"choice_dream").hide();
-	$("#"+param2+"dream_sel_link").html("꿈 선택 ▼");
+	$.colorbox.close();
+	$("#sel_job_btn").attr("src","images/btn_re_sec.png");
+	$("#sel_job_txt").html(param);
+	//$("#"+param2+"choice_dream").hide();
+	//$("#"+param2+"dream_sel_link").html("꿈 선택 ▼");
 	flag_sel_dream	= 0;
 
 }

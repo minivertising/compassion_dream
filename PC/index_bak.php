@@ -3,201 +3,40 @@ include_once "./header.php";
 
 $total_runner_cnt   = total_runner_info();
 $total_pic_cnt      = total_pic_info();
-//$total_matching_cnt = total_matching_info();
-$total_matching_cnt = 0;
+    //$total_matching_cnt = total_matching_info();
 ?>
 <body>
-<script>
-	window.fbAsyncInit = function() {
-		FB.init({
-			appId      : '649187078561789',
-			xfbml      : true,
-			version    : 'v2.6'
-		});
-	};
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '649187078561789',
+                xfbml      : true,
+                version    : 'v2.6'
+            });
+        };
 
-	(function(d, s, id){
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) {return;}
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_US/sdk.js";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-</script>
-<!-- 메인 index -->
-<div class="wrap_sec_top">
-  <div class="bg_wrap_sec_top">
-    <div class="inner">
-      <div class="logo"><a href="#"><img src="images/logo.png" /></a></div>
-      <div class="title"><img src="images/title_main.png" /></div>
-      <div class="block_img">
-        <div><a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_partin.png" /></a></div>
-        <div class="status">
-          <div class="child">
-            <div class="num"><?=$total_matching_cnt?></div>
-            <div class="bar">
-              <div class="inner_bar">
-                <div class="heart"><img src="images/bar_heart.png" /></div>
-                <div class="g"></div>
-              </div>
-            </div>
-          </div>
-          <div class="people">
-            <div class="num"><?=$total_runner_cnt?></div>
-          </div>
-        </div>
-        <div class="btn_howto">
-          <a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_howto.png" /></a>
-        </div>
-      </div>
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div id="loading_div" style="display:none">
+        Loading.... 꿈이 필요한 아이와 매칭중
     </div>
-    <div class="people_pic clearfix">
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
+    <div id="contents_div">
+        <h1>블루 바톤 챌린지</h1>
+        <h2>어린이의 꿈을 위해 달리고 있는 블루 러너 : <?=number_format($total_runner_cnt)?>명</h2>
+        <h2>현재 공유되고 있는 어릴적 사진 수 : <?=number_format($total_pic_cnt)?>Km(1공유 1Km)</h2>
+        <h2>123명의 어린이들이 드림러너를 통해 결연이 되었습니다.</h2>
+        <a href="#" onclick="open_pop('use_popup');">참여방법</a><br />
+        <a href="#" onclick="open_pop('dream_sel_popup');">참여하기</a>
+        <?
+        include_once "./popup_div.php";
+        ?>
     </div>
-  </div><!--bg-->
-</div>
-
-<div class="wrap_sec_movie">
-  <div class="bg_wrap_sec_movie">
-    <div class="inner">
-      <div class="title"><img src="images/title_movie.png" /></div>
-      <div class="movie"><iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe></div>
-      <div class="block_btn">
-        <a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_relay_movie.png" /></a>
-        <a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_relay_howto_movie.png" /></a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="wrap_sec_com">
-  <div class="inner">
-    <div class="title"><img src="images/title_com.png" /></div>
-    <div class="img">
-      <a href="http://www.compassion.or.kr/" target="_blank"><img src="images/btn_compassion.png" /></a>
-    </div>
-  </div>
-</div>
-<div class="wrap_sec_footer">
-  <div class="inner">
-    <div class="img"><img src="images/img_footer.jpg" /></div>
-  </div>
-</div>
-<!-- 메인 index -->
-
-<!-- 사진 업로드 페이지 -->
-<div id="upload_page" class="wrap_sec_top_sub" style="display:none;">
-  <div class="inner">
-    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
-    <div class="block_content upload">
-      <div class="title">
-        <div class="main"><span>'기타'</span>에게 어떤 꿈을 이어 주실 건가요?</div>
-      </div>
-      <div class="block_input_dream">
-        <div class="selec_job">
-        1. 꿈꾸던 직업선택<span id="sel_job_txt"></span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
-        </div>
-        <div class="upload_pic">
-          <div class="title_pic">
-          2. 사진업로드
-          </div>
-          <div class="desc">
-            <div class="txt_pic">
-              <img src="images/txt_pic.png" />
-            </div>
-            <div class="btns">
-              <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
-                <label for="inputImage" title="Upload image file">
-                  <input type="file" id="inputImage" class="sr-only" name="file" accept="image/*">
-                  <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" /></span>
-                  <a href="#" onclick="preview_img();return false;"><img src="images/btn_preview.png" /></a>
-                </label>
-              </form>
-            </div>
-          </div>
-          <div id="img_div" class="pic_area">
-            <img id="ori_image" src="./images/picture.jpg" alt="Picture">
-          </div>
-          <div class="btn_closeup">
-            <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
-            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" /></a>
-          </div>
-        </div>
-      </div>
-      <div class="block_btn">
-        <a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- 사진 업로드 페이지 -->
-
-<!-- 개인정보 입력 페이지 -->
-<div id="input_page" class="wrap_sec_top_sub input_data">
-  <div class="inner">
-    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
-    <div class="block_content">
-      <div class="title">
-      </div>
-      <div class="block_input">
-        <div class="input_one clearfix">
-          <div class="label">이름</div>
-          <div class="input"><input type="text" id="mb_name"></div>
-        </div>
-        <div class="input_one clearfix">
-          <div class="label">휴대폰번호</div>
-          <div class="input"><input type="text" id="mb_phone" placeholder="휴대폰번호 ('-' 없이 입력해주세요)"></div>
-        </div>
-        <div class="check">
-          <a href="#"><img src="images/check.png" /></a><a href="#">개인정보 수집 및 위탁에 관한 동의</a> <a href="#"><img src="images/btn_detail.png" /></a>
-        </div>
-      </div>
-      <div class="block_btn">
-        <a href="#" onclick="input_submit();return false;"><img src="images/btn_next.png" /></a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- 개인정보 입력 페이지 -->
-
-<?
-	include_once "./popup_div.php";
-?>
 </body>
 </html>
 <script type="text/javascript">
@@ -227,12 +66,6 @@ $total_matching_cnt = 0;
         $("#cboxMiddleRight").hide();
         $("#cboxTopCenter").hide();
         $("#cboxBottomCenter").hide();
-
-		// 유튜브 영상 크기 제어
-		var yt_width = $(".movie").width();
-		var yt_height = (yt_width / 16) * 9;
-		$("#ytplayer").width(yt_width);
-		$("#ytplayer").height(yt_height);
 
         Ins_tracking();
     
@@ -451,8 +284,7 @@ function dream_next()
                 {
                     // 매칭될 아이가 있을 경우
                     mb_image    = rs_ch[1];
-					$("#input_page").show();
-                    //open_pop('input_popup');
+                    open_pop('input_popup');
                 }else if (rs_ch[0] == "N"){
                     // 매칭될 아이가 없을 경우
                     mb_image    = rs_ch[1];
@@ -548,15 +380,5 @@ function dream_next()
         });
     }
 
-	function show_dream_sel()
-	{
-		$(".wrap_sec_top").hide();
-		$(".wrap_sec_com").hide();
-		$(".wrap_sec_movie").hide();
-		$(".wrap_sec_footer").hide();
-
-		$("body").addClass("bg_sub_page");
-		$("#upload_page").show();
-	}
 </script>
 <!-- <script src="../lib/Cropper/js/main.js"></script> -->
