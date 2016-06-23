@@ -103,7 +103,8 @@ body{
 	width:100%;
 }
 body.bg_sub_page{
-	background:url(../images/bg_movie.jpg) repeat;
+	background:url(../images/bg_sub.jpg) no-repeat;
+	background-size:cover;
 }
 
 .img_100,
@@ -311,7 +312,7 @@ body.main{
 	left:20px;
 }
 .wrap_sec_top_sub .block_content{
-	width:900px;
+	width:820px;
 	height:770px;
 	background:#fff;
 	margin:0 auto 0;
@@ -384,10 +385,10 @@ body.main{
 	padding-top:50px;
 }
 .wrap_sec_top_sub.input_data .block_input{
-	width:480px;
-	padding:20px 80px;
+	width:400px;
+	padding:40px 80px;
 	margin:0 auto;
-	background:#eaf4ff;
+	background:#d9edf3;
 }
 
 .wrap_sec_top_sub.input_data .block_input .input_one{
@@ -398,14 +399,16 @@ body.main{
 .wrap_sec_top_sub.input_data .block_input .input_one .input{
 	float:left;
 }
-
+.wrap_sec_top_sub.input_data .block_input .input_one .input{
+	float:right;
+}
 
 .wrap_sec_top_sub.input_data .block_input .input_one .label{
 	width:100px;
 	padding-top:10px;
 }
 .wrap_sec_top_sub.input_data .block_input .input_one .input{
-	width:200px;
+	width:250px;
 	background:#fff;
 	padding:5px;
 	border:1px solid #ccc;
@@ -413,13 +416,13 @@ body.main{
 
 .wrap_sec_top_sub.input_data .block_input .input_one .input input{
 	width:100%;
-	letter-spacing:0;
+	letter-spacing:-1px;
 	font-size:15px;
 }
 .wrap_sec_top_sub.input_data .block_input .check{
 	border-top:1px solid #91a0af;
-	padding-top:20px;
-	margin-top:20px;
+	padding-top:30px;
+	margin-top:30px;
 	line-height:19px;
 	font-size:14px;
 }
