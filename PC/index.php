@@ -130,7 +130,7 @@ $total_matching_cnt = 1000;
       </div>
       <div class="block_input_dream">
         <div class="selec_job">
-        1. 꿈꾸던 직업선택<span id="sel_job_txt"></span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
+          <span id="sel_job_txt">1. 꿈꾸던 직업선택</span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
         </div>
         <div class="upload_pic">
           <div class="title_pic">

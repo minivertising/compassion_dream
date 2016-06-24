@@ -47,14 +47,12 @@ function view_dream_div(param)
 }
 
 // 직업선택 시 변수 저장 함수
-function checked_dream(param, param2)
+function checked_dream(param, param2, param3)
 {
 	sel_dream	= param;
 	$.colorbox.close();
 	$("#sel_job_btn").attr("src","images/btn_re_sec.png");
-	$("#sel_job_txt").html(param);
-	//$("#"+param2+"choice_dream").hide();
-	//$("#"+param2+"dream_sel_link").html("꿈 선택 ▼");
+	$("#sel_job_txt").html(param3);
 	flag_sel_dream	= 0;
 
 }
