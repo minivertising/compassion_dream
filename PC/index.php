@@ -201,18 +201,18 @@ $total_matching_cnt = 0;
     <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content">
       <div class="title">
-      어린시절의 <span>미니버</span>님과 같이<br> 꿈이 필요한 어린이는 <span>‘기타’</span> 입니다
+      어린시절의 <span id="m_rs_name">미니버</span>님과 같이<br> 꿈이 필요한 어린이는 <span id="m_rs_ch_name">‘기타’</span> 입니다
       </div>
       <div class="block_child">
         <div class="img_letter"><img src="images/img_letter.png" /></div>
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic" /></div>
           <div class="child_text">
-            <h2>저도 선생님을 꿈꿀 수 있을까요?</h2>
+            <h2>저도 <span id="m_rs_job">선생님을</span> 꿈꿀 수 있을까요?</h2>
             <p>
             안녕하세요 <br>
-            저는  필리핀에 살고 있는 기타에요<br>
-            어린 시절에  선생님이 꿈이 셨군요<br>
+            저는  <span id="m_rs_nation">필리핀</span>에 살고 있는 기타에요<br>
+            어린 시절에  <span id="m_rs_job2">선생님이</span> 꿈이 셨군요<br>
             저도 언젠가는 그렇게 멋진 꿈을 꾸고 싶어요!
             </p>
           </div>
@@ -631,6 +631,15 @@ function dream_next(){
 					// 아이가 새로 매칭될 경우
 					$("#matching_child_pic").attr("src",rs_ch[1]);
 					$("#input_page").hide();
+					// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
+					//m_rs_name, m_rs_ch_name, m_rs_job. m_rs_nation, m_rs_job2
+					var job_add		= job_ko_add(sel_dream);
+					job_add_arr		= job_add.split("||");
+					$("#m_rs_name").html(mb_name);
+					$("#m_rs_ch_name").html(rs_ch[3]);
+					$("#m_rs_job").html(job_add_arr[0]);
+					$("#m_rs_jo2").html(job_add_arr[1]);
+					$("#m_rs_nation").html(rs_ch[4]);
 					$("#matching_share_page").show();
 					//open_pop('share_popup');
 				}else if (rs_ch[0] == "C"){

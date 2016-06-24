@@ -83,13 +83,13 @@ switch ($_REQUEST['exec'])
 				$result 	= mysqli_query($my_db, $query);
 
 				if ($result)
-					$flag	= "Y||".$child_arr[1]."||".$mb_serial;
+					$flag	= "Y||".$child_arr[1]."||".$mb_serial."||".$child_arr[2]."||".$child_arr[3];
 				else
 					$flag	= "N||fail||N";
 
 			}else{
 				// 매칭된 아이가 결연 되지 않았을 경우
-				$flag	= "C||".$ch_data['ch_top_img_url']."||".$mb_serial;
+				$flag	= "C||".$ch_data['ch_top_img_url']."||".$mb_serial."||".$ch_data['ch_nick']."||".$ch_data['ch_nation_code'];
 				$query 	= "INSERT INTO ".$_gl['activator_info_table']."(mb_ipaddr,mb_name,mb_phone,mb_job,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_name."','".$mb_phone."','".$mb_job."','".$mb_image."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
 				$result 	= mysqli_query($my_db, $query);
 			}
@@ -102,9 +102,9 @@ switch ($_REQUEST['exec'])
 			$result 	= mysqli_query($my_db, $query);
 
 			if ($result)
-				$flag	= "Y||".$child_arr[1]."||".$mb_serial;
+				$flag	= "Y||".$child_arr[1]."||".$mb_serial."||".$child_arr[2]."||".$child_arr[3];
 			else
-				$flag	= "N||fail||N";
+				$flag	= "N||fail||N||N||N";
 		}
 		echo $flag;
 	break;

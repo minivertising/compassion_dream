@@ -91,7 +91,7 @@
 		$choice_query		= "UPDATE ".$_gl['child_info_table']." SET ch_choice='M' WHERE idx='".$ch_data['idx']."'";
 		$choice_result		= mysqli_query($my_db, $choice_query);
 
-		return $ch_data['idx']."||".$ch_data['ch_top_img_url'];
+		return $ch_data['idx']."||".$ch_data['ch_top_img_url']."||".$ch_data['ch_nick']."||".$ch_data['ch_nation_code'];
 	}
 
 	function sel_child_info($ch_idx)
