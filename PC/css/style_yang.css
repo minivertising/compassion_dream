@@ -714,13 +714,43 @@ body.main{
 	border-radius:20px;
 	background:#fff;
 }
+.main_page_pop{
+	width:764px;
+	height:492px;
+	background: url(../images/bg_main_popup.png) no-repeat top center;
+}
+.main_page_pop .navi{
+	padding-top:60px;
+	padding-left:50px;
+}
+.main_page_pop .img{
+	padding-left:50px;
+	padding-top:20px;
+	font-size:14px;
+	color:#444;
+}
+.main_page_pop .img.step{
+	padding-top:60px;
+}
 
 
+.main_page_pop .img ul{
+	margin-left:20px;
+	margin-right:40px;
+}
+.main_page_pop .img li{
+	list-style: disc;
+	padding-bottom:5px;
+	line-height:20px;
+}
+.main_page_pop .img li span{
+	letter-spacing:0;
+}
 
 .popup_wrap .btn_close{
 	position:absolute;
-	right:15px;
-	top:15px;
+	right:25px;
+	top:25px;
 }
 
 
