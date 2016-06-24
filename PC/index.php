@@ -638,7 +638,7 @@ function dream_next(){
 					$("#m_rs_name").html(mb_name);
 					$("#m_rs_ch_name").html(rs_ch[3]);
 					$("#m_rs_job").html(job_add_arr[0]);
-					$("#m_rs_jo2").html(job_add_arr[1]);
+					$("#m_rs_job2").html(job_add_arr[1]);
 					$("#m_rs_nation").html(rs_ch[4]);
 					$("#matching_share_page").show();
 					//open_pop('share_popup');
@@ -647,6 +647,15 @@ function dream_next(){
 					//$("#c_matching_child_pic").attr("src",rs_ch[1]);
 					$("#matching_child_pic").attr("src",rs_ch[1]);
 					$("#input_page").hide();
+					// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
+					//m_rs_name, m_rs_ch_name, m_rs_job. m_rs_nation, m_rs_job2
+					var job_add		= job_ko_add(sel_dream);
+					job_add_arr		= job_add.split("||");
+					$("#m_rs_name").html(mb_name);
+					$("#m_rs_ch_name").html(rs_ch[3]);
+					$("#m_rs_job").html(job_add_arr[0]);
+					$("#m_rs_job2").html(job_add_arr[1]);
+					$("#m_rs_nation").html(rs_ch[4]);
 					$("#matching_share_page").show();
 					//open_pop('no_matching_popup');
 				}else{
