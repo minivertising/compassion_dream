@@ -316,7 +316,7 @@ body.main{
 	left:20px;
 }
 .wrap_sec_top_sub .block_content{
-	width:820px;
+	width:839px;
 	height:770px;
 	background:#fff;
 	margin:0 auto 0;
@@ -337,19 +337,35 @@ body.main{
 .wrap_sec_top_sub.match_child .block_content.share_compassion{
 	background:url(../images/bg_share_compassion.png) center top no-repeat;
 	border-radius:0;
+	width:839px;
+	height:783px;
 }
 .wrap_sec_top_sub .block_content.upload{
 	background:url(../images/bg_upload.png) center top no-repeat;
 	border-radius:0;
-	height:1200px;
+	height:832px;
 }
-
+.wrap_sec_top_sub .block_content.result_story_child{
+	background:url(../images/bg_result_story_child.png) center top no-repeat;
+	border-radius:0;
+	height:832px;
+}
+.wrap_sec_top_sub .block_content.result_story_compassion{
+	background:url(../images/bg_result_story_compassion.png) center top no-repeat;
+	border-radius:0;
+	height:832px;
+}
 
 
 .wrap_sec_top_sub .title{
 	text-align:center;
 	padding:35px 0 20px;
 }
+
+.wrap_sec_top_sub.match_child .block_content.result_story_compassion .title{
+	padding:65px 0 30px;
+}
+
 .wrap_sec_top_sub .title .main{
 	font-size:30px;
 	padding-bottom:10px;
@@ -361,7 +377,7 @@ body.main{
 
 .wrap_sec_top_sub .block_content.upload .title{
 	text-align:center;
-	padding:55px 0 20px;
+	padding:65px 0 10px;
 	color:#fff;
 }
 .wrap_sec_top_sub .block_content.upload .title .main{
@@ -375,12 +391,28 @@ body.main{
 
 
 .wrap_sec_top_sub.match_child .title .sub span{
-	font-size:14px;
+	font-size:16px;
 }
 .wrap_sec_top_sub.match_child .title .sub{
-	font-size:14px;
+	font-size:16px;
 	letter-spacing:-1px;
 }
+.wrap_sec_top_sub.match_child .block_content.result_story_child .title .sub{
+	font-size:16px;
+	letter-spacing:-1px;
+	color:#076d8c;
+	line-height: 22px;
+	padding-top:28px;
+}
+.wrap_sec_top_sub.match_child .block_content.result_story_compassion .title .sub{
+	font-size:16px;
+	letter-spacing:-1px;
+	color:#076d8c;
+	line-height: 22px;
+	padding-top:28px;
+}
+
+
 
 .wrap_sec_top_sub .block_btn{
 	text-align:center;
@@ -390,12 +422,12 @@ body.main{
 	width:720px;
 	margin:0 auto;
 	text-align:center;
-	padding-top:90px;
+	padding-top:103px;
 }
 .wrap_sec_top_sub .block_input_dream .selec_job{
 	background:#1055a1 url(../images/bg_input_title.jpg) repeat-x;
 	color:#fff;
-	padding:14px 0;
+	padding:11px 0;
 	font-size:18px;
 	line-height:29px;
 	border-radius:5px;
@@ -408,7 +440,7 @@ body.main{
 .wrap_sec_top_sub .block_input_dream .upload_pic .title_pic{
 	background:#1055a1 url(../images/bg_input_title.jpg) repeat-x;
 	color:#fff;
-	padding:17px 0;
+	padding:13px 0;
 	font-size:18px;
 	border-radius:5px 5px 0 0;
 }
@@ -490,7 +522,10 @@ body.main{
 	line-height:35px;
 	letter-spacing:-3px;
 	color:#fff;
-	padding:60px 0 50px;
+	padding:65px 0 40px;
+}
+.wrap_sec_top_sub.match_child  .block_content.result_story_child .title{
+	padding:65px 0 37px;
 }
 .wrap_sec_top_sub.match_child .title span{
 	font-size:30px;
@@ -502,11 +537,18 @@ body.main{
 	position:relative;
 }
 .wrap_sec_top_sub.match_child .block_content.follower .block_child{
-	padding:2px 0 30px;
+	padding:7px 0 30px;
 }
 .wrap_sec_top_sub.match_child .block_content.share_compassion .block_child{
-	padding:155px 0 30px;
+	padding:92px 0 30px;
 }
+.wrap_sec_top_sub.match_child .block_content.result_story_child .block_child{
+	padding:0px 0 38px;
+}
+.wrap_sec_top_sub.match_child .block_content.result_story_compassion .block_child{
+	padding:0 0 30px;
+}
+
 
 .wrap_sec_top_sub.match_child .block_child .img_letter{
 	position:absolute;
@@ -523,15 +565,27 @@ body.main{
 }
 .wrap_sec_top_sub.match_child .block_child .inner_block_child .child_pic{
 	width:250px;
-	padding-left:91px;
+	padding-left:101px;
+	padding-top:5px;
 }
 .wrap_sec_top_sub.match_child .block_content.follower .block_child .inner_block_child .child_pic{
 	width:250px;
 	padding-left:306px;
+	padding-top:0px;
 }
+.wrap_sec_top_sub.match_child .block_content.result_story_child .block_child .inner_block_child .child_pic{
+	width:270px;
+	padding-left:87px;
+	padding-top:4px;
+}
+
 .wrap_sec_top_sub.match_child .block_child .inner_block_child .child_pic img{
 	width:211px;
 	height:246px;
+}
+.wrap_sec_top_sub.match_child .block_content.follower .block_child .inner_block_child .child_pic img{
+	width:223px;
+	height:262px;
 }
 
 .wrap_sec_top_sub.match_child .block_content.share_compassion .block_child .inner_block_child {
@@ -542,7 +596,21 @@ body.main{
 	padding-left:0;
 	text-align:center;
 }
+.wrap_sec_top_sub.match_child .block_content.result_story_compassion .block_child .inner_block_child {
+	padding:0 0 125px 130px;
+}
+.wrap_sec_top_sub.match_child .block_content.result_story_compassion .block_child .inner_block_child .child_pic{
+	width:140px;
+	padding-left:0;
+	text-align:center;
+}
+
 .wrap_sec_top_sub.match_child .block_content.share_compassion .block_child .inner_block_child .child_pic img{
+	width:120px;
+	height:160px;
+	border:4px solid #fff;
+}
+.wrap_sec_top_sub.match_child .block_content.result_story_compassion .block_child .inner_block_child .child_pic img{
 	width:120px;
 	height:160px;
 	border:4px solid #fff;
@@ -553,7 +621,12 @@ body.main{
 	margin-top:60px;
 	height:175px;
 	overflow:scroll;
-	
+}
+.wrap_sec_top_sub.match_child .block_content.result_story_child .block_child .inner_block_child .child_text{
+	margin-top:50px;
+	height:190px;
+	overflow:scroll;
+	width:370px;
 }
 .wrap_sec_top_sub.match_child .block_child .inner_block_child .child_text h2{
 	padding-bottom:10px;
@@ -589,22 +662,42 @@ body.main{
 
 
 .wrap_sec_top_sub.match_child.follower .block_btn.apply{
-	padding:20px 20px 40px;
+	padding:10px 20px 35px;
 }
+.wrap_sec_top_sub.match_child.follower .block_btn.apply .inner_apply{
+	width:740px;
+	padding-left:0;
+}
+.wrap_sec_top_sub.match_child.follower .block_btn.apply .inner_apply .left,
+.wrap_sec_top_sub.match_child.follower .block_btn.apply .inner_apply .right{
+	float:left;
+	text-align:center;
+	width:370px;
+}
+.wrap_sec_top_sub.match_child.follower .block_btn.apply .inner_apply .txt {
+	padding-top:5px;
+	line-height:19px;
+	font-size:14px;
+	color:#666;
+}
+
+
+
 .wrap_sec_top_sub.match_child.follower .example{
 	width:500px;
-	text-align:center;
 	margin:0 auto;
+	padding-top:0px;
 }
 
 
 .wrap_sec_top_sub.match_child .block_content.follower .img_waiting_child{
-	background:url(../images/img_waiting_child.png) 0 0 no-repeat;
-	width:734px;
+	width:740px;
 	height:100px;
 	padding-left:85px;
-	padding-top:10px;
+	padding-top:8px;
 	margin-top:20px;
+	background:url(../images/img_waiting_child.png) 4px 0 no-repeat;
+	
 }
 .wrap_sec_top_sub.match_child .block_content.follower .img_waiting_child .one_child{
 	float:left;
