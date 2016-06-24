@@ -4,7 +4,7 @@ include_once "./header.php";
 $total_runner_cnt   = total_runner_info();
 $total_pic_cnt      = total_pic_info();
 //$total_matching_cnt = total_matching_info();
-$total_matching_cnt = 0;
+$total_matching_cnt = 1000;
 ?>
 <body>
 <script>
@@ -168,7 +168,7 @@ $total_matching_cnt = 0;
 <!-- 사진 업로드 페이지 -->
 
 <!-- 개인정보 입력 페이지 -->
-<div id="input_page" class="wrap_sec_top_sub input_data">
+<div id="input_page" class="wrap_sec_top_sub input_data" style="display:none;">
   <div class="inner">
     <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content">
@@ -277,6 +277,10 @@ $total_matching_cnt = 0;
 		$("#ytplayer").width(yt_width);
 		$("#ytplayer").height(yt_height);
 
+		// gage 스타일 적용
+		var gage_w	= (<?=$total_matching_cnt?>/3000)*100;
+		$(".g").css("width",gage_w+"%");
+		$(".heart").css("left",gage_w+"%");
         Ins_tracking();
 
       
