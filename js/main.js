@@ -75,6 +75,56 @@ function dream_next()
 }
 */
 
+function only_num(obj)
+{
+	var inText = obj.value;
+	var outText = "";
+	var flag = true;
+	var ret;
+	for(var i = 0; i < inText.length; i++)
+	{
+		ret = inText.charCodeAt(i);
+		if((ret < 48) || (ret > 57))
+		{
+			flag = false;
+		}
+		else
+		{
+			outText += inText.charAt(i);
+		}
+	}
+ 
+	if(flag == false)
+	{
+		alert("전화번호는 숫자입력만 가능합니다.");
+		obj.value = outText;
+		obj.focus();
+		return false;
+	} 
+	return true;
+}
+
+function tab_click(param)
+{
+	if (param == "1")
+	{
+		$("#s_tab1").attr("src","images/navi_fb_on.png");
+		$("#s_tab2").attr("src","images/navi_kt_off.png");
+		$("#s_tab3").attr("src","images/navi_ks_off.png");
+		$("#s_contents").attr("src","images/img_howto_fb.png");
+	}else if (param == "2"){
+		$("#s_tab1").attr("src","images/navi_fb_off.png");
+		$("#s_tab2").attr("src","images/navi_kt_on.png");
+		$("#s_tab3").attr("src","images/navi_ks_off.png");
+		$("#s_contents").attr("src","images/img_howto_kt.png");
+	}else{
+		$("#s_tab1").attr("src","images/navi_fb_off.png");
+		$("#s_tab2").attr("src","images/navi_kt_off.png");
+		$("#s_tab3").attr("src","images/navi_ks_on.png");
+		$("#s_contents").attr("src","images/img_howto_ks.png");
+	}
+}
+
 function sns_share(media, flag)
 {
 	if (media == "fb")

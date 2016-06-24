@@ -73,6 +73,41 @@
       </div>
     </div>
   </div> 
+  <!--직업선택팝업--> 
+
+
+  <!--공유 예제 팝업--> 
+  <div id="exam_share_popup" class="popup_wrap p_howto_share">
+  	<div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_close.png" /></a></div>
+    <div class="inner">
+		<div class="navi clearfix">
+        	<a href="#" onclick="tab_click('1');return false;"><img src="images/navi_fb_on.png" id="s_tab1" /></a>
+            <a href="#" onclick="tab_click('2');return false;"><img src="images/navi_kt_off.png" id="s_tab2" /></a>
+            <a href="#" onclick="tab_click('3');return false;"><img src="images/navi_ks_off.png" id="s_tab3" /></a>
+        </div>
+        <div class="howto_img">
+        	<img src="images/img_howto_fb.png" id="s_contents"/>
+        </div>
+        <div class="howto_img">
+        	<img src="images/img_howto_share_common.png" />
+        </div>
+        <div class="btn_block">
+        	<a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_ok.png" /></a>
+        </div>
+    </div>
+  </div> 
+  <!--공유 예제 팝업--> 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -231,7 +266,7 @@
 
   <!-- 약관 팝업-->
   <div id="agree_popup" class="popup_wrap" style="background:white;">
-    <a href="#" onclick="open_pop('input_popup');return false;">닫기</a>
+    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
     약관 내용
   </div>
   <!--END : 약관 팝업-->

@@ -181,10 +181,10 @@ $total_matching_cnt = 0;
         </div>
         <div class="input_one clearfix">
           <div class="label">휴대폰번호</div>
-          <div class="input"><input type="text" id="mb_phone" placeholder="휴대폰번호 ('-' 없이 입력해주세요)"></div>
+          <div class="input"><input type="text" id="mb_phone" placeholder="휴대폰번호 ('-' 없이 입력해주세요)" onkeyup="only_num(this);return false;"></div>
         </div>
         <div class="check">
-          <a href="#"><img src="images/check.png" /></a><a href="#">개인정보 수집 및 위탁에 관한 동의</a> <a href="#"><img src="images/btn_detail.png" /></a>
+          <a href="#" onclick="mb_check();return false;"><img src="images/check.png" name="mb_agree" id="mb_agree" /></a><a href="#">개인정보 수집 및 위탁에 관한 동의</a> <a href="#" onclick="open_pop('agree_popup');return false;"><img src="images/btn_detail.png" /></a>
         </div>
       </div>
       <div class="block_btn">
@@ -194,6 +194,47 @@ $total_matching_cnt = 0;
   </div>
 </div>
 <!-- 개인정보 입력 페이지 -->
+
+<!-- ACTIVATOR 매칭 결과 페이지 -->
+<div id="matching_share_page" class="wrap_sec_top_sub match_child" style="display:none;">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content">
+      <div class="title">
+      어린시절의 <span>미니버</span>님과 같이<br> 꿈이 필요한 어린이는 <span>‘기타’</span> 입니다
+      </div>
+      <div class="block_child">
+        <div class="img_letter"><img src="images/img_letter.png" /></div>
+        <div class="inner_block_child clearfix">
+          <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic" /></div>
+          <div class="child_text">
+            <h2>저도 선생님을 꿈꿀 수 있을까요?</h2>
+            <p>
+            안녕하세요 <br>
+            저는  필리핀에 살고 있는 기타에요<br>
+            어린 시절에  선생님이 꿈이 셨군요<br>
+            저도 언젠가는 그렇게 멋진 꿈을 꾸고 싶어요!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="block_txt">
+        <p>당신의 어린시절 사진을 공유하면 참여가 완료됩니다</p>
+        <p>끝까지 참여해주셔서 <span>'기타'</span>의 후원자님 찾아주세요</p>
+      </div>
+      <div class="block_btn sns">
+        <a href="#" onclick="sns_share('fb','act');"><img src="images/sns_f.png" /></a>
+        <!-- <a href="#" onclick="sns_share('kt','act');"><img src="images/sns_kt.png" /></a> -->
+        <a href="#" onclick="sns_share('ks','act');"><img src="images/sns_ks.png" /></a>
+      </div>
+      <div class="block_btn howtotag">
+        <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ACTIVATOR 매칭 결과 페이지 -->
+
 
 <?
 	include_once "./popup_div.php";
@@ -218,7 +259,7 @@ $total_matching_cnt = 0;
     var flag_sel_dream  = 0;
     var mb_rs       = null;
     var inputImageCheck;
-    
+    var chk_mb_flag = 0;
     $(document).ready(function() {
         Kakao.init('59df63251be6d99256b63b98f4948e89');
         $("#cboxTopLeft").hide();
@@ -279,7 +320,7 @@ $total_matching_cnt = 0;
 //     image_crop();
 // });
 
-function image_crop(type){
+function image_crop(){
     $($ori_image).cropper({
         viewMode: 0,
         dragMode: 'move',
@@ -468,7 +509,7 @@ function dream_next(){
                         //$("#no_matching_child_pic").attr("src",mb_image);
                         open_pop('no_matching_popup');
                     }else {
-                        // 에러
+                        // 에러 
                         alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
                         location.reload();
                     }
@@ -538,60 +579,74 @@ function dream_next(){
 */
     }
 
-    function input_submit()
-    {
-        var mb_name = $("#mb_name").val();
-        var mb_phone    = $("#mb_phone").val();
-        //mb_image      = "임시 이미지 URL"; // 이미지 경로 작업 완료되면 여기에 값 추가
+	function input_submit()
+	{
+		var mb_name = $("#mb_name").val();
+		var mb_phone    = $("#mb_phone").val();
+		//mb_image      = "임시 이미지 URL"; // 이미지 경로 작업 완료되면 여기에 값 추가
 
-        if (mb_name == "")
-        {
-            alert("이름을 입력해 주세요.");
-            return false;
-        }
+		if (mb_name == "")
+		{
+			alert("이름을 입력해 주세요.");
+			return false;
+		}
 
-        if (mb_phone == "")
-        {
-            alert("전화번호를 입력해 주세요.");
-            return false;
-        }
+		if (mb_phone == "")
+		{
+			alert("휴대폰번호를 입력해 주세요.");
+			return false;
+		}
 
-        $.ajax({
-            type:"POST",
-            data:{
-                "exec"          : "insert_info",
-                "mb_name"       : mb_name,
-                "mb_phone"      : mb_phone,
-                "mb_job"        : sel_dream,
-                "mb_image"      : mb_image
-                //"mb_serial"     : mb_rs
-            },
-            url: "../main_exec.php",
-            beforeSend: function(response){
-                alert(response);
-                $("#loading_div").show();
-                $("#contents_div").hide();
-            },
-            success: function(response){
-                alert(response);
-                var rs_ch = response.split("||");
-                mb_rs = rs_ch[2];
-                $("#loading_div").hide();
-                $("#contents_div").show();
-                if (rs_ch[0] == "Y")
-                {
-                    $("#matching_child_pic").attr("src",rs_ch[1]);
-                    open_pop('share_popup');
-                }else if (rs_ch[0] == "C"){
-                    $("#c_matching_child_pic").attr("src",rs_ch[1]);
-                    open_pop('no_matching_popup');
-                }else{
-                    alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
-                    location.reload();
-                }
-            }
-        });
-    }
+		if (chk_mb_flag == 0)
+		{
+			alert("개인정보 수집 및 위탁에 관한 동의를 안 하셨습니다.");
+			return false;
+		}
+
+
+		$.ajax({
+			type:"POST",
+			data:{
+				"exec"          : "insert_info",
+				"mb_name"       : mb_name,
+				"mb_phone"      : mb_phone,
+				"mb_job"        : sel_dream,
+				"mb_image"      : mb_image
+				//"mb_serial"     : mb_rs
+			},
+			url: "../main_exec.php",
+			beforeSend: function(response){
+				alert(response);
+				$("#loading_div").show();
+				$("#contents_div").hide();
+			},
+			success: function(response){
+				alert(response);
+				var rs_ch = response.split("||");
+				mb_rs = rs_ch[2];
+				$("#loading_div").hide();
+				$("#contents_div").show();
+				if (rs_ch[0] == "Y")
+				{
+					// 아이가 새로 매칭될 경우
+					$("#matching_child_pic").attr("src",rs_ch[1]);
+					$("#input_page").hide();
+					$("#matching_share_page").show();
+					//open_pop('share_popup');
+				}else if (rs_ch[0] == "C"){
+					// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
+					//$("#c_matching_child_pic").attr("src",rs_ch[1]);
+					$("#matching_child_pic").attr("src",rs_ch[1]);
+					$("#input_page").hide();
+					$("#matching_share_page").show();
+					//open_pop('no_matching_popup');
+				}else{
+					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
+					location.reload();
+				}
+			}
+		});
+	}
 
     function Ins_tracking()
     {
@@ -612,8 +667,22 @@ function dream_next(){
 		$(".wrap_sec_movie").hide();
 		$(".wrap_sec_footer").hide();
 
+		image_crop();
 		$("body").addClass("bg_sub_page");
 		$("#upload_page").show();
 	}
+
+	function mb_check()
+	{
+		if (chk_mb_flag == 0)
+		{
+			$("#mb_agree").attr("src","images/checked.png");
+			chk_mb_flag = 1;
+		}else{
+			$("#mb_agree").attr("src","images/check.png");
+			chk_mb_flag = 0;
+		}
+	}
+
 </script>
 <!-- <script src="../lib/Cropper/js/main.js"></script> -->
