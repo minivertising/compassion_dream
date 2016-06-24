@@ -488,12 +488,10 @@ function dream_next(){
                     cropboxData     : cropboxDataIE,
                 },
                 beforeSend: function(response){
-                    alert(response);
                     $("#loading_div").show();
                     $("#contents_div").hide();
                 },
                 success: function(res){
-                    console.dir(res);
                     // mb_image    = res;
 
                     var rs_ch = res.split("||");
@@ -521,7 +519,6 @@ function dream_next(){
             });
 
         }else{
-            alert("ie9이상 또는 ie 외 브라우저");
             // 사진 저장할 내용 추가
             var croppedCanvas = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
             crop_image_url = croppedCanvas.toDataURL("image/jpeg");
@@ -534,13 +531,11 @@ function dream_next(){
                     mb_job          : sel_dream
                 },
                 beforeSend: function(response){
-                    alert(response);
                     $("#loading_div").show();
                     $("#contents_div").hide();
                 },
                 success: function(res){
                     // console.log(res);
-                    alert(res);
                     //mb_image    = res;
 
                     var rs_ch = res.split("||");
@@ -620,12 +615,10 @@ function dream_next(){
 			},
 			url: "../main_exec.php",
 			beforeSend: function(response){
-				alert(response);
 				$("#loading_div").show();
 				$("#contents_div").hide();
 			},
 			success: function(response){
-				alert(response);
 				var rs_ch = response.split("||");
 				mb_rs = rs_ch[2];
 				$("#loading_div").hide();

@@ -4,72 +4,72 @@
     <div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_close.png" /></a></div>
     <div class="inner_p_select_job clearfix">
       <div class="one_job">
-        <div class="img"><a href="#" onclick="checked_dream('cook','');return false;"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#" onclick="checked_dream('cook','');return false;">요리사</a></div>
+        <div class="img"><a href="#" onclick="checked_dream('congress','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('congress','');return false;">국회의원</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('businessman','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('businessman','');return false;">기업가</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('teacher','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('teacher','');return false;">교사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('singer','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('singer','');return false;">가수</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('scientist','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('scientist','');return false;">과학자</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('policeman','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('policeman','');return false;">경찰관</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('soldier','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('soldier','');return false;">군인</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('designer','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('designer','');return false;">디자이너</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('president','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('president','');return false;">대통령</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('minister','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('minister','');return false;">목사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('model','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('model','');return false;">모델</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('lawyer','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('lawyer','');return false;">변호사</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('actor','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('actor','');return false;">배우</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('fireman','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('fireman','');return false;">소방관</a></div>
       </div>
       <div class="one_job">
         <div class="img"><a href="#" onclick="checked_dream('doctor','');return false;"><img src="images/job_1.png" /></a></div>
         <div class="text"><a href="#" onclick="checked_dream('doctor','');return false;">의사</a></div>
       </div>
       <div class="one_job">
-        <div class="img"><a href="#" onclick="checked_dream('teacher','');return false;"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#" onclick="checked_dream('teacher','');return false;">선생님</a></div>
+        <div class="img"><a href="#" onclick="checked_dream('cook','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('cook','');return false;">요리사</a></div>
       </div>
       <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
-      </div>
-      <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
-      </div>
-      <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
-      </div>
-      <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
-      </div>
-      <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
-      </div>
-      <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
-      </div>
-      <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
-      </div>
-      <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
-      </div>
-      <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
-      </div>
-      <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
-      </div>
-      <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
-      </div>
-      <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
-      </div>
-      <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
-      </div>
-      <div class="one_job">
-        <div class="img"><a href="#"><img src="images/job_1.png" /></a></div>
-        <div class="text"><a href="#">의사</a></div>
+        <div class="img"><a href="#" onclick="checked_dream('sportsman','');return false;"><img src="images/job_1.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('sportsman','');return false;">운동선수</a></div>
       </div>
     </div>
   </div> 
