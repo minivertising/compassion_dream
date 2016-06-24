@@ -458,7 +458,9 @@ function dream_next(){
                     {
                         // 매칭될 아이가 있을 경우
                         mb_image    = rs_ch[1];
-                        open_pop('input_popup');
+						$("#upload_page").hide();
+						$("#input_page").show();
+                        //open_pop('input_popup');
                     }else if (rs_ch[0] == "N"){
                         // 매칭될 아이가 없을 경우
                         mb_image    = rs_ch[1];
@@ -503,7 +505,9 @@ function dream_next(){
                     {
                         // 매칭될 아이가 있을 경우
                         mb_image    = rs_ch[1];
-                        open_pop('input_popup');
+						$("#upload_page").hide();
+						$("#input_page").show();
+                        //open_pop('input_popup');
                     }else if (rs_ch[0] == "N"){
                         // 매칭될 아이가 없을 경우
                         mb_image    = rs_ch[1];
