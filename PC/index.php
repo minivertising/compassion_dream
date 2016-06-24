@@ -235,6 +235,41 @@ $total_matching_cnt = 1000;
 </div>
 <!-- ACTIVATOR 매칭 결과 페이지 -->
 
+<!-- ACTIVATOR 매칭없을시 컴페션 소개 페이지 -->
+<div id="no_matching_page" class="wrap_sec_top_sub match_child" style="display:none">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content share_compassion">
+      <div class="title">
+      컴패션에서는 당신의 어린시절처럼<br>
+      꿈 많고 귀여운 어린이들이 있습니다
+      <!--
+      컴패션에서는 '미니버'님의 어린시절처럼<br>
+      꿈 많고 귀여운 어린이들이 있습니다
+      -->
+      </div>
+      <div class="block_child">
+        <div class="inner_block_child clearfix">
+          <div class="child_pic"><img src="images/ex_child.png" /></div>
+          <div class="child_pic"><img src="images/ex_child.png" /></div>
+          <div class="child_pic"><img src="images/ex_child.png" /></div>
+          <div class="child_pic"><img src="images/ex_child.png" /></div>
+        </div>
+      </div>
+      <div class="block_btn sns">
+        <a href="#" onclick="sns_share('fb','act');"><img src="images/sns_f.png" /></a>
+        <!-- <a href="#"><img src="images/sns_kt.png" /></a> -->
+        <a href="#" onclick="sns_share('ks','act');"><img src="images/sns_ks.png" /></a>
+      </div>
+      <div class="block_btn howtotag">
+        <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ACTIVATOR 매칭없을시 컴페션 소개 페이지 -->
+
+
 
 <?
 	include_once "./popup_div.php";
@@ -509,7 +544,10 @@ function dream_next(){
                         mb_image    = rs_ch[1];
                         mb_rs       = rs_ch[2];
                         //$("#no_matching_child_pic").attr("src",mb_image);
-                        open_pop('no_matching_popup');
+                        //open_pop('no_matching_popup');
+						$("#upload_page").hide();
+						$("#no_matching_page").show();
+
                     }else {
                         // 에러 
                         alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
@@ -553,7 +591,10 @@ function dream_next(){
                         mb_image    = rs_ch[1];
                         mb_rs       = rs_ch[2];
                         //$("#no_matching_child_pic").attr("src",mb_image);
-                        open_pop('no_matching_popup');
+                        //open_pop('no_matching_popup');
+						$("#upload_page").hide();
+						$("#no_matching_page").show();
+
                     }else {
                         // 에러
                         alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
@@ -654,7 +695,6 @@ function dream_next(){
 					$("#m_rs_job2").html(job_add_arr[1]);
 					$("#m_rs_nation").html(rs_ch[4]);
 					$("#matching_share_page").show();
-					//open_pop('no_matching_popup');
 				}else{
 					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
 					location.reload();

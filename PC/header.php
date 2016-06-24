@@ -30,7 +30,7 @@
 	{
 // PC, MOBILE 구분 ?
 ?>
-<meta property="og:url" content="http://www.mnv.kr/MOBILE/lms_index.php?rs=<?=$mb_data['mb_serial']?>" />
+<meta property="og:url" content="http://www.mnv.kr/MOBILE/lms_index.php?rs=<?=$mb_data['mb_serial']?>&ugu=<?=$ugu?>" />
 <meta property="og:image" content="<?=$img_url?>" />
 <?
 	}else{
