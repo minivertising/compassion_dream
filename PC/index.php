@@ -151,7 +151,7 @@ $total_matching_cnt = 1000;
             </div>
           </div>
           <div id="img_div" class="pic_area">
-            <img id="ori_image" src="./images/picture.jpg" alt="Picture">
+            <img id="ori_image" src="./images/picture.jpg" alt="Picture" />
           </div>
           <div class="btn_closeup">
             <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
@@ -630,6 +630,7 @@ function dream_next(){
 */
     }
 
+
 	function input_submit()
 	{
 		var mb_name = $("#mb_name").val();
@@ -737,6 +738,7 @@ function dream_next(){
 		$(".wrap_sec_com").hide();
 		$(".wrap_sec_movie").hide();
 		$(".wrap_sec_footer").hide();
+    image_crop();
 
 		image_crop();
 		$("body").addClass("bg_sub_page");
