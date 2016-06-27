@@ -151,7 +151,7 @@ $total_matching_cnt = 0;
             </div>
           </div>
           <div id="img_div" class="pic_area">
-            <img id="ori_image" src="./images/picture.jpg" alt="Picture">
+            <img id="ori_image" src="./images/picture.jpg" alt="Picture" />
           </div>
           <div class="btn_closeup">
             <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
@@ -536,8 +536,8 @@ function dream_next(){
 
     function input_submit()
     {
-        var mb_name = $("#mb_name").val();
-        var mb_phone    = $("#mb_phone").val();
+        var mb_name    = $("#mb_name").val();
+        var mb_phone   = $("#mb_phone").val();
         //mb_image      = "임시 이미지 URL"; // 이미지 경로 작업 완료되면 여기에 값 추가
 
         if (mb_name == "")
@@ -607,6 +607,7 @@ function dream_next(){
 		$(".wrap_sec_com").hide();
 		$(".wrap_sec_movie").hide();
 		$(".wrap_sec_footer").hide();
+    image_crop();
 
 		$("body").addClass("bg_sub_page");
 		$("#upload_page").show();
