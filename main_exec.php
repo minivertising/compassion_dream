@@ -61,19 +61,34 @@ switch ($_REQUEST['exec'])
 		$mb_image			= $_REQUEST['mb_image'];
 		$media				= $_SESSION['ss_media'];
 
-		$dupli_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE mb_phone='".$mb_phone."'";
+		$dupli_query 	= "SELECT mb_child FROM ".$_gl['activator_info_table']." WHERE mb_phone='".$mb_phone."'";
 		$dupli_result 	= mysqli_query($my_db, $dupli_query);
 		$dupli_data		= mysqli_fetch_array($dupli_result);
 
 		$mb_serial	= create_serial("activator", null);
 		if ($dupli_data)
 		{
-			// 이벤트 참여한적이 있을 경우
-			$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$dupli_data['mb_child']."'";
-			$ch_result 	= mysqli_query($my_db, $ch_query);
-			$ch_data		= mysqli_fetch_array($ch_result);
+			foreach($dupli_data as $key => $val)
+			{
+				// 이벤트 참여한적이 있을 경우
+				$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$val."'";
+				$ch_result 	= mysqli_query($my_db, $ch_query);
+				$ch_data		= mysqli_fetch_array($ch_result);
+				if ($ch_data['ch_choice'] == "N")
+				{
+					$check_choice	= false;
+					exit;
+				}else{
+					$check_choice	= true;
+				}
+			}
 
-			if ($ch_data['ch_choice'] == "Y")
+			// 이벤트 참여한적이 있을 경우
+			//$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$dupli_data['mb_child']."'";
+			//$ch_result 	= mysqli_query($my_db, $ch_query);
+			//$ch_data		= mysqli_fetch_array($ch_result);
+
+			if ($check_choice === true)
 			{
 				// 매칭된 아이가 결연 되었을 경우
 				$child_info	= matching_child($mb_job);
