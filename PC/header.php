@@ -45,7 +45,7 @@
 <title>PC MAIN</title>
 <link href="../lib/Cropper/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style_yang.css" rel="stylesheet" type="text/css">
-<!-- <link href="../lib/bxslider/jquery.bxslider.css" rel="stylesheet" /> -->
+<link href="../lib/bxslider/jquery.bxslider.css" rel="stylesheet" />
 <link href="../lib/Cropper/css/cropper.css" rel="stylesheet">
 <link rel="stylesheet" href="../lib/colorbox/colorbox.css">
 <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
@@ -55,7 +55,7 @@
 <script type="text/javascript" src="../js/jquery.form.js"></script>
 <script type="text/javascript" src="../js/canvas-to-blob.js"></script>
 <script type="text/javascript" src="../lib/colorbox/jquery.colorbox-min.js"></script>
-<!-- <script src="../lib/bxslider/jquery.bxslider.min.js"></script> -->
+<script src="../lib/bxslider/jquery.bxslider.min.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script src="../js/html5shiv.js"></script>
 <script type="text/javascript" src="../js/excanvas.js"></script>

@@ -318,6 +318,17 @@ $total_matching_cnt = 1000;
 		$(".heart").css("left",gage_w+"%");
         Ins_tracking();
 
+
+		$('.people_pic').bxSlider({
+			ticker: true,
+			speed: 40000,
+			// minSlide: 12,
+			// maxSilde: 12,
+			slideWidth: 155
+			// slideMargin: 20
+			// responsive: true,
+			// adaptiveHeight: true
+		});
       
     
         });
