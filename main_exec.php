@@ -73,6 +73,7 @@ switch ($_REQUEST['exec'])
 		if ($dupli_data)
 		{
 			$i = 0;
+			print_r($dupli_arr);
 			foreach($dupli_arr as $key => $val)
 			{
 				// 이벤트 참여한적이 있을 경우
