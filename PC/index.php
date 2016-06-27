@@ -277,34 +277,34 @@ $total_matching_cnt = 1000;
 </body>
 </html>
 <script type="text/javascript">
-    var agent = navigator.userAgent.toLowerCase();
-    var trident = navigator.userAgent.match(/Trident\/(\d.\d)/i);
-    var sel_dream       = null;
-    var runner_serial   = null;
-    var mb_job          = null;
-    var mb_image        = null;
-    var $ori_image = $('#ori_image');
-    var $inputImage = $('#inputImage')
-    var URL = window.URL || window.webkitURL;
-    var realFath;
-    var convertPath;
-    var blobURL;
-    var file;
-    var files;
-    var flag_sel_dream  = 0;
-    var mb_rs       = null;
-    var inputImageCheck;
-    var chk_mb_flag = 0;
-    $(document).ready(function() {
-        Kakao.init('59df63251be6d99256b63b98f4948e89');
-        $("#cboxTopLeft").hide();
-        $("#cboxTopRight").hide();
-        $("#cboxBottomLeft").hide();
-        $("#cboxBottomRight").hide();
-        $("#cboxMiddleLeft").hide();
-        $("#cboxMiddleRight").hide();
-        $("#cboxTopCenter").hide();
-        $("#cboxBottomCenter").hide();
+	var agent = navigator.userAgent.toLowerCase();
+	var trident = navigator.userAgent.match(/Trident\/(\d.\d)/i);
+	var sel_dream       = null;
+	var runner_serial   = null;
+	var mb_job          = null;
+	var mb_image        = null;
+	var $ori_image = $('#ori_image');
+	var $inputImage = $('#inputImage')
+	var URL = window.URL || window.webkitURL;
+	var realFath;
+	var convertPath;
+	var blobURL;
+	var file;
+	var files;
+	var flag_sel_dream  = 0;
+	var mb_rs       = null;
+	var inputImageCheck;
+	var chk_mb_flag = 0;
+	$(document).ready(function() {
+		Kakao.init('59df63251be6d99256b63b98f4948e89');
+		$("#cboxTopLeft").hide();
+		$("#cboxTopRight").hide();
+		$("#cboxBottomLeft").hide();
+		$("#cboxBottomRight").hide();
+		$("#cboxMiddleLeft").hide();
+		$("#cboxMiddleRight").hide();
+		$("#cboxTopCenter").hide();
+		$("#cboxBottomCenter").hide();
 
 		// 유튜브 영상 크기 제어
 		var yt_width = $(".movie").width();
@@ -316,7 +316,7 @@ $total_matching_cnt = 1000;
 		var gage_w	= (<?=$total_matching_cnt?>/3000)*100;
 		$(".g").css("width",gage_w+"%");
 		$(".heart").css("left",gage_w+"%");
-        Ins_tracking();
+		Ins_tracking();
 
 
 		$('.people_pic').bxSlider({
@@ -329,164 +329,164 @@ $total_matching_cnt = 1000;
 			// responsive: true,
 			// adaptiveHeight: true
 		});
-      
-    
-        });
-    /*
-        var $inputImage = $('#inputImage');
-        var URL = window.URL || window.webkitURL;
-        var blobURL;
+	  
+	
+		});
+	/*
+		var $inputImage = $('#inputImage');
+		var URL = window.URL || window.webkitURL;
+		var blobURL;
 
-            if (URL) {
-                $inputImage.change(function () {
-                    var files = this.files;
-                    var file;
+			if (URL) {
+				$inputImage.change(function () {
+					var files = this.files;
+					var file;
 
-                    if (!$ori_image.data('cropper')) {
-                        return;
-                    }
+					if (!$ori_image.data('cropper')) {
+						return;
+					}
 
-                    if (files && files.length) {
-                        file = files[0];
+					if (files && files.length) {
+						file = files[0];
 
-                        if (/^image\/\w+$/.test(file.type)) {
-                            blobURL = URL.createObjectURL(file);
-                            $ori_image.one('built.cropper', function () {
-                                // Revoke when load complete
-                                URL.revokeObjectURL(blobURL);
-                            }).cropper('reset').cropper('replace', blobURL);
-                            $inputImage.val('');
-                        } else {
-                            window.alert('Please choose an image file.');
-                        }
-                    }
-                });
-            } else {
-                $inputImage.prop('disabled', true).parent().addClass('disabled');
-            }
-            */
+						if (/^image\/\w+$/.test(file.type)) {
+							blobURL = URL.createObjectURL(file);
+							$ori_image.one('built.cropper', function () {
+								// Revoke when load complete
+								URL.revokeObjectURL(blobURL);
+							}).cropper('reset').cropper('replace', blobURL);
+							$inputImage.val('');
+						} else {
+							window.alert('Please choose an image file.');
+						}
+					}
+				});
+			} else {
+				$inputImage.prop('disabled', true).parent().addClass('disabled');
+			}
+			*/
 
 // $(function () {
 //     image_crop();
 // });
 
 function image_crop(){
-    $($ori_image).cropper({
-        viewMode: 0,
-        dragMode: 'move',
-        autoCropArea: 0.8,
-        aspectRatio: 1200/630,
-        responsive: false,
-        restore: false,
-        guides: false,
-        highlight: false,
-        cropBoxMovable: false,
-        cropBoxResizable: false,
-        preview: '.preview',
-        center:true,
-        zoomOnWheel:false,
-        zoomOnTouch:false,
-        toggleDragModeOnDblclick:false,
-        // build: function (e) {
-        //     console.log(e.type);
-        // },
-        // built: function (e) {
-        //     console.log(e.type);
-        // },
-        // cropstart: function (e) {
-        //     console.log(e.type, e.action);
-        // },
-        // cropper: function (e) {
-        //     console.log(e.type, e.action);
-        // },
-        // cropend: function (e) {
-        //     console.log(e.type, e.action);
-        // },
-        // crop: function (e) {
-        //     console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
-        // },
-        // zoom: function (e) {
-        //     console.log(e.type, e.ratio);
-        // }
-    });
+	$($ori_image).cropper({
+		viewMode: 0,
+		dragMode: 'move',
+		autoCropArea: 0.8,
+		aspectRatio: 1200/630,
+		responsive: false,
+		restore: false,
+		guides: false,
+		highlight: false,
+		cropBoxMovable: false,
+		cropBoxResizable: false,
+		preview: '.preview',
+		center:true,
+		zoomOnWheel:false,
+		zoomOnTouch:false,
+		toggleDragModeOnDblclick:false,
+		// build: function (e) {
+		//     console.log(e.type);
+		// },
+		// built: function (e) {
+		//     console.log(e.type);
+		// },
+		// cropstart: function (e) {
+		//     console.log(e.type, e.action);
+		// },
+		// cropper: function (e) {
+		//     console.log(e.type, e.action);
+		// },
+		// cropend: function (e) {
+		//     console.log(e.type, e.action);
+		// },
+		// crop: function (e) {
+		//     console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
+		// },
+		// zoom: function (e) {
+		//     console.log(e.type, e.ratio);
+		// }
+	});
 }
 // });
 
 function zoom_action(type){
-    if(type=="up")
-    {
-        $($ori_image).cropper('zoom', 0.1);
-    }else{
-        $($ori_image).cropper('zoom', -0.1);
-    }
+	if(type=="up")
+	{
+		$($ori_image).cropper('zoom', 0.1);
+	}else{
+		$($ori_image).cropper('zoom', -0.1);
+	}
 }
 
 function preview_img()
 {
 /*
-        사진 저장할 내용 추가
-        */
-        open_pop('preview_popup');
+		사진 저장할 내용 추가
+		*/
+		open_pop('preview_popup');
 
-    }
+	}
 
 function readURL(input) {
 
-    if (input.files && input.files[0]) {
-        file = files[0];
-        if (/^image\/\w+$/.test(file.type)) {
-            blobURL = URL.createObjectURL(file);
-            $ori_image.one('built.cropper', function () {
-                            // Revoke when load complete
-                            URL.revokeObjectURL(blobURL);
-                        }).cropper('reset').cropper('replace', blobURL);
-            $($inputImage).val('');
-        } else {
-            window.alert('Please choose an image file.');
-                    // }
-                    // var reader = new FileReader();
-                    // reader.onload = function (e) {
-                    //     alert("onload");
-                    //     $($ori_image).attr('src', e.target.result);
-                    //     image_crop();
-        }
-                    // realFath = input.files[0].name;
-                    // reader.readAsDataURL(input.files[0]);
-    }else if((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1)){
-        $($ori_image).cropper('destroy');
-        $('#ie_img_save').ajaxSubmit({
-            success: function (data) {
-                // console.dir(data);
-                $($ori_image).attr('src', data);
-                image_crop();
-            }
-        });
-            // $('#ie_img_save').ajaxForm({
-            //     success: function (data) {
-            //         console.dir(data);
-            //     }
-            // });
-            //이미지 저장후에 불러와서 $ori_image src 변경
-            // console.log(realFath);
-            // $.ajax({
-            //  method: 'POST',
-            //  url: 'ie_photo_upload.php',
-            //  data: {ieImageSrc: realFath},
-            //  success: function(res){
-            //      // convertPath = res;
-            //      alert(res);
-            //      // console.log("저장 후:"+convertPath);
-            //   // // alert(convertPath);
-            //   // $($ori_image).attr('src', convertPath);
-            //   // image_crop();
-            //  }
-            // });
-    }
+	if (input.files && input.files[0]) {
+		file = files[0];
+		if (/^image\/\w+$/.test(file.type)) {
+			blobURL = URL.createObjectURL(file);
+			$ori_image.one('built.cropper', function () {
+							// Revoke when load complete
+							URL.revokeObjectURL(blobURL);
+						}).cropper('reset').cropper('replace', blobURL);
+			$($inputImage).val('');
+		} else {
+			window.alert('Please choose an image file.');
+					// }
+					// var reader = new FileReader();
+					// reader.onload = function (e) {
+					//     alert("onload");
+					//     $($ori_image).attr('src', e.target.result);
+					//     image_crop();
+		}
+					// realFath = input.files[0].name;
+					// reader.readAsDataURL(input.files[0]);
+	}else if((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1)){
+		$($ori_image).cropper('destroy');
+		$('#ie_img_save').ajaxSubmit({
+			success: function (data) {
+				// console.dir(data);
+				$($ori_image).attr('src', data);
+				image_crop();
+			}
+		});
+			// $('#ie_img_save').ajaxForm({
+			//     success: function (data) {
+			//         console.dir(data);
+			//     }
+			// });
+			//이미지 저장후에 불러와서 $ori_image src 변경
+			// console.log(realFath);
+			// $.ajax({
+			//  method: 'POST',
+			//  url: 'ie_photo_upload.php',
+			//  data: {ieImageSrc: realFath},
+			//  success: function(res){
+			//      // convertPath = res;
+			//      alert(res);
+			//      // console.log("저장 후:"+convertPath);
+			//   // // alert(convertPath);
+			//   // $($ori_image).attr('src', convertPath);
+			//   // image_crop();
+			//  }
+			// });
+	}
 }
 
 $($inputImage).change(function(){
-    inputImageCheck = "Y";
-    files = this.files;
+	inputImageCheck = "Y";
+	files = this.files;
 // console.dir(this);
 // if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
 //  // $($ori_image).cropper('destroy');
@@ -499,136 +499,136 @@ $($inputImage).change(function(){
 //  // realFath = document.selection.createRangeCollection()[0].text.toString();
 //  // this.blur();
 //  }
-    readURL(this);
+	readURL(this);
 });
 
 
 function dream_next(){
-    var cropboxDataIE;
-    var crop_image_url;
-        if (sel_dream == null)
-        {
-            alert("당신의 어린시절 꿈을 선택해 주세요.");
-            return false;
-        }
-        if (inputImageCheck !== "Y")
-        {
-            alert("이미지를 업로드해주세요.");
-            return false;
-        }
-        //mb_job    = $("#mb_job").val();
+	var cropboxDataIE;
+	var crop_image_url;
+		if (sel_dream == null)
+		{
+			alert("당신의 어린시절 꿈을 선택해 주세요.");
+			return false;
+		}
+		if (inputImageCheck !== "Y")
+		{
+			alert("이미지를 업로드해주세요.");
+			return false;
+		}
+		//mb_job    = $("#mb_job").val();
 
-        if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
-            alert("ie8이하");
-            cropboxDataIE = $(ori_image).cropper('getData');
-            crop_image_url = $(ori_image).attr('src');
-            // console.dir(cropboxData);
-            // console.dir(cropboxgetData);
-               $.ajax({
-                method: 'POST',
-                url: '../main_exec.php',
-                data: {
-                    exec            : "input_image_IE",
-                    crop_image_url  : crop_image_url,
-                    mb_job          : sel_dream,
-                    cropboxData     : cropboxDataIE,
-                },
-                beforeSend: function(response){
-                    $("#loading_div").show();
-                    $("#contents_div").hide();
-                },
-                success: function(res){
-                    // mb_image    = res;
+		if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
+			alert("ie8이하");
+			cropboxDataIE = $(ori_image).cropper('getData');
+			crop_image_url = $(ori_image).attr('src');
+			// console.dir(cropboxData);
+			// console.dir(cropboxgetData);
+			   $.ajax({
+				method: 'POST',
+				url: '../main_exec.php',
+				data: {
+					exec            : "input_image_IE",
+					crop_image_url  : crop_image_url,
+					mb_job          : sel_dream,
+					cropboxData     : cropboxDataIE,
+				},
+				beforeSend: function(response){
+					$("#loading_div").show();
+					$("#contents_div").hide();
+				},
+				success: function(res){
+					// mb_image    = res;
 
-                    var rs_ch = res.split("||");
-                    $("#loading_div").hide();
-                    $("#contents_div").show();
-                    if (rs_ch[0] == "Y")
-                    {
-                        // 매칭될 아이가 있을 경우
-                        mb_image    = rs_ch[1];
+					var rs_ch = res.split("||");
+					$("#loading_div").hide();
+					$("#contents_div").show();
+					if (rs_ch[0] == "Y")
+					{
+						// 매칭될 아이가 있을 경우
+						mb_image    = rs_ch[1];
 						$("#upload_page").hide();
 						$("#input_page").show();
-                        //open_pop('input_popup');
-                    }else if (rs_ch[0] == "N"){
-                        // 매칭될 아이가 없을 경우
-                        mb_image    = rs_ch[1];
-                        mb_rs       = rs_ch[2];
-                        //$("#no_matching_child_pic").attr("src",mb_image);
-                        //open_pop('no_matching_popup');
+						//open_pop('input_popup');
+					}else if (rs_ch[0] == "N"){
+						// 매칭될 아이가 없을 경우
+						mb_image    = rs_ch[1];
+						mb_rs       = rs_ch[2];
+						//$("#no_matching_child_pic").attr("src",mb_image);
+						//open_pop('no_matching_popup');
 						$("#upload_page").hide();
 						$("#no_matching_page").show();
 
-                    }else {
-                        // 에러 
-                        alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
-                        location.reload();
-                    }
-                }
-            });
+					}else {
+						// 에러 
+						alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
+						location.reload();
+					}
+				}
+			});
 
-        }else{
-            // 사진 저장할 내용 추가
-            var croppedCanvas = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
-            crop_image_url = croppedCanvas.toDataURL("image/jpeg");
-            $.ajax({
-                method: 'POST',
-                url: '../main_exec.php',
-                data: {
-                    exec            : "input_image",
-                    crop_image_url  : crop_image_url,
-                    mb_job          : sel_dream
-                },
-                beforeSend: function(response){
-                    $("#loading_div").show();
-                    $("#contents_div").hide();
-                },
-                success: function(res){
-                    // console.log(res);
-                    //mb_image    = res;
+		}else{
+			// 사진 저장할 내용 추가
+			var croppedCanvas = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
+			crop_image_url = croppedCanvas.toDataURL("image/jpeg");
+			$.ajax({
+				method: 'POST',
+				url: '../main_exec.php',
+				data: {
+					exec            : "input_image",
+					crop_image_url  : crop_image_url,
+					mb_job          : sel_dream
+				},
+				beforeSend: function(response){
+					$("#loading_div").show();
+					$("#contents_div").hide();
+				},
+				success: function(res){
+					// console.log(res);
+					//mb_image    = res;
 
-                    var rs_ch = res.split("||");
-                    $("#loading_div").hide();
-                    $("#contents_div").show();
-                    if (rs_ch[0] == "Y")
-                    {
-                        // 매칭될 아이가 있을 경우
-                        mb_image    = rs_ch[1];
+					var rs_ch = res.split("||");
+					$("#loading_div").hide();
+					$("#contents_div").show();
+					if (rs_ch[0] == "Y")
+					{
+						// 매칭될 아이가 있을 경우
+						mb_image    = rs_ch[1];
 						$("#upload_page").hide();
 						$("#input_page").show();
-                        //open_pop('input_popup');
-                    }else if (rs_ch[0] == "N"){
-                        // 매칭될 아이가 없을 경우
-                        mb_image    = rs_ch[1];
-                        mb_rs       = rs_ch[2];
-                        //$("#no_matching_child_pic").attr("src",mb_image);
-                        //open_pop('no_matching_popup');
+						//open_pop('input_popup');
+					}else if (rs_ch[0] == "N"){
+						// 매칭될 아이가 없을 경우
+						mb_image    = rs_ch[1];
+						mb_rs       = rs_ch[2];
+						//$("#no_matching_child_pic").attr("src",mb_image);
+						//open_pop('no_matching_popup');
 						$("#upload_page").hide();
 						$("#no_matching_page").show();
 
-                    }else {
-                        // 에러
-                        alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
-                        location.reload();
-                    }
-                }
-            });
-        }
+					}else {
+						// 에러
+						alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
+						location.reload();
+					}
+				}
+			});
+		}
 
 /*
-        $.ajax({
-            method: 'POST',
-            url: 'photo_upload.php',
-            data: {canvasurl: canvasImageURL},
-            success: function(res){
-                // console.log(res);
-                //alert(res);
-                mb_image    = res;
-                open_pop('input_popup');
-            }
-        });
+		$.ajax({
+			method: 'POST',
+			url: 'photo_upload.php',
+			data: {canvasurl: canvasImageURL},
+			success: function(res){
+				// console.log(res);
+				//alert(res);
+				mb_image    = res;
+				open_pop('input_popup');
+			}
+		});
 */
-    }
+	}
 
 
 	function input_submit()
@@ -717,28 +717,28 @@ function dream_next(){
 		});
 	}
 
-    function Ins_tracking()
-    {
-        $.ajax({
-            type:"POST",
-            data:{
-                "exec"          : "insert_tracking_info",
-                "media"     : "<?=$_REQUEST['media'];?>"
-            },
-            url: "../main_exec.php"
-        });
-    }
+	function Ins_tracking()
+	{
+		$.ajax({
+			type:"POST",
+			data:{
+				"exec"          : "insert_tracking_info",
+				"media"     : "<?=$_REQUEST['media'];?>"
+			},
+			url: "../main_exec.php"
+		});
+	}
 
 	function show_dream_sel()
 	{
-    $("#ytplayer").each(function(){
-      this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
-    });
+	$("#ytplayer").each(function(){
+	  this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+	});
 		$(".wrap_sec_top").hide();
 		$(".wrap_sec_com").hide();
 		$(".wrap_sec_movie").hide();
 		$(".wrap_sec_footer").hide();
-    image_crop();
+	image_crop();
 
 		image_crop();
 		$("body").addClass("bg_sub_page");
