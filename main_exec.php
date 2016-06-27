@@ -110,7 +110,7 @@ switch ($_REQUEST['exec'])
 
 			}else{
 				// 매칭된 아이가 결연 되지 않았을 경우
-				$flag	= "C||".$ch_data['ch_full_img_url']."||".$mb_serial."||".$ch_data['ch_nick']."||".$ch_data['ch_nation_code'];
+				$flag	= "C||".$ch_data['ch_full_img_url']."||".$mb_serial."||".$ch_data['ch_nick']."||".$ch_data['ch_nation_name'];
 				$query 	= "INSERT INTO ".$_gl['activator_info_table']."(mb_ipaddr,mb_name,mb_phone,mb_job,mb_child,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_name."','".$mb_phone."','".$mb_job."','".$ch_data['idx']."','".$mb_image."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
 				$result 	= mysqli_query($my_db, $query);
 			}

@@ -201,7 +201,7 @@ $total_matching_cnt = 1000;
     <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content">
       <div class="title">
-      어린시절의 <span id="m_rs_name">미니버</span>님과 같이<br> 꿈이 필요한 어린이는 <span id="m_rs_ch_name">‘기타’</span> 입니다
+      어린시절의 <span id="m_rs_name">미니버</span>님과 같이<br> 꿈이 필요한 어린이는 '<span id="m_rs_ch_name">기타</span>' 입니다
       </div>
       <div class="block_child">
         <div class="img_letter"><img src="images/img_letter.png" /></div>
@@ -211,7 +211,7 @@ $total_matching_cnt = 1000;
             <h2>저도 <span id="m_rs_job">선생님을</span> 꿈꿀 수 있을까요?</h2>
             <p>
             안녕하세요 <br>
-            저는  <span id="m_rs_nation">필리핀</span>에 살고 있는 기타에요<br>
+            저는  <span id="m_rs_nation">필리핀</span>에 살고 있는 <span id="m_rs_ch_name2">기타</span>에요<br>
             어린 시절에  <span id="m_rs_job2">선생님이</span> 꿈이 셨군요<br>
             저도 언젠가는 그렇게 멋진 꿈을 꾸고 싶어요!
             </p>
@@ -671,7 +671,6 @@ function dream_next(){
 				$("#contents_div").hide();
 			},
 			success: function(response){
-				alert(response);
 				var rs_ch = response.split("||");
 				mb_rs = rs_ch[2];
 				$("#loading_div").hide();
@@ -687,6 +686,7 @@ function dream_next(){
 					job_add_arr		= job_add.split("||");
 					$("#m_rs_name").html(mb_name);
 					$("#m_rs_ch_name").html(rs_ch[3]);
+					$("#m_rs_ch_name2").html(rs_ch[3]);
 					$("#m_rs_job").html(job_add_arr[0]);
 					$("#m_rs_job2").html(job_add_arr[1]);
 					$("#m_rs_nation").html(rs_ch[4]);
@@ -703,6 +703,7 @@ function dream_next(){
 					job_add_arr		= job_add.split("||");
 					$("#m_rs_name").html(mb_name);
 					$("#m_rs_ch_name").html(rs_ch[3]);
+					$("#m_rs_ch_name2").html(rs_ch[3]);
 					$("#m_rs_job").html(job_add_arr[0]);
 					$("#m_rs_job2").html(job_add_arr[1]);
 					$("#m_rs_nation").html(rs_ch[4]);
