@@ -78,6 +78,7 @@ switch ($_REQUEST['exec'])
 				if ($ch_data['ch_choice'] == "Y")
 				{
 					$check_choice	= true;
+					print_r('222');
 				}else{
 					$check_choice	= false;
 					print_r('111');
