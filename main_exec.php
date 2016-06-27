@@ -69,6 +69,7 @@ switch ($_REQUEST['exec'])
 		if ($dupli_data)
 		{
 			$i = 0;
+			print_r($dupli_data);
 			foreach($dupli_data as $key => $val)
 			{
 				// 이벤트 참여한적이 있을 경우
@@ -76,7 +77,6 @@ switch ($_REQUEST['exec'])
 				$ch_result 	= mysqli_query($my_db, $ch_query);
 				$ch_data		= mysqli_fetch_array($ch_result);
 				$check_choice	= false;
-				print_r($ch_query);
 				if ($ch_data['ch_choice'] == "Y")
 				{
 					$check_choice	= true;
