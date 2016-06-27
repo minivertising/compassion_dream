@@ -9,14 +9,14 @@
 	$_SESSION['ss_media'] = $media;
 	$_SESSION['ss_testurl'] = $testurl;
 
-	BR_InsertTrackingInfo($media, $gubun);
+	//BR_InsertTrackingInfo($media, $gubun);
 
 	if($gubun == "MOBILE")
 	{
-		Header("Location:http://www.mnv.kr/MOBILE/index.php?media=".$media."");
+		Header("Location:http://mydream.compassion.or.kr/MOBILE/index.php?media=".$media."");
 		exit;
 	}else{
-		Header("Location:http://www.mnv.kr/PC/index.php?media=".$media."");
+		Header("Location:http://mydream.compassion.or.kr/PC/index.php?media=".$media."");
 		exit;
 	}
 
