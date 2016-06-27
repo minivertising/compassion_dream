@@ -77,7 +77,7 @@ switch ($_REQUEST['exec'])
 				if ($ch_data['ch_choice'] == "N")
 				{
 					$check_choice	= false;
-					exit;
+					break;
 				}else{
 					$check_choice	= true;
 				}
