@@ -28,7 +28,7 @@ $total_matching_cnt = 1000;
 <div class="wrap_sec_top">
   <div class="bg_wrap_sec_top">
     <div class="inner">
-      <div class="logo"><a href="#"><img src="images/logo.png" /></a></div>
+      <div class="logo"><a href="./index.php"><img src="images/logo.png" /></a></div>
       <div class="title"><img src="images/title_main.png" /></div>
       <div class="block_img">
         <div><a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_partin.png" /></a></div>
@@ -123,7 +123,7 @@ $total_matching_cnt = 1000;
 <!-- 사진 업로드 페이지 -->
 <div id="upload_page" class="wrap_sec_top_sub" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content upload">
       <div class="title">
         <div class="main"><span>'기타'</span>에게 어떤 꿈을 이어 주실 건가요?</div>
@@ -170,7 +170,7 @@ $total_matching_cnt = 1000;
 <!-- 개인정보 입력 페이지 -->
 <div id="input_page" class="wrap_sec_top_sub input_data" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content">
       <div class="title">
       </div>
@@ -198,7 +198,7 @@ $total_matching_cnt = 1000;
 <!-- ACTIVATOR 매칭 결과 페이지 -->
 <div id="matching_share_page" class="wrap_sec_top_sub match_child" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content">
       <div class="title">
       어린시절의 <span id="m_rs_name">미니버</span>님과 같이<br> 꿈이 필요한 어린이는 '<span id="m_rs_ch_name">기타</span>' 입니다
@@ -730,6 +730,9 @@ function dream_next(){
 
 	function show_dream_sel()
 	{
+    $("#ytplayer").each(function(){
+      this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+    });
 		$(".wrap_sec_top").hide();
 		$(".wrap_sec_com").hide();
 		$(".wrap_sec_movie").hide();
