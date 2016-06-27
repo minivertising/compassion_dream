@@ -70,7 +70,7 @@ switch ($_REQUEST['exec'])
 		//$dupli_data		= mysqli_fetch_array($dupli_result);
 
 		$mb_serial	= create_serial("activator", null);
-		if ($dupli_data)
+		if ($dupli_arr)
 		{
 			$i = 0;
 			print_r($dupli_arr);
