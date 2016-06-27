@@ -75,12 +75,12 @@ switch ($_REQUEST['exec'])
 				$ch_result 	= mysqli_query($my_db, $ch_query);
 				$ch_data		= mysqli_fetch_array($ch_result);
 				$check_choice	= false;
-				if ($ch_data['ch_choice'] == "N")
+				if ($ch_data['ch_choice'] == "Y")
 				{
-					$check_choice	= false;
-					break;
+					$check_choice	= true;
 				}else{
 					$check_choice	= false;
+					break;
 				}
 			}
 
@@ -88,7 +88,6 @@ switch ($_REQUEST['exec'])
 			//$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$dupli_data['mb_child']."'";
 			//$ch_result 	= mysqli_query($my_db, $ch_query);
 			//$ch_data		= mysqli_fetch_array($ch_result);
-
 			if ($check_choice === true)
 			{
 				// 매칭된 아이가 결연 되었을 경우
