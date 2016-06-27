@@ -65,31 +65,31 @@ switch ($_REQUEST['exec'])
 		$dupli_result 	= mysqli_query($my_db, $dupli_query);
 		$dupli_data		= mysqli_fetch_array($dupli_result);
 
+		@foreach($dupli_data as $key => $val)
+		{
+			// 이벤트 참여한적이 있을 경우
+			$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$val."'";
+			$ch_result 	= mysqli_query($my_db, $ch_query);
+			$ch_data		= mysqli_fetch_array($ch_result);
+			$check_choice	= false;
+			if ($ch_data['ch_choice'] == "N")
+			{
+				$check_choice	= false;
+				break;
+			}else{
+				$check_choice	= true;
+			}
+		}
+
 		$mb_serial	= create_serial("activator", null);
 		if ($dupli_data)
 		{
-			foreach($dupli_data as $key => $val)
-			{
-				// 이벤트 참여한적이 있을 경우
-				$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$val."'";
-				$ch_result 	= mysqli_query($my_db, $ch_query);
-				$ch_data		= mysqli_fetch_array($ch_result);
-				$check_choice	= 0;
-				if ($ch_data['ch_choice'] == "N")
-				{
-					$check_choice	= 1;
-					break;
-				}else{
-					$check_choice	= 0;
-				}
-			}
-
 			// 이벤트 참여한적이 있을 경우
 			//$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$dupli_data['mb_child']."'";
 			//$ch_result 	= mysqli_query($my_db, $ch_query);
 			//$ch_data		= mysqli_fetch_array($ch_result);
 
-			if ($check_choice == 0)
+			if ($check_choice === true)
 			{
 				// 매칭된 아이가 결연 되었을 경우
 				$child_info	= matching_child($mb_job);
@@ -99,7 +99,7 @@ switch ($_REQUEST['exec'])
 				$result 	= mysqli_query($my_db, $query);
 
 				if ($result)
-					$flag	= $check_choice;
+					$flag	= "Y||".$child_arr[1]."||".$mb_serial."||".$child_arr[2]."||".$child_arr[3];
 				else
 					$flag	= "N||fail||N";
 
