@@ -99,7 +99,7 @@ switch ($_REQUEST['exec'])
 				$result 	= mysqli_query($my_db, $query);
 
 				if ($result)
-					$flag	= "Y||".$child_arr[1]."||".$mb_serial."||".$child_arr[2]."||".$child_arr[3];
+					$flag	= $check_choice;
 				else
 					$flag	= "N||fail||N";
 
