@@ -798,8 +798,9 @@ body.main{
 	background:#d5e5f4;
 }
 .p_select_job{
-	width:750px;
-	height:640px;
+	width:763px;
+	height:678px;
+	background: url(../images/bg_job.png) no-repeat top center;
 }
 .p_howto_share{
 	width:745px;
@@ -849,7 +850,7 @@ body.main{
 
 
 .inner_p_select_job{
-	padding:30px 20px 0;
+	padding:30px 30px 0;
 }
 .inner_p_select_job .one_job{
 	float:left;
@@ -867,7 +868,7 @@ body.main{
 	width:80%;
 	margin:0 auto;
 	padding:3px 0;
-	border-radius:4px;
+	border-radius:10px;
 }
 
 
