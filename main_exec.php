@@ -74,13 +74,13 @@ switch ($_REQUEST['exec'])
 				$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$val."'";
 				$ch_result 	= mysqli_query($my_db, $ch_query);
 				$ch_data		= mysqli_fetch_array($ch_result);
-				$check_choice	= false;
+				$check_choice	= 0;
 				if ($ch_data['ch_choice'] == "N")
 				{
-					$check_choice	= false;
+					$check_choice	= 1;
 					break;
 				}else{
-					$check_choice	= true;
+					$check_choice	= 0;
 				}
 			}
 
@@ -89,7 +89,7 @@ switch ($_REQUEST['exec'])
 			//$ch_result 	= mysqli_query($my_db, $ch_query);
 			//$ch_data		= mysqli_fetch_array($ch_result);
 
-			if ($check_choice === true)
+			if ($check_choice == 0)
 			{
 				// 매칭된 아이가 결연 되었을 경우
 				$child_info	= matching_child($mb_job);
