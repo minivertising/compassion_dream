@@ -80,6 +80,7 @@ switch ($_REQUEST['exec'])
 					$check_choice	= true;
 				}else{
 					$check_choice	= false;
+					print_r('111');
 					break;
 				}
 			}
