@@ -76,7 +76,7 @@ switch ($_REQUEST['exec'])
 			foreach($dupli_arr as $key => $val)
 			{
 				// 이벤트 참여한적이 있을 경우
-				$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$dupli_arr[$i]."'";
+				$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$val."'";
 				$ch_result 	= mysqli_query($my_db, $ch_query);
 				$ch_data		= mysqli_fetch_array($ch_result);
 				$check_choice	= false;
