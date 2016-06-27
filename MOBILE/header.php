@@ -15,7 +15,7 @@
 			$mb_result 	= mysqli_query($my_db, $mb_query);
 			$mb_data	= mysqli_fetch_array($mb_result);
 		}
-		$img_url		= str_replace("..","http://www.mnv.kr",$mb_data['mb_image']);
+		$img_url		= str_replace("..","http://mydream.compassion.or.kr",$mb_data['mb_image']);
 	}
 ?>
 <!doctype html>
@@ -30,12 +30,12 @@
 	{
 // PC, MOBILE 구분 ?
 ?>
-<meta property="og:url" content="http://www.mnv.kr/MOBILE/lms_index.php?rs=<?=$mb_data['mb_serial']?>&ugu=<?=$ugu?>" />
+<meta property="og:url" content="http://mydream.compassion.or.kr/MOBILE/lms_index.php?rs=<?=$mb_data['mb_serial']?>&ugu=<?=$ugu?>" />
 <meta property="og:image" content="<?=$img_url?>" />
 <?
 	}else{
 ?>
-<meta property="og:url" content="http://www.mnv.kr/MOBILE/lms_index.php" />
+<meta property="og:url" content="http://mydream.compassion.or.kr/MOBILE/lms_index.php" />
 <meta property="og:image" content="" />
 <?
 	}
