@@ -74,6 +74,7 @@ switch ($_REQUEST['exec'])
 				$ch_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE idx='".$val."'";
 				$ch_result 	= mysqli_query($my_db, $ch_query);
 				$ch_data		= mysqli_fetch_array($ch_result);
+				$check_choice	= false;
 				if ($ch_data['ch_choice'] == "N")
 				{
 					$check_choice	= false;
