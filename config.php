@@ -10,10 +10,9 @@
 	include_once "include/phprandom.php";		//난수번호 생성 CLASS
 
 	mysqli_query ($my_db,"set names utf8");
-
-	
+	//print_r($_SERVER['REMOTE_ADDR']);
 	//if ($_SERVER['REMOTE_ADDR'] != "61.40.46.41")
-	if ($_SERVER['REMOTE_ADDR'] != "61.40.46.41" && $_SERVER['REMOTE_ADDR'] != "127.0.0.1")
+	if ($_SERVER['REMOTE_ADDR'] != "61.40.46.41" && $_SERVER['REMOTE_ADDR'] != "127.0.0.1" && $_SERVER['REMOTE_ADDR'] != "66.249.82.185")
 	{
 		echo "사이트 준비중입니다.";
 		exit;
