@@ -2,7 +2,7 @@ function open_pop(param)
 {
 	// $('.preview > img').css('width', 'max-width');
 	// alert("op_pp");
-	$.colorbox({innerWidth:"100%",innerHeight: "70%", initialWidth:"95%", initialHeight: "70%", inline:true, opacity:"0.9", scrolling:true, reposition: false,closeButton:false, overlayClose: false, open:true, speed:0, fadeOut: 300, href:"#"+param, onComplete: function(){
+	$.colorbox({innerWidth:"100%",innerHeight: "70%", initialWidth:"95%", initialHeight: "70%", inline:true, opacity:"0.9", scrolling:true, reposition: false, closeButton:false, overlayClose: false, open:true, speed:0, transition: "fade", fadeOut: 300, href:"#"+param, onComplete: function(){
 		$("#cboxContent").css("background","none");
 		$("#cboxContent").css("z-index","99999");
 		$('#cboxWrapper').css('backgroundColor', "");
@@ -24,10 +24,12 @@ function open_pop(param)
 	onClosed: function(){
 		//del_info();
 		$("#cboxContent").css("background","#fff");
-		$(".sec_main_img").show();
+		// $(".sec_main_img").show();
+		$(".sec_main_img").fadeIn('slow');
 		if (param == "gift_popup2" || param == "notice_popup2")
 		{
-			$(".sec_top").show();
+			// $(".sec_top").show();
+			$(".sec_top").fadeIn('slow');
 		}
 	}});
 }
@@ -44,12 +46,14 @@ function view_dream_div()
 		}
 		$("#dream_sel_link").html("꿈 선택 ▲");
 		// 준우씨가 animate로 변경
-		$("#choice_dream").show();
+		// $("#choice_dream").show();
+		$("#choice_dream").fadeIn('slow');
 		flag_sel_dream	= 1;
 	}else{
 		$("#dream_sel_link").html("꿈 선택 ▼");
 		// 준우씨가 animate로 변경
-		$("#choice_dream").hide();
+		// $("#choice_dream").hide();
+		$("#choice_dream").fadeOut('slow');
 		flag_sel_dream	= 0;
 	}
 }
@@ -68,8 +72,10 @@ function checked_dream(param, param2, param3)
 function next_page(param)
 {
 	var prev_param	= param - 1;
-	$("#page_div"+prev_param).hide();
-	$("#page_div"+param).show();
+	// $("#page_div"+prev_param).hide();
+	// $("#page_div"+param).show();
+	$("#page_div"+prev_param).fadeOut('slow');
+	$("#page_div"+param).fadeIn('slow');
 }
 
 function only_num(obj)
@@ -112,11 +118,12 @@ function show_dream_sel()
 	$(".wrap_sec_movie").hide();
 	$(".wrap_sec_footer").hide();
 	*/
-	$("#contents_div").hide();
-	image_crop();
-
+	// $("#contents_div").hide();
+	$("#contents_div").fadeOut('slow');
 	$("body").addClass("bg_sub_page");
-	$("#upload_page").show();
+	// $("#upload_page").show();
+	$("#upload_page").fadeIn('slow', 'swing');
+	image_crop();
 }
 
 function mb_check()

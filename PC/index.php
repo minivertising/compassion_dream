@@ -763,32 +763,4 @@ function dream_next(){
 		});
 	}
 
-	function show_dream_sel()
-	{
-		$("#ytplayer").each(function(){
-			this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
-		});
-		$(".wrap_sec_top").hide();
-		$(".wrap_sec_com").hide();
-		$(".wrap_sec_movie").hide();
-		$(".wrap_sec_footer").hide();
-
-		$("body").addClass("bg_sub_page");
-		// $("#upload_page").show();
-		$("#upload_page").fadeIn('slow', 'swing');
-		image_crop();
-	}
-
-	function mb_check()
-	{
-		if (chk_mb_flag == 0)
-		{
-			$("#mb_agree").attr("src","images/checked.png");
-			chk_mb_flag = 1;
-		}else{
-			$("#mb_agree").attr("src","images/check.png");
-			chk_mb_flag = 0;
-		}
-	}
-
 </script>
