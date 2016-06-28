@@ -287,8 +287,6 @@ $total_matching_cnt = 1000;
 	var $inputImage = $('#inputImage')
     var $previews = $('.preview');
 	var URL = window.URL || window.webkitURL;
-	var realFath;
-	var convertPath;
 	var blobURL;
 	var file;
 	var files;
@@ -367,9 +365,7 @@ $total_matching_cnt = 1000;
 			}
 			*/
 
-// $(function () {
-//     image_crop();
-// });
+
 
 function image_crop(){
 	$($ori_image).cropper({
@@ -377,16 +373,16 @@ function image_crop(){
 		dragMode: 'move',
 		autoCropArea: 0.8,
 		aspectRatio: 1200/630,
-		responsive: false,
-		restore: false,
+		responsive: true,
+		restore: true,
 		guides: false,
-		highlight: false,
-		cropBoxMovable: false,
-		cropBoxResizable: false,
+		highlight: true,
+		background: true,
+		cropBoxMovable: true,
+		cropBoxResizable: true,
 		preview: '.preview',
 		center:true,
 		zoomOnWheel:false,
-		zoomOnTouch:false,
 		toggleDragModeOnDblclick:false,
 		// build: function (e) {
 		//     console.log(e.type);
@@ -732,9 +728,9 @@ function dream_next(){
 		$(".wrap_sec_movie").hide();
 		$(".wrap_sec_footer").hide();
 
-		image_crop();
 		$("body").addClass("bg_sub_page");
 		$("#upload_page").show();
+		image_crop();
 	}
 
 	function mb_check()
@@ -750,4 +746,3 @@ function dream_next(){
 	}
 
 </script>
-<!-- <script src="../lib/Cropper/js/main.js"></script> -->

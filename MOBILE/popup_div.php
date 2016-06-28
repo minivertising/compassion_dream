@@ -1,7 +1,7 @@
 <div style="display:none;">
   <!--직업선택팝업--> 
   <div id="job_popup" class="wrap_pop p_select_job">
-    <div class="btn_close"><a href="#"><img src="images/popup/btn_close.png" /></a></div>
+    <div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/popup/btn_close.png" /></a></div>
     <div class="inner_p_select_job clearfix">
       <div class="one_job">
         <div class="img"><a href="#" onclick="checked_dream('congress','','국회의원');return false;"><img src="images/popup/job_1.png" /></a></div>
@@ -71,7 +71,8 @@
         <div class="img"><a href="#" onclick="checked_dream('congress','','운동선수');return false;"><img src="images/popup/job_17.png" /></a></div>
         <div class="text"><a href="#" onclick="checked_dream('congress','','운동선수');return false;">운동선수</a></div>
       </div>
-  </div> 
+  </div>
+</div>
   <!--직업선택팝업--> 
 
 

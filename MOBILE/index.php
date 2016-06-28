@@ -198,7 +198,6 @@ function image_crop(){
         responsive: true,
         restore: true,
         guides: false,
-        // modal: false,
         highlight: true,
         background: true,
         cropBoxMovable: true,

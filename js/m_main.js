@@ -1,6 +1,6 @@
 function open_pop(param)
 {
-	$('.preview > img').css('width', 'max-width');
+	// $('.preview > img').css('width', 'max-width');
 	// alert("op_pp");
 	$.colorbox({innerWidth:"100%",innerHeight: "70%", initialWidth:"95%", initialHeight: "70%", inline:true, opacity:"0.9", scrolling:true, reposition: false,closeButton:false, overlayClose: false, open:true, speed:0, fadeOut: 300, href:"#"+param, onComplete: function(){
 		$("#cboxContent").css("background","none");
@@ -15,10 +15,10 @@ function open_pop(param)
 		// $("body").height($("#"+param).height());
 		$("#cboxWrapper").width($("body").width());
 		//$(".sec_main_img").hide();
-		if (param == "dream_sel_popup")
-		{
-			image_crop();
-		}
+		// if (param == "dream_sel_popup")
+		// {
+		// 	image_crop();
+		// }
 
 	},
 	onClosed: function(){
