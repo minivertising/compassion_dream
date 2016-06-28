@@ -23,7 +23,7 @@
 	$mimeType=="") { 
 		echo("<script> 
 		alert('업로드를 할 수 없는 파일형식입니다.'); 
-		document.location.href = './lms_index.php';    
+		document.location.href = './index.php';    
 		</script>"); 
 		exit;
 	}

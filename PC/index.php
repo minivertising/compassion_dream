@@ -285,6 +285,7 @@ $total_matching_cnt = 1000;
 	var mb_image        = null;
 	var $ori_image = $('#ori_image');
 	var $inputImage = $('#inputImage')
+    var $previews = $('.preview');
 	var URL = window.URL || window.webkitURL;
 	var realFath;
 	var convertPath;
@@ -738,7 +739,6 @@ function dream_next(){
 		$(".wrap_sec_com").hide();
 		$(".wrap_sec_movie").hide();
 		$(".wrap_sec_footer").hide();
-	image_crop();
 
 		image_crop();
 		$("body").addClass("bg_sub_page");

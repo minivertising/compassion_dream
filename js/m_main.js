@@ -58,11 +58,12 @@ function view_dream_div()
 }
 
 // 직업선택 시 변수 저장 함수
-function checked_dream(param)
+function checked_dream(param, param2, param3)
 {
 	sel_dream	= param;
-	$("#choice_dream").hide();
-	$("#dream_sel_link").html("꿈 선택 ▼");
+	$.colorbox.close();
+	$("#sel_job_btn").attr("src","images/btn_re_sec.png");
+	$("#sel_job_txt").html(param3);
 	flag_sel_dream	= 0;
 
 }
@@ -73,15 +74,66 @@ function next_page(param)
 	$("#page_div"+prev_param).hide();
 	$("#page_div"+param).show();
 }
-/*
-function dream_next()
-{
-	sel_dream		= $(":input:radio[name=dream_chk]:checked").val();
-	runner_serial		= $("#runner_serial").val();
 
-	open_pop("upimage_popup");
+function only_num(obj)
+{
+	var inText = obj.value;
+	var outText = "";
+	var flag = true;
+	var ret;
+	for(var i = 0; i < inText.length; i++)
+	{
+		ret = inText.charCodeAt(i);
+		if((ret < 48) || (ret > 57))
+		{
+			flag = false;
+		}
+		else
+		{
+			outText += inText.charAt(i);
+		}
+	}
+ 
+	if(flag == false)
+	{
+		alert("전화번호는 숫자입력만 가능합니다.");
+		obj.value = outText;
+		obj.focus();
+		return false;
+	} 
+	return true;
 }
-*/
+
+function show_dream_sel()
+{
+	$("#ytplayer").each(function(){
+		this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+	});
+	/*
+	$(".wrap_sec_top").hide();
+	$(".wrap_sec_com").hide();
+	$(".wrap_sec_movie").hide();
+	$(".wrap_sec_footer").hide();
+	*/
+	$("#contents_div").hide();
+	image_crop();
+
+	$("body").addClass("bg_sub_page");
+	$("#upload_page").show();
+}
+
+function mb_check()
+{
+	if (chk_mb_flag == 0)
+	{
+		$("#mb_agree").attr("src","images/checked.png");
+		chk_mb_flag = 1;
+	}else{
+		$("#mb_agree").attr("src","images/check.png");
+		chk_mb_flag = 0;
+	}
+}
+
 
 function sns_share(media)
 {

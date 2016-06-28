@@ -30,12 +30,12 @@
 	{
 // PC, MOBILE 구분 ?
 ?>
-<meta property="og:url" content="http://mydream.compassion.or.kr/MOBILE/lms_index.php?rs=<?=$mb_data['mb_serial']?>&ugu=<?=$ugu?>" />
+<meta property="og:url" content="http://mydream.compassion.or.kr/MOBILE/index.php?rs=<?=$mb_data['mb_serial']?>&ugu=<?=$ugu?>" />
 <meta property="og:image" content="<?=$img_url?>" />
 <?
 	}else{
 ?>
-<meta property="og:url" content="http://mydream.compassion.or.kr/MOBILE/lms_index.php" />
+<meta property="og:url" content="http://mydream.compassion.or.kr/MOBILE/index.php" />
 <meta property="og:image" content="" />
 <?
 	}
@@ -45,6 +45,7 @@
 <title>모바일 메인</title>
 <!--[if lt IE 9]><script src="./js/html5shiv.js"></script><![endif]-->
 <!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
+<link href="css/style.css" rel="stylesheet" type="text/css">
 <link href="../lib/bxslider/jquery.bxslider.css" rel="stylesheet" />
 <link href="../lib/Cropper/css/bootstrap.min.css" rel="stylesheet">
 <link href="../lib/Cropper/css/cropper.css" rel="stylesheet">
@@ -57,14 +58,3 @@
 <script type="text/javascript" src="../lib/colorbox/jquery.colorbox-min.js"></script>
 <script src="../lib/bxslider/jquery.bxslider.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-
-<style>
-.container {
-	max-width: 100%;
-}
-
-img {
-	max-width: 100%;
-}
-
-</style>

@@ -4,7 +4,7 @@
 	$ch_data	= sel_child_info($mb_data['mb_child']);
 
 ?>
-<body>
+<body class="bg_status">
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -22,16 +22,59 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-    <div id="contents_div">
-	  <h2>후원자님의 링크는 <?=$mb_data['mb_share_cnt']?>명에 의해 공유되고 있습니다.</h2>
-	  <div>
-	    <img src="<?=$ch_data['ch_top_img_url']?>" style="width:100%">
-	  </div>
-	  <a href="#" onclick="open_pop('share_popup');return false;">더 많은 사람들에게 알리기</a>
+<div class="wrap_page mystatus">
+  <div class="head_title">
+    <img src="images/title_status.png" width="95" />
+  </div>
+  <div class="title">
+    <span><?=$mb_data['mb_name']?></span>님의 어릴적 사진은<br>
+    <span><?=number_format($mb_data['mb_share_cnt'])?></span>명에 의해 공유되고 있습니다
+  </div>
+  <div class="pic_child">
+    <div><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
+    <div class="txt_wating">
+    후원자님을 기다리고 있어요!  <!-- 후원자님을 만났어요-->
     </div>
+  </div>
+  <div class="head_title t_2">
+    <img src="images/title_sponsor_ox.png" width="70" />
+  </div>
 <?
-        include_once "./popup_div.php";
+	if ($ch_data['ch_choice'] == "Y")
+	{
 ?>
+  <div class="txt_status">
+    <span><?=$mb_data['mb_name']?></span>님의 어린이는<br>
+    <span class="yellow">결연</span>이 <span class="yellow">완료</span>되었습니다
+  </div>
+  <div class="txt_status_2">
+     -회원님의 링크는 <?=$ch_data['ch_nick']?> 같이<br>
+     도움이 필요한 어린이를 위해 달리게 됩니다.
+  </div>
+  <div class="btn_block last">
+    <a href="index.php"><img src="images/btn_help_oher.png"/></a> 
+  </div>
+<?
+	}else{
+?>
+  <div class="txt_status">
+    <span><?=$mb_data['mb_name']?></span>님의 어린이는<br>
+    <span class="yellow">결연</span>을 <span class="yellow">기다리는 중</span>입니다
+  </div>
+  <div class="btn_block bt_2">
+    <a href="#" onclick="open_pop('share_popup');return false;"><img src="images/btn_more_people.png"/></a> 
+  </div>
+  <div class="btn_block last">
+    <a href="index.php"><img src="images/btn_new_pic.png"/></a> 
+  </div>
+<?
+	}
+?>
+</div>
+<?
+	include_once "./popup_div.php";
+?>
+
 </body>
 </html>
 <script type="text/javascript">
