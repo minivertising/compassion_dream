@@ -4,7 +4,8 @@ include_once "./header.php";
 $total_runner_cnt   = total_runner_info();
 $total_pic_cnt      = total_pic_info();
 //$total_matching_cnt = total_matching_info();
-$total_matching_cnt = 1000;
+$total_matching_cnt		= 1000;
+$total_remain_cnt			= 3000 - $total_matching_cnt;
 ?>
 <body>
 <script>
@@ -28,29 +29,23 @@ $total_matching_cnt = 1000;
 <div class="wrap_sec_top">
   <div class="bg_wrap_sec_top">
     <div class="inner">
-      <div class="logo"><a href="./index.php"><img src="images/logo.png" /></a></div>
+      <div class="logo"><a href="index.php"><img src="images/logo.png" /></a></div>
       <div class="title"><img src="images/title_main.png" /></div>
       <div class="block_img">
-        <div><a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_partin.png" /></a></div>
-        <div class="status">
-          <div class="child">
-            <div class="num"><?=$total_matching_cnt?></div>
-            <div class="bar">
-              <div class="inner_bar">
-                <div class="heart"><img src="images/bar_heart.png" /></div>
-                <div class="g"></div>
-              </div>
+                <div><a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_partin.png" /></a></div>
+                <div class="status">
+                    <div class="people">
+                    	<div class="num"><?=number_format($total_matching_cnt)?></div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="people">
-            <div class="num"><?=$total_runner_cnt?></div>
-          </div>
+            <div class="main_child">
+            	<img src="images/main_child.png" />
+            </div>
+            <div class="btn_howto">
+                <a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_howto.png" /></a>
+            </div>
         </div>
-        <div class="btn_howto">
-          <a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_howto.png" /></a>
-        </div>
-      </div>
-    </div>
     <div class="people_pic clearfix">
       <div class="pic_one">
         <img src="images/ex_pic_one.png" />
@@ -92,32 +87,52 @@ $total_matching_cnt = 1000;
   </div><!--bg-->
 </div>
 
-<div class="wrap_sec_movie">
-  <div class="bg_wrap_sec_movie">
-    <div class="inner">
-      <div class="title"><img src="images/title_movie.png" /></div>
-      <div class="movie"><iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe></div>
-      <div class="block_btn">
-        <a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_relay_movie.png" /></a>
-        <a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_relay_howto_movie.png" /></a>
-      </div>
+    <div class="wrap_sec_movie">
+    	<div class="bg_wrap_sec_movie">
+            <div class="inner">
+                <div class="title"><img src="images/title_movie.png" /></div>
+                <div class="movie"><iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe></div>
+                <div class="block_btn">
+                    <a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_relay_movie.png" /></a>
+                    <a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_relay_howto_movie.png" /></a>
+                </div>
+            </div>
+            
+			<div class="bg_child">
+                <div class="child">
+                	<div class="inner_child clearfix">
+                        <div class="bar">
+                            <div class="inner_bar">
+                            	<div class="figure">결연된 어린이 <?=number_format($total_matching_cnt)?>명</div>
+                                <div class="heart"><img src="images/bar_heart.png" /></div>
+                                <div class="g"></div>
+                            </div>
+                        </div>
+                        <div class="num">
+                        	<div class="txt"><img src="images/txt_waiting_child.png" /></div>
+                        	<div class="cnt"><span><?=number_format($total_remain_cnt)?></span>명</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     </div>
-  </div>
-</div>
 
-<div class="wrap_sec_com">
-  <div class="inner">
-    <div class="title"><img src="images/title_com.png" /></div>
-    <div class="img">
-      <a href="http://www.compassion.or.kr/" target="_blank"><img src="images/btn_compassion.png" /></a>
+    <div class="wrap_sec_com">
+    	<div class="inner">
+        	<div class="title"><img src="images/title_com.png" /></div>
+   			<div class="img">
+            	<a href="http://www.compassion.or.kr/" target="_blank"><img src="images/btn_compassion.png" /></a>
+            </div>
+        </div>
+        
     </div>
-  </div>
-</div>
-<div class="wrap_sec_footer">
-  <div class="inner">
-    <div class="img"><img src="images/img_footer.jpg" /></div>
-  </div>
-</div>
+    <div class="wrap_sec_footer" style="display:none;">
+    	<div class="inner">
+   			<div class="img"><img src="images/img_footer.jpg" /></div>
+        </div>
+    </div>
 <!-- 메인 index -->
 
 <!-- 사진 업로드 페이지 -->
@@ -130,7 +145,7 @@ $total_matching_cnt = 1000;
       </div>
       <div class="block_input_dream">
         <div class="selec_job">
-          <span id="sel_job_txt">1. 꿈꾸던 직업선택</span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
+          <span id="sel_job_txt">1. 꿈꾸던 직업 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
         </div>
         <div class="upload_pic">
           <div class="title_pic">
@@ -175,6 +190,7 @@ $total_matching_cnt = 1000;
       <div class="title">
       </div>
       <div class="block_input">
+        <div class="label_title"><img src="images/label_title.png" /></div>
         <div class="input_one clearfix">
           <div class="label">이름</div>
           <div class="input"><input type="text" id="mb_name"></div>
@@ -186,6 +202,9 @@ $total_matching_cnt = 1000;
         <div class="check">
           <a href="#" onclick="mb_check();return false;"><img src="images/check.png" name="mb_agree" id="mb_agree" /></a><a href="#">개인정보 수집 및 위탁에 관한 동의</a> <a href="#" onclick="open_pop('agree_popup');return false;"><img src="images/btn_detail.png" /></a>
         </div>
+      </div>
+      <div class="txt_notice">
+      * 추첨에 선정  되신 분께는 개별 연락 드립니다
       </div>
       <div class="block_btn">
         <a href="#" onclick="input_submit();return false;"><img src="images/btn_next.png" /></a>
@@ -204,7 +223,7 @@ $total_matching_cnt = 1000;
       어린시절의 <span id="m_rs_name">미니버</span>님과 같이<br> 꿈이 필요한 어린이는 '<span id="m_rs_ch_name">기타</span>' 입니다
       </div>
       <div class="block_child">
-        <div class="img_letter"><img src="images/img_letter.png" /></div>
+        <!-- <div class="img_letter"><img src="images/img_letter.png" /></div> -->
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic" /></div>
           <div class="child_text">
@@ -219,8 +238,8 @@ $total_matching_cnt = 1000;
         </div>
       </div>
       <div class="block_txt">
-        <p>당신의 어린시절 사진을 공유하면 참여가 완료됩니다</p>
-        <p>끝까지 참여해주셔서 <span>'기타'</span>의 후원자님 찾아주세요</p>
+        <p>당신의 어린 시절 사진을 공유하면 참여가 완료됩니다</p>
+        <p>아래 SNS에 공유하여 '<span id="m_rs_ch_name3">기타</span>'의 후원자님 찾아주세요</p>
       </div>
       <div class="block_btn sns">
         <a href="#" onclick="sns_share('fb','act');"><img src="images/sns_f.png" /></a>
@@ -677,6 +696,7 @@ function dream_next(){
 					$("#m_rs_name").html(mb_name);
 					$("#m_rs_ch_name").html(rs_ch[3]);
 					$("#m_rs_ch_name2").html(rs_ch[3]);
+					$("#m_rs_ch_name3").html(rs_ch[3]);
 					$("#m_rs_job").html(job_add_arr[0]);
 					$("#m_rs_job2").html(job_add_arr[1]);
 					$("#m_rs_nation").html(rs_ch[4]);
@@ -694,6 +714,7 @@ function dream_next(){
 					$("#m_rs_name").html(mb_name);
 					$("#m_rs_ch_name").html(rs_ch[3]);
 					$("#m_rs_ch_name2").html(rs_ch[3]);
+					$("#m_rs_ch_name3").html(rs_ch[3]);
 					$("#m_rs_job").html(job_add_arr[0]);
 					$("#m_rs_job2").html(job_add_arr[1]);
 					$("#m_rs_nation").html(rs_ch[4]);
