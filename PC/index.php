@@ -285,6 +285,7 @@ $total_matching_cnt = 1000;
 	var mb_image        = null;
 	var $ori_image = $('#ori_image');
 	var $inputImage = $('#inputImage')
+    var $previews = $('.preview');
 	var URL = window.URL || window.webkitURL;
 	var realFath;
 	var convertPath;
@@ -729,33 +730,6 @@ function dream_next(){
 		});
 	}
 
-	function show_dream_sel()
-	{
-		$("#ytplayer").each(function(){
-			this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
-		});
-		$(".wrap_sec_top").hide();
-		$(".wrap_sec_com").hide();
-		$(".wrap_sec_movie").hide();
-		$(".wrap_sec_footer").hide();
-	image_crop();
-
-		image_crop();
-		$("body").addClass("bg_sub_page");
-		$("#upload_page").show();
-	}
-
-	function mb_check()
-	{
-		if (chk_mb_flag == 0)
-		{
-			$("#mb_agree").attr("src","images/checked.png");
-			chk_mb_flag = 1;
-		}else{
-			$("#mb_agree").attr("src","images/check.png");
-			chk_mb_flag = 0;
-		}
-	}
 
 </script>
 <!-- <script src="../lib/Cropper/js/main.js"></script> -->

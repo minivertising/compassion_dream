@@ -58,14 +58,3 @@
 <script type="text/javascript" src="../lib/colorbox/jquery.colorbox-min.js"></script>
 <script src="../lib/bxslider/jquery.bxslider.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-
-<style>
-.container {
-	max-width: 100%;
-}
-
-img {
-	max-width: 100%;
-}
-
-</style>

@@ -19,26 +19,131 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-    <div id="loading_div" style="display:none">
-        Loading.... 꿈이 필요한 아이와 매칭중
+<div id="loading_div" style="display:none">
+Loading.... 꿈이 필요한 아이와 매칭중
+</div>
+<div id="contents_div">
+  <a href="#" onclick="show_dream_sel();return false;">지금 참여하기</a>
+</div>
+
+<div id="upload_page" class="wrap_page sub upload" style="display:none;">
+  <div class="inner">
+    <div class="block_content">
+      <!--
+      // follower 일때는 주석 내용 표시
+      <div class="title">
+        <span>기타</span>에게 어떤 꿈을<br>
+        이어주실건가요?
+      </div>
+      <div class="sub_title">
+      당신의 어린 시절 꿈꾸던 직업과 사진을 올려주세요
+      </div>
+      -->
+      <!-- activator 일때는 아래의 내용 표시-->
+      <div class="title">
+        <span class="small">당신의 어린시절 사진과 꿈을 올려주시면</span><br>
+        '같은 꿈을 꾸고픈 어린이'가<br>
+        당신 지인에게 소개됩니다
+      </div>
+      <div class="block_input_dream">
+        <div class="selec_job clearfix">
+          <div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div>
+          <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="60" id="sel_job_btn"/></a></div><!--버튼 두개입니다-->
+        </div>
+        <div class="upload_pic">
+          <div class="title_pic">
+          2. 사진업로드
+          </div>
+          <div class="desc">
+            <div class="txt_pic">
+            * 1개의 이미지 파일을 등록할 수 있습니다
+            </div>
+            <div class="btns">
+              <label for="inputImage" title="Upload image file">
+                <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+                <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
+              </label>
+              <a href="#"><img src="images/btn_preview.png" width="80"  /></a>
+            </div>
+          </div>
+          <div id="img_div" class="pic_area">
+            <img id="ori_image" src="./images/picture.jpg" alt="Picture" />
+          </div>
+          <div class="btn_closeup">
+            <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" width="80" /></a>
+            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" width="80" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="block_btn upload">
+        <a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
+      </div>
     </div>
-    <div id="contents_div">
-        <a href="#" onclick="open_pop('dream_sel_popup');">지금 참여하기</a>
-        <?
-        include_once "./popup_div.php";
-        ?>
+  </div>
+</div>
+
+<!-- 개인정보 입력 페이지 -->
+<div id="input_page" class="wrap_page sub input_data" style="display:none">
+  <div class="inner">
+    <div class="block_content">
+      <div class="title">
+      참여하신 분 중 추첨을 통해<br>
+      컴패션 현지 센터를 방문할 수 있는<br>
+      기회를 드립니다
+      </div>
+      <div class="sub_title">
+      참여자 정보
+      </div>
+      <div class="block_input">
+        <div class="input_one clearfix">
+          <div class="label">이름</div>
+          <div class="input"><input type="text" id="mb_name"></div>
+        </div>
+        <div class="input_one clearfix">
+          <div class="label">휴대폰번호</div>
+          <div class="input"><input type="text" id="mb_phone" placeholder="휴대폰번호 ('-' 없이 입력해주세요)" onkeyup="only_num(this);return false;"></div>
+        </div>
+        <div class="check clearfix">
+          <a href="#" class="box" onclick="mb_check();return false;"><img src="images/check.png" name="mb_agree" id="mb_agree" /></a>
+          <a href="#" class="txt">개인정보 수집 및 위탁에 관한 동의</a>
+          <a href="#" class="bt" onclick="open_pop('agree_popup');return false;"><img src="images/btn_detail.png" /></a>
+        </div>
+      </div>
+      <div class="sub_title add">
+      추첨에 선정 되신 분께는 개별 연락 드립니다
+      </div>
+      <div class="block_btn">
+        <a href="#" onclick="input_submit();return false;"><img src="images/btn_next.png" /></a>
+      </div>
     </div>
+  </div>
+</div>
+<!-- 개인정보 입력 페이지 -->
+
+<?
+	include_once "./popup_div.php";
+?>
 </body>
 </html>
 <script type="text/javascript">
-    var sel_dream       = null;
-    var runner_serial   = null;
-    var mb_job          = null;
-    var mb_image        = null;
-    var $ori_image = $('#ori_image');
+	var sel_dream       = null;
+	var runner_serial   = null;
+	var mb_job          = null;
+	var mb_image        = null;
+	var $ori_image = $('#ori_image');
+	var $inputImage = $('#inputImage')
     var $previews = $('.preview');
-    var flag_sel_dream  = 0;
-    var mb_rs       = null;
+	var URL = window.URL || window.webkitURL;
+	//var realFath;
+	//var convertPath;
+	var blobURL;
+	var file;
+	var files;
+	var flag_sel_dream  = 0;
+	var mb_rs       = null;
+	var inputImageCheck;
+	var chk_mb_flag = 0;
+
     $(document).ready(function() {
         Kakao.init('59df63251be6d99256b63b98f4948e89');
         $("#cboxTopLeft").hide();
@@ -84,12 +189,6 @@
         $inputImage.prop('disabled', true).parent().addClass('disabled');
       }
 
-
-// $(function () {
-    
-
-// });
-
 function image_crop(){
     $($ori_image).cropper({
         viewMode: 0,
@@ -130,7 +229,25 @@ function image_crop(){
          }
     });
 }
-// });
+
+$($inputImage).change(function(){
+	inputImageCheck = "Y";
+	//files = this.files;
+// console.dir(this);
+// if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+//  // $($ori_image).cropper('destroy');
+//  $('#ie_img_save').ajaxSubmit({
+//      success: function (data) {
+//          console.dir(data);
+//      }
+//  });
+//  // this.select();
+//  // realFath = document.selection.createRangeCollection()[0].text.toString();
+//  // this.blur();
+//  }
+	//readURL(this);
+});
+
 
 function zoom_action(type){
   if(type=="up")
@@ -152,37 +269,111 @@ function preview_img()
 
 function dream_next()
 {
-    if (sel_dream == null)
-        {
-            alert("당신의 어린시절 꿈을 선택해 주세요.");
-            return false;
-        }
-    //mb_job    = $("#mb_job").val();
+	if (sel_dream == null)
+		{
+			alert("당신의 어린시절 꿈을 선택해 주세요.");
+			return false;
+		}
+		if (inputImageCheck !== "Y")
+		{
+			alert("이미지를 업로드해주세요.");
+			return false;
+		}
 
-    // 사진 저장할 내용 추가
-    $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
-      var formData = new FormData();
-      // formData.append('croppedImage', blob);
-      formData.append('croppedImage', blob, "test.jpg");
-      $.ajax('./upload2.php', {
-        method: "POST",
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function (data) {
-            // console.log(data);
-            mb_image    = data;
-            open_pop('input_popup');
-        }
-      });
-    });
-    //    
-    // if (mb_job == "")
-    // {
-    //     alert("당신의 어린시절 꿈을 선택해 주세요.");
-    //     return false;
-    // }
-    
+	//mb_job    = $("#mb_job").val();
+
+	// 사진 저장할 내용 추가
+	/*
+	$($ori_image).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
+	  var formData = new FormData();
+	  // formData.append('croppedImage', blob);
+	  formData.append('croppedImage', blob, "test.jpg");
+	*/
+	var croppedCanvas = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
+	crop_image_url = croppedCanvas.toDataURL("image/jpeg");
+
+	$.ajax({
+		method: 'POST',
+		url: '../main_exec.php',
+		data: {
+			exec            : "input_image",
+			crop_image_url  : crop_image_url,
+			mb_job          : sel_dream
+		},
+		beforeSend: function(response){
+			$("#loading_div").show();
+			$("#upload_page").hide();
+		},
+		success: function (res) {
+			alert(res);
+			// console.log(data);
+			//mb_image    = data;
+			//open_pop('input_popup');
+			var rs_ch = res.split("||");
+			if (rs_ch[0] == "Y")
+			{
+				// 매칭될 아이가 있을 경우
+				mb_image    = rs_ch[1];
+				$("#loading_div").hide();
+				$("#input_page").show();
+			}else if (rs_ch[0] == "N"){
+				// 매칭될 아이가 없을 경우
+				mb_image    = rs_ch[1];
+				mb_rs       = rs_ch[2];
+				$("#loading_div").hide();
+				$("#no_matching_page").show();
+
+			}else {
+				// 에러 
+				alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
+				location.reload();
+			}
+		}
+
+	/*
+	  $.ajax('./upload2.php', {
+		method: "POST",
+		data: formData,
+		processData: false,
+		contentType: false,
+		beforeSend: function(response){
+			$("#loading_div").show();
+			$("#upload_page").hide();
+		},
+		success: function (data) {
+			alert(data);
+			// console.log(data);
+			//mb_image    = data;
+			//open_pop('input_popup');
+			var rs_ch = res.split("||");
+			if (rs_ch[0] == "Y")
+			{
+				// 매칭될 아이가 있을 경우
+				mb_image    = rs_ch[1];
+				$("#loading_div").hide();
+				$("#input_page").show();
+			}else if (rs_ch[0] == "N"){
+				// 매칭될 아이가 없을 경우
+				mb_image    = rs_ch[1];
+				mb_rs       = rs_ch[2];
+				$("#loading_div").hide();
+				$("#no_matching_page").show();
+
+			}else {
+				// 에러 
+				alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
+				location.reload();
+			}
+		}
+		*/
+	});
+	//    
+	// if (mb_job == "")
+	// {
+	//     alert("당신의 어린시절 꿈을 선택해 주세요.");
+	//     return false;
+	// }
+	
 
 }
 
