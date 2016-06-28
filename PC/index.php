@@ -238,7 +238,7 @@ $total_matching_cnt = 1000;
 <!-- ACTIVATOR 매칭없을시 컴페션 소개 페이지 -->
 <div id="no_matching_page" class="wrap_sec_top_sub match_child" style="display:none">
   <div class="inner">
-    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content share_compassion">
       <div class="title">
       컴패션에서는 당신의 어린시절처럼<br>
@@ -731,9 +731,9 @@ function dream_next(){
 
 	function show_dream_sel()
 	{
-	$("#ytplayer").each(function(){
-	  this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
-	});
+		$("#ytplayer").each(function(){
+			this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+		});
 		$(".wrap_sec_top").hide();
 		$(".wrap_sec_com").hide();
 		$(".wrap_sec_movie").hide();

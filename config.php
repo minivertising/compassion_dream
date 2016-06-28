@@ -12,7 +12,8 @@
 	mysqli_query ($my_db,"set names utf8");
 
 	
-	if ($_SERVER['REMOTE_ADDR'] != "61.40.46.41")
+	//if ($_SERVER['REMOTE_ADDR'] != "61.40.46.41")
+	if ($_SERVER['REMOTE_ADDR'] != "61.40.46.41" && $_SERVER['REMOTE_ADDR'] != "127.0.0.1")
 	{
 		echo "사이트 준비중입니다.";
 		exit;
