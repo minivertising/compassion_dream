@@ -55,7 +55,7 @@ footer, header, hgroup, menu, nav, output, section, summary, time, mark, audio, 
 	box-shadow: 0 0 5px #ccc;
 	border:  5px solid #fff;
 	left: -5px;*/
-	background: #fff;
+	background: #0e2941;
 	
 	/*fix other elements on the page moving (on Chrome)*/
 	-webkit-transform: translatez(0);
