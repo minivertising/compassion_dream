@@ -76,7 +76,8 @@
   height: 100%;
 
   outline: 1px solid #39f;
-  outline-color: rgba(51, 153, 255, .75);
+  /*outline-color: rgba(10, 10, 255, .75);*/
+   outline-color: rgba(51, 153, 255, .75); 
 }
 
 .cropper-dashed {
@@ -221,6 +222,7 @@
   height: 5px;
 
   opacity: .75;
+  /*background-color: #39f;*/
   background-color: #39f;
 
   filter: alpha(opacity=75);
