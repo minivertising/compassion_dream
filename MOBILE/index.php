@@ -411,20 +411,47 @@ function input_submit()
             $("#contents_div").hide();
         },
         success: function(response){
-			alert(response);
-            console.log(response);
-            var rs_ch	= response.split("||");
-			mb_rs	= rs_ch[2];
-            $("#loading_div").hide();
-            $("#contents_div").show();
-            if (rs_ch[0] == "Y")
-            {
-				$("#matching_child_pic").attr("src",rs_ch[1]);
-                open_pop('share_popup');
-            }else {
-                alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
-                location.reload();
-            }
+				var rs_ch = response.split("||");
+				mb_rs = rs_ch[2];
+				$("#loading_div").hide();
+				$("#contents_div").show();
+				if (rs_ch[0] == "Y")
+				{
+					// 아이가 새로 매칭될 경우
+					$("#matching_child_pic").attr("src",rs_ch[1]);
+					$("#input_page").hide();
+					// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
+					//m_rs_name, m_rs_ch_name, m_rs_job. m_rs_nation, m_rs_job2
+					var job_add		= job_ko_add(sel_dream);
+					job_add_arr		= job_add.split("||");
+					$("#m_rs_name").html(mb_name);
+					$("#m_rs_ch_name").html(rs_ch[3]);
+					$("#m_rs_ch_name2").html(rs_ch[3]);
+					$("#m_rs_job").html(job_add_arr[0]);
+					$("#m_rs_job2").html(job_add_arr[1]);
+					$("#m_rs_nation").html(rs_ch[4]);
+					$("#matching_share_page").show();
+					//open_pop('share_popup');
+				}else if (rs_ch[0] == "C"){
+					// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
+					//$("#c_matching_child_pic").attr("src",rs_ch[1]);
+					$("#matching_child_pic").attr("src",rs_ch[1]);
+					$("#input_page").hide();
+					// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
+					//m_rs_name, m_rs_ch_name, m_rs_job. m_rs_nation, m_rs_job2
+					var job_add		= job_ko_add(sel_dream);
+					job_add_arr		= job_add.split("||");
+					$("#m_rs_name").html(mb_name);
+					$("#m_rs_ch_name").html(rs_ch[3]);
+					$("#m_rs_ch_name2").html(rs_ch[3]);
+					$("#m_rs_job").html(job_add_arr[0]);
+					$("#m_rs_job2").html(job_add_arr[1]);
+					$("#m_rs_nation").html(rs_ch[4]);
+					$("#matching_share_page").show();
+				}else{
+					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
+					location.reload();
+				}
         }
     });
 }
