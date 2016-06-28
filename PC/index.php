@@ -145,7 +145,7 @@ $total_matching_cnt = 1000;
                 <label for="inputImage" title="Upload image file">
                   <input type="file" id="inputImage" class="sr-only" name="file" accept="image/*">
                   <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" style="cursor:pointer;"/></span>
-                  <a href="#" onclick="preview_img();return false;"><img src="images/btn_preview.png" /></a>
+                  <a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a>
                 </label>
               </form>
             </div>
@@ -422,14 +422,6 @@ function zoom_action(type){
 	}
 }
 
-function preview_img()
-{
-/*
-		사진 저장할 내용 추가
-		*/
-		open_pop('preview_popup');
-
-	}
 
 function readURL(input) {
 

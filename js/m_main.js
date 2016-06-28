@@ -1,8 +1,5 @@
 function open_pop(param)
 {
-	$('.preview').css('overflow', 'hidden');
-	$('.preview').css('width', '263');
-	$('.preview').css('height', '148');
 	$('.preview > img').css('width', 'max-width');
 	// alert("op_pp");
 	$.colorbox({innerWidth:"100%",innerHeight: "70%", initialWidth:"95%", initialHeight: "70%", inline:true, opacity:"0.9", scrolling:true, reposition: false,closeButton:false, overlayClose: false, open:true, speed:0, fadeOut: 300, href:"#"+param, onComplete: function(){

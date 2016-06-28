@@ -189,21 +189,21 @@
 
   <!--사진 미리보기 팝업-->
   <div id="preview_popup" class="popup_wrap" style="background:white; width:100%; height:100%;">
-    <a href="#" onclick="open_pop('dream_sel_popup');return false;">닫기</a>
+    <a href="#" onclick="$.colorbox.close();return false;");return false;">닫기</a>
     <h2>사진 미리보기</h2>
     <div class="preview">
     </div>
-    <a href="#" onclick="dream_next();return false;">확인</a>
+    <a href="#" onclick="$.colorbox.close();return false;">확인</a>
   </div>
   <!--END : 사진 미리보기 팝업-->
 
   <!--팔로워용 사진 미리보기 팝업-->
   <div id="f_preview_popup" class="popup_wrap" style="background:white; width:100%; height:100%;">
-    <a href="#" onclick="open_pop('f_dream_sel_popup');return false;">닫기</a>
+    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
     <h2>사진 미리보기</h2>
     <div class="preview">
     </div>
-    <a href="#" onclick="f_dream_next();return false;">확인</a>
+    <a href="#" onclick="$.colorbox.close();return false;">확인</a>
   </div>
   <!--END : 팔로워용 사진 미리보기 팝업-->
 

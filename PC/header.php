@@ -60,11 +60,9 @@
 <script src="../js/html5shiv.js"></script>
 <script type="text/javascript" src="../js/excanvas.js"></script>
 <style>
-.container {
-	max-width: 100%;
-}
-
-img {
-	max-width: 100%;
+.preview {
+  overflow: hidden;
+  width: 400px; 
+  height: 300px;
 }
 </style>
