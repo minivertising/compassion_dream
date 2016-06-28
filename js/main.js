@@ -6,7 +6,7 @@ function open_pop(param)
 		var pop_h	= "682px";
 		var pop_oh	= "640px";
 	}
-	$.colorbox({width:pop_w, height:pop_h, inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: false, fadeOut: 300, href:"#"+param, onComplete: function(){
+	$.colorbox({width:pop_w, height:pop_h, inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: false, transition: "fade", fadeOut: 300, href:"#"+param, onComplete: function(){
 		$("#cboxLoadedContent").height(pop_oh);
 		$("#cboxContent").css("background","none");
 	},
