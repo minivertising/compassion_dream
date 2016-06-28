@@ -731,9 +731,9 @@ function dream_next(){
 
 	function show_dream_sel()
 	{
-	$("#ytplayer").each(function(){
-	  this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
-	});
+		$("#ytplayer").each(function(){
+			this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+		});
 		$(".wrap_sec_top").hide();
 		$(".wrap_sec_com").hide();
 		$(".wrap_sec_movie").hide();
