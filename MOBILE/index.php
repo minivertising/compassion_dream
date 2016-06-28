@@ -63,7 +63,7 @@ Loading.... 꿈이 필요한 아이와 매칭중
                 <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
                 <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
               </label>
-              <a href="#"><img src="images/btn_preview.png" width="80"  /></a>
+              <a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a>
             </div>
           </div>
           <div id="img_div" class="pic_area">
@@ -195,12 +195,14 @@ function image_crop(){
         dragMode: 'move',
         autoCropArea: 0.8,
         aspectRatio: 1200/630,
-        responsive: false,
-        restore: false,
+        responsive: true,
+        restore: true,
         guides: false,
-        highlight: false,
-        cropBoxMovable: false,
-        cropBoxResizable: false,
+        // modal: false,
+        highlight: true,
+        background: true,
+        cropBoxMovable: true,
+        cropBoxResizable: true,
         preview: '.preview',
         center:true,
         zoomOnWheel:false,
@@ -258,14 +260,6 @@ function zoom_action(type){
   }
 }
 
-function preview_img()
-{
-/*
-    사진 저장할 내용 추가
-*/
-    open_pop('preview_popup');
-
-}
 
 function dream_next()
 {

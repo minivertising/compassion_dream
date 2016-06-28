@@ -78,13 +78,14 @@
 
   <!--사진 미리보기 팝업-->
   <div id="preview_popup" class="popup_wrap" style="background:white; width:100%; height:100%;">
-    <a href="#" onclick="open_pop('dream_sel_popup');return false;">닫기</a>
+    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
     <h2>사진 미리보기</h2>
-    <div class="preview">
+    <div class="preview" style="overflow: hidden;width: 400px;height: 200px ;">
     </div>
-    <a href="#" onclick="dream_next();return false;">확인</a>
+    <a href="#" onclick="$.colorbox.close();return false;">확인</a>
   </div>
   <!--END : 사진 미리보기 팝업-->
+
 
   <!--개인정보 입력(이름, 전화번호) 팝업-->
   <div id="input_popup" class="popup_wrap" style="background:white;">

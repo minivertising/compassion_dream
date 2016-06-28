@@ -145,7 +145,7 @@ $total_matching_cnt = 1000;
                 <label for="inputImage" title="Upload image file">
                   <input type="file" id="inputImage" class="sr-only" name="file" accept="image/*">
                   <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" style="cursor:pointer;"/></span>
-                  <a href="#" onclick="preview_img();return false;"><img src="images/btn_preview.png" /></a>
+                  <a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a>
                 </label>
               </form>
             </div>
@@ -422,14 +422,6 @@ function zoom_action(type){
 	}
 }
 
-function preview_img()
-{
-/*
-		사진 저장할 내용 추가
-		*/
-		open_pop('preview_popup');
-
-	}
 
 function readURL(input) {
 
@@ -730,6 +722,32 @@ function dream_next(){
 		});
 	}
 
+	function show_dream_sel()
+	{
+		$("#ytplayer").each(function(){
+			this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+		});
+		$(".wrap_sec_top").hide();
+		$(".wrap_sec_com").hide();
+		$(".wrap_sec_movie").hide();
+		$(".wrap_sec_footer").hide();
+
+		image_crop();
+		$("body").addClass("bg_sub_page");
+		$("#upload_page").show();
+	}
+
+	function mb_check()
+	{
+		if (chk_mb_flag == 0)
+		{
+			$("#mb_agree").attr("src","images/checked.png");
+			chk_mb_flag = 1;
+		}else{
+			$("#mb_agree").attr("src","images/check.png");
+			chk_mb_flag = 0;
+		}
+	}
 
 </script>
 <!-- <script src="../lib/Cropper/js/main.js"></script> -->
