@@ -4,7 +4,7 @@
 		exit('Connect Error (' . mysqli_connect_errno() . ') '. mysqli_connect_error());
 	}
 
-	$query 	= "SELECT * FROM child_info WHERE ch_choice<>'N'";
+	$query 	= "SELECT * FROM child_info WHERE ch_choice='N'";
 	$result 	= mysqli_query($my_db, $query);
 
 	while ($data = mysqli_fetch_array($result))
@@ -14,12 +14,13 @@
 		$response = file_get_contents($url);
 		$object = simplexml_load_string($response);
 
-		$channel = $object->channel;
+		$matchingYN = $object->ResponseInfo->CommitmentYN;
 
-		foreach($channel->item as $value) {
-			$title = $value->title;
-			$description = $value->description;
-			$link = $value->link;
+		if ($matchingYN == "Y")
+		{
+			$query2 	= "UPDATE child_info SET ch_choice='Y' WHERE ch_id='".$data['ch_id']."'";
+			$result2 	= mysqli_query($my_db, $query2);
 		}
 	}
+	echo "end";
 ?>
