@@ -407,11 +407,11 @@ function input_submit()
         },
         url: "../main_exec.php",
         beforeSend: function(response){
-			alert(response);
             $("#loading_div").show();
             $("#contents_div").hide();
         },
         success: function(response){
+			alert(response);
             console.log(response);
             var rs_ch	= response.split("||");
 			mb_rs	= rs_ch[2];
