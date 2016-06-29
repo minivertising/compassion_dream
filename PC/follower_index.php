@@ -503,7 +503,18 @@ function f_dream_next()
                 {
                     $("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
 	                $("#loading_div").fadeOut('fast',function(){
+<?
+	if ($ch_data['ch_choice'] == "Y")
+	{
+?>
+						$("#f_share_no_matching_page").fadeIn("fast");
+<?
+	}else{
+?>
 						$("#f_share_page").fadeIn("fast");
+<?
+	}
+?>
 					});
                 }else if (rs_ch[0] == "N"){
 	                $("#loading_div").fadeOut('fast',function(){
@@ -560,7 +571,18 @@ function f_dream_next()
                 {
                     $("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
 	                $("#loading_div").fadeOut('fast',function(){
+<?
+	if ($ch_data['ch_choice'] == "Y")
+	{
+?>
+						$("#f_share_no_matching_page").fadeIn("fast");
+<?
+	}else{
+?>
 						$("#f_share_page").fadeIn("fast");
+<?
+	}
+?>
 					});
                 }else if (rs_ch[0] == "N"){
 	                $("#loading_div").fadeOut('fast',function(){
