@@ -191,44 +191,44 @@ Loading.... 꿈이 필요한 아이와 매칭중
 // });
 
 function image_crop(){
-    $($ori_image).cropper({
-        viewMode: 0,
-        dragMode: 'move',
-        autoCropArea: 0.8,
-        aspectRatio: 1200/630,
-        responsive: false,
-        restore: false,
-        guides: false,
-        highlight: false,
-        cropBoxMovable: false,
-        cropBoxResizable: false,
-        preview: '.preview',
-        center:true,
-        zoomOnWheel:false,
-        zoomOnTouch:false,
-        toggleDragModeOnDblclick:false,
-        // build: function (e) {
-        //  console.log(e.type);
-        // },
-        // built: function (e) {
-        //  console.log(e.type);
-        // },
-        // cropstart: function (e) {
-        //  console.log(e.type, e.action);
-        // },
-        // cropper: function (e) {
-        //  console.log(e.type, e.action);
-        // },
-        // cropend: function (e) {
-        //  console.log(e.type, e.action);
-        // },
-        // crop: function (e) {
-        //  console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
-        // },
-        // zoom: function (e) {
-        //  console.log(e.type, e.ratio);
-        // }
-    });
+	$($ori_image).cropper({
+		viewMode: 0,
+		dragMode: 'move',
+		autoCropArea: 0.8,
+		aspectRatio: 1200/630,
+		responsive: true,
+		restore: true,
+		guides: false,
+		highlight: true,
+		background: true,
+		cropBoxMovable: true,
+		cropBoxResizable: true,
+		preview: '.preview',
+		center:true,
+		zoomOnWheel:false,
+		toggleDragModeOnDblclick:false,
+		// build: function (e) {
+		//     console.log(e.type);
+		// },
+		// built: function (e) {
+		//     console.log(e.type);
+		// },
+		// cropstart: function (e) {
+		//     console.log(e.type, e.action);
+		// },
+		// cropper: function (e) {
+		//     console.log(e.type, e.action);
+		// },
+		// cropend: function (e) {
+		//     console.log(e.type, e.action);
+		// },
+		// crop: function (e) {
+		//     console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
+		// },
+		// zoom: function (e) {
+		//     console.log(e.type, e.ratio);
+		// }
+	});
 }
 // });
 
