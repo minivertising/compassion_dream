@@ -52,8 +52,8 @@ function next_page(param)
 	var prev_param	= param - 1;
 	// $("#page_div"+prev_param).hide();
 	// $("#page_div"+param).show();
-	$("#page_div"+prev_param).fadeOut('slow', function(){
-		$("#page_div"+param).fadeIn('slow');
+	$("#page_div"+prev_param).fadeOut('fast', function(){
+		$("#page_div"+param).fadeIn('fast');
 	});
 }
 /*
@@ -209,6 +209,26 @@ function show_dream_sel()
 
 	$("body").addClass("bg_sub_page");
 	// $("#upload_page").show();
+	$("#upload_page").fadeIn('slow', 'swing');
+	image_crop();
+}
+
+function f_show_dream_sel()
+{
+	// $(".wrap_sec_top").hide();
+	// $(".wrap_sec_com").hide();
+	// $(".wrap_sec_movie").hide();
+	// $(".wrap_sec_footer").hide();
+/*
+	$(".wrap_sec_top").fadeOut('slow');
+	$(".wrap_sec_com").fadeOut('slow');
+	$(".wrap_sec_movie").fadeOut('slow');
+	$(".wrap_sec_footer").fadeOut('slow');
+*/
+
+
+	$("body").addClass("bg_sub_page");
+	 $("#contents_div").hide(); // 임시 적용 
 	$("#upload_page").fadeIn('slow', 'swing');
 	image_crop();
 }

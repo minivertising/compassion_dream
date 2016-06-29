@@ -43,30 +43,205 @@ Loading.... 꿈이 필요한 아이와 매칭중
   <div id="page_div4" style="display:none">
     <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
 <?
-    if ($ch_data)
+    if ($ch_data['ch_choice'] == "Y")
     {
 ?>
-    <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
+    <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
 <?
     }else{
 ?>
-    <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
+    <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
 <?
     }
 ?>
   </div>
-  <div id="page_div5" style="display:none">
-    <h2>저와 함께 꿈꾸는 행복을 <?=$ch_data['ch_ko_name']?>에게 전해주실래요?</h2>
-    <div>
-      <img src="<?=$ch_data['ch_top_img_url']?>" style="width:100%">
+  <div id="page_div5" class="wrap_sec_top_sub match_child follower" style="display:none;">
+    <div class="inner">
+      <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+      <div class="block_content result_story_child">
+        <div class="title">
+          <div class="main">‘<?=$ch_data['ch_nick']?>'야 내 꿈꿔~!’</div>
+          <div class="sub">
+          꿈꾸는 것조차 어려운 <span><?=$ch_data['ch_nick']?></span>에게<br> 
+          내 어린시절 꿈이 담긴 사진으로 희망을 선물하세요
+          </div>
+        </div>
+        <div class="block_child">
+          <div class="inner_block_child clearfix">
+            <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
+            <div class="child_text">
+              <p>
+              <?=$ch_data['ch_nick']?>는 부모님과 함께 살고 있습니다 <br>
+              아버지는 임시직으로 노동일을 하시며 어머니는 집안일을 하십니다 <br>
+              기타는 집안에서 시장에서 물건 사고 팔기, 
+              물 길어 나르기를 맡아서 합니다
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="block_btn apply">
+          <div class="inner_apply clearfix">
+            <div class="left">
+              <div class="bt"><a href="#"><img src="images/btn_sponsor.png" /></a></div>
+              <div class="txt">1:1결연으로 '<?=$ch_data['ch_nick']?>'의 꿈을<br> 현실로 만들어주세요!</div>
+            </div>
+            <div class="right">
+              <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
+              <div class="txt">SNS에 어릴적 사진을 공유해서<br> '<?=$ch_data['ch_nick']?>'가 꿈꿀 수 있게 도와주세요</div>
+            </div>
+          </div>
+        </div>
+        <div class="example">
+          <img src="images/story_1.png" width="100" />
+        </div>
+      </div>
     </div>
-    <a href="#">1:1 결연</a>
-    <a href="#" onclick="open_pop('f_dream_sel_popup');return false;">사진 공유</a>
   </div>
-  <div id="page_div6" style="display:none">
-    <h2>"얘들아 내 꿈꿔~!" 내용</h2>
-    <a href="#">1:1 결연</a>
-    <a href="#" onclick="open_pop('f_dream_sel_popup');return false;">사진 공유</a>
+
+  <div id="page_div6" class="wrap_sec_top_sub match_child follower" style="display:none;">
+    <div class="inner">
+      <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+      <div class="block_content result_story_compassion">
+        <div class="title">
+          <div class="main">얘들아 내 꿈꿔~!’</div>
+          <div class="sub">
+          컴패션 소개와 함께 어린시절 사진을 SNS에 공유하면<br>  
+          꿈이 필요한 어린이들을 도와줄 수 있습니다
+          </div>
+        </div>
+        <div class="block_child">
+          <div class="inner_block_child clearfix">
+            <div class="child_pic"><img src="images/ex_child.png" /></div>
+            <div class="child_pic"><img src="images/ex_child.png" /></div>
+            <div class="child_pic"><img src="images/ex_child.png" /></div>
+            <div class="child_pic"><img src="images/ex_child.png" /></div>
+          </div>
+        </div>
+        <div class="block_btn apply">
+          <div class="inner_apply clearfix">
+            <div class="left">
+              <div class="bt"><a href="#"><img src="images/btn_sponsor.png" /></a></div>
+              <div class="txt">1:1결연으로 '기타'의 꿈을<br> 현실로 만들어주세요!</div>
+            </div>
+            <div class="right">
+              <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
+              <div class="txt">SNS에 어릴적 사진을 공유해서<br> '기타'가 꿈꿀 수 있게 도와주세요</div>
+            </div>
+          </div>
+        </div>
+        <div class="example">
+          <img src="images/story_1.png" width="100" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 사진 업로드 페이지 -->
+<div id="upload_page" class="wrap_sec_top_sub" style="display:none;">
+  <div class="inner">
+    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content upload">
+      <div class="title">
+        <div class="main"><span>'<?=$ch_data['ch_nick']?>'</span>에게 어떤 꿈을 이어 주실 건가요?</div>
+      </div>
+      <div class="block_input_dream">
+        <div class="selec_job">
+          <span id="sel_job_txt">1. 꿈꾸던 직업 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
+        </div>
+        <div class="upload_pic">
+          <div class="title_pic">
+          2. 사진업로드
+          </div>
+          <div class="desc">
+            <div class="txt_pic">
+              <img src="images/txt_pic.png" />
+            </div>
+            <div class="btns">
+              <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
+                <label for="f_inputImage" title="Upload image file">
+                  <input type="file" id="f_inputImage" class="sr-only" name="file" accept="image/*">
+                  <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" style="cursor:pointer;"/></span>
+                  <a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a>
+                </label>
+              </form>
+            </div>
+          </div>
+          <div id="img_div" class="pic_area">
+            <img id="f_ori_image" src="./images/picture.jpg" alt="Picture" />
+          </div>
+          <div class="btn_closeup">
+            <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
+            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="block_btn">
+        <a href="#" onclick="f_dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 사진 업로드 페이지 -->
+
+<!-- 팔로워 사진업로드 완료 공유 페이지 -->
+<div id="f_share_page" class="wrap_sec_top_sub match_child" style="display:none;">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content follower">
+      <div class="title">
+        <span>'<?=$ch_data['ch_nick']?>'</span>의 꿈을 위해<br>
+        참여해주셔서 감사합니다
+      </div>
+      <div class="block_child">
+        <div class="inner_block_child clearfix">
+          <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
+        </div>
+      </div>
+      <div class="block_txt">
+        <p>당신의 어린시절 사진을 공유하면 참여가 완료됩니다</p>
+        <p>끝까지 참여해주셔서 <span>'<?=$ch_data['ch_nick']?>'</span>의 후원자님 찾아주세요</p>
+      </div>
+      <div class="block_btn sns">
+        <a href="#" onclick="sns_share('fb','fol');"><img src="images/sns_f.png" /></a>
+        <!-- <a href="#" onclick="sns_share('kt','fol');"><img src="images/sns_kt.png" /></a> -->
+        <a href="#" onclick="sns_share('ks','fol');"><img src="images/sns_ks.png" /></a>
+      </div>
+      <div class="block_btn howtotag">
+        <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 팔로워 사진업로드 완료 공유 페이지 ( 매칭X) -->
+
+<!-- 팔로워 사진업로드 완료 공유 페이지 ( 매칭O) -->
+<div id="f_share_no_matching_page"class="wrap_sec_top_sub match_child" style="display:none;">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content share_compassion">
+      <div class="title">
+      컴패션에서는 당신의 어린시절처럼<br>
+      꿈 많고 귀여운 어린이들이 있습니다
+      </div>
+      <div class="block_child">
+        <div class="inner_block_child clearfix">
+          <div class="child_pic"><img src="images/ex_child.png" /></div>
+          <div class="child_pic"><img src="images/ex_child.png" /></div>
+          <div class="child_pic"><img src="images/ex_child.png" /></div>
+          <div class="child_pic"><img src="images/ex_child.png" /></div>
+        </div>
+      </div>
+      <div class="block_btn sns">
+        <a href="#" onclick="sns_share('fb','fol');"><img src="images/sns_f.png" /></a>
+        <!-- <a href="#" onclick="sns_share('kt','fol');"><img src="images/sns_kt.png" /></a> -->
+        <a href="#" onclick="sns_share('ks','fol');"><img src="images/sns_ks.png" /></a>
+      </div>
+      <div class="block_btn howtotag">
+        <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
+      </div>
+    </div>
   </div>
 </div>
 <?
@@ -143,44 +318,44 @@ Loading.... 꿈이 필요한 아이와 매칭중
 // });
 
 function image_crop(){
-    $($ori_image).cropper({
-        viewMode: 0,
-        dragMode: 'move',
-        autoCropArea: 0.8,
-        aspectRatio: 1200/630,
-        responsive: false,
-        restore: false,
-        guides: false,
-        highlight: false,
-        cropBoxMovable: false,
-        cropBoxResizable: false,
-        preview: '.preview',
-        center:true,
-        zoomOnWheel:false,
-        zoomOnTouch:false,
-        toggleDragModeOnDblclick:false,
-        // build: function (e) {
-        //  console.log(e.type);
-        // },
-        // built: function (e) {
-        //  console.log(e.type);
-        // },
-        // cropstart: function (e) {
-        //  console.log(e.type, e.action);
-        // },
-        // cropper: function (e) {
-        //  console.log(e.type, e.action);
-        // },
-        // cropend: function (e) {
-        //  console.log(e.type, e.action);
-        // },
-        // crop: function (e) {
-        //  console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
-        // },
-        // zoom: function (e) {
-        //  console.log(e.type, e.ratio);
-        // }
-    });
+	$($ori_image).cropper({
+		viewMode: 0,
+		dragMode: 'move',
+		autoCropArea: 0.8,
+		aspectRatio: 1200/630,
+		responsive: true,
+		restore: true,
+		guides: false,
+		highlight: true,
+		background: true,
+		cropBoxMovable: true,
+		cropBoxResizable: true,
+		preview: '.preview',
+		center:true,
+		zoomOnWheel:false,
+		toggleDragModeOnDblclick:false,
+		// build: function (e) {
+		//     console.log(e.type);
+		// },
+		// built: function (e) {
+		//     console.log(e.type);
+		// },
+		// cropstart: function (e) {
+		//     console.log(e.type, e.action);
+		// },
+		// cropper: function (e) {
+		//     console.log(e.type, e.action);
+		// },
+		// cropend: function (e) {
+		//     console.log(e.type, e.action);
+		// },
+		// crop: function (e) {
+		//     console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
+		// },
+		// zoom: function (e) {
+		//     console.log(e.type, e.ratio);
+		// }
+	});
 }
 // });
 
@@ -314,7 +489,7 @@ function f_dream_next()
             beforeSend: function(response){
                 alert(response);
                 $("#loading_div").show();
-                $("#contents_div").hide();
+                $("#upload_page").hide();
             },
             success: function(res){
                 // console.log(res);
@@ -323,14 +498,28 @@ function f_dream_next()
 
                 var rs_ch = res.split("||");
                 mb_rs = rs_ch[1];
-                $("#loading_div").hide();
-                $("#contents_div").show();
+                //$("#contents_div").show();
                 if (rs_ch[0] == "Y")
                 {
                     $("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
-                    open_pop('f_share_popup');
+	                $("#loading_div").fadeOut('fast',function(){
+<?
+	if ($ch_data['ch_choice'] == "Y")
+	{
+?>
+						$("#f_share_no_matching_page").fadeIn("fast");
+<?
+	}else{
+?>
+						$("#f_share_page").fadeIn("fast");
+<?
+	}
+?>
+					});
                 }else if (rs_ch[0] == "N"){
-                    open_pop('f_share_no_matching_popup');
+	                $("#loading_div").fadeOut('fast',function(){
+						$("#f_share_no_matching_page").fadeIn("fast");
+					});
                 }else {
                     alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
                     location.reload();
@@ -367,7 +556,7 @@ function f_dream_next()
             beforeSend: function(response){
                 alert(response);
                 $("#loading_div").show();
-                $("#contents_div").hide();
+                $("#upload_page").hide();
             },
             success: function(res){
                 // console.log(res);
@@ -376,14 +565,29 @@ function f_dream_next()
 
                 var rs_ch = res.split("||");
                 mb_rs = rs_ch[1];
-                $("#loading_div").hide();
-                $("#contents_div").show();
+                //$("#loading_div").hide();
+                //$("#contents_div").show();
                 if (rs_ch[0] == "Y")
                 {
                     $("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
-                    open_pop('f_share_popup');
+	                $("#loading_div").fadeOut('fast',function(){
+<?
+	if ($ch_data['ch_choice'] == "Y")
+	{
+?>
+						$("#f_share_no_matching_page").fadeIn("fast");
+<?
+	}else{
+?>
+						$("#f_share_page").fadeIn("fast");
+<?
+	}
+?>
+					});
                 }else if (rs_ch[0] == "N"){
-                    open_pop('f_share_no_matching_popup');
+	                $("#loading_div").fadeOut('fast',function(){
+						$("#f_share_no_matching_page").fadeIn("fast");
+					});
                 }else {
                     alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
                     location.reload();
