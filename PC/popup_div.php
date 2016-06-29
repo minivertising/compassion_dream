@@ -234,18 +234,11 @@
   <!--END : 팔로워용 꿈 선택 팝업-->
 
   <!--사진 미리보기 팝업-->
-  <!-- <div id="preview_popup" class="popup_wrap" style="background:white; width:100%; height:100%;">
-    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
-    <h2>사진 미리보기</h2>
-    <div class="preview">
-    </div>
-    <a href="#" onclick="$.colorbox.close();return false;">확인</a>
-  </div> -->
-
   <div id="preview_popup" class="popup_wrap p_preview">
   	<div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_close.png" /></a></div>
     <div class="inner_p_preview clearfix">
     	<div class="img preview">
+        	<img src="images/img_sns_share.jpg" width="474" height="236" />
         </div>
     </div>
   </div>  
@@ -253,13 +246,14 @@
   <!--END : 사진 미리보기 팝업-->
 
   <!--팔로워용 사진 미리보기 팝업-->
-  <div id="f_preview_popup" class="popup_wrap" style="background:white; width:100%; height:100%;">
-    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
-    <h2>사진 미리보기</h2>
-    <div class="preview">
+  <div id="f_preview_popup" class="popup_wrap p_preview">
+  	<div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_close.png" /></a></div>
+    <div class="inner_p_preview clearfix">
+    	<div class="img preview">
+        	<img src="images/img_sns_share.jpg" width="474" height="236" />
+        </div>
     </div>
-    <a href="#" onclick="$.colorbox.close();return false;">확인</a>
-  </div>
+  </div>  
   <!--END : 팔로워용 사진 미리보기 팝업-->
 
   <!--개인정보 입력(이름, 전화번호) 팝업-->
