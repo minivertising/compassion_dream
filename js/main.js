@@ -52,7 +52,6 @@ function next_page(param)
 	var prev_param	= param - 1;
 	// $("#page_div"+prev_param).hide();
 	// $("#page_div"+param).show();
-	alert(prev_param);
 	$("#page_div"+prev_param).fadeOut('fast', function(){
 		$("#page_div"+param).fadeIn('fast');
 	});
