@@ -32,12 +32,12 @@
 // PC, MOBILE 구분 ?
 ?>
 <meta property="og:url" content="http://mydream.compassion.or.kr/PC/index.php?rs=<?=$mb_data['mb_serial']?>&ugu=<?=$ugu?>" />
-<meta property="og:image" content="http://mydream.compassion.or.kr/files/20160629/compassion_20160629115513.jpg" />
+<meta property="og:image" content="<?=$img_url?>" />
 <?
 	}else{
 ?>
 <meta property="og:url" content="http://mydream.compassion.or.kr/PC/index.php" />
-<meta property="og:image" content="http://mydream.compassion.or.kr/files/20160629/compassion_20160629115513.jpg" />
+<meta property="og:image" content="" />
 <?
 	}
 ?>
