@@ -137,7 +137,7 @@ switch ($_REQUEST['exec'])
 		$img_result 	= mysqli_query($my_db, $img_query);
 		$img_data	= mysqli_fetch_array($img_result);
 	
-		$img_url		= str_replace("..","http://www.mnv.kr",$img_data['mb_image']);
+		$img_url		= str_replace("..","http://mydream.compassion.or.kr",$img_data['mb_image']);
 
 		echo $img_url;
 	break;

@@ -14,10 +14,10 @@
 
 	if($gubun == "MOBILE")
 	{
-		Header("Location:http://www.mnv.kr/MOBILE/follower_index.php?media=".$media."&rs=".$rs."&ugu=".$ugu);
+		Header("Location:http:///mydream.compassion.or.kr/MOBILE/follower_index.php?media=".$media."&rs=".$rs."&ugu=".$ugu);
 		exit;
 	}else{
-		Header("Location:http://www.mnv.kr/PC/follower_index.php?media=".$media."&rs=".$rs."&ugu=".$ugu);
+		Header("Location:http:///mydream.compassion.or.kr/PC/follower_index.php?media=".$media."&rs=".$rs."&ugu=".$ugu);
 		exit;
 	}
 

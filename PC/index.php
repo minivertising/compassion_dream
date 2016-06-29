@@ -544,8 +544,8 @@ function dream_next(){
 				beforeSend: function(response){
 					// $("#loading_div").show();
 					// $("#contents_div").hide();
-					$("#loading_div").fadeIn('slow');
 					$("#contents_div").fadeOut('slow');
+					$("#loading_div").fadeIn('slow');
 				},
 				success: function(res){
 					// mb_image    = res;
@@ -598,8 +598,8 @@ function dream_next(){
 				beforeSend: function(response){
 					// $("#loading_div").show();
 					// $("#contents_div").hide();
-					$("#loading_div").fadeIn('slow');
 					$("#contents_div").fadeOut('slow');
+					$("#loading_div").fadeIn('slow');
 				},
 				success: function(res){
 					// console.log(res);
@@ -694,8 +694,8 @@ function dream_next(){
 			beforeSend: function(response){
 				// $("#loading_div").show();
 				// $("#contents_div").hide();
-				$("#loading_div").fadeIn('slow');
 				$("#contents_div").fadeOut('slow');
+				$("#loading_div").fadeIn('slow');
 			},
 			success: function(response){
 				var rs_ch = response.split("||");
