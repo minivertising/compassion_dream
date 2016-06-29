@@ -489,7 +489,7 @@ function f_dream_next()
             beforeSend: function(response){
                 alert(response);
                 $("#loading_div").show();
-                $("#contents_div").hide();
+                $("#upload_page").hide();
             },
             success: function(res){
                 // console.log(res);
@@ -545,7 +545,7 @@ function f_dream_next()
             beforeSend: function(response){
                 alert(response);
                 $("#loading_div").show();
-                $("#contents_div").hide();
+                $("#upload_page").hide();
             },
             success: function(res){
                 // console.log(res);
