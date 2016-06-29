@@ -544,8 +544,9 @@ function dream_next(){
 				beforeSend: function(response){
 					// $("#loading_div").show();
 					// $("#contents_div").hide();
-					$("#contents_div").fadeOut('slow');
-					$("#loading_div").fadeIn('slow');
+					$("#contents_div").fadeOut('slow', function(){
+						$("#loading_div").fadeIn('slow');
+					});
 				},
 				success: function(res){
 					// mb_image    = res;
@@ -553,16 +554,18 @@ function dream_next(){
 					var rs_ch = res.split("||");
 					// $("#loading_div").hide();
 					// $("#contents_div").show();
-					$("#loading_div").fadeOut('slow');
-					$("#contents_div").fadeIn('slow');
+					$("#loading_div").fadeOut('slow', function(){
+						$("#contents_div").fadeIn('slow');
+					});
 					if (rs_ch[0] == "Y")
 					{
 						// 매칭될 아이가 있을 경우
 						mb_image    = rs_ch[1];
 						// $("#upload_page").hide();
 						// $("#input_page").show();
-						$("#upload_page").fadeOut('slow');
-						$("#input_page").fadeIn('slow');
+						$("#upload_page").fadeOut('slow', function(){
+							$("#input_page").fadeIn('slow');
+						});
 						//open_pop('input_popup');
 					}else if (rs_ch[0] == "N"){
 						// 매칭될 아이가 없을 경우
@@ -572,8 +575,9 @@ function dream_next(){
 						//open_pop('no_matching_popup');
 						// $("#upload_page").hide();
 						// $("#no_matching_page").show();
-						$("#upload_page").fadeOut('slow');
-						$("#no_matching_page").fadeIn('slow');
+						$("#upload_page").fadeOut('slow', function(){
+							$("#no_matching_page").fadeIn('slow');
+						});
 
 					}else {
 						// 에러 
@@ -598,8 +602,9 @@ function dream_next(){
 				beforeSend: function(response){
 					// $("#loading_div").show();
 					// $("#contents_div").hide();
-					$("#contents_div").fadeOut('slow');
-					$("#loading_div").fadeIn('slow');
+					$("#contents_div").fadeOut('slow', function(){
+						$("#loading_div").fadeIn('slow');
+					});
 				},
 				success: function(res){
 					// console.log(res);
@@ -608,16 +613,18 @@ function dream_next(){
 					var rs_ch = res.split("||");
 					// $("#loading_div").hide();
 					// $("#contents_div").show();
-					$("#loading_div").fadeOut('slow');
-					$("#contents_div").fadeIn('slow');
+					$("#loading_div").fadeOut('slow', function(){
+						$("#contents_div").fadeIn('slow');
+					});
 					if (rs_ch[0] == "Y")
 					{
 						// 매칭될 아이가 있을 경우
 						mb_image    = rs_ch[1];
 						// $("#upload_page").hide();
 						// $("#input_page").show();
-						$("#upload_page").fadeOut('slow');
-						$("#input_page").fadeIn('slow');
+						$("#upload_page").fadeOut('slow', function(){
+							$("#input_page").fadeIn('slow');
+						});
 						//open_pop('input_popup');
 					}else if (rs_ch[0] == "N"){
 						// 매칭될 아이가 없을 경우
@@ -627,8 +634,9 @@ function dream_next(){
 						//open_pop('no_matching_popup');
 						// $("#upload_page").hide();
 						// $("#no_matching_page").show();
-						$("#upload_page").fadeOut('slow');
-						$("#no_matching_page").fadeIn('slow');
+						$("#upload_page").fadeOut('slow', function(){
+							$("#no_matching_page").fadeIn('slow');
+						});
 
 					}else {
 						// 에러
@@ -694,16 +702,18 @@ function dream_next(){
 			beforeSend: function(response){
 				// $("#loading_div").show();
 				// $("#contents_div").hide();
-				$("#contents_div").fadeOut('slow');
-				$("#loading_div").fadeIn('slow');
+				$("#contents_div").fadeOut('slow', function(){
+					$("#loading_div").fadeIn('slow');
+				});
 			},
 			success: function(response){
 				var rs_ch = response.split("||");
 				mb_rs = rs_ch[2];
 				// $("#loading_div").hide();
 				// $("#contents_div").show();
-				$("#loading_div").fadeOut('slow');
-				$("#contents_div").fadeIn('slow');
+				$("#loading_div").fadeOut('slow', function(){
+					$("#contents_div").fadeIn('slow');
+				});
 				if (rs_ch[0] == "Y")
 				{
 					// 아이가 새로 매칭될 경우

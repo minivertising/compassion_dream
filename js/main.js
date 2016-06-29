@@ -52,8 +52,9 @@ function next_page(param)
 	var prev_param	= param - 1;
 	// $("#page_div"+prev_param).hide();
 	// $("#page_div"+param).show();
-	$("#page_div"+prev_param).fadeOut('slow');
-	$("#page_div"+param).fadeIn('slow');
+	$("#page_div"+prev_param).fadeOut('slow', function(){
+		$("#page_div"+param).fadeIn('slow');
+	});
 }
 /*
 function dream_next()
