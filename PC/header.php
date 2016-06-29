@@ -23,6 +23,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta property="fb:app_id" content="649187078561789" />
 <meta property="og:title" content="나의 어릴적 꿈을 소개합니다" />
 <meta property="og:type" content="website" />
 <?
