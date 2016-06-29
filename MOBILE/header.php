@@ -23,7 +23,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=yes,initial-scale=1.0, maximum-scale=1.0"/>
-<meta property="og:title" content="나의 어릴적 꿈을 소개합니다">
+<meta property="og:title" content="나의 어릴적 꿈을 소개합니다" />
 <meta property="og:type" content="website" />
 <?
 	if (isset($rs))
@@ -40,7 +40,7 @@
 <?
 	}
 ?>
-<meta property="og:description" content="Compassion BLUE BATON CHALLENGE">
+<meta property="og:description" content="Compassion BLUE BATON CHALLENGE" />
 <link rel="shortcut icon" type="image/x-icon" href="./img/icon/favicon.ico" />
 <title>모바일 메인</title>
 <!--[if lt IE 9]><script src="./js/html5shiv.js"></script><![endif]-->
