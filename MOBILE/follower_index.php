@@ -1,7 +1,7 @@
 <?
 	include_once "./header.php";
 
-	ins_share_cnt($rs);
+	// ins_share_cnt($rs);
 
 	$ch_data	= sel_child_info($mb_data['mb_child']);
 
