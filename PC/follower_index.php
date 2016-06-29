@@ -43,14 +43,14 @@ Loading.... 꿈이 필요한 아이와 매칭중
   <div id="page_div4" style="display:none">
     <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
 <?
-    if ($ch_data)
+    if ($ch_data['ch_choice'] == "Y")
     {
 ?>
-    <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
+    <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
 <?
     }else{
 ?>
-    <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
+    <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
 <?
     }
 ?>
