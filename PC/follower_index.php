@@ -61,7 +61,7 @@ Loading.... 꿈이 필요한 아이와 매칭중
       <img src="<?=$ch_data['ch_top_img_url']?>" style="width:100%">
     </div>
     <a href="#">1:1 결연</a>
-    <a href="#" onclick="open_pop('f_dream_sel_popup');return false;">사진 공유</a>
+    <a href="#" onclick="f_show_dream_sel();return false;">사진 공유</a>
   </div>
   <div id="page_div6" style="display:none">
     <h2>"얘들아 내 꿈꿔~!" 내용</h2>
@@ -69,6 +69,54 @@ Loading.... 꿈이 필요한 아이와 매칭중
     <a href="#" onclick="open_pop('f_dream_sel_popup');return false;">사진 공유</a>
   </div>
 </div>
+
+<!-- 사진 업로드 페이지 -->
+<div id="upload_page" class="wrap_sec_top_sub" style="display:none;">
+  <div class="inner">
+    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content upload">
+      <div class="title">
+        <div class="main"><span>'기타'</span>에게 어떤 꿈을 이어 주실 건가요?</div>
+      </div>
+      <div class="block_input_dream">
+        <div class="selec_job">
+          <span id="sel_job_txt">1. 꿈꾸던 직업 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
+        </div>
+        <div class="upload_pic">
+          <div class="title_pic">
+          2. 사진업로드
+          </div>
+          <div class="desc">
+            <div class="txt_pic">
+              <img src="images/txt_pic.png" />
+            </div>
+            <div class="btns">
+              <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
+                <label for="inputImage" title="Upload image file">
+                  <input type="file" id="inputImage" class="sr-only" name="file" accept="image/*">
+                  <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" style="cursor:pointer;"/></span>
+                  <a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a>
+                </label>
+              </form>
+            </div>
+          </div>
+          <div id="img_div" class="pic_area">
+            <img id="ori_image" src="./images/picture.jpg" alt="Picture" />
+          </div>
+          <div class="btn_closeup">
+            <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
+            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="block_btn">
+        <a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 사진 업로드 페이지 -->
+
 <?
         include_once "./popup_div.php";
 ?>
