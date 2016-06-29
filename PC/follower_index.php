@@ -76,7 +76,7 @@ Loading.... 꿈이 필요한 아이와 매칭중
     <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content upload">
       <div class="title">
-        <div class="main"><span>'기타'</span>에게 어떤 꿈을 이어 주실 건가요?</div>
+        <div class="main"><span>'<?=$ch_data['ch_nick']?>'</span>에게 어떤 꿈을 이어 주실 건가요?</div>
       </div>
       <div class="block_input_dream">
         <div class="selec_job">
@@ -110,7 +110,7 @@ Loading.... 꿈이 필요한 아이와 매칭중
         </div>
       </div>
       <div class="block_btn">
-        <a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
+        <a href="#" onclick="f_dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
       </div>
     </div>
   </div>
