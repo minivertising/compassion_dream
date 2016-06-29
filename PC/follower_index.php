@@ -196,7 +196,7 @@ Loading.... 꿈이 필요한 아이와 매칭중
       </div>
       <div class="block_child">
         <div class="inner_block_child clearfix">
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
+          <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
         </div>
       </div>
       <div class="block_txt">
