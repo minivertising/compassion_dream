@@ -132,7 +132,7 @@ Loading.... 꿈이 필요한 아이와 매칭중
 	var mb_image        = null;
 	var $ori_image = $('#ori_image');
 	var $inputImage = $('#inputImage')
-    var $previews = $('.preview');
+  var $preview = $('.preview');
 	var URL = window.URL || window.webkitURL;
 	//var realFath;
 	//var convertPath;

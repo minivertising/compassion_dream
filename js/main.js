@@ -14,7 +14,7 @@ function open_pop(param)
 	}});
 }
 
-// 직업선택 팝업 창 여는 함수
+// 직업선택 팝업 창 여는 함수// 미사용
 function view_dream_div(param)
 {
 	if (flag_sel_dream == 0)

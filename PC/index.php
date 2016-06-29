@@ -304,7 +304,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 	var mb_image        = null;
 	var $ori_image = $('#ori_image');
 	var $inputImage = $('#inputImage')
-    var $previews = $('.preview');
+    var $preview = $('.preview');
 	var URL = window.URL || window.webkitURL;
 	var blobURL;
 	var file;
