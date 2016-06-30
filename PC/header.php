@@ -68,4 +68,19 @@
   width: 400px; 
   height: 300px;
 }
+.fileUp {
+	position: absolute;
+    top: 6;
+    right: 0;
+    /*font-size: 100px;*/
+    width: 107px;
+    height: 38px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
 </style>

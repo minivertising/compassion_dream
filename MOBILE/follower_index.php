@@ -25,7 +25,7 @@
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
      js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
+     fjs.parentNode.insertBefore(js, fjs); 
    }(document, 'script', 'facebook-jssdk'));
 </script>
     <div id="page_div1">
