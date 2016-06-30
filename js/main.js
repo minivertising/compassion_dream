@@ -5,8 +5,13 @@ function open_pop(param)
 		var pop_w	= "792px";
 		var pop_h	= "682px";
 		var pop_oh	= "640px";
+		var transition_pop	= "fade";
+	}else if (param == "use_popup" || param == "notice_popup"){
+		var transition_pop	= "elastic";
+	}else{
+		var transition_pop	= "fade";
 	}
-	$.colorbox({width:pop_w, height:pop_h, inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: false, transition: "fade", fadeOut: 300, href:"#"+param, onComplete: function(){
+	$.colorbox({width:pop_w, height:pop_h, inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: false, transition: transition_pop, fadeOut: 300, href:"#"+param, onComplete: function(){
 		$("#cboxLoadedContent").height(pop_oh);
 		$("#cboxContent").css("background","none");
 	},

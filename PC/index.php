@@ -25,6 +25,20 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 </script>
+<div id="loading_div" class="wrap_sec_top_sub loading" style="display:none;">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content">
+      <div class="img_load">
+      <!-- 꿈이 필요한 어린이 '베리'를 응원중입니다<br>
+      잠시만 기다려 주세요 --> 
+      꿈이 필요한 어린이와 매칭중입니다<br>
+      잠시만 기다려 주세요
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- 메인 index -->
 <div class="wrap_sec_top">
   <div class="bg_wrap_sec_top">
@@ -541,22 +555,12 @@ function dream_next(){
 					mb_job          : sel_dream,
 					cropboxData     : cropboxDataIE,
 				},
-				beforeSend: function(response){
-					// $("#loading_div").show();
-					// $("#contents_div").hide();
-					$("#contents_div").fadeOut('slow', function(){
-						$("#loading_div").fadeIn('slow');
-					});
-				},
 				success: function(res){
 					// mb_image    = res;
 
 					var rs_ch = res.split("||");
 					// $("#loading_div").hide();
 					// $("#contents_div").show();
-					$("#loading_div").fadeOut('slow', function(){
-						$("#contents_div").fadeIn('slow');
-					});
 					if (rs_ch[0] == "Y")
 					{
 						// 매칭될 아이가 있을 경우
@@ -599,13 +603,6 @@ function dream_next(){
 					crop_image_url  : crop_image_url,
 					mb_job          : sel_dream
 				},
-				beforeSend: function(response){
-					// $("#loading_div").show();
-					// $("#contents_div").hide();
-					$("#contents_div").fadeOut('slow', function(){
-						$("#loading_div").fadeIn('slow');
-					});
-				},
 				success: function(res){
 					alert(res);
 					// console.log(res);
@@ -614,9 +611,6 @@ function dream_next(){
 					var rs_ch = res.split("||");
 					// $("#loading_div").hide();
 					// $("#contents_div").show();
-					$("#loading_div").fadeOut('slow', function(){
-						$("#contents_div").fadeIn('slow');
-					});
 					if (rs_ch[0] == "Y")
 					{
 						// 매칭될 아이가 있을 경우
@@ -702,10 +696,8 @@ function dream_next(){
 			url: "../main_exec.php",
 			beforeSend: function(response){
 				// $("#loading_div").show();
-				// $("#contents_div").hide();
-				$("#contents_div").fadeOut('slow', function(){
-					$("#loading_div").fadeIn('slow');
-				});
+				$("#input_page").hide();
+				$("#loading_div").show();
 			},
 			success: function(response){
 				alert(response);
@@ -713,15 +705,12 @@ function dream_next(){
 				mb_rs = rs_ch[2];
 				// $("#loading_div").hide();
 				// $("#contents_div").show();
-				$("#loading_div").fadeOut('slow', function(){
-					$("#contents_div").fadeIn('slow');
-				});
 				if (rs_ch[0] == "Y")
 				{
 					// 아이가 새로 매칭될 경우
 					$("#matching_child_pic").attr("src",rs_ch[1]);
 					// $("#input_page").hide();
-					$("#input_page").fadeOut('slow', function(){
+					$("#loading_div").fadeOut('fast', function(){
 						// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
 						//m_rs_name, m_rs_ch_name, m_rs_job. m_rs_nation, m_rs_job2
 						var job_add		= job_ko_add(sel_dream);
@@ -734,7 +723,7 @@ function dream_next(){
 						$("#m_rs_job2").html(job_add_arr[1]);
 						$("#m_rs_nation").html(rs_ch[4]);
 						// $("#matching_share_page").show();
-						$("#matching_share_page").fadeIn('slow');
+						$("#matching_share_page").fadeIn('fast');
 						//open_pop('share_popup');
 					});
 				}else if (rs_ch[0] == "C"){
@@ -742,7 +731,7 @@ function dream_next(){
 					//$("#c_matching_child_pic").attr("src",rs_ch[1]);
 					$("#matching_child_pic").attr("src",rs_ch[1]);
 					// $("#input_page").hide();
-					$("#input_page").fadeOut('slow', function(){
+					$("#loading_div").fadeOut('fast', function(){
 						// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
 						//m_rs_name, m_rs_ch_name, m_rs_job. m_rs_nation, m_rs_job2
 						var job_add		= job_ko_add(sel_dream);
@@ -755,7 +744,7 @@ function dream_next(){
 						$("#m_rs_job2").html(job_add_arr[1]);
 						$("#m_rs_nation").html(rs_ch[4]);
 						// $("#matching_share_page").show();
-						$("#matching_share_page").fadeIn('slow');
+						$("#matching_share_page").fadeIn('fast');
 					});
 				}else{
 					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
