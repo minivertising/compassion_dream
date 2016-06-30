@@ -173,7 +173,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
               <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
                 <label for="inputImage" title="Upload image file">
                   <span title="Import image" style="position: relative; overflow: hidden;">
-                    <input type="file" id="inputImage" class="fileUp" name="file" accept="image/*">
+                    <input type="file" id="inputImage" class="fileUp" name="file">
                     <img src="images/btn_select_pic.png" style="cursor:pointer;"/>
                   </span>
                 </label>
@@ -454,9 +454,8 @@ function zoom_action(type){
 }
 
 
-function readURL(input) {
-
-	if (input.files && input.files[0]) {
+function readURL(input, browser) {
+	if (input.files && input.files[0] && browser == "C") {
 		file = files[0];
 		if (/^image\/\w+$/.test(file.type)) {
 			blobURL = URL.createObjectURL(file);
@@ -466,7 +465,7 @@ function readURL(input) {
 						}).cropper('reset').cropper('replace', blobURL);
 			$($inputImage).val('');
 		} else {
-			window.alert('Please choose an image file.');
+			window.alert("이미지를 선택해주세요.");
 					// }
 					// var reader = new FileReader();
 					// reader.onload = function (e) {
@@ -476,7 +475,7 @@ function readURL(input) {
 		}
 					// realFath = input.files[0].name;
 					// reader.readAsDataURL(input.files[0]);
-	}else if((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1)){
+	}else if(browser == "I"){
 		$($ori_image).cropper('destroy');
 		$('#ie_img_save').ajaxSubmit({
 			success: function (data) {
@@ -509,21 +508,28 @@ function readURL(input) {
 }
 
 $($inputImage).change(function(){
+	var pre_upload_browser_check;
+	if((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1))
+	{
+		var file_value = this.value;
+		var file_value_lengh = this.value.length;
+		var file_exe_start_length = file_value_lengh-3;
+		var file_exe = file_value.substr(file_exe_start_length, 3);
+
+		if(file_exe == "jpg" || file_exe == "JPG" || file_exe == "png" || file_exe == "PNG" || file_exe == "gif") {
+			pre_upload_browser_check = "I";
+		}else{
+			alert("이미지를 선택해주세요.")
+			return;
+		}
+
+	}else{
+		files = this.files;
+		pre_upload_browser_check = "C";
+	}
 	inputImageCheck = "Y";
-	files = this.files;
-// console.dir(this);
-// if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
-//  // $($ori_image).cropper('destroy');
-//  $('#ie_img_save').ajaxSubmit({
-//      success: function (data) {
-//          console.dir(data);
-//      }
-//  });
-//  // this.select();
-//  // realFath = document.selection.createRangeCollection()[0].text.toString();
-//  // this.blur();
-//  }
-	readURL(this);
+
+	readURL(this, pre_upload_browser_check);
 });
 
 
