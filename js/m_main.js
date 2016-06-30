@@ -118,11 +118,12 @@ function show_dream_sel()
 	$(".wrap_sec_footer").hide();
 	*/
 	// $("#contents_div").hide();
-	$("#contents_div").fadeOut('slow');
-	$("body").addClass("bg_sub_page");
-	// $("#upload_page").show();
-	$("#upload_page").fadeIn('slow', 'swing');
-	image_crop();
+	$("#contents_div").fadeOut('slow', function(){
+		$("body").addClass("bg_sub_page");
+		// $("#upload_page").show();
+		$("#upload_page").fadeIn('slow', 'swing');
+		image_crop();
+	});
 }
 
 function mb_check()
