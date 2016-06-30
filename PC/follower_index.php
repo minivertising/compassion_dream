@@ -1,6 +1,11 @@
 <?
     include_once "./header.php";
 
+	// MOBILE에서 유입시 MOBILE로 이동
+	if ($gubun == "MOBILE")
+		echo "<script>location.href='../MOBILE/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
+
+
     $ch_data    = sel_child_info($mb_data['mb_child']);
 ?>
 <body>

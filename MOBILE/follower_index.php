@@ -3,6 +3,8 @@
 
 	// ins_share_cnt($rs);
 
+	if ($gubun == "PC")
+		echo "<script>location.href='../PC/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
 	$ch_data	= sel_child_info($mb_data['mb_child']);
 
 ?>
