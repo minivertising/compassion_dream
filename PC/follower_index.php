@@ -477,6 +477,7 @@ function f_dream_next()
                 crop_image_url  : crop_image_url,
                 cropboxData     : cropboxDataIE,
                 mb_child    : "<?=$mb_data['mb_child']?>",
+                rs    : "<?=$rs?>",
 <?
     if ($ugu == "act")
     {
@@ -544,6 +545,7 @@ function f_dream_next()
                 exec            : "input_follower",
                 canvasurl   : canvasImageURL,
                 mb_child    : "<?=$mb_data['mb_child']?>",
+                rs    : "<?=$rs?>",
 <?
     if ($ugu == "act")
     {

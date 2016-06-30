@@ -144,12 +144,12 @@ switch ($_REQUEST['exec'])
 
     case "input_follower_IE" :
 
-        $ori_data   = $_REQUEST['crop_image_url'];
-        $mb_child   = $_REQUEST['mb_child'];
-        $mb_job     = $_REQUEST['mb_job'];
-        $parent_idx = $_REQUEST['parent_idx'];
-        $rs         = $_SESSION['ss_serial'];
-        $cropboxData = $_REQUEST['cropboxData'];
+        $ori_data		= $_REQUEST['crop_image_url'];
+        $mb_child		= $_REQUEST['mb_child'];
+        $mb_job			= $_REQUEST['mb_job'];
+        $parent_idx		= $_REQUEST['parent_idx'];
+        $rs				= $_REQUEST['rs'];
+        $cropboxData	= $_REQUEST['cropboxData'];
         $path_parts = pathinfo($ori_data);
         $file_ext = $path_parts['extension'];
         $data = "./PC/tmp_images/".$path_parts['basename'];
@@ -213,7 +213,7 @@ switch ($_REQUEST['exec'])
 		$mb_child	= $_REQUEST['mb_child'];
 		$mb_job		= $_REQUEST['mb_job'];
 		$parent_idx	= $_REQUEST['parent_idx'];
-		$rs			= $_SESSION['ss_serial'];
+		$rs			= $_REQUEST['rs'];
 
 		list($type, $data) = explode(';', $data);
 		list(, $data)      = explode(',', $data);
