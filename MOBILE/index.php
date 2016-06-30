@@ -507,8 +507,10 @@ function input_submit()
     				$("#m_rs_job2").html(job_add_arr[1]);
     				$("#m_rs_nation").html(rs_ch[4]);
     				
-            // $("#matching_share_page").show();
-    				// $("#matching_share_page").fadeIn('slow');
+					// $("#matching_share_page").show();
+					$("#loading_div").fadeOut('fast', function(){
+							  $("#matching_share_page").fadeIn('slow');
+					})
     			}else{
     				alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
     				location.reload();
