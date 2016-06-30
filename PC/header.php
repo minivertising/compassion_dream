@@ -10,10 +10,12 @@
 			$mb_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$rs."'";
 			$mb_result 	= mysqli_query($my_db, $mb_query);
 			$mb_data	= mysqli_fetch_array($mb_result);
+			$parent_idx	= "";
 		}else{
 			$mb_query 	= "SELECT * FROM ".$_gl['follower_info_table']." WHERE mb_serial='".$rs."'";
 			$mb_result 	= mysqli_query($my_db, $mb_query);
 			$mb_data	= mysqli_fetch_array($mb_result);
+			$parent_idx	= $mb_data['parent_idx'];
 		}
 		$img_url		= str_replace("..","http://mydream.compassion.or.kr",$mb_data['mb_image']);
 	}

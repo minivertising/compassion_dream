@@ -282,7 +282,7 @@ Loading.... 꿈이 필요한 아이와 매칭중
         $("#cboxTopCenter").hide();
         $("#cboxBottomCenter").hide();
 
-        Ins_share_cnt('<?=$rs?>','<?=$ugu?>','');
+        Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
     });
     /*
         var $inputImage = $('#inputImage');
@@ -610,9 +610,10 @@ function f_dream_next()
         $.ajax({
             type:"POST",
             data:{
-                "exec"              : "insert_share_cnt",
-                "serial"                : serial,
-                "ugu"                   : ugu
+                "exec"			: "insert_share_cnt",
+                "serial"			: serial,
+                "parent_idx"	: parent_idx,
+                "ugu"				: ugu
             },
             url: "../main_exec.php",
             success: function(res){
