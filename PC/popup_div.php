@@ -237,15 +237,15 @@
   <div id="preview_popup" class="popup_wrap p_preview">
   	<div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_close.png" /></a></div>
     <div class="inner_p_preview clearfix">
-    	<div class="img preview">
-        	<img src="images/img_sns_share.jpg" width="474" height="236" />
-        </div>
+    	<div class="preview">
+        	<!-- <img src="images/img_sns_share.jpg" width="474" height="236" /> -->
+      </div>
     </div>
   </div>  
 
   <!--END : 사진 미리보기 팝업-->
 
-  <!--팔로워용 사진 미리보기 팝업-->
+  <!--팔로워용 사진 미리보기 팝업///////// activator로 동일하게 수정하겠습니다.-->
   <div id="f_preview_popup" class="popup_wrap p_preview">
   	<div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_close.png" /></a></div>
     <div class="inner_p_preview clearfix">

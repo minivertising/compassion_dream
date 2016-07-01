@@ -961,9 +961,24 @@ body.main{
 	height:581px;
 	background: url(../images/bg_preview.png) no-repeat top center;
 }
-.p_preview .img{
+.inner_p_preview {
+	width: 480px;
+	height: 250px;
+	position: absolute;
+	left: 86px;
+	top: 199px;
+}
+/*.p_preview .img{
 	padding-top:198px;
 	padding-left:89px;
+}*/
+.preview {
+	overflow: hidden;
+	width: 478px; 
+	height: 235px;
+	margin: 0 auto;
+/*  padding-top:198px;
+  padding-left:89px;*/
 }
 
 

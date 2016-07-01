@@ -63,11 +63,13 @@
 <script src="../js/html5shiv.js"></script>
 <script type="text/javascript" src="../js/excanvas.js"></script>
 <style>
-.preview {
+/*.preview {
   overflow: hidden;
-  width: 400px; 
-  height: 300px;
-}
+  width: 474px; 
+  height: 236px;
+  padding-top:198px;
+  padding-left:89px;
+}*/
 .fileUp {
 	position: absolute;
     top: 6;
