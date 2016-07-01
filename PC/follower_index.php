@@ -26,8 +26,18 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-<div id="loading_div" style="display:none">
-Loading.... 꿈이 필요한 아이와 매칭중
+<div id="loading_div" class="wrap_sec_top_sub loading" style="display:none;">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content">
+      <div class="img_load">
+      <!-- 꿈이 필요한 어린이 '베리'를 응원중입니다<br>
+      잠시만 기다려 주세요 --> 
+      꿈이 필요한 어린이와 매칭중입니다<br>
+      잠시만 기다려 주세요
+      </div>
+    </div>
+  </div>
 </div>
 <div id="contents_div">
   <div id="page_div1">
@@ -494,8 +504,8 @@ function f_dream_next()
             },
             beforeSend: function(response){
                 alert(response);
-                $("#loading_div").show();
                 $("#upload_page").hide();
+                $("#loading_div").show();
             },
             success: function(res){
                 // console.log(res);
@@ -562,8 +572,8 @@ function f_dream_next()
             },
             beforeSend: function(response){
                 alert(response);
-                $("#loading_div").show();
                 $("#upload_page").hide();
+                $("#loading_div").show();
             },
             success: function(res){
                 // console.log(res);
