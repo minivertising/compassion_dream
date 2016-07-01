@@ -598,9 +598,11 @@ function f_dream_next()
 					});
 					},1500);
                 }else if (rs_ch[0] == "N"){
+					setTimeout(function(){
 	                $("#loading_div").fadeOut('fast',function(){
 						$("#f_share_no_matching_page").fadeIn("fast");
 					});
+					},1500);
                 }else {
                     alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
                     location.reload();
