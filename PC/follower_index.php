@@ -581,6 +581,7 @@ function f_dream_next()
                 if (rs_ch[0] == "Y")
                 {
                     $("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
+					setTimeout(3000,function(){
 	                $("#loading_div").fadeOut('fast',function(){
 <?
 	if ($ch_data['ch_choice'] == "Y")
@@ -594,6 +595,7 @@ function f_dream_next()
 <?
 	}
 ?>
+					});
 					});
                 }else if (rs_ch[0] == "N"){
 	                $("#loading_div").fadeOut('fast',function(){
