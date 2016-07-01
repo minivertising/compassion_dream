@@ -476,7 +476,6 @@ function f_dream_next()
         //mb_job    = $("#mb_job").val();
 
     if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
-        alert("ie8이하");
         cropboxDataIE = $(ori_image).cropper('getData');
         crop_image_url = $(ori_image).attr('src');
            $.ajax({
@@ -503,13 +502,11 @@ function f_dream_next()
                 mb_job      : sel_dream
             },
             beforeSend: function(response){
-                alert(response);
                 $("#upload_page").hide();
                 $("#loading_div").show();
             },
             success: function(res){
                 // console.log(res);
-                alert(res);
                 //mb_image    = res;
 
                 var rs_ch = res.split("||");
@@ -545,7 +542,6 @@ function f_dream_next()
 
     }else{
         // 사진 저장할 내용 추가
-        alert("ie9 이상 또는 ie 외 브라우저");
         var croppedImg = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
         var canvasImageURL = croppedImg.toDataURL("image/jpeg");
         $.ajax({
@@ -571,13 +567,11 @@ function f_dream_next()
                 mb_job      : sel_dream
             },
             beforeSend: function(response){
-                alert(response);
                 $("#upload_page").hide();
                 $("#loading_div").show();
             },
             success: function(res){
                 // console.log(res);
-                alert(res);
                 //mb_image    = res;
 
                 var rs_ch = res.split("||");

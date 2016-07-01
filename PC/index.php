@@ -612,7 +612,6 @@ function dream_next(){
 					mb_job          : sel_dream
 				},
 				success: function(res){
-					alert(res);
 					// console.log(res);
 					//mb_image    = res;
 
@@ -708,7 +707,6 @@ function dream_next(){
 				$("#loading_div").show();
 			},
 			success: function(response){
-				alert(response);
 				var rs_ch = response.split("||");
 				mb_rs = rs_ch[2];
 				// $("#loading_div").hide();
