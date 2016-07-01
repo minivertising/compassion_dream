@@ -46,24 +46,68 @@ body.bg_status{
 
 
 
+.wrap_page.main_page{
+	width:100%;
+	position:relative;
+	background:#4d9eaf;
+}
+.wrap_page.main_page .main_top{
+	width:100%;
+	position:relative;
+}
+.wrap_page.main_page .main_top .logo{
+	width:50%;
+	float:left;
+}
+.wrap_page.main_page .main_top .logo img{
+	width:50%;
+}
+.wrap_page.main_page .main_top .btn_how{
+	width:50%;
+	float:left;
+	text-align:right;
+}
+.wrap_page.main_page .main_top .btn_how img{
+	width:50%;
+}
+
+.wrap_page.main_page .btn_block.main{
+	width:100%;
+	text-align:center;
+}
+.wrap_page.main_page .btn_block.main img{
+	width:60%;
+}
+
+.wrap_page.main_page .img_child{
+	width:100%;
+}
+.wrap_page.main_page .img_child img{
+	width:100%;
+}
+
 
 .wrap_page.lms_landing{
+	background:url(../images/bg_lms.jpg) no-repeat;
+	background-size:cover;
 }
 
 .wrap_page.lms_landing .sec_movie{
 	background:#ccc;
 }
 .wrap_page.lms_landing .sec_txt{
-	background:#ddd;
+	text-align:center;
+}
+.wrap_page.lms_landing .sec_txt img{
+	width:96%;
 }
 
 .wrap_page.lms_landing .btn_block{
 	text-align:center;
 }
-.wrap_page.lms_landing .btn_block.one{
-	background:#fff;
+.wrap_page.lms_landing .btn_block div img{
+	width:96%;
 }
-
 
 
 .wrap_page.mystatus{
@@ -628,6 +672,15 @@ body.bg_status{
 }
 .wrap_pop.p_howto_share .inner .btn_block img{
 	width:30%;
+}
+
+
+.wrap_pop.about_campaign{
+
+}
+.wrap_pop.about_campaign .img,
+.wrap_pop.about_campaign .img img{
+	width:100%;
 }
 
 
