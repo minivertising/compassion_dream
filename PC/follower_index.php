@@ -490,7 +490,7 @@ function f_dream_next()
 <?
     }
 ?>
-                mb_job      : "<?=$mb_data['mb_job']?>"
+                mb_job      : sel_dream
             },
             beforeSend: function(response){
                 alert(response);
@@ -558,7 +558,7 @@ function f_dream_next()
 <?
     }
 ?>
-                mb_job      : "<?=$mb_data['mb_job']?>"
+                mb_job      : sel_dream
             },
             beforeSend: function(response){
                 alert(response);
