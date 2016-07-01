@@ -596,7 +596,7 @@ function f_dream_next()
 	}
 ?>
 					});
-					},3000);
+					},1500);
                 }else if (rs_ch[0] == "N"){
 	                $("#loading_div").fadeOut('fast',function(){
 						$("#f_share_no_matching_page").fadeIn("fast");
