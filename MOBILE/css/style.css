@@ -46,6 +46,46 @@ body.bg_status{
 
 
 
+.wrap_page.main_page{
+	width:100%;
+	position:relative;
+	background:#4d9eaf;
+}
+.wrap_page.main_page .main_top{
+	width:100%;
+	position:relative;
+}
+.wrap_page.main_page .main_top .logo{
+	width:50%;
+	float:left;
+}
+.wrap_page.main_page .main_top .logo img{
+	width:50%;
+}
+.wrap_page.main_page .main_top .btn_how{
+	width:50%;
+	float:left;
+	text-align:right;
+}
+.wrap_page.main_page .main_top .btn_how img{
+	width:50%;
+}
+
+.wrap_page.main_page .btn_block.main{
+	width:100%;
+	text-align:center;
+}
+.wrap_page.main_page .btn_block.main img{
+	width:60%;
+}
+
+.wrap_page.main_page .img_child{
+	width:100%;
+}
+.wrap_page.main_page .img_child img{
+	width:100%;
+}
+
 
 .wrap_page.lms_landing{
 	background:url(../images/bg_lms.jpg) no-repeat;
