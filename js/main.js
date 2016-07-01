@@ -313,7 +313,7 @@ function sns_share(media, flag)
 		});
 	}else{
 		Kakao.Story.share({
-			url: 'http://mydream.compassion.or.kr/follower_index.php?rs='+mb_rs+'&ugu='+flag,
+			url: 'http://mydream.compassion.or.kr/PC/follower_index.php?rs='+mb_rs+'&ugu='+flag,
 			text: '#블루바톤챌린지'
 		});
 		$.ajax({
