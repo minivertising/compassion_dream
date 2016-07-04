@@ -213,18 +213,99 @@
 </body>
 </html>
 <script type="text/javascript">
-    var mb_rs       = '<?=$rs?>';
-    $(document).ready(function() {
-        Kakao.init('59df63251be6d99256b63b98f4948e89');
-        $("#cboxTopLeft").hide();
-        $("#cboxTopRight").hide();
-        $("#cboxBottomLeft").hide();
-        $("#cboxBottomRight").hide();
-        $("#cboxMiddleLeft").hide();
-        $("#cboxMiddleRight").hide();
-        $("#cboxTopCenter").hide();
-        $("#cboxBottomCenter").hide();
-    });
+var agent = navigator.userAgent.toLowerCase();
+var sel_dream       = null;
+var runner_serial   = null;
+var mb_job          = null;
+var mb_image        = null;
+var $ori_image = $('#f_ori_image');
+var $inputImage = $('#f_inputImage');
+var URL = window.URL || window.webkitURL;
+var realFath;
+var convertPath;
+var blobURL;
+var file;
+var files;
+var flag_sel_dream  = 0;
+var mb_rs       = null;
+var inputImageCheck;
+$(document).ready(function() {
+	Kakao.init('59df63251be6d99256b63b98f4948e89');
+	$("#cboxTopLeft").hide();
+	$("#cboxTopRight").hide();
+	$("#cboxBottomLeft").hide();
+	$("#cboxBottomRight").hide();
+	$("#cboxMiddleLeft").hide();
+	$("#cboxMiddleRight").hide();
+	$("#cboxTopCenter").hide();
+	$("#cboxBottomCenter").hide();
+	Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
+});
+
+function image_crop(){
+	$($ori_image).cropper({
+		viewMode: 0,
+		dragMode: 'move',
+		autoCropArea: 0.8,
+		aspectRatio: 1200/630,
+		responsive: true,
+		restore: true,
+		guides: false,
+		highlight: true,
+		background: true,
+		cropBoxMovable: true,
+		cropBoxResizable: true,
+		preview: '.preview',
+		center:true,
+		zoomOnWheel:false,
+		toggleDragModeOnDblclick:false,
+	});
+}
+
+function f_preview_img()
+{
+	open_pop('f_preview_popup');
+}
+
+function zoom_action(type){
+	if(type=="up")
+	{
+		$($ori_image).cropper('zoom', 0.1);
+	}else{
+		$($ori_image).cropper('zoom', -0.1);
+	}
+}
+
+function readURL(input) {
+	if (input.files && input.files[0]) {
+		file = files[0];
+		if (/^image\/\w+$/.test(file.type)) {
+			blobURL = URL.createObjectURL(file);
+			$ori_image.one('built.cropper', function () {
+				// Revoke when load complete
+				URL.revokeObjectURL(blobURL);
+			}).cropper('reset').cropper('replace', blobURL);
+			$($inputImage).val('');
+		} else {
+			window.alert('Please choose an image file.');
+		}
+	}else if((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1)){
+		$($ori_image).cropper('destroy');
+		$('#f_ie_img_save').ajaxSubmit({
+			success: function (data) {
+				$($ori_image).attr('src', data);
+				image_crop();
+			}
+		});
+	}
+}
+
+$($inputImage).change(function(){
+	inputImageCheck = "Y";
+	files = this.files;
+	readURL(this);
+});
+
 
 function f_dream_next()
 {
@@ -309,5 +390,22 @@ function f_dream_next()
             }
         });
 }
+
+    function Ins_share_cnt(serial, ugu,parent_idx)
+    {
+        $.ajax({
+            type:"POST",
+            data:{
+                "exec"			: "insert_share_cnt",
+                "serial"			: serial,
+                "parent_idx"	: parent_idx,
+                "ugu"				: ugu
+            },
+            url: "../main_exec.php",
+            success: function(res){
+                // console.log(res);
+            }
+        });
+    }
 
 </script>
