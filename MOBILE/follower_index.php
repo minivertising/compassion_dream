@@ -43,10 +43,6 @@
   </div>
 </div>
 <div id="contents_div">
-  <a href="#" onclick="show_dream_sel();return false;">지금 참여하기</a>
-</div>
-
-<div id="contents_div">
     <div id="page_div1">
 	  <h2>어릴적 내 꿈은 <?=$_gl['job'][$mb_data['mb_job']]?></h2>
 	  <div>
