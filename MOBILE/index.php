@@ -349,12 +349,11 @@ function dream_next()
 		beforeSend: function(response){
 			// $("#loading_div").show();
       // $("#upload_page").hide();
-      $("#loading_div").fadeIn('slow', function(){
-  			$("#upload_page").fadeOut('slow');
-      });
+			$("#upload_page").fadeOut('fast', function(){
+				$("#loading_div").fadeIn('fast');
+			});
 		},
 		success: function (res) {
-			alert(res);
 			// console.log(data);
 			//mb_image    = data;
 			//open_pop('input_popup');
@@ -363,21 +362,20 @@ function dream_next()
 			{
 				// 매칭될 아이가 있을 경우
 				mb_image    = rs_ch[1];
-        // $("#loading_div").hide();
-        // $("#input_page").show();
-        $("#loading_div").fadeOut('slow', function(){
-  				$("#input_page").fadeIn('slow');
-        });
+				setTimeout(function(){
+					$("#loading_div").fadeOut('slow', function(){
+							$("#input_page").fadeIn('slow');
+					});
+				},1500);
 			}else if (rs_ch[0] == "N"){
 				// 매칭될 아이가 없을 경우
 				mb_image    = rs_ch[1];
 				mb_rs       = rs_ch[2];
-        // $("#loading_div").hide();
-        // $("#no_matching_page").show();
-        $("#loading_div").fadeOut('slow', function(){
-  				$("#no_matching_page").fadeIn('slow');
-        });
-
+				setTimeout(function(){
+					$("#loading_div").fadeOut('slow', function(){
+  						$("#no_matching_page").fadeIn('slow');
+					});
+				},1500);
 			}else {
 				// 에러 
 				alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
