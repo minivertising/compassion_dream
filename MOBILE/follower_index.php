@@ -180,15 +180,15 @@
             * 1개의 이미지 파일을 등록할 수 있습니다
             </div>
             <div class="btns">
-              <label for="inputImage" title="Upload image file">
-                <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+              <label for="f_inputImage" title="Upload image file">
+                <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
                 <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
               </label>
               <a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a>
             </div>
           </div>
           <div id="img_div" class="pic_area">
-            <img id="ori_image" src="./images/picture.jpg" alt="Picture" />
+            <img id="f_ori_image" src="./images/picture.jpg" alt="Picture" />
           </div>
           <div class="btn_closeup">
             <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" width="80" /></a>
