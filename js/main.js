@@ -2,11 +2,19 @@ function open_pop(param)
 {
 	if (param == "job_popup")
 	{
-		var pop_w	= "792px";
-		var pop_h	= "682px";
-		var pop_oh	= "640px";
+		var pop_w	= "805px";
+		var pop_h	= "759px";
+		var pop_oh	= "717px";
 		var transition_pop	= "fade";
-	}else if (param == "use_popup" || param == "notice_popup"){
+	}else if (param == "notice_popup"){
+		var pop_w	= "806px";
+		var pop_h	= "534px";
+		var pop_oh	= "492px";
+		var transition_pop	= "elastic";
+	}else if (param == "use_popup"){
+		var pop_w	= "806px";
+		var pop_h	= "792px";
+		var pop_oh	= "755px";
 		var transition_pop	= "elastic";
 	}else{
 		var transition_pop	= "fade";

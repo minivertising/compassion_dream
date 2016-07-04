@@ -46,11 +46,11 @@
 <meta property="og:description" content="Compassion BLUE BATON CHALLENGE" />
 <link rel="shortcut icon" type="image/x-icon" href="./img/icon/favicon.ico" />
 <title>PC MAIN</title>
-<link href="../lib/Cropper/css/bootstrap.min.css" rel="stylesheet">
-<link href="css/style_yang.css" rel="stylesheet" type="text/css">
+<!-- <link href="../lib/Cropper/css/bootstrap.min.css" rel="stylesheet"> -->
 <link href="../lib/bxslider/jquery.bxslider.css" rel="stylesheet" />
 <link href="../lib/Cropper/css/cropper.css" rel="stylesheet">
 <link rel="stylesheet" href="../lib/colorbox/colorbox.css">
+<link href="css/style_yang.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
 <script src="../lib/Cropper/js/bootstrap.min.js"></script>
 <script src="../lib/Cropper/js/cropper.js"></script>

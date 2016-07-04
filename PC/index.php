@@ -40,12 +40,12 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 </div>
 
 <!-- 메인 index -->
-<div class="wrap_sec_top">
-  <div class="bg_wrap_sec_top">
-    <div class="inner">
-      <div class="logo"><a href="index.php"><img src="images/logo.png" /></a></div>
-      <div class="title"><img src="images/title_main.png" /></div>
-      <div class="block_img">
+    <div class="wrap_sec_top">
+    <div class="bg_wrap_sec_top">
+    	<div class="inner">
+        	<div class="logo"><a href="index.php"><img src="images/logo.png" /></a></div>
+            <div class="title"><img src="images/title_main.png" /></div>
+            <div class="block_img">
                 <div><a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_partin.png" /></a></div>
                 <div class="status">
                     <div class="people">
@@ -60,47 +60,47 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
                 <a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_howto.png" /></a>
             </div>
         </div>
-    <div class="people_pic clearfix">
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
+        <div class="people_pic clearfix">
+        	<div class="pic_one">
+            	<img src="images/ex_pic_one.png" />
+            </div>
+        	<div class="pic_one">
+            	<img src="images/ex_pic_one.png" />
+            </div>
+        	<div class="pic_one">
+            	<img src="images/ex_pic_one.png" />
+            </div>
+        	<div class="pic_one">
+            	<img src="images/ex_pic_one.png" />
+            </div>
+        	<div class="pic_one">
+            	<img src="images/ex_pic_one.png" />
+            </div>
+        	<div class="pic_one">
+            	<img src="images/ex_pic_one.png" />
+            </div>
+        	<div class="pic_one">
+            	<img src="images/ex_pic_one.png" />
+            </div>
+        	<div class="pic_one">
+            	<img src="images/ex_pic_one.png" />
+            </div>
+        	<div class="pic_one">
+            	<img src="images/ex_pic_one.png" />
+            </div>
+        	<div class="pic_one">
+            	<img src="images/ex_pic_one.png" />
+            </div>
+        	<div class="pic_one">
+            	<img src="images/ex_pic_one.png" />
+            </div>
+        	<div class="pic_one">
+            	<img src="images/ex_pic_one.png" />
+            </div>
+        </div>
+    </div><!--bg-->
     </div>
-  </div><!--bg-->
-</div>
-
+    
     <div class="wrap_sec_movie">
     	<div class="bg_wrap_sec_movie">
             <div class="inner">
@@ -112,6 +112,12 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
                 </div>
             </div>
             
+            <div class="sec_q">
+    			<div class="inner">
+        			<div class="btn"><a href="http://www.compassion.or.kr" target="_blank"><img src="images/btn_gift.png" alt=""/></a></div>
+        		</div>
+    		</div>
+    
 			<div class="bg_child">
                 <div class="child">
                 	<div class="inner_child clearfix">
@@ -132,12 +138,12 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
             
         </div>
     </div>
-
+    
     <div class="wrap_sec_com">
     	<div class="inner">
         	<div class="title"><img src="images/title_com.png" /></div>
    			<div class="img">
-            	<a href="http://www.compassion.or.kr/" target="_blank"><img src="images/btn_compassion.png" /></a>
+            	<a href="http://www.compassion.or.kr" target="_blank"><img src="images/btn_compassion.png" /></a>
             </div>
         </div>
         
@@ -150,26 +156,29 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <!-- 메인 index -->
 
 <!-- 사진 업로드 페이지 -->
-<div id="upload_page" class="wrap_sec_top_sub" style="display:none;">
-  <div class="inner">
-    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
-    <div class="block_content upload">
-      <div class="title">
-        <div class="main"><span>'기타'</span>에게 어떤 꿈을 이어 주실 건가요?</div>
-      </div>
-      <div class="block_input_dream">
-        <div class="selec_job">
-          <span id="sel_job_txt">1. 꿈꾸던 직업 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
-        </div>
-        <div class="upload_pic">
-          <div class="title_pic">
-          2. 사진업로드
-          </div>
-          <div class="desc">
-            <div class="txt_pic">
-              <img src="images/txt_pic.png" />
-            </div>
-            <div class="btns">
+    <div id="upload_page" class="wrap_sec_top_sub" style="display:none;">
+    	<div class="inner">
+        	<div class="logo"><a href="index.php"><img src="images/logo_sub.png" /></a></div>
+            <div class="block_content upload">
+            	<div class="title">
+                	<div class="main">
+                    여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
+                    SNS에 사진과 함께 당신이 응원할 <span>‘꿈을 잃은 어린이’</span>가 소개됩니다
+                    </div>
+                </div>
+                <div class="block_input_dream">
+                	<div class="selec_job">
+                    	<span id="sel_job_txt">1. 꿈꾸던 직업 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_re_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
+                    </div>
+                    <div class="upload_pic">
+                    	<div class="title_pic">
+                        	2. 사진업로드
+                        </div>
+                        <div class="desc">
+                        	<div class="txt_pic">
+                            	<img src="images/txt_pic.png" />
+                            </div>
+                        	<div class="btns">
               <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
                 <label for="inputImage" title="Upload image file">
                   <span title="Import image" style="position: relative; overflow: hidden;">
@@ -179,23 +188,24 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
                 </label>
                   <a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a>
               </form>
+                            </div>
+                        </div>
+                        <div id="img_div" class="pic_area">
+                        	<img id="ori_image" src="./images/picture.jpg" alt="Picture" />
+                        </div>
+                        <div class="btn_closeup">
+                        	<a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
+                            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="block_btn">
+                	<a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
+                </div>
             </div>
-          </div>
-          <div id="img_div" class="pic_area">
-            <img id="ori_image" src="./images/picture.jpg" alt="Picture" />
-          </div>
-          <div class="btn_closeup">
-            <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
-            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" /></a>
-          </div>
+            
         </div>
-      </div>
-      <div class="block_btn">
-        <a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
-      </div>
     </div>
-  </div>
-</div>
 <!-- 사진 업로드 페이지 -->
 
 <!-- 개인정보 입력 페이지 -->
@@ -220,7 +230,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
         </div>
       </div>
       <div class="txt_notice">
-      * 추첨에 선정  되신 분께는 개별 연락 드립니다
+      * 선정 되신 분께는 개별 연락 드립니다
       </div>
       <div class="block_btn">
         <a href="#" onclick="input_submit();return false;"><img src="images/btn_next.png" /></a>
@@ -236,7 +246,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content">
       <div class="title">
-      어린시절의 <span id="m_rs_name">미니버</span>님과 같이<br> 꿈이 필요한 어린이는 '<span id="m_rs_ch_name">기타</span>' 입니다
+	  당신의 도움이 필요한 어린이는<br> <span id="m_rs_ch_name">기타</span> 입니다
       </div>
       <div class="block_child">
         <!-- <div class="img_letter"><img src="images/img_letter.png" /></div> -->
@@ -245,17 +255,17 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
           <div class="child_text">
             <h2>저도 <span id="m_rs_job">선생님</span><span id="jobPP">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
             <p>
-            안녕하세요 <br>
-            저는  <span id="m_rs_nation">필리핀</span>에 살고 있는 <span id="m_rs_ch_name2">기타</span><span id="name2PP">에요</span><br> <!-- 조사 ~에요, ~이에요 -->
-            어린 시절에  <span id="m_rs_job2">선생님</span><span id="job2PP">가</span> 꿈이 셨군요<br> <!-- 조사 ~이, ~가 -->
+            안녕하세요 저는  <span id="m_rs_nation">필리핀</span>에 살고 있는<br>
+            <span id="m_rs_ch_name2">기타</span><span id="name2PP">에요</span><br>
+            어린 시절에 <span id="m_rs_job2">선생님</span>이 꿈이 셨군요<br>
             저도 언젠가는 그렇게 멋진 꿈을 꾸고 싶어요!
+
             </p>
           </div>
         </div>
       </div>
       <div class="block_txt">
-        <p>당신의 어린 시절 사진을 공유하면 참여가 완료됩니다</p>
-        <p>아래 SNS에 공유하여 '<span id="m_rs_ch_name3">기타</span>'의 후원자님 찾아주세요</p>
+        <p>SNS에 공유하셔서 <span id="m_rs_ch_name3">기타</span>이 후원자를 만날 수 있도록 해주세요!</p>
       </div>
       <div class="block_btn sns">
         <a href="#" onclick="sns_share('fb','act');"><img src="images/sns_f.png" /></a>
@@ -273,7 +283,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <!-- ACTIVATOR 매칭없을시 컴페션 소개 페이지 -->
 <div id="no_matching_page" class="wrap_sec_top_sub match_child" style="display:none">
   <div class="inner">
-    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="index.php"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content share_compassion">
       <div class="title">
       컴패션에서는 당신의 어린시절처럼<br>
@@ -725,7 +735,7 @@ function dream_next(){
 						//m_rs_name, m_rs_ch_name, m_rs_job. m_rs_nation, m_rs_job2
 						// var job_add		= job_ko_add(sel_dream);
 						// job_add_arr		= job_add.split("||");
-						$("#m_rs_name").html(mb_name);
+						//$("#m_rs_name").html(mb_name);
 						$("#m_rs_ch_name").html(rs_ch[3]);
 						$("#m_rs_ch_name2").html(rs_ch[3]);
 
@@ -758,7 +768,7 @@ function dream_next(){
 						//m_rs_name, m_rs_ch_name, m_rs_job. m_rs_nation, m_rs_job2
 						// var job_add		= job_ko_add(sel_dream);
 						// job_add_arr		= job_add.split("||");
-						$("#m_rs_name").html(mb_name);
+						//$("#m_rs_name").html(mb_name);
 						$("#m_rs_ch_name").html(rs_ch[3]);
 						$("#m_rs_ch_name2").html(rs_ch[3]);
 
