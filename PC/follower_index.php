@@ -183,10 +183,12 @@
                         	<div class="btns">
               <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
                 <label for="f_inputImage" title="Upload image file">
-                  <input type="file" id="f_inputImage" class="sr-only" name="file" accept="image/*">
-                  <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" style="cursor:pointer;"/></span>
-                  <a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a>
+                  <span title="Import image" style="position: relative; overflow: hidden;">
+                    <input type="file" id="f_inputImage" class="fileUp" name="file">
+                    <img src="images/btn_select_pic.png" style="cursor:pointer;"/>
+                  </span>
                 </label>
+                  <a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a>
               </form>
                             </div>
                         </div>
