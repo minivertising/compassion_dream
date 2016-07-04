@@ -106,6 +106,15 @@
 		return $ch_data;
 	}
 
+	function has_batchim($str, $charset = 'UTF-8') 
+	{
+		$str = mb_convert_encoding($str, 'UTF-16BE', $charset);
+		$str = str_split(substr($str, strlen($str) - 2));
+		$code_point = (ord($str[0]) * 256) + ord($str[1]);
+		if ($code_point < 44032 || $code_point > 55203) return 0;
+		return ($code_point - 44032) % 28;
+	}
+
 	function total_runner_info()
 	{
 		global $_gl;

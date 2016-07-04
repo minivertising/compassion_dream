@@ -57,6 +57,7 @@ switch ($_REQUEST['exec'])
 		$mb_name			= $_REQUEST['mb_name'];
 		$mb_phone			= $_REQUEST['mb_phone'];
 		$mb_job				= $_REQUEST['mb_job'];
+		$mb_job_kor			= $_REQUEST['mb_job_kor'];
 		//$mb_serial			= $_REQUEST['mb_serial'];
 		$mb_image			= $_REQUEST['mb_image'];
 		$media				= $_SESSION['ss_media'];
@@ -100,17 +101,25 @@ switch ($_REQUEST['exec'])
 				$child_info	= matching_child($mb_job);
 
 				$child_arr	= explode("||",$child_info);
+
+				$cName_post_position = has_batchim($child_arr[2]); //아이 이름 받침 유무 검사 0 or 0보다 큰 정수 리턴
+				$job_post_position = has_batchim($mb_job_kor); //직업 받침 유무 검사 0 or 0보다 큰 정수 리턴
+
 				$query 	= "INSERT INTO ".$_gl['activator_info_table']."(mb_ipaddr,mb_name,mb_phone,mb_job,mb_child,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_name."','".$mb_phone."','".$mb_job."','".$child_arr[0]."','".$mb_image."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
 				$result 	= mysqli_query($my_db, $query);
 
 				if ($result)
-					$flag	= "Y||".$child_arr[1]."||".$mb_serial."||".$child_arr[2]."||".$child_arr[3];
+					$flag	= "Y||".$child_arr[1]."||".$mb_serial."||".$child_arr[2]."||".$child_arr[3]."||".$cName_post_position."||".$job_post_position;
 				else
 					$flag	= "N||fail||N";
 
 			}else{
 				// 매칭된 아이가 결연 되지 않았을 경우
-				$flag	= "C||".$ch_data['ch_full_img_url']."||".$mb_serial."||".$ch_data['ch_nick']."||".$ch_data['ch_nation_name'];
+				$cName_post_position = has_batchim($ch_data['ch_nick']);
+				$job_post_position = has_batchim($mb_job_kor);
+
+				$flag	= "C||".$ch_data['ch_full_img_url']."||".$mb_serial."||".$ch_data['ch_nick']."||".$ch_data['ch_nation_name']."||".$cName_post_position."||".$job_post_position;
+
 				$query 	= "INSERT INTO ".$_gl['activator_info_table']."(mb_ipaddr,mb_name,mb_phone,mb_job,mb_child,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_name."','".$mb_phone."','".$mb_job."','".$ch_data['idx']."','".$mb_image."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
 				$result 	= mysqli_query($my_db, $query);
 			}
@@ -119,11 +128,15 @@ switch ($_REQUEST['exec'])
 			$child_info	= matching_child($mb_job);
 
 			$child_arr	= explode("||",$child_info);
+
+			$cName_post_position = has_batchim($child_arr[2]); //아이 이름 받침 유무 검사 0 or 0보다 큰 정수 리턴
+			$job_post_position = has_batchim($mb_job_kor); //직업 받침 유무 검사 0 or 0보다 큰 정수 리턴
+
 			$query 	= "INSERT INTO ".$_gl['activator_info_table']."(mb_ipaddr,mb_name,mb_phone,mb_job,mb_child,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_name."','".$mb_phone."','".$mb_job."','".$child_arr[0]."','".$mb_image."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
 			$result 	= mysqli_query($my_db, $query);
 
 			if ($result)
-				$flag	= "Y||".$child_arr[1]."||".$mb_serial."||".$child_arr[2]."||".$child_arr[3];
+				$flag	= "Y||".$child_arr[1]."||".$mb_serial."||".$child_arr[2]."||".$child_arr[3]."||".$cName_post_position."||".$job_post_position; ///////////////
 			else
 				$flag	= "N||fail||N||N||N";
 		}
