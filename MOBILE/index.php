@@ -452,6 +452,12 @@ function input_submit()
 		return false;
 	}
 
+	if (chk_mb_flag == 0)
+	{
+		alert("개인정보 수집 및 위탁에 관한 동의를 안 하셨습니다.");
+		return false;
+	}
+
 	$.ajax({
 		type:"POST",
 		data:{
