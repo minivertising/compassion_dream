@@ -4,6 +4,7 @@
 <body>
 <div id="talk_area" style="position:absolute;width:400px;height:600px;background:skyblue;overflow-y:auto;">
   <div id="talk_1" style="position:relative;width:150px;height:100px;background:orange;left:250px;display:none;">첫번째 DIV</div>
+  <embed src="sample.wav" autostart="false" width="0" height="0" id="my_sound" enablejavascript="true">
   <div id="talk_2" style="position:relative;width:150px;height:100px;background:orange;left:250px;display:none;">두번째 DIV</div>
   <div id="talk_3" style="position:relative;width:150px;height:100px;background:orange;left:0px;display:none;">세번째 DIV</div>
   <div id="talk_4" style="position:relative;width:150px;height:100px;background:orange;left:250px;display:none;">네번째 DIV</div>
@@ -22,11 +23,18 @@ $(document).ready(function(){
 
 	talk_start();
 });
+function sound_play(soundObj)
+{
+	var sound = document.getElementById(soundObj);
+	sound.Play();
+}
 
 function talk_start()
 {
 	setTimeout(function(){
-		$("#talk_1").fadeIn("fast");
+		$("#talk_1").fadeIn("fast", function(){
+			sound_play("my_sound");
+		});
 	},500);
 	setTimeout(function(){
 		$("#talk_2").fadeIn("fast");
