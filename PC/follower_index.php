@@ -70,48 +70,51 @@
     }
 ?>
   </div>
-  <div id="page_div5" class="wrap_sec_top_sub match_child follower" style="display:none;">
-    <div class="inner">
-      <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
-      <div class="block_content result_story_child">
-        <div class="title">
-          <div class="main"><?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "아" : "야" ?> 내 꿈꿔~!</div>
-          <div class="sub">
-          꿈꾸는 것조차 어려운 <span><?=$ch_data['ch_nick']?></span>에게<br> 
-          내 어린시절 꿈이 담긴 사진으로 희망을 선물하세요
-          </div>
-        </div>
-        <div class="block_child">
-          <div class="inner_block_child clearfix">
-            <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
-            <div class="child_text">
-              <p>
-              <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "은" : "는" ?> 부모님과 함께 살고 있습니다 <br>
-              아버지는 임시직으로 노동일을 하시며 어머니는 집안일을 하십니다 <br>
-              <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "은" : "는" ?> 집안에서 시장에서 물건 사고 팔기, 
-              물 길어 나르기를 맡아서 합니다
-              </p>
+    <div id="page_div5" class="wrap_sec_top_sub match_child follower" style="display:none;">
+    	<div class="inner">
+        	<div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+            <div class="block_content result_story_child">
+            	<div class="title">
+                	<div class="main"><span><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "아" : "야" ?> 내꿈꿔~!</div>
+					<div class="sub">
+                    가난으로 인해 꿈을 잃어버린 <?=$ch_data['ch_nick']?>의 후원자가 되어주세요
+                    </div>
+                </div>
+                <div class="block_child">
+                	<div class="inner_block_child clearfix">
+                        <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
+                        <div class="child_text">
+                            <p>
+                            	<?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "은" : "는" ?> 부모님과 함께<br> 
+                                살고 있습니다 아버지는 임시직으로 <br>
+                                노동일을 하시며 어머니는 집안일을 하십니다<br>
+                                <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "은" : "는" ?> 집안에서 시장에서 물건 사고 팔기,<br>
+                                물 길어 나르기를 맡아서 합니다
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="block_btn apply">
+                	<div class="inner_apply clearfix">
+                		<div class="left">
+                        	<div class="bt"><a href="#"><img src="images/btn_sponsor.png" /></a></div>
+                         	<div class="txt">1:1후원으로<br><?=$ch_data['ch_nick']?>의 꿈을<br>현실로 만들어주세요!
+						</div>
+                        </div>
+                        <div class="right">
+                            <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
+                         	<div class="txt">1:1 후원이 어려울 경우<br>SNS에 어릴적 사진을 공유하고 함께 응원해주세요
+						</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="example">
+                	<img src="images/story_1.png" width="100" />
+                </div>
             </div>
-          </div>
+            
         </div>
-        <div class="block_btn apply">
-          <div class="inner_apply clearfix">
-            <div class="left">
-              <div class="bt"><a href="#"><img src="images/btn_sponsor.png" /></a></div>
-              <div class="txt">1:1결연으로 '<?=$ch_data['ch_nick']?>'의 꿈을<br> 현실로 만들어주세요!</div>
-            </div>
-            <div class="right">
-              <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
-              <div class="txt">SNS에 어릴적 사진을 공유해서<br> '<?=$ch_data['ch_nick']?>'<?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 꿈꿀 수 있게 도와주세요</div>
-            </div>
-          </div>
-        </div>
-        <div class="example">
-          <img src="images/story_1.png" width="100" />
-        </div>
-      </div>
     </div>
-  </div>
 
   <div id="page_div6" class="wrap_sec_top_sub match_child follower" style="display:none;">
     <div class="inner">
@@ -136,15 +139,15 @@
           <div class="inner_apply clearfix">
             <div class="left">
               <div class="bt"><a href="#"><img src="images/btn_sponsor.png" /></a></div>
-              <div class="txt">1:1결연으로 '기타'의 꿈을<br> 현실로 만들어주세요!</div>
+              <div class="txt">1:1후원으로 '<?=$ch_data['ch_nick']?>'의 꿈을<br> 현실로 만들어주세요!</div>
             </div>
             <div class="right">
               <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
-              <div class="txt">SNS에 어릴적 사진을 공유해서<br> '기타'가 꿈꿀 수 있게 도와주세요</div>
+              <div class="txt">1:1 후원이 어려울 경우<br>SNS에 어릴적 사진을 공유하고 함께 응원해주세요</div>
             </div>
           </div>
         </div>
-        <div class="example">
+        <div class="example02">
           <img src="images/story_1.png" width="100" />
         </div>
       </div>
@@ -154,26 +157,30 @@
 </div>
 
 <!-- 사진 업로드 페이지 -->
-<div id="upload_page" class="wrap_sec_top_sub" style="display:none;">
-  <div class="inner">
-    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
-    <div class="block_content upload">
-      <div class="title">
-        <div class="main"><span>'<?=$ch_data['ch_nick']?>'</span>에게 어떤 꿈을 이어 주실 건가요?</div>
-      </div>
-      <div class="block_input_dream">
-        <div class="selec_job">
-          <span id="sel_job_txt">1. 꿈꾸던 직업 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
-        </div>
-        <div class="upload_pic">
-          <div class="title_pic">
-          2. 사진업로드
-          </div>
-          <div class="desc">
-            <div class="txt_pic">
-              <img src="images/txt_pic.png" />
-            </div>
-            <div class="btns">
+    <div id="upload_page" class="wrap_sec_top_sub" style="display:none;">
+    	<div class="inner">
+        	<div class="logo"><a href="index.php"><img src="images/logo_sub.png" /></a></div>
+            <div class="block_content upload_02">
+            	<div class="title">
+                	<div class="main">
+                    여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
+                    SNS에 사진과 함께 당신이 응원할<br>
+                    ‘꿈을 잃은 어린이 <span><?=$ch_data['ch_nick']?></span>’이 소개됩니다
+                    </div>
+                </div>
+                <div class="block_input_dream">
+                	<div class="selec_job">
+                    	<span id="sel_job_txt">1. 꿈꾸던 직업 </span><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_re_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
+                    </div>
+                    <div class="upload_pic">
+                    	<div class="title_pic">
+                        	2. 사진업로드
+                        </div>
+                        <div class="desc">
+                        	<div class="txt_pic">
+                            	<img src="images/txt_pic.png" />
+                            </div>
+                        	<div class="btns">
               <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
                 <label for="f_inputImage" title="Upload image file">
                   <input type="file" id="f_inputImage" class="sr-only" name="file" accept="image/*">
@@ -181,23 +188,24 @@
                   <a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a>
                 </label>
               </form>
+                            </div>
+                        </div>
+                        <div id="img_div" class="pic_area">
+                        	<img id="f_ori_image" src="./images/picture.jpg" alt="Picture" />
+                        </div>
+                        <div class="btn_closeup">
+                        	<a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
+                            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="block_btn">
+                	<a href="#" onclick="f_dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
+                </div>
             </div>
-          </div>
-          <div id="img_div" class="pic_area">
-            <img id="f_ori_image" src="./images/picture.jpg" alt="Picture" />
-          </div>
-          <div class="btn_closeup">
-            <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
-            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" /></a>
-          </div>
+            
         </div>
-      </div>
-      <div class="block_btn">
-        <a href="#" onclick="f_dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
-      </div>
     </div>
-  </div>
-</div>
 <!-- 사진 업로드 페이지 -->
 
 <!-- 팔로워 사진업로드 완료 공유 페이지 -->
@@ -232,33 +240,39 @@
 <!-- 팔로워 사진업로드 완료 공유 페이지 ( 매칭X) -->
 
 <!-- 팔로워 사진업로드 완료 공유 페이지 ( 매칭O) -->
-<div id="f_share_no_matching_page"class="wrap_sec_top_sub match_child" style="display:none;">
-  <div class="inner">
-    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
-    <div class="block_content share_compassion">
-      <div class="title">
-      컴패션에서는 당신의 어린시절처럼<br>
-      꿈 많고 귀여운 어린이들이 있습니다
-      </div>
-      <div class="block_child">
-        <div class="inner_block_child clearfix">
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
+    <div id="f_share_no_matching_page" class="wrap_sec_top_sub match_child" style="display:none;">
+    	<div class="inner">
+        	<div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+            <div class="block_content share_compassion">
+            	<div class="title">
+                	컴패션에서는 당신의 어린시절처럼<br>
+					꿈 많고 귀여운 어린이들이 있습니다
+                    
+					<!--                    
+                	컴패션에서는 '미니버'님의 어린시절처럼<br>
+					꿈 많고 귀여운 어린이들이 있습니다
+					-->
+                    
+                </div>
+                <div class="block_child">
+                	<div class="inner_block_child clearfix">
+                        <div class="child_pic"><img src="images/ex_child.png" /></div>
+                        <div class="child_pic"><img src="images/ex_child.png" /></div>
+                        <div class="child_pic"><img src="images/ex_child.png" /></div>
+                        <div class="child_pic"><img src="images/ex_child.png" /></div>
+                    </div>
+                </div>
+                <div class="block_btn sns">
+                	<a href="#" onclick="sns_share('fb','fol');"><img src="images/sns_f.png" /></a>
+                	<a href="#" onclick="sns_share('ks','fol');"><img src="images/sns_ks.png" /></a>
+                </div>
+                <div class="block_btn howtotag">
+                	<a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
+                </div>
+            </div>
+            
         </div>
-      </div>
-      <div class="block_btn sns">
-        <a href="#" onclick="sns_share('fb','fol');"><img src="images/sns_f.png" /></a>
-        <!-- <a href="#" onclick="sns_share('kt','fol');"><img src="images/sns_kt.png" /></a> -->
-        <a href="#" onclick="sns_share('ks','fol');"><img src="images/sns_ks.png" /></a>
-      </div>
-      <div class="block_btn howtotag">
-        <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
-      </div>
     </div>
-  </div>
-</div>
 <?
         include_once "./popup_div.php";
 ?>

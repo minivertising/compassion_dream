@@ -66,6 +66,10 @@ function next_page(param)
 	// $("#page_div"+prev_param).hide();
 	// $("#page_div"+param).show();
 	$("#page_div"+prev_param).fadeOut('fast', function(){
+		if (param == "5" || param == "6")
+		{
+			$("body").addClass("bg_sub_page");
+		}
 		$("#page_div"+param).fadeIn('fast');
 	});
 }
