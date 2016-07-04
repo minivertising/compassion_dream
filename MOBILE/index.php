@@ -19,8 +19,19 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-<div id="loading_div" style="display:none">
-Loading.... 꿈이 필요한 아이와 매칭중
+<div id="loading_div" class="wrap_page loading" style="display:none">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content">
+      <div class="img_load">
+        <img src="images/img_loading.png" />
+      </div>
+      <div class="txt_load">
+      꿈이 필요한 어린이와 매칭중입니다<br>
+      잠시만 기다려 주세요 
+      </div>
+    </div>
+  </div>
 </div>
 <div id="contents_div">
   <a href="#" onclick="show_dream_sel();return false;">지금 참여하기</a>
