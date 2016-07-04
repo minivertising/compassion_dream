@@ -57,6 +57,7 @@
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/jquery.form.js"></script>
 <script type="text/javascript" src="../js/canvas-to-blob.js"></script>
+<script type="text/javascript" src="../js/jquery.nicescroll.js"></script>
 <script type="text/javascript" src="../lib/colorbox/jquery.colorbox-min.js"></script>
 <script src="../lib/bxslider/jquery.bxslider.min.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
