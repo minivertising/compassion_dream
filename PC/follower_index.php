@@ -26,8 +26,18 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-<div id="loading_div" style="display:none">
-Loading.... 꿈이 필요한 아이와 매칭중
+<div id="loading_div" class="wrap_sec_top_sub loading" style="display:none;">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content">
+      <div class="img_load">
+      <!-- 꿈이 필요한 어린이 '베리'를 응원중입니다<br>
+      잠시만 기다려 주세요 --> 
+      꿈이 필요한 어린이와 매칭중입니다<br>
+      잠시만 기다려 주세요
+      </div>
+    </div>
+  </div>
 </div>
 <div id="contents_div">
   <div id="page_div1">
@@ -466,7 +476,6 @@ function f_dream_next()
         //mb_job    = $("#mb_job").val();
 
     if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
-        alert("ie8이하");
         cropboxDataIE = $(ori_image).cropper('getData');
         crop_image_url = $(ori_image).attr('src');
            $.ajax({
@@ -490,16 +499,14 @@ function f_dream_next()
 <?
     }
 ?>
-                mb_job      : "<?=$mb_data['mb_job']?>"
+                mb_job      : sel_dream
             },
             beforeSend: function(response){
-                alert(response);
-                $("#loading_div").show();
                 $("#upload_page").hide();
+                $("#loading_div").show();
             },
             success: function(res){
                 // console.log(res);
-                alert(res);
                 //mb_image    = res;
 
                 var rs_ch = res.split("||");
@@ -535,7 +542,6 @@ function f_dream_next()
 
     }else{
         // 사진 저장할 내용 추가
-        alert("ie9 이상 또는 ie 외 브라우저");
         var croppedImg = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
         var canvasImageURL = croppedImg.toDataURL("image/jpeg");
         $.ajax({
@@ -558,16 +564,14 @@ function f_dream_next()
 <?
     }
 ?>
-                mb_job      : "<?=$mb_data['mb_job']?>"
+                mb_job      : sel_dream
             },
             beforeSend: function(response){
-                alert(response);
-                $("#loading_div").show();
                 $("#upload_page").hide();
+                $("#loading_div").show();
             },
             success: function(res){
                 // console.log(res);
-                alert(res);
                 //mb_image    = res;
 
                 var rs_ch = res.split("||");
@@ -577,6 +581,7 @@ function f_dream_next()
                 if (rs_ch[0] == "Y")
                 {
                     $("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
+					setTimeout(function(){
 	                $("#loading_div").fadeOut('fast',function(){
 <?
 	if ($ch_data['ch_choice'] == "Y")
@@ -591,10 +596,13 @@ function f_dream_next()
 	}
 ?>
 					});
+					},1500);
                 }else if (rs_ch[0] == "N"){
+					setTimeout(function(){
 	                $("#loading_div").fadeOut('fast',function(){
 						$("#f_share_no_matching_page").fadeIn("fast");
 					});
+					},1500);
                 }else {
                     alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
                     location.reload();
