@@ -239,12 +239,12 @@ function tab_click(param)
 
 function sns_share(media, flag)
 {
-	alert(mb_rs);
 	if (media == "fb")
 	{
+		
 		//https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer
 		//var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.belif-play.com/PC/index.php'),'sharer','toolbar=0,status=0,width=600,height=325');
-		var newWindow = window.open('https://www.facebook.com/dialog/share?app_id=649187078561789&display=popup&href=' + encodeURIComponent('http://mydream.compassion.or.kr/MOBILE/follower_index.php?rs='+mb_rs+'&ugu='+flag),'sharer','toolbar=0,status=0,width=600,height=325');
+		var newWindow = window.open('https://www.facebook.com/dialog/share?app_id=649187078561789&display=popup&hashtag=내꿈꿔&href=' + encodeURIComponent('http://mydream.compassion.or.kr/MOBILE/follower_index.php?rs='+mb_rs+'&ugu='+flag),'sharer','toolbar=0,status=0,width=600,height=325');
 		$.ajax({
 			type   : "POST",
 			async  : false,
@@ -280,7 +280,7 @@ function sns_share(media, flag)
 				  },
 				  webButton: {
 					text: '링크 열기',
-					url: 'http://mydream.compassion.or.kr/follower_index.php?rs='+mb_rs+'&ugu='+flag // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+					url: 'http://mydream.compassion.or.kr/MOBILE/follower_index.php?rs='+mb_rs+'&ugu='+flag // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
 				  }
 				});
 
@@ -294,12 +294,13 @@ function sns_share(media, flag)
 			data:{
 				"exec" : "insert_share_info",
 				"sns_media" : media,
+				"mb_gubun" : flag,
 				"mb_serial"  : mb_rs
 			}
 		});
 	}else{
 		Kakao.Story.share({
-			url: 'http://mydream.compassion.or.kr/follower_index.php?rs='+mb_rs+'&ugu='+flag,
+			url: 'http://mydream.compassion.or.kr/MOBILE/follower_index.php?rs='+mb_rs+'&ugu='+flag,
 			text: '#블루바톤챌린지'
 		});
 		$.ajax({
