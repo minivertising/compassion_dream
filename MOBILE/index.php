@@ -19,8 +19,19 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-<div id="loading_div" style="display:none">
-Loading.... 꿈이 필요한 아이와 매칭중
+<div id="loading_div" class="wrap_page loading" style="display:none">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content">
+      <div class="img_load">
+        <img src="images/img_loading.png" />
+      </div>
+      <div class="txt_load">
+      꿈이 필요한 어린이와 매칭중입니다<br>
+      잠시만 기다려 주세요 
+      </div>
+    </div>
+  </div>
 </div>
 <div id="contents_div">
   <a href="#" onclick="show_dream_sel();return false;">지금 참여하기</a>
@@ -101,7 +112,7 @@ Loading.... 꿈이 필요한 아이와 매칭중
         </div>
         <div class="input_one clearfix">
           <div class="label">휴대폰번호</div>
-          <div class="input"><input type="text" id="mb_phone" placeholder="휴대폰번호 ('-' 없이 입력해주세요)" onkeyup="only_num(this);return false;"></div>
+          <div class="input"><input type="tel" id="mb_phone" placeholder="휴대폰번호 ('-' 없이 입력해주세요)" onkeyup="only_num(this);return false;"></div>
         </div>
         <div class="check clearfix">
           <a href="#" class="box" onclick="mb_check();return false;"><img src="images/check.png" name="mb_agree" id="mb_agree" /></a>
@@ -338,12 +349,12 @@ function dream_next()
 		beforeSend: function(response){
 			// $("#loading_div").show();
       // $("#upload_page").hide();
-      $("#loading_div").fadeIn('slow', function(){
-  			$("#upload_page").fadeOut('slow');
-      });
+			$("#upload_page").fadeOut('fast', function(){
+				$("body").addClass("bg_sub_page bg_loading");
+				$("#loading_div").fadeIn('fast');
+			});
 		},
 		success: function (res) {
-			alert(res);
 			// console.log(data);
 			//mb_image    = data;
 			//open_pop('input_popup');
@@ -352,21 +363,21 @@ function dream_next()
 			{
 				// 매칭될 아이가 있을 경우
 				mb_image    = rs_ch[1];
-        // $("#loading_div").hide();
-        // $("#input_page").show();
-        $("#loading_div").fadeOut('slow', function(){
-  				$("#input_page").fadeIn('slow');
-        });
+				setTimeout(function(){
+					$("#loading_div").fadeOut('slow', function(){
+						$("body").removeClass("bg_sub_page bg_loading");
+							$("#input_page").fadeIn('slow');
+					});
+				},1500);
 			}else if (rs_ch[0] == "N"){
 				// 매칭될 아이가 없을 경우
 				mb_image    = rs_ch[1];
 				mb_rs       = rs_ch[2];
-        // $("#loading_div").hide();
-        // $("#no_matching_page").show();
-        $("#loading_div").fadeOut('slow', function(){
-  				$("#no_matching_page").fadeIn('slow');
-        });
-
+				setTimeout(function(){
+					$("#loading_div").fadeOut('slow', function(){
+  						$("#no_matching_page").fadeIn('slow');
+					});
+				},1500);
 			}else {
 				// 에러 
 				alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
@@ -423,100 +434,108 @@ function dream_next()
 
 function input_submit()
 {
-    var mb_name = $("#mb_name").val();
-    var mb_phone    = $("#mb_phone").val();
-    //mb_image      = "임시 이미지 URL"; // 이미지 경로 작업 완료되면 여기에 값 추가
+	var mb_name = $("#mb_name").val();
+	var mb_phone    = $("#mb_phone").val();
+	//mb_image      = "임시 이미지 URL"; // 이미지 경로 작업 완료되면 여기에 값 추가
 
-    if (mb_name == "")
-    {
-        alert("이름을 입력해 주세요.");
-        return false;
-    }
+	if (mb_name == "")
+	{
+		alert("이름을 입력해 주세요.");
+		$("#mb_name").focus();
+		return false;
+	}
 
-    if (mb_phone == "")
-    {
-        alert("전화번호를 입력해 주세요.");
-        return false;
-    }
+	if (mb_phone == "")
+	{
+		alert("전화번호를 입력해 주세요.");
+		$("#mb_phone").focus();
+		return false;
+	}
 
-    $.ajax({
-        type:"POST",
-        data:{
-            "exec"          : "insert_info",
-            "mb_name"       : mb_name,
-            "mb_phone"      : mb_phone,
-            "mb_job"        : sel_dream,
-            "mb_image"      : mb_image
-            //"mb_serial"     : mb_rs
-        },
-        url: "../main_exec.php",
-        beforeSend: function(response){
-            // $("#loading_div").show();
-            // $("#contents_div").hide();
-            $("#input_page").fadeOut('slow', function(){
-              // $("#loading_div").fadeIn('slow'); // 로딩이 계속 남아있어 주석처리
-            });
-        },
-        success: function(response){
-    			alert(response);
-    			var rs_ch = response.split("||");
-    			mb_rs = rs_ch[2];
-          // $("#loading_div").hide();
-          // $("#contents_div").show();
-          // $("#loading_div").fadeOut('fast', function(){
-          //   alert("loading_div unset");
-          // });
-    			if (rs_ch[0] == "Y")
-    			{
-    				// 아이가 새로 매칭될 경우
-    				$("#matching_child_pic").attr("src",rs_ch[1]);
-            // $("#input_page").hide();
-    				// $("#input_page").fadeOut('slow', function(){
+	if (chk_mb_flag == 0)
+	{
+		alert("개인정보 수집 및 위탁에 관한 동의를 안 하셨습니다.");
+		return false;
+	}
 
-    				// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
-    				
-    				 var job_add		= job_ko_add(sel_dream);
-    				 job_add_arr		= job_add.split("||");
-    				 $("#m_rs_name").html(mb_name);
-    				 $("#m_rs_ch_name").html(rs_ch[3]);
-    				 $("#m_rs_ch_name2").html(rs_ch[3]);
-    				 $("#m_rs_job").html(job_add_arr[0]);
-    				 $("#m_rs_job2").html(job_add_arr[1]);
-    				 $("#m_rs_nation").html(rs_ch[4]);
-    				
-            // $("#matching_share_page").show();
-            $("#loading_div").fadeOut('fast', function(){
-    				  $("#matching_share_page").fadeIn('slow');
-            })
-            // });
+	$.ajax({
+		type:"POST",
+		data:{
+			"exec"          : "insert_info",
+			"mb_name"       : mb_name,
+			"mb_phone"      : mb_phone,
+			"mb_job"        : sel_dream,
+			"mb_image"      : mb_image
+			//"mb_serial"     : mb_rs
+		},
+		url: "../main_exec.php",
+		beforeSend: function(response){
+			// $("#loading_div").show();
+			// $("#contents_div").hide();
+			$("#input_page").fadeOut('slow', function(){
+			  // $("#loading_div").fadeIn('slow'); // 로딩이 계속 남아있어 주석처리
+			});
+		},
+		success: function(response){
+				alert(response);
+				var rs_ch = response.split("||");
+				mb_rs = rs_ch[2];
+		  // $("#loading_div").hide();
+		  // $("#contents_div").show();
+		  // $("#loading_div").fadeOut('fast', function(){
+		  //   alert("loading_div unset");
+		  // });
+				if (rs_ch[0] == "Y")
+				{
+					// 아이가 새로 매칭될 경우
+					$("#matching_child_pic").attr("src",rs_ch[1]);
+			// $("#input_page").hide();
+					// $("#input_page").fadeOut('slow', function(){
 
-    			}else if (rs_ch[0] == "C"){
-    				// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
-    				//$("#c_matching_child_pic").attr("src",rs_ch[1]);
-    				$("#matching_child_pic").attr("src",rs_ch[1]);
-            // $("#input_page").hide();
-    				// $("#input_page").fadeOut('slow');
-    				// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
-    				
-    				var job_add		= job_ko_add(sel_dream);
-    				job_add_arr		= job_add.split("||");
-    				$("#m_rs_name").html(mb_name);
-    				$("#m_rs_ch_name").html(rs_ch[3]);
-    				$("#m_rs_ch_name2").html(rs_ch[3]);
-    				$("#m_rs_job").html(job_add_arr[0]);
-    				$("#m_rs_job2").html(job_add_arr[1]);
-    				$("#m_rs_nation").html(rs_ch[4]);
-    				
+					// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
+					
+					var job_add		= job_ko_add(sel_dream);
+					job_add_arr		= job_add.split("||");
+					$("#m_rs_name").html(mb_name);
+					$("#m_rs_ch_name").html(rs_ch[3]);
+					$("#m_rs_ch_name2").html(rs_ch[3]);
+					$("#m_rs_ch_name3").html(rs_ch[3]);
+					$("#m_rs_job").html(job_add_arr[0]);
+					$("#m_rs_job2").html(job_add_arr[1]);
+					$("#m_rs_nation").html(rs_ch[4]);
+					
+					$("#loading_div").fadeOut('fast', function(){
+							  $("#matching_share_page").fadeIn('slow');
+					})
+
+				}else if (rs_ch[0] == "C"){
+					// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
+					//$("#c_matching_child_pic").attr("src",rs_ch[1]);
+					$("#matching_child_pic").attr("src",rs_ch[1]);
+			// $("#input_page").hide();
+					// $("#input_page").fadeOut('slow');
+					// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
+					
+					var job_add		= job_ko_add(sel_dream);
+					job_add_arr		= job_add.split("||");
+					$("#m_rs_name").html(mb_name);
+					$("#m_rs_ch_name").html(rs_ch[3]);
+					$("#m_rs_ch_name2").html(rs_ch[3]);
+					$("#m_rs_ch_name3").html(rs_ch[3]);
+					$("#m_rs_job").html(job_add_arr[0]);
+					$("#m_rs_job2").html(job_add_arr[1]);
+					$("#m_rs_nation").html(rs_ch[4]);
+					
 					// $("#matching_share_page").show();
 					$("#loading_div").fadeOut('fast', function(){
 							  $("#matching_share_page").fadeIn('slow');
 					})
-    			}else{
-    				alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
-    				location.reload();
-    			}
-        }
-    });
+				}else{
+					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
+					location.reload();
+				}
+		}
+	});
 }
 
 function Ins_tracking()

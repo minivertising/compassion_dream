@@ -28,6 +28,21 @@
      fjs.parentNode.insertBefore(js, fjs); 
    }(document, 'script', 'facebook-jssdk'));
 </script>
+<div id="loading_div" class="wrap_page loading" style="display:none">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content">
+      <div class="img_load">
+        <img src="images/img_loading.png" />
+      </div>
+      <div class="txt_load">
+      꿈이 필요한 어린이 '<?=$ch_data['ch_nick']?>'를 응원중입니다<br>
+      잠시만 기다려 주세요 
+      </div>
+    </div>
+  </div>
+</div>
+<div id="contents_div">
     <div id="page_div1">
 	  <h2>어릴적 내 꿈은 <?=$_gl['job'][$mb_data['mb_job']]?></h2>
 	  <div>
@@ -139,23 +154,254 @@
       </div>
     </div>
   </div>
+</div>
+
+<div id="upload_page" class="wrap_page sub upload" style="display:none;">
+  <div class="inner">
+    <div class="block_content">
+      <div class="title">
+        <span><?=$ch_data['ch_nick']?></span>에게 어떤 꿈을<br>
+        이어주실건가요?
+      </div>
+      <div class="sub_title">
+      당신의 어린 시절 꿈꾸던 직업과 사진을 올려주세요
+      </div>
+      <div class="block_input_dream">
+        <div class="selec_job clearfix">
+          <div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div>
+          <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="60" id="sel_job_btn"/></a></div><!--버튼 두개입니다-->
+        </div>
+        <div class="upload_pic">
+          <div class="title_pic">
+          2. 사진업로드
+          </div>
+          <div class="desc">
+            <div class="txt_pic">
+            * 1개의 이미지 파일을 등록할 수 있습니다
+            </div>
+            <div class="btns">
+              <label for="f_inputImage" title="Upload image file">
+                <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
+                <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
+              </label>
+              <a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a>
+            </div>
+          </div>
+          <div id="img_div" class="pic_area">
+            <img id="f_ori_image" src="./images/picture.jpg" alt="Picture" />
+          </div>
+          <div class="btn_closeup">
+            <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" width="80" /></a>
+            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" width="80" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="block_btn upload">
+        <a href="#" onclick="f_dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <?
         include_once "./popup_div.php";
 ?>
 </body>
 </html>
 <script type="text/javascript">
-    var mb_rs       = '<?=$rs?>';
-    $(document).ready(function() {
-        Kakao.init('59df63251be6d99256b63b98f4948e89');
-        $("#cboxTopLeft").hide();
-        $("#cboxTopRight").hide();
-        $("#cboxBottomLeft").hide();
-        $("#cboxBottomRight").hide();
-        $("#cboxMiddleLeft").hide();
-        $("#cboxMiddleRight").hide();
-        $("#cboxTopCenter").hide();
-        $("#cboxBottomCenter").hide();
-    });
+var agent = navigator.userAgent.toLowerCase();
+var sel_dream       = null;
+var runner_serial   = null;
+var mb_job          = null;
+var mb_image        = null;
+var $ori_image = $('#f_ori_image');
+var $inputImage = $('#f_inputImage');
+var URL = window.URL || window.webkitURL;
+var realFath;
+var convertPath;
+var blobURL;
+var file;
+var files;
+var flag_sel_dream  = 0;
+var mb_rs       = null;
+var inputImageCheck;
+$(document).ready(function() {
+	Kakao.init('59df63251be6d99256b63b98f4948e89');
+	$("#cboxTopLeft").hide();
+	$("#cboxTopRight").hide();
+	$("#cboxBottomLeft").hide();
+	$("#cboxBottomRight").hide();
+	$("#cboxMiddleLeft").hide();
+	$("#cboxMiddleRight").hide();
+	$("#cboxTopCenter").hide();
+	$("#cboxBottomCenter").hide();
+	Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
+});
+
+function image_crop(){
+	$($ori_image).cropper({
+		viewMode: 0,
+		dragMode: 'move',
+		autoCropArea: 0.8,
+		aspectRatio: 1200/630,
+		responsive: true,
+		restore: true,
+		guides: false,
+		highlight: true,
+		background: true,
+		cropBoxMovable: true,
+		cropBoxResizable: true,
+		preview: '.preview',
+		center:true,
+		zoomOnWheel:false,
+		toggleDragModeOnDblclick:false,
+	});
+}
+
+function f_preview_img()
+{
+	open_pop('f_preview_popup');
+}
+
+function zoom_action(type){
+	if(type=="up")
+	{
+		$($ori_image).cropper('zoom', 0.1);
+	}else{
+		$($ori_image).cropper('zoom', -0.1);
+	}
+}
+
+function readURL(input) {
+	if (input.files && input.files[0]) {
+		file = files[0];
+		if (/^image\/\w+$/.test(file.type)) {
+			blobURL = URL.createObjectURL(file);
+			$ori_image.one('built.cropper', function () {
+				// Revoke when load complete
+				URL.revokeObjectURL(blobURL);
+			}).cropper('reset').cropper('replace', blobURL);
+			$($inputImage).val('');
+		} else {
+			window.alert('Please choose an image file.');
+		}
+	}else if((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1)){
+		$($ori_image).cropper('destroy');
+		$('#f_ie_img_save').ajaxSubmit({
+			success: function (data) {
+				$($ori_image).attr('src', data);
+				image_crop();
+			}
+		});
+	}
+}
+
+$($inputImage).change(function(){
+	inputImageCheck = "Y";
+	files = this.files;
+	readURL(this);
+});
+
+
+function f_dream_next()
+{
+    if (sel_dream == null)
+    {
+        alert("당신의 어린시절 꿈을 선택해 주세요.");
+        return false;
+    }
+    if (inputImageCheck !== "Y")
+    {
+        alert("이미지를 업로드해주세요.");
+        return false;
+    }
+        //mb_job    = $("#mb_job").val();
+
+        // 사진 저장할 내용 추가
+        var croppedImg = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
+        var canvasImageURL = croppedImg.toDataURL("image/jpeg");
+        $.ajax({
+            method: 'POST',
+            url: '../main_exec.php',
+            data: {
+                exec            : "input_follower",
+                canvasurl   : canvasImageURL,
+                mb_child    : "<?=$mb_data['mb_child']?>",
+                rs    : "<?=$rs?>",
+<?
+    if ($ugu == "act")
+    {
+?>
+                parent_idx  : "<?=$mb_data['idx']?>",
+<?
+    }else{
+?>
+                parent_idx  : "<?=$mb_data['parent_idx']?>",
+<?
+    }
+?>
+                mb_job      : sel_dream
+            },
+            beforeSend: function(response){
+                $("#upload_page").hide();
+                $("#loading_div").show();
+            },
+            success: function(res){
+                // console.log(res);
+                //mb_image    = res;
+
+                var rs_ch = res.split("||");
+                mb_rs = rs_ch[1];
+                //$("#loading_div").hide();
+                //$("#contents_div").show();
+                if (rs_ch[0] == "Y")
+                {
+                    $("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
+					setTimeout(function(){
+	                $("#loading_div").fadeOut('fast',function(){
+<?
+	if ($ch_data['ch_choice'] == "Y")
+	{
+?>
+						$("#f_share_no_matching_page").fadeIn("fast");
+<?
+	}else{
+?>
+						$("#f_share_page").fadeIn("fast");
+<?
+	}
+?>
+					});
+					},1500);
+                }else if (rs_ch[0] == "N"){
+					setTimeout(function(){
+	                $("#loading_div").fadeOut('fast',function(){
+						$("#f_share_no_matching_page").fadeIn("fast");
+					});
+					},1500);
+                }else {
+                    alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
+                    location.reload();
+                }
+            }
+        });
+}
+
+    function Ins_share_cnt(serial, ugu,parent_idx)
+    {
+        $.ajax({
+            type:"POST",
+            data:{
+                "exec"			: "insert_share_cnt",
+                "serial"			: serial,
+                "parent_idx"	: parent_idx,
+                "ugu"				: ugu
+            },
+            url: "../main_exec.php",
+            success: function(res){
+                // console.log(res);
+            }
+        });
+    }
+
 </script>
-<!-- <script src="../lib/Cropper/js/main.js"></script> -->
