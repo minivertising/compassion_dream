@@ -350,6 +350,7 @@ function dream_next()
 			// $("#loading_div").show();
       // $("#upload_page").hide();
 			$("#upload_page").fadeOut('fast', function(){
+				$("body").addClass("bg_sub_page bg_loading");
 				$("#loading_div").fadeIn('fast');
 			});
 		},
