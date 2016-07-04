@@ -240,9 +240,9 @@
             
         </div>
     </div>
-<!-- 팔로워 사진업로드 완료 공유 페이지 ( 매칭X) -->
+<!-- 팔로워 사진업로드 완료 공유 페이지 ( 결연X) -->
 
-<!-- 팔로워 사진업로드 완료 공유 페이지 ( 매칭O) -->
+<!-- 팔로워 사진업로드 완료 공유 페이지 ( 결연O) -->
     <div id="f_share_no_matching_page" class="wrap_sec_top_sub match_child" style="display:none;">
     	<div class="inner">
         	<div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
