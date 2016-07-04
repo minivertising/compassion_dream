@@ -494,20 +494,19 @@ function input_submit()
 
 					// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
 					
-					 var job_add		= job_ko_add(sel_dream);
-					 job_add_arr		= job_add.split("||");
-					 $("#m_rs_name").html(mb_name);
-					 $("#m_rs_ch_name").html(rs_ch[3]);
-					 $("#m_rs_ch_name2").html(rs_ch[3]);
-					 $("#m_rs_job").html(job_add_arr[0]);
-					 $("#m_rs_job2").html(job_add_arr[1]);
-					 $("#m_rs_nation").html(rs_ch[4]);
+					var job_add		= job_ko_add(sel_dream);
+					job_add_arr		= job_add.split("||");
+					$("#m_rs_name").html(mb_name);
+					$("#m_rs_ch_name").html(rs_ch[3]);
+					$("#m_rs_ch_name2").html(rs_ch[3]);
+					$("#m_rs_ch_name3").html(rs_ch[3]);
+					$("#m_rs_job").html(job_add_arr[0]);
+					$("#m_rs_job2").html(job_add_arr[1]);
+					$("#m_rs_nation").html(rs_ch[4]);
 					
-			// $("#matching_share_page").show();
-			$("#loading_div").fadeOut('fast', function(){
-					  $("#matching_share_page").fadeIn('slow');
-			})
-			// });
+					$("#loading_div").fadeOut('fast', function(){
+							  $("#matching_share_page").fadeIn('slow');
+					})
 
 				}else if (rs_ch[0] == "C"){
 					// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
@@ -522,6 +521,7 @@ function input_submit()
 					$("#m_rs_name").html(mb_name);
 					$("#m_rs_ch_name").html(rs_ch[3]);
 					$("#m_rs_ch_name2").html(rs_ch[3]);
+					$("#m_rs_ch_name3").html(rs_ch[3]);
 					$("#m_rs_job").html(job_add_arr[0]);
 					$("#m_rs_job2").html(job_add_arr[1]);
 					$("#m_rs_nation").html(rs_ch[4]);
