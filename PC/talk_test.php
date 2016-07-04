@@ -21,50 +21,71 @@ $(document).ready(function(){
 	$("#talk_area").niceScroll({cursorcolor:"gray",cursorborder:"gray"});
 
 	talk_start();
+
 });
+
+var obj = new Audio('sample.wav');
+function playNow()
+{
+	obj.play();
+	if(obj.currentTime > 0) // INVALID_STATE_ERR를 피하기 위한 꼼수
+		obj.currentTime = 0; 
+}
 
 function talk_start()
 {
 	setTimeout(function(){
-		$("#talk_1").fadeIn("fast");
+		$("#talk_1").fadeIn("fast", function(){
+			playNow();
+		});
 	},500);
 	setTimeout(function(){
-		$("#talk_2").fadeIn("fast");
+		$("#talk_2").fadeIn("fast", function(){
+			playNow();
+		});
 	},1000);
 	setTimeout(function(){
 		$("#talk_3").fadeIn("fast");
+		playNow();
 	},2000);
 	setTimeout(function(){
 		$("#talk_4").fadeIn("fast");
+			playNow();
 	},2500);
 	setTimeout(function(){
 		$("#talk_5").fadeIn("fast",function(){
 			$('#talk_area').animate({scrollTop:$("#talk_5").offset().top}, 500);
+			playNow();
 		});
 	},3500);
 	setTimeout(function(){
 		$("#talk_6").fadeIn("fast",function(){
 			$('#talk_area').animate({scrollTop:$("#talk_6").offset().top}, 500);
+			playNow();
 		});
 	},4500);
 	setTimeout(function(){
 		$("#talk_7").fadeIn("fast",function(){
 			$('#talk_area').animate({scrollTop:$("#talk_7").offset().top}, 500);
+			playNow();
 		});
 	},6000);
 	setTimeout(function(){
 		$("#talk_8").fadeIn("fast",function(){
 			$('#talk_area').animate({scrollTop:$("#talk_8").offset().top}, 500);
+			playNow();
 		});
 	},7500);
 	setTimeout(function(){
 		$("#talk_9").fadeIn("fast",function(){
 			$('#talk_area').animate({scrollTop:$("#talk_9").offset().top}, 500);
+			playNow();
 		});
 	},9000);
 	setTimeout(function(){
 		$("#talk_10").fadeIn("fast",function(){
 			$('#talk_area').animate({scrollTop:$("#talk_10").offset().top}, 500);
+			playNow();
 		});
 	},11000);
 }
