@@ -91,12 +91,22 @@ body.bg_status{
 	background:url(../images/bg_lms.jpg) no-repeat;
 	background-size:cover;
 }
+.wrap_page.lms_landing .logo{
+	padding:10px 0 0 10px;
+}
+.wrap_page.lms_landing .title{
+	padding:0 0 10px;
+}
+.wrap_page.lms_landing .logo img{
+	width:30%;
+}
 
 .wrap_page.lms_landing .sec_movie{
 	background:#ccc;
 }
 .wrap_page.lms_landing .sec_txt{
 	text-align:center;
+	padding:10px 0;
 }
 .wrap_page.lms_landing .sec_txt img{
 	width:96%;
@@ -105,8 +115,18 @@ body.bg_status{
 .wrap_page.lms_landing .btn_block{
 	text-align:center;
 }
+.wrap_page.lms_landing .btn_block div{
+	padding:5px 0;
+}
 .wrap_page.lms_landing .btn_block div img{
 	width:96%;
+}
+.wrap_page.lms_landing .btn_block div.vision{
+	padding-top:10px;
+	padding-bottom:0;
+}
+.wrap_page.lms_landing .btn_block div.vision img{
+	width:100%;
 }
 
 
