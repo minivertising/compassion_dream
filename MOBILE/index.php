@@ -365,6 +365,7 @@ function dream_next()
 				mb_image    = rs_ch[1];
 				setTimeout(function(){
 					$("#loading_div").fadeOut('slow', function(){
+						$("body").removeClass("bg_sub_page bg_loading");
 							$("#input_page").fadeIn('slow');
 					});
 				},1500);
