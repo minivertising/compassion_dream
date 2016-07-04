@@ -974,9 +974,11 @@ body.main{
 }*/
 .preview {
 	overflow: hidden;
-	width: 478px; 
+	width: 477px; 
 	height: 235px;
-	margin: 0 auto;
+/*	margin: 0 auto;*/
+	margin left: 0;
+	margin right: 0;
 /*  padding-top:198px;
   padding-left:89px;*/
 }
