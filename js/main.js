@@ -233,7 +233,7 @@ function f_show_dream_sel()
 
 
 	$("body").addClass("bg_sub_page");
-	 $("#contents_div").hide(); // 임시 적용 
+	$("#contents_div").hide(); // 임시 적용 
 	$("#upload_page").fadeIn('slow', 'swing');
 	image_crop();
 }
