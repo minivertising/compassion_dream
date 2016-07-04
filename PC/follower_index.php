@@ -211,34 +211,35 @@
 <!-- 사진 업로드 페이지 -->
 
 <!-- 팔로워 사진업로드 완료 공유 페이지 -->
-<div id="f_share_page" class="wrap_sec_top_sub match_child" style="display:none;">
-  <div class="inner">
-    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
-    <div class="block_content follower">
-      <div class="title">
-        <span>'<?=$ch_data['ch_nick']?>'</span>의 꿈을 위해<br>
-        참여해주셔서 감사합니다
-      </div>
-      <div class="block_child">
-        <div class="inner_block_child clearfix">
-          <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
+    <div id="f_share_page" class="wrap_sec_top_sub match_child" style="display:none;">
+    	<div class="inner">
+        	<div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+            <div class="block_content follower">
+            	<div class="title">
+                	미니버님!<br> 
+					<span><?=$ch_data['ch_nick']?></span>을 위해<br>
+					다시 한번 참여해주셔서 감사합니다 
+                </div>
+                <div class="block_child">
+                	<div class="inner_block_child clearfix">
+                        <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
+                    </div>
+                </div>
+                <div class="block_txt">
+                	<p>아래 SNS에 당신의 어린 시절 사진과 꿈을 공유하셔서</p>
+					<p><?=$ch_data['ch_nick']?>이 후원자를 만날 수 있도록 해주세요!</p>
+                </div>
+                <div class="block_btn sns">
+                	<a href="#" onclick="sns_share('fb','fol');"><img src="images/sns_f.png" /></a>
+                	<a href="#" onclick="sns_share('ks','fol');"><img src="images/sns_ks.png" /></a>
+                </div>
+                <div class="block_btn howtotag">
+                	<a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
+                </div>
+            </div>
+            
         </div>
-      </div>
-      <div class="block_txt">
-        <p>당신의 어린시절 사진을 공유하면 참여가 완료됩니다</p>
-        <p>끝까지 참여해주셔서 <span>'<?=$ch_data['ch_nick']?>'</span>의 후원자님 찾아주세요</p>
-      </div>
-      <div class="block_btn sns">
-        <a href="#" onclick="sns_share('fb','fol');"><img src="images/sns_f.png" /></a>
-        <!-- <a href="#" onclick="sns_share('kt','fol');"><img src="images/sns_kt.png" /></a> -->
-        <a href="#" onclick="sns_share('ks','fol');"><img src="images/sns_ks.png" /></a>
-      </div>
-      <div class="block_btn howtotag">
-        <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
-      </div>
     </div>
-  </div>
-</div>
 <!-- 팔로워 사진업로드 완료 공유 페이지 ( 매칭X) -->
 
 <!-- 팔로워 사진업로드 완료 공유 페이지 ( 매칭O) -->
