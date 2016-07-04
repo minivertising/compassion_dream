@@ -41,7 +41,7 @@
 </div>
 <div id="contents_div">
   <div id="page_div1">
-    <h2>어릴적 내 꿈은 <?=$_gl['job'][$mb_data['mb_job']]?></h2>
+    <h2>어릴적 내 꿈은 <?=$mb_data['mb_job']?><?= has_batchim($mb_data['mb_job']) > 0 ? "이었어요" : "였어요" ?></h2>
   <div>
     <img src="<?=$mb_data['mb_image']?>" style="width:100%">
   </div>
@@ -75,7 +75,7 @@
       <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
       <div class="block_content result_story_child">
         <div class="title">
-          <div class="main">‘<?=$ch_data['ch_nick']?>'야 내 꿈꿔~!’</div>
+          <div class="main"><?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "아" : "야" ?> 내 꿈꿔~!</div>
           <div class="sub">
           꿈꾸는 것조차 어려운 <span><?=$ch_data['ch_nick']?></span>에게<br> 
           내 어린시절 꿈이 담긴 사진으로 희망을 선물하세요
@@ -86,9 +86,9 @@
             <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
             <div class="child_text">
               <p>
-              <?=$ch_data['ch_nick']?>는 부모님과 함께 살고 있습니다 <br>
+              <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "은" : "는" ?> 부모님과 함께 살고 있습니다 <br>
               아버지는 임시직으로 노동일을 하시며 어머니는 집안일을 하십니다 <br>
-              <?=$ch_data['ch_nick']?>는 집안에서 시장에서 물건 사고 팔기, 
+              <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "은" : "는" ?> 집안에서 시장에서 물건 사고 팔기, 
               물 길어 나르기를 맡아서 합니다
               </p>
             </div>
@@ -102,7 +102,7 @@
             </div>
             <div class="right">
               <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
-              <div class="txt">SNS에 어릴적 사진을 공유해서<br> '<?=$ch_data['ch_nick']?>'가 꿈꿀 수 있게 도와주세요</div>
+              <div class="txt">SNS에 어릴적 사진을 공유해서<br> '<?=$ch_data['ch_nick']?>'<?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 꿈꿀 수 있게 도와주세요</div>
             </div>
           </div>
         </div>

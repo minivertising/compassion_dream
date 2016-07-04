@@ -243,11 +243,11 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic" /></div>
           <div class="child_text">
-            <h2>저도 <span id="m_rs_job">선생님을</span> 꿈꿀 수 있을까요?</h2>
+            <h2>저도 <span id="m_rs_job">선생님</span><span id="jobPP">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
             <p>
             안녕하세요 <br>
-            저는  <span id="m_rs_nation">필리핀</span>에 살고 있는 <span id="m_rs_ch_name2">기타</span>에요<br>
-            어린 시절에  <span id="m_rs_job2">선생님이</span> 꿈이 셨군요<br>
+            저는  <span id="m_rs_nation">필리핀</span>에 살고 있는 <span id="m_rs_ch_name2">기타</span><span id="name2PP">에요</span><br> <!-- 조사 ~에요, ~이에요 -->
+            어린 시절에  <span id="m_rs_job2">선생님</span><span id="job2PP">가</span> 꿈이 셨군요<br> <!-- 조사 ~이, ~가 -->
             저도 언젠가는 그렇게 멋진 꿈을 꾸고 싶어요!
             </p>
           </div>
@@ -688,6 +688,7 @@ function dream_next(){
 			alert("개인정보 수집 및 위탁에 관한 동의를 안 하셨습니다.");
 			return false;
 		}
+		var job_lang_kor = job_ko_add(sel_dream);
 
 
 		$.ajax({
@@ -697,6 +698,7 @@ function dream_next(){
 				"mb_name"       : mb_name,
 				"mb_phone"      : mb_phone,
 				"mb_job"        : sel_dream,
+				"mb_job_kor"    : job_lang_kor,
 				"mb_image"      : mb_image
 				//"mb_serial"     : mb_rs
 			},
@@ -707,7 +709,9 @@ function dream_next(){
 				$("#loading_div").show();
 			},
 			success: function(response){
+        alert(response);
 				var rs_ch = response.split("||");
+        //rs_ch[5] 아이이름 받침 유무, rs_ch[6] 직업 받침 유무 (0 or 0보다큰정수)
 				mb_rs = rs_ch[2];
 				// $("#loading_div").hide();
 				// $("#contents_div").show();
@@ -719,14 +723,26 @@ function dream_next(){
 					$("#loading_div").fadeOut('fast', function(){
 						// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
 						//m_rs_name, m_rs_ch_name, m_rs_job. m_rs_nation, m_rs_job2
-						var job_add		= job_ko_add(sel_dream);
-						job_add_arr		= job_add.split("||");
+						// var job_add		= job_ko_add(sel_dream);
+						// job_add_arr		= job_add.split("||");
 						$("#m_rs_name").html(mb_name);
 						$("#m_rs_ch_name").html(rs_ch[3]);
 						$("#m_rs_ch_name2").html(rs_ch[3]);
+
+						if(rs_ch[5] > 0) {
+							//받침 O
+							$("#name2PP").html("이에요");
+						}
+
 						$("#m_rs_ch_name3").html(rs_ch[3]);
-						$("#m_rs_job").html(job_add_arr[0]);
-						$("#m_rs_job2").html(job_add_arr[1]);
+						$("#m_rs_job").html(job_lang_kor);
+						$("#m_rs_job2").html(job_lang_kor);
+
+						if(rs_ch[6] > 0){
+							$("#jobPP").html("을");
+							$("#job2PP").html("이");
+						}
+
 						$("#m_rs_nation").html(rs_ch[4]);
 						// $("#matching_share_page").show();
 						$("#matching_share_page").fadeIn('fast');
@@ -740,14 +756,26 @@ function dream_next(){
 					$("#loading_div").fadeOut('fast', function(){
 						// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
 						//m_rs_name, m_rs_ch_name, m_rs_job. m_rs_nation, m_rs_job2
-						var job_add		= job_ko_add(sel_dream);
-						job_add_arr		= job_add.split("||");
+						// var job_add		= job_ko_add(sel_dream);
+						// job_add_arr		= job_add.split("||");
 						$("#m_rs_name").html(mb_name);
 						$("#m_rs_ch_name").html(rs_ch[3]);
 						$("#m_rs_ch_name2").html(rs_ch[3]);
+
+						if(rs_ch[5] > 0) {
+							//받침 O
+							$("#name2PP").html("이에요");
+						}
+						
 						$("#m_rs_ch_name3").html(rs_ch[3]);
-						$("#m_rs_job").html(job_add_arr[0]);
-						$("#m_rs_job2").html(job_add_arr[1]);
+						$("#m_rs_job").html(job_lang_kor);
+						$("#m_rs_job2").html(job_lang_kor);
+						
+						if(rs_ch[6] > 0){
+							$("#jobPP").html("을");
+							$("#job2PP").html("이");
+						}
+
 						$("#m_rs_nation").html(rs_ch[4]);
 						// $("#matching_share_page").show();
 						$("#matching_share_page").fadeIn('fast');
