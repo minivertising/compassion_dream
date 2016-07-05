@@ -74,82 +74,81 @@
     }
 ?>
     </div>
-  <div id="page_div5" class="wrap_sec_top_sub match_child follower" style="display:none;">
-    <div class="inner">
-      <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
-      <div class="block_content result_story_child">
-        <div class="title">
-          <div class="main">‘<?=$ch_data['ch_nick']?>'야 내 꿈꿔~!’</div>
-          <div class="sub">
-          꿈꾸는 것조차 어려운 <span><?=$ch_data['ch_nick']?></span>에게<br> 
-          내 어린시절 꿈이 담긴 사진으로 희망을 선물하세요
+    <div id="page_div5" class="wrap_page share_match_child" style="display:none;">
+      <div class="inner">
+        <div class="block_content">
+          <div class="title compassion">
+          컴패션에서는<br>
+          <?=$mb_data['mb_name']?>님의 어린 시절처럼<br>
+          꿈 많고 귀여운 어린이들이 있습니다
           </div>
-        </div>
-        <div class="block_child">
-          <div class="inner_block_child clearfix">
-            <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
-            <div class="child_text">
-              <p>
-              <?=$ch_data['ch_nick']?>는 부모님과 함께 살고 있습니다 <br>
-              아버지는 임시직으로 노동일을 하시며 어머니는 집안일을 하십니다 <br>
-              기타는 집안에서 시장에서 물건 사고 팔기, 
-              물 길어 나르기를 맡아서 합니다
-              </p>
+          <div class="sub_txt">
+          가난으로 인해 꿈을 잃어버린 <br>
+          '<?=$ch_data['ch_nick']?>'의 후원자가 되어주세요
+          </div>
+          <div class="img_com">
+            <div class="img_child story_result">
+              <img src="<?=$ch_data['ch_full_img_url']?>" />
+            </div>
+            <div class="txt_child story_result">	
+              <div class="inner">
+                <?=$ch_data['ch_desc']?>
+              </div>
+            </div>
+            <img src="images/bg_story_result.jpg" class="bg" />
+          </div>
+          <div class="block_btn spon">
+            <div class="bt"><a href="http://www.compassion.or.kr/Mobile/cdspDetail3.aspx?ChildMasterID=<?=$ch_data['ch_id']?>&ChildID=<?=$ch_data['ch_key']?>" target="_blank"><img src="images/btn_spon.png" /></a></div>
+            <div class="txt">1:1후원으로 <?=$ch_data['ch_nick']?>의 꿈을 현실로 만들어주세요!</div>
+          </div>
+          <div class="block_btn cheer">
+            <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
+            <div class="txt">1:1 후원이 어려울 경우<br> SNS에 어릴적 사진을 공유하고 함께 응원해주세요</div>
+          </div>
+          <div class="friends_pic">
+            <div class="inner_friends_pic clearfix">
+              <div class="img"><img src="images/ex_friend.png" /></div>
+              <div class="txt">어린 시절  꿈과 사진을 등록하고<br> SNS공유하면 응원 완료!</div>
             </div>
           </div>
-        </div>
-        <div class="block_btn apply">
-          <div class="inner_apply clearfix">
-            <div class="left">
-              <div class="bt"><a href="#"><img src="images/btn_sponsor.png" /></a></div>
-              <div class="txt">1:1결연으로 '<?=$ch_data['ch_nick']?>'의 꿈을<br> 현실로 만들어주세요!</div>
-            </div>
-            <div class="right">
-              <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
-              <div class="txt">SNS에 어릴적 사진을 공유해서<br> '<?=$ch_data['ch_nick']?>'가 꿈꿀 수 있게 도와주세요</div>
-            </div>
-          </div>
-        </div>
-        <div class="example">
-          <img src="images/story_1.png" width="100" />
         </div>
       </div>
     </div>
   </div>
 
-  <div id="page_div6" class="wrap_sec_top_sub match_child follower" style="display:none;">
+  <div id="page_div6" class="wrap_page share_match_child" style="display:none;">
     <div class="inner">
-      <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
-      <div class="block_content result_story_compassion">
-        <div class="title">
-          <div class="main">얘들아 내 꿈꿔~!’</div>
-          <div class="sub">
-          컴패션 소개와 함께 어린시절 사진을 SNS에 공유하면<br>  
-          꿈이 필요한 어린이들을 도와줄 수 있습니다
-          </div>
+      <div class="block_content">
+        <div class="title compassion">
+        "얘들아, 내꿈꿔~!"
         </div>
-        <div class="block_child">
-          <div class="inner_block_child clearfix">
-            <div class="child_pic"><img src="images/ex_child.png" /></div>
-            <div class="child_pic"><img src="images/ex_child.png" /></div>
-            <div class="child_pic"><img src="images/ex_child.png" /></div>
-            <div class="child_pic"><img src="images/ex_child.png" /></div>
-          </div>
+        <div class="sub_txt">
+        컴패션 소개와 함께 어린 시절 사진을 sns에 공유하면<br>
+        꿈을 잃어버린 어린이들을 도와줄 수 있습니다
         </div>
-        <div class="block_btn apply">
-          <div class="inner_apply clearfix">
-            <div class="left">
-              <div class="bt"><a href="#"><img src="images/btn_sponsor.png" /></a></div>
-              <div class="txt">1:1결연으로 '기타'의 꿈을<br> 현실로 만들어주세요!</div>
-            </div>
-            <div class="right">
-              <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
-              <div class="txt">SNS에 어릴적 사진을 공유해서<br> '기타'가 꿈꿀 수 있게 도와주세요</div>
+        <div class="img_com">
+          <div class="img_child">
+            <div class="inner_img_child clearfix">
+              <div class="one"><img src="images/ex_child.png" /></div>
+              <div class="one"><img src="images/ex_child.png" /></div>
+              <div class="one"><img src="images/ex_child.png" /></div>
             </div>
           </div>
+          <img src="images/bg_share_com.png" class="bg" />
         </div>
-        <div class="example">
-          <img src="images/story_1.png" width="100" />
+        <div class="block_btn spon">
+          <div class="bt"><a href="#"><img src="images/btn_spon.png" /></a></div>
+          <div class="txt">1:1후원으로 기타의 꿈을 현실로 만들어주세요!</div>
+        </div>
+        <div class="block_btn cheer">
+          <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
+          <div class="txt">1:1 후원이 어려울 경우<br> SNS에 어릴적 사진을 공유하고 함께 응원해주세요</div>
+        </div>
+        <div class="friends_pic">
+          <div class="inner_friends_pic clearfix">
+            <div class="img"><img src="images/ex_friend.png" /></div>
+            <div class="txt">어린 시절  꿈과 사진을 등록하고<br> SNS공유하면 응원 완료!</div>
+          </div>
         </div>
       </div>
     </div>
@@ -159,17 +158,16 @@
 <div id="upload_page" class="wrap_page sub upload" style="display:none;">
   <div class="inner">
     <div class="block_content">
-      <div class="title">
-        <span><?=$ch_data['ch_nick']?></span>에게 어떤 꿈을<br>
-        이어주실건가요?
-      </div>
-      <div class="sub_title">
-      당신의 어린 시절 꿈꾸던 직업과 사진을 올려주세요
+      <div class="title follower">
+        여러분의 어린 시절의 꿈과 사진을 올려주세요<br>
+        SNS에 사진과 함께 당신이 응원할<br>
+        꿈을 잃은 어린이<br>
+        <span class="name">‘<?=$ch_data['ch_nick']?>’</span>이 소개됩니다
       </div>
       <div class="block_input_dream">
         <div class="selec_job clearfix">
           <div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div>
-          <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="60" id="sel_job_btn"/></a></div><!--버튼 두개입니다-->
+          <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="60" id="sel_job_btn" /></a></div><!--버튼 두개입니다-->
         </div>
         <div class="upload_pic">
           <div class="title_pic">
@@ -203,6 +201,124 @@
   </div>
 </div>
 
+<div id="matching_share_page" class="wrap_page share_match_child" style="display:none;">
+  <div class="inner">
+    <div class="block_content">
+      <div class="title">
+        당신의 도움이 필요한 어린이는<br>
+        '<span id="m_rs_ch_name"><?=$ch_data['ch_nick']?></span>'입니다
+      </div>
+      <div class="block_child">
+        <div class="inner_block_child clearfix">
+          <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" id="f_matching_child_pic" /></div>
+          <div class="child_text">
+            <h2>"저도 <span id="m_rs_job"><?=$mb_data['mb_job']?>을</span> 꿈꿀 수 있을까요?"</h2>
+            <div class="bg_line">
+              <p>
+             <?=$ch_data['ch_desc']?>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block_txt">
+        SNS에 공유하셔서<br>
+        <span id="m_rs_ch_name3"><?=$ch_data['ch_nick']?></span>의 후원자를 찾아주세요
+      </div>
+      <div class="block_btn sns">
+        <a href="#" onclick="go_share('fb','fol','matching_share_page');return false;"><img src="images/sns_f.png" /></a>
+        <a href="#" onclick="go_share('kt','fol','matching_share_page');return false;"><img src="images/sns_kt.png" /></a>
+        <a href="#" onclick="go_share('ks','fol','matching_share_page');return false;"><img src="images/sns_ks.png" /></a>
+      </div>
+      <div class="block_btn howtotag">
+        <a href="#"  onclick="open_pop('exam_share_popup');return false;" class="clearfix">
+          <span>어린이들을 도울 수 있는 SNS별 친구 태그 방법 보기</span>
+          <img src="images/btn_more.png" width="20" />
+        </a>
+      </div>
+      <div class="block_btn ok">
+        <a href="#" onclick="go_main('matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div  id="no_matching_page" class="wrap_page share_match_child" style="display:none;">
+  <div class="inner">
+    <div class="block_content">
+      <div class="title compassion">
+      컴패션에는 당신의 어린 시절처럼<br>
+      꿈 많고 귀여운 어린이들이 있습니다
+      </div>
+      <div class="sub_txt">
+      컴패션 소개와 함께 어린 시절 사진을 sns에 공유하면<br>
+      꿈을 잃어버린 어린이들을 도와줄 수 있습니다
+      </div>
+      <div class="img_com">
+        <div class="img_child">
+          <div class="inner_img_child clearfix">
+            <div class="one"><img src="images/ex_child.png" /></div>
+            <div class="one"><img src="images/ex_child.png" /></div>
+            <div class="one"><img src="images/ex_child.png" /></div>
+          </div>
+        </div>
+        <img src="images/bg_share_com.png" class="bg" />
+      </div>
+      <div class="block_btn sns">
+        <a href="#" onclick="go_share('fb','fol','no_matching_page');return false;"><img src="images/sns_f.png" /></a>
+        <a href="#" onclick="go_share('kt','fol','no_matching_page');return false;"><img src="images/sns_kt.png" /></a>
+        <a href="#" onclick="go_share('ks','fol','no_matching_page');return false;"><img src="images/sns_ks.png" /></a>
+      </div>
+      <div class="block_btn howtotag">
+        <a href="#" onclick="open_pop('exam_share_popup');return false;" class="clearfix">
+          <span>어린이들을 도울 수 있는 SNS별 친구 태그 방법 보기</span>
+          <img src="images/btn_more.png" width="20" />
+        </a>
+      </div>
+      <div class="block_btn ok">
+        <a href="#" onclick="go_main('no_matching_page');return false;"><img src="images/btn_ok.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 공유버튼 클릭시 나오는 예시 페이지 -->
+<div id="sns_exam_page" class="wrap_page sns_exam" style="display:none;">
+  <div class="inner">
+    <div class="block_content">
+      <div class="img"> 
+        <img src="images/sns_share.jpg" class="bg">
+      </div>
+      <div class="btn_block">
+        <a href="#" id="go_share_func"><img src="images/btn_keepgoing.png"></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 공유버튼 클릭시 나오는 예시 페이지 -->
+
+<!-- 공유 완료 페이지 -->
+<div id="thanks_page" class="wrap_page share_match_child" style="display:none">
+  <div class="inner">
+    <div class="block_content">
+      <div class="title">
+        참여해주셔서 감사합니다<br>
+        <span id="thx_ch_name">'<?=$ch_data['ch_nick']?>'</span>이<br>
+        꿈을 꿀 수 있도록 끝까지 함께 응원해주세요
+      </div>
+      <div class="block_child re">
+        <div class="inner_block_child clearfix">
+          <div class="child_pic re"><img src="<?=$ch_data['ch_full_img_url']?>" id="thx_ch_img" /></div>
+        </div>
+      </div>
+      <div class="block_btn ok">
+        <a href="#" onclick="location.reload();"><img src="images/btn_ok.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 공유 완료 페이지 -->
+
 <?
         include_once "./popup_div.php";
 ?>
@@ -225,6 +341,8 @@ var files;
 var flag_sel_dream  = 0;
 var mb_rs       = null;
 var inputImageCheck;
+var share_cnt			= 0;
+
 $(document).ready(function() {
 	Kakao.init('59df63251be6d99256b63b98f4948e89');
 	$("#cboxTopLeft").hide();
@@ -343,8 +461,10 @@ function f_dream_next()
                 mb_job      : sel_dream
             },
             beforeSend: function(response){
-                $("#upload_page").hide();
-                $("#loading_div").show();
+				$("#upload_page").fadeOut('fast', function(){
+					$("body").addClass("bg_sub_page bg_loading");
+					$("#loading_div").fadeIn('fast');
+				});
             },
             success: function(res){
                 // console.log(res);
@@ -356,18 +476,20 @@ function f_dream_next()
                 //$("#contents_div").show();
                 if (rs_ch[0] == "Y")
                 {
-                    $("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
+                    $("#matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
 					setTimeout(function(){
 	                $("#loading_div").fadeOut('fast',function(){
 <?
 	if ($ch_data['ch_choice'] == "Y")
 	{
 ?>
-						$("#f_share_no_matching_page").fadeIn("fast");
+						$("#no_matching_page").fadeIn("fast");
 <?
 	}else{
 ?>
-						$("#f_share_page").fadeIn("fast");
+						$("body").removeClass("bg_loading");
+
+						$("#matching_share_page").fadeIn("fast");
 <?
 	}
 ?>
@@ -376,7 +498,7 @@ function f_dream_next()
                 }else if (rs_ch[0] == "N"){
 					setTimeout(function(){
 	                $("#loading_div").fadeOut('fast',function(){
-						$("#f_share_no_matching_page").fadeIn("fast");
+						$("#no_matching_page").fadeIn("fast");
 					});
 					},1500);
                 }else {

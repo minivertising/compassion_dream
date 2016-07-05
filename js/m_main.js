@@ -227,17 +227,17 @@ function tab_click(param)
 		$("#s_tab1").attr("src","images/navi_fb_on.png");
 		$("#s_tab2").attr("src","images/navi_kt_off.png");
 		$("#s_tab3").attr("src","images/navi_ks_off.png");
-		$("#s_contents").attr("src","images/img_howto_fb.png");
+		$("#s_contents").attr("src","images/img_howto_fb.jpg");
 	}else if (param == "2"){
 		$("#s_tab1").attr("src","images/navi_fb_off.png");
 		$("#s_tab2").attr("src","images/navi_kt_on.png");
 		$("#s_tab3").attr("src","images/navi_ks_off.png");
-		$("#s_contents").attr("src","images/img_howto_kt.png");
+		$("#s_contents").attr("src","images/img_howto_kt.jpg");
 	}else{
 		$("#s_tab1").attr("src","images/navi_fb_off.png");
 		$("#s_tab2").attr("src","images/navi_kt_off.png");
 		$("#s_tab3").attr("src","images/navi_ks_on.png");
-		$("#s_contents").attr("src","images/img_howto_ks.png");
+		$("#s_contents").attr("src","images/img_howto_ks.jpg");
 	}
 }
 
@@ -249,8 +249,38 @@ function f_show_dream_sel()
 	image_crop();
 }
 
+function go_share(media, flag, page)
+{
+	$("#"+page).fadeOut('fast', function(){
+		$("#sns_exam_page").fadeIn('fast',function(){
+			$("#go_share_func").attr("onclick","sns_share('"+media+"','"+flag+"','"+page+"');return false;");
+			share_cnt = share_cnt + 1;
+		});
+	})
+}
 
-function sns_share(media, flag)
+function go_main(page)
+{
+	if (share_cnt == 0)
+	{
+		alert("공유를 완료해 주세요.\r\nSNS에 공유 해주셔야만 어린이들의 꿈을 도울 수 있습니다");
+	}else if (share_cnt > 0 && share_cnt < 3){
+		if (confirm("다른 SNS로도 공유 하시겠어요?\r\n더 많이 공유 해주실 수록 어린이들이 후원자를 찾는데 큰 힘이 됩니다."))
+		{
+			return false;
+		}else{
+			$("#"+page).fadeOut('fast', function(){
+				$("#thanks_page").fadeIn('fast');
+			})
+		}
+	}else if (share_cnt == 3){
+		$("#"+page).fadeOut('fast', function(){
+			$("#thanks_page").fadeIn('fast');
+		});
+	}
+}
+
+function sns_share(media, flag, page)
 {
 	if (media == "fb")
 	{
@@ -328,4 +358,8 @@ function sns_share(media, flag)
 			}
 		});
 	}
+	$("#sns_exam_page").fadeOut('fast', function(){
+		$("#"+page).fadeIn('fast');
+	})
+
 }

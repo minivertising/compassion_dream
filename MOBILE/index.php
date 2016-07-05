@@ -1,6 +1,11 @@
 <?
 	include_once "./header.php";
 
+	if (isset($_REQUEST['lmsflag']))
+		$lms_flag	= $_REQUEST['lmsflag'];
+	else
+		$lms_flag	= "N";
+
 	$total_runner_cnt   = total_runner_info();
 	$total_pic_cnt      = total_pic_info();
 	//$total_matching_cnt = total_matching_info();
@@ -40,6 +45,7 @@
   </div>
 </div>
 <!-- index 메인 페이지 -->
+<<<<<<< HEAD
 	<div id="contents_div" class="wrap_page main_page">
     	<div class="wrap_top_bg">
             <div class="quick">
@@ -195,74 +201,92 @@
             </div>
             
         </div>
-    </div>
-<!-- 개인정보 입력 페이지 -->
 
-<!-- ACTIVATOR 매칭 결과 페이지 --> <!-- 임시 추가 -->
-<div id="matching_share_page" class="wrap_page share_match_child" style="display:none;">
-  <div class="inner">
-    <div class="block_content">
+
+    </div>
+    <div class="main_top clearfix">
+      <div class="logo"><a href="index.php"><img src="images/logo_main.png" /></a></div>
+      <div class="btn_how"><a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_howto.png" /></a></div>
+    </div>	
+    <div class="main_block">
       <div class="title">
-      어린시절의 <span id="m_rs_name">미니버</span>님과 같이<br> 꿈이 필요한 어린이는 '<span id="m_rs_ch_name">기타</span>' 입니다.
+        <img src="images/title_main.png" />
       </div>
-      <div class="block_child">
-        <div class="inner_block_child clearfix">
-          <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic"/></div>
-          <div class="child_text">
-            <h2>저도 <span id="m_rs_job">선생님을</span> 꿈꿀 수 있을까요?</h2>
-            <div class="bg_line">
-            <p>
-            안녕하세요 <br>
-            저는  <span id="m_rs_nation">필리핀</span>에 살고 있는 <span id="m_rs_ch_name2">기타</span>에요<br>
-            어린 시절에  <span id="m_rs_job2">선생님이</span> 꿈이 셨군요<br>
-            저도 언젠가는 그렇게 멋진 꿈을 꾸고 싶어요!
-            </p>
-            </div>
-          </div>
-        </div>
+      <div class="btn_block main">
+        <a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_apply_main.png" /></a>
       </div>
-      <div class="block_txt">
-      SNS에 공유하셔서<br>'<span id="m_rs_ch_name3">기타</span>'의 후원자님 찾아주세요
+      <div class="img_child">
+        <img src="images/img_main_child.png" />
       </div>
-      <div class="block_btn sns">
-        <a href="#" onclick="sns_share('fb','act')";><img src="images/sns_f.png" /></a>
-        <a href="#" onclick="sns_share('kt','act')";><img src="images/sns_kt.png" /></a>
-        <a href="#" onclick="sns_share('ks','act')";><img src="images/sns_ks.png" /></a>
-      </div>
-      <div class="block_btn howtotag">
-        <a href="#"  onclick="open_pop('exam_share_popup');return false;" class="clearfix">
-        <span>어린이들을 도울 수 있는 SNS별 친구 태그 방법 보기</span>
-        <img src="images/btn_more.png" width="20" />
-        </a>
-      </div>
+    </div>
+    <div class="main_num">
+      <div class="num"><?=number_format($total_matching_cnt)?></div>
+      <img src="images/bg_main_num.png" />
+    </div>    
+  </div>
+  <div class="people_list">
+    <div class="inner_people_list clearfix">
+      <div class="one"><img src="images/ex_list.png" /></div>
+      <div class="one"><img src="images/ex_list.png" /></div>
+      <div class="one"><img src="images/ex_list.png" /></div>
     </div>
   </div>
+  <div class="sec_movie">
+    <div class="title_movie"><img src="images/title_movie.png" /></div>
+    <div class="youtube yt_player"><iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe></div>
+    <div class="btn_movie_block">
+      <a href="#" class="apply" onclick="show_dream_sel();return false;"><img src="images/btn_apply_movie.png" /></a>
+      <a href="#" class="howto" onclick="open_pop('use_popup');return false;"><img src="images/btn_howto_movie.png" /></a>
+      <img src="images/bg_sec_movie.jpg" class="bg" />
+    </div>
+  </div>
+  <div class="sec_child_num">
+    <div class="bg_bar">
+      <div class="inner_bg_bar">
+        <div class="txt_num">결연된 어린이 <?=number_format($total_matching_cnt)?>명 </div>
+        <div class="icon"><img src="images/icon_head.png" width="35" /></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+    <div class="num">
+<?=number_format($total_remain_cnt)?>
+    </div>
+    <img src="images/bg_num_child.jpg" class="bg" />
+  </div>
+  <div class="sec_com">
+    <a href="http://www.compassion.or.kr" target="_blank"><img src="images/btn_go_com.png" /></a>
+    <img src="images/bg_com.jpg" class="bg" />
+  </div>
 </div>
-<!-- ACTIVATOR 매칭 결과 페이지 -->
+<?
+	}
+?>
+
+<!-- index 메인 페이지 -->
 
 <?
+	include_once "./page_div.php";
 	include_once "./popup_div.php";
 ?>
 </body>
 </html>
 <script type="text/javascript">
-	var sel_dream       = null;
-	var runner_serial   = null;
-	var mb_job          = null;
-	var mb_image        = null;
-	var $ori_image = $('#ori_image');
-	var $inputImage = $('#inputImage')
-  var $preview = $('.preview');
-	var URL = window.URL || window.webkitURL;
-	//var realFath;
-	//var convertPath;
+	var sel_dream			= null;
+	var runner_serial		= null;
+	var mb_job				= null;
+	var mb_image			= null;
+	var $ori_image			= $('#ori_image');
+	var $inputImage		= $('#inputImage')
+	var $preview			= $('.preview');
+	var URL					= window.URL || window.webkitURL;
+	var flag_sel_dream	= 0;
+	var mb_rs				= null;
+	var chk_mb_flag		= 0;
+	var share_cnt			= 0;
 	var blobURL;
 	var file;
 	var files;
-	var flag_sel_dream  = 0;
-	var mb_rs       = null;
 	var inputImageCheck;
-	var chk_mb_flag = 0;
 
 	$(document).ready(function() {
 		Kakao.init('59df63251be6d99256b63b98f4948e89');
@@ -276,25 +300,18 @@
 		$("#cboxBottomCenter").hide();
 
 		// 유튜브 영상 크기 제어
-		var yt_width = $(".youtube").width();
+		var yt_width = $(".yt_player").width();
 		var yt_height = (yt_width / 16) * 9;
 		$("#ytplayer").width(yt_width);
 		$("#ytplayer").height(yt_height);
-		$(".youtube").height(yt_height);
+		$(".yt_player").height(yt_height);
 
 		// gage 스타일 적용
 		var gage_w	= (<?=$total_matching_cnt?>/3000)*100;
 		$(".bar").css("width",gage_w+"%");
 		$(".icon").css("left",gage_w+"%");
 		Ins_tracking();
-
-
-
-		Ins_tracking();
     });
-    var $inputImage = $('#inputImage');
-    var URL = window.URL || window.webkitURL;
-    var blobURL;
 
       if (URL) {
         $inputImage.change(function () {
@@ -559,18 +576,13 @@ function input_submit()
 			});
 		},
 		success: function(response){
-				alert(response);
 				var rs_ch = response.split("||");
 				mb_rs = rs_ch[2];
-		  // $("#loading_div").hide();
-		  // $("#contents_div").show();
-		  // $("#loading_div").fadeOut('fast', function(){
-		  //   alert("loading_div unset");
-		  // });
 				if (rs_ch[0] == "Y")
 				{
 					// 아이가 새로 매칭될 경우
 					$("#matching_child_pic").attr("src",rs_ch[1]);
+					$("#thx_ch_img").attr("src",rs_ch[1]);
 			// $("#input_page").hide();
 					// $("#input_page").fadeOut('slow', function(){
 
@@ -578,39 +590,32 @@ function input_submit()
 					
 					var job_add		= job_ko_add(sel_dream);
 					job_add_arr		= job_add.split("||");
-					$("#m_rs_name").html(mb_name);
+					//$("#m_rs_name").html(mb_name);
 					$("#m_rs_ch_name").html(rs_ch[3]);
 					$("#m_rs_ch_name2").html(rs_ch[3]);
 					$("#m_rs_ch_name3").html(rs_ch[3]);
+					$("#thx_ch_name").html("'"+rs_ch[3]+"'");
 					$("#m_rs_job").html(job_add_arr[0]);
 					$("#m_rs_job2").html(job_add_arr[1]);
 					$("#m_rs_nation").html(rs_ch[4]);
 					
 					$("#loading_div").fadeOut('fast', function(){
-							  $("#matching_share_page").fadeIn('slow');
+						$("#matching_share_page").fadeIn('fast');
 					})
 
 				}else if (rs_ch[0] == "C"){
 					// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
-					//$("#c_matching_child_pic").attr("src",rs_ch[1]);
 					$("#matching_child_pic").attr("src",rs_ch[1]);
-			// $("#input_page").hide();
-					// $("#input_page").fadeOut('slow');
-					// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
-					
+					$("#thx_ch_img").attr("src",rs_ch[1]);
 					var job_add		= job_ko_add(sel_dream);
 					job_add_arr		= job_add.split("||");
-					$("#m_rs_name").html(mb_name);
-					$("#m_rs_ch_name").html(rs_ch[3]);
-					$("#m_rs_ch_name2").html(rs_ch[3]);
-					$("#m_rs_ch_name3").html(rs_ch[3]);
-					$("#m_rs_job").html(job_add_arr[0]);
-					$("#m_rs_job2").html(job_add_arr[1]);
-					$("#m_rs_nation").html(rs_ch[4]);
+					$("#act_name").html(mb_name);
+					$("#re_ch_name").html("'"+rs_ch[3]+"'");
+					$("#re_ch_name2").html("'"+rs_ch[3]+"'");
+					$("#thx_ch_name").html("'"+rs_ch[3]+"'");
 					
-					// $("#matching_share_page").show();
 					$("#loading_div").fadeOut('fast', function(){
-							  $("#matching_share_page").fadeIn('slow');
+						$("#re_matching_share_page").fadeIn('fast');
 					})
 				}else{
 					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");

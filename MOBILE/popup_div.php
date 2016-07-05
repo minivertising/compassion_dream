@@ -79,7 +79,8 @@
   <div id="preview_popup" class="wrap_pop p_preview"> 
       <div class="btn_close" style="z-index:99999"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/popup/btn_close.png" /></a></div>
       <div class="inner_p_preview">
-      	<div class="img preview" style="overflow: hidden;width: 400px;height: 200px;"><img src="images/ex_preview.jpg"/></div>
+      	<!-- <div class="img preview" style="overflow: hidden;width: 400px;height: 200px;"></div> -->
+      	<div class="img preview"></div>
       	<img src="images/bg_preview.jpg" class="bg" />
       </div>
   </div>
@@ -117,11 +118,11 @@
         <a href="#" onclick="tab_click('2');return false;"><img src="images/navi_kt_off.png" id="s_tab2" /></a>
         <a href="#" onclick="tab_click('3');return false;"><img src="images/navi_ks_off.png" id="s_tab3" /></a>
       </div>
-      <div class="howto_img">
-        <img src="images/img_howto_fb.png" id="s_contents" />
+      <div class="txt_title">
+      페이스북 친구 태그 방법은 이렇게 해보세요!
       </div>
       <div class="howto_img">
-        <img src="images/img_howto_share_common.png" />
+        <img src="images/img_howto_fb.jpg" id="s_contents" />
       </div>
       <div class="btn_block">
         <a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_ok.png" /></a>
@@ -181,5 +182,12 @@
         </div>
     </div> 
   <!-- 참여방법 팝업-->
+
+  <!-- 비전트립 설명 팝업-->
+  <div id="trip_popup" class="wrap_pop about_campaign">
+    <div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/popup/btn_close.png" /></a></div>
+    <div class="img"><img src="images/popup/img_about_campaign.png" /></div>
+  </div>
+  <!-- 비전트립 설명 팝업-->
 
 </div>
