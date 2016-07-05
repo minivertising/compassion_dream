@@ -210,7 +210,7 @@
       </div>
       <div class="block_child">
         <div class="inner_block_child clearfix">
-          <div class="child_pic"><img src="images/ex_child.png" id="f_matching_child_pic" /></div>
+          <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" id="f_matching_child_pic" /></div>
           <div class="child_text">
             <h2>"저도 <span id="m_rs_job"><?=$mb_data['mb_job']?>을</span> 꿈꿀 수 있을까요?"</h2>
             <div class="bg_line">
@@ -265,9 +265,9 @@
         <img src="images/bg_share_com.png" class="bg" />
       </div>
       <div class="block_btn sns">
-        <a href="#" onclick="go_share('fb','act','no_matching_page');return false;"><img src="images/sns_f.png" /></a>
-        <a href="#" onclick="go_share('kt','act','no_matching_page');return false;"><img src="images/sns_kt.png" /></a>
-        <a href="#" onclick="go_share('ks','act','no_matching_page');return false;"><img src="images/sns_ks.png" /></a>
+        <a href="#" onclick="go_share('fb','fol','no_matching_page');return false;"><img src="images/sns_f.png" /></a>
+        <a href="#" onclick="go_share('kt','fol','no_matching_page');return false;"><img src="images/sns_kt.png" /></a>
+        <a href="#" onclick="go_share('ks','fol','no_matching_page');return false;"><img src="images/sns_ks.png" /></a>
       </div>
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;" class="clearfix">
@@ -485,6 +485,8 @@ function f_dream_next()
 <?
 	}else{
 ?>
+						$("body").removeClass("bg_loading");
+
 						$("#matching_share_page").fadeIn("fast");
 <?
 	}
