@@ -201,6 +201,95 @@
   </div>
 </div>
 
+<div id="f_matching_share_page" class="wrap_page share_match_child" style="display:none;">
+  <div class="inner">
+    <div class="block_content">
+      <div class="title">
+        당신의 도움이 필요한 어린이는<br>
+        '<span id="m_rs_ch_name">아비가일 마아 야아 암퐁</span>'입니다
+      </div>
+      <div class="block_child">
+        <div class="inner_block_child clearfix">
+          <div class="child_pic"><img src="images/ex_child.png" id="f_matching_child_pic" /></div>
+          <div class="child_text">
+            <h2>"저도 <span id="m_rs_job">선생님을</span> 꿈꿀 수 있을까요?"</h2>
+            <div class="bg_line">
+              <p>
+              안녕하세요 <br>
+              저는  필리핀에 살고 있는 기타에요<br>
+              어린 시절에  선생님이 꿈이 셨군요<br>
+              저도 언젠가는 그렇게 멋진 꿈을 꾸고 싶어요!
+              어린 시절에  선생님이 꿈이 셨군요<br>
+              어린 시절에  선생님이 꿈이 셨군요<br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block_txt">
+        SNS에 공유하셔서<br>
+        <span id="m_rs_ch_name3">기타</span>의 후원자를 찾아주세요
+      </div>
+      <div class="block_btn sns">
+        <!-- <a href="#" onclick="sns_share('fb','act');return false;"><img src="images/sns_f.png" /></a>
+        <a href="#" onclick="sns_share('kt','act');return false;"><img src="images/sns_kt.png" /></a>
+        <a href="#" onclick="sns_share('ks','act');return false;"><img src="images/sns_ks.png" /></a> -->
+        <a href="#" onclick="go_share('fb','act','matching_share_page');return false;"><img src="images/sns_f.png" /></a>
+        <a href="#" onclick="go_share('kt','act','matching_share_page');return false;"><img src="images/sns_kt.png" /></a>
+        <a href="#" onclick="go_share('ks','act','matching_share_page');return false;"><img src="images/sns_ks.png" /></a>
+      </div>
+      <div class="block_btn howtotag">
+        <a href="#"  onclick="open_pop('exam_share_popup');return false;" class="clearfix">
+          <span>어린이들을 도울 수 있는 SNS별 친구 태그 방법 보기</span>
+          <img src="images/btn_more.png" width="20" />
+        </a>
+      </div>
+      <div class="block_btn ok">
+        <a href="#" onclick="go_main('matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div  id="f_no_matching_page" class="wrap_page share_match_child" style="display:none;">
+  <div class="inner">
+    <div class="block_content">
+      <div class="title compassion">
+      컴패션에는 당신의 어린 시절처럼<br>
+      꿈 많고 귀여운 어린이들이 있습니다
+      </div>
+      <div class="sub_txt">
+      컴패션 소개와 함께 어린 시절 사진을 sns에 공유하면<br>
+      꿈을 잃어버린 어린이들을 도와줄 수 있습니다
+      </div>
+      <div class="img_com">
+        <div class="img_child">
+          <div class="inner_img_child clearfix">
+            <div class="one"><img src="images/ex_child.png" /></div>
+            <div class="one"><img src="images/ex_child.png" /></div>
+            <div class="one"><img src="images/ex_child.png" /></div>
+          </div>
+        </div>
+        <img src="images/bg_share_com.png" class="bg" />
+      </div>
+      <div class="block_btn sns">
+        <a href="#" onclick="go_share('fb','act','no_matching_page');return false;"><img src="images/sns_f.png" /></a>
+        <a href="#" onclick="go_share('kt','act','no_matching_page');return false;"><img src="images/sns_kt.png" /></a>
+        <a href="#" onclick="go_share('ks','act','no_matching_page');return false;"><img src="images/sns_ks.png" /></a>
+      </div>
+      <div class="block_btn howtotag">
+        <a href="#" onclick="open_pop('exam_share_popup');return false;" class="clearfix">
+          <span>어린이들을 도울 수 있는 SNS별 친구 태그 방법 보기</span>
+          <img src="images/btn_more.png" width="20" />
+        </a>
+      </div>
+      <div class="block_btn ok">
+        <a href="#" onclick="go_main('no_matching_page');return false;"><img src="images/btn_ok.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <?
         include_once "./popup_div.php";
 ?>
@@ -363,11 +452,11 @@ function f_dream_next()
 	if ($ch_data['ch_choice'] == "Y")
 	{
 ?>
-						$("#f_share_no_matching_page").fadeIn("fast");
+						$("#f_no_matching_page").fadeIn("fast");
 <?
 	}else{
 ?>
-						$("#f_share_page").fadeIn("fast");
+						$("#f_matching_share_page").fadeIn("fast");
 <?
 	}
 ?>
@@ -376,7 +465,7 @@ function f_dream_next()
                 }else if (rs_ch[0] == "N"){
 					setTimeout(function(){
 	                $("#loading_div").fadeOut('fast',function(){
-						$("#f_share_no_matching_page").fadeIn("fast");
+						$("#f_no_matching_page").fadeIn("fast");
 					});
 					},1500);
                 }else {
