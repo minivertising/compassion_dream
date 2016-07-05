@@ -366,7 +366,7 @@ function go_main(page)
 	}
 }
 
-function sns_share(media, flag)
+function sns_share(media, flag, page)
 {
 	if (media == "fb")
 	{
