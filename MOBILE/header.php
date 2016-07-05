@@ -37,12 +37,12 @@
 	}else{
 ?>
 <meta property="og:url" content="http://mydream.compassion.or.kr/MOBILE/index.php" />
-<meta property="og:image" content="" />
+<meta property="og:image" content="http://mydream.compassion.or.kr/MOBILE/images/compassion_share.jpg" />
 <?
 	}
 ?>
 <meta property="og:description" content="Compassion BLUE BATON CHALLENGE" />
-<link rel="shortcut icon" type="image/x-icon" href="./img/icon/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="./images/compassion.ico" />
 <title>모바일 메인</title>
 <!--[if lt IE 9]><script src="./js/html5shiv.js"></script><![endif]-->
 <!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->

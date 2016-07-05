@@ -39,12 +39,12 @@
 	}else{
 ?>
 <meta property="og:url" content="http://mydream.compassion.or.kr/PC/index.php" />
-<meta property="og:image" content="" />
+<meta property="og:image" content="http://mydream.compassion.or.kr/MOBILE/images/compassion_share.jpg" />
 <?
 	}
 ?>
 <meta property="og:description" content="Compassion BLUE BATON CHALLENGE" />
-<link rel="shortcut icon" type="image/x-icon" href="./img/icon/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="./images/compassion.ico" />
 <title>PC MAIN</title>
 <!-- <link href="../lib/Cropper/css/bootstrap.min.css" rel="stylesheet"> -->
 <link href="../lib/bxslider/jquery.bxslider.css" rel="stylesheet" />
