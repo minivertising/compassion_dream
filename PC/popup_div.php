@@ -82,8 +82,7 @@
     <div class="inner">
       <div class="navi clearfix">
         <a href="#" onclick="tab_click('1');return false;"><img src="images/navi_fb_on.png" id="s_tab1" /></a>
-        <a href="#" onclick="tab_click('2');return false;"><img src="images/navi_kt_off.png" id="s_tab2" /></a>
-        <a href="#" onclick="tab_click('3');return false;"><img src="images/navi_ks_off.png" id="s_tab3" /></a>
+        <a href="#" onclick="tab_click('2');return false;"><img src="images/navi_ks_off.png" id="s_tab2" /></a>
       </div>
       <div class="howto_img">
         <img src="images/img_howto_fb.png" id="s_contents" />

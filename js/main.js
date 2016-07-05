@@ -132,18 +132,11 @@ function tab_click(param)
 	if (param == "1")
 	{
 		$("#s_tab1").attr("src","images/navi_fb_on.png");
-		$("#s_tab2").attr("src","images/navi_kt_off.png");
-		$("#s_tab3").attr("src","images/navi_ks_off.png");
+		$("#s_tab2").attr("src","images/navi_ks_off.png");
 		$("#s_contents").attr("src","images/img_howto_fb.png");
-	}else if (param == "2"){
-		$("#s_tab1").attr("src","images/navi_fb_off.png");
-		$("#s_tab2").attr("src","images/navi_kt_on.png");
-		$("#s_tab3").attr("src","images/navi_ks_off.png");
-		$("#s_contents").attr("src","images/img_howto_kt.png");
 	}else{
 		$("#s_tab1").attr("src","images/navi_fb_off.png");
-		$("#s_tab2").attr("src","images/navi_kt_off.png");
-		$("#s_tab3").attr("src","images/navi_ks_on.png");
+		$("#s_tab2").attr("src","images/navi_ks_on.png");
 		$("#s_contents").attr("src","images/img_howto_ks.png");
 	}
 }
