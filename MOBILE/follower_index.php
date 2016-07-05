@@ -342,8 +342,10 @@ function f_dream_next()
                 mb_job      : sel_dream
             },
             beforeSend: function(response){
-                $("#upload_page").hide();
-                $("#loading_div").show();
+				$("#upload_page").fadeOut('fast', function(){
+					$("body").addClass("bg_sub_page bg_loading");
+					$("#loading_div").fadeIn('fast');
+				});
             },
             success: function(res){
                 // console.log(res);
