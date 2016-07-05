@@ -113,15 +113,15 @@
     <div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/popup/btn_close.png" /></a></div>
     <div class="inner">
       <div class="navi clearfix">
-        <a href="#" onclick="tab_click('1');return false;"><img src="images/navi_fb_on.png" id="s_tab1" /></a>
-        <a href="#" onclick="tab_click('2');return false;"><img src="images/navi_kt_off.png" id="s_tab2" /></a>
-        <a href="#" onclick="tab_click('3');return false;"><img src="images/navi_ks_off.png" id="s_tab3" /></a>
+        <a href="#" onclick="tab_click('1');return false;"><img src="images/navi_fb_on.png" /></a>
+        <a href="#" onclick="tab_click('2');return false;"><img src="images/navi_kt_off.png" /></a>
+        <a href="#" onclick="tab_click('3');return false;"><img src="images/navi_ks_off.png" /></a>
+      </div>
+      <div class="txt_title">
+      페이스북 친구 태그 방법은 이렇게 해보세요!
       </div>
       <div class="howto_img">
-        <img src="images/img_howto_fb.png" id="s_contents" />
-      </div>
-      <div class="howto_img">
-        <img src="images/img_howto_share_common.png" />
+        <img src="images/img_howto_fb.jpg" id="s_contents" />
       </div>
       <div class="btn_block">
         <a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_ok.png" /></a>
