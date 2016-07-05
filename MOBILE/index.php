@@ -254,6 +254,84 @@
     </div>
 <!-- ACTIVATOR 매칭 결과 페이지 -->
 
+<!-- ACTIVATOR 매칭 결과 페이지 (이미참여 결연X)-->
+    <div id="re_matching_share_page" class="wrap_page share_match_child" style="display:none;">
+    	<div class="inner">
+            <div class="block_content">
+              <div class="title">
+              		<span id="act_name">000</span>님!<br>
+                    <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span>을 위해<br>
+                    다시 한번 참여해주셔서 감사합니다 
+              </div>
+                <div class="block_child re">
+                	<div class="inner_block_child clearfix">
+                        <div class="child_pic re"><img src="images/ex_child.png" id="re_matching_child_pic" /></div>
+                    </div>
+                </div>
+                <div class="block_txt">
+                	아래 SNS에 당신의 어린 시절 사진과 꿈을 공유하셔서<br>
+                    <span id="re_ch_name2">'아비가일 마아 야아 암퐁'</span>이<br>
+                    후원자를 만날 수 있도록 해주세요!
+                </div>
+                <div class="block_btn sns">
+                	<a href="#" onclick="sns_share('fb','act');return false;"><img src="images/sns_f.png" /></a>
+                	<a href="#" onclick="sns_share('kt','act');return false;"><img src="images/sns_kt.png" /></a>
+                	<a href="#" onclick="sns_share('ks','act');return false;"><img src="images/sns_ks.png" /></a>
+                </div>
+                <div class="block_btn howtotag">
+                	<a href="#" onclick="open_pop('exam_share_popup');return false;" class="clearfix">
+                    	<span>어린이들을 도울 수 있는 SNS별 친구 태그 방법 보기</span>
+                        <img src="images/btn_more.png" width="20" />
+                    </a>
+                </div>
+                <div class="block_btn ok">
+                	<a href="index.php"><img src="images/btn_ok.png" /></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+<!-- ACTIVATOR 매칭 결과 페이지 (이미참여 결연X)-->
+
+<!-- ACTIVATOR 매칭 결과 페이지 (컴페션 소개 링크)-->
+    <div id="re_matching_share_page" class="wrap_page share_match_child" style="display:none;">
+    	<div class="inner">
+            <div class="block_content">
+              <div class="title">
+              		<span id="act_name">000</span>님!<br>
+                    <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span>을 위해<br>
+                    다시 한번 참여해주셔서 감사합니다 
+              </div>
+                <div class="block_child re">
+                	<div class="inner_block_child clearfix">
+                        <div class="child_pic re"><img src="images/ex_child.png" id="re_matching_child_pic" /></div>
+                    </div>
+                </div>
+                <div class="block_txt">
+                	아래 SNS에 당신의 어린 시절 사진과 꿈을 공유하셔서<br>
+                    <span id="re_ch_name2">'아비가일 마아 야아 암퐁'</span>이<br>
+                    후원자를 만날 수 있도록 해주세요!
+                </div>
+                <div class="block_btn sns">
+                	<a href="#" onclick="sns_share('fb','act');return false;"><img src="images/sns_f.png" /></a>
+                	<a href="#" onclick="sns_share('kt','act');return false;"><img src="images/sns_kt.png" /></a>
+                	<a href="#" onclick="sns_share('ks','act');return false;"><img src="images/sns_ks.png" /></a>
+                </div>
+                <div class="block_btn howtotag">
+                	<a href="#" onclick="open_pop('exam_share_popup');return false;" class="clearfix">
+                    	<span>어린이들을 도울 수 있는 SNS별 친구 태그 방법 보기</span>
+                        <img src="images/btn_more.png" width="20" />
+                    </a>
+                </div>
+                <div class="block_btn ok">
+                	<a href="index.php"><img src="images/btn_ok.png" /></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+<!-- ACTIVATOR 매칭 결과 페이지 (컴페션 소개 링크)-->
+
 <?
 	include_once "./popup_div.php";
 ?>
@@ -576,11 +654,6 @@ function input_submit()
 				alert(response);
 				var rs_ch = response.split("||");
 				mb_rs = rs_ch[2];
-		  // $("#loading_div").hide();
-		  // $("#contents_div").show();
-		  // $("#loading_div").fadeOut('fast', function(){
-		  //   alert("loading_div unset");
-		  // });
 				if (rs_ch[0] == "Y")
 				{
 					// 아이가 새로 매칭될 경우
@@ -601,30 +674,20 @@ function input_submit()
 					$("#m_rs_nation").html(rs_ch[4]);
 					
 					$("#loading_div").fadeOut('fast', function(){
-							  $("#matching_share_page").fadeIn('slow');
+						$("#matching_share_page").fadeIn('fast');
 					})
 
 				}else if (rs_ch[0] == "C"){
 					// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
-					//$("#c_matching_child_pic").attr("src",rs_ch[1]);
 					$("#matching_child_pic").attr("src",rs_ch[1]);
-			// $("#input_page").hide();
-					// $("#input_page").fadeOut('slow');
-					// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
-					
 					var job_add		= job_ko_add(sel_dream);
 					job_add_arr		= job_add.split("||");
-					//$("#m_rs_name").html(mb_name);
-					$("#m_rs_ch_name").html(rs_ch[3]);
-					$("#m_rs_ch_name2").html(rs_ch[3]);
-					$("#m_rs_ch_name3").html(rs_ch[3]);
-					$("#m_rs_job").html(job_add_arr[0]);
-					$("#m_rs_job2").html(job_add_arr[1]);
-					$("#m_rs_nation").html(rs_ch[4]);
+					$("#act_name").html(mb_name);
+					$("#re_ch_name").html("'"+rs_ch[3]+"'");
+					$("#re_ch_name2").html("'"+rs_ch[3]+"'");
 					
-					// $("#matching_share_page").show();
 					$("#loading_div").fadeOut('fast', function(){
-							  $("#matching_share_page").fadeIn('slow');
+						$("#re_matching_share_page").fadeIn('fast');
 					})
 				}else{
 					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
