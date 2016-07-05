@@ -268,9 +268,9 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
         <p>SNS에 공유하셔서 <span id="m_rs_ch_name3">기타</span><span id="name3PP">이</span> 후원자를 만날 수 있도록 해주세요!</p><!-- ~이 ~가 -->
       </div>
       <div class="block_btn sns">
-        <a href="#" onclick="sns_share('fb','act');"><img src="images/sns_f.png" /></a>
+        <a href="#" onclick="go_share('fb','act','matching_share_page');return false;"><img src="images/sns_f.png" /></a>
         <!-- <a href="#" onclick="sns_share('kt','act');"><img src="images/sns_kt.png" /></a> -->
-        <a href="#" onclick="sns_share('ks','act');"><img src="images/sns_ks.png" /></a>
+        <a href="#" onclick="go_share('ks','act','matching_share_page');return false;"><img src="images/sns_ks.png" /></a>
       </div>
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
@@ -279,6 +279,43 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
   </div>
 </div>
 <!-- ACTIVATOR 매칭 결과 페이지 -->
+
+<!-- ACTIVATOR 매칭 결과 페이지 (이미참여 결연X)-->
+<div id="re_matching_share_page" class="wrap_sec_top_sub match_child" style="display:none;">
+  <div class="inner">
+    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content">
+      <div class="title">
+	  당신의 도움이 필요한 어린이는<br> <span id="m_rs_ch_name">기타</span> 입니다
+      </div>
+      <div class="block_child">
+        <!-- <div class="img_letter"><img src="images/img_letter.png" /></div> -->
+        <div class="inner_block_child clearfix">
+          <div class="child_pic"><img src="images/ex_child.png" id="re_matching_child_pic" /></div>
+          <div class="child_text">
+            <h2>저도 <span id="re_m_rs_job">선생님</span><span id="re_jobPP">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
+            <p>
+            상세설명 넣기!
+
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="block_txt">
+        <p>SNS에 공유하셔서 <span id="re_m_rs_ch_name3">기타</span><span id="re_name3PP">이</span> 후원자를 만날 수 있도록 해주세요!</p><!-- ~이 ~가 -->
+      </div>
+      <div class="block_btn sns">
+        <a href="#" onclick="go_share('fb','act','re_matching_share_page');return false;"><img src="images/sns_f.png" /></a>
+        <!-- <a href="#" onclick="sns_share('kt','act');"><img src="images/sns_kt.png" /></a> -->
+        <a href="#" onclick="go_share('ks','act','re_matching_share_page');return false;"><img src="images/sns_ks.png" /></a>
+      </div>
+      <div class="block_btn howtotag">
+        <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ACTIVATOR 매칭 결과 페이지 (이미참여 결연X)-->
 
 <!-- ACTIVATOR 매칭없을시 컴페션 소개 페이지 -->
 <div id="no_matching_page" class="wrap_sec_top_sub match_child" style="display:none">
@@ -302,9 +339,9 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
         </div>
       </div>
       <div class="block_btn sns">
-        <a href="#" onclick="sns_share('fb','act');"><img src="images/sns_f.png" /></a>
+        <a href="#" onclick="go_share('fb','act','no_matching_page');return false;"><img src="images/sns_f.png" /></a>
         <!-- <a href="#"><img src="images/sns_kt.png" /></a> -->
-        <a href="#" onclick="sns_share('ks','act');"><img src="images/sns_ks.png" /></a>
+        <a href="#" onclick="go_share('fb','act','no_matching_page');return false;"><img src="images/sns_ks.png" /></a>
       </div>
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
@@ -314,7 +351,45 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 </div>
 <!-- ACTIVATOR 매칭없을시 컴페션 소개 페이지 -->
 
+<!-- 공유버튼 클릭시 나오는 예시 페이지 -->
+<div id="sns_exam_page" class="wrap_sec_top_sub match_child" style="display:none;">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content exshare">
+      <div class="title">
+      아래의 예시를 참고하셔서<br>
+      지인들에게 공유해주세요
+      </div>
+      <div class="block_btn_again">
+        <a href="#" id="go_share_func"><img src="images/btn_again.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 공유버튼 클릭시 나오는 예시 페이지 -->
 
+<!-- 공유 완료 페이지 -->
+<div id="thanks_page" style="display:none" class="wrap_sec_top_sub match_child">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content follower">
+      <div class="title">
+      참여해주셔서 감사합니다!<br>
+      <span id="thx_ch_name">아비가일 마아 야아 암퐁</span>이 꿈을 꿀 수 있도록<br>
+      끝까지 함께 응원해주세요
+      </div>
+      <div class="block_child">
+        <div class="inner_block_child clearfix">
+          <div class="child_pic"><img src="images/ex_child.png" id="thx_ch_img" /></div>
+        </div>
+      </div>
+      <div class="block_btn">
+        <a href="#" onclick="location.reload();"><img src="images/btn_ok.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 공유 완료 페이지 -->
 
 <?
 	include_once "./popup_div.php";
@@ -729,6 +804,7 @@ function dream_next(){
 				{
 					// 아이가 새로 매칭될 경우
 					$("#matching_child_pic").attr("src",rs_ch[1]);
+					$("#thx_ch_img").attr("src",rs_ch[1]);
 					// $("#input_page").hide();
 					$("#loading_div").fadeOut('fast', function(){
 						// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
@@ -739,6 +815,7 @@ function dream_next(){
 						$("#m_rs_ch_name").html(rs_ch[3]);
 						$("#m_rs_ch_name2").html(rs_ch[3]);
 						$("#m_rs_ch_name3").html(rs_ch[3]);
+						$("#thx_ch_name").html("'"+rs_ch[3]+"'");
 
             if(rs_ch[5] > 0) {
               //받침 O
@@ -774,6 +851,7 @@ function dream_next(){
 						$("#m_rs_ch_name").html(rs_ch[3]);
 						$("#m_rs_ch_name2").html(rs_ch[3]);
 						$("#m_rs_ch_name3").html(rs_ch[3]);
+						$("#thx_ch_name").html("'"+rs_ch[3]+"'");
 
 						if(rs_ch[5] > 0) {
 							//받침 O
