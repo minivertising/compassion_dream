@@ -2,8 +2,8 @@
 	include_once "config.php";
 
 	//unset($media);
-	$media	= $_REQUEST['media'];
-	$testurl	= $_REQUEST['testurl'];
+	$media		= $_REQUEST['media'];
+	$lms_flag	= $_REQUEST['lmsflag'];
 	$tab	= $_REQUEST['tab'];
 
 	$_SESSION['ss_media'] = $media;
@@ -13,7 +13,7 @@
 
 	if($gubun == "MOBILE")
 	{
-		Header("Location:http://mydream.compassion.or.kr/MOBILE/index.php?media=".$media."");
+		Header("Location:http://mydream.compassion.or.kr/MOBILE/index.php?media=".$media."&lmsflag=".$lms_flag."");
 		exit;
 	}else{
 		Header("Location:http://mydream.compassion.or.kr/PC/index.php?media=".$media."");
