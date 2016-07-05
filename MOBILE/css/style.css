@@ -231,6 +231,24 @@ body.bg_status{
 .wrap_page.main_page .sec_child_num .bg_bar .inner_bg_bar .icon img{
 	width:35px;
 }
+
+
+.wrap_page.main_page .sec_child_num .bg_bar .inner_bg_bar .txt_num{
+	position:absolute;
+	top:115%;
+	left:0%;
+	width:48%;
+	margin-left:0;
+	text-align:center;
+	color:#fff;
+	background:#0b345c;
+	border-radius:3px;
+	font-size:12px;
+	letter-spacing:-1px;
+	padding:3px 0;
+}
+
+
 .wrap_page.main_page .sec_child_num .num{
 	position:absolute;
 	color:#fff;
@@ -807,6 +825,28 @@ body.bg_status{
 .wrap_pop.howto_notice .img{
 	font-size:12px;
 }
+.wrap_pop.howto_notice .navi{
+	width:100%;
+	padding-top:40px;
+}
+.wrap_pop.howto_notice .navi a{
+	width:50%;
+	display:block;
+	float:left;
+}
+.wrap_pop.howto_notice .navi a img{
+	width:100%;
+}
+.wrap_pop.howto_notice ul{
+	padding:0 10px;
+	margin-left:10px;
+	color:#333;
+}
+.wrap_pop.howto_notice ul li{
+	padding-bottom:2px;
+}
+
+
 
 .wrap_pop .inner_p_select_job{
 	border:4px solid #1055a1;
