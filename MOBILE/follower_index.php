@@ -341,6 +341,8 @@ var files;
 var flag_sel_dream  = 0;
 var mb_rs       = null;
 var inputImageCheck;
+var share_cnt			= 0;
+
 $(document).ready(function() {
 	Kakao.init('59df63251be6d99256b63b98f4948e89');
 	$("#cboxTopLeft").hide();
