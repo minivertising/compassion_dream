@@ -133,7 +133,7 @@ function tab_click(param)
 	}
 }
 
-// 직업 뒤에 조사 붙이기 함수
+// 직업 한글 변환
 function job_ko_add(job)
 {
 	if (job == "president")

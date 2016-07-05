@@ -257,7 +257,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
             <p>
             안녕하세요 저는  <span id="m_rs_nation">필리핀</span>에 살고 있는<br>
             <span id="m_rs_ch_name2">기타</span><span id="name2PP">에요</span><br>
-            어린 시절에 <span id="m_rs_job2">선생님</span>이 꿈이 셨군요<br>
+            어린 시절에 <span id="m_rs_job2">선생님</span><span id="job2PP">가</span> 꿈이 셨군요<br> <!-- ~이 ~가 -->
             저도 언젠가는 그렇게 멋진 꿈을 꾸고 싶어요!
 
             </p>
@@ -265,7 +265,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
         </div>
       </div>
       <div class="block_txt">
-        <p>SNS에 공유하셔서 <span id="m_rs_ch_name3">기타</span>이 후원자를 만날 수 있도록 해주세요!</p>
+        <p>SNS에 공유하셔서 <span id="m_rs_ch_name3">기타</span><span id="name3PP">이</span> 후원자를 만날 수 있도록 해주세요!</p><!-- ~이 ~가 -->
       </div>
       <div class="block_btn sns">
         <a href="#" onclick="sns_share('fb','act');"><img src="images/sns_f.png" /></a>
@@ -738,17 +738,19 @@ function dream_next(){
 						//$("#m_rs_name").html(mb_name);
 						$("#m_rs_ch_name").html(rs_ch[3]);
 						$("#m_rs_ch_name2").html(rs_ch[3]);
-
-						if(rs_ch[5] > 0) {
-							//받침 O
-							$("#name2PP").html("이에요");
-						}
-
 						$("#m_rs_ch_name3").html(rs_ch[3]);
+
+            if(rs_ch[5] > 0) {
+              //받침 O
+              $("#name2PP").html("이에요");
+              $("#name3PP").html("이");
+            }
+
 						$("#m_rs_job").html(job_lang_kor);
 						$("#m_rs_job2").html(job_lang_kor);
 
 						if(rs_ch[6] > 0){
+              //받침 O
 							$("#jobPP").html("을");
 							$("#job2PP").html("이");
 						}
@@ -771,13 +773,14 @@ function dream_next(){
 						//$("#m_rs_name").html(mb_name);
 						$("#m_rs_ch_name").html(rs_ch[3]);
 						$("#m_rs_ch_name2").html(rs_ch[3]);
+						$("#m_rs_ch_name3").html(rs_ch[3]);
 
 						if(rs_ch[5] > 0) {
 							//받침 O
 							$("#name2PP").html("이에요");
+							$("#name3PP").html("이");
 						}
 						
-						$("#m_rs_ch_name3").html(rs_ch[3]);
 						$("#m_rs_job").html(job_lang_kor);
 						$("#m_rs_job2").html(job_lang_kor);
 						

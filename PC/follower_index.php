@@ -41,6 +41,7 @@
 </div>
 <div id="contents_div">
   <div id="page_div1">
+    <!-- 직업 한글 변환 필요 -->
     <h2>어릴적 내 꿈은 <?=$mb_data['mb_job']?><?= has_batchim($mb_data['mb_job']) > 0 ? "이었어요" : "였어요" ?></h2>
   <div>
     <img src="<?=$mb_data['mb_image']?>" style="width:100%">
@@ -139,7 +140,7 @@
           <div class="inner_apply clearfix">
             <div class="left">
               <div class="bt"><a href="#"><img src="images/btn_sponsor.png" /></a></div>
-              <div class="txt">1:1후원으로 '<?=$ch_data['ch_nick']?>'의 꿈을<br> 현실로 만들어주세요!</div>
+              <div class="txt">1:1후원으로 '<?=$ch_data['ch_nick']?>'의 꿈을<br> 현실로 만들어주세요!</div> <!-- 변경 필요 -->
             </div>
             <div class="right">
               <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
@@ -165,7 +166,7 @@
                 	<div class="main">
                     여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
                     SNS에 사진과 함께 당신이 응원할<br>
-                    ‘꿈을 잃은 어린이 <span><?=$ch_data['ch_nick']?></span>’이 소개됩니다
+                    ‘꿈을 잃은 어린이 <span><?=$ch_data['ch_nick']?></span>’<?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 소개됩니다 <!-- ~이 ~가 -->
                     </div>
                 </div>
                 <div class="block_input_dream">
@@ -217,7 +218,7 @@
             <div class="block_content follower">
             	<div class="title">
                 	미니버님!<br> 
-					<span><?=$ch_data['ch_nick']?></span>을 위해<br>
+					<span><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 위해<br> <!-- ~을 ~를 -->
 					다시 한번 참여해주셔서 감사합니다 
                 </div>
                 <div class="block_child">
@@ -227,7 +228,7 @@
                 </div>
                 <div class="block_txt">
                 	<p>아래 SNS에 당신의 어린 시절 사진과 꿈을 공유하셔서</p>
-					<p><?=$ch_data['ch_nick']?>이 후원자를 만날 수 있도록 해주세요!</p>
+					<p><?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 후원자를 만날 수 있도록 해주세요!</p> <!-- ~이 ~가 -->
                 </div>
                 <div class="block_btn sns">
                 	<a href="#" onclick="sns_share('fb','fol');"><img src="images/sns_f.png" /></a>
