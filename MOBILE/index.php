@@ -446,7 +446,6 @@ function input_submit()
 			});
 		},
 		success: function(response){
-			console.log(response);
 				var rs_ch = response.split("||");
 				mb_rs = rs_ch[2];
 				if (rs_ch[0] == "Y")
