@@ -199,45 +199,59 @@
 <!-- 개인정보 입력 페이지 -->
 
 <!-- ACTIVATOR 매칭 결과 페이지 --> <!-- 임시 추가 -->
-<div id="matching_share_page" class="wrap_page share_match_child" style="display:none;">
-  <div class="inner">
-    <div class="block_content">
-      <div class="title">
-      어린시절의 <span id="m_rs_name">미니버</span>님과 같이<br> 꿈이 필요한 어린이는 '<span id="m_rs_ch_name">기타</span>' 입니다.
-      </div>
-      <div class="block_child">
-        <div class="inner_block_child clearfix">
-          <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic"/></div>
-          <div class="child_text">
-            <h2>저도 <span id="m_rs_job">선생님을</span> 꿈꿀 수 있을까요?</h2>
-            <div class="bg_line">
-            <p>
-            안녕하세요 <br>
-            저는  <span id="m_rs_nation">필리핀</span>에 살고 있는 <span id="m_rs_ch_name2">기타</span>에요<br>
-            어린 시절에  <span id="m_rs_job2">선생님이</span> 꿈이 셨군요<br>
-            저도 언젠가는 그렇게 멋진 꿈을 꾸고 싶어요!
-            </p>
+    <div id="matching_share_page" class="wrap_page share_match_child" style="display:none;">
+    	<div class="inner">
+            <div class="block_content">
+<!--        <div class="title">
+                	아래 SNS에 어린 시절 사진을 공유하여 <br>
+                    <span>'아비가일 마아 야아 암퐁'</span>이<br>
+                    후원자를 만날 수 있도록 해주세요!
+
+              </div> -->
+              <div class="title">
+              		당신의 도움이 필요한 어린이는<br>
+					'<span id="m_rs_ch_name">아비가일 마아 야아 암퐁</span>'입니다
+              </div>
+                <div class="block_child">
+                	<div class="inner_block_child clearfix">
+                        <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic" /></div>
+                        <div class="child_text">
+                            <h2>"저도 <span id="m_rs_job">선생님을</span> 꿈꿀 수 있을까요?"</h2>
+                            <div class="bg_line">
+                                <p>
+                                    안녕하세요 <br>
+                                    저는  필리핀에 살고 있는 기타에요<br>
+                                    어린 시절에  선생님이 꿈이 셨군요<br>
+                                    저도 언젠가는 그렇게 멋진 꿈을 꾸고 싶어요!
+                                    어린 시절에  선생님이 꿈이 셨군요<br>
+                                    어린 시절에  선생님이 꿈이 셨군요<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block_txt">
+                	SNS에 공유하셔서<br>
+					<span id="m_rs_ch_name3">기타</span>의 후원자를 찾아주세요
+                </div>
+                <div class="block_btn sns">
+                	<a href="#" onclick="sns_share('fb','act');return false;"><img src="images/sns_f.png" /></a>
+                	<a href="#" onclick="sns_share('kt','act');return false;"><img src="images/sns_kt.png" /></a>
+                	<a href="#" onclick="sns_share('ks','act');return false;"><img src="images/sns_ks.png" /></a>
+                </div>
+                <div class="block_btn howtotag">
+                	<a href="#"  onclick="open_pop('exam_share_popup');return false;" class="clearfix">
+                    	<span>어린이들을 도울 수 있는 SNS별 친구 태그 방법 보기</span>
+                        <img src="images/btn_more.png" width="20" />
+                    </a>
+                </div>
+                <div class="block_btn ok">
+                	<a href="index.php"><img src="images/btn_ok.png" /></a>
+                </div>
             </div>
-          </div>
+            
         </div>
-      </div>
-      <div class="block_txt">
-      SNS에 공유하셔서<br>'<span id="m_rs_ch_name3">기타</span>'의 후원자님 찾아주세요
-      </div>
-      <div class="block_btn sns">
-        <a href="#" onclick="sns_share('fb','act')";><img src="images/sns_f.png" /></a>
-        <a href="#" onclick="sns_share('kt','act')";><img src="images/sns_kt.png" /></a>
-        <a href="#" onclick="sns_share('ks','act')";><img src="images/sns_ks.png" /></a>
-      </div>
-      <div class="block_btn howtotag">
-        <a href="#"  onclick="open_pop('exam_share_popup');return false;" class="clearfix">
-        <span>어린이들을 도울 수 있는 SNS별 친구 태그 방법 보기</span>
-        <img src="images/btn_more.png" width="20" />
-        </a>
-      </div>
     </div>
-  </div>
-</div>
 <!-- ACTIVATOR 매칭 결과 페이지 -->
 
 <?
@@ -578,7 +592,7 @@ function input_submit()
 					
 					var job_add		= job_ko_add(sel_dream);
 					job_add_arr		= job_add.split("||");
-					$("#m_rs_name").html(mb_name);
+					//$("#m_rs_name").html(mb_name);
 					$("#m_rs_ch_name").html(rs_ch[3]);
 					$("#m_rs_ch_name2").html(rs_ch[3]);
 					$("#m_rs_ch_name3").html(rs_ch[3]);
@@ -600,7 +614,7 @@ function input_submit()
 					
 					var job_add		= job_ko_add(sel_dream);
 					job_add_arr		= job_add.split("||");
-					$("#m_rs_name").html(mb_name);
+					//$("#m_rs_name").html(mb_name);
 					$("#m_rs_ch_name").html(rs_ch[3]);
 					$("#m_rs_ch_name2").html(rs_ch[3]);
 					$("#m_rs_ch_name3").html(rs_ch[3]);
