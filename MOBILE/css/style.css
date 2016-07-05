@@ -84,9 +84,10 @@ body.bg_status{
 	padding-bottom:10px;
 }
 .wrap_page.main_page .quick{
-	position:absolute;
+	position:fixed;
 	top:19%;
 	right:0;
+	z-index:999;
 }
 .wrap_page.main_page .quick img{
 	width:80px;
