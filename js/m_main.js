@@ -2,8 +2,7 @@ function open_pop(param)
 {
 	if (param == "preview_popup")
 	{
-		$(".preview").width($(document).width()-40);
-		$(".preview").height($(".preview").width()/2);
+
 	}
 	// $('.preview > img').css('width', 'max-width');
 	$.colorbox({innerWidth:"100%",innerHeight: "95%", initialWidth:"95%", initialHeight: "70%", inline:true, opacity:"0.9", scrolling:true, reposition: false, closeButton:false, overlayClose: false, open:true, speed:20, transition: "fade", fadeOut: 300, href:"#"+param, onComplete: function(){
