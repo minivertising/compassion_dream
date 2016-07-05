@@ -79,7 +79,8 @@
   <div id="preview_popup" class="wrap_pop p_preview"> 
       <div class="btn_close" style="z-index:99999"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/popup/btn_close.png" /></a></div>
       <div class="inner_p_preview">
-      	<div class="img preview" style="overflow: hidden;width: 400px;height: 200px;"><img src="images/ex_preview.jpg"/></div>
+      	<!-- <div class="img preview" style="overflow: hidden;width: 400px;height: 200px;"></div> -->
+      	<div class="img preview"></div>
       	<img src="images/bg_preview.jpg" class="bg" />
       </div>
   </div>

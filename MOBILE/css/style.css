@@ -1098,11 +1098,18 @@ body.bg_status{
 	top:39%;
 	text-align:center;
 	padding-left:1.5%;
+	left:2%; /* 개발쪽 변경*/
 }
 .wrap_pop.p_preview .inner_p_preview .img img{
 	width:100%;
 }
 
+
+.wrap_pop.p_preview .inner_p_preview .preview {
+	overflow: hidden;
+	width:400px;
+	height:200px;
+}
 
 
 

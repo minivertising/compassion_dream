@@ -217,9 +217,12 @@
         <span id="m_rs_ch_name3">기타</span>의 후원자를 찾아주세요
       </div>
       <div class="block_btn sns">
-        <a href="#" onclick="sns_share('fb','act');return false;"><img src="images/sns_f.png" /></a>
+        <!-- <a href="#" onclick="sns_share('fb','act');return false;"><img src="images/sns_f.png" /></a>
         <a href="#" onclick="sns_share('kt','act');return false;"><img src="images/sns_kt.png" /></a>
-        <a href="#" onclick="sns_share('ks','act');return false;"><img src="images/sns_ks.png" /></a>
+        <a href="#" onclick="sns_share('ks','act');return false;"><img src="images/sns_ks.png" /></a> -->
+        <a href="#" onclick="go_share('fb','act','matching_share_page');return false;"><img src="images/sns_f.png" /></a>
+        <a href="#" onclick="go_share('kt','act','matching_share_page');return false;"><img src="images/sns_kt.png" /></a>
+        <a href="#" onclick="go_share('ks','act','matching_share_page');return false;"><img src="images/sns_ks.png" /></a>
       </div>
       <div class="block_btn howtotag">
         <a href="#"  onclick="open_pop('exam_share_popup');return false;" class="clearfix">
@@ -228,7 +231,7 @@
         </a>
       </div>
       <div class="block_btn ok">
-        <a href="index.php"><img src="images/btn_ok.png" /></a>
+        <a href="#" onclick="go_main('matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
   </div>
@@ -255,9 +258,9 @@
         후원자를 만날 수 있도록 해주세요!
       </div>
       <div class="block_btn sns">
-        <a href="#" onclick="sns_share('fb','act');return false;"><img src="images/sns_f.png" /></a>
-        <a href="#" onclick="sns_share('kt','act');return false;"><img src="images/sns_kt.png" /></a>
-        <a href="#" onclick="sns_share('ks','act');return false;"><img src="images/sns_ks.png" /></a>
+        <a href="#" onclick="go_share('fb','act','re_matching_share_page');return false;"><img src="images/sns_f.png" /></a>
+        <a href="#" onclick="go_share('kt','act','re_matching_share_page');return false;"><img src="images/sns_kt.png" /></a>
+        <a href="#" onclick="go_share('ks','act','re_matching_share_page');return false;"><img src="images/sns_ks.png" /></a>
       </div>
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;" class="clearfix">
@@ -266,7 +269,7 @@
         </a>
       </div>
       <div class="block_btn ok">
-        <a href="index.php"><img src="images/btn_ok.png" /></a>
+        <a href="#" onclick="go_main('re_matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
   </div>
@@ -296,9 +299,9 @@
         <img src="images/bg_share_com.png" class="bg" />
       </div>
       <div class="block_btn sns">
-        <a href="#" onclick="sns_share('fb','act');return false;"><img src="images/sns_f.png" /></a>
-        <a href="#" onclick="sns_share('kt','act');return false;"><img src="images/sns_kt.png" /></a>
-        <a href="#" onclick="sns_share('ks','act');return false;"><img src="images/sns_ks.png" /></a>
+        <a href="#" onclick="go_share('fb','act','no_matching_page');return false;"><img src="images/sns_f.png" /></a>
+        <a href="#" onclick="go_share('kt','act','no_matching_page');return false;"><img src="images/sns_kt.png" /></a>
+        <a href="#" onclick="go_share('ks','act','no_matching_page');return false;"><img src="images/sns_ks.png" /></a>
       </div>
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;" class="clearfix">
@@ -307,35 +310,73 @@
         </a>
       </div>
       <div class="block_btn ok">
-        <a href="#"><img src="images/btn_ok.png" /></a>
+        <a href="#" onclick="go_main('no_matching_page');return false;"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
   </div>
 </div>
 <!-- ACTIVATOR 매칭 결과 페이지 (컴페션 소개 링크)-->
+
+<!-- 공유버튼 클릭시 나오는 예시 페이지 -->
+<div id="sns_exam_page" class="wrap_page sns_exam" style="display:none;">
+  <div class="inner">
+    <div class="block_content">
+      <div class="img"> 
+        <img src="images/sns_share.jpg" class="bg">
+      </div>
+      <div class="btn_block">
+        <a href="#" id="go_share_func"><img src="images/btn_keepgoing.png"></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 공유버튼 클릭시 나오는 예시 페이지 -->
+
+<!-- 공유 완료 페이지 -->
+<div id="thanks_page" class="wrap_page share_match_child" style="display:none">
+  <div class="inner">
+    <div class="block_content">
+      <div class="title">
+        참여해주셔서 감사합니다<br>
+        <span id="thx_ch_name">'아비가일 마아 야아 암퐁'</span>퐁이<br>
+        꿈을 꿀 수 있도록 끝까지 함께 응원해주세요
+      </div>
+      <div class="block_child re">
+        <div class="inner_block_child clearfix">
+          <div class="child_pic re"><img src="images/ex_child.png" id="thx_ch_img" /></div>
+        </div>
+      </div>
+      <div class="block_btn ok">
+        <a href="index.php"><img src="images/btn_ok.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 공유 완료 페이지 -->
+
+
 <?
 	include_once "./popup_div.php";
 ?>
 </body>
 </html>
 <script type="text/javascript">
-	var sel_dream       = null;
-	var runner_serial   = null;
-	var mb_job          = null;
-	var mb_image        = null;
-	var $ori_image = $('#ori_image');
-	var $inputImage = $('#inputImage')
-  var $preview = $('.preview');
-	var URL = window.URL || window.webkitURL;
-	//var realFath;
-	//var convertPath;
+	var sel_dream			= null;
+	var runner_serial		= null;
+	var mb_job				= null;
+	var mb_image			= null;
+	var $ori_image			= $('#ori_image');
+	var $inputImage		= $('#inputImage')
+	var $preview			= $('.preview');
+	var URL					= window.URL || window.webkitURL;
+	var flag_sel_dream	= 0;
+	var mb_rs				= null;
+	var chk_mb_flag		= 0;
+	var share_cnt			= 0;
 	var blobURL;
 	var file;
 	var files;
-	var flag_sel_dream  = 0;
-	var mb_rs       = null;
 	var inputImageCheck;
-	var chk_mb_flag = 0;
 
 	$(document).ready(function() {
 		Kakao.init('59df63251be6d99256b63b98f4948e89');
@@ -632,13 +673,13 @@ function input_submit()
 			});
 		},
 		success: function(response){
-				alert(response);
 				var rs_ch = response.split("||");
 				mb_rs = rs_ch[2];
 				if (rs_ch[0] == "Y")
 				{
 					// 아이가 새로 매칭될 경우
 					$("#matching_child_pic").attr("src",rs_ch[1]);
+					$("#thx_ch_img").attr("src",rs_ch[1]);
 			// $("#input_page").hide();
 					// $("#input_page").fadeOut('slow', function(){
 
@@ -650,6 +691,7 @@ function input_submit()
 					$("#m_rs_ch_name").html(rs_ch[3]);
 					$("#m_rs_ch_name2").html(rs_ch[3]);
 					$("#m_rs_ch_name3").html(rs_ch[3]);
+					$("#thx_ch_name").html("'"+rs_ch[3]+"'");
 					$("#m_rs_job").html(job_add_arr[0]);
 					$("#m_rs_job2").html(job_add_arr[1]);
 					$("#m_rs_nation").html(rs_ch[4]);
@@ -661,11 +703,13 @@ function input_submit()
 				}else if (rs_ch[0] == "C"){
 					// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
 					$("#matching_child_pic").attr("src",rs_ch[1]);
+					$("#thx_ch_img").attr("src",rs_ch[1]);
 					var job_add		= job_ko_add(sel_dream);
 					job_add_arr		= job_add.split("||");
 					$("#act_name").html(mb_name);
 					$("#re_ch_name").html("'"+rs_ch[3]+"'");
 					$("#re_ch_name2").html("'"+rs_ch[3]+"'");
+					$("#thx_ch_name").html("'"+rs_ch[3]+"'");
 					
 					$("#loading_div").fadeOut('fast', function(){
 						$("#re_matching_share_page").fadeIn('fast');

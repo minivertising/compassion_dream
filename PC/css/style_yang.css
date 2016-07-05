@@ -1044,10 +1044,10 @@ body.main{
 	background: url(../images/bg_preview.png) no-repeat top center;
 }
 .inner_p_preview {
-	width: 480px;
+	width: 500px;
 	height: 250px;
 	position: absolute;
-	left: 86px;
+	left: 87px;
 	top: 199px;
 }
 /*.p_preview .img{
@@ -1056,9 +1056,9 @@ body.main{
 }*/
 .preview {
 	overflow: hidden;
-	width: 478px; 
-	height: 235px;
-	margin: 0 auto;
+	width: 480px; 
+	height: 250px;
+	/*margin: 0 auto;*/
 /*  padding-top:198px;
   padding-left:89px;*/
 }
