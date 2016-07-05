@@ -954,19 +954,28 @@ body.bg_status{
 	width:100%;
 }
 .wrap_pop.p_howto_share .inner .navi{
-	padding-top:10px;
+	padding-top:20px;
 }
 .wrap_pop.p_howto_share .inner .navi a{
 	display:block;
 	float:left;
-	width:33%;
+	width:33.3333%;
 }
 .wrap_pop.p_howto_share .inner .navi a img{
 	width:100%;
 }
-.wrap_pop.p_howto_share .inner .howto_img{
-	width:99%;
+
+.wrap_pop.p_howto_share .txt_title{
+	padding:0 0 10px;
 	text-align:center;
+	font-size:13px;
+	font-weight:bold;
+}
+
+.wrap_pop.p_howto_share .inner .howto_img{
+	width:100%;
+	text-align:center;
+	padding-bottom:10px;
 }
 
 .wrap_pop.p_howto_share .inner .howto_img img{
