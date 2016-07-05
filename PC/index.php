@@ -414,6 +414,8 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 	var mb_rs       = null;
 	var inputImageCheck;
 	var chk_mb_flag = 0;
+	var share_cnt			= 0;
+
 	$(document).ready(function() {
 		Kakao.init('59df63251be6d99256b63b98f4948e89');
 		$("#cboxTopLeft").hide();
