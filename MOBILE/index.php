@@ -198,7 +198,7 @@
     </div>
 <!-- 개인정보 입력 페이지 -->
 
-<!-- ACTIVATOR 매칭 결과 페이지 --> <!-- 임시 추가 -->
+<!-- ACTIVATOR 매칭 결과 페이지 -->
     <div id="matching_share_page" class="wrap_page share_match_child" style="display:none;">
     	<div class="inner">
             <div class="block_content">
