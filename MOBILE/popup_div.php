@@ -75,18 +75,15 @@
 </div>
   <!--직업선택팝업--> 
 
-
-
   <!--사진 미리보기 팝업-->
-  <div id="preview_popup" class="popup_wrap" style="background:white; width:100%; height:100%;">
-    <a href="#" onclick="$.colorbox.close();return false;">닫기</a>
-    <h2>사진 미리보기</h2>
-    <div class="preview" style="overflow: hidden;width: 400px;height: 200px ;">
-    </div>
-    <a href="#" onclick="$.colorbox.close();return false;">확인</a>
+  <div id="preview_popup" class="wrap_pop p_preview"> 
+      <div class="btn_close" style="z-index:99999"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/popup/btn_close.png" /></a></div>
+      <div class="inner_p_preview">
+      	<div class="img preview" style="overflow: hidden;width: 400px;height: 200px;"><img src="images/ex_preview.jpg"/></div>
+      	<img src="images/bg_preview.jpg" class="bg" />
+      </div>
   </div>
   <!--END : 사진 미리보기 팝업-->
-
 
   <!--개인정보 입력(이름, 전화번호) 팝업-->
   <div id="input_popup" class="popup_wrap" style="background:white;">
@@ -140,5 +137,49 @@
     약관 내용
   </div>
   <!--END : 약관 팝업-->
+
+  <!-- 유의사항 팝업-->
+    <div id="notice_popup" class="wrap_pop howto_notice">
+    	<div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/popup/btn_close.png" /></a></div>
+        <div class="navi">
+        	<div class="inner_navi clearfix">
+        		<a href="#" onclick="open_pop('use_popup');return false;"><img src="images/navi_howto.png" /></a>
+            	<a href="#" onclick="open_pop('notice_popup');return false;"><img src="images/navi_notice_on.png" /></a>
+            </div>
+        </div>
+        <div class="img">
+        	<ul>
+            	<li>업로드해주신 사진은 이벤트의 목적 적합성에 따라 임의로 삭제 될 수 있습니다.</li>
+                <li>이벤트 참여는 7월 6일부터 7월 31일까지 가능합니다.</li>
+                <li>잘못된 개인 정보로 인한 불이익은 한국컴패션에서 책임지지 않습니다.</li>
+                <li>
+                	본 캠페인은 미니버타이징(주)에서 대행하고 있으며, 이벤트 관련 문의사항은 전화(02-532-2475) 또는 이메일<span>(bk.park@minivertising.kr)</span>로 연락 주시기 바랍니다.<br>
+                    (평일 오전 10:00~ 오후 6시, 주말은 불가)
+                </li>
+                <li>비전트립 일정은 한국컴패션 비전트립 일정에 맞춰서 진행되며 양도는 불가합니다.</li>
+                <li>비전트립 당첨자는 공유해주신 링크로 결연을 이뤄주신 참여자들을 대상으로 추첨을 통해 선정됩니다.</li>
+                <li>당첨자 발표는 8월 中에 개별적으로 연락드릴 예정입니다.</li>
+                <li>
+                	공유해주신 1대1 매칭된 어린이 링크로 3일간 활동이 없으실 경우, 해당 어린이의 링크가 다른 참여자들에게 오픈됩니다. 어린이의 꿈을 위해 이 점 양해 부탁드립니다. 
+				</li>
+            </ul>
+        </div>
+    </div>
+  <!-- 유의사항 팝업-->
+
+  <!-- 참여방법 팝업-->
+    <div id="use_popup" class="wrap_pop howto_notice">
+    	<div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/popup/btn_close.png" /></a></div>
+        <div class="navi">
+        	<div class="inner_navi clearfix">
+        		<a href="#" onclick="open_pop('use_popup');return false;"><img src="images/navi_howto_on.png" /></a>
+            	<a href="#" onclick="open_pop('notice_popup');return false;"><img src="images/navi_notice.png" /></a>
+            </div>
+        </div>
+        <div class="img step">
+        	<img src="images/img_step.png" class="bg"/>
+        </div>
+    </div> 
+  <!-- 참여방법 팝업-->
 
 </div>

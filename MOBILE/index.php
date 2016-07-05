@@ -1,5 +1,11 @@
 <?
 	include_once "./header.php";
+
+	$total_runner_cnt   = total_runner_info();
+	$total_pic_cnt      = total_pic_info();
+	//$total_matching_cnt = total_matching_info();
+	$total_matching_cnt		= 1000;
+	$total_remain_cnt			= 3000 - $total_matching_cnt;
 ?>
 <body>
 <script>
@@ -33,102 +39,163 @@
     </div>
   </div>
 </div>
-<div id="contents_div">
-  <a href="#" onclick="show_dream_sel();return false;">지금 참여하기</a>
-</div>
-
-<div id="upload_page" class="wrap_page sub upload" style="display:none;">
-  <div class="inner">
-    <div class="block_content">
-      <!--
-      // follower 일때는 주석 내용 표시
-      <div class="title">
-        <span>기타</span>에게 어떤 꿈을<br>
-        이어주실건가요?
-      </div>
-      <div class="sub_title">
-      당신의 어린 시절 꿈꾸던 직업과 사진을 올려주세요
-      </div>
-      -->
-      <!-- activator 일때는 아래의 내용 표시-->
-      <div class="title">
-        <span class="small">당신의 어린시절 사진과 꿈을 올려주시면</span><br>
-        '같은 꿈을 꾸고픈 어린이'가<br>
-        당신 지인에게 소개됩니다
-      </div>
-      <div class="block_input_dream">
-        <div class="selec_job clearfix">
-          <div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div>
-          <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="60" id="sel_job_btn"/></a></div><!--버튼 두개입니다-->
-        </div>
-        <div class="upload_pic">
-          <div class="title_pic">
-          2. 사진업로드
-          </div>
-          <div class="desc">
-            <div class="txt_pic">
-            * 1개의 이미지 파일을 등록할 수 있습니다
+<!-- index 메인 페이지 -->
+	<div id="contents_div" class="wrap_page main_page">
+    	<div class="wrap_top_bg">
+            <div class="quick">
+                <a href="http://www.compassion.or.kr" target="_blank"><img src="images/quick.png" /></a>
             </div>
-            <div class="btns">
+            <div class="main_top clearfix">
+                <div class="logo"><a href="index.php"><img src="images/logo_main.png" /></a></div>
+                <div class="btn_how"><a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_howto.png" /></a></div>
+            </div>	
+            <div class="main_block">
+                <div class="title">
+                    <img src="images/title_main.png" />
+                </div>
+                <div class="btn_block main">
+                    <a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_apply_main.png" /></a>
+                </div>
+            
+                <div class="img_child">
+                    <img src="images/img_main_child.png" />
+                </div>
+            </div>
+            <div class="main_num">
+                <div class="num"><?=number_format($total_matching_cnt)?></div>
+                <img src="images/bg_main_num.png" />
+            </div>    
+        </div>
+        
+        <div class="people_list">
+        	<div class="inner_people_list clearfix">
+            	<div class="one"><img src="images/ex_list.png" /></div>
+                <div class="one"><img src="images/ex_list.png" /></div>
+                <div class="one"><img src="images/ex_list.png" /></div>
+            </div>
+        	
+        </div>
+        
+        <div class="sec_movie">
+        	<div class="title_movie"><img src="images/title_movie.png" /></div>
+            <div class="youtube"><iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe></div>
+            <div class="btn_movie_block">
+            	<a href="#" class="apply" onclick="show_dream_sel();return false;"><img src="images/btn_apply_movie.png" /></a>
+                <a href="#" class="howto" onclick="open_pop('use_popup');return false;"><img src="images/btn_howto_movie.png" /></a>
+                <img src="images/bg_sec_movie.jpg" class="bg" />
+            </div>
+        </div>
+        
+        <div class="sec_child_num">
+        	<div class="bg_bar">
+            	<div class="inner_bg_bar">
+                	<div class="txt_num">결연된 어린이 <?=number_format($total_matching_cnt)?>명 </div>
+                	<div class="icon"><img src="images/icon_head.png" width="35" /></div>
+                	<div class="bar"></div>
+                </div>
+            </div>
+            <div class="num">
+<?=number_format($total_remain_cnt)?>
+            </div>
+        	 <img src="images/bg_num_child.jpg" class="bg" />
+        </div>
+        
+        <div class="sec_com">
+        	<a href="http://www.compassion.or.kr" target="_blank"><img src="images/btn_go_com.png" /></a>
+        	<img src="images/bg_com.jpg" class="bg" />
+        </div>
+    </div>
+<!-- index 메인 페이지 -->
+
+<!-- 사진 업로드 페이지 -->
+    <div id="upload_page" class="wrap_page sub upload" style="display:none;">
+    	<div class="inner">
+            <div class="block_content">
+                <div class="title">
+                	<span class="small">당신의 어린시절 사진과 꿈을 올려주시면</span><br>
+					'같은 꿈을 꾸고픈 어린이'가<br>
+					당신 지인에게 소개됩니다
+                </div>
+                
+                <div class="block_input_dream">
+                	<div class="selec_job clearfix">
+                    	<div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div>
+                        <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="60" id="sel_job_btn" /></a></div><!--버튼 두개입니다-->
+                    </div>
+                    <div class="upload_pic">
+                    	<div class="title_pic">
+                        	2. 사진업로드
+                        </div>
+                        <div class="desc">
+                        	<div class="txt_pic">
+                            	* 1개의 이미지 파일을 등록할 수 있습니다
+                            </div>
+                        	<div class="btns">
               <label for="inputImage" title="Upload image file">
                 <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
                 <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
               </label>
+
+
               <a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a>
-            </div>
-          </div>
-          <div id="img_div" class="pic_area">
+                            </div>
+                        </div>
+                        <div id="img_div" class="pic_area">
             <img id="ori_image" src="./images/picture.jpg" alt="Picture" />
-          </div>
-          <div class="btn_closeup">
-            <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" width="80" /></a>
-            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" width="80" /></a>
-          </div>
+                        </div>
+                        <div class="btn_closeup">
+                        	<a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" width="80" /></a>
+                            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" width="80" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="block_btn upload">
+                	<a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
+                </div>
+            </div>
+            
         </div>
-      </div>
-      <div class="block_btn upload">
-        <a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
-      </div>
     </div>
-  </div>
-</div>
+<!-- 사진 업로드 페이지 -->
 
 <!-- 개인정보 입력 페이지 -->
-<div id="input_page" class="wrap_page sub input_data" style="display:none">
-  <div class="inner">
-    <div class="block_content">
-      <div class="title">
-      참여하신 분 중 추첨을 통해<br>
-      컴패션 현지 센터를 방문할 수 있는<br>
-      기회를 드립니다
-      </div>
-      <div class="sub_title">
-      참여자 정보
-      </div>
-      <div class="block_input">
-        <div class="input_one clearfix">
-          <div class="label">이름</div>
-          <div class="input"><input type="text" id="mb_name"></div>
-        </div>
-        <div class="input_one clearfix">
-          <div class="label">휴대폰번호</div>
-          <div class="input"><input type="tel" id="mb_phone" placeholder="휴대폰번호 ('-' 없이 입력해주세요)" onkeyup="only_num(this);return false;"></div>
-        </div>
-        <div class="check clearfix">
+    <div id="input_page" class="wrap_page sub input_data" style="display:none">
+    	<div class="inner">
+            <div class="block_content">
+            	<div class="title">
+					참여하신 분 중 추첨을 통해<br>
+					컴패션 현지 센터를 방문할 수 있는<br>
+					기회를 드립니다
+                </div>
+                <div class="block_input">
+                	
+                    <div class="sub_title">
+                        참여자 정보
+                    </div>
+                    <div class="input_one clearfix">
+                    	<div class="label">이름</div>
+                        <div class="input"><input type="text" id="mb_name"></div>
+                    </div>
+                	<div class="input_one clearfix">
+                    	<div class="label">휴대폰번호</div>
+                        <div class="input"><input type="tel" id="mb_phone" placeholder="휴대폰번호 ('-' 없이 입력해주세요)" onkeyup="only_num(this);return false;"></div>
+                    </div>
+                    <div class="check clearfix">
           <a href="#" class="box" onclick="mb_check();return false;"><img src="images/check.png" name="mb_agree" id="mb_agree" /></a>
           <a href="#" class="txt">개인정보 수집 및 위탁에 관한 동의</a>
           <a href="#" class="bt" onclick="open_pop('agree_popup');return false;"><img src="images/btn_detail.png" /></a>
+                    </div>
+                </div>
+                <div class="sub_title add">
+                	추첨에 선정 되신 분께는 개별 연락 드립니다
+                </div>
+                <div class="block_btn">
+                	<a href="#" onclick="input_submit();return false;"><img src="images/btn_next.png" /></a>
+                </div>
+            </div>
+            
         </div>
-      </div>
-      <div class="sub_title add">
-      추첨에 선정 되신 분께는 개별 연락 드립니다
-      </div>
-      <div class="block_btn">
-        <a href="#" onclick="input_submit();return false;"><img src="images/btn_next.png" /></a>
-      </div>
     </div>
-  </div>
-</div>
 <!-- 개인정보 입력 페이지 -->
 
 <!-- ACTIVATOR 매칭 결과 페이지 --> <!-- 임시 추가 -->
@@ -197,16 +264,31 @@
 	var inputImageCheck;
 	var chk_mb_flag = 0;
 
-    $(document).ready(function() {
-        Kakao.init('59df63251be6d99256b63b98f4948e89');
-        $("#cboxTopLeft").hide();
-        $("#cboxTopRight").hide();
-        $("#cboxBottomLeft").hide();
-        $("#cboxBottomRight").hide();
-        $("#cboxMiddleLeft").hide();
-        $("#cboxMiddleRight").hide();
-        $("#cboxTopCenter").hide();
-        $("#cboxBottomCenter").hide();
+	$(document).ready(function() {
+		Kakao.init('59df63251be6d99256b63b98f4948e89');
+		$("#cboxTopLeft").hide();
+		$("#cboxTopRight").hide();
+		$("#cboxBottomLeft").hide();
+		$("#cboxBottomRight").hide();
+		$("#cboxMiddleLeft").hide();
+		$("#cboxMiddleRight").hide();
+		$("#cboxTopCenter").hide();
+		$("#cboxBottomCenter").hide();
+
+		// 유튜브 영상 크기 제어
+		var yt_width = $(".youtube").width();
+		var yt_height = (yt_width / 16) * 9;
+		$("#ytplayer").width(yt_width);
+		$("#ytplayer").height(yt_height);
+		$(".youtube").height(yt_height);
+
+		// gage 스타일 적용
+		var gage_w	= (<?=$total_matching_cnt?>/3000)*100;
+		$(".bar").css("width",gage_w+"%");
+		$(".icon").css("left",gage_w+"%");
+		Ins_tracking();
+
+
 
 		Ins_tracking();
     });
