@@ -158,17 +158,16 @@
 <div id="upload_page" class="wrap_page sub upload" style="display:none;">
   <div class="inner">
     <div class="block_content">
-      <div class="title">
-        <span><?=$ch_data['ch_nick']?></span>에게 어떤 꿈을<br>
-        이어주실건가요?
-      </div>
-      <div class="sub_title">
-      당신의 어린 시절 꿈꾸던 직업과 사진을 올려주세요
+      <div class="title follower">
+        여러분의 어린 시절의 꿈과 사진을 올려주세요<br>
+        SNS에 사진과 함께 당신이 응원할<br>
+        꿈을 잃은 어린이<br>
+        <span class="name">‘<?=$ch_data['ch_nick']?>’</span>이 소개됩니다
       </div>
       <div class="block_input_dream">
         <div class="selec_job clearfix">
           <div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div>
-          <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="60" id="sel_job_btn"/></a></div><!--버튼 두개입니다-->
+          <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="60" id="sel_job_btn" /></a></div><!--버튼 두개입니다-->
         </div>
         <div class="upload_pic">
           <div class="title_pic">
