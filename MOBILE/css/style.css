@@ -535,30 +535,35 @@ body.bg_status{
 	background:url(../images/bg_title.jpg) top center;
 	background-size:cover;
 	text-align:center;
-	padding:30px 0;
-	font-size:20px;
-	line-height:28px;
+	padding:20px 0;
+	font-size:18px;
+	line-height:24px;
 }
 .wrap_page.input_data .block_content .sub_title{
 	color:#076d8c;
 	font-size:15px;
-	padding:10px 0;
+	padding:0 0 15px;
 	text-align:center;
 	font-weight:bold;
+	border-bottom:1px solid #b0bcc9;
+	margin-bottom:15px;
 }
 .wrap_page.input_data .block_content .sub_title.add{
 	color:#333;
 	font-size:13px;
-	padding:10px 0;
+	padding:10px 0 0;
+	margin-bottom:0;
 	text-align:center;
 	font-weight:normal;
+	border:none;
 }
 .wrap_page.input_data .block_input{
 	width:76%;
-	padding:10%;
+	padding:6% 10%;
 	padding-bottom:6%;
 	margin:0 2%;
 	background:#eaf4ff;
+	margin-top:10px;
 }
 .wrap_page.input_data .block_input .input_one{
 	width:100%;
@@ -573,6 +578,7 @@ body.bg_status{
 	width:30%;
 	padding-top:3px;
 	color:#333;
+	font-size:13px;
 }
 .wrap_page.input_data .block_input .input_one .input{
 	width:68%;
@@ -587,9 +593,9 @@ body.bg_status{
 	font-size:13px;
 }
 .wrap_page.input_data .block_input .check{
-	border-top:1px solid #91a0af;
-	padding-top:20px;
-	margin-top:20px;
+	border-top:1px solid #b0bcc9;
+	padding-top:15px;
+	margin-top:15px;
 	width:100%;
 }
 .wrap_page.input_data .block_input .check a{
@@ -597,13 +603,14 @@ body.bg_status{
 	font-size:12px;
 	letter-spacing:-1px;
 	text-decoration:none;
-	line-height:18px;
+	line-height:16px;
 	display:block;
 	float:left;
 }
 .wrap_page.input_data .block_input .check a.bt{
 	padding-left:5px;
 	width:46px;
+	line-height: 18px;
 }
 .wrap_page.input_data .block_input .check a.box{
 	width:20px;
