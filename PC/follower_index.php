@@ -237,7 +237,7 @@
         <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
       </div>
       <div class="btn_block" style="margin-top:15px;">
-        <a href="#" onclick="go_main('matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
+        <a href="#" onclick="go_main('f_share_page');return false;"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
   </div>
@@ -314,7 +314,7 @@
 <!-- 공유 완료 페이지 -->
 
 <?
-        include_once "./popup_div.php";
+	include_once "./popup_div.php";
 ?>
 </body>
 </html>
