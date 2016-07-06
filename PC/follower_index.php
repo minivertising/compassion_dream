@@ -229,9 +229,9 @@
         <p>SNS에 공유하셔서 <span id="m_rs_ch_name3">기타</span><span id="name3PP">가</span> 후원자를 만날 수 있도록 해주세요!</p>
       </div> -->
       <div class="block_btn sns">
-        <a href="#" onclick="go_share('fb','act','matching_share_page');return false;"><img src="images/sns_f.png" /></a>
+        <a href="#" onclick="go_share('fb','fol','f_share_page');return false;"><img src="images/sns_f.png" /></a>
         <!-- <a href="#" onclick="sns_share('kt','act');"><img src="images/sns_kt.png" /></a> -->
-        <a href="#" onclick="go_share('ks','act','matching_share_page');return false;"><img src="images/sns_ks.png" /></a>
+        <a href="#" onclick="go_share('ks','fol','f_share_page');return false;"><img src="images/sns_ks.png" /></a>
       </div>
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
