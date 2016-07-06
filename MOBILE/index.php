@@ -161,6 +161,7 @@
 	var file;
 	var files;
 	var inputImageCheck;
+	var s_ugu	= null;
 	$(document).ready(function() {
 		Kakao.init('59df63251be6d99256b63b98f4948e89');
 		$("#cboxTopLeft").hide();
@@ -183,6 +184,7 @@
 		$(".icon").css("left",gage_w+"%");
 		// 미리보기 제어
 		$(".preview").width($(document).width()*0.9);
+		s_ugu	= '<?=$ugu?>';
 
 		$('.inner_people_list').bxSlider({
 			ticker: true,
