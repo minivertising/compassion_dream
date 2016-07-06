@@ -357,7 +357,7 @@ $(document).ready(function() {
 	Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
 	// 미리보기 제어
 	$(".preview").width($(document).width()*0.9);
-	s_ugu	= '<?=$ugu?>';
+	s_ugu	= 'fol';
 });
 
 function image_crop(){

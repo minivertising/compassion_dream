@@ -355,7 +355,6 @@ function sns_share(media, flag, page)
 	}else if (media == "kt"){
 		// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
 		//Kakao.Link.createTalkLinkButton({
-		alert(s_ugu);
 		$.ajax({
 			type:"POST",
 			data:{
@@ -365,7 +364,6 @@ function sns_share(media, flag, page)
 			},
 			url: "../main_exec.php",
 			success: function(response){
-				alert(response);
 				var img_url	= response;
 
 				Kakao.Link.sendTalkLink({

@@ -184,7 +184,7 @@
 		$(".icon").css("left",gage_w+"%");
 		// 미리보기 제어
 		$(".preview").width($(document).width()*0.9);
-		s_ugu	= '<?=$ugu?>';
+		s_ugu	= 'act';
 
 		$('.inner_people_list').bxSlider({
 			ticker: true,
