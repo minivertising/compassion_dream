@@ -205,8 +205,9 @@
   <div class="inner">
     <div class="block_content">
       <div class="title">
-        당신의 도움이 필요한 어린이는<br>
-        '<span id="m_rs_ch_name"><?=$ch_data['ch_nick']?></span>'입니다
+        아래 SNS에 어린 시절 사진을 공유하여<br>
+        <span style="color:#E9DE51"><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 후원자를<br>
+        만날 수 있도록 해주세요!
       </div>
       <div class="block_child">
         <div class="inner_block_child clearfix">
