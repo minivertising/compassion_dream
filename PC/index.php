@@ -253,7 +253,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic" /></div>
           <div class="child_text">
-            <h2>저도 <span id="m_rs_job">선생님</span><span id="jobPP">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
+            <h2>저도 <span id="m_rs_job">운동선수</span><span id="jobPP">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
             <p id="m_rs_desc">
             </p>
           </div>
@@ -449,7 +449,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 		});
 	  
 	
-		});
+	});
 
 function image_crop(){
 	$($ori_image).cropper({
