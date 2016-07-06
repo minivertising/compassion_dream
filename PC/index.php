@@ -275,42 +275,42 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
       </div>
+      <div class="btn_block">
+        <a href="#" onclick="go_main('matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
+      </div>
     </div>
   </div>
 </div>
 <!-- ACTIVATOR 매칭 결과 페이지 -->
 
 <!-- ACTIVATOR 매칭 결과 페이지 (이미참여 결연X)-->
-<div id="re_matching_share_page" class="wrap_sec_top_sub match_child" style="display:none;">
+<div id="re_matching_share_page" class="wrap_sec_top_sub match_child">
   <div class="inner">
-    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
-    <div class="block_content">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content follower">
       <div class="title">
-	  당신의 도움이 필요한 어린이는<br> <span id="m_rs_ch_name">기타</span> 입니다
+        미니버님!<br> 
+        <span id="re_ch_name">아비가일 마아 야아 암퐁</span>을 위해<br>
+        다시 한번 참여해주셔서 감사합니다 
       </div>
       <div class="block_child">
-        <!-- <div class="img_letter"><img src="images/img_letter.png" /></div> -->
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="images/ex_child.png" id="re_matching_child_pic" /></div>
-          <div class="child_text">
-            <h2>저도 <span id="re_m_rs_job">선생님</span><span id="re_jobPP">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
-            <p>
-            상세설명 넣기!
-
-            </p>
-          </div>
         </div>
       </div>
       <div class="block_txt">
-        <p>SNS에 공유하셔서 <span id="re_m_rs_ch_name3">기타</span><span id="re_name3PP">이</span> 후원자를 만날 수 있도록 해주세요!</p><!-- ~이 ~가 -->
+        <p>아래 SNS에 당신의 어린 시절 사진과 꿈을 공유하셔서</p>
+        <p><span  id="re_ch_name2">아비가일 마아 야아 암퐁</span>이 후원자를 만날 수 있도록 해주세요!</p>
       </div>
       <div class="block_btn sns">
         <a href="#" onclick="go_share('fb','act','re_matching_share_page');return false;"><img src="images/sns_f.png" /></a>
-        <!-- <a href="#" onclick="sns_share('kt','act');"><img src="images/sns_kt.png" /></a> -->
         <a href="#" onclick="go_share('ks','act','re_matching_share_page');return false;"><img src="images/sns_ks.png" /></a>
       </div>
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
+      </div>
+      <div class="btn_block">
+        <a href="#" onclick="go_main('re_matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
   </div>
@@ -345,6 +345,9 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       </div>
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
+      </div>
+      <div class="btn_block">
+        <a href="#" onclick="go_main('no_matching_page');return false;"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
   </div>
