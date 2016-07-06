@@ -168,7 +168,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
                 </div>
                 <div class="block_input_dream">
                 	<div class="selec_job">
-                    	<span id="sel_job_txt">1. 꿈꾸던 직업 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_re_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
+                    	<span id="sel_job_txt">1. 꿈꾸던 직업 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
                     </div>
                     <div class="upload_pic">
                     	<div class="title_pic">
