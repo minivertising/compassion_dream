@@ -324,7 +324,8 @@ function dream_next()
 				mb_rs       = rs_ch[2];
 				setTimeout(function(){
 					$("#loading_div").fadeOut('slow', function(){
-							$("#no_matching_page").fadeIn('slow');
+						$("body").removeClass("bg_sub_page bg_loading");
+						$("#no_matching_page").fadeIn('slow');
 					});
 				},1500);
 			}else {

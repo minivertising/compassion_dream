@@ -172,7 +172,8 @@
   <div class="inner">
     <div class="block_content">
       <div class="title compassion">
-      컴패션에는 당신의 어린 시절처럼<br>
+      컴패션에서는<br>
+      당신의 어린 시절처럼<br>
       꿈 많고 귀여운 어린이들이 있습니다
       </div>
       <div class="sub_txt">
