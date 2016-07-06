@@ -867,7 +867,7 @@ function dream_next(){
 
 						//$("#m_rs_nation").html(rs_ch[4]);
 						// $("#matching_share_page").show();
-						$("#matching_share_page").fadeIn('fast');
+						$("#re_matching_share_page").fadeIn('fast');
 					});
 				}else{
 					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
