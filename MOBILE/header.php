@@ -24,7 +24,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=yes,initial-scale=1.0, maximum-scale=1.0"/>
 <meta property="fb:app_id" content="649187078561789" />
-<meta property="og:title" content="나의 어릴적 꿈을 소개합니다" />
+<meta property="og:title" content="내꿈꿔 릴레이" />
 <meta property="og:type" content="website" />
 <?
 	if (isset($rs))
@@ -41,7 +41,7 @@
 <?
 	}
 ?>
-<meta property="og:description" content="Compassion BLUE BATON CHALLENGE" />
+<meta property="og:description" content="내 어린 시절 꿈과 사진으로 꿈이 필요한 어린이에게 후원자를 찾아주는 컴패션의 릴레이 캠페인입니다" />
 <link rel="shortcut icon" type="image/x-icon" href="./images/compassion.ico" />
 <title>모바일 메인</title>
 <!--[if lt IE 9]><script src="./js/html5shiv.js"></script><![endif]-->

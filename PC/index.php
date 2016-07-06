@@ -32,7 +32,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       <div class="img_load">
       <!-- 꿈이 필요한 어린이 '베리'를 응원중입니다<br>
       잠시만 기다려 주세요 --> 
-      꿈이 필요한 어린이와 매칭중입니다<br>
+      당신이 응원할 '꿈을 잃은 어린이'를 찾는 중이에요<br>
       잠시만 기다려 주세요
       </div>
     </div>
@@ -182,7 +182,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
               <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
                 <label for="inputImage" title="Upload image file">
                   <span title="Import image" style="position: relative; overflow: hidden;">
-                    <input type="file" id="inputImage" class="fileUp" name="file">
+                    <input type="file" id="inputImage" class="fileUp" name="file" style="cursor:pointer;">
                     <img src="images/btn_select_pic.png" style="cursor:pointer;"/>
                   </span>
                 </label>
@@ -260,7 +260,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
         </div>
       </div>
       <div class="block_txt">
-        <p>SNS에 공유하셔서 <span id="m_rs_ch_name3">기타</span><span id="name3PP">이</span> 후원자를 만날 수 있도록 해주세요!</p><!-- ~이 ~가 -->
+        <p>SNS에 공유하셔서 <span id="m_rs_ch_name3">기타</span><span id="name3PP">가</span> 후원자를 만날 수 있도록 해주세요!</p><!-- ~이 ~가 -->
       </div>
       <div class="block_btn sns">
         <a href="#" onclick="go_share('fb','act','matching_share_page');return false;"><img src="images/sns_f.png" /></a>
@@ -370,10 +370,10 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <div id="thanks_page" style="display:none" class="wrap_sec_top_sub match_child">
   <div class="inner">
     <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
-    <div class="block_content follower">
+    <div class="block_content follower" style="margin-top:35px;">
       <div class="title">
       참여해주셔서 감사합니다!<br>
-      <span id="thx_ch_name">아비가일 마아 야아 암퐁</span><span id="thx_namePP">가</span> 꿈을 꿀 수 있도록<br>  <!-- ~이 ~가 -->
+      <span id="thx_ch_name">아비가일 마아 야아 암퐁</span><span id="thx_namePP" style="color:#fff">가</span> 꿈을 꿀 수 있도록<br>  <!-- ~이 ~가 -->
       끝까지 함께 응원해주세요
       </div>
       <div class="block_child">
@@ -496,7 +496,7 @@ function image_crop(){
 		restore: true,
 		guides: false,
 		highlight: true,
-		background: true,
+		background: false,
 		cropBoxMovable: true,
 		cropBoxResizable: true,
 		preview: '.preview',
@@ -854,7 +854,7 @@ function dream_next(){
 							//받침 O
 							//$("#name2PP").html("이에요");
 							$("#name3PP").html("이");
-              $("#thx_namePP").html("이");
+							$("#thx_namePP").html("이");
 						}
 						
 						$("#m_rs_job").html(job_lang_kor);

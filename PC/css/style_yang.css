@@ -380,6 +380,7 @@ body.main{
 	background:#fff;
 	margin:0 auto 0;
 	border-radius:20px; border:0px red solid;
+	margin-top:35px;
 }
 .wrap_sec_top_sub.input_data .block_content{
 	background:url(../images/bg_input_data.png) center top no-repeat;
