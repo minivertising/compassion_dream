@@ -32,7 +32,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       <div class="img_load">
       <!-- 꿈이 필요한 어린이 '베리'를 응원중입니다<br>
       잠시만 기다려 주세요 --> 
-      꿈이 필요한 어린이와 매칭중입니다<br>
+      당신이 응원할 '꿈을 잃은 어린이'를 찾는 중이에요<br>
       잠시만 기다려 주세요
       </div>
     </div>
@@ -168,7 +168,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
                 </div>
                 <div class="block_input_dream">
                 	<div class="selec_job">
-                    	<span id="sel_job_txt">1. 꿈꾸던 직업 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
+                    	<span id="sel_job_txt">1. 내 어린 시절의 꿈 선택 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
                     </div>
                     <div class="upload_pic">
                     	<div class="title_pic">
@@ -370,10 +370,10 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <div id="thanks_page" style="display:none" class="wrap_sec_top_sub match_child">
   <div class="inner">
     <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
-    <div class="block_content follower">
+    <div class="block_content follower" style="margin-top:35px;">
       <div class="title">
       참여해주셔서 감사합니다!<br>
-      <span id="thx_ch_name">아비가일 마아 야아 암퐁</span><span id="thx_namePP">가</span> 꿈을 꿀 수 있도록<br>  <!-- ~이 ~가 -->
+      <span id="thx_ch_name">아비가일 마아 야아 암퐁</span><span id="thx_namePP" style="color:#fff">가</span> 꿈을 꿀 수 있도록<br>  <!-- ~이 ~가 -->
       끝까지 함께 응원해주세요
       </div>
       <div class="block_child">
@@ -450,41 +450,6 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 	  
 	
 		});
-	/*
-		var $inputImage = $('#inputImage');
-		var URL = window.URL || window.webkitURL;
-		var blobURL;
-
-			if (URL) {
-				$inputImage.change(function () {
-					var files = this.files;
-					var file;
-
-					if (!$ori_image.data('cropper')) {
-						return;
-					}
-
-					if (files && files.length) {
-						file = files[0];
-
-						if (/^image\/\w+$/.test(file.type)) {
-							blobURL = URL.createObjectURL(file);
-							$ori_image.one('built.cropper', function () {
-								// Revoke when load complete
-								URL.revokeObjectURL(blobURL);
-							}).cropper('reset').cropper('replace', blobURL);
-							$inputImage.val('');
-						} else {
-							window.alert('Please choose an image file.');
-						}
-					}
-				});
-			} else {
-				$inputImage.prop('disabled', true).parent().addClass('disabled');
-			}
-			*/
-
-
 
 function image_crop(){
 	$($ori_image).cropper({
@@ -496,37 +461,15 @@ function image_crop(){
 		restore: true,
 		guides: false,
 		highlight: true,
-		background: true,
+		background: false,
 		cropBoxMovable: true,
 		cropBoxResizable: true,
 		preview: '.preview',
 		center:true,
 		zoomOnWheel:false,
 		toggleDragModeOnDblclick:false,
-		// build: function (e) {
-		//     console.log(e.type);
-		// },
-		// built: function (e) {
-		//     console.log(e.type);
-		// },
-		// cropstart: function (e) {
-		//     console.log(e.type, e.action);
-		// },
-		// cropper: function (e) {
-		//     console.log(e.type, e.action);
-		// },
-		// cropend: function (e) {
-		//     console.log(e.type, e.action);
-		// },
-		// crop: function (e) {
-		//     console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
-		// },
-		// zoom: function (e) {
-		//     console.log(e.type, e.ratio);
-		// }
 	});
 }
-// });
 
 function zoom_action(type){
 	if(type=="up")
@@ -544,50 +487,20 @@ function readURL(input, browser) {
 		if (/^image\/\w+$/.test(file.type)) {
 			blobURL = URL.createObjectURL(file);
 			$ori_image.one('built.cropper', function () {
-							// Revoke when load complete
-							URL.revokeObjectURL(blobURL);
-						}).cropper('reset').cropper('replace', blobURL);
+				URL.revokeObjectURL(blobURL);
+			}).cropper('reset').cropper('replace', blobURL);
 			$($inputImage).val('');
 		} else {
 			window.alert("이미지를 선택해주세요.");
-					// }
-					// var reader = new FileReader();
-					// reader.onload = function (e) {
-					//     alert("onload");
-					//     $($ori_image).attr('src', e.target.result);
-					//     image_crop();
 		}
-					// realFath = input.files[0].name;
-					// reader.readAsDataURL(input.files[0]);
 	}else if(browser == "I"){
 		$($ori_image).cropper('destroy');
 		$('#ie_img_save').ajaxSubmit({
 			success: function (data) {
-				// console.dir(data);
 				$($ori_image).attr('src', data);
 				image_crop();
 			}
 		});
-			// $('#ie_img_save').ajaxForm({
-			//     success: function (data) {
-			//         console.dir(data);
-			//     }
-			// });
-			//이미지 저장후에 불러와서 $ori_image src 변경
-			// console.log(realFath);
-			// $.ajax({
-			//  method: 'POST',
-			//  url: 'ie_photo_upload.php',
-			//  data: {ieImageSrc: realFath},
-			//  success: function(res){
-			//      // convertPath = res;
-			//      alert(res);
-			//      // console.log("저장 후:"+convertPath);
-			//   // // alert(convertPath);
-			//   // $($ori_image).attr('src', convertPath);
-			//   // image_crop();
-			//  }
-			// });
 	}
 }
 
@@ -630,14 +543,11 @@ function dream_next(){
 			alert("이미지를 업로드해주세요.");
 			return false;
 		}
-		//mb_job    = $("#mb_job").val();
 
 		if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
 			alert("ie8이하");
 			cropboxDataIE = $(ori_image).cropper('getData');
 			crop_image_url = $(ori_image).attr('src');
-			// console.dir(cropboxData);
-			// console.dir(cropboxgetData);
 			   $.ajax({
 				method: 'POST',
 				url: '../main_exec.php',
@@ -648,29 +558,18 @@ function dream_next(){
 					cropboxData     : cropboxDataIE,
 				},
 				success: function(res){
-					// mb_image    = res;
-
 					var rs_ch = res.split("||");
-					// $("#loading_div").hide();
-					// $("#contents_div").show();
 					if (rs_ch[0] == "Y")
 					{
 						// 매칭될 아이가 있을 경우
 						mb_image    = rs_ch[1];
-						// $("#upload_page").hide();
-						// $("#input_page").show();
 						$("#upload_page").fadeOut('slow', function(){
 							$("#input_page").fadeIn('slow');
 						});
-						//open_pop('input_popup');
 					}else if (rs_ch[0] == "N"){
 						// 매칭될 아이가 없을 경우
 						mb_image    = rs_ch[1];
 						mb_rs       = rs_ch[2];
-						//$("#no_matching_child_pic").attr("src",mb_image);
-						//open_pop('no_matching_popup');
-						// $("#upload_page").hide();
-						// $("#no_matching_page").show();
 						$("#upload_page").fadeOut('slow', function(){
 							$("#no_matching_page").fadeIn('slow');
 						});
@@ -696,30 +595,18 @@ function dream_next(){
 					mb_job          : sel_dream
 				},
 				success: function(res){
-					// console.log(res);
-					//mb_image    = res;
-
 					var rs_ch = res.split("||");
-					// $("#loading_div").hide();
-					// $("#contents_div").show();
 					if (rs_ch[0] == "Y")
 					{
 						// 매칭될 아이가 있을 경우
 						mb_image    = rs_ch[1];
-						// $("#upload_page").hide();
-						// $("#input_page").show();
 						$("#upload_page").fadeOut('slow', function(){
 							$("#input_page").fadeIn('slow');
 						});
-						//open_pop('input_popup');
 					}else if (rs_ch[0] == "N"){
 						// 매칭될 아이가 없을 경우
 						mb_image    = rs_ch[1];
 						mb_rs       = rs_ch[2];
-						//$("#no_matching_child_pic").attr("src",mb_image);
-						//open_pop('no_matching_popup');
-						// $("#upload_page").hide();
-						// $("#no_matching_page").show();
 						$("#upload_page").fadeOut('slow', function(){
 							$("#no_matching_page").fadeIn('slow');
 						});
@@ -732,20 +619,6 @@ function dream_next(){
 				}
 			});
 		}
-
-/*
-		$.ajax({
-			method: 'POST',
-			url: 'photo_upload.php',
-			data: {canvasurl: canvasImageURL},
-			success: function(res){
-				// console.log(res);
-				//alert(res);
-				mb_image    = res;
-				open_pop('input_popup');
-			}
-		});
-*/
 	}
 
 
@@ -784,7 +657,6 @@ function dream_next(){
 				"mb_job"        : sel_dream,
 				"mb_job_kor"    : job_lang_kor,
 				"mb_image"      : mb_image
-				//"mb_serial"     : mb_rs
 			},
 			url: "../main_exec.php",
 			beforeSend: function(response){
@@ -793,25 +665,16 @@ function dream_next(){
 			},
 			success: function(response){
 				var rs_ch = response.split("||");
-        //rs_ch[5] 아이이름 받침 유무, rs_ch[6] 직업 받침 유무 (0 or 0보다큰정수)
+				//rs_ch[5] 아이이름 받침 유무, rs_ch[6] 직업 받침 유무 (0 or 0보다큰정수)
 				mb_rs = rs_ch[2];
-				// $("#loading_div").hide();
-				// $("#contents_div").show();
 				if (rs_ch[0] == "Y")
 				{
 					// 아이가 새로 매칭될 경우
 					$("#matching_child_pic").attr("src",rs_ch[1]);
 					$("#thx_ch_img").attr("src",rs_ch[1]);
-					// $("#input_page").hide();
 					$("#loading_div").fadeOut('fast', function(){
-						// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
-						//m_rs_name, m_rs_ch_name, m_rs_job. m_rs_nation, m_rs_job2
-						// var job_add		= job_ko_add(sel_dream);
-						// job_add_arr		= job_add.split("||");
-						//$("#m_rs_name").html(mb_name);
 						$("#m_rs_ch_name").html(rs_ch[3]);
 						$("#m_rs_desc").html(rs_ch[7]);
-						//$("#m_rs_ch_name2").html(rs_ch[3]);
 						$("#m_rs_ch_name3").html(rs_ch[3]);
 						$("#thx_ch_name").html("'"+rs_ch[3]+"'");
 						$("#m_rs_job").html(job_lang_kor);
@@ -832,21 +695,16 @@ function dream_next(){
 						}
 
 						$("#matching_share_page").fadeIn('fast');
-						//open_pop('share_popup');
 					});
 				}else if (rs_ch[0] == "C"){
 					// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
-					//$("#c_matching_child_pic").attr("src",rs_ch[1]);
-					$("#matching_child_pic").attr("src",rs_ch[1]);
-					// $("#input_page").hide();
+					$("#re_matching_child_pic").attr("src",rs_ch[1]);
+					$("#thx_ch_img").attr("src",rs_ch[1]);
 					$("#loading_div").fadeOut('fast', function(){
-						// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
-						//m_rs_name, m_rs_ch_name, m_rs_job. m_rs_nation, m_rs_job2
-						// var job_add		= job_ko_add(sel_dream);
-						// job_add_arr		= job_add.split("||");
-						//$("#m_rs_name").html(mb_name);
 						$("#m_rs_ch_name").html(rs_ch[3]);
-						//$("#m_rs_ch_name2").html(rs_ch[3]);
+						$("#re_ch_name").html(rs_ch[3]);
+						$("#re_ch_name2").html(rs_ch[3]);
+						
 						$("#m_rs_ch_name3").html(rs_ch[3]);
 						$("#thx_ch_name").html("'"+rs_ch[3]+"'");
 
@@ -854,7 +712,7 @@ function dream_next(){
 							//받침 O
 							//$("#name2PP").html("이에요");
 							$("#name3PP").html("이");
-              $("#thx_namePP").html("이");
+							$("#thx_namePP").html("이");
 						}
 						
 						$("#m_rs_job").html(job_lang_kor);
@@ -865,9 +723,7 @@ function dream_next(){
 							//$("#job2PP").html("이");
 						}
 
-						//$("#m_rs_nation").html(rs_ch[4]);
-						// $("#matching_share_page").show();
-						$("#matching_share_page").fadeIn('fast');
+						$("#re_matching_share_page").fadeIn('fast');
 					});
 				}else{
 					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");

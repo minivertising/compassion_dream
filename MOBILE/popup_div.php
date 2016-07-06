@@ -81,7 +81,7 @@
       <div class="inner_p_preview">
       	<!-- <div class="img preview" style="overflow: hidden;width: 400px;height: 200px;"></div> -->
       	<div class="img preview"></div>
-      	<img src="images/bg_preview.jpg" class="bg" />
+      	<img src="images/bg_m_preview.jpg" class="bg" />
       </div>
   </div>
   <!--END : 사진 미리보기 팝업-->
