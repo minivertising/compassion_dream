@@ -76,7 +76,6 @@ function next_page(param)
 
 		case '6':
 			var fade_page	= prev_param-1;
-			alert(fade_page);
 			$("#page_div"+fade_page).fadeOut('fast', function(){
 				$("body").addClass("bg_sub_page");
 				$("#page_div"+param).fadeIn('fast');
