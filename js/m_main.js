@@ -365,7 +365,7 @@ function sns_share(media, flag, page)
 
 				Kakao.Link.sendTalkLink({
 				  //container: '#kakao-link-btn',
-				  label: "꿈 많았던 나의 어린시절을 소개합니다.\n\r아래의 링크로 확인해주세요.\n\r#블루바톤챌린지",
+				  label: "내꿈꿔 릴레이\n\r내 어린 시절 꿈과 사진으로 꿈이 필요한 어린이에게 후원자를 찾아주는 컴패션의 릴레이 캠페인입니다",
 				  image: {
 					src: img_url,
 					width: '1200',
@@ -394,7 +394,7 @@ function sns_share(media, flag, page)
 	}else{
 		Kakao.Story.share({
 			url: 'http://mydream.compassion.or.kr/MOBILE/follower_index.php?rs='+mb_rs+'&ugu='+flag,
-			text: '#블루바톤챌린지'
+			text: '#내꿈꿔'
 		});
 		$.ajax({
 			type   : "POST",
