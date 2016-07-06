@@ -96,7 +96,7 @@
                 <div class="block_btn apply">
                 	<div class="inner_apply clearfix">
                 		<div class="left">
-                        	<div class="bt"><a href="#"><img src="images/btn_sponsor.png" /></a></div>
+                        	<div class="bt"><a href="http://www.compassion.or.kr/Sponsor/cdspDetail.aspx?ChildDetailID=<?=$ch_data['ch_detail_id']?>&ChildMasterID=<?=$ch_data['ch_id']?>&ChildID=<?=$ch_data['ch_key']?>"><img src="images/btn_sponsor.png" /></a></div>
                          	<div class="txt">1:1후원으로<br><?=$ch_data['ch_nick']?>의 꿈을<br>현실로 만들어주세요!
 						</div>
                         </div>
