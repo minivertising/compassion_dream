@@ -119,7 +119,7 @@
         <a href="#" onclick="tab_click('3');return false;"><img src="images/navi_ks_off.png" id="s_tab3" /></a>
       </div>
       <div class="txt_title">
-      페이스북 친구 태그 방법은 이렇게 해보세요!
+      <span id="s_sns">페이스북</span> 친구 태그 방법은 이렇게 해보세요!
       </div>
       <div class="howto_img">
         <img src="images/img_howto_fb.jpg" id="s_contents" />

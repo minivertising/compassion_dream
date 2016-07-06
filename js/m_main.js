@@ -278,16 +278,19 @@ function tab_click(param)
 		$("#s_tab2").attr("src","images/navi_kt_off.png");
 		$("#s_tab3").attr("src","images/navi_ks_off.png");
 		$("#s_contents").attr("src","images/img_howto_fb.jpg");
+		$("#s_sns").html("페이스북");
 	}else if (param == "2"){
 		$("#s_tab1").attr("src","images/navi_fb_off.png");
 		$("#s_tab2").attr("src","images/navi_kt_on.png");
 		$("#s_tab3").attr("src","images/navi_ks_off.png");
 		$("#s_contents").attr("src","images/img_howto_kt.jpg");
+		$("#s_sns").html("카카오톡");
 	}else{
 		$("#s_tab1").attr("src","images/navi_fb_off.png");
 		$("#s_tab2").attr("src","images/navi_kt_off.png");
 		$("#s_tab3").attr("src","images/navi_ks_on.png");
 		$("#s_contents").attr("src","images/img_howto_ks.jpg");
+		$("#s_sns").html("카카오 스토리");
 	}
 }
 
