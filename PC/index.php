@@ -437,7 +437,6 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 		$(".heart").css("left",gage_w+"%");
 		Ins_tracking();
 
-
 		$('.people_pic').bxSlider({
 			ticker: true,
 			speed: 40000,

@@ -1077,3 +1077,31 @@ body.main{
 	width: 100% !important;
 	height: 113.55px !important;
 }
+
+/* 약관 */
+.popup_wrap.main_page_pop dl{
+	/*padding:0px 50px;
+	margin-left:10px;*/
+	color:#333;
+	font-size:15px;
+	
+	font-family:"맑은고딕", "Malgun Gothic", "돋움", Dotum, "Apple Gothic", sans-serif; 
+}
+.popup_wrap.main_page_pop dl dt{
+	padding-bottom:20px;
+	font-size:19px;
+	font-weight:bold;
+	text-align:center;
+	
+}
+.popup_wrap.main_page_pop dl dd{
+	padding-bottom:8px;
+	line-height: 22px;
+
+}
+.popup_wrap.main_page_pop .text{
+overflow-y:scroll;
+border:0px red solid;
+margin-top:0px;
+height:400px;
+}
