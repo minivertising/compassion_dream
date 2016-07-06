@@ -58,8 +58,7 @@
   <div id="page_div4" style="display:none">
     <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
 <?
-	print_r($mb_data);
-	if ($mb_data['mb_child'] == "NULL")
+	if ($mb_data['mb_child'] == "")
 	{
 ?>
     <a href="#" onclick="next_page('7');return false;">어린이 만나기111</a>
