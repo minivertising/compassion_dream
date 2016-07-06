@@ -43,84 +43,85 @@
   </div>
 </div>
 <div id="contents_div">
-    <div id="page_div1">
-	  <h2>어릴적 내 꿈은 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이었어요" : "였어요" ?></h2>
-	  <div>
-	    <img src="<?=$mb_data['mb_image']?>" style="width:100%">
-	  </div>
-	  <a href="#" onclick="next_page('2');return false;">다음</a>
+  <div id="page_div1">
+    <h2>어릴적 내 꿈은 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이었어요" : "였어요" ?></h2>
+    <div>
+      <img src="<?=$mb_data['mb_image']?>" style="width:100%">
     </div>
-    <div id="page_div2" style="display:none">
-	  <h2>저는 사실 하루가 다르게 꿈이 바뀌었어요.</h2>
-	  <a href="#" onclick="next_page('3');return false;">다음</a>
-    </div>
-    <div id="page_div3" style="display:none">
-	  <h2>그런데 만약 그 어린시절에 꿈을 꿀 수 없었다면 어땠을까요?</h2>
-	  <a href="#" onclick="next_page('4');return false;">다음</a>
-    </div>
-    <div id="page_div4" style="display:none">
-	  <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
-    <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
+      <a href="#" onclick="next_page('2');return false;">다음</a>
+  </div>
+  <div id="page_div2" style="display:none">
+      <h2>저는 사실 하루가 다르게 꿈이 바뀌었어요.</h2>
+      <a href="#" onclick="next_page('3');return false;">다음</a>
+  </div>
+  <div id="page_div3" style="display:none">
+      <h2>그런데 만약 그 어린시절에 꿈을 꿀 수 없었다면 어땠을까요?</h2>
+      <a href="#" onclick="next_page('4');return false;">다음</a>
+  </div>
+  <div id="page_div4" style="display:none">
+      <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
+      <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
 <?
 	if ($mb_data['mb_child'] == "")
 	{
 ?>
-    <a href="#" onclick="next_page('7');return false;">어린이 만나기111</a>
+      <a href="#" onclick="next_page('7');return false;">어린이 만나기111</a>
 <?
 	}else{
 		if ($ch_data['ch_choice'] == "Y")
 		{
 ?>
-    <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
+      <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
 <?
 		}else{
 ?>
-    <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
+      <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
 <?
 		}
 	}
 ?>
-    </div>
-    <div id="page_div5" class="wrap_page share_match_child" style="display:none;">
-      <div class="inner">
-        <div class="block_content">
-          <div class="title compassion">
+  </div>
+  <div id="page_div5" class="wrap_page share_match_child" style="display:none;">
+    <div class="inner">
+      <div class="block_content">
+        <div class="title compassion">
           "<span style="color:#E9DE51"><?=$ch_data['ch_nick']?></span>아<br>
           내꿈꿔!"<br>
+        </div>
+        <div class="sub_txt">
+        가난으로 인해 꿈을 잃어버린 <br>
+        '<?=$ch_data['ch_nick']?>'의 후원자가 되어주세요
+        </div>
+        <div class="img_com">
+          <div class="img_child story_result">
+            <img src="<?=$ch_data['ch_full_img_url']?>" />
           </div>
-          <div class="sub_txt">
-          가난으로 인해 꿈을 잃어버린 <br>
-          '<?=$ch_data['ch_nick']?>'의 후원자가 되어주세요
-          </div>
-          <div class="img_com">
-            <div class="img_child story_result">
-              <img src="<?=$ch_data['ch_full_img_url']?>" />
+          <div class="txt_child story_result">
+            <div class="inner">
+              <?=$ch_data['ch_desc']?>
             </div>
-            <div class="txt_child story_result">	
-              <div class="inner">
-                <?=$ch_data['ch_desc']?>
-              </div>
-            </div>
-            <img src="images/bg_story_result.jpg" class="bg" />
           </div>
-          <div class="block_btn spon">
-            <div class="bt"><a href="http://www.compassion.or.kr/Mobile/cdspDetail3.aspx?ChildMasterID=<?=$ch_data['ch_id']?>&ChildID=<?=$ch_data['ch_key']?>" target="_blank"><img src="images/btn_spon.png" /></a></div>
-            <div class="txt">1:1후원으로 <?=$ch_data['ch_nick']?>의 꿈을 현실로 만들어주세요!</div>
+          <img src="images/bg_story_result.jpg" class="bg" />
+        </div>
+        <div class="block_btn spon">
+          <div class="bt"><a href="http://www.compassion.or.kr/Mobile/cdspDetail3.aspx?ChildMasterID=<?=$ch_data['ch_id']?>&ChildID=<?=$ch_data['ch_key']?>" target="_blank"><img src="images/btn_spon.png" /></a>
           </div>
-          <div class="block_btn cheer">
-            <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
-            <div class="txt">1:1 후원이 어려울 경우<br> SNS에 어릴적 사진을 공유하고 함께 응원해주세요</div>
-          </div>
-          <div class="friends_pic">
-            <div class="inner_friends_pic clearfix">
-              <div class="img"><img src="images/ex_friend.png" /></div>
-              <div class="txt">어린 시절  꿈과 사진을 등록하고<br> SNS공유하면 응원 완료!</div>
-            </div>
+          <div class="txt">1:1후원으로 <?=$ch_data['ch_nick']?>의 꿈을 현실로 만들어주세요!</div>
+        </div>
+        <div class="block_btn cheer">
+          <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
+          <div class="txt">1:1 후원이 어려울 경우<br> SNS에 어릴적 사진을 공유하고 함께 응원해주세요</div>
+        </div>
+        <div class="friends_pic">
+          <div class="inner_friends_pic clearfix">
+            <div class="img"><img src="images/ex_friend.png" /></div>
+            <div class="txt">어린 시절  꿈과 사진을 등록하고<br> SNS공유하면 응원 완료!</div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
   <div id="page_div6" class="wrap_page share_match_child" style="display:none;">
     <div class="inner">
