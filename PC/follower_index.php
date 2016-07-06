@@ -88,11 +88,7 @@
                         <div class="child_text">
                             <p>
                             <!-- 설명으로 변경 -->
-                            	<?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "은" : "는" ?> 부모님과 함께<br> 
-                                살고 있습니다 아버지는 임시직으로 <br>
-                                노동일을 하시며 어머니는 집안일을 하십니다<br>
-                                <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "은" : "는" ?> 집안에서 시장에서 물건 사고 팔기,<br>
-                                물 길어 나르기를 맡아서 합니다
+                            <?=$ch_data['ch_desc']?>
                             </p>
                         </div>
                     </div>
