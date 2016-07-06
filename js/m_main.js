@@ -364,6 +364,7 @@ function sns_share(media, flag, page)
 			},
 			url: "../main_exec.php",
 			success: function(response){
+				alert(response);
 				var img_url	= response;
 
 				Kakao.Link.sendTalkLink({
