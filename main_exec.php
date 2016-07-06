@@ -153,7 +153,7 @@ switch ($_REQUEST['exec'])
 	
 		$img_url		= str_replace("..","http://mydream.compassion.or.kr",$img_data['mb_image']);
 
-		echo $img_url;
+		echo $img_query;
 	break;
 
     case "input_follower_IE" :
