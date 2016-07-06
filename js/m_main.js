@@ -69,8 +69,37 @@ function next_page(param)
 	var prev_param	= param - 1;
 	// $("#page_div"+prev_param).hide();
 	// $("#page_div"+param).show();
-	$("#page_div"+prev_param).fadeOut('slow');
-	$("#page_div"+param).fadeIn('slow');
+	switch(param)
+	{
+		case '5':
+			$("#page_div"+prev_param).fadeOut('fast', function(){
+				$("body").addClass("bg_sub_page");
+				$("#page_div"+param).fadeIn('fast');
+			});
+		break;
+
+		case '6':
+			var fade_page	= prev_param-1;
+			$("#page_div"+fade_page).fadeOut('fast', function(){
+				$("body").addClass("bg_sub_page");
+				$("#page_div"+param).fadeIn('fast');
+			});
+		break;
+
+		case '7':
+			var fade_page	= prev_param-2;
+			$("#page_div"+fade_page).fadeOut('fast', function(){
+				$("body").addClass("bg_sub_page");
+				$("#page_div"+param).fadeIn('fast');
+			});
+		break;
+
+		default:
+			$("#page_div"+prev_param).fadeOut('fast', function(){
+				$("#page_div"+param).fadeIn('fast');
+			});
+		break;
+	}
 }
 
 function only_num(obj)

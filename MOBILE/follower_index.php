@@ -62,16 +62,23 @@
 	  <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
     <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
 <?
-    if ($ch_data['ch_choice'] == "Y")
-    {
+	if ($mb_data['mb_child'] == "")
+	{
+?>
+    <a href="#" onclick="next_page('7');return false;">어린이 만나기111</a>
+<?
+	}else{
+		if ($ch_data['ch_choice'] == "Y")
+		{
 ?>
     <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
 <?
-    }else{
+		}else{
 ?>
     <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
 <?
-    }
+		}
+	}
 ?>
     </div>
     <div id="page_div5" class="wrap_page share_match_child" style="display:none;">
@@ -146,7 +153,48 @@
       </div>
     </div>
   </div>
+
+  <div id="page_div7" class="wrap_page share_match_child" style="display:none;">
+    <div class="inner">
+      <div class="block_content">
+        <div class="title compassion">
+        "얘들아, 내꿈꿔~!"
+        </div>
+        <div class="sub_txt">
+        컴패션 소개와 함께 어린 시절 사진을 sns에 공유하면<br>
+        꿈을 잃어버린 어린이들을 도와줄 수 있습니다
+        </div>
+        <div class="img_com">
+          <div class="img_child">
+            <div class="inner_img_child clearfix">
+              <div class="one"><img src="images/ex_child.png" /></div>
+              <div class="one"><img src="images/ex_child.png" /></div>
+              <div class="one"><img src="images/ex_child.png" /></div>
+            </div>
+          </div>
+          <img src="images/bg_share_com.png" class="bg" />
+        </div>
+        <div class="block_btn spon">
+          <div class="bt"><a href="#"><img src="images/btn_spon.png" /></a></div>
+          <div class="txt">1:1후원으로 아이의 꿈을 현실로 만들어주세요!</div>
+         </div>
+         <div class="block_btn cheer">
+           <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
+           <div class="txt">1:1 후원이 어려울 경우<br> SNS에 어릴적 사진을 공유하고 함께 응원해주세요</div>
+         </div>
+         <div class="friends_pic">
+           <div class="inner_friends_pic clearfix">
+             <div class="img"><img src="images/ex_friend.png" /></div>
+             <div class="txt">어린 시절  꿈과 사진을 등록하고<br> SNS공유하면 응원 완료!</div>
+           </div>
+         </div>
+       </div>
+     </div>
+    </div>
+  </div>
+
 </div>
+
 
 <div id="upload_page" class="wrap_page sub upload" style="display:none;">
   <div class="inner">
