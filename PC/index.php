@@ -182,7 +182,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
               <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
                 <label for="inputImage" title="Upload image file">
                   <span title="Import image" style="position: relative; overflow: hidden;">
-                    <input type="file" id="inputImage" class="fileUp" name="file">
+                    <input type="file" id="inputImage" class="fileUp" name="file" style="cursor:pointer;">
                     <img src="images/btn_select_pic.png" style="cursor:pointer;"/>
                   </span>
                 </label>
@@ -253,14 +253,14 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic" /></div>
           <div class="child_text">
-            <h2>저도 <span id="m_rs_job">선생님</span><span id="jobPP">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
+            <h2>저도 <span id="m_rs_job">운동선수</span><span id="jobPP">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
             <p id="m_rs_desc">
             </p>
           </div>
         </div>
       </div>
       <div class="block_txt">
-        <p>SNS에 공유하셔서 <span id="m_rs_ch_name3">기타</span><span id="name3PP">이</span> 후원자를 만날 수 있도록 해주세요!</p><!-- ~이 ~가 -->
+        <p>SNS에 공유하셔서 <span id="m_rs_ch_name3">기타</span><span id="name3PP">가</span> 후원자를 만날 수 있도록 해주세요!</p><!-- ~이 ~가 -->
       </div>
       <div class="block_btn sns">
         <a href="#" onclick="go_share('fb','act','matching_share_page');return false;"><img src="images/sns_f.png" /></a>
