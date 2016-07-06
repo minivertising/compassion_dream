@@ -8,7 +8,7 @@
 		echo "<script>location.href='../PC/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
 
 	$ch_data	= sel_child_info($mb_data['mb_child']);
-
+	$convert_job = job_ko_add($mb_data['mb_job']);
 ?>
 <body>
 <script>
@@ -36,7 +36,7 @@
         <img src="images/img_loading.png" />
       </div>
       <div class="txt_load">
-      꿈이 필요한 어린이 '<?=$ch_data['ch_nick']?>'를 응원중입니다<br>
+      꿈이 필요한 어린이 '<?=$ch_data['ch_nick']?>'<?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 응원중입니다<br>
       잠시만 기다려 주세요 
       </div>
     </div>
@@ -44,7 +44,7 @@
 </div>
 <div id="contents_div">
     <div id="page_div1">
-	  <h2>어릴적 내 꿈은 <?=$_gl['job'][$mb_data['mb_job']]?></h2>
+	  <h2>어릴적 내 꿈은 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이었어요" : "였어요" ?></h2>
 	  <div>
 	    <img src="<?=$mb_data['mb_image']?>" style="width:100%">
 	  </div>
@@ -162,7 +162,8 @@
         여러분의 어린 시절의 꿈과 사진을 올려주세요<br>
         SNS에 사진과 함께 당신이 응원할<br>
         꿈을 잃은 어린이<br>
-        <span class="name">‘<?=$ch_data['ch_nick']?>’</span>이 소개됩니다
+        <!-- 이미 결연된 아이의 링크 일 경우엔 텍스트? -->
+        <span class="name">‘<?=$ch_data['ch_nick']?>’</span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 소개됩니다 <!-- 이 가 -->
       </div>
       <div class="block_input_dream">
         <div class="selec_job clearfix">
@@ -212,7 +213,7 @@
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" id="f_matching_child_pic" /></div>
           <div class="child_text">
-            <h2>"저도 <span id="m_rs_job"><?=$mb_data['mb_job']?>을</span> 꿈꿀 수 있을까요?"</h2>
+            <h2>"저도 <span id="m_rs_job"><?=$convert_job?></span><?= has_batchim($convert_job) > 0 ? "을" : "를" ?> 꿈꿀 수 있을까요?"</h2> <!-- 을 를 -->
             <div class="bg_line">
               <p>
              <?=$ch_data['ch_desc']?>
@@ -303,8 +304,8 @@
     <div class="block_content">
       <div class="title">
         참여해주셔서 감사합니다<br>
-        <span id="thx_ch_name">'<?=$ch_data['ch_nick']?>'</span>이<br>
-        꿈을 꿀 수 있도록 끝까지 함께 응원해주세요
+        <span id="thx_ch_name">'<?=$ch_data['ch_nick']?>'</span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?><br>
+        꿈을 꿀 수 있도록 끝까지 함께 응원해주세요 <!-- 이 가 -->
       </div>
       <div class="block_child re">
         <div class="inner_block_child clearfix">

@@ -5,8 +5,9 @@
 	if ($gubun == "MOBILE")
 		echo "<script>location.href='../MOBILE/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
 
-
-    $ch_data    = sel_child_info($mb_data['mb_child']);
+	$ch_data    = sel_child_info($mb_data['mb_child']);
+	$convert_job = job_ko_add($mb_data['mb_job']);
+	
 ?>
 <body>
 <script>
@@ -42,7 +43,7 @@
 <div id="contents_div">
   <div id="page_div1">
     <!-- 직업 한글 변환 필요 -->
-    <h2>어릴적 내 꿈은 <?=$mb_data['mb_job']?><?= has_batchim($mb_data['mb_job']) > 0 ? "이었어요" : "였어요" ?></h2>
+    <h2>어릴적 내 꿈은 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이었어요" : "였어요" ?></h2>
   <div>
     <img src="<?=$mb_data['mb_image']?>" style="width:100%">
   </div>
@@ -86,6 +87,7 @@
                         <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
                         <div class="child_text">
                             <p>
+                            <!-- 설명으로 변경 -->
                             	<?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "은" : "는" ?> 부모님과 함께<br> 
                                 살고 있습니다 아버지는 임시직으로 <br>
                                 노동일을 하시며 어머니는 집안일을 하십니다<br>
@@ -217,6 +219,7 @@
         	<div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
             <div class="block_content follower">
             	<div class="title">
+                <!-- 팔로워명 변경 -->
                 	미니버님!<br> 
 					<span><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 위해<br> <!-- ~을 ~를 -->
 					다시 한번 참여해주셔서 감사합니다 
@@ -302,7 +305,8 @@
     <div class="block_content follower">
       <div class="title">
       참여해주셔서 감사합니다!<br>
-      <span id="thx_ch_name"><?=$ch_data['ch_nick']?></span>이 꿈을 꿀 수 있도록<br>
+      <!-- 아이 id 속성 삭제 -->
+      <span id="thx_ch_name"><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 꿈을 꿀 수 있도록<br> <!-- ~이 ~가 -->
       끝까지 함께 응원해주세요
       </div>
       <div class="block_child">

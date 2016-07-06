@@ -346,7 +346,7 @@
   	<div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_close.png" /></a></div>
     <div class="inner_p_preview clearfix">
     	<div class="img preview">
-        	<img src="images/img_sns_share.jpg" width="474" height="236" />
+        	<!-- <img src="images/img_sns_share.jpg" width="474" height="236" /> -->
         </div>
     </div>
   </div>  

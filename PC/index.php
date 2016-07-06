@@ -373,7 +373,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     <div class="block_content follower">
       <div class="title">
       참여해주셔서 감사합니다!<br>
-      <span id="thx_ch_name">아비가일 마아 야아 암퐁</span>이 꿈을 꿀 수 있도록<br>
+      <span id="thx_ch_name">아비가일 마아 야아 암퐁</span><span id="thx_namePP">가</span> 꿈을 꿀 수 있도록<br>  <!-- ~이 ~가 -->
       끝까지 함께 응원해주세요
       </div>
       <div class="block_child">
@@ -788,7 +788,6 @@ function dream_next(){
 			},
 			url: "../main_exec.php",
 			beforeSend: function(response){
-				// $("#loading_div").show();
 				$("#input_page").hide();
 				$("#loading_div").show();
 			},
@@ -815,24 +814,23 @@ function dream_next(){
 						//$("#m_rs_ch_name2").html(rs_ch[3]);
 						$("#m_rs_ch_name3").html(rs_ch[3]);
 						$("#thx_ch_name").html("'"+rs_ch[3]+"'");
-
-            if(rs_ch[5] > 0) {
-              //받침 O
-              //$("#name2PP").html("이에요");
-              $("#name3PP").html("이");
-            }
-
 						$("#m_rs_job").html(job_lang_kor);
-						//$("#m_rs_job2").html(job_lang_kor);
+						$("#m_rs_job2").html(job_lang_kor);
+						$("#m_rs_nation").html(rs_ch[4]);
+
+						if(rs_ch[5] > 0) {
+							//받침 O
+							$("#name2PP").html("이에요");
+							$("#name3PP").html("이");
+							$("#thx_namePP").html("이");
+						}
 
 						if(rs_ch[6] > 0){
-              //받침 O
+							//받침 O
 							$("#jobPP").html("을");
 							//$("#job2PP").html("이");
 						}
 
-						//$("#m_rs_nation").html(rs_ch[4]);
-						// $("#matching_share_page").show();
 						$("#matching_share_page").fadeIn('fast');
 						//open_pop('share_popup');
 					});
@@ -856,6 +854,7 @@ function dream_next(){
 							//받침 O
 							//$("#name2PP").html("이에요");
 							$("#name3PP").html("이");
+              $("#thx_namePP").html("이");
 						}
 						
 						$("#m_rs_job").html(job_lang_kor);
