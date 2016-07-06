@@ -58,16 +58,23 @@
   <div id="page_div4" style="display:none">
     <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
 <?
-    if ($ch_data['ch_choice'] == "Y")
-    {
+	if ($mb_data['mb_child'] == "NULL")
+	{
+?>
+    <a href="#" onclick="next_page('7');return false;">어린이 만나기</a>
+<?
+	}else{
+		if ($ch_data['ch_choice'] == "Y")
+		{
 ?>
     <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
 <?
-    }else{
+		}else{
 ?>
     <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
 <?
-    }
+		}
+	}
 ?>
   </div>
   <div id="page_div5" class="wrap_sec_top_sub match_child follower" style="display:none;">
@@ -137,7 +144,47 @@
       </div>
     </div>
   </div>
+
+  <div id="page_div7" class="wrap_sec_top_sub match_child follower" style="display:none;">
+    <div class="inner">
+      <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+      <div class="block_content result_story_compassion">
+        <div class="title">
+          <div class="main">얘들아 내 꿈꿔~!’</div>
+          <div class="sub">
+          컴패션 소개와 함께 어린 시절 사진을 SNS에 공유하면<br>
+          꿈을 잃어버린 어린이들을 도와줄 수 있습니다
+          </div>
+        </div>
+        <div class="block_child">
+          <div class="inner_block_child clearfix">
+            <div class="child_pic"><img src="images/ex_child.png" /></div>
+            <div class="child_pic"><img src="images/ex_child.png" /></div>
+            <div class="child_pic"><img src="images/ex_child.png" /></div>
+            <div class="child_pic"><img src="images/ex_child.png" /></div>
+          </div>
+        </div>
+        <div class="block_btn apply">
+          <div class="inner_apply clearfix">
+            <div class="left">
+              <div class="bt"><a href="#"><img src="images/btn_sponsor.png" /></a></div>
+              <div class="txt">1:1후원으로<br>아이들의 꿈을<br>현실로 만들어주세요!</div>
+            </div>
+            <div class="right">
+              <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
+              <div class="txt">1:1 후원이 어려울 경우<br>SNS에 어릴적 사진을 공유하고 함께 응원해주세요</div>
+            </div>
+          </div>
+        </div>
+        <div class="example02">
+          <img src="images/story_1.png" width="100" />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 <!-- 사진 업로드 페이지 -->
 <div id="upload_page" class="wrap_sec_top_sub" style="display:none;">

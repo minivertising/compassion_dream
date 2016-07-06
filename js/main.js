@@ -82,6 +82,14 @@ function next_page(param)
 			});
 		break;
 
+		case '7':
+			var fade_page	= prev_param-2;
+			$("#page_div"+fade_page).fadeOut('fast', function(){
+				$("body").addClass("bg_sub_page");
+				$("#page_div"+param).fadeIn('fast');
+			});
+		break;
+
 		default:
 			$("#page_div"+prev_param).fadeOut('fast', function(){
 				$("#page_div"+param).fadeIn('fast');
