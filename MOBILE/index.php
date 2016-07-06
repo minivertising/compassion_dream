@@ -93,9 +93,16 @@
 	</div>
 	<div class="people_list">
 		<div class="inner_people_list clearfix">
-			<div class="one"><img src="images/ex_list.png" /></div>
-			<div class="one"><img src="images/ex_list.png" /></div>
-			<div class="one"><img src="images/ex_list.png" /></div>
+					<div class="one"><img src="images/ex_list.png" /></div>
+					<div class="one"><img src="images/ex_list.png" /></div>
+					<div class="one"><img src="images/ex_list.png" /></div>
+					<div class="one"><img src="images/ex_list.png" /></div>
+					<div class="one"><img src="images/ex_list.png" /></div>
+					<div class="one"><img src="images/ex_list.png" /></div>
+					<div class="one"><img src="images/ex_list.png" /></div>
+					<div class="one"><img src="images/ex_list.png" /></div>
+					<div class="one"><img src="images/ex_list.png" /></div>
+					<div class="one"><img src="images/ex_list.png" /></div>
 		</div>
 	</div>
 	<div class="sec_movie">
@@ -174,6 +181,18 @@
 		var gage_w  = (<?=$total_matching_cnt?>/3000)*100;
 		$(".bar").css("width",gage_w+"%");
 		$(".icon").css("left",gage_w+"%");
+
+		$('.inner_people_list').bxSlider({
+			ticker: true,
+			speed: 40000,
+			minSlide: 3,
+			maxSilde: 3,
+			slideWidth: 120,
+			slideMargin: 2
+			// responsive: true,
+			// adaptiveHeight: true
+		});
+
 		Ins_tracking();
 		});
 			if (URL) {
@@ -217,27 +236,6 @@ function image_crop(){
 				center:true,
 				zoomOnWheel:false,
 				toggleDragModeOnDblclick:false,
-				build: function (e) {
-					console.log(e.type);
-				},
-				built: function (e) {
-					console.log(e.type);
-				},
-				cropstart: function (e) {
-					console.log(e.type, e.action);
-				},
-				cropper: function (e) {
-					console.log(e.type, e.action);
-				},
-				cropend: function (e) {
-					console.log(e.type, e.action);
-				},
-				crop: function (e) {
-					console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
-				},
-				zoom: function (e) {
-					console.log(e.type, e.ratio);
-				 }
 		});
 }
 $($inputImage).change(function(){

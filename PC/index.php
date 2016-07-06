@@ -449,7 +449,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 		});
 	  
 	
-		});
+	});
 
 function image_crop(){
 	$($ori_image).cropper({
