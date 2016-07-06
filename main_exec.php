@@ -146,14 +146,19 @@ switch ($_REQUEST['exec'])
 
 	case "url_info" :
 		$mb_serial			= $_REQUEST['mb_serial'];
+		$ugu					= $_REQUEST['ugu'];
 
-		$img_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$mb_serial."'";
+		if ($ugu	== "act")
+		{
+			$img_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE mb_serial='".$mb_serial."'";
+		}else{
+			$img_query 	= "SELECT * FROM ".$_gl['follower_info_table']." WHERE mb_serial='".$mb_serial."'";
+		}
 		$img_result 	= mysqli_query($my_db, $img_query);
 		$img_data	= mysqli_fetch_array($img_result);
-	
 		$img_url		= str_replace("..","http://mydream.compassion.or.kr",$img_data['mb_image']);
 
-		echo $img_query;
+		echo $img_url;
 	break;
 
     case "input_follower_IE" :

@@ -343,7 +343,7 @@ var flag_sel_dream  = 0;
 var mb_rs       = null;
 var inputImageCheck;
 var share_cnt			= 0;
-
+var s_ugu	= null;
 $(document).ready(function() {
 	Kakao.init('59df63251be6d99256b63b98f4948e89');
 	$("#cboxTopLeft").hide();
@@ -357,6 +357,7 @@ $(document).ready(function() {
 	Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
 	// 미리보기 제어
 	$(".preview").width($(document).width()*0.9);
+	s_ugu	= '<?=$ugu?>';
 });
 
 function image_crop(){

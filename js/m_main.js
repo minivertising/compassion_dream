@@ -359,7 +359,8 @@ function sns_share(media, flag, page)
 			type:"POST",
 			data:{
 				"exec"			: "url_info",
-				"mb_serial"		: mb_rs
+				"mb_serial"		: mb_rs,
+				"ugu"			: s_ugu
 			},
 			url: "../main_exec.php",
 			success: function(response){
