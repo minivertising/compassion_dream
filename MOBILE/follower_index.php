@@ -354,6 +354,8 @@ $(document).ready(function() {
 	$("#cboxTopCenter").hide();
 	$("#cboxBottomCenter").hide();
 	Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
+	// 미리보기 제어
+	$(".preview").width($(document).width()*0.9);
 });
 
 function image_crop(){
