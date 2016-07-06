@@ -4,7 +4,7 @@
 		exit('Connect Error (' . mysqli_connect_errno() . ') '. mysqli_connect_error());
 	}
 
-	$query 	= "SELECT * FROM child_info WHERE ch_choice<>'N'";
+	$query 	= "SELECT * FROM child_info WHERE ch_choice='N'";
 	$result 	= mysqli_query($my_db, $query);
 
 	while ($data = mysqli_fetch_array($result))
