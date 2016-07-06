@@ -61,7 +61,7 @@
 	if ($mb_data['mb_child'] == "NULL")
 	{
 ?>
-    <a href="#" onclick="next_page('7');return false;">어린이 만나기</a>
+    <a href="#" onclick="next_page('7');return false;">어린이 만나기111</a>
 <?
 	}else{
 		if ($ch_data['ch_choice'] == "Y")
