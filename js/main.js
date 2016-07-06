@@ -75,8 +75,9 @@ function next_page(param)
 		break;
 
 		case '6':
-			alert(prev_param);
-			$("#page_div"+prev_param-1).fadeOut('fast', function(){
+			var fade_page	= prev_param-1;
+			alert(fade_page);
+			$("#page_div"+fade_page).fadeOut('fast', function(){
 				$("body").addClass("bg_sub_page");
 				$("#page_div"+param).fadeIn('fast');
 			});
