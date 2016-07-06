@@ -427,6 +427,7 @@ function input_submit()
 				}else if (rs_ch[0] == "C"){
 					// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
 					$("#matching_child_pic").attr("src",rs_ch[1]);
+					$("#re_matching_child_pic").attr("src",rs_ch[1]);
 					$("#thx_ch_img").attr("src",rs_ch[1]);
 					$("#m_rs_job").html(job_lang_kor);
 					$("#m_rs_job2").html(job_lang_kor);
@@ -448,6 +449,7 @@ function input_submit()
 					}
 					
 					$("#loading_div").fadeOut('fast', function(){
+						$("body").removeClass("bg_sub_page bg_loading");
 						$("#re_matching_share_page").fadeIn('fast');
 					})
 				}else{

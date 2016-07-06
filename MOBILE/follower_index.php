@@ -1,12 +1,9 @@
 <?
 	include_once "./header.php";
-
 	// ins_share_cnt($rs);
-
 	// PC에서 유입시 PC로 이동
 	if ($gubun == "PC")
 		echo "<script>location.href='../PC/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
-
 	$ch_data	= sel_child_info($mb_data['mb_child']);
 	$convert_job = job_ko_add($mb_data['mb_job']);
 ?>
@@ -19,7 +16,6 @@
       version    : 'v2.6'
     });
   };
-
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
@@ -48,34 +44,33 @@
     <div>
       <img src="<?=$mb_data['mb_image']?>" style="width:100%">
     </div>
-      <a href="#" onclick="next_page('2');return false;">다음</a>
+    <a href="#" onclick="next_page('2');return false;">다음</a>
   </div>
   <div id="page_div2" style="display:none">
-      <h2>저는 사실 하루가 다르게 꿈이 바뀌었어요.</h2>
-      <a href="#" onclick="next_page('3');return false;">다음</a>
+    <h2>저는 사실 하루가 다르게 꿈이 바뀌었어요.</h2>
+    <a href="#" onclick="next_page('3');return false;">다음</a>
   </div>
   <div id="page_div3" style="display:none">
-      <h2>그런데 만약 그 어린시절에 꿈을 꿀 수 없었다면 어땠을까요?</h2>
-      <a href="#" onclick="next_page('4');return false;">다음</a>
+    <h2>그런데 만약 그 어린시절에 꿈을 꿀 수 없었다면 어땠을까요?</h2>
+    <a href="#" onclick="next_page('4');return false;">다음</a>
   </div>
   <div id="page_div4" style="display:none">
-      <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
-      <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
+    <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
 <?
 	if ($mb_data['mb_child'] == "")
 	{
 ?>
-      <a href="#" onclick="next_page('7');return false;">어린이 만나기111</a>
+    <a href="#" onclick="next_page('7');return false;">어린이 만나기111</a>
 <?
 	}else{
 		if ($ch_data['ch_choice'] == "Y")
 		{
 ?>
-      <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
+    <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
 <?
 		}else{
 ?>
-      <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
+    <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
 <?
 		}
 	}
@@ -96,7 +91,7 @@
           <div class="img_child story_result">
             <img src="<?=$ch_data['ch_full_img_url']?>" />
           </div>
-          <div class="txt_child story_result">
+          <div class="txt_child story_result">	
             <div class="inner">
               <?=$ch_data['ch_desc']?>
             </div>
@@ -104,8 +99,7 @@
           <img src="images/bg_story_result.jpg" class="bg" />
         </div>
         <div class="block_btn spon">
-          <div class="bt"><a href="http://www.compassion.or.kr/Mobile/cdspDetail3.aspx?ChildMasterID=<?=$ch_data['ch_id']?>&ChildID=<?=$ch_data['ch_key']?>" target="_blank"><img src="images/btn_spon.png" /></a>
-          </div>
+          <div class="bt"><a href="http://www.compassion.or.kr/Mobile/cdspDetail3.aspx?ChildMasterID=<?=$ch_data['ch_id']?>&ChildID=<?=$ch_data['ch_key']?>" target="_blank"><img src="images/btn_spon.png" /></a></div>
           <div class="txt">1:1후원으로 <?=$ch_data['ch_nick']?>의 꿈을 현실로 만들어주세요!</div>
         </div>
         <div class="block_btn cheer">
@@ -121,7 +115,6 @@
       </div>
     </div>
   </div>
-</div>
 
   <div id="page_div6" class="wrap_page share_match_child" style="display:none;">
     <div class="inner">
@@ -187,7 +180,7 @@
           <div class="inner_friends_pic clearfix">
             <div class="img"><img src="images/ex_friend.png" /></div>
             <div class="txt">어린 시절  꿈과 사진을 등록하고<br> SNS공유하면 응원 완료!</div>
-           </div>
+          </div>
         </div>
       </div>
     </div>
@@ -401,7 +394,6 @@ $(document).ready(function() {
 	$(".preview").width($(document).width()*0.9);
 	s_ugu	= 'fol';
 });
-
 function image_crop(){
 	$($ori_image).cropper({
 		viewMode: 0,
@@ -421,12 +413,10 @@ function image_crop(){
 		toggleDragModeOnDblclick:false,
 	});
 }
-
 function f_preview_img()
 {
 	open_pop('f_preview_popup');
 }
-
 function zoom_action(type){
 	if(type=="up")
 	{
@@ -435,7 +425,6 @@ function zoom_action(type){
 		$($ori_image).cropper('zoom', -0.1);
 	}
 }
-
 function readURL(input) {
 	if (input.files && input.files[0]) {
 		file = files[0];
@@ -459,14 +448,11 @@ function readURL(input) {
 		});
 	}
 }
-
 $($inputImage).change(function(){
 	inputImageCheck = "Y";
 	files = this.files;
 	readURL(this);
 });
-
-
 function f_dream_next()
 {
     if (sel_dream == null)
@@ -480,7 +466,6 @@ function f_dream_next()
         return false;
     }
         //mb_job    = $("#mb_job").val();
-
         // 사진 저장할 내용 추가
         var croppedImg = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
         var canvasImageURL = croppedImg.toDataURL("image/jpeg");
@@ -515,7 +500,6 @@ function f_dream_next()
             success: function(res){
                 // console.log(res);
                 //mb_image    = res;
-
                 var rs_ch = res.split("||");
                 mb_rs = rs_ch[1];
                 //$("#loading_div").hide();
@@ -534,7 +518,6 @@ function f_dream_next()
 	}else{
 ?>
 						$("body").removeClass("bg_loading");
-
 						$("#matching_share_page").fadeIn("fast");
 <?
 	}
@@ -554,7 +537,6 @@ function f_dream_next()
             }
         });
 }
-
     function Ins_share_cnt(serial, ugu,parent_idx)
     {
         $.ajax({
@@ -571,5 +553,4 @@ function f_dream_next()
             }
         });
     }
-
 </script>
