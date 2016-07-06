@@ -404,6 +404,7 @@ function input_submit()
 						$("#m_rs_job").html(job_add_arr[0]);
 						$("#m_rs_job2").html(job_add_arr[1]);
 						$("#m_rs_nation").html(rs_ch[4]);
+						$("#m_rs_desc").html(rs_ch[7]);
 
 						if(rs_ch[5] > 0) {
 							//받침 O
@@ -433,6 +434,7 @@ function input_submit()
 					$("#re_ch_name").html("'"+rs_ch[3]+"'");
 					$("#re_ch_name2").html("'"+rs_ch[3]+"'");
 					$("#thx_ch_name").html("'"+rs_ch[3]+"'");
+					$("#m_rs_desc").html(rs_ch[7]);
 					if(rs_ch[5] > 0)
 					{
 						$("#namePP").html("을");

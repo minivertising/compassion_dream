@@ -97,13 +97,7 @@
           <div class="child_text">
             <h2>"저도 <span id="m_rs_job">선생님</span><span id="jobPP">를</span> 꿈꿀 수 있을까요?"</h2> <!-- 을 를 -->
             <div class="bg_line">
-              <p>
-              안녕하세요 <br>
-              저는  필리핀에 살고 있는 기타에요<br>
-              어린 시절에  선생님이 꿈이 셨군요<br>
-              저도 언젠가는 그렇게 멋진 꿈을 꾸고 싶어요!
-              어린 시절에  선생님이 꿈이 셨군요<br>
-              어린 시절에  선생님이 꿈이 셨군요<br>
+              <p id="m_rs_desc">
               </p>
             </div>
           </div>
