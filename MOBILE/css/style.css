@@ -1095,7 +1095,7 @@ body.bg_status{
 .wrap_pop.p_preview .inner_p_preview .img{
 	position: absolute;
 	width:96.5%;
-	top:39%;
+	top:38%;
 	text-align:center;
 	padding-left:1.5%;
 	left:2%; /* 개발쪽 변경*/

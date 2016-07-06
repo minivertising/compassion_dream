@@ -25,15 +25,7 @@ function open_pop(param)
 
 	},
 	onClosed: function(){
-		//del_info();
 		$("#cboxContent").css("background","#fff");
-		// $(".sec_main_img").show();
-		$(".sec_main_img").fadeIn('slow');
-		if (param == "gift_popup2" || param == "notice_popup2")
-		{
-			// $(".sec_top").show();
-			$(".sec_top").fadeIn('slow');
-		}
 	}});
 }
 

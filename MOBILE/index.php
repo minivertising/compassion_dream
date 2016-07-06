@@ -174,6 +174,9 @@
 		var gage_w  = (<?=$total_matching_cnt?>/3000)*100;
 		$(".bar").css("width",gage_w+"%");
 		$(".icon").css("left",gage_w+"%");
+		// 미리보기 제어
+		$(".preview").width($(document).width()*0.9);
+
 		Ins_tracking();
 		});
 			if (URL) {
@@ -210,7 +213,7 @@ function image_crop(){
 				restore: true,
 				guides: false,
 				highlight: true,
-				background: true,
+				background: false,
 				cropBoxMovable: true,
 				cropBoxResizable: true,
 				preview: '.preview',
@@ -296,8 +299,6 @@ function dream_next()
 			mb_job          : sel_dream
 		},
 		beforeSend: function(response){
-			// $("#loading_div").show();
-			// $("#upload_page").hide();
 			$("#upload_page").fadeOut('fast', function(){
 				$("body").addClass("bg_sub_page bg_loading");
 				$("#loading_div").fadeIn('fast');
@@ -333,49 +334,7 @@ function dream_next()
 				location.reload();
 			}
 		}
-	/*
-		$.ajax('./upload2.php', {
-		method: "POST",
-		data: formData,
-		processData: false,
-		contentType: false,
-		beforeSend: function(response){
-			$("#loading_div").show();
-			$("#upload_page").hide();
-		},
-		success: function (data) {
-			alert(data);
-			// console.log(data);
-			//mb_image    = data;
-			//open_pop('input_popup');
-			var rs_ch = res.split("||");
-			if (rs_ch[0] == "Y")
-			{
-				// 매칭될 아이가 있을 경우
-				mb_image    = rs_ch[1];
-				$("#loading_div").hide();
-				$("#input_page").show();
-			}else if (rs_ch[0] == "N"){
-				// 매칭될 아이가 없을 경우
-				mb_image    = rs_ch[1];
-				mb_rs       = rs_ch[2];
-				$("#loading_div").hide();
-				$("#no_matching_page").show();
-			}else {
-				// 에러 
-				alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
-				location.reload();
-			}
-		}
-		*/
 	});
-	//    
-	// if (mb_job == "")
-	// {
-	//     alert("당신의 어린시절 꿈을 선택해 주세요.");
-	//     return false;
-	// }
-	
 }
 function input_submit()
 {
@@ -411,12 +370,14 @@ function input_submit()
 			"mb_job"        : sel_dream,
 			"mb_job_kor"    : job_lang_kor,
 			"mb_image"      : mb_image
-			//"mb_serial"     : mb_rs
 		},
 		url: "../main_exec.php",
 		beforeSend: function(response){
-				$("#input_page").hide();
-				$("#loading_div").show();
+			$("#input_page").fadeOut('fast', function(){
+				$("body").addClass("bg_sub_page bg_loading");
+				$("#loading_div").fadeIn('fast');
+			});
+
 		},
 		success: function(response){
 				alert(response);
@@ -431,6 +392,7 @@ function input_submit()
 					// $("#input_page").fadeOut('slow', function(){
 					// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
 					$("#loading_div").fadeOut('fast', function(){
+						$("body").removeClass("bg_sub_page bg_loading");
 
 						var job_add   = job_ko_add(sel_dream);
 						job_add_arr   = job_add.split("||");

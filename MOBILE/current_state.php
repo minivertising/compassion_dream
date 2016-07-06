@@ -166,7 +166,7 @@ function image_crop(){
         restore: true,
         guides: false,
         highlight: true,
-        background: true,
+		background: false,
         cropBoxMovable: true,
         cropBoxResizable: true,
         preview: '.preview',
