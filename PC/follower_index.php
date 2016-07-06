@@ -231,8 +231,8 @@
 					<p><?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 후원자를 만날 수 있도록 해주세요!</p> <!-- ~이 ~가 -->
                 </div>
                 <div class="block_btn sns">
-                	<a href="#" onclick="sns_share('fb','fol');"><img src="images/sns_f.png" /></a>
-                	<a href="#" onclick="sns_share('ks','fol');"><img src="images/sns_ks.png" /></a>
+                	<a href="#" onclick="go_share('fb','fol','f_share_page');return false;"><img src="images/sns_f.png" /></a>
+                	<a href="#" onclick="go_share('ks','fol','f_share_page');return false;"><img src="images/sns_ks.png" /></a>
                 </div>
                 <div class="block_btn howtotag">
                 	<a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
@@ -267,8 +267,8 @@
                     </div>
                 </div>
                 <div class="block_btn sns">
-                	<a href="#" onclick="sns_share('fb','fol');"><img src="images/sns_f.png" /></a>
-                	<a href="#" onclick="sns_share('ks','fol');"><img src="images/sns_ks.png" /></a>
+                	<a href="#" onclick="go_share('fb','fol','f_share_no_matching_page');return false;"><img src="images/sns_f.png" /></a>
+                	<a href="#" onclick="go_share('ks','fol','f_share_no_matching_page');return false;"><img src="images/sns_ks.png" /></a>
                 </div>
                 <div class="block_btn howtotag">
                 	<a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
@@ -277,6 +277,47 @@
             
         </div>
     </div>
+
+<!-- 공유버튼 클릭시 나오는 예시 페이지 -->
+<div id="sns_exam_page" class="wrap_sec_top_sub match_child" style="display:none;">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content exshare">
+      <div class="title">
+      아래의 예시를 참고하셔서<br>
+      지인들에게 공유해주세요
+      </div>
+      <div class="block_btn_again">
+        <a href="#" id="go_share_func"><img src="images/btn_again.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 공유버튼 클릭시 나오는 예시 페이지 -->
+
+<!-- 공유 완료 페이지 -->
+<div id="thanks_page" style="display:none" class="wrap_sec_top_sub match_child">
+  <div class="inner">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content follower">
+      <div class="title">
+      참여해주셔서 감사합니다!<br>
+      <span id="thx_ch_name"><?=$ch_data['ch_nick']?></span>이 꿈을 꿀 수 있도록<br>
+      끝까지 함께 응원해주세요
+      </div>
+      <div class="block_child">
+        <div class="inner_block_child clearfix">
+          <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" id="thx_ch_img" /></div>
+        </div>
+      </div>
+      <div class="block_btn">
+        <a href="#" onclick="location.reload();"><img src="images/btn_ok.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 공유 완료 페이지 -->
+
 <?
         include_once "./popup_div.php";
 ?>
@@ -299,7 +340,9 @@
     var flag_sel_dream  = 0;
     var mb_rs       = null;
     var inputImageCheck;
-    $(document).ready(function() {
+	var share_cnt			= 0;
+    
+	$(document).ready(function() {
         Kakao.init('59df63251be6d99256b63b98f4948e89');
         $("#cboxTopLeft").hide();
         $("#cboxTopRight").hide();
