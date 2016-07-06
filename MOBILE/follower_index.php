@@ -78,9 +78,8 @@
       <div class="inner">
         <div class="block_content">
           <div class="title compassion">
-          컴패션에서는<br>
-          <?=$mb_data['mb_name']?>님의 어린 시절처럼<br>
-          꿈 많고 귀여운 어린이들이 있습니다
+          "<span style="color:#E9DE51"><?=$ch_data['ch_nick']?></span>아<br>
+          내꿈꿔!"<br>
           </div>
           <div class="sub_txt">
           가난으로 인해 꿈을 잃어버린 <br>
