@@ -168,7 +168,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
                 </div>
                 <div class="block_input_dream">
                 	<div class="selec_job">
-                    	<span id="sel_job_txt">1. 꿈꾸던 직업 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_re_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
+                    	<span id="sel_job_txt">1. 꿈꾸던 직업 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
                     </div>
                     <div class="upload_pic">
                     	<div class="title_pic">
@@ -254,12 +254,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
           <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic" /></div>
           <div class="child_text">
             <h2>저도 <span id="m_rs_job">선생님</span><span id="jobPP">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
-            <p>
-            안녕하세요 저는  <span id="m_rs_nation">필리핀</span>에 살고 있는<br>
-            <span id="m_rs_ch_name2">기타</span><span id="name2PP">에요</span><br>
-            어린 시절에 <span id="m_rs_job2">선생님</span><span id="job2PP">가</span> 꿈이 셨군요<br> <!-- ~이 ~가 -->
-            저도 언젠가는 그렇게 멋진 꿈을 꾸고 싶어요!
-
+            <p id="m_rs_desc">
             </p>
           </div>
         </div>
@@ -275,6 +270,9 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
       </div>
+      <div class="btn_block" style="margin-top:15px;">
+        <a href="#" onclick="go_main('matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
+      </div>
     </div>
   </div>
 </div>
@@ -283,34 +281,31 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <!-- ACTIVATOR 매칭 결과 페이지 (이미참여 결연X)-->
 <div id="re_matching_share_page" class="wrap_sec_top_sub match_child" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
-    <div class="block_content">
+    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content follower">
       <div class="title">
-	  당신의 도움이 필요한 어린이는<br> <span id="m_rs_ch_name">기타</span> 입니다
+        미니버님!<br> 
+        <span id="re_ch_name">아비가일 마아 야아 암퐁</span>을 위해<br>
+        다시 한번 참여해주셔서 감사합니다 
       </div>
       <div class="block_child">
-        <!-- <div class="img_letter"><img src="images/img_letter.png" /></div> -->
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="images/ex_child.png" id="re_matching_child_pic" /></div>
-          <div class="child_text">
-            <h2>저도 <span id="re_m_rs_job">선생님</span><span id="re_jobPP">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
-            <p>
-            상세설명 넣기!
-
-            </p>
-          </div>
         </div>
       </div>
       <div class="block_txt">
-        <p>SNS에 공유하셔서 <span id="re_m_rs_ch_name3">기타</span><span id="re_name3PP">이</span> 후원자를 만날 수 있도록 해주세요!</p><!-- ~이 ~가 -->
+        <p>아래 SNS에 당신의 어린 시절 사진과 꿈을 공유하셔서</p>
+        <p><span  id="re_ch_name2">아비가일 마아 야아 암퐁</span>이 후원자를 만날 수 있도록 해주세요!</p>
       </div>
       <div class="block_btn sns">
         <a href="#" onclick="go_share('fb','act','re_matching_share_page');return false;"><img src="images/sns_f.png" /></a>
-        <!-- <a href="#" onclick="sns_share('kt','act');"><img src="images/sns_kt.png" /></a> -->
         <a href="#" onclick="go_share('ks','act','re_matching_share_page');return false;"><img src="images/sns_ks.png" /></a>
       </div>
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
+      </div>
+      <div class="btn_block">
+        <a href="#" onclick="go_main('re_matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
   </div>
@@ -345,6 +340,9 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       </div>
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
+      </div>
+      <div class="btn_block">
+        <a href="#" onclick="go_main('no_matching_page');return false;"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
   </div>
@@ -438,7 +436,6 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 		$(".g").css("width",gage_w+"%");
 		$(".heart").css("left",gage_w+"%");
 		Ins_tracking();
-
 
 		$('.people_pic').bxSlider({
 			ticker: true,
@@ -795,7 +792,6 @@ function dream_next(){
 				$("#loading_div").show();
 			},
 			success: function(response){
-        alert(response);
 				var rs_ch = response.split("||");
         //rs_ch[5] 아이이름 받침 유무, rs_ch[6] 직업 받침 유무 (0 or 0보다큰정수)
 				mb_rs = rs_ch[2];
@@ -814,7 +810,8 @@ function dream_next(){
 						// job_add_arr		= job_add.split("||");
 						//$("#m_rs_name").html(mb_name);
 						$("#m_rs_ch_name").html(rs_ch[3]);
-						$("#m_rs_ch_name2").html(rs_ch[3]);
+						$("#m_rs_desc").html(rs_ch[7]);
+						//$("#m_rs_ch_name2").html(rs_ch[3]);
 						$("#m_rs_ch_name3").html(rs_ch[3]);
 						$("#thx_ch_name").html("'"+rs_ch[3]+"'");
 						$("#m_rs_job").html(job_lang_kor);
@@ -828,16 +825,12 @@ function dream_next(){
 							$("#thx_namePP").html("이");
 						}
 
-						$("#m_rs_job").html(job_lang_kor);
-						$("#m_rs_job2").html(job_lang_kor);
-
 						if(rs_ch[6] > 0){
 							//받침 O
 							$("#jobPP").html("을");
-							$("#job2PP").html("이");
+							//$("#job2PP").html("이");
 						}
 
-						// $("#matching_share_page").show();
 						$("#matching_share_page").fadeIn('fast');
 						//open_pop('share_popup');
 					});
@@ -853,26 +846,26 @@ function dream_next(){
 						// job_add_arr		= job_add.split("||");
 						//$("#m_rs_name").html(mb_name);
 						$("#m_rs_ch_name").html(rs_ch[3]);
-						$("#m_rs_ch_name2").html(rs_ch[3]);
+						//$("#m_rs_ch_name2").html(rs_ch[3]);
 						$("#m_rs_ch_name3").html(rs_ch[3]);
 						$("#thx_ch_name").html("'"+rs_ch[3]+"'");
 
 						if(rs_ch[5] > 0) {
 							//받침 O
-							$("#name2PP").html("이에요");
+							//$("#name2PP").html("이에요");
 							$("#name3PP").html("이");
               $("#thx_namePP").html("이");
 						}
 						
 						$("#m_rs_job").html(job_lang_kor);
-						$("#m_rs_job2").html(job_lang_kor);
+						//$("#m_rs_job2").html(job_lang_kor);
 						
 						if(rs_ch[6] > 0){
 							$("#jobPP").html("을");
-							$("#job2PP").html("이");
+							//$("#job2PP").html("이");
 						}
 
-						$("#m_rs_nation").html(rs_ch[4]);
+						//$("#m_rs_nation").html(rs_ch[4]);
 						// $("#matching_share_page").show();
 						$("#matching_share_page").fadeIn('fast');
 					});

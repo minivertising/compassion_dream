@@ -106,7 +106,7 @@
                         </div>
                         <div class="right">
                             <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
-                         	<div class="txt">1:1 후원이 어려울 경우<br>SNS에 어릴적 사진을 공유하고 함께 응원해주세요
+                         	<div class="txt">1:1 후원이 어려울 경우<br>SNS에 어릴적 사진을 공유하고<br>함께 응원해주세요
 						</div>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
             </div>
             <div class="right">
               <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
-              <div class="txt">1:1 후원이 어려울 경우<br>SNS에 어릴적 사진을 공유하고 함께 응원해주세요</div>
+              <div class="txt">1:1 후원이 어려울 경우<br>SNS에 어릴적 사진을 공유하고<br>함께 응원해주세요</div>
             </div>
           </div>
         </div>
