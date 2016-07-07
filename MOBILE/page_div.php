@@ -94,7 +94,7 @@
       </div>
       <div class="block_child">
         <div class="inner_block_child clearfix">
-          <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic" /></div>
+          <div class="child_pic"><img src="images/ex_child_01.png" id="matching_child_pic" /></div>
           <div class="child_text">
             <h2>"저도 <span id="m_rs_job">선생님</span><span id="jobPP">를</span> 꿈꿀 수 있을까요?"</h2> <!-- 을 를 -->
             <div class="bg_line">
@@ -184,9 +184,9 @@
       <div class="img_com">
         <div class="img_child">
           <div class="inner_img_child clearfix">
-            <div class="one"><img src="images/ex_child.png" /></div>
-            <div class="one"><img src="images/ex_child.png" /></div>
-            <div class="one"><img src="images/ex_child.png" /></div>
+            <div class="one"><img src="images/ex_child_01.png" /></div>
+            <div class="one"><img src="images/ex_child_02.png" /></div>
+            <div class="one"><img src="images/ex_child_03.png" /></div>
           </div>
         </div>
         <img src="images/bg_share_com.png" class="bg" />
