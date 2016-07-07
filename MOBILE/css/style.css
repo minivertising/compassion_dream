@@ -1043,7 +1043,7 @@ body.storytelling{
 	background:url(../images/bg_txt_match.png) 0 0 no-repeat;
 	background-size:100%;
 	margin-top:-10px;
-	padding-bottom:10px;
+	padding-bottom:60px;
 	
 	
 	
@@ -1059,7 +1059,7 @@ body.storytelling{
 	font-size:14px;
 	width:80%;
 	line-height:32px;
-	height:130px;
+	height:90px;
 	background:url(../images/txt_line.png) 0 0 repeat-y;
 	margin:0 auto;
 	overflow:scroll;
