@@ -29,7 +29,6 @@
 </script>
 <div id="loading_div" class="wrap_page loading" style="display:none">
 	<div class="inner">
-		<div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
 		<div class="block_content">
 			<div class="img_load">
 				<img src="images/img_loading.png" />

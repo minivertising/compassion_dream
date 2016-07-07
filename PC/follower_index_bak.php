@@ -1,12 +1,15 @@
 <?
     include_once "./header.php";
-  // MOBILE에서 유입시 MOBILE로 이동
-  if ($gubun == "MOBILE")
-    echo "<script>location.href='../MOBILE/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
-  $ch_data    = sel_child_info($mb_data['mb_child']);
-  $convert_job = job_ko_add($mb_data['mb_job']);
+
+	// MOBILE에서 유입시 MOBILE로 이동
+	if ($gubun == "MOBILE")
+		echo "<script>location.href='../MOBILE/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
+
+	$ch_data    = sel_child_info($mb_data['mb_child']);
+	$convert_job = job_ko_add($mb_data['mb_job']);
+	
 ?>
-<body class="bg_sub_page story">
+<body>
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -15,6 +18,7 @@
       version    : 'v2.6'
     });
   };
+
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
@@ -29,358 +33,61 @@
     <div class="block_content">
       <div class="img_load">
 <?
-  if ($ch_data['ch_nick'] == "")
-  {
+	if ($ch_data['ch_nick'] == "")
+	{
 ?>
       당신이 응원할 '꿈을 잃은 어린이'를 찾는 중이예요<br>
       잠시만 기다려 주세요
 <?
-  }else{
+	}else{
 ?>
       꿈이 필요한 어린이 '<?=$ch_data['ch_nick']?>'<?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 응원중입니다<br>
       잠시만 기다려 주세요
 <?
-  }
+	}
 ?>
       </div>
     </div>
   </div>
 </div>
 <div id="contents_div">
-  <div class="wrap_sec_top_sub storytelling">
-    <div class="inner">
-      <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
-      <div class="block_content story_1">
-        <div class="inner_story" id="talk_area">
-          <div class="top" id="talk_alarm1" style="display:none;">[<?=$mb_data['mb_name']?>님]이 당신과 [<?=$ch_data['ch_nick']?>]를 초대했습니다.</div>
-          <!--왼쪽 글 레이아웃-->
-          <div class="one_talk clearfix">
-            <div class="left">
-              <div class="inner_left clearfix">
-                <div class="icon talk_ch_message1" style="display:none;"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
-                <div class="content">
-                  <div class="name talk_ch_message1" style="display:none;"><?=$ch_data['ch_nick']?></div>
-                  <div class="pic talk_ch_message1" style="display:none;"><img src="<?=$ch_data['ch_full_img_url']?>" class="story_pic pic_child" /></div>
-                  <!--대화말풍선 하나(어린이쪽)-->
-                  <div class="inner_chat clearfix" id="talk_ch_message2" style="display:none;">
-                    <div class="chat">
-                      <div class="bg_chat_front">
-                        <div class="cc">저에요</div>
-                      </div>
-                    </div>
-                    <div class="cnt">1</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--오른쪽 글 레이아웃-->
-          <div class="one_talk clearfix">
-            <div class="right clearfix">
-              <div class="name talk_mb_message1" style="display:none;"><?=$mb_data['mb_name']?></div>
-              <div class="pic talk_mb_message1" style="display:none;"><img src="<?=$mb_data['mb_image']?>" class="story_pic pic_acti" /></div>
-              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-              <div class="mychat" id="talk_mb_message2" style="display:none;">
-                <div class="inner_chat clearfix">
-                  <div class="chat">
-                    <div class="bg_chat_front">
-                      <div class="cc">내 어린 시절이야 우린 참 많이 닮은 것 같아</div>
-                    </div>
-                  </div>
-                  <div class="cnt">1</div>
-                </div>
-              </div>
-              <!--말풍선끝-->
-            </div>
-          </div>
-          <!--왼쪽 글 레이아웃-->
-          <div class="one_talk clearfix" id="talk_ch_message3" style="display:none;">
-            <div class="left">
-              <div class="inner_left clearfix">
-                <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
-                <div class="content">
-                  <div class="name"><?=$ch_data['ch_nick']?></div>
-                  <!--대화말풍선 하나(어린이쪽)-->
-                  <div class="inner_chat clearfix">
-                    <div class="chat">
-                      <div class="bg_chat_front">
-                        <div class="cc">네?</div>
-                      </div>
-                    </div>
-                    <div class="cnt">1</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--오른쪽 글 레이아웃-->
-          <div class="one_talk clearfix">
-            <div class="right clearfix" id="talk_mb_message3" style="display:none;">
-              <div class="name"><?=$mb_data['mb_name']?></div>
-              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-              <div class="mychat">
-                <div class="inner_chat clearfix">
-                  <div class="chat">
-                    <div class="bg_chat_front">
-                      <div class="cc">^^</div>
-                    </div>
-                  </div>
-                  <div class="cnt">1</div>
-                </div>
-              </div>
-              <!--말풍선끝-->                            
-              <!--대화말풍선 하나 두줄짜리 (액티베이터쪽)-->
-              <div class="mychat" id="talk_mb_message4" style="display:none;">
-                <div class="inner_chat clearfix">
-                  <div class="chat v2">
-                    <div class="bg_chat_front v2">
-                      <div class="cc v2">
-                      우리는 꿈 많은 어린 시절이 닮았어<br>
-                      나는 선생님이 꿈이었는데 넌?
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cnt v2">1</div>
-                </div>
-              </div>
-              <!--말풍선끝-->
-            </div>
-          </div>
-          <!--왼쪽 글 레이아웃-->
-          <div class="one_talk clearfix" id="talk_ch_message4" style="display:none;">
-            <div class="left">
-              <div class="inner_left clearfix">
-                <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
-                <div class="content">
-                  <div class="name"><?=$ch_data['ch_nick']?></div>
-                  <!--대화말풍선 하나(어린이쪽)-->
-                  <div class="inner_chat clearfix">
-                    <div class="chat">
-                      <div class="bg_chat_front">
-                        <div class="cc no_chat">...</div>
-                      </div>
-                    </div>
-                    <div class="cnt">1</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="top" id="talk_alarm2" style="display:none;">가난이 채팅에 참여했습니다.</div>
-          <!--왼쪽 글 레이아웃-->
-          <div class="one_talk clearfix" id="talk_poor_area1" style="display:none;">
-            <div class="left">
-              <div class="inner_left clearfix">
-                <div class="icon" id="talk_poor_icon1" style="display:none;"><img src="images/icon_ganan.jpg" class="pic_icon" /></div>
-                <div class="content">
-                  <div class="name" id="talk_poor_nick1" style="display:none;">가난</div>
-                  <!--대화말풍선 하나(가난)-->
-                  <div class="inner_chat clearfix" id="talk_poor_message1" style="display:none;">
-                    <div class="chat">
-                      <div class="bg_chat_front">
-                        <div class="cc">아니 둘은 달라</div>
-                      </div>
-                    </div>
-                    <div class="cnt">1</div>
-                  </div>
-                  <div class="pic" id="talk_poor_message2" style="display:none;"><img src="images/ex_ganan.jpg" class="story_pic pic_ganan" /></div>
-                  <!--대화말풍선 하나(가난)-->
-                  <div class="inner_chat clearfix" id="talk_poor_message3" style="display:none;">
-                    <div class="chat v3">
-                      <div class="bg_chat_front v3">
-                        <div class="cc v3">
-                        <?=$mb_data['mb_name']?>는 자유롭게 꿈꾸는 행복을 누렸지만,<br>
-                        <?=$ch_data['ch_nick']?>는<br>
-                        나로 인해 계속 꿈을 꿀 수 없을테니까.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="cnt">1</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--왼쪽 글 레이아웃-->
-          <div class="one_talk clearfix" id="talk_ch_message5" style="display:none;">
-            <div class="left">
-              <div class="inner_left clearfix">
-                <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
-                <div class="content">
-                  <div class="name"><?=$ch_data['ch_nick']?></div>
-                  <!--대화말풍선 하나(어린이쪽)-->
-                  <div class="inner_chat clearfix">
-                    <div class="chat">
-                      <div class="bg_chat_front">
-                        <div class="cc no_chat">ㅠ_ㅠ</div>
-                      </div>
-                    </div>
-                    <div class="cnt">1</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="top" id="talk_alarm3" style="display:none;">미니버님이 가난을 강퇴시켰습니다.</div>
-          <!--오른쪽 글 레이아웃-->
-          <div class="one_talk clearfix">
-            <div class="right clearfix" id="talk_mb_message5" style="display:none;">                        
-              <div class="name"><?=$mb_data['mb_name']?></div>
-              <!--대화말풍선 하나 두줄짜리 (액티베이터쪽)-->
-              <div class="mychat">
-                <div class="inner_chat clearfix">
-                  <div class="chat v2">
-                    <div class="bg_chat_front v2">
-                      <div class="cc v2">
-                      가난이 오늘도 너에게 거짓말을 하는구나!<br>
-                      가난해도 꿈꿀 수 있어
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cnt v2">1</div>
-                </div>
-              </div>
-              <!--말풍선끝-->
-              <!--대화말풍선 하나 두줄짜리 (액티베이터쪽)-->
-              <div class="mychat" id="talk_mb_message6" style="display:none;">
-                <div class="inner_chat clearfix">
-                  <div class="chat v6">
-                    <div class="bg_chat_front v6">
-                      <div class="cc v6">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cnt v2">1</div>
-                </div>
-              </div>
-              <!--말풍선끝-->                           
-            </div>
-          </div>
-          <!--왼쪽 글 레이아웃-->
-          <div class="one_talk clearfix" id="talk_ch_message6" style="display:none;">
-            <div class="left">
-              <div class="inner_left clearfix">
-                <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
-                <div class="content">
-                  <div class="name"><?=$ch_data['ch_nick']?></div>
-                  <!--대화말풍선 하나(어린이쪽)-->
-                  <div class="inner_chat clearfix">
-                    <div class="chat v5">
-                      <div class="bg_chat_front v5">
-                        <div class="cc v5">
-                        정말 그럴 수 있을까요? ㅠㅠ..<br>
-                        전 일하러 갈게요..
-                        </div>
-                      </div>
-                    </div>
-                    <div class="cnt">1</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="top" id="talk_alarm4" style="display:none;">어린이님이 퇴장하였습니다.</div>
-          <!--오른쪽 글 레이아웃-->
-          <div class="one_talk clearfix">
-            <div class="right clearfix">                        
-              <div class="name" id="talk_mb_nick2" style="display:none;"><?=$mb_data['mb_name']?></div>
-              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-              <div class="mychat" id="talk_mb_message7" style="display:none;">
-                <div class="inner_chat clearfix">
-                  <div class="chat">
-                    <div class="bg_chat_front">
-                      <div class="cc">
-                      우리 둘만 남았네요..
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cnt">1</div>
-                </div>
-              </div>
-              <!--말풍선끝-->
-              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-              <div class="mychat" id="talk_mb_message8" style="display:none;">
-                <div class="inner_chat clearfix">
-                  <div class="chat">
-                    <div class="bg_chat_front">
-                      <div class="cc">
-                      당신도 어린 시절 꾸웠던 꿈이 있나요?
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cnt">1</div>
-                </div>
-              </div>
-              <!--말풍선끝-->
-              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-              <div class="mychat" id="talk_mb_message9" style="display:none;">
-                <div class="inner_chat clearfix">
-                  <div class="chat v7">
-                    <div class="bg_chat_front v7">
-                      <div class="cc v7">
-                      그렇다면 저와 함께<br>
-                      [아비가일 마아 야아 암퐁]의 손을 잡아주세요<br>
-                      그리고 희망을 말해주세요.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cnt v7">1</div>
-                </div>
-              </div>
-              <!--말풍선끝-->
-              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-              <div class="mychat" id="talk_mb_message10" style="display:none;">
-                <div class="inner_chat clearfix">
-                  <div class="chat">
-                    <div class="bg_chat_front">
-                      <div class="cc">
-                      “[아비가일 마아 야아] 너는 꿈을 꿀 자격이 있어.”
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cnt">1</div>
-                </div>
-              </div>
-              <!--말풍선끝-->
-              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-              <div class="mychat" id="talk_mb_message11" style="display:none;">
-                <div class="inner_chat clearfix">
-                  <div class="chat">
-                    <div class="bg_chat_front">
-                      <div class="cc">
-                      “자, 여기 내꿈꿔.”
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cnt">1</div>
-                </div>
-              </div>
-              <!--말풍선끝-->
-              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-              <div class="mychat" id="talk_mb_message12" style="display:none;">
-                <div class="inner_chat clearfix">
-                  <div class="chat v8">
-                    <div class="bg_chat_front v8">
-                      <div class="cc v8">
-                        아미가일 마아 야아 암퐁을 다시 초대하기<br>
-                        <a href="#">mydream.compassion.or.kr</a><br>
-                        <a href="#"><img src="images/chat_8_img.png" /></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cnt v8">
-                    <img src="images/chat_8.png" />
-                  </div>
-                </div>
-              </div>
-              <!--말풍선끝-->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bg_img_1"><img src="images/bg_pic_1.png" /></div>
-      <div class="bg_img_2"><img src="images/bg_pic_2.png" /></div>
-    </div>
+  <div id="page_div1">
+    <!-- 직업 한글 변환 필요 -->
+    <h2>어릴적 내 꿈은 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이었어요" : "였어요" ?></h2>
+  <div>
+    <img src="<?=$mb_data['mb_image']?>" style="width:100%">
+  </div>
+    <a href="#" onclick="next_page('2');return false;">다음</a>
+  </div>
+  <div id="page_div2" style="display:none">
+    <h2>저는 사실 하루가 다르게 꿈이 바뀌었어요.</h2>
+    <a href="#" onclick="next_page('3');return false;">다음</a>
+  </div>
+  <div id="page_div3" style="display:none">
+    <h2>그런데 만약 그 어린시절에 꿈을 꿀 수 없었다면 어땠을까요?</h2>
+    <a href="#" onclick="next_page('4');return false;">다음</a>
+  </div>
+  <div id="page_div4" style="display:none">
+    <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
+<?
+	if ($mb_data['mb_child'] == "")
+	{
+?>
+    <a href="#" onclick="next_page('7');return false;">어린이 만나기111</a>
+<?
+	}else{
+		if ($ch_data['ch_choice'] == "Y")
+		{
+?>
+    <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
+<?
+		}else{
+?>
+    <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
+<?
+		}
+	}
+?>
   </div>
   <div id="page_div5" class="wrap_sec_top_sub match_child follower" style="display:none;">
     <div class="inner">
@@ -499,20 +206,20 @@
       <div class="title">
         <div class="main">
 <?
-  if ($ch_data['ch_nick'] == "")
-  {
+	if ($ch_data['ch_nick'] == "")
+	{
 ?>
         여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
         SNS에 사진과 함께 당신이 응원할<br>
         <span>‘꿈을 잃은 어린이</span>가 소개됩니다
 <?
-  }else{
+	}else{
 ?>
         여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
         SNS에 사진과 함께 당신이 응원할<br>
         ‘꿈을 잃은 어린이 <span><?=$ch_data['ch_nick']?></span>’<?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 소개됩니다 <!-- ~이 ~가 -->
 <?
-  }
+	}
 ?>
         </div>
       </div>
@@ -665,7 +372,7 @@
 <!-- 공유 완료 페이지 -->
 
 <?
-  include_once "./popup_div.php";
+	include_once "./popup_div.php";
 ?>
 </body>
 </html>
@@ -686,9 +393,9 @@
     var flag_sel_dream  = 0;
     var mb_rs       = null;
     var inputImageCheck;
-  var share_cnt     = 0;
+	var share_cnt			= 0;
     
-  $(window).load(function() {
+	$(document).ready(function() {
         Kakao.init('59df63251be6d99256b63b98f4948e89');
         $("#cboxTopLeft").hide();
         $("#cboxTopRight").hide();
@@ -698,23 +405,26 @@
         $("#cboxMiddleRight").hide();
         $("#cboxTopCenter").hide();
         $("#cboxBottomCenter").hide();
-    $("#talk_area").niceScroll({cursorcolor:"gray",cursorborder:"gray"});
-    talk_start();
+
         Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
     });
     /*
         var $inputImage = $('#inputImage');
         var URL = window.URL || window.webkitURL;
         var blobURL;
+
             if (URL) {
                 $inputImage.change(function () {
                     var files = this.files;
                     var file;
+
                     if (!$ori_image.data('cropper')) {
                         return;
                     }
+
                     if (files && files.length) {
                         file = files[0];
+
                         if (/^image\/\w+$/.test(file.type)) {
                             blobURL = URL.createObjectURL(file);
                             $ori_image.one('built.cropper', function () {
@@ -731,57 +441,62 @@
                 $inputImage.prop('disabled', true).parent().addClass('disabled');
             }
             */
+
 // $(function () {
 //     image_crop();
 // });
+
 function image_crop(){
-  $($ori_image).cropper({
-    viewMode: 0,
-    dragMode: 'move',
-    autoCropArea: 0.8,
-    aspectRatio: 1200/630,
-    responsive: true,
-    restore: true,
-    guides: false,
-    highlight: true,
-    background: true,
-    cropBoxMovable: true,
-    cropBoxResizable: true,
-    preview: '.preview',
-    center:true,
-    zoomOnWheel:false,
-    toggleDragModeOnDblclick:false,
-    // build: function (e) {
-    //     console.log(e.type);
-    // },
-    // built: function (e) {
-    //     console.log(e.type);
-    // },
-    // cropstart: function (e) {
-    //     console.log(e.type, e.action);
-    // },
-    // cropper: function (e) {
-    //     console.log(e.type, e.action);
-    // },
-    // cropend: function (e) {
-    //     console.log(e.type, e.action);
-    // },
-    // crop: function (e) {
-    //     console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
-    // },
-    // zoom: function (e) {
-    //     console.log(e.type, e.ratio);
-    // }
-  });
+	$($ori_image).cropper({
+		viewMode: 0,
+		dragMode: 'move',
+		autoCropArea: 0.8,
+		aspectRatio: 1200/630,
+		responsive: true,
+		restore: true,
+		guides: false,
+		highlight: true,
+		background: true,
+		cropBoxMovable: true,
+		cropBoxResizable: true,
+		preview: '.preview',
+		center:true,
+		zoomOnWheel:false,
+		toggleDragModeOnDblclick:false,
+		// build: function (e) {
+		//     console.log(e.type);
+		// },
+		// built: function (e) {
+		//     console.log(e.type);
+		// },
+		// cropstart: function (e) {
+		//     console.log(e.type, e.action);
+		// },
+		// cropper: function (e) {
+		//     console.log(e.type, e.action);
+		// },
+		// cropend: function (e) {
+		//     console.log(e.type, e.action);
+		// },
+		// crop: function (e) {
+		//     console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
+		// },
+		// zoom: function (e) {
+		//     console.log(e.type, e.ratio);
+		// }
+	});
 }
 // });
+
 function f_preview_img()
 {
 /*
         사진 저장할 내용 추가
         */
         open_pop('f_preview_popup');
+
     }
+
 function zoom_action(type){
     if(type=="up")
     {
@@ -790,6 +505,7 @@ function zoom_action(type){
         $($ori_image).cropper('zoom', -0.1);
     }
 }
+
 function readURL(input) {
     if (input.files && input.files[0]) {
         file = files[0];
@@ -842,6 +558,7 @@ function readURL(input) {
             // });
     }
 }
+
                 $($inputImage).change(function(){
                     inputImageCheck = "Y";
                     files = this.files;
@@ -856,6 +573,8 @@ function readURL(input) {
                 //  }
                     readURL(this);
                 });
+
+
 function f_dream_next()
 {
     if (sel_dream == null)
@@ -869,6 +588,7 @@ function f_dream_next()
         return false;
     }
         //mb_job    = $("#mb_job").val();
+
     if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
         cropboxDataIE = $(ori_image).cropper('getData');
         crop_image_url = $(ori_image).attr('src');
@@ -902,36 +622,38 @@ function f_dream_next()
             success: function(res){
                 // console.log(res);
                 //mb_image    = res;
+
                 var rs_ch = res.split("||");
                 mb_rs = rs_ch[1];
                 //$("#contents_div").show();
                 if (rs_ch[0] == "Y")
                 {
                     $("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
-                  $("#loading_div").fadeOut('fast',function(){
+	                $("#loading_div").fadeOut('fast',function(){
 <?
-  if ($ch_data['ch_choice'] == "Y")
-  {
+	if ($ch_data['ch_choice'] == "Y")
+	{
 ?>
-            $("#f_share_no_matching_page").fadeIn("fast");
+						$("#f_share_no_matching_page").fadeIn("fast");
 <?
-  }else{
+	}else{
 ?>
-            $("#f_share_page").fadeIn("fast");
+						$("#f_share_page").fadeIn("fast");
 <?
-  }
+	}
 ?>
-          });
+					});
                 }else if (rs_ch[0] == "N"){
-                  $("#loading_div").fadeOut('fast',function(){
-            $("#f_share_no_matching_page").fadeIn("fast");
-          });
+	                $("#loading_div").fadeOut('fast',function(){
+						$("#f_share_no_matching_page").fadeIn("fast");
+					});
                 }else {
                     alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
                     location.reload();
                 }
             }
         });
+
     }else{
         // 사진 저장할 내용 추가
         var croppedImg = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
@@ -965,6 +687,7 @@ function f_dream_next()
             success: function(res){
                 // console.log(res);
                 //mb_image    = res;
+
                 var rs_ch = res.split("||");
                 mb_rs = rs_ch[1];
                 //$("#loading_div").hide();
@@ -972,28 +695,28 @@ function f_dream_next()
                 if (rs_ch[0] == "Y")
                 {
                     $("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
-          setTimeout(function(){
-                  $("#loading_div").fadeOut('fast',function(){
+					setTimeout(function(){
+	                $("#loading_div").fadeOut('fast',function(){
 <?
-  if ($ch_data['ch_choice'] == "Y")
-  {
+	if ($ch_data['ch_choice'] == "Y")
+	{
 ?>
-            $("#f_share_no_matching_page").fadeIn("fast");
+						$("#f_share_no_matching_page").fadeIn("fast");
 <?
-  }else{
+	}else{
 ?>
-            $("#f_share_page").fadeIn("fast");
+						$("#f_share_page").fadeIn("fast");
 <?
-  }
+	}
 ?>
-          });
-          },1500);
+					});
+					},1500);
                 }else if (rs_ch[0] == "N"){
-          setTimeout(function(){
-                  $("#loading_div").fadeOut('fast',function(){
-            $("#f_share_no_matching_page").fadeIn("fast");
-          });
-          },1500);
+					setTimeout(function(){
+	                $("#loading_div").fadeOut('fast',function(){
+						$("#f_share_no_matching_page").fadeIn("fast");
+					});
+					},1500);
                 }else {
                     alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
                     location.reload();
@@ -1003,15 +726,16 @@ function f_dream_next()
         
     }
 }
+
     function Ins_share_cnt(serial, ugu,parent_idx)
     {
         $.ajax({
             type:"POST",
             data:{
-                "exec"      : "insert_share_cnt",
-                "serial"      : serial,
-                "parent_idx"  : parent_idx,
-                "ugu"       : ugu
+                "exec"			: "insert_share_cnt",
+                "serial"			: serial,
+                "parent_idx"	: parent_idx,
+                "ugu"				: ugu
             },
             url: "../main_exec.php",
             success: function(res){
@@ -1019,4 +743,6 @@ function f_dream_next()
             }
         });
     }
+
 </script>
+<!-- <script src="../lib/Cropper/js/main.js"></script> -->
