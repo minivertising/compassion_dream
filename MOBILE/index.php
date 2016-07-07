@@ -201,6 +201,7 @@
 		});
 			if (URL) {
 				$inputImage.change(function () {
+					//$("#img_div").show();
 					var files = this.files;
 					var file;
 					if (!$ori_image.data('cropper')) {
@@ -390,8 +391,6 @@ function input_submit()
 			// $("#input_page").hide();
 					// $("#input_page").fadeOut('slow', function(){
 					// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
-					$("#loading_div").fadeOut('fast', function(){
-						$("body").removeClass("bg_sub_page bg_loading");
 
 						var job_add   = job_ko_add(sel_dream);
 						job_add_arr   = job_add.split("||");
@@ -421,6 +420,8 @@ function input_submit()
 							$("#job2PP").html("이");
 						}
 
+					$("#loading_div").fadeOut('fast', function(){
+						$("body").removeClass("bg_sub_page bg_loading");
 						$("#matching_share_page").fadeIn('fast');
 					});
 				}else if (rs_ch[0] == "C"){
@@ -450,7 +451,7 @@ function input_submit()
 					$("#loading_div").fadeOut('fast', function(){
 						$("body").removeClass("bg_sub_page bg_loading");
 						$("#re_matching_share_page").fadeIn('fast');
-					})
+					});
 				}else{
 					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
 					location.reload();
