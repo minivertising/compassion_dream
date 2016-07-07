@@ -156,7 +156,6 @@ body.bg_status{
 	border:3px solid #fff;
 }
 
-
 .wrap_page.main_page .sec_movie .title_movie{
 	width:100%;
 }
@@ -1095,7 +1094,7 @@ body.bg_status{
 .wrap_pop.p_preview .inner_p_preview .img{
 	position: absolute;
 	width:96.5%;
-	top:39%;
+	top:38%;
 	text-align:center;
 	padding-left:1.5%;
 	left:2%; /* 개발쪽 변경*/
@@ -1322,4 +1321,31 @@ html[xmlns] .clearfix {
 /* animate out */
 .my-mfp-slide-bottom.mfp-removing.mfp-bg {
 	opacity: 0;
+}
+
+/* 약관 */
+.wrap_pop.howto_notice dl{
+	padding:0 10px;
+	margin-left:10px;
+	color:#333;
+	font-size:13px;
+	font-family:"맑은고딕", "Malgun Gothic", "돋움", Dotum, "Apple Gothic", sans-serif; 
+}
+.wrap_pop.howto_notice dl dt{
+	padding-bottom:10px;
+	font-size:17px;
+	font-weight:bold;
+	text-align:center;
+}
+.wrap_pop.howto_notice dl dd{
+	padding-bottom:4px;
+	line-height: 18px;
+}
+
+.wrap_pop.howto_notice .text{
+overflow:scroll;
+border:0px red solid;
+margin-top:0px;
+height:800px;
+
 }

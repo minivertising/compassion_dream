@@ -2,8 +2,7 @@ function open_pop(param)
 {
 	if (param == "preview_popup")
 	{
-		$(".preview").width($(document).width()-40);
-		$(".preview").height($(".preview").width()/2);
+
 	}
 	// $('.preview > img').css('width', 'max-width');
 	$.colorbox({innerWidth:"100%",innerHeight: "95%", initialWidth:"95%", initialHeight: "70%", inline:true, opacity:"0.9", scrolling:true, reposition: false, closeButton:false, overlayClose: false, open:true, speed:20, transition: "fade", fadeOut: 300, href:"#"+param, onComplete: function(){
@@ -26,15 +25,7 @@ function open_pop(param)
 
 	},
 	onClosed: function(){
-		//del_info();
 		$("#cboxContent").css("background","#fff");
-		// $(".sec_main_img").show();
-		$(".sec_main_img").fadeIn('slow');
-		if (param == "gift_popup2" || param == "notice_popup2")
-		{
-			// $(".sec_top").show();
-			$(".sec_top").fadeIn('slow');
-		}
 	}});
 }
 
@@ -78,8 +69,37 @@ function next_page(param)
 	var prev_param	= param - 1;
 	// $("#page_div"+prev_param).hide();
 	// $("#page_div"+param).show();
-	$("#page_div"+prev_param).fadeOut('slow');
-	$("#page_div"+param).fadeIn('slow');
+	switch(param)
+	{
+		case '5':
+			$("#page_div"+prev_param).fadeOut('fast', function(){
+				$("body").addClass("bg_sub_page");
+				$("#page_div"+param).fadeIn('fast');
+			});
+		break;
+
+		case '6':
+			var fade_page	= prev_param-1;
+			$("#page_div"+fade_page).fadeOut('fast', function(){
+				$("body").addClass("bg_sub_page");
+				$("#page_div"+param).fadeIn('fast');
+			});
+		break;
+
+		case '7':
+			var fade_page	= prev_param-2;
+			$("#page_div"+fade_page).fadeOut('fast', function(){
+				$("body").addClass("bg_sub_page");
+				$("#page_div"+param).fadeIn('fast');
+			});
+		break;
+
+		default:
+			$("#page_div"+prev_param).fadeOut('fast', function(){
+				$("#page_div"+param).fadeIn('fast');
+			});
+		break;
+	}
 }
 
 function only_num(obj)
@@ -117,76 +137,134 @@ function job_ko_add(job)
 	if (job == "president")
 	{
 		// 대통령
-		var job_add1	= "대통령을";
-		var job_add2	= "대통령이";
+		var job	= "대통령";
 	}else if (job == "congress"){
 		// 국회의원
-		var job_add1	= "국회의원을";
-		var job_add2	= "국회의원이";
+		var job	= "국회의원";
 	}else if (job == "businessman"){
 		// 기업가
-		var job_add1	= "기업가를";
-		var job_add2	= "기업가가";
+		var job	= "기업가";
 	}else if (job == "teacher"){
 		// 교사
-		var job_add1	= "교사를";
-		var job_add2	= "교사가";
+		var job	= "교사";
 	}else if (job == "singer"){
 		// 가수
-		var job_add1	= "가수를";
-		var job_add2	= "가수가";
+		var job	= "가수";
 	}else if (job == "actor"){
 		// 배우
-		var job_add1	= "배우를";
-		var job_add2	= "배우가";
+		var job	= "배우";
 	}else if (job == "designer"){
 		// 디자이너
-		var job_add1	= "디자이너를";
-		var job_add2	= "디자이너가";
+		var job	= "디자이너";
 	}else if (job == "model"){
 		// 모델
-		var job_add1	= "모델을";
-		var job_add2	= "모델이";
+		var job	= "모델";
 	}else if (job == "sportsman"){
 		// 운동선수
-		var job_add1	= "운동선수를";
-		var job_add2	= "운동선수가";
+		var job	= "운동선수";
 	}else if (job == "lawyer"){
 		// 변호사
-		var job_add1	= "변호사를";
-		var job_add2	= "변호사가";
+		var job	= "변호사";
 	}else if (job == "doctor"){
 		// 의사
-		var job_add1	= "의사를";
-		var job_add2	= "의사가";
+		var job	= "의사";
 	}else if (job == "scientist"){
 		// 과학자
-		var job_add1	= "과학자를";
-		var job_add2	= "과학자가";
+		var job	= "과학자";
 	}else if (job == "minister"){
 		// 목사
-		var job_add1	= "목사를";
-		var job_add2	= "목사가";
+		var job	= "목사";
 	}else if (job == "policeman"){
 		// 경찰관
-		var job_add1	= "경찰관을";
-		var job_add2	= "경찰관이";
+		var job	= "경찰관";
 	}else if (job == "fireman"){
 		// 소방관
-		var job_add1	= "소방관을";
-		var job_add2	= "소방관이";
+		var job	= "소방관";
 	}else if (job == "soldier"){
 		// 군인
-		var job_add1	= "군인을";
-		var job_add2	= "군인이";
+		var job	= "군인";
 	}else if (job == "cook"){
 		// 요리사
-		var job_add1	= "요리사를";
-		var job_add2	= "요리사가";
+		var job	= "요리사";
 	}
 
-	return job_add1 + "||" + job_add2;
+	return job;
 }
+// function job_ko_add(job)
+// {
+// 	if (job == "president")
+// 	{
+// 		// 대통령
+// 		var job_add1	= "대통령을";
+// 		var job_add2	= "대통령이";
+// 	}else if (job == "congress"){
+// 		// 국회의원
+// 		var job_add1	= "국회의원을";
+// 		var job_add2	= "국회의원이";
+// 	}else if (job == "businessman"){
+// 		// 기업가
+// 		var job_add1	= "기업가를";
+// 		var job_add2	= "기업가가";
+// 	}else if (job == "teacher"){
+// 		// 교사
+// 		var job_add1	= "교사를";
+// 		var job_add2	= "교사가";
+// 	}else if (job == "singer"){
+// 		// 가수
+// 		var job_add1	= "가수를";
+// 		var job_add2	= "가수가";
+// 	}else if (job == "actor"){
+// 		// 배우
+// 		var job_add1	= "배우를";
+// 		var job_add2	= "배우가";
+// 	}else if (job == "designer"){
+// 		// 디자이너
+// 		var job_add1	= "디자이너를";
+// 		var job_add2	= "디자이너가";
+// 	}else if (job == "model"){
+// 		// 모델
+// 		var job_add1	= "모델을";
+// 		var job_add2	= "모델이";
+// 	}else if (job == "sportsman"){
+// 		// 운동선수
+// 		var job_add1	= "운동선수를";
+// 		var job_add2	= "운동선수가";
+// 	}else if (job == "lawyer"){
+// 		// 변호사
+// 		var job_add1	= "변호사를";
+// 		var job_add2	= "변호사가";
+// 	}else if (job == "doctor"){
+// 		// 의사
+// 		var job_add1	= "의사를";
+// 		var job_add2	= "의사가";
+// 	}else if (job == "scientist"){
+// 		// 과학자
+// 		var job_add1	= "과학자를";
+// 		var job_add2	= "과학자가";
+// 	}else if (job == "minister"){
+// 		// 목사
+// 		var job_add1	= "목사를";
+// 		var job_add2	= "목사가";
+// 	}else if (job == "policeman"){
+// 		// 경찰관
+// 		var job_add1	= "경찰관을";
+// 		var job_add2	= "경찰관이";
+// 	}else if (job == "fireman"){
+// 		// 소방관
+// 		var job_add1	= "소방관을";
+// 		var job_add2	= "소방관이";
+// 	}else if (job == "soldier"){
+// 		// 군인
+// 		var job_add1	= "군인을";
+// 		var job_add2	= "군인이";
+// 	}else if (job == "cook"){
+// 		// 요리사
+// 		var job_add1	= "요리사를";
+// 		var job_add2	= "요리사가";
+// 	}
+
+// 	return job_add1 + "||" + job_add2;
+// }
 
 
 function show_dream_sel()
@@ -229,16 +307,19 @@ function tab_click(param)
 		$("#s_tab2").attr("src","images/navi_kt_off.png");
 		$("#s_tab3").attr("src","images/navi_ks_off.png");
 		$("#s_contents").attr("src","images/img_howto_fb.jpg");
+		$("#s_sns").html("페이스북");
 	}else if (param == "2"){
 		$("#s_tab1").attr("src","images/navi_fb_off.png");
 		$("#s_tab2").attr("src","images/navi_kt_on.png");
 		$("#s_tab3").attr("src","images/navi_ks_off.png");
 		$("#s_contents").attr("src","images/img_howto_kt.jpg");
+		$("#s_sns").html("카카오톡");
 	}else{
 		$("#s_tab1").attr("src","images/navi_fb_off.png");
 		$("#s_tab2").attr("src","images/navi_kt_off.png");
 		$("#s_tab3").attr("src","images/navi_ks_on.png");
 		$("#s_contents").attr("src","images/img_howto_ks.jpg");
+		$("#s_sns").html("카카오 스토리");
 	}
 }
 
@@ -307,16 +388,16 @@ function sns_share(media, flag, page)
 			type:"POST",
 			data:{
 				"exec"			: "url_info",
-				"mb_serial"		: mb_rs
+				"mb_serial"		: mb_rs,
+				"ugu"			: s_ugu
 			},
 			url: "../main_exec.php",
 			success: function(response){
-				alert(response);
 				var img_url	= response;
 
 				Kakao.Link.sendTalkLink({
 				  //container: '#kakao-link-btn',
-				  label: "꿈 많았던 나의 어린시절을 소개합니다.\n\r아래의 링크로 확인해주세요.\n\r#블루바톤챌린지",
+				  label: "내꿈꿔 릴레이\n\r내 어린 시절 꿈과 사진으로 꿈이 필요한 어린이에게 후원자를 찾아주는 컴패션의 릴레이 캠페인입니다",
 				  image: {
 					src: img_url,
 					width: '1200',
@@ -345,7 +426,7 @@ function sns_share(media, flag, page)
 	}else{
 		Kakao.Story.share({
 			url: 'http://mydream.compassion.or.kr/MOBILE/follower_index.php?rs='+mb_rs+'&ugu='+flag,
-			text: '#블루바톤챌린지'
+			text: '#내꿈꿔'
 		});
 		$.ajax({
 			type   : "POST",

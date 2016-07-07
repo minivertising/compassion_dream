@@ -106,6 +106,64 @@
 		return $ch_data;
 	}
 
+	function job_ko_add($engJob)
+	{
+		if ($engJob == "president")
+		{
+			// 대통령
+			$convert_job	= "대통령";
+		}else if ($engJob == "congress"){
+			// 국회의원
+			$convert_job	= "국회의원";
+		}else if ($engJob == "businessman"){
+			// 기업가
+			$convert_job	= "기업가";
+		}else if ($engJob == "teacher"){
+			// 교사
+			$convert_job	= "교사";
+		}else if ($engJob == "singer"){
+			// 가수
+			$convert_job	= "가수";
+		}else if ($engJob == "actor"){
+			// 배우
+			$convert_job	= "배우";
+		}else if ($engJob == "designer"){
+			// 디자이너
+			$convert_job	= "디자이너";
+		}else if ($engJob == "model"){
+			// 모델
+			$convert_job	= "모델";
+		}else if ($engJob == "sportsman"){
+			// 운동선수
+			$convert_job	= "운동선수";
+		}else if ($engJob == "lawyer"){
+			// 변호사
+			$convert_job	= "변호사";
+		}else if ($engJob == "doctor"){
+			// 의사
+			$convert_job	= "의사";
+		}else if ($engJob == "scientist"){
+			// 과학자
+			$convert_job	= "과학자";
+		}else if ($engJob == "minister"){
+			// 목사
+			$convert_job	= "목사";
+		}else if ($engJob == "policeman"){
+			// 경찰관
+			$convert_job	= "경찰관";
+		}else if ($engJob == "fireman"){
+			// 소방관
+			$convert_job	= "소방관";
+		}else if ($engJob == "soldier"){
+			// 군인
+			$convert_job	= "군인";
+		}else if ($engJob == "cook"){
+			// 요리사
+			$convert_job	= "요리사";
+		}
+	return $convert_job;
+	}
+
 	function has_batchim($str, $charset = 'UTF-8') 
 	{
 		$str = mb_convert_encoding($str, 'UTF-16BE', $charset);
@@ -250,11 +308,11 @@
 			'subject' => '',
 			'msg_body' => 
 "
-블루 바톤 챌린지를 시작하셨네요!
+내꿈꿔 릴레이를 시작하셨네요!
 
-더 많은 사람들이 참여해서 후원자 님의 어린이가 꿈을 찾아갈 수 있도록 결연이 되는 그날 까지 힘내주세요
+더 많은 사람들이 참여해서 후원자 님의 어린이가 꿈을 찾아갈 수 있도록 결연이 되는 그날까지 힘내주세요
 
-아래의 링크를 누르시면 내 블루 바톤 터치 현황을 확인하실 수 있습니다.
+아래의 링크를 누르시면 내 어린이의 현황을 확인하실 수 있습니다.
 
 현황 확인하기:
 ".$s_url."

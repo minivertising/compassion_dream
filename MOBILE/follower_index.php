@@ -8,7 +8,7 @@
 		echo "<script>location.href='../PC/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
 
 	$ch_data	= sel_child_info($mb_data['mb_child']);
-
+	$convert_job = job_ko_add($mb_data['mb_job']);
 ?>
 <body>
 <script>
@@ -36,80 +36,84 @@
         <img src="images/img_loading.png" />
       </div>
       <div class="txt_load">
-      꿈이 필요한 어린이 '<?=$ch_data['ch_nick']?>'를 응원중입니다<br>
+      꿈이 필요한 어린이 '<?=$ch_data['ch_nick']?>'<?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 응원중입니다<br>
       잠시만 기다려 주세요 
       </div>
     </div>
   </div>
 </div>
 <div id="contents_div">
-    <div id="page_div1">
-	  <h2>어릴적 내 꿈은 <?=$_gl['job'][$mb_data['mb_job']]?></h2>
-	  <div>
-	    <img src="<?=$mb_data['mb_image']?>" style="width:100%">
-	  </div>
-	  <a href="#" onclick="next_page('2');return false;">다음</a>
+  <div id="page_div1">
+    <h2>어릴적 내 꿈은 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이었어요" : "였어요" ?></h2>
+    <div>
+      <img src="<?=$mb_data['mb_image']?>" style="width:100%">
     </div>
-    <div id="page_div2" style="display:none">
-	  <h2>저는 사실 하루가 다르게 꿈이 바뀌었어요.</h2>
-	  <a href="#" onclick="next_page('3');return false;">다음</a>
-    </div>
-    <div id="page_div3" style="display:none">
-	  <h2>그런데 만약 그 어린시절에 꿈을 꿀 수 없었다면 어땠을까요?</h2>
-	  <a href="#" onclick="next_page('4');return false;">다음</a>
-    </div>
-    <div id="page_div4" style="display:none">
-	  <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
+    <a href="#" onclick="next_page('2');return false;">다음</a>
+  </div>
+  <div id="page_div2" style="display:none">
+    <h2>저는 사실 하루가 다르게 꿈이 바뀌었어요.</h2>
+    <a href="#" onclick="next_page('3');return false;">다음</a>
+  </div>
+  <div id="page_div3" style="display:none">
+    <h2>그런데 만약 그 어린시절에 꿈을 꿀 수 없었다면 어땠을까요?</h2>
+    <a href="#" onclick="next_page('4');return false;">다음</a>
+  </div>
+  <div id="page_div4" style="display:none">
     <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
 <?
-    if ($ch_data['ch_choice'] == "Y")
-    {
+	if ($mb_data['mb_child'] == "")
+	{
+?>
+    <a href="#" onclick="next_page('7');return false;">어린이 만나기111</a>
+<?
+	}else{
+		if ($ch_data['ch_choice'] == "Y")
+		{
 ?>
     <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
 <?
-    }else{
+		}else{
 ?>
     <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
 <?
-    }
+		}
+	}
 ?>
-    </div>
-    <div id="page_div5" class="wrap_page share_match_child" style="display:none;">
-      <div class="inner">
-        <div class="block_content">
-          <div class="title compassion">
-          컴패션에서는<br>
-          <?=$mb_data['mb_name']?>님의 어린 시절처럼<br>
-          꿈 많고 귀여운 어린이들이 있습니다
+  </div>
+  <div id="page_div5" class="wrap_page share_match_child" style="display:none;">
+    <div class="inner">
+      <div class="block_content">
+        <div class="title compassion">
+          "<span style="color:#E9DE51"><?=$ch_data['ch_nick']?></span>아<br>
+          내꿈꿔!"<br>
+        </div>
+        <div class="sub_txt">
+        가난으로 인해 꿈을 잃어버린 <br>
+        '<?=$ch_data['ch_nick']?>'의 후원자가 되어주세요
+        </div>
+        <div class="img_com">
+          <div class="img_child story_result">
+            <img src="<?=$ch_data['ch_full_img_url']?>" />
           </div>
-          <div class="sub_txt">
-          가난으로 인해 꿈을 잃어버린 <br>
-          '<?=$ch_data['ch_nick']?>'의 후원자가 되어주세요
-          </div>
-          <div class="img_com">
-            <div class="img_child story_result">
-              <img src="<?=$ch_data['ch_full_img_url']?>" />
+          <div class="txt_child story_result">	
+            <div class="inner">
+              <?=$ch_data['ch_desc']?>
             </div>
-            <div class="txt_child story_result">	
-              <div class="inner">
-                <?=$ch_data['ch_desc']?>
-              </div>
-            </div>
-            <img src="images/bg_story_result.jpg" class="bg" />
           </div>
-          <div class="block_btn spon">
-            <div class="bt"><a href="http://www.compassion.or.kr/Mobile/cdspDetail3.aspx?ChildMasterID=<?=$ch_data['ch_id']?>&ChildID=<?=$ch_data['ch_key']?>" target="_blank"><img src="images/btn_spon.png" /></a></div>
-            <div class="txt">1:1후원으로 <?=$ch_data['ch_nick']?>의 꿈을 현실로 만들어주세요!</div>
-          </div>
-          <div class="block_btn cheer">
-            <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
-            <div class="txt">1:1 후원이 어려울 경우<br> SNS에 어릴적 사진을 공유하고 함께 응원해주세요</div>
-          </div>
-          <div class="friends_pic">
-            <div class="inner_friends_pic clearfix">
-              <div class="img"><img src="images/ex_friend.png" /></div>
-              <div class="txt">어린 시절  꿈과 사진을 등록하고<br> SNS공유하면 응원 완료!</div>
-            </div>
+          <img src="images/bg_story_result.jpg" class="bg" />
+        </div>
+        <div class="block_btn spon">
+          <div class="bt"><a href="http://www.compassion.or.kr/Mobile/cdspDetail3.aspx?ChildMasterID=<?=$ch_data['ch_id']?>&ChildID=<?=$ch_data['ch_key']?>" target="_blank"><img src="images/btn_spon.png" /></a></div>
+          <div class="txt">1:1후원으로 <?=$ch_data['ch_nick']?>의 꿈을 현실로 만들어주세요!</div>
+        </div>
+        <div class="block_btn cheer">
+          <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
+          <div class="txt">1:1 후원이 어려울 경우<br> SNS에 어릴적 사진을 공유하고 함께 응원해주세요</div>
+        </div>
+        <div class="friends_pic">
+          <div class="inner_friends_pic clearfix">
+            <div class="img"><img src="images/ex_friend.png" /></div>
+            <div class="txt">어린 시절  꿈과 사진을 등록하고<br> SNS공유하면 응원 완료!</div>
           </div>
         </div>
       </div>
@@ -117,6 +121,38 @@
   </div>
 
   <div id="page_div6" class="wrap_page share_match_child" style="display:none;">
+    <div class="inner">
+      <div class="block_content">
+        <div class="title">
+          "<span><?=$ch_data['ch_nick']?></span>아<br>
+          내꿈꿔!"	
+        </div>
+        <div class="block_child re">
+          <div class="inner_block_child clearfix">
+            <div class="child_pic re"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
+          </div>
+        </div>
+        <div class="more_child_list">
+          <div class="inner_more_child_list clearfix">
+            <div class="one"><img src="images/ex_child.png" /></div>
+            <div class="one"><img src="images/ex_child.png" /></div>
+            <div class="one"><img src="images/ex_child.png" /></div>
+            <div class="one"><img src="images/ex_child.png" /></div>
+          </div>
+          <div class="txt">
+          컴패션에는 꿈이 필요한 어린이들이 많이 있어요<br>
+          당신의 어린 시절 꿈과 사진을 공유하셔서<br> 
+          어린이의 꿈을 응원해주세요
+          </div>
+        </div>
+        <div class="block_btn re">
+          <a href="index.php"><img src="images/btn_apply_re.png" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page_div7" class="wrap_page share_match_child" style="display:none;">
     <div class="inner">
       <div class="block_content">
         <div class="title compassion">
@@ -138,7 +174,7 @@
         </div>
         <div class="block_btn spon">
           <div class="bt"><a href="#"><img src="images/btn_spon.png" /></a></div>
-          <div class="txt">1:1후원으로 기타의 꿈을 현실로 만들어주세요!</div>
+          <div class="txt">1:1후원으로 아이의 꿈을 현실로 만들어주세요!</div>
         </div>
         <div class="block_btn cheer">
           <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
@@ -153,7 +189,9 @@
       </div>
     </div>
   </div>
+
 </div>
+
 
 <div id="upload_page" class="wrap_page sub upload" style="display:none;">
   <div class="inner">
@@ -162,7 +200,8 @@
         여러분의 어린 시절의 꿈과 사진을 올려주세요<br>
         SNS에 사진과 함께 당신이 응원할<br>
         꿈을 잃은 어린이<br>
-        <span class="name">‘<?=$ch_data['ch_nick']?>’</span>이 소개됩니다
+        <!-- 이미 결연된 아이의 링크 일 경우엔 텍스트? -->
+        <span class="name">‘<?=$ch_data['ch_nick']?>’</span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 소개됩니다 <!-- 이 가 -->
       </div>
       <div class="block_input_dream">
         <div class="selec_job clearfix">
@@ -205,14 +244,15 @@
   <div class="inner">
     <div class="block_content">
       <div class="title">
-        당신의 도움이 필요한 어린이는<br>
-        '<span id="m_rs_ch_name"><?=$ch_data['ch_nick']?></span>'입니다
+        아래 SNS에 어린 시절 사진을 공유하여<br>
+        <span style="color:#E9DE51"><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 후원자를<br>
+        만날 수 있도록 해주세요!
       </div>
       <div class="block_child">
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" id="f_matching_child_pic" /></div>
           <div class="child_text">
-            <h2>"저도 <span id="m_rs_job"><?=$mb_data['mb_job']?>을</span> 꿈꿀 수 있을까요?"</h2>
+            <h2>"저도 <span id="m_rs_job"><?=$convert_job?></span><?= has_batchim($convert_job) > 0 ? "을" : "를" ?> 꿈꿀 수 있을까요?"</h2> <!-- 을 를 -->
             <div class="bg_line">
               <p>
              <?=$ch_data['ch_desc']?>
@@ -303,8 +343,8 @@
     <div class="block_content">
       <div class="title">
         참여해주셔서 감사합니다<br>
-        <span id="thx_ch_name">'<?=$ch_data['ch_nick']?>'</span>이<br>
-        꿈을 꿀 수 있도록 끝까지 함께 응원해주세요
+        <span id="thx_ch_name">'<?=$ch_data['ch_nick']?>'</span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?><br>
+        꿈을 꿀 수 있도록 끝까지 함께 응원해주세요 <!-- 이 가 -->
       </div>
       <div class="block_child re">
         <div class="inner_block_child clearfix">
@@ -342,7 +382,7 @@ var flag_sel_dream  = 0;
 var mb_rs       = null;
 var inputImageCheck;
 var share_cnt			= 0;
-
+var s_ugu	= null;
 $(document).ready(function() {
 	Kakao.init('59df63251be6d99256b63b98f4948e89');
 	$("#cboxTopLeft").hide();
@@ -354,6 +394,9 @@ $(document).ready(function() {
 	$("#cboxTopCenter").hide();
 	$("#cboxBottomCenter").hide();
 	Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
+	// 미리보기 제어
+	$(".preview").width($(document).width()*0.9);
+	s_ugu	= 'fol';
 });
 
 function image_crop(){
@@ -366,7 +409,7 @@ function image_crop(){
 		restore: true,
 		guides: false,
 		highlight: true,
-		background: true,
+		background: false,
 		cropBoxMovable: true,
 		cropBoxResizable: true,
 		preview: '.preview',

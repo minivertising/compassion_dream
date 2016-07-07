@@ -62,7 +62,7 @@
     <span class="yellow">결연</span>이 <span class="yellow">완료</span>되었습니다
   </div>
   <div class="txt_status_2">
-     -회원님의 링크는 <?=$ch_data['ch_nick']?>와 같이<br>
+     -회원님의 링크는 <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "과" : "와" ?> 같이<br>
      도움이 필요한 어린이를 위해 달리게 됩니다.
   </div>
   <div class="btn_block last">
@@ -166,7 +166,7 @@ function image_crop(){
         restore: true,
         guides: false,
         highlight: true,
-        background: true,
+		background: false,
         cropBoxMovable: true,
         cropBoxResizable: true,
         preview: '.preview',
@@ -240,15 +240,6 @@ function dream_next()
 			return false;
 		}
 
-	//mb_job    = $("#mb_job").val();
-
-	// 사진 저장할 내용 추가
-	/*
-	$($ori_image).cropper('getCroppedCanvas', {width:1200, height:630}).toBlob(function (blob) {
-	  var formData = new FormData();
-	  // formData.append('croppedImage', blob);
-	  formData.append('croppedImage', blob, "test.jpg");
-	*/
 	var croppedCanvas = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
 	crop_image_url = croppedCanvas.toDataURL("image/jpeg");
 

@@ -3,9 +3,9 @@
   <div class="inner">
     <div class="block_content">
       <div class="title">
-        <span class="small">당신의 어린시절 사진과 꿈을 올려주시면</span><br>
-        '같은 꿈을 꾸고픈 어린이'가<br>
-        당신 지인에게 소개됩니다
+        <span class="small">여러분의 어린 시절 꿈과 사진을 올려주세요<br>
+        SNS에 사진과 함께 당신이 응원할<br>
+        <span class="small" style="color:#E9DE51">'꿈을 잃은 어린이'</span>가 소개됩니다</span>
       </div>
       <div class="block_input_dream">
         <div class="selec_job clearfix">
@@ -51,8 +51,8 @@
     <div class="block_content">
       <div class="title">
       참여하신 분 중 추첨을 통해<br>
-      컴패션 현지 센터를 방문할 수 있는<br>
-      기회를 드립니다
+      컴패션 현지 어린이센터를<br>
+      방문할 수 있는기회를 드립니다
       </div>
       <div class="block_input">
         <div class="sub_title">
@@ -95,15 +95,9 @@
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic" /></div>
           <div class="child_text">
-            <h2>"저도 <span id="m_rs_job">선생님을</span> 꿈꿀 수 있을까요?"</h2>
+            <h2>"저도 <span id="m_rs_job">선생님</span><span id="jobPP">를</span> 꿈꿀 수 있을까요?"</h2> <!-- 을 를 -->
             <div class="bg_line">
-              <p>
-              안녕하세요 <br>
-              저는  필리핀에 살고 있는 기타에요<br>
-              어린 시절에  선생님이 꿈이 셨군요<br>
-              저도 언젠가는 그렇게 멋진 꿈을 꾸고 싶어요!
-              어린 시절에  선생님이 꿈이 셨군요<br>
-              어린 시절에  선생님이 꿈이 셨군요<br>
+              <p id="m_rs_desc">
               </p>
             </div>
           </div>
@@ -141,7 +135,7 @@
     <div class="block_content">
       <div class="title">
         <span id="act_name">000</span>님!<br>
-        <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span>을 위해<br>
+        <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span><span id="namePP">를</span> 위해<br> <!-- ~을 ~를 -->
         다시 한번 참여해주셔서 감사합니다 
       </div>
       <div class="block_child re">
@@ -151,7 +145,7 @@
       </div>
       <div class="block_txt">
         아래 SNS에 당신의 어린 시절 사진과 꿈을 공유하셔서<br>
-        <span id="re_ch_name2">'아비가일 마아 야아 암퐁'</span>이<br>
+        <span id="re_ch_name2">'아비가일 마아 야아 암퐁'</span><span id="name2PP">가</span><br> <!-- ~이 ~가 -->
         후원자를 만날 수 있도록 해주세요!
       </div>
       <div class="block_btn sns">
@@ -178,7 +172,8 @@
   <div class="inner">
     <div class="block_content">
       <div class="title compassion">
-      컴패션에는 당신의 어린 시절처럼<br>
+      컴패션에서는<br>
+      당신의 어린 시절처럼<br>
       꿈 많고 귀여운 어린이들이 있습니다
       </div>
       <div class="sub_txt">
@@ -235,7 +230,7 @@
     <div class="block_content">
       <div class="title">
         참여해주셔서 감사합니다<br>
-        <span id="thx_ch_name">'아비가일 마아 야아 암퐁'</span>이<br>
+        <span id="thx_ch_name">'아비가일 마아 야아 암퐁'</span><span id="thxNamePP">가</span><br> <!-- 이 가 -->
         꿈을 꿀 수 있도록 끝까지 함께 응원해주세요
       </div>
       <div class="block_child re">
