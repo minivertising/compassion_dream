@@ -7,9 +7,8 @@
 
 	$ch_data    = sel_child_info($mb_data['mb_child']);
 	$convert_job = job_ko_add($mb_data['mb_job']);
-	
 ?>
-<body>
+<body class="bg_sub_page story">
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -51,44 +50,333 @@
   </div>
 </div>
 <div id="contents_div">
-  <div id="page_div1">
-    <!-- 직업 한글 변환 필요 -->
-    <h2>어릴적 내 꿈은 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이었어요" : "였어요" ?></h2>
-  <div>
-    <img src="<?=$mb_data['mb_image']?>" style="width:100%">
-  </div>
-    <a href="#" onclick="next_page('2');return false;">다음</a>
-  </div>
-  <div id="page_div2" style="display:none">
-    <h2>저는 사실 하루가 다르게 꿈이 바뀌었어요.</h2>
-    <a href="#" onclick="next_page('3');return false;">다음</a>
-  </div>
-  <div id="page_div3" style="display:none">
-    <h2>그런데 만약 그 어린시절에 꿈을 꿀 수 없었다면 어땠을까요?</h2>
-    <a href="#" onclick="next_page('4');return false;">다음</a>
-  </div>
-  <div id="page_div4" style="display:none">
-    <h2>여기 꿈을 꾸는 것조차 허락되지 않은 어린이가 있어요</h2>
-<?
-	if ($mb_data['mb_child'] == "")
-	{
-?>
-    <a href="#" onclick="next_page('7');return false;">어린이 만나기111</a>
-<?
-	}else{
-		if ($ch_data['ch_choice'] == "Y")
-		{
-?>
-    <a href="#" onclick="next_page('6');return false;">어린이 만나기</a>
-<?
-		}else{
-?>
-    <a href="#" onclick="next_page('5');return false;">어린이 만나기</a>
-<?
-		}
-	}
-?>
-  </div>
+  <div class="wrap_sec_top_sub storytelling">
+    <div class="inner">
+      <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+      <div class="block_content story_1">
+        <div class="inner_story">
+          <div class="top first">[<?=$mb_data['mb_name']?>]이 당신과 [<?=$ch_data['ch_nick']?>]를 초대했습니다.</div>
+          <!--왼쪽 글 레이아웃 한줄 아이콘+사진-->
+          <div class="one_talk left">
+            <div class="inner_one_talk clearfix">
+              <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
+              <div class="content">
+                <div class="name"><?=$ch_data['ch_nick']?></div>
+                <div class="pic"><img src="<?=$ch_data['ch_full_img_url']?>" class="story_pic pic_child" /></div>
+              </div>
+            </div>
+          </div>
+
+          <!--왼쪽 글 레이아웃 한줄 - only chat-->
+          <div class="one_talk left">
+            <div class="inner_one_talk clearfix">
+              <div class="icon no_icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
+              <div class="content">
+                <div class="chat clearfix">
+                  <div class="deco"><img src="images/deco_white.png" width="24" /></div>
+                  <div class="txt">저에요</div>
+                  <div class="cnt">1</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--오른쪽 글 레이아웃 한줄 - 이름+이미지-->
+          <div class="one_talk right">
+            <div class="inner_one_talk">
+              <div class="content">
+                <div class="name"><?=$mb_data['mb_name']?>님</div>
+                  <div class="pic"><img src="<?=$mb_data['mb_image']?>" class="story_pic pic_acti" /></div>
+                </div>
+              </div>
+            </div>
+
+            <!--오른쪽 글 레이아웃 한줄 - only chat-->
+            <div class="one_talk right">
+              <div class="inner_one_talk">
+                <div class="content">
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                    <div class="txt">내 어린 시절이야 우린 참 많이 닮은 것 같아</div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
+            <div class="one_talk left">
+              <div class="inner_one_talk clearfix">
+                <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
+                <div class="content">
+                  <div class="name"><?=$ch_data['ch_nick']?></div>
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_white.png" width="24" /></div>
+                    <div class="txt">네?</div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--오른쪽 글 레이아웃 한줄 - 이름+chat-->
+            <div class="one_talk right">
+              <div class="inner_one_talk">
+                <div class="content">
+                  <div class="name"><?=$mb_data['mb_name']?>님</div>
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                    <div class="txt">^^</div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--오른쪽 글 레이아웃 한줄 - only chat-->
+            <div class="one_talk right">
+              <div class="inner_one_talk">
+                <div class="content">
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                    <div class="txt">
+                    우리는 꿈 많은 어린 시절이 닮았어<br>
+                    나는 선생님이 꿈이었는데 넌?
+                    </div>
+                    <div class="cnt v2">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
+            <div class="one_talk left">
+              <div class="inner_one_talk clearfix">
+                <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
+                <div class="content">
+                  <div class="name"><?=$ch_data['ch_name']?></div>
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_white.png" width="24" /></div>
+                    <div class="txt no_chat">...</div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="top">가난이 채팅에 참여했습니다.</div>
+
+            <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
+            <div class="one_talk left">
+              <div class="inner_one_talk clearfix">
+                <div class="icon"><img src="images/icon_ganan.jpg" class="pic_icon" /></div>
+                <div class="content">
+                  <div class="name">가난</div>
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_white.png" width="24" /></div>
+                    <div class="txt">아니 둘은 달라</div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
+            <div class="one_talk left">
+              <div class="inner_one_talk clearfix">
+                <div class="icon no_icon"><img src="images/icon_ganan.jpg" class="pic_icon" /></div>
+                <div class="content">
+                  <div class="pic"><img src="images/ex_ganan.jpg" class="story_pic pic_ganan" /></div>
+                </div>
+              </div>
+            </div>
+
+            <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
+            <div class="one_talk left">
+              <div class="inner_one_talk clearfix">
+                <div class="icon no_icon"><img src="images/icon_ganan.jpg" class="pic_icon" /></div>
+                <div class="content">
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_white.png" width="24" /></div>
+                    <div class="txt">
+                    <?=$mb_data['mb_name']?>는 자유롭게 꿈꾸는 행복을 누렸지만,<br>
+                    <?=$ch_data['ch_nick']?>이는<br>
+                    나로 인해 계속 꿈을 꿀 수 없을테니까.
+                    </div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
+            <div class="one_talk left">
+              <div class="inner_one_talk clearfix">
+                <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
+                <div class="content">
+                  <div class="name"><?=$ch_data['ch_nick']?></div>
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_white.png" width="24" /></div>
+                    <div class="txt no_chat">ㅠㅠ</div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="top"><?=$mb_data['mb_name']?>님이 가난을 강퇴시켰습니다.</div>
+
+            <!--오른쪽 글 레이아웃 한줄 - only chat-->
+            <div class="one_talk right">
+              <div class="inner_one_talk">
+                <div class="content">
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                    <div class="txt">
+                    가난이 오늘도 너에게 거짓말을 하는구나!<br>
+                    가난해도 꿈꿀 수 있어
+                    </div>
+                    <div class="cnt v2">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--오른쪽 글 레이아웃 한줄 - only chat-->
+            <div class="one_talk right">
+              <div class="inner_one_talk">
+                <div class="content">
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                    <div class="txt center">
+                      <img src="images/icon_angry.png" />
+                    </div>
+                    <div class="cnt v3">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
+            <div class="one_talk left">
+              <div class="inner_one_talk clearfix">
+                <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
+                <div class="content">
+                  <div class="name"><?=$ch_data['ch_nick']?></div>
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_white.png" width="24" /></div>
+                    <div class="txt">
+                    정말 그럴 수 있을까요? ㅠㅠ..<br>
+                    전 일하러 갈게요..
+                    </div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="top"><?=$ch_data['ch_name']?>님이 퇴장하였습니다.</div>
+
+            <!--오른쪽 글 레이아웃 한줄 - only chat-->
+            <div class="one_talk right">
+              <div class="inner_one_talk">
+                <div class="content">
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                    <div class="txt">
+                    우리 둘만 남았네요..
+                    </div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--오른쪽 글 레이아웃 한줄 - only chat-->
+            <div class="one_talk right">
+              <div class="inner_one_talk">
+                <div class="content">
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                    <div class="txt">
+                    당신도 어린 시절 꾸웠던 꿈이 있나요?
+                    </div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--오른쪽 글 레이아웃 세줄 - only chat-->
+            <div class="one_talk right">
+              <div class="inner_one_talk">
+                <div class="content">
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                    <div class="txt">
+                    그렇다면 저와 함께<br>
+                    [<?=$ch_data['ch_nick']?>]의 손을 잡아주세요<br>
+                    그리고 희망을 말해주세요.
+                    </div>
+                    <div class="cnt v3">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--오른쪽 글 레이아웃 한줄 - only chat-->
+            <div class="one_talk right">
+              <div class="inner_one_talk">
+                <div class="content">
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                    <div class="txt">
+                    “[<?=$ch_data['ch_nick']?>] 너는 꿈을 꿀 자격이 있어.”
+                    </div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--오른쪽 글 레이아웃 한줄 - only chat-->
+            <div class="one_talk right">
+              <div class="inner_one_talk">
+                <div class="content">
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                    <div class="txt">
+                    “자, 여기 내꿈꿔.”
+                    </div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--오른쪽 글 레이아웃 한줄 - only chat-->
+            <div class="one_talk right">
+              <div class="inner_one_talk">
+                <div class="content">
+                  <div class="chat clearfix">
+                    <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                    <div class="txt">
+                      <?=$ch_data['ch_nick']?>을 다시 초대하기<br>
+                      <a href="#">mydream.compassion.or.kr</a>
+                      <a href="#"><img src="images/chat_8_img.png" /></a>
+                    </div>
+                    <div class="cnt v4"><img src="images/link_out.png" /></div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+        <div class="bg_img_1"><img src="images/bg_pic_1.png" /></div>
+        <div class="bg_img_2"><img src="images/bg_pic_2.png" /></div>
+      </div>
+    </div>
+
   <div id="page_div5" class="wrap_sec_top_sub match_child follower" style="display:none;">
     <div class="inner">
       <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
@@ -118,7 +406,7 @@
           </div>
           <div class="right">
             <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
-            <div class="txt">1:1 후원이 어려울 경우<br>SNS에 어릴적 사진을 공유하고<br> 함께 응원해주세요
+            <div class="txt">1:1 후원이 어려울 경우<br>SNS에 어릴적 사진을 공유하고<br>함께 응원해주세요
           </div>
         </div>
       </div>
@@ -145,10 +433,10 @@
           </div>
         </div>
         <div class="img_waiting_child clearfix">
-          <!-- <div class="one_child"><img src="images/ex_child.png" /></div>
           <div class="one_child"><img src="images/ex_child.png" /></div>
           <div class="one_child"><img src="images/ex_child.png" /></div>
-          <div class="one_child"><img src="images/ex_child.png" /></div> -->
+          <div class="one_child"><img src="images/ex_child.png" /></div>
+          <div class="one_child"><img src="images/ex_child.png" /></div>
         </div>
         <div class="block_btn">
           <a href="index.php"><img src="images/btn_go_campaign.png" /></a>
@@ -184,7 +472,7 @@
             </div>
             <div class="right">
               <div class="bt"><a href="#" onclick="f_show_dream_sel();return false;"><img src="images/btn_cheer.png" /></a></div>
-              <div class="txt">1:1 후원이 어려울 경우<br>SNS에 어릴적 사진을 공유하고<br> 함께 응원해주세요</div>
+              <div class="txt">1:1 후원이 어려울 경우<br>SNS에 어릴적 사진을 공유하고 함께 응원해주세요</div>
             </div>
           </div>
         </div>
@@ -277,7 +565,7 @@
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
           <div class="child_text">
-            <h2>저도 <span id="f_ch_job">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
+            <h2>저도 <span><?=$convert_job?></span><?= has_batchim($convert_job) > 0 ? "을" : "를" ?> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
             <p id="m_rs_desc"><?=$ch_data['ch_desc']?>
             </p>
           </div>
@@ -395,7 +683,7 @@
     var inputImageCheck;
 	var share_cnt			= 0;
     
-	$(document).ready(function() {
+	$(window).load(function() {
         Kakao.init('59df63251be6d99256b63b98f4948e89');
         $("#cboxTopLeft").hide();
         $("#cboxTopRight").hide();
@@ -405,6 +693,10 @@
         $("#cboxMiddleRight").hide();
         $("#cboxTopCenter").hide();
         $("#cboxBottomCenter").hide();
+
+		$("#talk_area").niceScroll({cursorcolor:"gray",cursorborder:"gray"});
+
+		talk_start();
 
         Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
     });
@@ -588,7 +880,6 @@ function f_dream_next()
         return false;
     }
         //mb_job    = $("#mb_job").val();
-	var job_lang_kor = job_ko_add(sel_dream);
 
     if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
         cropboxDataIE = $(ori_image).cropper('getData');
@@ -614,8 +905,7 @@ function f_dream_next()
 <?
     }
 ?>
-                mb_job      : sel_dream,
-				mb_job_kor    : job_lang_kor
+                mb_job      : sel_dream
             },
             beforeSend: function(response){
                 $("#upload_page").hide();
@@ -640,13 +930,6 @@ function f_dream_next()
 <?
 	}else{
 ?>
-						if(rs_ch[2] > 0) {
-							//받침 O
-							$("#f_ch_job").html(job_lang_kor +"을");
-						}else{
-							$("#f_ch_job").html(job_lang_kor +"를");
-						}
-
 						$("#f_share_page").fadeIn("fast");
 <?
 	}
@@ -687,8 +970,7 @@ function f_dream_next()
 <?
     }
 ?>
-                mb_job      : sel_dream,
-				mb_job_kor    : job_lang_kor
+                mb_job      : sel_dream
             },
             beforeSend: function(response){
                 $("#upload_page").hide();
@@ -715,13 +997,6 @@ function f_dream_next()
 <?
 	}else{
 ?>
-						if(rs_ch[2] > 0) {
-							//받침 O
-							$("#f_ch_job").html(job_lang_kor+"을");
-						}else{
-							$("#f_ch_job").html(job_lang_kor+"를");
-						}
-
 						$("#f_share_page").fadeIn("fast");
 <?
 	}
