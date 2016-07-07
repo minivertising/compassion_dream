@@ -642,9 +642,9 @@ function f_dream_next()
 ?>
 						if(rs_ch[2] > 0) {
 							//받침 O
-							$("#f_ch_job").html(rs_ch[2] +"을");
+							$("#f_ch_job").html(job_lang_kor +"을");
 						}else{
-							$("#f_ch_job").html(rs_ch[2] +"를");
+							$("#f_ch_job").html(job_lang_kor +"를");
 						}
 
 						$("#f_share_page").fadeIn("fast");
@@ -717,9 +717,9 @@ function f_dream_next()
 ?>
 						if(rs_ch[2] > 0) {
 							//받침 O
-							$("#f_ch_job").html(rs_ch[2]+"을");
+							$("#f_ch_job").html(job_lang_kor+"을");
 						}else{
-							$("#f_ch_job").html(rs_ch[2]+"를");
+							$("#f_ch_job").html(job_lang_kor+"를");
 						}
 
 						$("#f_share_page").fadeIn("fast");
