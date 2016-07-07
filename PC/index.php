@@ -256,7 +256,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     <div class="block_content follower" style="height:830px">
       <div class="title">
         미니버님!<br> 
-        <span id="re_ch_name">아비가일 마아 야아 암퐁</span>을 위해<br>
+        <span id="re_ch_name">아비가일 마아 야아 암퐁을</span> 위해<br>
         다시 한번 참여해주셔서 감사합니다 
       </div>
       <div class="block_child">
@@ -266,7 +266,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       </div>
       <div class="block_txt">
         <p>아래 SNS에 당신의 어린 시절 사진과 꿈을 공유하셔서</p>
-        <p><span  id="re_ch_name2">아비가일 마아 야아 암퐁</span>이 후원자를 만날 수 있도록 해주세요!</p>
+        <p><span  id="re_ch_name2">아비가일 마아 야아 암퐁이</span> 후원자를 만날 수 있도록 해주세요!</p>
       </div>
       <div class="block_btn sns">
         <a href="#" onclick="go_share('fb','act','re_matching_share_page');return false;"><img src="images/sns_f.png" /></a>
@@ -289,7 +289,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     <div class="logo"><a href="index.php"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content share_compassion">
       <div class="title">
-      컴패션에서는 당신의 어린시절처럼<br>
+      컴패션에는 당신의 어린시절처럼<br>
       꿈 많고 귀여운 어린이들이 있습니다
       <!--
       컴패션에서는 '미니버'님의 어린시절처럼<br>
@@ -673,8 +673,6 @@ function dream_next(){
 					$("#thx_ch_img").attr("src",rs_ch[1]);
 					$("#loading_div").fadeOut('fast', function(){
 						$("#m_rs_ch_name").html(rs_ch[3]);
-						$("#re_ch_name").html(rs_ch[3]);
-						$("#re_ch_name2").html(rs_ch[3]);
 						
 						$("#m_rs_ch_name3").html(rs_ch[3]);
 						$("#thx_ch_name").html("'"+rs_ch[3]+"'");
@@ -684,6 +682,8 @@ function dream_next(){
 							//$("#name2PP").html("이에요");
 							$("#name3PP").html("이");
 							$("#thx_namePP").html("이");
+							$("#re_ch_name").html(rs_ch[3]+"를");
+							$("#re_ch_name2").html(rs_ch[3]+"가");
 						}
 						
 						$("#m_rs_job").html(job_lang_kor);
