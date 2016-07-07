@@ -40,7 +40,6 @@
 </div>
 <div id="contents_div">
   <div id="page_div1">
-    <!-- 직업 한글 변환 필요 -->
     <h2>어릴적 내 꿈은 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이었어요" : "였어요" ?></h2>
   <div>
     <img src="<?=$mb_data['mb_image']?>" style="width:100%">
@@ -133,10 +132,6 @@
           </div>
         </div>
         <div class="img_waiting_child clearfix">
-          <div class="one_child"><img src="images/ex_child.png" /></div>
-          <div class="one_child"><img src="images/ex_child.png" /></div>
-          <div class="one_child"><img src="images/ex_child.png" /></div>
-          <div class="one_child"><img src="images/ex_child.png" /></div>
         </div>
         <div class="block_btn">
           <a href="index.php"><img src="images/btn_go_campaign.png" /></a>
@@ -195,6 +190,7 @@
         <div class="main">
         여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
         SNS에 사진과 함께 당신이 응원할<br>
+        <!-- PPT에는 이름 출력 X--> <!-- 업로드 페이지 같이 씀 매칭될 아이가 없을때의 조건이 필요할듯합니다. (이름 출력문제) -->
         ‘꿈을 잃은 어린이 <span><?=$ch_data['ch_nick']?></span>’<?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 소개됩니다 <!-- ~이 ~가 -->
         </div>
       </div>
@@ -252,7 +248,7 @@
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
           <div class="child_text">
-            <h2>저도 <span><?=$convert_job?></span><?= has_batchim($convert_job) > 0 ? "을" : "를" ?> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
+            <h2>"저도 <span><?=$convert_job?></span><?= has_batchim($convert_job) > 0 ? "을" : "를" ?> 꿈꿀 수 있을까요?"</h2> <!-- 조사 ~을, ~를 -->
             <p id="m_rs_desc"><?=$ch_data['ch_desc']?>
             </p>
           </div>
