@@ -382,7 +382,7 @@ body.main{
 }
 .wrap_sec_top_sub .block_content{
 	width:839px;
-	height:770px;
+	height:834px;
 	background:#fff;
 	margin:0 auto 0;
 	border-radius:20px; border:0px red solid;
@@ -409,7 +409,7 @@ body.main{
 	background:url(../images/bg_share_compassion.png) center top no-repeat;
 	border-radius:0;
 	width:839px;
-	height:783px;
+	height:855px;
 }
 .wrap_sec_top_sub .block_content.upload{
 	background:url(../images/bg_upload.png) center top no-repeat;
@@ -466,7 +466,7 @@ body.main{
 .wrap_sec_top_sub .block_content.upload .title .main{
 	font-size:28px;
 	padding-bottom:0;
-	font-weight:bold;
+	font-weight:;
 }
 .wrap_sec_top_sub .block_content.upload .title .main span{
 	font-size:28px;
@@ -678,12 +678,12 @@ body.main{
 .wrap_sec_top_sub.match_child .block_content.result_story_child .block_child .inner_block_child .child_pic{
 	width:245px;
 	padding-left:101px;
-	padding-top:14px; border:0px red solid;
+	padding-top:11px; border:0px red solid;
 }
 
 .wrap_sec_top_sub.match_child .block_child .inner_block_child .child_pic img{
-	width:211px;
-	height:246px; border:0px red solid;
+	width:213px;
+	height:252px; border:0px red solid;
 }
 .wrap_sec_top_sub.match_child .block_content.follower .block_child .inner_block_child .child_pic img{
 	width:213px;
@@ -692,7 +692,7 @@ body.main{
 
 
 .wrap_sec_top_sub.match_child .block_content.share_compassion .block_child .inner_block_child {
-	padding:0 0 115px 130px; border:0px red solid;
+	padding:13px 0 115px 130px; border:0px red solid;
 }
 .wrap_sec_top_sub.match_child .block_content.share_compassion .block_child .inner_block_child .child_pic{
 	width:140px;
@@ -700,7 +700,7 @@ body.main{
 	text-align:center; border:0px red solid;
 }
 .wrap_sec_top_sub.match_child .block_content.result_story_compassion .block_child .inner_block_child {
-	padding:0 0 135px 130px; border:0px red solid;
+	padding:11px 0 135px 130px; border:0px red solid;
 }
 .wrap_sec_top_sub.match_child .block_content.result_story_compassion .block_child .inner_block_child .child_pic{
 	width:140px;
@@ -710,7 +710,7 @@ body.main{
 
 .wrap_sec_top_sub.match_child .block_content.share_compassion .block_child .inner_block_child .child_pic img{
 	width:120px;
-	height:160px;
+	height:142px;
 	border:4px solid #fff; 
 	box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.2)
 }
@@ -1398,8 +1398,9 @@ body.main{
 
 }
 .popup_wrap.main_page_pop .text{
-overflow-y:scroll;
-border:0px red solid;
-margin-top:5px;
-height:400px;
+	overflow-y:scroll;
+	border:0px red solid;
+	margin-top:0px;
+	height:380px;
+	padding:0 0px 0 50px;
 }

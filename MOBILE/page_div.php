@@ -2,6 +2,7 @@
 <div id="upload_page" class="wrap_page sub upload" style="display:none;">
   <div class="inner">
     <div class="block_content">
+
       <div class="title">
         <span class="small">여러분의 어린 시절 꿈과 사진을 올려주세요<br>
         SNS에 사진과 함께 당신이 응원할<br>
