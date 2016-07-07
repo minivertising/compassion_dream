@@ -166,6 +166,7 @@ switch ($_REQUEST['exec'])
         $ori_data		= $_REQUEST['crop_image_url'];
         $mb_child		= $_REQUEST['mb_child'];
         $mb_job			= $_REQUEST['mb_job'];
+		$mb_job_kor			= $_REQUEST['mb_job_kor'];
         $parent_idx		= $_REQUEST['parent_idx'];
         $rs				= $_REQUEST['rs'];
         $cropboxData	= $_REQUEST['cropboxData'];
@@ -187,6 +188,8 @@ switch ($_REQUEST['exec'])
                 }
             }
         }
+
+		$job_post_position = has_batchim($mb_job_kor); //직업 받침 유무 검사 0 or 0보다 큰 정수 리턴
 
         $dest_url = $save_dir . $change_file_name.'.jpg';
       
@@ -216,11 +219,11 @@ switch ($_REQUEST['exec'])
             if ($result)
             {
                 if ($mb_child == "")
-                    $flag   = "N||".$mb_serial;
+                    $flag   = "N||".$mb_serial."||".$job_post_position;
                 else
-                    $flag   = "Y||".$mb_serial;
+                    $flag   = "Y||".$mb_serial."||".$job_post_position;
             }else{
-                $flag   = "E||null";
+                $flag   = "E||null||null";
             }
             echo $flag;
         }
@@ -233,7 +236,7 @@ switch ($_REQUEST['exec'])
 		$mb_job		= $_REQUEST['mb_job'];
 		$parent_idx	= $_REQUEST['parent_idx'];
 		$rs			= $_REQUEST['rs'];
-
+		$mb_job_kor			= $_REQUEST['mb_job_kor'];
 		list($type, $data) = explode(';', $data);
 		list(, $data)      = explode(',', $data);
 		$data = base64_decode($data);
@@ -256,6 +259,7 @@ switch ($_REQUEST['exec'])
 
 		//파일을 저장할 디렉토리 및 파일명 전체 경로
 		$dest_url = $save_dir . $change_file_name.'.jpg';
+		$job_post_position = has_batchim($mb_job_kor); //직업 받침 유무 검사 0 or 0보다 큰 정수 리턴
 
 
 		//mkdir($_SERVER['DOCUMENT_ROOT'] . "/photos");
@@ -274,11 +278,11 @@ switch ($_REQUEST['exec'])
 			if ($result)
 			{
 				if ($mb_child == "")
-					$flag	= "N||".$mb_serial;
+					$flag	= "N||".$mb_serial."||".$job_post_position;
 				else
-					$flag	= "Y||".$mb_serial;
+					$flag	= "Y||".$mb_serial."||".$job_post_position;
 			}else{
-				$flag	= "E||null";
+				$flag	= "E||null||null";
 			}
 			echo $flag;
 		}

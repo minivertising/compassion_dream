@@ -277,7 +277,7 @@
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
           <div class="child_text">
-            <h2>저도 <span><?=$convert_job?></span><?= has_batchim($convert_job) > 0 ? "을" : "를" ?> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
+            <h2>저도 <span id="f_ch_job">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
             <p id="m_rs_desc"><?=$ch_data['ch_desc']?>
             </p>
           </div>
@@ -588,6 +588,7 @@ function f_dream_next()
         return false;
     }
         //mb_job    = $("#mb_job").val();
+	var job_lang_kor = job_ko_add(sel_dream);
 
     if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
         cropboxDataIE = $(ori_image).cropper('getData');
@@ -614,6 +615,7 @@ function f_dream_next()
     }
 ?>
                 mb_job      : sel_dream
+				mb_job_kor    : job_lang_kor,
             },
             beforeSend: function(response){
                 $("#upload_page").hide();
@@ -638,6 +640,13 @@ function f_dream_next()
 <?
 	}else{
 ?>
+						if(rs_ch[2] > 0) {
+							//받침 O
+							$("#f_ch_job").html(rs_ch[2] +"을");
+						}else{
+							$("#f_ch_job").html(rs_ch[2] +"를");
+						}
+
 						$("#f_share_page").fadeIn("fast");
 <?
 	}
@@ -679,6 +688,7 @@ function f_dream_next()
     }
 ?>
                 mb_job      : sel_dream
+				mb_job_kor    : job_lang_kor,
             },
             beforeSend: function(response){
                 $("#upload_page").hide();
@@ -705,6 +715,13 @@ function f_dream_next()
 <?
 	}else{
 ?>
+						if(rs_ch[2] > 0) {
+							//받침 O
+							$("#f_ch_job").html(rs_ch[2] +"을");
+						}else{
+							$("#f_ch_job").html(rs_ch[2] +"를");
+						}
+
 						$("#f_share_page").fadeIn("fast");
 <?
 	}
