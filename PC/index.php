@@ -74,39 +74,6 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <?
 	}
 ?>
-      <!-- <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div> -->
     </div>
   </div><!--bg-->
 </div>
@@ -122,7 +89,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     </div>
     <div class="sec_q">
       <div class="inner">
-        <div class="btn"><a href="http://www.compassion.or.kr" target="_blank"><img src="images/btn_gift.png" alt=""/></a></div>
+        <div class="btn"><a href="http://www.compassion.or.kr/Sponsor/CDSPList.aspx" target="_blank"><img src="images/btn_gift.png" alt=""/></a></div>
       </div>
     </div>
     <div class="bg_child">
