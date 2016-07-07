@@ -2,6 +2,7 @@
 <div id="upload_page" class="wrap_page sub upload" style="display:none;">
   <div class="inner">
     <div class="block_content">
+
       <div class="title">
         <span class="small">여러분의 어린 시절 꿈과 사진을 올려주세요<br>
         SNS에 사진과 함께 당신이 응원할<br>
@@ -93,9 +94,9 @@
       </div>
       <div class="block_child">
         <div class="inner_block_child clearfix">
-          <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic" /></div>
+          <div class="child_pic"><img src="images/ex_child_01.png" id="matching_child_pic" /></div>
           <div class="child_text">
-            <h2>"저도 <span id="m_rs_job">선생님</span><span id="jobPP">를</span> 꿈꿀 수 있을까요?"</h2> <!-- 을 를 -->
+            <h2>"저도 <span id="m_rs_job">선생님</span><span id="jobPP" style="color:#fff">를</span> 꿈꿀 수 있을까요?"</h2> <!-- 을 를 -->
             <div class="bg_line">
               <p id="m_rs_desc">
               </p>
@@ -135,7 +136,7 @@
     <div class="block_content">
       <div class="title">
         <span id="act_name">000</span>님!<br>
-        <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span><span id="namePP">를</span> 위해<br> <!-- ~을 ~를 -->
+        <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span><span id="namePP" style="color:#fff">를</span> 위해<br> <!-- ~을 ~를 -->
         다시 한번 참여해주셔서 감사합니다 
       </div>
       <div class="block_child re">
@@ -145,7 +146,7 @@
       </div>
       <div class="block_txt">
         아래 SNS에 당신의 어린 시절 사진과 꿈을 공유하셔서<br>
-        <span id="re_ch_name2">'아비가일 마아 야아 암퐁'</span><span id="name2PP">가</span><br> <!-- ~이 ~가 -->
+        <span id="re_ch_name2">'아비가일 마아 야아 암퐁'</span><span id="name2PP" style="color:#fff">가</span><br> <!-- ~이 ~가 -->
         후원자를 만날 수 있도록 해주세요!
       </div>
       <div class="block_btn sns">
@@ -183,9 +184,9 @@
       <div class="img_com">
         <div class="img_child">
           <div class="inner_img_child clearfix">
-            <div class="one"><img src="images/ex_child.png" /></div>
-            <div class="one"><img src="images/ex_child.png" /></div>
-            <div class="one"><img src="images/ex_child.png" /></div>
+            <div class="one"><img src="images/ex_child_01.png" /></div>
+            <div class="one"><img src="images/ex_child_02.png" /></div>
+            <div class="one"><img src="images/ex_child_03.png" /></div>
           </div>
         </div>
         <img src="images/bg_share_com.png" class="bg" />
@@ -230,7 +231,7 @@
     <div class="block_content">
       <div class="title">
         참여해주셔서 감사합니다<br>
-        <span id="thx_ch_name">'아비가일 마아 야아 암퐁'</span><span id="thxNamePP">가</span><br> <!-- 이 가 -->
+        <span id="thx_ch_name">'아비가일 마아 야아 암퐁'</span><span id="thxNamePP" style="color:#fff">가</span><br> <!-- 이 가 -->
         꿈을 꿀 수 있도록 끝까지 함께 응원해주세요
       </div>
       <div class="block_child re">

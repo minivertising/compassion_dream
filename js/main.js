@@ -362,22 +362,26 @@ function talk_start()
 
 	$(".talk_mb_message1").delay(3000).fadeIn("fast", function(){
 		playNow();
-		alert('11122');
-		$('.talk_area').animate({scrollTop:$('.talk_area').height()}, 500);
+		$('.talk_area').animate({scrollTop:2000}, 200);
 	});
-/*
 
 	$("#talk_mb_message2").delay(3500).fadeIn("fast", function(){
 		playNow();
-		$('#talk_area').animate({scrollTop:2000}, 500);
+		$('#talk_area').animate({scrollTop:2000}, 200);
 	});
-	setTimeout(function(){
-		$("#talk_ch_message3").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_ch_message3").offset().top}, 500);
-	},5000);
 
+	$("#talk_ch_message3").delay(4500).fadeIn("fast", function(){
+		playNow();
+		$('#talk_area').animate({scrollTop:2000}, 200);
+	});
+
+	$("#talk_mb_message3_area").delay(5000).fadeIn("fast", function(){
+		$("#talk_mb_message3").fadeIn('fast');
+		playNow();
+		$('#talk_area').animate({scrollTop:2000}, 200);
+	});
+
+/*
 	setTimeout(function(){
 		$("#talk_mb_message3").fadeIn("fast", function(){
 			playNow();
@@ -752,7 +756,7 @@ function go_main(page)
 				$("#thanks_page").fadeIn('fast');
 			})
 		}
-	}else if (share_cnt == 3){
+	}else if (share_cnt == 2){
 		$("#"+page).fadeOut('fast', function(){
 			$("#thanks_page").fadeIn('fast');
 		});

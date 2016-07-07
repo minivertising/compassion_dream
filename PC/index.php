@@ -74,39 +74,6 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <?
 	}
 ?>
-      <!-- <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div> -->
     </div>
   </div><!--bg-->
 </div>
@@ -122,7 +89,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     </div>
     <div class="sec_q">
       <div class="inner">
-        <div class="btn"><a href="http://www.compassion.or.kr" target="_blank"><img src="images/btn_gift.png" alt=""/></a></div>
+        <div class="btn"><a href="http://www.compassion.or.kr/Sponsor/CDSPList.aspx" target="_blank"><img src="images/btn_gift.png" alt=""/></a></div>
       </div>
     </div>
     <div class="bg_child">
@@ -289,7 +256,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     <div class="block_content follower" style="height:830px">
       <div class="title">
         미니버님!<br> 
-        <span id="re_ch_name">아비가일 마아 야아 암퐁</span>을 위해<br>
+        <span id="re_ch_name">아비가일 마아 야아 암퐁</span><span id="re_namePP">를</span> 위해<br>
         다시 한번 참여해주셔서 감사합니다 
       </div>
       <div class="block_child">
@@ -299,7 +266,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       </div>
       <div class="block_txt">
         <p>아래 SNS에 당신의 어린 시절 사진과 꿈을 공유하셔서</p>
-        <p><span  id="re_ch_name2">아비가일 마아 야아 암퐁</span>이 후원자를 만날 수 있도록 해주세요!</p>
+        <p><span  id="re_ch_name2">아비가일 마아 야아 암퐁</span><span id="re_namePP2">가</span> 후원자를 만날 수 있도록 해주세요!</p>
       </div>
       <div class="block_btn sns">
         <a href="#" onclick="go_share('fb','act','re_matching_share_page');return false;"><img src="images/sns_f.png" /></a>
@@ -322,7 +289,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     <div class="logo"><a href="index.php"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content share_compassion">
       <div class="title">
-      컴패션에서는 당신의 어린시절처럼<br>
+      컴패션에는 당신의 어린시절처럼<br>
       꿈 많고 귀여운 어린이들이 있습니다
       <!--
       컴패션에서는 '미니버'님의 어린시절처럼<br>
@@ -443,7 +410,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 
 		$('.people_pic').bxSlider({
 			ticker: true,
-			speed: 40000,
+			speed: 4000,
 			// minSlide: 12,
 			// maxSilde: 12,
 			slideWidth: 155,
@@ -706,17 +673,19 @@ function dream_next(){
 					$("#thx_ch_img").attr("src",rs_ch[1]);
 					$("#loading_div").fadeOut('fast', function(){
 						$("#m_rs_ch_name").html(rs_ch[3]);
-						$("#re_ch_name").html(rs_ch[3]);
-						$("#re_ch_name2").html(rs_ch[3]);
 						
 						$("#m_rs_ch_name3").html(rs_ch[3]);
 						$("#thx_ch_name").html("'"+rs_ch[3]+"'");
+						$("#re_ch_name").html(rs_ch[3]);
+						$("#re_ch_name2").html(rs_ch[3]);
 
-						if(rs_ch[5] > 0) {
-							//받침 O
-							//$("#name2PP").html("이에요");
-							$("#name3PP").html("이");
-							$("#thx_namePP").html("이");
+            if(rs_ch[5] > 0) {
+              //받침 O
+              //$("#name2PP").html("이에요");
+              $("#name3PP").html("이");
+              $("#thx_namePP").html("이");
+              $("#re_namePP").html("을");
+              $("#re_namePP2").html("이");
 						}
 						
 						$("#m_rs_job").html(job_lang_kor);

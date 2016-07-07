@@ -133,10 +133,10 @@
         </div>
         <div class="more_child_list">
           <div class="inner_more_child_list clearfix">
-            <div class="one"><img src="images/ex_child.png" /></div>
-            <div class="one"><img src="images/ex_child.png" /></div>
-            <div class="one"><img src="images/ex_child.png" /></div>
-            <div class="one"><img src="images/ex_child.png" /></div>
+            <div class="one"><img src="images/ex_child_01.png" /></div>
+            <div class="one"><img src="images/ex_child_02.png" /></div>
+            <div class="one"><img src="images/ex_child_03.png" /></div>
+            <div class="one"><img src="images/ex_child_04.png" /></div>
           </div>
           <div class="txt">
           컴패션에는 꿈이 필요한 어린이들이 많이 있어요<br>
