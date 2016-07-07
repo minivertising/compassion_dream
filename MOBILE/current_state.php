@@ -3,6 +3,7 @@
 
 	$ch_data	= sel_child_info($mb_data['mb_child']);
 
+	$share_count	= $mb_data['mb_share_cnt'] + $mb_data['mb_f_share_cnt'];
 ?>
 <body class="bg_status">
 <script>
@@ -42,7 +43,7 @@
   </div>
   <div class="title">
     <span><?=$mb_data['mb_name']?></span>님의 어릴적 사진은<br>
-    <span><?=number_format($mb_data['mb_share_cnt'])?></span>명에 의해 공유되고 있습니다
+    <span><?=number_format($share_count)?></span>명에 의해 공유되고 있습니다
   </div>
   <div class="pic_child">
     <div><img src="<?=$ch_data['ch_full_img_url']?>" /></div>

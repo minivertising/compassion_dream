@@ -80,7 +80,7 @@
     <div class="inner">
       <div class="block_content">
         <div class="title compassion">
-          "<span style="color:#E9DE51"><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "아" : "야" ?><br>
+          "<span style="color:#E9DE51"><?=$ch_data['ch_nick']?></span>아<br>
           내꿈꿔!"<br>
         </div>
         <div class="sub_txt">
@@ -120,8 +120,12 @@
     <div class="inner">
       <div class="block_content">
         <div class="title">
-          "<span><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "아" : "야" ?><br>
-          내꿈꿔!"	
+          감사합니다!<br>
+          당신과 같이 꿈을 응원해주시는 분들 덕분에
+          <span><?=$ch_data['ch_nick']?></span>이
+          후원자를 만나 꿈을 꿀 수 있게 됐어요
+          <!-- "<span><?=$ch_data['ch_nick']?></span>아<br>
+          내꿈꿔!"	 -->
         </div>
         <div class="block_child re">
           <div class="inner_block_child clearfix">
@@ -193,11 +197,24 @@
   <div class="inner">
     <div class="block_content">
       <div class="title follower">
+<?
+	if ($ch_data['ch_nick'] == "")
+	{
+?>
+        여러분의 어린 시절의 꿈과 사진을 올려주세요<br>
+        SNS에 사진과 함께 당신이 응원할<br>
+        <span class="name">'꿈을 잃은 어린이</span>가 소개됩니다<br>
+<?
+	}else{
+?>
         여러분의 어린 시절의 꿈과 사진을 올려주세요<br>
         SNS에 사진과 함께 당신이 응원할<br>
         꿈을 잃은 어린이<br>
         <!-- 이미 결연된 아이의 링크 일 경우엔 텍스트? -->
         <span class="name">‘<?=$ch_data['ch_nick']?>’</span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 소개됩니다 <!-- 이 가 -->
+<?
+	}
+?>
       </div>
       <div class="block_input_dream">
         <div class="selec_job clearfix">
