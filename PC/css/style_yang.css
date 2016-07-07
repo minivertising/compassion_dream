@@ -855,6 +855,7 @@ body.main{
 	height:635px;
 	margin-top:98px;
 	margin-left:20px;
+	/*overflow:scroll;*/
 }
 .wrap_sec_top_sub.storytelling .block_content .inner_story .top{
 	text-align:center;
@@ -944,6 +945,35 @@ body.main{
 	height:61px;
 	padding-top:15px;
 }
+
+
+
+.wrap_sec_top_sub.storytelling .block_content .inner_story .left .inner_left .inner_chat .chat.v5{
+	float:left;
+	padding-right:26px;
+	background: url(../images/chat5_bg.png) top right no-repeat;
+	height:95px;
+	padding-top:5px;
+}
+.wrap_sec_top_sub.storytelling .block_content .inner_story .left .inner_left .inner_chat .chat .bg_chat_front.v5{
+	background:none;
+}
+
+.wrap_sec_top_sub.storytelling .block_content .inner_story .left .inner_left .inner_chat .chat .bg_chat_front .cc.v5{
+	background:none;
+}
+
+
+
+
+
+
+
+
+
+.wrap_sec_top_sub.storytelling .block_content .inner_story .left .inner_left .inner_chat .chat .bg_chat_front .cc.no_chat{
+	letter-spacing:1px;
+}
 .wrap_sec_top_sub.storytelling .block_content .inner_story .left .inner_left .inner_chat .chat.v3{
 	float:left;
 	padding-right:26px;
@@ -991,22 +1021,31 @@ body.main{
 }
 
 .wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat{
-	float:left;
+	float:right;
 }
 .wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .cnt{
-	float:left;
+	float:right;
 	padding-top:35px;
 	padding-right:12px;
 }
 .wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .cnt.v2{
-	float:left;
+	float:right;
 	padding-top:65px;
 	padding-right:12px;
+}
+.wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .cnt.v7{
+	float:right;
+	padding-top:95px;
+	padding-right:12px;
+}
+.wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .cnt.v8{
+	float:right;
+	padding-top:0;
+	padding-right:0;
 }
 
 
 .wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat{
-	float:left;
 	padding-right:49px;
 	background: url(../images/chat2_bg_right.png) top right no-repeat;
 	height:61px;
@@ -1017,7 +1056,6 @@ body.main{
 	background: url(../images/chat2_bg_left.png) 0 0 no-repeat;
 	height:61px;
 }
-
 .wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat .bg_chat_front .cc{
 	float:left;
 	background: url(../images/chat2_bg_middle.png) 0 0 repeat-x;
@@ -1028,7 +1066,6 @@ body.main{
 
 
 .wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat.v2{
-	float:left;
 	padding-right:43px;
 	background: url(../images/chat3_bg_right.png) top right no-repeat;
 	height:95px;
@@ -1046,6 +1083,68 @@ body.main{
 	padding:0 5px;
 	height:95px;
 	padding-top:15px;
+}
+
+.wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat.v6{
+	padding-right:0;
+	background: url(../images/chat6_bg.png) top right no-repeat;
+	height:103px;
+	width:185px;
+}
+.wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat .bg_chat_front.v6{
+	background:none;
+}
+
+.wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat .bg_chat_front .cc.v6{
+	background:none;
+}
+
+
+
+.wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat.v7{
+	padding-right:38px;
+	background: url(../images/chat7_bg_right.png) top right no-repeat;
+	height:120px;
+}
+.wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat .bg_chat_front.v7{
+	float:left;
+	padding-left:24px;
+	background: url(../images/chat7_bg_left.png) 0 0 no-repeat;
+	height:120px;
+}
+.wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat .bg_chat_front .cc.v7{
+	float:left;
+	background: url(../images/chat7_bg_middle.png) 0 0 repeat-x;
+	padding:0 5px;
+	padding-top:15px;
+	height:120px;
+}
+
+
+
+.wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat.v8{
+	padding-right:51px;
+	background: url(../images/chat8_bg_right.png) top right no-repeat;
+	height:202px;
+}
+.wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat .bg_chat_front.v8{
+	float:left;
+	padding-left:37px;
+	background: url(../images/chat8_bg_left.png) 0 0 no-repeat;
+	height:202px;
+}
+.wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat .bg_chat_front .cc.v8{
+	float:left;
+	background: url(../images/chat8_bg_middle.png) 0 0 repeat-x;
+	padding:0 5px;
+	padding-top:20px;
+	height:202px;
+	font-weight:bold;
+}
+
+.wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat .bg_chat_front .cc.v8 a{
+	color:#004f98;
+	text-decoration:underline;
 }
 
 
