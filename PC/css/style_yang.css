@@ -955,6 +955,14 @@ body.main{
 	height:95px;
 	padding-top:5px;
 }
+.wrap_sec_top_sub.storytelling .block_content .inner_story .left .inner_left .inner_chat .chat.v9{
+	float:left;
+	padding-right:26px;
+	background: url(../images/chat9_bg.png) top left no-repeat;
+	height:95px;
+	padding-top:5px;
+	width:541px;
+}
 .wrap_sec_top_sub.storytelling .block_content .inner_story .left .inner_left .inner_chat .chat .bg_chat_front.v5{
 	background:none;
 }
@@ -1145,6 +1153,8 @@ body.main{
 .wrap_sec_top_sub.storytelling .block_content .inner_story .right .inner_chat .chat .bg_chat_front .cc.v8 a{
 	color:#004f98;
 	text-decoration:underline;
+	display:block;
+	padding-bottom:5px;
 }
 
 

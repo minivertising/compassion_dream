@@ -362,7 +362,8 @@ function talk_start()
 
 	$(".talk_mb_message1").delay(3000).fadeIn("fast", function(){
 		playNow();
-		$('.talk_area').animate({scrollTop:2000}, 500);
+		alert('11122');
+		$('.talk_area').animate({scrollTop:$('.talk_area').height()}, 500);
 	});
 /*
 

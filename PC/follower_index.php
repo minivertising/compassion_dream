@@ -114,7 +114,7 @@
             </div>
           </div>
           <!--오른쪽 글 레이아웃-->
-          <div class="one_talk clearfix">
+          <div class="one_talk clearfix" style="display:none;">
             <div class="right clearfix" id="talk_mb_message3" style="display:none;">
               <div class="name"><?=$mb_data['mb_name']?></div>
               <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
@@ -223,7 +223,7 @@
           </div>
           <div class="top" id="talk_alarm3" style="display:none;">미니버님이 가난을 강퇴시켰습니다.</div>
           <!--오른쪽 글 레이아웃-->
-          <div class="one_talk clearfix">
+          <div class="one_talk clearfix" style="display:none;">
             <div class="right clearfix" id="talk_mb_message5" style="display:none;">                        
               <div class="name"><?=$mb_data['mb_name']?></div>
               <!--대화말풍선 하나 두줄짜리 (액티베이터쪽)-->
@@ -281,7 +281,7 @@
           </div>
           <div class="top" id="talk_alarm4" style="display:none;">어린이님이 퇴장하였습니다.</div>
           <!--오른쪽 글 레이아웃-->
-          <div class="one_talk clearfix">
+          <div class="one_talk clearfix" style="display:none;">
             <div class="right clearfix">                        
               <div class="name" id="talk_mb_nick2" style="display:none;"><?=$mb_data['mb_name']?></div>
               <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
