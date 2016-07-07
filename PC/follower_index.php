@@ -614,8 +614,8 @@ function f_dream_next()
 <?
     }
 ?>
-                mb_job      : sel_dream
-				mb_job_kor    : job_lang_kor,
+                mb_job      : sel_dream,
+				mb_job_kor    : job_lang_kor
             },
             beforeSend: function(response){
                 $("#upload_page").hide();
@@ -687,8 +687,8 @@ function f_dream_next()
 <?
     }
 ?>
-                mb_job      : sel_dream
-				mb_job_kor    : job_lang_kor,
+                mb_job      : sel_dream,
+				mb_job_kor    : job_lang_kor
             },
             beforeSend: function(response){
                 $("#upload_page").hide();
@@ -717,9 +717,9 @@ function f_dream_next()
 ?>
 						if(rs_ch[2] > 0) {
 							//받침 O
-							$("#f_ch_job").html(rs_ch[2] +"을");
+							$("#f_ch_job").html(rs_ch[2]+"을");
 						}else{
-							$("#f_ch_job").html(rs_ch[2] +"를");
+							$("#f_ch_job").html(rs_ch[2]+"를");
 						}
 
 						$("#f_share_page").fadeIn("fast");
