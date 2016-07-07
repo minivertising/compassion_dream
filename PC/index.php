@@ -62,9 +62,19 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     </div>
     <div class="people_pic clearfix">
 <?
+	$slider_query = "SELECT * FROM ".$_gl['activator_info_table']." order by idx DESC limit 20";
+	$slider_res = mysqli_query($my_db, $slider_query);
 
+	while ($slider_data = @mysqli_fetch_array($slider_res))
+	{
 ?>
       <div class="pic_one">
+        <img src="<?=$slider_data['mb_image']?>" />
+      </div>
+<?
+	}
+?>
+      <!-- <div class="pic_one">
         <img src="images/ex_pic_one.png" />
       </div>
       <div class="pic_one">
@@ -96,10 +106,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       </div>
       <div class="pic_one">
         <img src="images/ex_pic_one.png" />
-      </div>
-      <div class="pic_one">
-        <img src="images/ex_pic_one.png" />
-      </div>
+      </div> -->
     </div>
   </div><!--bg-->
 </div>

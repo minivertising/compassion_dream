@@ -32,8 +32,20 @@
     <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content">
       <div class="img_load">
+<?
+	if ($ch_data['ch_nick'] == "")
+	{
+?>
+      당신이 응원할 '꿈을 잃은 어린이'를 찾는 중이예요<br>
+      잠시만 기다려 주세요
+<?
+	}else{
+?>
       꿈이 필요한 어린이 '<?=$ch_data['ch_nick']?>'<?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 응원중입니다<br>
       잠시만 기다려 주세요
+<?
+	}
+?>
       </div>
     </div>
   </div>
@@ -193,9 +205,22 @@
     <div class="block_content upload_02">
       <div class="title">
         <div class="main">
+<?
+	if ($ch_data['ch_nick'] == "")
+	{
+?>
+        여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
+        SNS에 사진과 함께 당신이 응원할<br>
+        <span>‘꿈을 잃은 어린이</span>가 소개됩니다
+<?
+	}else{
+?>
         여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
         SNS에 사진과 함께 당신이 응원할<br>
         ‘꿈을 잃은 어린이 <span><?=$ch_data['ch_nick']?></span>’<?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 소개됩니다 <!-- ~이 ~가 -->
+<?
+	}
+?>
         </div>
       </div>
       <div class="block_input_dream">

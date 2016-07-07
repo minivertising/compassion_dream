@@ -1291,6 +1291,6 @@ body.main{
 .popup_wrap.main_page_pop .text{
 overflow-y:scroll;
 border:0px red solid;
-margin-top:0px;
+margin-top:5px;
 height:400px;
 }

@@ -93,7 +93,17 @@
 	</div>
 	<div class="people_list">
 		<div class="inner_people_list clearfix">
-					<div class="one"><img src="images/ex_list.png" /></div>
+<?
+	$slider_query = "SELECT * FROM ".$_gl['activator_info_table']." order by idx DESC limit 20";
+	$slider_res = mysqli_query($my_db, $slider_query);
+
+	while ($slider_data = @mysqli_fetch_array($slider_res))
+	{
+?>
+					<div class="one"><img src="<?=$slider_data['mb_image']?>" /></div>
+<?
+	}
+?>
 					<div class="one"><img src="images/ex_list.png" /></div>
 					<div class="one"><img src="images/ex_list.png" /></div>
 					<div class="one"><img src="images/ex_list.png" /></div>
