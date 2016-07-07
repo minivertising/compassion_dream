@@ -7,9 +7,8 @@
 
 	$ch_data    = sel_child_info($mb_data['mb_child']);
 	$convert_job = job_ko_add($mb_data['mb_job']);
-	
 ?>
-<body>
+<body class="bg_sub_page story">
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -55,18 +54,18 @@
     <div class="inner">
       <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
       <div class="block_content story_1">
-        <div class="inner_story">
-          <div class="top">[미니버님]이 당신과 [아비가일 마아 야아 암퐁]를 초대했습니다.</div>
+        <div class="inner_story" id="talk_area">
+          <div class="top" id="talk_alarm1" style="display:none;">[<?=$mb_data['mb_name']?>님]이 당신과 [<?=$ch_data['ch_nick']?>]를 초대했습니다.</div>
           <!--왼쪽 글 레이아웃-->
-          <div class="one_talk clearfix" style="display:;">
+          <div class="one_talk clearfix">
             <div class="left">
               <div class="inner_left clearfix">
-                <div class="icon"><img src="images/ex_child.png" class="pic_icon" /></div>
+                <div class="icon talk_ch_message1" style="display:none;"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
                 <div class="content">
-                  <div class="name">어린이이름</div>
-                  <div class="pic"><img src="images/ex_child.png" class="story_pic pic_child" /></div>
+                  <div class="name talk_ch_message1" style="display:none;"><?=$ch_data['ch_nick']?></div>
+                  <div class="pic talk_ch_message1" style="display:none;"><img src="<?=$ch_data['ch_full_img_url']?>" class="story_pic pic_child" /></div>
                   <!--대화말풍선 하나(어린이쪽)-->
-                  <div class="inner_chat clearfix">
+                  <div class="inner_chat clearfix" id="talk_ch_message2" style="display:none;">
                     <div class="chat">
                       <div class="bg_chat_front">
                         <div class="cc">저에요</div>
@@ -79,448 +78,313 @@
             </div>
           </div>
           <!--오른쪽 글 레이아웃-->
-          <div class="one_talk clearfix" style="display:;">
+          <div class="one_talk clearfix">
             <div class="right clearfix">
-              <div class="name">미니버</div>
-              <div class="pic"><img src="images/ex_acti.jpg" class="story_pic pic_acti" /></div>
+              <div class="name talk_mb_message1" style="display:none;"><?=$mb_data['mb_name']?></div>
+              <div class="pic talk_mb_message1" style="display:none;"><img src="<?=$mb_data['mb_image']?>" class="story_pic pic_acti" /></div>
+              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
+              <div class="mychat" id="talk_mb_message2" style="display:none;">
+                <div class="inner_chat clearfix">
+                  <div class="chat">
+                    <div class="bg_chat_front">
+                      <div class="cc">내 어린 시절이야 우린 참 많이 닮은 것 같아</div>
+                    </div>
+                  </div>
+                  <div class="cnt">1</div>
+                </div>
+              </div>
+              <!--말풍선끝-->
+            </div>
+          </div>
+          <!--왼쪽 글 레이아웃-->
+          <div class="one_talk clearfix" id="talk_ch_message3" style="display:none;">
+            <div class="left">
+              <div class="inner_left clearfix">
+                <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
+                <div class="content">
+                  <div class="name"><?=$ch_data['ch_nick']?></div>
+                  <!--대화말풍선 하나(어린이쪽)-->
+                  <div class="inner_chat clearfix">
+                    <div class="chat">
+                      <div class="bg_chat_front">
+                        <div class="cc">네?</div>
+                      </div>
+                    </div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--오른쪽 글 레이아웃-->
+          <div class="one_talk clearfix">
+            <div class="right clearfix" id="talk_mb_message3" style="display:none;">
+              <div class="name"><?=$mb_data['mb_name']?></div>
               <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
               <div class="mychat">
                 <div class="inner_chat clearfix">
                   <div class="chat">
-                                        <div class="bg_chat_front">
-                                            <div class="cc">내 어린 시절이야 우린 참 많이 닮은 것 같아</div>
-                                        </div>
-                                    </div>
-                                    <div class="cnt">1</div>
-                                    
-                                </div>
-                            </div>
-                            <!--말풍선끝-->                            
-                            
-
-                        </div>
+                    <div class="bg_chat_front">
+                      <div class="cc">^^</div>
                     </div>
-                    
-                    
-                    <!--왼쪽 글 레이아웃-->
-                    <div class="one_talk clearfix" style="display:;">
-                    
-                        <div class="left">
-                            <div class="inner_left clearfix">
-                            	<div class="icon"><img src="images/ex_child.png" class="pic_icon" /></div>
-                                <div class="content">
-                            		<div class="name">어린이이름</div>
-                                    
-                                    <!--대화말풍선 하나(어린이쪽)-->
-                                    <div class="inner_chat clearfix">
-                                   		<div class="chat">
-                                        	<div class="bg_chat_front">
-                                            	<div class="cc">네?</div>
-                                            </div>
-                                        </div>
-                                   		<div class="cnt">1</div>
-                                    </div>
-                                    
-                                    
-                                                                       
-                                </div>
-                            </div>
-                        </div>
-                    
+                  </div>
+                  <div class="cnt">1</div>
+                </div>
+              </div>
+              <!--말풍선끝-->                            
+              <!--대화말풍선 하나 두줄짜리 (액티베이터쪽)-->
+              <div class="mychat" id="talk_mb_message4" style="display:none;">
+                <div class="inner_chat clearfix">
+                  <div class="chat v2">
+                    <div class="bg_chat_front v2">
+                      <div class="cc v2">
+                      우리는 꿈 많은 어린 시절이 닮았어<br>
+                      나는 선생님이 꿈이었는데 넌?
+                      </div>
                     </div>
-                    
-                    
-                    <!--오른쪽 글 레이아웃-->
-                    <div class="one_talk clearfix" style="display:;">
-                        <div class="right clearfix">                        
-
-                            
-                            <div class="name">미니버</div>
-                            
-                            
-                            <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-                            <div class="mychat">
-                                <div class="inner_chat clearfix">
-                                    
-                                    <div class="chat">
-                                        <div class="bg_chat_front">
-                                            <div class="cc">^^</div>
-                                        </div>
-                                    </div>
-                                    <div class="cnt">1</div>
-                                    
-                                </div>
-                            </div>
-                            <!--말풍선끝-->                            
-                            
-                            
-                            <!--대화말풍선 하나 두줄짜리 (액티베이터쪽)-->
-                            <div class="mychat">
-                                <div class="inner_chat clearfix">
-                                    
-                                    <div class="chat v2">
-                                        <div class="bg_chat_front v2">
-                                            <div class="cc v2">
-                                            	우리는 꿈 많은 어린 시절이 닮았어<br>
-												나는 선생님이 꿈이었는데 넌?
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cnt v2">1</div>
-                                    
-                                </div>
-                            </div>
-                            <!--말풍선끝-->
-
-                        </div>
-                    </div>
-                    
-                    
-                    
-                    <!--왼쪽 글 레이아웃-->
-                    <div class="one_talk clearfix" style="display:;">
-                    
-                        <div class="left">
-                            <div class="inner_left clearfix">
-                            	<div class="icon"><img src="images/ex_child.png" class="pic_icon" /></div>
-                                <div class="content">
-                            		<div class="name">어린이이름</div>
-                                    
-                                    <!--대화말풍선 하나(어린이쪽)-->
-                                    <div class="inner_chat clearfix">
-                                   		<div class="chat">
-                                        	<div class="bg_chat_front">
-                                            	<div class="cc no_chat">...</div>
-                                            </div>
-                                        </div>
-                                   		<div class="cnt">1</div>
-                                    </div>
-                                    
-                                    
-                                                                       
-                                </div>
-                            </div>
-                        </div>
-                    
-                    </div>
-                    
-                    
-                    
-                    
-					<div class="top">가난이 채팅에 참여했습니다.</div>
-                    
-                    <!--왼쪽 글 레이아웃-->
-                    <div class="one_talk clearfix" style="display:;">
-                    
-                        <div class="left">
-                            <div class="inner_left clearfix">
-                            	<div class="icon"><img src="images/icon_ganan.jpg" class="pic_icon" /></div>
-                                <div class="content">
-                            		<div class="name">가난</div>
-                            		
-                                    
-                                    <!--대화말풍선 하나(가난)-->
-                                    <div class="inner_chat clearfix">
-                                   		<div class="chat">
-                                        	<div class="bg_chat_front">
-                                            	<div class="cc">아니 둘은 달라</div>
-                                            </div>
-                                        </div>
-                                   		<div class="cnt">1</div>
-                                    </div>
-                                    
-                                    <div class="pic"><img src="images/ex_ganan.jpg" class="story_pic pic_ganan" /></div>
-                                    
-                                     <!--대화말풍선 하나(가난)-->
-                                    <div class="inner_chat clearfix">
-                                   		<div class="chat v3">
-                                        	<div class="bg_chat_front v3">
-                                            	<div class="cc v3">
-                                                	미니버는 자유롭게 꿈꾸는 행복을 누렸지만,<br>
-                                                    아비가일 마아 야아 암퐁이는<br>
-                                                    나로 인해 계속 꿈을 꿀 수 없을테니까.
-                                                </div>
-                                            </div>
-                                        </div>
-                                   		<div class="cnt">1</div>
-                                    </div>
-                                    
-                                    
-                                                                       
-                                </div>
-                            </div>
-                        </div>
-                    
-                    </div>
-                    
-                    
-                    
-                    
-                    <!--왼쪽 글 레이아웃-->
-                    <div class="one_talk clearfix" style="display:;">
-                    
-                        <div class="left">
-                            <div class="inner_left clearfix">
-                            	<div class="icon"><img src="images/ex_child.png" class="pic_icon" /></div>
-                                <div class="content">
-                            		<div class="name">어린이이름</div>
-                                    
-                                    <!--대화말풍선 하나(어린이쪽)-->
-                                    <div class="inner_chat clearfix">
-                                   		<div class="chat">
-                                        	<div class="bg_chat_front">
-                                            	<div class="cc no_chat">ㅠ_ㅠ</div>
-                                            </div>
-                                        </div>
-                                   		<div class="cnt">1</div>
-                                    </div>
-                                    
-                                    
-                                                                       
-                                </div>
-                            </div>
-                        </div>
-                    
-                    </div>
-                    
-                    
-					<div class="top">미니버님이 가난을 강퇴시켰습니다.</div>
-                    
-                    
-                    
-                    <!--오른쪽 글 레이아웃-->
-                    <div class="one_talk clearfix" style="display:;">
-                        <div class="right clearfix">                        
-
-                            
-                            <div class="name">미니버</div>
-                            
-                                                    
-                            
-                            
-                            <!--대화말풍선 하나 두줄짜리 (액티베이터쪽)-->
-                            <div class="mychat">
-                                <div class="inner_chat clearfix">
-                                    
-                                    <div class="chat v2">
-                                        <div class="bg_chat_front v2">
-                                            <div class="cc v2">
-                                            	가난이 오늘도 너에게 거짓말을 하는구나!<br>
-												가난해도 꿈꿀 수 있어
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cnt v2">1</div>
-                                    
-                                </div>
-                            </div>
-                            <!--말풍선끝-->
-                            
-                            
-                            <!--대화말풍선 하나 두줄짜리 (액티베이터쪽)-->
-                            <div class="mychat">
-                                <div class="inner_chat clearfix">
-                                    
-                                    <div class="chat v6">
-                                        <div class="bg_chat_front v6">
-                                            <div class="cc v6">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cnt v2">1</div>
-                                    
-                                </div>
-                            </div>
-                            <!--말풍선끝-->                           
-                            
-                            
-
-                        </div>
-                    </div>
-                    
-                    
-                    
-                    <!--왼쪽 글 레이아웃-->
-                    <div class="one_talk clearfix" style="display:;">
-                    
-                        <div class="left">
-                            <div class="inner_left clearfix">
-                            	<div class="icon"><img src="images/ex_child.png" class="pic_icon" /></div>
-                                <div class="content">
-                            		<div class="name">어린이이름</div>
-                                    
-                                    <!--대화말풍선 하나(어린이쪽)-->
-                                    <div class="inner_chat clearfix">
-                                   		<div class="chat v5">
-                                        	<div class="bg_chat_front v5">
-                                            	<div class="cc v5">
-                                                정말 그럴 수 있을까요? ㅠㅠ..<br>
-												전 일하러 갈게요..
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                   		<div class="cnt">1</div>
-                                    </div>
-                                    
-                                    
-                                                                       
-                                </div>
-                            </div>
-                        </div>
-                    
-                    </div>
-                    
-                    
-					<div class="top">어린이님이 퇴장하였습니다.</div>
-                    
-                    
-                    
-                    
-                    <!--오른쪽 글 레이아웃-->
-                    <div class="one_talk clearfix" style="display:;">
-                        <div class="right clearfix">                        
-
-                            
-                            <div class="name">미니버</div>
-                            
-                                                    
-                            
-                            
-                            <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-                            <div class="mychat">
-                                <div class="inner_chat clearfix">
-                                    
-                                    <div class="chat">
-                                        <div class="bg_chat_front">
-                                            <div class="cc">
-                                            	우리 둘만 남았네요..
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cnt">1</div>
-                                    
-                                </div>
-                            </div>
-                            <!--말풍선끝-->
-                            
-                            <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-                            <div class="mychat">
-                                <div class="inner_chat clearfix">
-                                    
-                                    <div class="chat">
-                                        <div class="bg_chat_front">
-                                            <div class="cc">
-                                            	당신도 어린 시절 꾸웠던 꿈이 있나요?
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cnt">1</div>
-                                    
-                                </div>
-                            </div>
-                            <!--말풍선끝-->
-                            
-                            
-                            
-                            <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-                            <div class="mychat">
-                                <div class="inner_chat clearfix">
-                                    
-                                    <div class="chat v7">
-                                        <div class="bg_chat_front v7">
-                                            <div class="cc v7">
-                                            	그렇다면 저와 함께<br>
-                                                [아비가일 마아 야아 암퐁]의 손을 잡아주세요<br>
-                                                그리고 희망을 말해주세요.
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cnt v7">1</div>
-                                    
-                                </div>
-                            </div>
-                            <!--말풍선끝-->
-                            
-                            
-                            
-                            
-                            <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-                            <div class="mychat">
-                                <div class="inner_chat clearfix">
-                                    
-                                    <div class="chat">
-                                        <div class="bg_chat_front">
-                                            <div class="cc">
-                                            	“[아비가일 마아 야아] 너는 꿈을 꿀 자격이 있어.”
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cnt">1</div>
-                                    
-                                </div>
-                            </div>
-                            <!--말풍선끝-->
-                            
-                            <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-                            <div class="mychat">
-                                <div class="inner_chat clearfix">
-                                    
-                                    <div class="chat">
-                                        <div class="bg_chat_front">
-                                            <div class="cc">
-                                            	“자, 여기 내꿈꿔.”
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cnt">1</div>
-                                    
-                                </div>
-                            </div>
-                            <!--말풍선끝-->
-                            
-                            <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
-                            <div class="mychat">
-                                <div class="inner_chat clearfix">
-                                    
-                                    <div class="chat v8">
-                                        <div class="bg_chat_front v8">
-                                            <div class="cc v8">
-                                            	아미가일 마아 야아 암퐁을 다시 초대하기<br>
-												<a href="#">mydream.compassion.or.kr</a><br>
-                                                <a href="#"><img src="images/chat_8_img.png" /></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cnt v8">
-                                    	<img src="images/chat_8.png" />
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <!--말풍선끝-->
-                            
-                                                     
-                            
-                            
-
-                        </div>
-                    </div>
-                    
-                    
-                    
-                    
-                    
-               </div>
+                  </div>
+                  <div class="cnt v2">1</div>
+                </div>
+              </div>
+              <!--말풍선끝-->
             </div>
-            <div class="bg_img_1"><img src="images/bg_pic_1.png" /></div>
-            <div class="bg_img_2"><img src="images/bg_pic_2.png" /></div>
-            
+          </div>
+          <!--왼쪽 글 레이아웃-->
+          <div class="one_talk clearfix" id="talk_ch_message4" style="display:none;">
+            <div class="left">
+              <div class="inner_left clearfix">
+                <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
+                <div class="content">
+                  <div class="name"><?=$ch_data['ch_nick']?></div>
+                  <!--대화말풍선 하나(어린이쪽)-->
+                  <div class="inner_chat clearfix">
+                    <div class="chat">
+                      <div class="bg_chat_front">
+                        <div class="cc no_chat">...</div>
+                      </div>
+                    </div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="top" id="talk_alarm2" style="display:none;">가난이 채팅에 참여했습니다.</div>
+          <!--왼쪽 글 레이아웃-->
+          <div class="one_talk clearfix" id="talk_poor_area1" style="display:none;">
+            <div class="left">
+              <div class="inner_left clearfix">
+                <div class="icon" id="talk_poor_icon1" style="display:none;"><img src="images/icon_ganan.jpg" class="pic_icon" /></div>
+                <div class="content">
+                  <div class="name" id="talk_poor_nick1" style="display:none;">가난</div>
+                  <!--대화말풍선 하나(가난)-->
+                  <div class="inner_chat clearfix" id="talk_poor_message1" style="display:none;">
+                    <div class="chat">
+                      <div class="bg_chat_front">
+                        <div class="cc">아니 둘은 달라</div>
+                      </div>
+                    </div>
+                    <div class="cnt">1</div>
+                  </div>
+                  <div class="pic" id="talk_poor_message2" style="display:none;"><img src="images/ex_ganan.jpg" class="story_pic pic_ganan" /></div>
+                  <!--대화말풍선 하나(가난)-->
+                  <div class="inner_chat clearfix" id="talk_poor_message3" style="display:none;">
+                    <div class="chat v3">
+                      <div class="bg_chat_front v3">
+                        <div class="cc v3">
+                        <?=$mb_data['mb_name']?>는 자유롭게 꿈꾸는 행복을 누렸지만,<br>
+                        <?=$ch_data['ch_nick']?>는<br>
+                        나로 인해 계속 꿈을 꿀 수 없을테니까.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--왼쪽 글 레이아웃-->
+          <div class="one_talk clearfix" id="talk_ch_message5" style="display:none;">
+            <div class="left">
+              <div class="inner_left clearfix">
+                <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
+                <div class="content">
+                  <div class="name"><?=$ch_data['ch_nick']?></div>
+                  <!--대화말풍선 하나(어린이쪽)-->
+                  <div class="inner_chat clearfix">
+                    <div class="chat">
+                      <div class="bg_chat_front">
+                        <div class="cc no_chat">ㅠ_ㅠ</div>
+                      </div>
+                    </div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="top" id="talk_alarm3" style="display:none;">미니버님이 가난을 강퇴시켰습니다.</div>
+          <!--오른쪽 글 레이아웃-->
+          <div class="one_talk clearfix">
+            <div class="right clearfix" id="talk_mb_message5" style="display:none;">                        
+              <div class="name"><?=$mb_data['mb_name']?></div>
+              <!--대화말풍선 하나 두줄짜리 (액티베이터쪽)-->
+              <div class="mychat">
+                <div class="inner_chat clearfix">
+                  <div class="chat v2">
+                    <div class="bg_chat_front v2">
+                      <div class="cc v2">
+                      가난이 오늘도 너에게 거짓말을 하는구나!<br>
+                      가난해도 꿈꿀 수 있어
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cnt v2">1</div>
+                </div>
+              </div>
+              <!--말풍선끝-->
+              <!--대화말풍선 하나 두줄짜리 (액티베이터쪽)-->
+              <div class="mychat" id="talk_mb_message6" style="display:none;">
+                <div class="inner_chat clearfix">
+                  <div class="chat v6">
+                    <div class="bg_chat_front v6">
+                      <div class="cc v6">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cnt v2">1</div>
+                </div>
+              </div>
+              <!--말풍선끝-->                           
+            </div>
+          </div>
+          <!--왼쪽 글 레이아웃-->
+          <div class="one_talk clearfix" id="talk_ch_message6" style="display:none;">
+            <div class="left">
+              <div class="inner_left clearfix">
+                <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
+                <div class="content">
+                  <div class="name"><?=$ch_data['ch_nick']?></div>
+                  <!--대화말풍선 하나(어린이쪽)-->
+                  <div class="inner_chat clearfix">
+                    <div class="chat v5">
+                      <div class="bg_chat_front v5">
+                        <div class="cc v5">
+                        정말 그럴 수 있을까요? ㅠㅠ..<br>
+                        전 일하러 갈게요..
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cnt">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="top" id="talk_alarm4" style="display:none;">어린이님이 퇴장하였습니다.</div>
+          <!--오른쪽 글 레이아웃-->
+          <div class="one_talk clearfix">
+            <div class="right clearfix">                        
+              <div class="name" id="talk_mb_nick2" style="display:none;"><?=$mb_data['mb_name']?></div>
+              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
+              <div class="mychat" id="talk_mb_message7" style="display:none;">
+                <div class="inner_chat clearfix">
+                  <div class="chat">
+                    <div class="bg_chat_front">
+                      <div class="cc">
+                      우리 둘만 남았네요..
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cnt">1</div>
+                </div>
+              </div>
+              <!--말풍선끝-->
+              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
+              <div class="mychat" id="talk_mb_message8" style="display:none;">
+                <div class="inner_chat clearfix">
+                  <div class="chat">
+                    <div class="bg_chat_front">
+                      <div class="cc">
+                      당신도 어린 시절 꾸웠던 꿈이 있나요?
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cnt">1</div>
+                </div>
+              </div>
+              <!--말풍선끝-->
+              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
+              <div class="mychat" id="talk_mb_message9" style="display:none;">
+                <div class="inner_chat clearfix">
+                  <div class="chat v7">
+                    <div class="bg_chat_front v7">
+                      <div class="cc v7">
+                      그렇다면 저와 함께<br>
+                      [아비가일 마아 야아 암퐁]의 손을 잡아주세요<br>
+                      그리고 희망을 말해주세요.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cnt v7">1</div>
+                </div>
+              </div>
+              <!--말풍선끝-->
+              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
+              <div class="mychat" id="talk_mb_message10" style="display:none;">
+                <div class="inner_chat clearfix">
+                  <div class="chat">
+                    <div class="bg_chat_front">
+                      <div class="cc">
+                      “[아비가일 마아 야아] 너는 꿈을 꿀 자격이 있어.”
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cnt">1</div>
+                </div>
+              </div>
+              <!--말풍선끝-->
+              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
+              <div class="mychat" id="talk_mb_message11" style="display:none;">
+                <div class="inner_chat clearfix">
+                  <div class="chat">
+                    <div class="bg_chat_front">
+                      <div class="cc">
+                      “자, 여기 내꿈꿔.”
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cnt">1</div>
+                </div>
+              </div>
+              <!--말풍선끝-->
+              <!--대화말풍선 하나 한줄짜리 (액티베이터쪽)-->
+              <div class="mychat" id="talk_mb_message12" style="display:none;">
+                <div class="inner_chat clearfix">
+                  <div class="chat v8">
+                    <div class="bg_chat_front v8">
+                      <div class="cc v8">
+                        아미가일 마아 야아 암퐁을 다시 초대하기<br>
+                        <a href="#">mydream.compassion.or.kr</a><br>
+                        <a href="#"><img src="images/chat_8_img.png" /></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cnt v8">
+                    <img src="images/chat_8.png" />
+                  </div>
+                </div>
+              </div>
+              <!--말풍선끝-->
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="bg_img_1"><img src="images/bg_pic_1.png" /></div>
+      <div class="bg_img_2"><img src="images/bg_pic_2.png" /></div>
     </div>
+  </div>
   <div id="page_div5" class="wrap_sec_top_sub match_child follower" style="display:none;">
     <div class="inner">
       <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
@@ -827,7 +691,7 @@
     var inputImageCheck;
 	var share_cnt			= 0;
     
-	$(document).ready(function() {
+	$(window).load(function() {
         Kakao.init('59df63251be6d99256b63b98f4948e89');
         $("#cboxTopLeft").hide();
         $("#cboxTopRight").hide();
@@ -837,6 +701,10 @@
         $("#cboxMiddleRight").hide();
         $("#cboxTopCenter").hide();
         $("#cboxBottomCenter").hide();
+
+		$("#talk_area").niceScroll({cursorcolor:"gray",cursorborder:"gray"});
+
+		talk_start();
 
         Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
     });
