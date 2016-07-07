@@ -61,6 +61,9 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       </div>
     </div>
     <div class="people_pic clearfix">
+<?
+
+?>
       <div class="pic_one">
         <img src="images/ex_pic_one.png" />
       </div>
@@ -276,7 +279,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <div id="re_matching_share_page" class="wrap_sec_top_sub match_child" style="display:none;">
   <div class="inner">
     <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
-    <div class="block_content follower">
+    <div class="block_content follower" style="height:830px">
       <div class="title">
         미니버님!<br> 
         <span id="re_ch_name">아비가일 마아 야아 암퐁</span>을 위해<br>
