@@ -104,15 +104,6 @@
 <?
 	}
 ?>
-					<div class="one"><img src="images/ex_list.png" /></div>
-					<div class="one"><img src="images/ex_list.png" /></div>
-					<div class="one"><img src="images/ex_list.png" /></div>
-					<div class="one"><img src="images/ex_list.png" /></div>
-					<div class="one"><img src="images/ex_list.png" /></div>
-					<div class="one"><img src="images/ex_list.png" /></div>
-					<div class="one"><img src="images/ex_list.png" /></div>
-					<div class="one"><img src="images/ex_list.png" /></div>
-					<div class="one"><img src="images/ex_list.png" /></div>
 		</div>
 	</div>
 	<div class="sec_movie">
