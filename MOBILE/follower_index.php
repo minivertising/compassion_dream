@@ -1,12 +1,9 @@
 <?
 	include_once "./header.php";
-
 	// ins_share_cnt($rs);
-
 	// PC에서 유입시 PC로 이동
 	if ($gubun == "PC")
 		echo "<script>location.href='../PC/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
-
 	$ch_data	= sel_child_info($mb_data['mb_child']);
 	$convert_job = job_ko_add($mb_data['mb_job']);
 ?>
@@ -19,7 +16,6 @@
       version    : 'v2.6'
     });
   };
-
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
@@ -398,7 +394,6 @@ $(document).ready(function() {
 	$(".preview").width($(document).width()*0.9);
 	s_ugu	= 'fol';
 });
-
 function image_crop(){
 	$($ori_image).cropper({
 		viewMode: 0,
@@ -418,12 +413,10 @@ function image_crop(){
 		toggleDragModeOnDblclick:false,
 	});
 }
-
 function f_preview_img()
 {
 	open_pop('f_preview_popup');
 }
-
 function zoom_action(type){
 	if(type=="up")
 	{
@@ -432,7 +425,6 @@ function zoom_action(type){
 		$($ori_image).cropper('zoom', -0.1);
 	}
 }
-
 function readURL(input) {
 	if (input.files && input.files[0]) {
 		file = files[0];
@@ -456,14 +448,11 @@ function readURL(input) {
 		});
 	}
 }
-
 $($inputImage).change(function(){
 	inputImageCheck = "Y";
 	files = this.files;
 	readURL(this);
 });
-
-
 function f_dream_next()
 {
     if (sel_dream == null)
@@ -477,7 +466,6 @@ function f_dream_next()
         return false;
     }
         //mb_job    = $("#mb_job").val();
-
         // 사진 저장할 내용 추가
         var croppedImg = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
         var canvasImageURL = croppedImg.toDataURL("image/jpeg");
@@ -512,7 +500,6 @@ function f_dream_next()
             success: function(res){
                 // console.log(res);
                 //mb_image    = res;
-
                 var rs_ch = res.split("||");
                 mb_rs = rs_ch[1];
                 //$("#loading_div").hide();
@@ -531,7 +518,6 @@ function f_dream_next()
 	}else{
 ?>
 						$("body").removeClass("bg_loading");
-
 						$("#matching_share_page").fadeIn("fast");
 <?
 	}
@@ -551,7 +537,6 @@ function f_dream_next()
             }
         });
 }
-
     function Ins_share_cnt(serial, ugu,parent_idx)
     {
         $.ajax({
@@ -568,5 +553,4 @@ function f_dream_next()
             }
         });
     }
-
 </script>

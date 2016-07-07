@@ -47,7 +47,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="./images/compassion.ico" />
 <title>PC MAIN</title>
 <!-- <link href="../lib/Cropper/css/bootstrap.min.css" rel="stylesheet"> -->
-<link href="../lib/bxslider/jquery.bxslider.css" rel="stylesheet" />
+<link href="../lib/bxslider/p_jquery.bxslider.css" rel="stylesheet" />
 <link href="../lib/Cropper/css/cropper.css" rel="stylesheet">
 <link rel="stylesheet" href="../lib/colorbox/colorbox.css">
 <link href="css/style_yang.css" rel="stylesheet" type="text/css">

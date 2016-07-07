@@ -40,119 +40,113 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 </div>
 
 <!-- 메인 index -->
-    <div class="wrap_sec_top">
-    <div class="bg_wrap_sec_top">
-    	<div class="inner">
-        	<div class="logo"><a href="index.php"><img src="images/logo.png" /></a></div>
-            <div class="title"><img src="images/title_main.png" /></div>
-            <div class="block_img">
-                <div><a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_partin.png" /></a></div>
-                <div class="status">
-                    <div class="people">
-                    	<div class="num"><?=number_format($total_matching_cnt)?></div>
-                    </div>
-                </div>
-            </div>
-            <div class="main_child">
-            	<img src="images/main_child.png" />
-            </div>
-            <div class="btn_howto">
-                <a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_howto.png" /></a>
-            </div>
+<div class="wrap_sec_top">
+  <div class="bg_wrap_sec_top">
+    <div class="inner">
+      <div class="logo"><a href="index.php"><img src="images/logo.png" /></a></div>
+      <div class="title"><img src="images/title_main.png" /></div>
+      <div class="block_img">
+        <div><a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_partin.png" /></a></div>
+        <div class="status">
+          <div class="people">
+            <div class="num"><?=number_format($total_matching_cnt)?></div>
+          </div>
         </div>
-        <div class="people_pic clearfix">
-        	<div class="pic_one">
-            	<img src="images/ex_pic_one.png" />
-            </div>
-        	<div class="pic_one">
-            	<img src="images/ex_pic_one.png" />
-            </div>
-        	<div class="pic_one">
-            	<img src="images/ex_pic_one.png" />
-            </div>
-        	<div class="pic_one">
-            	<img src="images/ex_pic_one.png" />
-            </div>
-        	<div class="pic_one">
-            	<img src="images/ex_pic_one.png" />
-            </div>
-        	<div class="pic_one">
-            	<img src="images/ex_pic_one.png" />
-            </div>
-        	<div class="pic_one">
-            	<img src="images/ex_pic_one.png" />
-            </div>
-        	<div class="pic_one">
-            	<img src="images/ex_pic_one.png" />
-            </div>
-        	<div class="pic_one">
-            	<img src="images/ex_pic_one.png" />
-            </div>
-        	<div class="pic_one">
-            	<img src="images/ex_pic_one.png" />
-            </div>
-        	<div class="pic_one">
-            	<img src="images/ex_pic_one.png" />
-            </div>
-        	<div class="pic_one">
-            	<img src="images/ex_pic_one.png" />
-            </div>
-        </div>
-    </div><!--bg-->
+      </div>
+      <div class="main_child">
+        <img src="images/main_child.png" />
+      </div>
+      <div class="btn_howto">
+        <a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_howto.png" /></a>
+      </div>
     </div>
-    
-    <div class="wrap_sec_movie">
-    	<div class="bg_wrap_sec_movie">
-            <div class="inner">
-                <div class="title"><img src="images/title_movie.png" /></div>
-                <div class="movie"><iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe></div>
-                <div class="block_btn">
-                    <a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_relay_movie.png" /></a>
-                    <a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_relay_howto_movie.png" /></a>
-                </div>
-            </div>
-            
-            <div class="sec_q">
-    			<div class="inner">
-        			<div class="btn"><a href="http://www.compassion.or.kr" target="_blank"><img src="images/btn_gift.png" alt=""/></a></div>
-        		</div>
-    		</div>
-    
-			<div class="bg_child">
-                <div class="child">
-                	<div class="inner_child clearfix">
-                        <div class="bar">
-                            <div class="inner_bar">
-                            	<div class="figure">결연된 어린이 <?=number_format($total_matching_cnt)?>명</div>
-                                <div class="heart"><img src="images/bar_heart.png" /></div>
-                                <div class="g"></div>
-                            </div>
-                        </div>
-                        <div class="num">
-                        	<div class="txt"><img src="images/txt_waiting_child.png" /></div>
-                        	<div class="cnt"><span><?=number_format($total_remain_cnt)?></span>명</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
+    <div class="people_pic clearfix">
+      <div class="pic_one">
+        <img src="images/ex_pic_one.png" />
+      </div>
+      <div class="pic_one">
+        <img src="images/ex_pic_one.png" />
+      </div>
+      <div class="pic_one">
+        <img src="images/ex_pic_one.png" />
+      </div>
+      <div class="pic_one">
+        <img src="images/ex_pic_one.png" />
+      </div>
+      <div class="pic_one">
+        <img src="images/ex_pic_one.png" />
+      </div>
+      <div class="pic_one">
+        <img src="images/ex_pic_one.png" />
+      </div>
+      <div class="pic_one">
+        <img src="images/ex_pic_one.png" />
+      </div>
+      <div class="pic_one">
+        <img src="images/ex_pic_one.png" />
+      </div>
+      <div class="pic_one">
+        <img src="images/ex_pic_one.png" />
+      </div>
+      <div class="pic_one">
+        <img src="images/ex_pic_one.png" />
+      </div>
+      <div class="pic_one">
+        <img src="images/ex_pic_one.png" />
+      </div>
+      <div class="pic_one">
+        <img src="images/ex_pic_one.png" />
+      </div>
     </div>
-    
-    <div class="wrap_sec_com">
-    	<div class="inner">
-        	<div class="title"><img src="images/title_com.png" /></div>
-   			<div class="img">
-            	<a href="http://www.compassion.or.kr" target="_blank"><img src="images/btn_compassion.png" /></a>
+  </div><!--bg-->
+</div>
+<div class="wrap_sec_movie">
+  <div class="bg_wrap_sec_movie">
+    <div class="inner">
+      <div class="title"><img src="images/title_movie.png" /></div>
+      <div class="movie"><iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe></div>
+      <div class="block_btn">
+        <a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_relay_movie.png" /></a>
+        <a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_relay_howto_movie.png" /></a>
+      </div>
+    </div>
+    <div class="sec_q">
+      <div class="inner">
+        <div class="btn"><a href="http://www.compassion.or.kr" target="_blank"><img src="images/btn_gift.png" alt=""/></a></div>
+      </div>
+    </div>
+    <div class="bg_child">
+      <div class="child">
+        <div class="inner_child clearfix">
+          <div class="bar">
+            <div class="inner_bar">
+              <div class="figure">결연된 어린이 <?=number_format($total_matching_cnt)?>명</div>
+              <div class="heart"><img src="images/bar_heart.png" /></div>
+              <div class="g"></div>
             </div>
+          </div>
+          <div class="num">
+            <div class="txt"><img src="images/txt_waiting_child.png" /></div>
+            <div class="cnt"><span><?=number_format($total_remain_cnt)?></span>명</div>
+          </div>
         </div>
-        
+      </div>
     </div>
-    <div class="wrap_sec_footer" style="display:none;">
-    	<div class="inner">
-   			<div class="img"><img src="images/img_footer.jpg" /></div>
-        </div>
+  </div>
+</div>
+<div class="wrap_sec_com">
+  <div class="inner">
+    <div class="title"><img src="images/title_com.png" /></div>
+    <div class="img">
+      <a href="http://www.compassion.or.kr" target="_blank"><img src="images/btn_compassion.png" /></a>
     </div>
+  </div>
+</div>
+<div class="wrap_sec_footer" style="display:none;">
+  <div class="inner">
+    <div class="img"><img src="images/img_footer.jpg" /></div>
+  </div>
+</div>
 <!-- 메인 index -->
 
 <!-- 사진 업로드 페이지 -->
