@@ -410,7 +410,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 
 		$('.people_pic').bxSlider({
 			ticker: true,
-			speed: 400,
+			speed: 4000,
 			// minSlide: 12,
 			// maxSilde: 12,
 			slideWidth: 155
