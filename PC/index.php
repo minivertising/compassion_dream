@@ -446,7 +446,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 			speed: 40000,
 			// minSlide: 12,
 			// maxSilde: 12,
-			slideWidth: 155
+			slideWidth: 155,
 			// slideMargin: 20
 			// responsive: true,
 			// adaptiveHeight: true
