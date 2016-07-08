@@ -4,7 +4,16 @@
 	$targ_src = $_FILES['file']['name'];
 	$file_type = $_FILES['file']['type'];
 	// 올린 파일이 이미지인지 검증이 필요할듯합니다.
-	
+
+
+
+    $exif = exif_read_data($file); // 추가
+    print_r($exif); // 추가 
+
+
+
+
+
   	$sTempFileName = './tmp_images/' . md5(time().rand());
     // move uploaded file into cache folder
     move_uploaded_file($file, $sTempFileName);
