@@ -478,7 +478,7 @@ function readURL(input, browser) {
 		$($ori_image).cropper('destroy');
 		$('#ie_img_save').ajaxSubmit({
 			success: function (data) {
-        console.log(data);
+        alert(data);
 				$($ori_image).attr('src', data);
 				image_crop();
 			}
@@ -539,7 +539,6 @@ function dream_next(){
 					cropboxData     : cropboxDataIE,
 				},
 				success: function(res){
-					console.log(res);
 					var rs_ch = res.split("||");
 					if (rs_ch[0] == "Y")
 					{
