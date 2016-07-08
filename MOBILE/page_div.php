@@ -186,9 +186,9 @@
       <div class="img_com">
         <div class="img_child">
           <div class="inner_img_child clearfix">
-            <div class="one"><img src="images/ex_child_01.png" /></div>
-            <div class="one"><img src="images/ex_child_02.png" /></div>
-            <div class="one"><img src="images/ex_child_03.png" /></div>
+	                    	<div class="one"><img src="images/ex_child_05.jpg" /></div>
+                            <div class="one"><img src="images/ex_child_06.jpg" /></div>
+                            <div class="one"><img src="images/ex_child_07.jpg" /></div>
           </div>
         </div>
         <img src="images/bg_share_com.png" class="bg" />

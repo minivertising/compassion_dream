@@ -778,7 +778,7 @@
       <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
       <div class="block_content result_story_child">
         <div class="title">
-          <div class="main"><span><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "아" : "야" ?> 내꿈꿔~!</div>
+          <div class="main">"<span><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "아" : "야" ?> 내꿈꿔~!"</div>
           <div class="sub">
           가난으로 인해 꿈을 잃어버린 <?=$ch_data['ch_nick']?>의 후원자가 되어주세요
           </div>
@@ -849,7 +849,7 @@
       <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
       <div class="block_content result_story_compassion">
         <div class="title">
-          <div class="main">얘들아 내 꿈꿔~!’</div>
+          <div class="main">'얘들아 내 꿈꿔~!’</div>
           <div class="sub">
           컴패션 소개와 함께 어린 시절 사진을 SNS에 공유하면<br>
           꿈을 잃어버린 어린이들을 도와줄 수 있습니다
