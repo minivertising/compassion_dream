@@ -875,8 +875,8 @@ body.main{
 .wrap_sec_top_sub.storytelling .one_talk.right.ending_chat{
 	position:absolute;
 	left:50%;
-	margin-left:-164px;
-	top:579px;
+	margin-left: -150px;
+    top: 593px;
 	z-index:10000;
 }
 
