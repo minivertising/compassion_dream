@@ -201,7 +201,9 @@
 		});
 			if (URL) {
 				$inputImage.change(function () {
-					//$("#img_div").show();
+					inputImageCheck = "Y";
+					$("#img_div").show();
+					$(".btn_closeup").show();
 					var files = this.files;
 					var file;
 					if (!$ori_image.data('cropper')) {

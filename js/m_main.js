@@ -1,9 +1,5 @@
 function open_pop(param)
 {
-	if (param == "preview_popup")
-	{
-
-	}
 	// $('.preview > img').css('width', 'max-width');
 	$.colorbox({innerWidth:"100%",innerHeight: "95%", initialWidth:"95%", initialHeight: "70%", inline:true, opacity:"0.9", scrolling:true, reposition: false, closeButton:false, overlayClose: false, open:true, speed:20, transition: "fade", fadeOut: 300, href:"#"+param, onComplete: function(){
 		$("#cboxContent").css("background","none");
@@ -72,34 +68,43 @@ function next_page(param)
 	switch(param)
 	{
 		case '5':
-			$("#page_div"+prev_param).fadeOut('fast', function(){
-				$("body").addClass("bg_sub_page");
+			$(".storytelling_m").fadeOut('fast', function(){
+				$("body").removeClass("storytelling");
 				$("#page_div"+param).fadeIn('fast');
+				$("#talk_final_mask").hide();
 			});
 		break;
 
 		case '6':
-			var fade_page	= prev_param-1;
-			$("#page_div"+fade_page).fadeOut('fast', function(){
-				$("body").addClass("bg_sub_page");
+			$(".storytelling_m").fadeOut('fast', function(){
+				$("body").removeClass("storytelling");
 				$("#page_div"+param).fadeIn('fast');
+				$("#talk_final_mask").hide();
 			});
 		break;
 
 		case '7':
-			var fade_page	= prev_param-2;
-			$("#page_div"+fade_page).fadeOut('fast', function(){
-				$("body").addClass("bg_sub_page");
+			$(".storytelling_m").fadeOut('fast', function(){
+				$("body").removeClass("storytelling");
 				$("#page_div"+param).fadeIn('fast');
+				$("#talk_c_final_mask").hide();
 			});
 		break;
 
 		default:
-			$("#page_div"+prev_param).fadeOut('fast', function(){
+			$(".storytelling_m").fadeOut('fast', function(){
+				$("body").removeClass("storytelling");
 				$("#page_div"+param).fadeIn('fast');
+				$("#talk_final_mask").hide();
 			});
 		break;
 	}
+}
+
+function open_fb_ks_page(param)
+{
+	$("#page_div"+param).hide();
+	$("#fb_ks_page").show();
 }
 
 function only_num(obj)
@@ -287,6 +292,289 @@ function go_main(page)
 	}
 }
 
+var obj = new Audio('sample.wav');
+function playNow()
+{
+	obj.play();
+	if(obj.currentTime > 0) // INVALID_STATE_ERR를 피하기 위한 꼼수
+		obj.currentTime = 0; 
+}
+
+// 스토리텔링 모션
+function talk_start()
+{
+	$("#talk_alarm1").delay(500).fadeIn("fast", function(){
+		playNow();
+	});
+
+	$("#talk_message1").delay(2500).fadeIn("fast", function(){
+		playNow();
+	});
+
+	$("#talk_message2").delay(3500).fadeIn("fast", function(){
+		playNow();
+	});
+
+	$("#talk_message3").delay(5500).fadeIn("fast", function(){
+		playNow();
+	});
+
+	$("#talk_message4").delay(7000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
+
+	$("#talk_message5").delay(9000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
+
+	$("#talk_message6").delay(10000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
+
+	$("#talk_message7").delay(12000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
+
+	$("#talk_message8").delay(15000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
+
+	$("#talk_alarm2").delay(16000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
+
+	$("#talk_message9").delay(18000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_message10").delay(21000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_message11").delay(24000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_message12").delay(25000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_alarm3").delay(26000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_message13").delay(28000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_message14").delay(29000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_message15").delay(31000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_alarm4").delay(32000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_message16").delay(34000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_message17").delay(36000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_message18").delay(38000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_message19").delay(39500).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_message20").delay(41000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_message21").delay(43000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500,function(){
+			$("#talk_final").show();
+			$("#talk_final_mask").show();
+			scroll_end	= $(".inner_story").scrollTop();
+		});
+	});
+}
+
+function close_mask()
+{
+	$("#talk_final_send").hide();
+	$("#talk_final").hide();
+	$("#talk_final_mask").hide();
+
+}
+
+function close_c_mask()
+{
+	$("#talk_c_final_send").hide();
+	$("#talk_c_final").hide();
+	$("#talk_c_final_mask").hide();
+
+}
+
+
+// 스토리텔링 모션 ( 매칭된 아이가 없을 경우) 
+function talk_c_start()
+{
+	$("#talk_c_alarm1").delay(500).fadeIn("fast", function(){
+		playNow();
+	});
+
+	$("#talk_c_message1").delay(2500).fadeIn("fast", function(){
+		playNow();
+	});
+
+	$("#talk_c_message2").delay(3500).fadeIn("fast", function(){
+		playNow();
+	});
+
+	$("#talk_c_message3").delay(5500).fadeIn("fast", function(){
+		playNow();
+	});
+
+	$("#talk_c_message4").delay(7000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
+
+	$("#talk_c_message5").delay(9000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
+
+	$("#talk_c_message6").delay(10000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
+
+	$("#talk_c_message7").delay(12000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
+
+	$("#talk_c_message8").delay(15000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
+
+	$("#talk_c_alarm2").delay(16000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
+
+	$("#talk_c_message9").delay(18000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_message10").delay(21000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_message11").delay(24000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_message12").delay(25000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_alarm3").delay(26000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_message13").delay(28000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_message14").delay(29000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_message15").delay(31000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_alarm4").delay(32000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_message16").delay(34000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_message17").delay(36000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_message18").delay(38000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_message19").delay(39500).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_message20").delay(41000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
+
+	$("#talk_c_message21").delay(43000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500,function(){
+			$("#talk_c_final").show();
+			$("#talk_c_final_mask").show();
+			scroll_end	= $(".inner_story").scrollTop();
+		});
+	});
+}
+
 function sns_share(media, flag, page)
 {
 	if (media == "fb")
@@ -294,7 +582,7 @@ function sns_share(media, flag, page)
 		
 		//https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer
 		//var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.belif-play.com/PC/index.php'),'sharer','toolbar=0,status=0,width=600,height=325');
-		var newWindow = window.open('https://www.facebook.com/dialog/share?app_id=649187078561789&display=popup&hashtag=내꿈꿔&href=' + encodeURIComponent('http://mydream.compassion.or.kr/MOBILE/follower_index.php?rs='+mb_rs+'&ugu='+flag),'sharer','toolbar=0,status=0,width=600,height=325');
+		var newWindow = window.open('https://www.facebook.com/dialog/share?app_id=649187078561789&display=popup&hashtag=내꿈꿔&href=' + encodeURIComponent('http://mydream.compassion.or.kr/MOBILE/follower_index2.php?rs='+mb_rs+'&ugu='+flag),'sharer','toolbar=0,status=0,width=600,height=325');
 		$.ajax({
 			type   : "POST",
 			async  : false,
@@ -350,7 +638,7 @@ function sns_share(media, flag, page)
 		});
 	}else{
 		Kakao.Story.share({
-			url: 'http://mydream.compassion.or.kr/MOBILE/follower_index.php?rs='+mb_rs+'&ugu='+flag,
+			url: 'http://mydream.compassion.or.kr/MOBILE/follower_index2.php?rs='+mb_rs+'&ugu='+flag,
 			text: '#내꿈꿔'
 		});
 		$.ajax({
