@@ -230,7 +230,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
           </div>
         </div>
       </div>
-      <div class="block_txt">
+      <div class="block_txt02">
         <p>SNS에 공유하셔서 <span id="m_rs_ch_name3">기타</span><span id="name3PP">가</span> 후원자를 만날 수 있도록 해주세요!</p><!-- ~이 ~가 -->
       </div>
       <div class="block_btn sns">
