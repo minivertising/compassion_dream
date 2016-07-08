@@ -1070,7 +1070,7 @@
 
 		$(".inner_story").scroll(function(){
 			console.log($(".inner_story").scrollTop()+"||"+talk_scroll);
-			if ($(".inner_story").scrollTop() == 1711){
+			if ($(".inner_story").scrollTop() == 1846){
 				$("#talk_final").show();
 				$("#talk_final_mask").show();
 			}
