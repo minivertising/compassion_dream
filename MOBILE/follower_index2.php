@@ -429,7 +429,8 @@ function image_crop(){
 		center:true,
 		zoomOnWheel:false,
 		toggleDragModeOnDblclick:false,
-    checkOrientation: false
+    checkOrientation: true,
+    checkCrossOrigin: true
 	});
 }
 function f_preview_img()
