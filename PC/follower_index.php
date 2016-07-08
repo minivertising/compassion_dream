@@ -365,8 +365,8 @@
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
                       어린이들을 다시 초대하기<br>
-                      <a href="#">mydream.compassion.or.kr</a>
-                      <a href="#"><img src="images/chat_8_img.png" /></a>
+                      <a href="#" onclick="next_page('7');return false;">mydream.compassion.or.kr</a>
+                      <a href="#" onclick="next_page('7');return false;"><img src="images/chat_8_img.png" /></a>
                     </div>
                     <div class="cnt v4"><img src="images/link_out.png" /></div>
                   </div>
@@ -392,7 +392,7 @@
             </div>
           </div>
         </div> 
-        <div id="talk_c_final_mask" class="mask_ending" onclick="close_mask();return false;" style="display:none;"></div>
+        <div id="talk_c_final_mask" class="mask_ending" onclick="close_c_mask();return false;" style="display:none;"></div>
 
         <div class="bg_img_1"><img src="images/bg_pic_1.png" /></div>
         <div class="bg_img_2"><img src="images/bg_pic_2.png" /></div>
@@ -715,8 +715,20 @@
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt end">
                       <?=$ch_data['ch_nick']?>을 다시 초대하기<br>
-                      <a href="#">mydream.compassion.or.kr</a>
-                      <a href="#"><img src="images/chat_8_img.png" /></a>
+<?
+	if ($ch_data['ch_choice'] == "Y")
+	{
+?>
+                  <a href="#" onclick="next_page('6');return false;">mydream.compassion.or.kr</a>
+                  <a href="#" onclick="next_page('6');return false;"><img src="images/chat_8_img.png" /></a>
+<?
+	}else{
+?>
+                  <a href="#" onclick="next_page('5');return false;">mydream.compassion.or.kr</a>
+                  <a href="#" onclick="next_page('5');return false;"><img src="images/chat_8_img.png" /></a>
+<?
+	}
+?>
                     </div>
                     <div class="cnt v4"><img src="images/link_out.png" /></div>
                   </div>
@@ -739,11 +751,11 @@
 	{
 ?>
                   <a href="#" onclick="next_page('6');return false;">mydream.compassion.or.kr</a>
-                  <a href="#" onclick="next_page('5');return false;"><img src="images/chat_8_img.png" /></a>
+                  <a href="#" onclick="next_page('6');return false;"><img src="images/chat_8_img.png" /></a>
 <?
 	}else{
 ?>
-                  <a href="#" onclick="next_page('6');return false;">mydream.compassion.or.kr</a>
+                  <a href="#" onclick="next_page('5');return false;">mydream.compassion.or.kr</a>
                   <a href="#" onclick="next_page('5');return false;"><img src="images/chat_8_img.png" /></a>
 <?
 	}
@@ -1089,14 +1101,19 @@
 	{
 ?>
 		talk_c_start();
+
+		$(".inner_story").scroll(function(){
+			console.log($(".inner_story").scrollTop()+"||"+talk_scroll);
+			if ($(".inner_story").scrollTop() == 1846){
+				$("#talk_c_final").show();
+				$("#talk_c_final_mask").show();
+			}
+		});
+
 <?
 	}else{
 ?>
 		talk_start();
-
-<?
-	}
-?>
 
 		$(".inner_story").scroll(function(){
 			console.log($(".inner_story").scrollTop()+"||"+talk_scroll);
@@ -1105,6 +1122,10 @@
 				$("#talk_final_mask").show();
 			}
 		});
+
+<?
+	}
+?>
 
         Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
     });
