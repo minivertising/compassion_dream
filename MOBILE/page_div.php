@@ -8,38 +8,35 @@
         SNS에 사진과 함께 당신이 응원할<br>
         <span class="small" style="color:#E9DE51">'꿈을 잃은 어린이'</span>가 소개됩니다</span>
       </div>
-      <div class="block_input_dream">
-        <div class="selec_job clearfix">
-          <div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div>
-          <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="60" id="sel_job_btn" /></a></div><!--버튼 두개입니다-->
-        </div>
-        <div class="upload_pic">
-          <div class="title_pic">
-          2. 사진업로드
-          </div>
-          <div class="desc">
-            <div class="txt_pic">
-            * 1개의 이미지 파일을 등록할 수 있습니다
-            </div>
-            <div class="btns">
+                <div class="block_input_dream">
+                	<div class="selec_job clearfix">
+                    	<div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div>
+                        <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="90" /></a></div><!--버튼 두개입니다-->
+                    </div>
+                    <div class="upload_pic">
+                    	<div class="title_pic clearfix">
+                        	<div class="txt_1">2. 사진업로드</div>
+                            <div class="txt_2">
               <label for="inputImage" title="Upload image file">
                 <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
                 <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
               </label>
-              <a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a>
-            </div>
-          </div>
-          <div id="img_div" class="pic_area">
-            <img id="ori_image" src="./images/picture.jpg" alt="Picture" />
-          </div>
-          <div class="btn_closeup">
-            <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" width="80" /></a>
-            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" width="80" /></a>
-            <a href="#" onclick="rotate_action('+');return false;">90</a>
-            <a href="#" onclick="rotate_action('-');return false;">-90</a>
-          </div>
-        </div>
-      </div>
+							</div>
+                        	<div class="txt_3"><a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a></div>
+                        </div>
+                        <div id="img_div" class="pic_area" style="display:none;">
+                        	<img id="ori_image" src="./images/picture.jpg" alt="Picture" />
+                        </div>
+                        <div class="btn_closeup" style="display:none;">
+                        	<a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" width="80" /></a>
+                            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" width="80" /></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="txt_pic">
+                    * 1개의 이미지 파일을 등록할 수 있습니다
+                </div>
       <div class="block_btn upload">
         <a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
       </div>

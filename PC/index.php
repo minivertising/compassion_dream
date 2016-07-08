@@ -135,8 +135,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
                 	<div class="main">
                     <!--스장-->
                     여러분의 어린 시절 꿈과 사진을 올려주세요<br> 
-                    SNS에 사진과 함께 당신이 응원할<br>
-                    ‘꿈을 잃은 어린이 <span>아비가일 마아 야아 암퐁</span>’이 소개됩니다
+                    SNS에 사진과 함께 당신이 응원할 <span>‘꿈을 잃은 어린이'</span>’가 소개됩니다
                     </div>
                 </div>
                 <div class="block_input_dream">
