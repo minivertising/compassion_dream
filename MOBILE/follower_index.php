@@ -1392,6 +1392,7 @@ function f_dream_next()
 				});
             },
             success: function(res){
+				alert(res);
                 // console.log(res);
                 //mb_image    = res;
                 var rs_ch = res.split("||");
