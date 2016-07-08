@@ -288,11 +288,11 @@ switch ($_REQUEST['exec'])
 						break;
 				}
 			}
-			header('Content-type: image/jpeg');
+			//header('Content-type: image/jpeg');
 			 
-			imagejpeg($image);
+			imagejpeg($image, $ori_images);
 			 
-			imagedestroy($image);
+			//imagedestroy($image);
 
 			$mb_serial	= create_serial("follower",$rs);
 			$dest_url	= ".".$dest_url;
@@ -308,7 +308,7 @@ switch ($_REQUEST['exec'])
 			}else{
 				$flag	= "E||null||null";
 			}
-			echo $flag;
+			echo $exif;
 		}
 
 	break;
