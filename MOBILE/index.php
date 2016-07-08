@@ -199,32 +199,31 @@
 
 		Ins_tracking();
 		});
-			// if (URL) {
-			// 	$inputImage.change(function () {
-			// 		inputImageCheck = "Y";
-			// 		//$("#img_div").show();
-			// 		var files = this.files;
-			// 		var file;
-			// 		if (!$ori_image.data('cropper')) {
-			// 			return;
-			// 		}
-			// 		if (files && files.length) {
-			// 			file = files[0];
-			// 			if (/^image\/\w+$/.test(file.type)) {
-			// 				blobURL = URL.createObjectURL(file);
-			// 				$ori_image.one('built.cropper', function () {
-			// 					// Revoke when load complete
-			// 					URL.revokeObjectURL(blobURL);
-			// 				}).cropper('reset').cropper('replace', blobURL);
-			// 				$inputImage.val('');
-			// 			} else {
-			// 				window.alert('Please choose an image file.');
-			// 			}
-			// 		}
-			// 	});
-			// } else {
-			// 	$inputImage.prop('disabled', true).parent().addClass('disabled');
-			// }
+			if (URL) {
+				$inputImage.change(function () {
+					//$("#img_div").show();
+					var files = this.files;
+					var file;
+					if (!$ori_image.data('cropper')) {
+						return;
+					}
+					if (files && files.length) {
+						file = files[0];
+						if (/^image\/\w+$/.test(file.type)) {
+							blobURL = URL.createObjectURL(file);
+							$ori_image.one('built.cropper', function () {
+								// Revoke when load complete
+								URL.revokeObjectURL(blobURL);
+							}).cropper('reset').cropper('replace', blobURL);
+							$inputImage.val('');
+						} else {
+							window.alert('Please choose an image file.');
+						}
+					}
+				});
+			} else {
+				$inputImage.prop('disabled', true).parent().addClass('disabled');
+			}
 function image_crop(){
 		$($ori_image).cropper({
 				viewMode: 0,
@@ -242,81 +241,33 @@ function image_crop(){
 				center:true,
 				zoomOnWheel:false,
 				toggleDragModeOnDblclick:false,
-			    checkOrientation: true,
-			    checkCrossOrigin: true
 		});
 }
-
+$($inputImage).change(function(){
+	inputImageCheck = "Y";
+	//files = this.files;
+// console.dir(this);
+// if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+//  // $($ori_image).cropper('destroy');
+//  $('#ie_img_save').ajaxSubmit({
+//      success: function (data) {
+//          console.dir(data);
+//      }
+//  });
+//  // this.select();
+//  // realFath = document.selection.createRangeCollection()[0].text.toString();
+//  // this.blur();
+//  }
+	//readURL(this);
+});
 function zoom_action(type){
 	if(type=="up")
-	{	
+	{
 		$($ori_image).cropper('zoom', 0.1);
 	}else{
-
 		$($ori_image).cropper('zoom', -0.1);
 	}
 }
-
-function rotate_action(degree){
-	if(degree=="+")
-	{
-		$($ori_image).cropper('rotate', 90);
-	}else{
-		$($ori_image).cropper('rotate', -90);
-	}
-}
-
-function readURL(input) {
-	// if (input.files && input.files[0] && browser == "C") {
-	// 	file = files[0];
-	// 	if (/^image\/\w+$/.test(file.type)) {
-	// 		blobURL = URL.createObjectURL(file);
-	// 		$ori_image.one('built.cropper', function () {
-	// 			URL.revokeObjectURL(blobURL);
-	// 		}).cropper('reset').cropper('replace', blobURL);
-	// 		$($inputImage).val('');
-	// 	} else {
-	// 		window.alert("이미지를 선택해주세요.");
-	// 	}
-	// }else if(browser == "I"){
-		$($ori_image).cropper('destroy');
-		$('#img_save').ajaxSubmit({
-			success: function (data) {
-				console.log(data);
-				$($ori_image).attr('src', data);
-				image_crop();
-			}
-		});
-	}
-
-
-$($inputImage).change(function(){
-	// var pre_upload_browser_check;
-	// if((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1))
-	// {
-		var file_value = this.value;
-		var file_value_lengh = this.value.length;
-		var file_exe_start_length = file_value_lengh-3;
-		var file_exe = file_value.substr(file_exe_start_length, 3);
-
-		if(file_exe == "jpg" || file_exe == "JPG" || file_exe == "png" || file_exe == "PNG" || file_exe == "gif") {
-			// pre_upload_browser_check = "I";
-			inputImageCheck = "Y";
-			readURL(this);
-		}else{
-			alert("이미지를 선택해주세요.")
-			return;
-		}
-
-	// }else{
-		// files = this.files;
-		// pre_upload_browser_check = "C";
-	// }
-	// inputImageCheck = "Y";
-
-	// readURL(this, pre_upload_browser_check);
-});
-
 function dream_next()
 {
 	if (sel_dream == null)
