@@ -6,8 +6,6 @@
 		echo "<script>location.href='../PC/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
 	$ch_data	= sel_child_info($mb_data['mb_child']);
 	$convert_job = job_ko_add($mb_data['mb_job']);
-
-	print_r($iphone_banner_gubun);
 ?>
 <body class="bg_sub_page storytelling">
 <script>
@@ -874,7 +872,18 @@
           <img src="images/bg_story_result.jpg" class="bg" />
         </div>
         <div class="block_btn spon">
+<?
+	if ($iphone_banner_gubun == "N")
+	{
+?>
+          <div class="bt"><a href="#" onclick="open_fb_ks_page('5');return false;"><img src="images/btn_spon.png" /></a></div>
+<?
+	}else{
+?>
           <div class="bt"><a href="http://www.compassion.or.kr/Mobile/cdspDetail3.aspx?ChildMasterID=<?=$ch_data['ch_id']?>&ChildID=<?=$ch_data['ch_key']?>" target="_blank"><img src="images/btn_spon.png" /></a></div>
+<?
+	}
+?>
           <div class="txt">1:1후원으로 <?=$ch_data['ch_nick']?>의 꿈을 현실로 만들어주세요!</div>
         </div>
         <div class="block_btn cheer">
@@ -948,7 +957,18 @@
           <img src="images/bg_share_com.png" class="bg" />
         </div>
         <div class="block_btn spon">
-          <div class="bt"><a href="#"><img src="images/btn_spon.png" /></a></div>
+<?
+	if ($iphone_banner_gubun == "N")
+	{
+?>
+          <div class="bt"><a href="#" onclick="open_fb_ks_page('7');return false;"><img src="images/btn_spon.png" /></a></div>
+<?
+	}else{
+?>
+          <div class="bt"><a href="http://www.compassion.or.kr/Mobile/cdspDetail3.aspx?ChildMasterID=<?=$ch_data['ch_id']?>&ChildID=<?=$ch_data['ch_key']?>" target="_blank"><img src="images/btn_spon.png" /></a></div>
+<?
+	}
+?>
           <div class="txt">1:1후원으로 아이의 꿈을 현실로 만들어주세요!</div>
         </div>
         <div class="block_btn cheer">

@@ -1,9 +1,5 @@
 function open_pop(param)
 {
-	if (param == "preview_popup")
-	{
-
-	}
 	// $('.preview > img').css('width', 'max-width');
 	$.colorbox({innerWidth:"100%",innerHeight: "95%", initialWidth:"95%", initialHeight: "70%", inline:true, opacity:"0.9", scrolling:true, reposition: false, closeButton:false, overlayClose: false, open:true, speed:20, transition: "fade", fadeOut: 300, href:"#"+param, onComplete: function(){
 		$("#cboxContent").css("background","none");
@@ -103,6 +99,12 @@ function next_page(param)
 			});
 		break;
 	}
+}
+
+function open_fb_ks_page(param)
+{
+	$("#page_div"+param).hide();
+	$("#fb_ks_page").show();
 }
 
 function only_num(obj)

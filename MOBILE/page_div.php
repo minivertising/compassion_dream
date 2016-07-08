@@ -246,3 +246,39 @@
   </div>
 </div>
 <!-- 공유 완료 페이지 -->
+
+<!-- 페북/카스 인앱브라우저에서 결연맺기 클릭시(팔로워) 페이지 -->
+<div id="fb_ks_page" class="wrap_page sub phone" style="display:none;">
+  <div class="inner">
+    <div class="block_content">
+      <div class="title">
+      참여하신 분 중 추첨을 통해<br>
+      컴패션 현지 센터를 방문할 수 있는<br>
+      기회를 드립니다
+      </div>
+
+      <div class="sub_title">
+      후원자님의 어린이 양육을 돕기 위해 <br>
+      전화연결을 진행하고 있습니다
+      </div>
+
+      <div class="block_btn">
+        <a href="#"><img src="images/btn_phone.png" /></a>
+      </div>
+      <div class="txt_desc">
+      지금 바로 연결을 원하시면 위의 버튼을 눌러주세요<br>
+      한국컴패션으로 연결됩니다.<br>
+      (오전 9시 – 저녁 6시에 전화 연결 가능)
+      </div>
+
+      <div class="block_btn second">
+        <a href="#"><img src="images/btn_phone_num.png" /></a>
+      </div>
+      <div class="txt_desc">
+      저녁 6시 이후에는 상담이 어려운 관계로<br>
+      연락처를 남겨주시면 한국컴패션에서 전화를 드립니다.
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 페북/카스 인앱브라우저에서 결연맺기 클릭시(팔로워) 페이지 -->
