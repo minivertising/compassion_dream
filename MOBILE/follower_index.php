@@ -1295,8 +1295,7 @@ function image_crop(){
 		preview: '.preview',
 		center:true,
 		zoomOnWheel:false,
-		toggleDragModeOnDblclick:false,
-    checkOrientation: false
+		toggleDragModeOnDblclick:false
 	});
 }
 function f_preview_img()
@@ -1323,7 +1322,8 @@ function rotate_action(degree){
       if (URL) {
         $inputImage.change(function () {
           inputImageCheck = "Y";
-          //$("#img_div").show();
+          $("#img_div").show();
+		$(".btn_closeup").show();
           var files = this.files;
           var file;
           if (!$ori_image.data('cropper')) {
@@ -1392,6 +1392,7 @@ function f_dream_next()
 				});
             },
             success: function(res){
+				alert(res);
                 // console.log(res);
                 //mb_image    = res;
                 var rs_ch = res.split("||");
