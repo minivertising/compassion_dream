@@ -765,6 +765,37 @@ body.storytelling{
 	width:100%;
 	position:relative;
 }
+.one_chat.right.ending_chat{
+	position:absolute;
+	top:68.5%;
+	width:96%;
+	margin-right:4%;
+	z-index:120;
+}
+
+@media screen and (min-device-height: 400px) and (max-device-height: 568px) {
+	
+	.one_chat.right.ending_chat {
+		top:62.5%;
+	}
+}
+
+.one_chat.right.ending_chat .content{
+	width:100%;
+}
+.mask_ending{
+	width:100%;
+	height:600px;
+	background:rgba(0,0,0,0.50);
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:100;
+}
+
+
+
+
 .wrap_page.storytelling .inner {
 	width:94%;
 	margin:10px auto 0;
@@ -851,11 +882,13 @@ body.storytelling{
 .wrap_page.storytelling .inner .block_content .one_chat .content .cnt.v5{
 	padding-top:81px !important;
 }
-.wrap_page.storytelling .inner .block_content .one_chat .content .cnt.v6{
+.wrap_page.storytelling .inner .block_content .one_chat .content .cnt.v6,
+.one_chat.ending_chat .content .cnt.v6{
 	padding-top:101px !important;
 }
 
-.wrap_page.storytelling .inner .block_content .one_chat .content .talk{
+.wrap_page.storytelling .inner .block_content .one_chat .content .talk,
+.one_chat.ending_chat .content .talk{
 	color:#222;
 	font-size:14px;
 	padding-bottom:0;
@@ -945,7 +978,8 @@ body.storytelling{
     box-shadow: 1px 2px 1px #888888;
 }
 
-.wrap_page.storytelling .inner .block_content .one_chat.right .content .talk{
+.wrap_page.storytelling .inner .block_content .one_chat.right .content .talk,
+.one_chat.right.ending_chat .content .talk{
 	width:100%;
 }
 .wrap_page.storytelling .inner .block_content .one_chat.right .content .cnt,
@@ -953,7 +987,13 @@ body.storytelling{
 .wrap_page.storytelling .inner .block_content .one_chat.right .content .deco{
 	float:right;
 }
-.wrap_page.storytelling .inner .block_content .one_chat.right .content .txt{
+.one_chat.right.ending_chat .content .cnt,
+.one_chat.right.ending_chat .content .txt,
+.one_chat.right.ending_chat .content .deco{
+	float:right;
+}
+.wrap_page.storytelling .inner .block_content .one_chat.right .content .txt,
+.one_chat.right.ending_chat .content .txt{
 	background:#feec04;
 	border-radius:6px;
 	border-bottom-left-radius:7px;
@@ -961,12 +1001,19 @@ body.storytelling{
 	padding:10px 10px 7px;
 	box-shadow: 0 1px 0 #888888;
 }
+.wrap_page.storytelling .inner .block_content .one_chat.right .content .txt.end,
+.one_chat.right.ending_chat .content .txt.end{
+	width:75%;
+	letter-spacing:-2px;
+}
 
-.wrap_page.storytelling .inner .block_content .one_chat.right .content .talk.ending {
+.wrap_page.storytelling .inner .block_content .one_chat.right .content .talk.ending,
+.one_chat.right.ending_chat .content .talk.ending {
 	position:relative;
 }
 
-.wrap_page.storytelling .inner .block_content .one_chat.right .content .talk.ending .here {
+.wrap_page.storytelling .inner .block_content .one_chat.right .content .talk.ending .here,
+.one_chat.right.ending_chat .content .talk.ending .here{
 	position: absolute;
 	top:-60px;
 	left:20px;
@@ -979,10 +1026,12 @@ body.storytelling{
 	left:50px;
 
 }
-.wrap_page.storytelling .inner .block_content .one_chat.right .content .talk.ending .txt{
+.wrap_page.storytelling .inner .block_content .one_chat.right .content .talk.ending .txt,
+.one_chat.right.ending_chat .content .talk.ending .txt {
 	font-weight:bold;
 }
-.wrap_page.storytelling .inner .block_content .one_chat.right .content .talk.ending .txt a{
+.wrap_page.storytelling .inner .block_content .one_chat.right .content .talk.ending .txt a,
+.one_chat.right.ending_chat .content .talk.ending .txt a{
 	display:block;
 	padding:4px;
 	color:#004f98;
@@ -991,11 +1040,13 @@ body.storytelling{
 
 
 
-.wrap_page.storytelling .inner .block_content .one_chat.right .content .deco{
+.wrap_page.storytelling .inner .block_content .one_chat.right .content .deco,
+.one_chat.right.ending_chat .content .deco{
 	padding-top:7px;
 }
 
-.wrap_page.storytelling .inner .block_content .one_chat.right .content .cnt{
+.wrap_page.storytelling .inner .block_content .one_chat.right .content .cnt,
+.one_chat.right.ending_chat .content .cnt{
 	padding-right:5px;
 }
 
