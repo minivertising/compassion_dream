@@ -724,7 +724,7 @@
             </div>
           </div>
         </div> 
-        <div id="talk_final_mask" class="mask" onclick="close_mask();return false;" style="display:none;"></div>
+        <div id="talk_final_mask" class="mask_ending" onclick="close_mask();return false;" style="display:none;"></div>
 
         <div class="bg_img_1"><img src="images/bg_pic_1.png" /></div>
         <div class="bg_img_2"><img src="images/bg_pic_2.png" /></div>
