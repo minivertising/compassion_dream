@@ -910,19 +910,15 @@
 ?>
         </div>
       </div>
-      <div class="block_input_dream">
-        <div class="selec_job">
-          <span id="sel_job_txt">1. 내 어린 시절의 꿈 선택 </span><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
-        </div>
-        <div class="upload_pic">
-          <div class="title_pic">
-          2. 사진업로드
-          </div>
-          <div class="desc">
-            <div class="txt_pic">
-              <img src="images/txt_pic.png" />
-            </div>
-            <div class="btns">
+                <div class="block_input_dream">
+                	<div class="selec_job clearfix">
+                    	<div class="txt_1" id="sel_job_txt">1. 내 어린 시절의 꿈 선택 </div>
+                        <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a></div><!--버튼 두개입니다-->
+                    </div>
+                    <div class="upload_pic">
+                    	<div class="title_pic clearfix">
+                        	<div class="txt_1">2. 사진업로드</div>
+                            <div class="txt_2">
               <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
                 <label for="f_inputImage" title="Upload image file">
                   <span title="Import image" style="position: relative; overflow: hidden;">
@@ -930,18 +926,23 @@
                     <img src="images/btn_select_pic.png" style="cursor:pointer;"/>
                   </span>
                 </label>
-                  <a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a>
               </form>
-            </div>
-          </div>
-          <div id="img_div" class="pic_area">
-            <img id="f_ori_image" src="./images/picture.jpg" alt="Picture" />
-          </div>
-          <div class="btn_closeup">
-            <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
-            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" /></a>
-          </div>
-        </div>
+							</div>
+                        	<div class="txt_3"><a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a></div>
+                        </div>
+                        <div id="img_div" class="pic_area" style="display:none;">
+                        	<img id="f_ori_image" src="./images/picture.jpg" alt="Picture" />
+                        </div>
+                        <div class="btn_closeup" style="display:none;">
+                        	<a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
+                            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" /></a>
+                        </div>
+                    </div>
+                    
+                 
+                <div class="txt_desc">
+                	* 1개의 이미지 파일을 등록할 수 있습니다.
+                </div>
       </div>
       <div class="block_btn">
         <a href="#" onclick="f_dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>

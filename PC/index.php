@@ -129,27 +129,25 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <!-- 사진 업로드 페이지 -->
     <div id="upload_page" class="wrap_sec_top_sub" style="display:none;">
     	<div class="inner">
-        	<div class="logo"><a href="index.php"><img src="images/logo_sub.png" /></a></div>
-            <div class="block_content upload">
+        	<div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+            <div class="block_content upload_02">
             	<div class="title">
                 	<div class="main">
-                    여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
-                    SNS에 사진과 함께 당신이 응원할 <span>‘꿈을 잃은 어린이’</span>가 소개됩니다
+                    <!--스장-->
+                    여러분의 어린 시절 꿈과 사진을 올려주세요<br> 
+                    SNS에 사진과 함께 당신이 응원할<br>
+                    ‘꿈을 잃은 어린이 <span>아비가일 마아 야아 암퐁</span>’이 소개됩니다
                     </div>
                 </div>
                 <div class="block_input_dream">
-                	<div class="selec_job">
-                    	<span id="sel_job_txt">1. 내 어린 시절의 꿈 선택 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
+                	<div class="selec_job clearfix">
+                    	<div class="txt_1" id="sel_job_txt">1. 내 어린 시절의 꿈 선택 </div>
+                        <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a></div><!--버튼 두개입니다-->
                     </div>
                     <div class="upload_pic">
-                    	<div class="title_pic">
-                        	2. 사진업로드
-                        </div>
-                        <div class="desc">
-                        	<div class="txt_pic">
-                            	<img src="images/txt_pic.png" />
-                            </div>
-                        	<div class="btns">
+                    	<div class="title_pic clearfix">
+                        	<div class="txt_1">2. 사진업로드</div>
+                            <div class="txt_2">
               <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
                 <label for="inputImage" title="Upload image file">
                   <span title="Import image" style="position: relative; overflow: hidden;">
@@ -157,19 +155,28 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
                     <img src="images/btn_select_pic.png" style="cursor:pointer;"/>
                   </span>
                 </label>
-                  <a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a>
               </form>
-                            </div>
+							</div>
+                        	<div class="txt_3"><a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a></div>
                         </div>
-                        <div id="img_div" class="pic_area">
+                        <div id="img_div" class="pic_area" style="display:none;">
                         	<img id="ori_image" src="./images/picture.jpg" alt="Picture" />
                         </div>
-                        <div class="btn_closeup">
+                        <div class="btn_closeup" style="display:none;">
                         	<a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
                             <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" /></a>
                         </div>
                     </div>
+                    
+                 
+                <div class="txt_desc">
+                	* 1개의 이미지 파일을 등록할 수 있습니다.
                 </div>
+                
+                   
+                </div>
+                
+                
                 <div class="block_btn">
                 	<a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
                 </div>
@@ -456,6 +463,9 @@ function readURL(input, browser) {
 	if (input.files && input.files[0] && browser == "C") {
 		file = files[0];
 		if (/^image\/\w+$/.test(file.type)) {
+			$("#img_div").show();
+			$(".btn_closeup").show();
+
 			blobURL = URL.createObjectURL(file);
 			$ori_image.one('built.cropper', function () {
 				URL.revokeObjectURL(blobURL);
