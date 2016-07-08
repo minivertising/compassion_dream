@@ -1183,7 +1183,7 @@
       </div>
 
       <div class="block_btn">
-        <a href="#"><img src="images/btn_phone.png" /></a>
+        <a href="tel:02-740-1000"><img src="images/btn_phone.png" /></a>
       </div>
       <div class="txt_desc">
       지금 바로 연결을 원하시면 위의 버튼을 눌러주세요<br>
