@@ -352,385 +352,125 @@ function talk_start()
 		playNow();
 	});
 
-	$(".talk_ch_message1").delay(1500).fadeIn("fast", function(){
+	$("#talk_message1").delay(2000).fadeIn("fast", function(){
 		playNow();
 	});
 
-	$("#talk_ch_message2").delay(2000).fadeIn("fast", function(){
+	$("#talk_message2").delay(3000).fadeIn("fast", function(){
 		playNow();
 	});
 
-	$(".talk_mb_message1").delay(3000).fadeIn("fast", function(){
+	$("#talk_message3").delay(4500).fadeIn("fast", function(){
 		playNow();
-		$('.talk_area').animate({scrollTop:2000}, 200);
 	});
 
-	$("#talk_mb_message2").delay(3500).fadeIn("fast", function(){
+	$("#talk_message4").delay(5500).fadeIn("fast", function(){
 		playNow();
-		$('#talk_area').animate({scrollTop:2000}, 200);
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-	$("#talk_ch_message3").delay(4500).fadeIn("fast", function(){
+	$("#talk_message5").delay(6500).fadeIn("fast", function(){
 		playNow();
-		$('#talk_area').animate({scrollTop:2000}, 200);
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-	$("#talk_mb_message3_area").delay(5000).fadeIn("fast", function(){
-		$("#talk_mb_message3").fadeIn('fast');
+	$("#talk_message6").delay(7300).fadeIn("fast", function(){
 		playNow();
-		$('#talk_area').animate({scrollTop:2000}, 200);
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-/*
-	setTimeout(function(){
-		$("#talk_mb_message3").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_mb_message3").offset().top}, 500);
-	},5500);
+	$("#talk_message7").delay(9000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_mb_message4").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_mb_message4").offset().top}, 500);
-	},6500);
+	$("#talk_message8").delay(10000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_ch_message4").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_ch_message4").offset().top}, 500);
-	},7500);
+	$("#talk_alarm2").delay(10500).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_alarm2").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_alarm2").offset().top}, 500);
-	},8000);
+	$("#talk_message9").delay(11500).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_poor_area1").fadeIn("fast", function(){
-			playNow();
-		});
-		$("#talk_poor_icon1").fadeIn("fast", function(){
-			playNow();
-		});
-		$("#talk_poor_nick1").fadeIn("fast", function(){
-			playNow();
-		});
-		$("#talk_poor_message1").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_poor_message1").offset().top}, 500);
-	},8500);
+	$("#talk_message10").delay(13500).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_poor_message2").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},9200);
+	$("#talk_message11").delay(16000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_poor_message3").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},9700);
+	$("#talk_message12").delay(18000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_ch_message5").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},10200);
+	$("#talk_alarm3").delay(19000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_alarm3").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},10500);
+	$("#talk_message13").delay(21000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_mb_message5").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},11000);
+	$("#talk_message14").delay(22000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_mb_message6").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},11500);
+	$("#talk_message15").delay(25000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_ch_message6").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},12000);
+	$("#talk_alarm4").delay(26000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_alarm4").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},12500);
+	$("#talk_message16").delay(28500).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_mb_nick2").fadeIn("fast", function(){
-			playNow();
-		});
-		$("#talk_mb_message7").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},13500);
+	$("#talk_message17").delay(30000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_mb_message8").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},14000);
+	$("#talk_message18").delay(32500).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_mb_message9").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},14500);
+	$("#talk_message19").delay(34500).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_mb_message10").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},15000);
+	$("#talk_message20").delay(36000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
-	setTimeout(function(){
-		$("#talk_mb_message11").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},15500);
-
-	setTimeout(function(){
-		$("#talk_mb_message12").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},16000);
-
-*/
-
-}
-/*
-// 스토리텔링 모션
-function talk_start()
-{
-	setTimeout(function(){
-		$("#talk_alarm1").fadeIn("fast", function(){
-			playNow();
-		});
-	},500);
-
-	setTimeout(function(){
-		$("#talk_ch_icon1").fadeIn("fast", function(){
-			playNow();
-		});
-		$("#talk_ch_nick1").fadeIn("fast", function(){
-			playNow();
-		});
-		$("#talk_ch_message1").fadeIn("fast", function(){
-			playNow();
-		});
-	},2000);
-
-	setTimeout(function(){
-		$("#talk_ch_message2").fadeIn("fast", function(){
-			playNow();
-		});
-	},2500);
-
-	setTimeout(function(){
-		$("#talk_mb_nick1").fadeIn("fast", function(){
-			playNow();
-		});
-		$("#talk_mb_message1").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_mb_message1").offset().top}, 500);
-	},3500);
-
-	setTimeout(function(){
-		$("#talk_mb_message2").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_mb_message2").offset().top}, 500);
-	},4000);
-
-	setTimeout(function(){
-		$("#talk_ch_message3").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_ch_message3").offset().top}, 500);
-	},5000);
-
-	setTimeout(function(){
-		$("#talk_mb_message3").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_mb_message3").offset().top}, 500);
-	},5500);
-
-	setTimeout(function(){
-		$("#talk_mb_message4").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_mb_message4").offset().top}, 500);
-	},6500);
-
-	setTimeout(function(){
-		$("#talk_ch_message4").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_ch_message4").offset().top}, 500);
-	},7500);
-
-	setTimeout(function(){
-		$("#talk_alarm2").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_alarm2").offset().top}, 500);
-	},8000);
-
-	setTimeout(function(){
-		$("#talk_poor_area1").fadeIn("fast", function(){
-			playNow();
-		});
-		$("#talk_poor_icon1").fadeIn("fast", function(){
-			playNow();
-		});
-		$("#talk_poor_nick1").fadeIn("fast", function(){
-			playNow();
-		});
-		$("#talk_poor_message1").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:$("#talk_poor_message1").offset().top}, 500);
-	},8500);
-
-	setTimeout(function(){
-		$("#talk_poor_message2").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},9200);
-
-	setTimeout(function(){
-		$("#talk_poor_message3").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},9700);
-
-	setTimeout(function(){
-		$("#talk_ch_message5").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},10200);
-
-	setTimeout(function(){
-		$("#talk_alarm3").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},10500);
-
-	setTimeout(function(){
-		$("#talk_mb_message5").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},11000);
-
-	setTimeout(function(){
-		$("#talk_mb_message6").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},11500);
-
-	setTimeout(function(){
-		$("#talk_ch_message6").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:2000}, 500);
-	},12000);
-
-	setTimeout(function(){
-		$("#talk_alarm4").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},12500);
-
-	setTimeout(function(){
-		$("#talk_mb_nick2").fadeIn("fast", function(){
-			playNow();
-		});
-		$("#talk_mb_message7").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},13500);
-
-	setTimeout(function(){
-		$("#talk_mb_message8").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},14000);
-
-	setTimeout(function(){
-		$("#talk_mb_message9").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},14500);
-
-	setTimeout(function(){
-		$("#talk_mb_message10").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},15000);
-
-	setTimeout(function(){
-		$("#talk_mb_message11").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},15500);
-
-	setTimeout(function(){
-		$("#talk_mb_message12").fadeIn("fast", function(){
-			playNow();
-		});
-		$('#talk_area').animate({scrollTop:4000}, 500);
-	},16000);
-
+	$("#talk_message21").delay(40000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:2000}, 500);
+	});
 
 
 }
-*/
 
 function go_share(media, flag, page)
 {

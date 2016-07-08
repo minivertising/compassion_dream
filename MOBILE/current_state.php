@@ -60,7 +60,7 @@
   </div>
   <div class="txt_status">
     <span><?=$mb_data['mb_name']?></span>님의 어린이는<br>
-    <span class="yellow">결연</span>이 <span class="yellow">완료</span>되었습니다
+    <span class="yellow">결연이 완료</span>되었습니다
   </div>
   <div class="txt_status_2">
      -회원님의 링크는 <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "과" : "와" ?> 같이<br>
@@ -81,7 +81,7 @@
   </div>
   <div class="txt_status">
     <span><?=$mb_data['mb_name']?></span>님의 어린이는<br>
-    <span class="yellow">결연</span>을 <span class="yellow">기다리는 중</span>입니다
+    <span class="yellow">결연을 기다리는 중</span>입니다
   </div>
   <div class="btn_block bt_2">
     <a href="#" onclick="go_other_sns();return false;"><img src="images/btn_more_people.png"/></a> 

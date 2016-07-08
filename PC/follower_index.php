@@ -1,12 +1,11 @@
 <?
     include_once "./header.php";
 
-	// MOBILE에서 유입시 MOBILE로 이동
-	if ($gubun == "MOBILE")
-		echo "<script>location.href='../MOBILE/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
-
-	$ch_data    = sel_child_info($mb_data['mb_child']);
-	$convert_job = job_ko_add($mb_data['mb_job']);
+  // MOBILE에서 유입시 MOBILE로 이동
+  if ($gubun == "MOBILE")
+    echo "<script>location.href='../MOBILE/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
+  $ch_data    = sel_child_info($mb_data['mb_child']);
+  $convert_job = job_ko_add($mb_data['mb_job']);
 ?>
 <body class="bg_sub_page story">
 <script>
@@ -17,7 +16,6 @@
       version    : 'v2.6'
     });
   };
-
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
@@ -32,18 +30,18 @@
     <div class="block_content">
       <div class="img_load">
 <?
-	if ($ch_data['ch_nick'] == "")
-	{
+  if ($ch_data['ch_nick'] == "")
+  {
 ?>
       당신이 응원할 '꿈을 잃은 어린이'를 찾는 중이예요<br>
       잠시만 기다려 주세요
 <?
-	}else{
+  }else{
 ?>
       꿈이 필요한 어린이 '<?=$ch_data['ch_nick']?>'<?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 응원중입니다<br>
       잠시만 기다려 주세요
 <?
-	}
+  }
 ?>
       </div>
     </div>
@@ -55,9 +53,11 @@
       <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
       <div class="block_content story_1">
         <div class="inner_story">
-          <div class="top first">[<?=$mb_data['mb_name']?>]이 당신과 [<?=$ch_data['ch_nick']?>]를 초대했습니다.</div>
+
+          <div id="talk_alarm1" class="top first" style="display:none;">[<?=$mb_data['mb_name']?>]이 당신과 [<?=$ch_data['ch_nick']?>]를 초대했습니다.</div>
+
           <!--왼쪽 글 레이아웃 한줄 아이콘+사진-->
-          <div class="one_talk left">
+          <div id="talk_message1" class="one_talk left" style="display:none;">
             <div class="inner_one_talk clearfix">
               <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
               <div class="content">
@@ -68,21 +68,21 @@
           </div>
 
           <!--왼쪽 글 레이아웃 한줄 - only chat-->
-          <div class="one_talk left">
+          <div id="talk_message2" class="one_talk left" style="display:none;">
             <div class="inner_one_talk clearfix">
               <div class="icon no_icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
               <div class="content">
                 <div class="chat clearfix">
                   <div class="deco"><img src="images/deco_white.png" width="24" /></div>
                   <div class="txt">저에요</div>
-                  <div class="cnt">1</div>
+                  <!-- <div class="cnt">1</div> -->
                 </div>
               </div>
             </div>
           </div>
 
           <!--오른쪽 글 레이아웃 한줄 - 이름+이미지-->
-          <div class="one_talk right">
+          <div id="talk_message3" class="one_talk right" style="display:none;">
             <div class="inner_one_talk">
               <div class="content">
                 <div class="name"><?=$mb_data['mb_name']?>님</div>
@@ -92,20 +92,20 @@
             </div>
 
             <!--오른쪽 글 레이아웃 한줄 - only chat-->
-            <div class="one_talk right">
+            <div id="talk_message4" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">내 어린 시절이야 우린 참 많이 닮은 것 같아</div>
-                    <div class="cnt">1</div>
+                    <!-- <div class="cnt">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
             <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
-            <div class="one_talk left">
+            <div id="talk_message5" class="one_talk left" style="display:none;">
               <div class="inner_one_talk clearfix">
                 <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
                 <div class="content">
@@ -113,28 +113,28 @@
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_white.png" width="24" /></div>
                     <div class="txt">네?</div>
-                    <div class="cnt">1</div>
+                    <!-- <div class="cnt">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
             <!--오른쪽 글 레이아웃 한줄 - 이름+chat-->
-            <div class="one_talk right">
+            <div id="talk_message6" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
                   <div class="name"><?=$mb_data['mb_name']?>님</div>
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">^^</div>
-                    <div class="cnt">1</div>
+                    <!-- <div class="cnt">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
             <!--오른쪽 글 레이아웃 한줄 - only chat-->
-            <div class="one_talk right">
+            <div id="talk_message7" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
                   <div class="chat clearfix">
@@ -143,14 +143,14 @@
                     우리는 꿈 많은 어린 시절이 닮았어<br>
                     나는 선생님이 꿈이었는데 넌?
                     </div>
-                    <div class="cnt v2">1</div>
+                    <!-- <div class="cnt v2">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
             <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
-            <div class="one_talk left">
+            <div id="talk_message8" class="one_talk left" style="display:none;">
               <div class="inner_one_talk clearfix">
                 <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
                 <div class="content">
@@ -158,16 +158,16 @@
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_white.png" width="24" /></div>
                     <div class="txt no_chat">...</div>
-                    <div class="cnt">1</div>
+                    <!-- <div class="cnt">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="top">가난이 채팅에 참여했습니다.</div>
+            <div id="talk_alarm2" class="top" style="display:none;">가난이 채팅에 참여했습니다.</div>
 
             <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
-            <div class="one_talk left">
+            <div id="talk_message9" class="one_talk left" style="display:none;">
               <div class="inner_one_talk clearfix">
                 <div class="icon"><img src="images/icon_ganan.jpg" class="pic_icon" /></div>
                 <div class="content">
@@ -175,14 +175,14 @@
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_white.png" width="24" /></div>
                     <div class="txt">아니 둘은 달라</div>
-                    <div class="cnt">1</div>
+                    <!-- <div class="cnt">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
             <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
-            <div class="one_talk left">
+            <div id="talk_message10" class="one_talk left" style="display:none;">
               <div class="inner_one_talk clearfix">
                 <div class="icon no_icon"><img src="images/icon_ganan.jpg" class="pic_icon" /></div>
                 <div class="content">
@@ -192,7 +192,7 @@
             </div>
 
             <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
-            <div class="one_talk left">
+            <div id="talk_message11" class="one_talk left" style="display:none;">
               <div class="inner_one_talk clearfix">
                 <div class="icon no_icon"><img src="images/icon_ganan.jpg" class="pic_icon" /></div>
                 <div class="content">
@@ -200,17 +200,17 @@
                     <div class="deco"><img src="images/deco_white.png" width="24" /></div>
                     <div class="txt">
                     <?=$mb_data['mb_name']?>는 자유롭게 꿈꾸는 행복을 누렸지만,<br>
-                    <?=$ch_data['ch_nick']?>이는<br>
+                    <?=$ch_data['ch_nick']?>는<br>
                     나로 인해 계속 꿈을 꿀 수 없을테니까.
                     </div>
-                    <div class="cnt">1</div>
+                    <!-- <div class="cnt">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
             <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
-            <div class="one_talk left">
+            <div id="talk_message12" class="one_talk left" style="display:none;">
               <div class="inner_one_talk clearfix">
                 <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
                 <div class="content">
@@ -218,16 +218,16 @@
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_white.png" width="24" /></div>
                     <div class="txt no_chat">ㅠㅠ</div>
-                    <div class="cnt">1</div>
+                    <!-- <div class="cnt">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="top"><?=$mb_data['mb_name']?>님이 가난을 강퇴시켰습니다.</div>
+            <div id="talk_alarm3" class="top" style="display:none;"><?=$mb_data['mb_name']?>님이 가난을 강퇴시켰습니다.</div>
 
             <!--오른쪽 글 레이아웃 한줄 - only chat-->
-            <div class="one_talk right">
+            <div id="talk_message13" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
                   <div class="chat clearfix">
@@ -236,14 +236,14 @@
                     가난이 오늘도 너에게 거짓말을 하는구나!<br>
                     가난해도 꿈꿀 수 있어
                     </div>
-                    <div class="cnt v2">1</div>
+                    <!-- <div class="cnt v2">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
             <!--오른쪽 글 레이아웃 한줄 - only chat-->
-            <div class="one_talk right">
+            <div id="talk_message14" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
                   <div class="chat clearfix">
@@ -251,14 +251,14 @@
                     <div class="txt center">
                       <img src="images/icon_angry.png" />
                     </div>
-                    <div class="cnt v3">1</div>
+                    <!-- <div class="cnt v3">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
             <!--왼쪽 글 레이아웃 한줄 아이콘+chat-->
-            <div class="one_talk left">
+            <div id="talk_message15" class="one_talk left" style="display:none;">
               <div class="inner_one_talk clearfix">
                 <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
                 <div class="content">
@@ -269,16 +269,16 @@
                     정말 그럴 수 있을까요? ㅠㅠ..<br>
                     전 일하러 갈게요..
                     </div>
-                    <div class="cnt">1</div>
+                    <!-- <div class="cnt">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="top"><?=$ch_data['ch_name']?>님이 퇴장하였습니다.</div>
+            <div id="talk_alarm4" class="top" style="display:none;"><?=$ch_data['ch_nick']?>님이 퇴장하였습니다.</div>
 
             <!--오른쪽 글 레이아웃 한줄 - only chat-->
-            <div class="one_talk right">
+            <div id="talk_message16" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
                   <div class="chat clearfix">
@@ -286,14 +286,14 @@
                     <div class="txt">
                     우리 둘만 남았네요..
                     </div>
-                    <div class="cnt">1</div>
+                    <!-- <div class="cnt">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
             <!--오른쪽 글 레이아웃 한줄 - only chat-->
-            <div class="one_talk right">
+            <div id="talk_message17" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
                   <div class="chat clearfix">
@@ -301,14 +301,14 @@
                     <div class="txt">
                     당신도 어린 시절 꾸웠던 꿈이 있나요?
                     </div>
-                    <div class="cnt">1</div>
+                    <!-- <div class="cnt">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
             <!--오른쪽 글 레이아웃 세줄 - only chat-->
-            <div class="one_talk right">
+            <div id="talk_message18" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
                   <div class="chat clearfix">
@@ -318,14 +318,14 @@
                     [<?=$ch_data['ch_nick']?>]의 손을 잡아주세요<br>
                     그리고 희망을 말해주세요.
                     </div>
-                    <div class="cnt v3">1</div>
+                    <!-- <div class="cnt v3">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
             <!--오른쪽 글 레이아웃 한줄 - only chat-->
-            <div class="one_talk right">
+            <div id="talk_message19" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
                   <div class="chat clearfix">
@@ -333,14 +333,14 @@
                     <div class="txt">
                     “[<?=$ch_data['ch_nick']?>] 너는 꿈을 꿀 자격이 있어.”
                     </div>
-                    <div class="cnt">1</div>
+                    <!-- <div class="cnt">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
             <!--오른쪽 글 레이아웃 한줄 - only chat-->
-            <div class="one_talk right">
+            <div id="talk_message20" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
                   <div class="chat clearfix">
@@ -348,14 +348,14 @@
                     <div class="txt">
                     “자, 여기 내꿈꿔.”
                     </div>
-                    <div class="cnt">1</div>
+                    <!-- <div class="cnt">1</div> -->
                   </div>
                 </div>
               </div>
             </div>
 
             <!--오른쪽 글 레이아웃 한줄 - only chat-->
-            <div class="one_talk right">
+            <div id="talk_message21" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
                   <div class="chat clearfix">
@@ -494,20 +494,20 @@
       <div class="title">
         <div class="main">
 <?
-	if ($ch_data['ch_nick'] == "")
-	{
+  if ($ch_data['ch_nick'] == "")
+  {
 ?>
         여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
         SNS에 사진과 함께 당신이 응원할<br>
         <span>‘꿈을 잃은 어린이</span>가 소개됩니다
 <?
-	}else{
+  }else{
 ?>
         여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
         SNS에 사진과 함께 당신이 응원할<br>
         ‘꿈을 잃은 어린이 <span><?=$ch_data['ch_nick']?></span>’<?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 소개됩니다 <!-- ~이 ~가 -->
 <?
-	}
+  }
 ?>
         </div>
       </div>
@@ -660,7 +660,7 @@
 <!-- 공유 완료 페이지 -->
 
 <?
-	include_once "./popup_div.php";
+  include_once "./popup_div.php";
 ?>
 </body>
 </html>
@@ -681,7 +681,7 @@
     var flag_sel_dream  = 0;
     var mb_rs       = null;
     var inputImageCheck;
-	var share_cnt			= 0;
+  var share_cnt     = 0;
     
 	$(window).load(function() {
         Kakao.init('59df63251be6d99256b63b98f4948e89');
@@ -694,7 +694,7 @@
         $("#cboxTopCenter").hide();
         $("#cboxBottomCenter").hide();
 
-		$("#talk_area").niceScroll({cursorcolor:"gray",cursorborder:"gray"});
+		//$("#talk_area").niceScroll({cursorcolor:"gray",cursorborder:"gray"});
 
 		talk_start();
 
@@ -704,19 +704,15 @@
         var $inputImage = $('#inputImage');
         var URL = window.URL || window.webkitURL;
         var blobURL;
-
             if (URL) {
                 $inputImage.change(function () {
                     var files = this.files;
                     var file;
-
                     if (!$ori_image.data('cropper')) {
                         return;
                     }
-
                     if (files && files.length) {
                         file = files[0];
-
                         if (/^image\/\w+$/.test(file.type)) {
                             blobURL = URL.createObjectURL(file);
                             $ori_image.one('built.cropper', function () {
@@ -733,62 +729,57 @@
                 $inputImage.prop('disabled', true).parent().addClass('disabled');
             }
             */
-
 // $(function () {
 //     image_crop();
 // });
-
 function image_crop(){
-	$($ori_image).cropper({
-		viewMode: 0,
-		dragMode: 'move',
-		autoCropArea: 0.8,
-		aspectRatio: 1200/630,
-		responsive: true,
-		restore: true,
-		guides: false,
-		highlight: true,
-		background: true,
-		cropBoxMovable: true,
-		cropBoxResizable: true,
-		preview: '.preview',
-		center:true,
-		zoomOnWheel:false,
-		toggleDragModeOnDblclick:false,
-		// build: function (e) {
-		//     console.log(e.type);
-		// },
-		// built: function (e) {
-		//     console.log(e.type);
-		// },
-		// cropstart: function (e) {
-		//     console.log(e.type, e.action);
-		// },
-		// cropper: function (e) {
-		//     console.log(e.type, e.action);
-		// },
-		// cropend: function (e) {
-		//     console.log(e.type, e.action);
-		// },
-		// crop: function (e) {
-		//     console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
-		// },
-		// zoom: function (e) {
-		//     console.log(e.type, e.ratio);
-		// }
-	});
+  $($ori_image).cropper({
+    viewMode: 0,
+    dragMode: 'move',
+    autoCropArea: 0.8,
+    aspectRatio: 1200/630,
+    responsive: true,
+    restore: true,
+    guides: false,
+    highlight: true,
+    background: true,
+    cropBoxMovable: true,
+    cropBoxResizable: true,
+    preview: '.preview',
+    center:true,
+    zoomOnWheel:false,
+    toggleDragModeOnDblclick:false,
+    // build: function (e) {
+    //     console.log(e.type);
+    // },
+    // built: function (e) {
+    //     console.log(e.type);
+    // },
+    // cropstart: function (e) {
+    //     console.log(e.type, e.action);
+    // },
+    // cropper: function (e) {
+    //     console.log(e.type, e.action);
+    // },
+    // cropend: function (e) {
+    //     console.log(e.type, e.action);
+    // },
+    // crop: function (e) {
+    //     console.log(e.type, e.x, e.y, e.width, e.height, e.rotate, e.scaleX, e.scaleY);
+    // },
+    // zoom: function (e) {
+    //     console.log(e.type, e.ratio);
+    // }
+  });
 }
 // });
-
 function f_preview_img()
 {
 /*
         사진 저장할 내용 추가
         */
         open_pop('f_preview_popup');
-
     }
-
 function zoom_action(type){
     if(type=="up")
     {
@@ -797,7 +788,6 @@ function zoom_action(type){
         $($ori_image).cropper('zoom', -0.1);
     }
 }
-
 function readURL(input) {
     if (input.files && input.files[0]) {
         file = files[0];
@@ -850,7 +840,6 @@ function readURL(input) {
             // });
     }
 }
-
                 $($inputImage).change(function(){
                     inputImageCheck = "Y";
                     files = this.files;
@@ -865,8 +854,6 @@ function readURL(input) {
                 //  }
                     readURL(this);
                 });
-
-
 function f_dream_next()
 {
     if (sel_dream == null)
@@ -880,7 +867,7 @@ function f_dream_next()
         return false;
     }
         //mb_job    = $("#mb_job").val();
-
+    var job_lang_kor = job_ko_add(sel_dream);
     if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
         cropboxDataIE = $(ori_image).cropper('getData');
         crop_image_url = $(ori_image).attr('src');
@@ -905,7 +892,8 @@ function f_dream_next()
 <?
     }
 ?>
-                mb_job      : sel_dream
+                mb_job      : sel_dream,
+                mb_job_kor    : job_lang_kor
             },
             beforeSend: function(response){
                 $("#upload_page").hide();
@@ -914,38 +902,42 @@ function f_dream_next()
             success: function(res){
                 // console.log(res);
                 //mb_image    = res;
-
                 var rs_ch = res.split("||");
                 mb_rs = rs_ch[1];
                 //$("#contents_div").show();
                 if (rs_ch[0] == "Y")
                 {
                     $("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
-	                $("#loading_div").fadeOut('fast',function(){
+                  $("#loading_div").fadeOut('fast',function(){
 <?
-	if ($ch_data['ch_choice'] == "Y")
-	{
+  if ($ch_data['ch_choice'] == "Y")
+  {
 ?>
-						$("#f_share_no_matching_page").fadeIn("fast");
+            $("#f_share_no_matching_page").fadeIn("fast");
 <?
-	}else{
+  }else{
 ?>
-						$("#f_share_page").fadeIn("fast");
+            if(rs_ch[2] > 0) {
+              //받침 O
+              $("#f_ch_job").html(job_lang_kor +"을");
+            }else{
+              $("#f_ch_job").html(job_lang_kor +"를");
+            }
+            $("#f_share_page").fadeIn("fast");
 <?
-	}
+  }
 ?>
-					});
+          });
                 }else if (rs_ch[0] == "N"){
-	                $("#loading_div").fadeOut('fast',function(){
-						$("#f_share_no_matching_page").fadeIn("fast");
-					});
+                  $("#loading_div").fadeOut('fast',function(){
+            $("#f_share_no_matching_page").fadeIn("fast");
+          });
                 }else {
                     alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
                     location.reload();
                 }
             }
         });
-
     }else{
         // 사진 저장할 내용 추가
         var croppedImg = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
@@ -970,7 +962,8 @@ function f_dream_next()
 <?
     }
 ?>
-                mb_job      : sel_dream
+                mb_job      : sel_dream,
+        mb_job_kor    : job_lang_kor
             },
             beforeSend: function(response){
                 $("#upload_page").hide();
@@ -979,7 +972,6 @@ function f_dream_next()
             success: function(res){
                 // console.log(res);
                 //mb_image    = res;
-
                 var rs_ch = res.split("||");
                 mb_rs = rs_ch[1];
                 //$("#loading_div").hide();
@@ -987,28 +979,34 @@ function f_dream_next()
                 if (rs_ch[0] == "Y")
                 {
                     $("#f_matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
-					setTimeout(function(){
-	                $("#loading_div").fadeOut('fast',function(){
+          setTimeout(function(){
+                  $("#loading_div").fadeOut('fast',function(){
 <?
-	if ($ch_data['ch_choice'] == "Y")
-	{
+  if ($ch_data['ch_choice'] == "Y")
+  {
 ?>
-						$("#f_share_no_matching_page").fadeIn("fast");
+            $("#f_share_no_matching_page").fadeIn("fast");
 <?
-	}else{
+  }else{
 ?>
-						$("#f_share_page").fadeIn("fast");
+            if(rs_ch[2] > 0) {
+              //받침 O
+              $("#f_ch_job").html(job_lang_kor+"을");
+            }else{
+              $("#f_ch_job").html(job_lang_kor+"를");
+            }
+            $("#f_share_page").fadeIn("fast");
 <?
-	}
+  }
 ?>
-					});
-					},1500);
+          });
+          },1500);
                 }else if (rs_ch[0] == "N"){
-					setTimeout(function(){
-	                $("#loading_div").fadeOut('fast',function(){
-						$("#f_share_no_matching_page").fadeIn("fast");
-					});
-					},1500);
+          setTimeout(function(){
+                  $("#loading_div").fadeOut('fast',function(){
+            $("#f_share_no_matching_page").fadeIn("fast");
+          });
+          },1500);
                 }else {
                     alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
                     location.reload();
@@ -1018,16 +1016,15 @@ function f_dream_next()
         
     }
 }
-
     function Ins_share_cnt(serial, ugu,parent_idx)
     {
         $.ajax({
             type:"POST",
             data:{
-                "exec"			: "insert_share_cnt",
-                "serial"			: serial,
-                "parent_idx"	: parent_idx,
-                "ugu"				: ugu
+                "exec"      : "insert_share_cnt",
+                "serial"      : serial,
+                "parent_idx"  : parent_idx,
+                "ugu"       : ugu
             },
             url: "../main_exec.php",
             success: function(res){
@@ -1035,6 +1032,5 @@ function f_dream_next()
             }
         });
     }
-
 </script>
 <!-- <script src="../lib/Cropper/js/main.js"></script> -->

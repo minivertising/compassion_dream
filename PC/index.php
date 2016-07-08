@@ -256,7 +256,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     <div class="block_content follower" style="height:830px">
       <div class="title">
         미니버님!<br> 
-        <span id="re_ch_name">아비가일 마아 야아 암퐁을</span> 위해<br>
+        <span id="re_ch_name">아비가일 마아 야아 암퐁</span><span id="re_namePP">를</span> 위해<br>
         다시 한번 참여해주셔서 감사합니다 
       </div>
       <div class="block_child">
@@ -266,7 +266,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       </div>
       <div class="block_txt">
         <p>아래 SNS에 당신의 어린 시절 사진과 꿈을 공유하셔서</p>
-        <p><span  id="re_ch_name2">아비가일 마아 야아 암퐁이</span> 후원자를 만날 수 있도록 해주세요!</p>
+        <p><span  id="re_ch_name2">아비가일 마아 야아 암퐁</span><span id="re_namePP2">가</span> 후원자를 만날 수 있도록 해주세요!</p>
       </div>
       <div class="block_btn sns">
         <a href="#" onclick="go_share('fb','act','re_matching_share_page');return false;"><img src="images/sns_f.png" /></a>
@@ -413,7 +413,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 			speed: 4000,
 			// minSlide: 12,
 			// maxSilde: 12,
-			slideWidth: 155
+			slideWidth: 155,
 			// slideMargin: 20
 			// responsive: true,
 			// adaptiveHeight: true
@@ -676,14 +676,16 @@ function dream_next(){
 						
 						$("#m_rs_ch_name3").html(rs_ch[3]);
 						$("#thx_ch_name").html("'"+rs_ch[3]+"'");
+						$("#re_ch_name").html(rs_ch[3]);
+						$("#re_ch_name2").html(rs_ch[3]);
 
-						if(rs_ch[5] > 0) {
-							//받침 O
-							//$("#name2PP").html("이에요");
-							$("#name3PP").html("이");
-							$("#thx_namePP").html("이");
-							$("#re_ch_name").html(rs_ch[3]+"를");
-							$("#re_ch_name2").html(rs_ch[3]+"가");
+            if(rs_ch[5] > 0) {
+              //받침 O
+              //$("#name2PP").html("이에요");
+              $("#name3PP").html("이");
+              $("#thx_namePP").html("이");
+              $("#re_namePP").html("을");
+              $("#re_namePP2").html("이");
 						}
 						
 						$("#m_rs_job").html(job_lang_kor);
