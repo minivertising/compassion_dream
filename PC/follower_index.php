@@ -373,9 +373,27 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
+
+        <!--오른쪽 글 레이아웃 한줄 - only chat-->
+        <div id="talk_c_final" class="one_talk right ending_chat" style="display:none;">
+          <div class="inner_one_talk">
+            <div class="content">
+              <div class="chat clearfix">
+                <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                <div class="txt" onclick="next_page('7');return false;">
+                  <?=$ch_data['ch_nick']?>을 다시 초대하기<br>
+                  <a href="#">mydream.compassion.or.kr</a>
+                  <a href="#"><img src="images/chat_8_img.png" /></a>
+                </div>
+                <div class="cnt v4"><img src="images/link_out.png" /></div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div id="talk_c_final_mask" class="mask_ending" onclick="close_mask();return false;" style="display:none;"></div>
+
         <div class="bg_img_1"><img src="images/bg_pic_1.png" /></div>
         <div class="bg_img_2"><img src="images/bg_pic_2.png" /></div>
       </div>
@@ -714,7 +732,18 @@
             <div class="content">
               <div class="chat clearfix">
                 <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
-                <div class="txt">
+<?
+	if ($ch_data['ch_choice'] == "Y")
+	{
+?>
+                <div class="txt" onclick="next_page('6');return false;">
+<?
+	}else{
+?>
+                <div class="txt" onclick="next_page('5');return false;">
+<?
+	}
+?>
                   <?=$ch_data['ch_nick']?>을 다시 초대하기<br>
                   <a href="#">mydream.compassion.or.kr</a>
                   <a href="#"><img src="images/chat_8_img.png" /></a>
