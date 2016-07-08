@@ -1295,8 +1295,7 @@ function image_crop(){
 		preview: '.preview',
 		center:true,
 		zoomOnWheel:false,
-		toggleDragModeOnDblclick:false,
-    checkOrientation: false
+		toggleDragModeOnDblclick:false
 	});
 }
 function f_preview_img()

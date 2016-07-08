@@ -269,6 +269,30 @@ switch ($_REQUEST['exec'])
 		{
 			die("파일을 지정한 디렉토리에 업로드하는데 실패했습니다.");
 		}else{
+			// 이미지 로테이트 
+
+			@$image = imagecreatefromjpeg($dest_url) or die('Error opening file '.$dest_url);
+
+			$exif = exif_read_data($dest_url);
+			 
+			if(!empty($exif['Orientation'])) {
+				switch($exif['Orientation']) {
+					case 8:
+						$image = imagerotate($image,90,0);
+						break;
+					case 3:
+						$image = imagerotate($image,180,0);
+						break;
+					case 6:
+						$image = imagerotate($image,-90,0);
+						break;
+				}
+			}
+			header('Content-type: image/jpeg');
+			 
+			imagejpeg($image);
+			 
+			imagedestroy($image);
 
 			$mb_serial	= create_serial("follower",$rs);
 			$dest_url	= ".".$dest_url;
