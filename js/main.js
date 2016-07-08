@@ -370,102 +370,102 @@ function talk_start()
 		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-	$("#talk_message5").delay(8000).fadeIn("fast", function(){
+	$("#talk_message5").delay(9000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-	$("#talk_message6").delay(9000).fadeIn("fast", function(){
+	$("#talk_message6").delay(10000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-	$("#talk_message7").delay(11000).fadeIn("fast", function(){
+	$("#talk_message7").delay(12000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-	$("#talk_message8").delay(12000).fadeIn("fast", function(){
+	$("#talk_message8").delay(15000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-	$("#talk_alarm2").delay(13000).fadeIn("fast", function(){
+	$("#talk_alarm2").delay(16000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-	$("#talk_message9").delay(15000).fadeIn("fast", function(){
+	$("#talk_message9").delay(18000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message10").delay(18000).fadeIn("fast", function(){
+	$("#talk_message10").delay(21000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message11").delay(21000).fadeIn("fast", function(){
+	$("#talk_message11").delay(24000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message12").delay(22000).fadeIn("fast", function(){
+	$("#talk_message12").delay(25000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_alarm3").delay(23000).fadeIn("fast", function(){
+	$("#talk_alarm3").delay(26000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message13").delay(25000).fadeIn("fast", function(){
+	$("#talk_message13").delay(28000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message14").delay(26000).fadeIn("fast", function(){
+	$("#talk_message14").delay(29000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message15").delay(28000).fadeIn("fast", function(){
+	$("#talk_message15").delay(31000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_alarm4").delay(29000).fadeIn("fast", function(){
+	$("#talk_alarm4").delay(32000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message16").delay(31000).fadeIn("fast", function(){
+	$("#talk_message16").delay(34000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message17").delay(33000).fadeIn("fast", function(){
+	$("#talk_message17").delay(36000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message18").delay(35000).fadeIn("fast", function(){
+	$("#talk_message18").delay(38000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message19").delay(36500).fadeIn("fast", function(){
+	$("#talk_message19").delay(39500).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message20").delay(38000).fadeIn("fast", function(){
+	$("#talk_message20").delay(41000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message21").delay(40000).fadeIn("fast", function(){
+	$("#talk_message21").delay(43000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500,function(){
 			$("#talk_final").show();
