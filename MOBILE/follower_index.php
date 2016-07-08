@@ -1011,38 +1011,36 @@
 	}
 ?>
       </div>
-      <div class="block_input_dream">
-        <div class="selec_job clearfix">
-          <div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div>
-          <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="60" id="sel_job_btn" /></a></div><!--버튼 두개입니다-->
-        </div>
-        <div class="upload_pic">
-          <div class="title_pic">
-          2. 사진업로드
-          </div>
-          <div class="desc">
-            <div class="txt_pic">
-            * 1개의 이미지 파일을 등록할 수 있습니다
-            </div>
-            <div class="btns">
+                <div class="block_input_dream">
+                	<div class="selec_job clearfix">
+                    	<!-- <div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div> -->
+                        <div class="txt_1">1. 선택한 꿈 : <span id="sel_job_txt">디자이너</span> </div>
+                        <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="90" /></a></div><!--버튼 두개입니다-->
+                    </div>
+                    <div class="upload_pic">
+                    	<div class="title_pic clearfix">
+                        	<div class="txt_1">2. 사진업로드</div>
+                            <div class="txt_2">
               <label for="f_inputImage" title="Upload image file">
                 <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
                 <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
               </label>
-              <a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a>
-            </div>
-          </div>
-          <div id="img_div" class="pic_area">
-            <img id="f_ori_image" src="./images/picture.jpg" alt="Picture" />
-          </div>
-          <div class="btn_closeup">
-            <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" width="80" /></a>
-            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" width="80" /></a>
-            <a href="#" onclick="rotate_action('+');return false;">90</a>
-            <a href="#" onclick="rotate_action('-');return false;">-90</a>
-          </div>
-        </div>
-      </div>
+							</div>
+                        	<div class="txt_3"><a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a></div>
+                        </div>
+                        <div id="img_div" class="pic_area" style="display:none;">
+                        	<img id="f_ori_image" src="./images/picture.jpg" alt="Picture" />
+                        </div>
+                        <div class="btn_closeup" style="display:none;">
+                        	<a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" width="80" /></a>
+                            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" width="80" /></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="txt_pic">
+                    * 1개의 이미지 파일을 등록할 수 있습니다
+                </div>
       <div class="block_btn upload">
         <a href="#" onclick="f_dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
       </div>
@@ -1168,6 +1166,42 @@
   </div>
 </div>
 <!-- 공유 완료 페이지 -->
+
+<!-- 페북/카스 인앱브라우저에서 결연맺기 클릭시(팔로워) 페이지 -->
+<div id="fb_ks_page" class="wrap_page sub phone" style="display:none;">
+  <div class="inner">
+    <div class="block_content">
+      <div class="title">
+      참여하신 분 중 추첨을 통해<br>
+      컴패션 현지 센터를 방문할 수 있는<br>
+      기회를 드립니다
+      </div>
+
+      <div class="sub_title">
+      후원자님의 어린이 양육을 돕기 위해 <br>
+      전화연결을 진행하고 있습니다
+      </div>
+
+      <div class="block_btn">
+        <a href="#"><img src="images/btn_phone.png" /></a>
+      </div>
+      <div class="txt_desc">
+      지금 바로 연결을 원하시면 위의 버튼을 눌러주세요<br>
+      한국컴패션으로 연결됩니다.<br>
+      (오전 9시 – 저녁 6시에 전화 연결 가능)
+      </div>
+
+      <div class="block_btn second">
+        <a href="#"><img src="images/btn_phone_num.png" /></a>
+      </div>
+      <div class="txt_desc">
+      저녁 6시 이후에는 상담이 어려운 관계로<br>
+      연락처를 남겨주시면 한국컴패션에서 전화를 드립니다.
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 페북/카스 인앱브라우저에서 결연맺기 클릭시(팔로워) 페이지 -->
 
 <?
         include_once "./popup_div.php";
