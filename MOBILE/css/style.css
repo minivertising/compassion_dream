@@ -775,6 +775,15 @@ body.storytelling{
 	box-shadow: 1px 2px 1px #888888;
 	position:relative;
 }
+@media screen and (min-device-height: 400px) and (max-device-height: 568px) {
+	
+	.wrap_page.storytelling .inner {
+		height:500px;
+	}
+}
+
+
+
 
 .wrap_page.storytelling .inner .frame_top {
 	background:#f2fdff;
@@ -803,6 +812,14 @@ body.storytelling{
 .wrap_page.storytelling .inner .block_content {
 	height:530px;
 	overflow:scroll;
+}
+
+@media screen and (min-device-height: 400px) and (max-device-height: 568px) {
+	
+	.wrap_page.storytelling .inner .block_content {
+	height:430px;
+	overflow:scroll;
+	}
 }
 .wrap_page.storytelling .inner .block_content .chat_title{
 	text-align:center;
@@ -951,14 +968,14 @@ body.storytelling{
 
 .wrap_page.storytelling .inner .block_content .one_chat.right .content .talk.ending .here {
 	position: absolute;
-	top:-50px;
+	top:-60px;
 	left:20px;
 
 }
 
 .wrap_page.storytelling .inner .block_content .one_chat.right .content .talk.ending .here.com {
 	position: absolute;
-	top:-50px;
+	top:-60px;
 	left:50px;
 
 }
