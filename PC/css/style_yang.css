@@ -519,12 +519,22 @@ body.main{
 	padding-top:40px;
 }
 .wrap_sec_top_sub .block_input_dream .selec_job{
-	background:#1055a1 url(../images/bg_input_title.jpg) repeat-x;
+	background:#1055a1 url(../images/bg_input_title.jpg) repeat;
 	color:#fff;
-	padding:11px 0;
-	font-size:18px;
+	padding:25px 0 20px;
+	font-size:19px;
 	line-height:29px;
 	border-radius:5px;
+	width:100%;
+}
+.wrap_sec_top_sub .block_input_dream .selec_job .txt_1{
+	float:left;
+	padding-left:180px;
+	padding-top:10px;
+}
+.wrap_sec_top_sub .block_input_dream .selec_job .txt_2{
+	float:left;
+	padding-left:10px;
 }
 
 .wrap_sec_top_sub .block_input_dream .upload_pic{
@@ -532,16 +542,33 @@ body.main{
 	
 }
 .wrap_sec_top_sub .block_input_dream .upload_pic .title_pic{
-	background:#1055a1 url(../images/bg_input_title.jpg) repeat-x;
+	background:#1055a1 url(../images/bg_input_title2.jpg) repeat;
 	color:#fff;
-	padding:13px 0;
-	font-size:18px;
-	border-radius:5px 5px 0 0;
+	padding:25px 0 20px;
+	font-size:19px;
+	border-radius:5px;
+	width:100%;
 }
 
-.wrap_sec_top_sub .block_input_dream .upload_pic .desc{
-	background:#1055a1 url(../images/bg_desc.jpg) repeat;
-	padding:10px 0;
+.wrap_sec_top_sub .block_input_dream .upload_pic .title_pic .txt_1{
+	float:left;
+	padding-left:180px;
+	padding-top:20px;
+}
+.wrap_sec_top_sub .block_input_dream .upload_pic .title_pic .txt_2{
+	float:left;
+	padding-left:10px;
+}
+.wrap_sec_top_sub .block_input_dream .upload_pic .title_pic .txt_3{
+	float:left;
+	padding-left:10px;
+	padding-top:5px;
+}
+
+.wrap_sec_top_sub .block_input_dream .txt_desc{
+	padding:10px 0 0;
+	font-size:14px;
+	text-align:left;
 }
 
 .wrap_sec_top_sub .block_input_dream .upload_pic .desc .txt_pic{
@@ -551,7 +578,7 @@ body.main{
 .wrap_sec_top_sub .block_input_dream .upload_pic .pic_area{
 	border:3px solid #003f7b;
 	border-bottom:none;
-	height:260px;
+	height:200px;
 }
 .wrap_sec_top_sub .block_input_dream .upload_pic .btn_closeup{
 	border-bottom:3px solid #003f7b;
