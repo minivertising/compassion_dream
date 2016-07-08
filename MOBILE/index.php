@@ -268,6 +268,16 @@ function zoom_action(type){
 		$($ori_image).cropper('zoom', -0.1);
 	}
 }
+
+function rotate_action(degree){
+	if(degree=="+")
+	{
+		$($ori_image).cropper('rotate', 90);
+	}else{
+		$($ori_image).cropper('rotate', -90);
+	}
+}
+
 function dream_next()
 {
 	if (sel_dream == null)

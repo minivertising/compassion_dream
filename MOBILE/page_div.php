@@ -35,6 +35,8 @@
           <div class="btn_closeup">
             <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" width="80" /></a>
             <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" width="80" /></a>
+            <a href="#" onclick="rotate_action('+');return false;">90</a>
+            <a href="#" onclick="rotate_action('-');return false;">-90</a>
           </div>
         </div>
       </div>
@@ -146,7 +148,7 @@
       </div>
       <div class="block_txt">
         아래 SNS에 당신의 어린 시절 사진과 꿈을 공유하셔서<br>
-        <span id="re_ch_name2">'아비가일 마아 야아 암퐁'</span><span id="name2PP" style="color:#fff">가</span><br> <!-- ~이 ~가 -->
+        <span id="re_ch_name2">'아비가일 마아 야아 암퐁'</span><span id="name2PP" style="color:#000000">가</span><br> <!-- ~이 ~가 -->
         후원자를 만날 수 있도록 해주세요!
       </div>
       <div class="block_btn sns">
