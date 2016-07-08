@@ -242,6 +242,8 @@
           <div class="btn_closeup">
             <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" width="80" /></a>
             <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" width="80" /></a>
+            <a href="#" onclick="rotate_action('+');return false;">90</a>
+            <a href="#" onclick="rotate_action('-');return false;">-90</a>
           </div>
         </div>
       </div>
