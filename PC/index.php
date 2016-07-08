@@ -138,7 +138,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
                     SNS에 사진과 함께 당신이 응원할 <span>‘꿈을 잃은 어린이'</span>’가 소개됩니다
                     </div>
                 </div>
-                <div class="block_input_dream">
+                <div class="block_input_dream" style="padding-top:80px">
                 	<div class="selec_job clearfix">
                     	<!-- <div class="txt_1" id="sel_job_txt">1. 내 어린 시절의 꿈 선택 </div> -->
 						<div class="txt_1">1. 선택한 직업 : <span id="sel_job_txt">디자이너</span> </div>
