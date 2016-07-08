@@ -350,125 +350,134 @@ function talk_start()
 {
 	$("#talk_alarm1").delay(500).fadeIn("fast", function(){
 		playNow();
+		talk_scroll	= $("#talk_alarm1").height();
 	});
 
-	$("#talk_message1").delay(2000).fadeIn("fast", function(){
+	$("#talk_message1").delay(2500).fadeIn("fast", function(){
 		playNow();
 	});
 
-	$("#talk_message2").delay(3000).fadeIn("fast", function(){
+	$("#talk_message2").delay(3500).fadeIn("fast", function(){
 		playNow();
 	});
 
-	$("#talk_message3").delay(4500).fadeIn("fast", function(){
+	$("#talk_message3").delay(5500).fadeIn("fast", function(){
 		playNow();
 	});
 
-	$("#talk_message4").delay(5500).fadeIn("fast", function(){
-		playNow();
-		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
-	});
-
-	$("#talk_message5").delay(6500).fadeIn("fast", function(){
+	$("#talk_message4").delay(7000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-	$("#talk_message6").delay(7300).fadeIn("fast", function(){
+	$("#talk_message5").delay(8000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-	$("#talk_message7").delay(9000).fadeIn("fast", function(){
+	$("#talk_message6").delay(9000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-	$("#talk_message8").delay(10000).fadeIn("fast", function(){
+	$("#talk_message7").delay(11000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-	$("#talk_alarm2").delay(10500).fadeIn("fast", function(){
+	$("#talk_message8").delay(12000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
 	});
 
-	$("#talk_message9").delay(11500).fadeIn("fast", function(){
+	$("#talk_alarm2").delay(13000).fadeIn("fast", function(){
+		playNow();
+		$('.inner_story').animate({scrollTop:$('.inner_story').height()}, 500);
+	});
+
+	$("#talk_message9").delay(15000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message10").delay(13500).fadeIn("fast", function(){
+	$("#talk_message10").delay(18000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message11").delay(16000).fadeIn("fast", function(){
+	$("#talk_message11").delay(21000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message12").delay(18000).fadeIn("fast", function(){
+	$("#talk_message12").delay(22000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_alarm3").delay(19000).fadeIn("fast", function(){
+	$("#talk_alarm3").delay(23000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message13").delay(21000).fadeIn("fast", function(){
+	$("#talk_message13").delay(25000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message14").delay(22000).fadeIn("fast", function(){
+	$("#talk_message14").delay(26000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message15").delay(25000).fadeIn("fast", function(){
+	$("#talk_message15").delay(28000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_alarm4").delay(26000).fadeIn("fast", function(){
+	$("#talk_alarm4").delay(29000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message16").delay(28500).fadeIn("fast", function(){
+	$("#talk_message16").delay(31000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message17").delay(30000).fadeIn("fast", function(){
+	$("#talk_message17").delay(33000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message18").delay(32500).fadeIn("fast", function(){
+	$("#talk_message18").delay(35000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message19").delay(34500).fadeIn("fast", function(){
+	$("#talk_message19").delay(36500).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
-	$("#talk_message20").delay(36000).fadeIn("fast", function(){
+	$("#talk_message20").delay(38000).fadeIn("fast", function(){
 		playNow();
 		$('.inner_story').animate({scrollTop:2000}, 500);
 	});
 
 	$("#talk_message21").delay(40000).fadeIn("fast", function(){
 		playNow();
-		$('.inner_story').animate({scrollTop:2000}, 500);
+		$('.inner_story').animate({scrollTop:2000}, 500,function(){
+			$("#talk_final").show();
+			$("#talk_final_mask").show();
+		});
 	});
+}
 
+function close_mask()
+{
+	$("#talk_final").hide();
+	$("#talk_final_mask").hide();
 
 }
 

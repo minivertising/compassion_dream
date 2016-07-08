@@ -707,6 +707,25 @@
             </div> 
           </div>
         </div>
+
+        <!--오른쪽 글 레이아웃 한줄 - only chat-->
+        <div id="talk_final" class="one_talk right ending_chat" style="display:none;">
+          <div class="inner_one_talk">
+            <div class="content">
+              <div class="chat clearfix">
+                <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                <div class="txt">
+                  <?=$ch_data['ch_nick']?>을 다시 초대하기<br>
+                  <a href="#">mydream.compassion.or.kr</a>
+                  <a href="#"><img src="images/chat_8_img.png" /></a>
+                </div>
+                <div class="cnt v4"><img src="images/link_out.png" /></div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div id="talk_final_mask" class="mask" onclick="close_mask();return false;" style="display:none;"></div>
+
         <div class="bg_img_1"><img src="images/bg_pic_1.png" /></div>
         <div class="bg_img_2"><img src="images/bg_pic_2.png" /></div>
       </div>
@@ -1019,7 +1038,8 @@
     var flag_sel_dream  = 0;
     var mb_rs       = null;
     var inputImageCheck;
-  var share_cnt     = 0;
+	var share_cnt     = 0;
+	var talk_scroll		= 0;
     
 	$(window).load(function() {
         Kakao.init('59df63251be6d99256b63b98f4948e89');
@@ -1032,7 +1052,7 @@
         $("#cboxTopCenter").hide();
         $("#cboxBottomCenter").hide();
 
-		//$("#talk_area").niceScroll({cursorcolor:"gray",cursorborder:"gray"});
+		$(".inner_story").niceScroll({cursorcolor:"gray",cursorborder:"gray"});
 
 <?
 	if ($mb_data['mb_child'] == "")
@@ -1043,9 +1063,18 @@
 	}else{
 ?>
 		talk_start();
+
 <?
 	}
 ?>
+
+		$(".inner_story").scroll(function(){
+			console.log($(".inner_story").scrollTop()+"||"+talk_scroll);
+			if ($(".inner_story").scrollTop() == 1711){
+				$("#talk_final").show();
+				$("#talk_final_mask").show();
+			}
+		});
 
         Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
     });
