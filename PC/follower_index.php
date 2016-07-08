@@ -58,7 +58,7 @@
       <div class="block_content story_1">
         <div class="inner_story">
 
-          <div id="talk_c_alarm1" class="top first" style="display:none;">[<?=$mb_data['mb_name']?>님]이 당신과 컴패션 어린이들을 초대했습니다.</div>
+          <div id="talk_c_alarm1" class="top first" style="display:none;">[<?=$mb_data['mb_name']?>]님이 당신과 컴패션 어린이들을 초대했습니다.</div>
 
           <!--왼쪽 글 레이아웃 한줄 아이콘+사진-->
           <div id="talk_c_message1" class="one_talk left" style="display:none;">
@@ -407,7 +407,7 @@
       <div class="block_content story_1">
         <div class="inner_story">
 
-          <div id="talk_alarm1" class="top first" style="display:none;">[<?=$mb_data['mb_name']?>]이 당신과 [<?=$ch_data['ch_nick']?>]를 초대했습니다.</div>
+          <div id="talk_alarm1" class="top first" style="display:none;">[<?=$mb_data['mb_name']?>]님이 당신과 [<?=$ch_data['ch_nick']?>]를 초대했습니다.</div>
 
           <!--왼쪽 글 레이아웃 한줄 아이콘+사진-->
           <div id="talk_message1" class="one_talk left" style="display:none;">
