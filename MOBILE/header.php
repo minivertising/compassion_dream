@@ -58,4 +58,5 @@
 <script type="text/javascript" src="../js/canvas-to-blob.js"></script>
 <script type="text/javascript" src="../lib/colorbox/jquery.colorbox-min.js"></script>
 <script src="../lib/bxslider/jquery.bxslider.js"></script>
+<script src="../lib/load-image/load-image.all.min.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>

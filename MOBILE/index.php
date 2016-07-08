@@ -201,6 +201,7 @@
 		});
 			if (URL) {
 				$inputImage.change(function () {
+					inputImageCheck = "Y";
 					//$("#img_div").show();
 					var files = this.files;
 					var file;
@@ -241,30 +242,16 @@ function image_crop(){
 				center:true,
 				zoomOnWheel:false,
 				toggleDragModeOnDblclick:false,
+				checkOrientation: false
 		});
 }
-$($inputImage).change(function(){
-	inputImageCheck = "Y";
-	//files = this.files;
-// console.dir(this);
-// if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
-//  // $($ori_image).cropper('destroy');
-//  $('#ie_img_save').ajaxSubmit({
-//      success: function (data) {
-//          console.dir(data);
-//      }
-//  });
-//  // this.select();
-//  // realFath = document.selection.createRangeCollection()[0].text.toString();
-//  // this.blur();
-//  }
-	//readURL(this);
-});
+
 function zoom_action(type){
 	if(type=="up")
-	{
+	{	
 		$($ori_image).cropper('zoom', 0.1);
 	}else{
+
 		$($ori_image).cropper('zoom', -0.1);
 	}
 }
@@ -272,9 +259,13 @@ function zoom_action(type){
 function rotate_action(degree){
 	if(degree=="+")
 	{
+		$($ori_image).cropper('clear');
 		$($ori_image).cropper('rotate', 90);
+		$($ori_image).cropper('crop');
 	}else{
+		$($ori_image).cropper('clear');
 		$($ori_image).cropper('rotate', -90);
+		$($ori_image).cropper('crop');
 	}
 }
 

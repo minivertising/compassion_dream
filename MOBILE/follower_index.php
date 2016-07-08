@@ -781,6 +781,7 @@ function image_crop(){
 		center:true,
 		zoomOnWheel:false,
 		toggleDragModeOnDblclick:false,
+    checkOrientation: false
 	});
 }
 function f_preview_img()
@@ -803,34 +804,34 @@ function rotate_action(degree){
     $($ori_image).cropper('rotate', -90);
   }
 }
-function readURL(input) {
-	if (input.files && input.files[0]) {
-		file = files[0];
-		if (/^image\/\w+$/.test(file.type)) {
-			blobURL = URL.createObjectURL(file);
-			$ori_image.one('built.cropper', function () {
-				// Revoke when load complete
-				URL.revokeObjectURL(blobURL);
-			}).cropper('reset').cropper('replace', blobURL);
-			$($inputImage).val('');
-		} else {
-			window.alert('Please choose an image file.');
-		}
-	}else if((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1)){
-		$($ori_image).cropper('destroy');
-		$('#f_ie_img_save').ajaxSubmit({
-			success: function (data) {
-				$($ori_image).attr('src', data);
-				image_crop();
-			}
-		});
-	}
-}
-$($inputImage).change(function(){
-	inputImageCheck = "Y";
-	files = this.files;
-	readURL(this);
-});
+
+      if (URL) {
+        $inputImage.change(function () {
+          inputImageCheck = "Y";
+          //$("#img_div").show();
+          var files = this.files;
+          var file;
+          if (!$ori_image.data('cropper')) {
+            return;
+          }
+          if (files && files.length) {
+            file = files[0];
+            if (/^image\/\w+$/.test(file.type)) {
+              blobURL = URL.createObjectURL(file);
+              $ori_image.one('built.cropper', function () {
+                // Revoke when load complete
+                URL.revokeObjectURL(blobURL);
+              }).cropper('reset').cropper('replace', blobURL);
+              $inputImage.val('');
+            } else {
+              window.alert('Please choose an image file.');
+            }
+          }
+        });
+      } else {
+        $inputImage.prop('disabled', true).parent().addClass('disabled');
+      }
+
 function f_dream_next()
 {
     if (sel_dream == null)
