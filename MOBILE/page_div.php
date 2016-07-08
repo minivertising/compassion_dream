@@ -22,11 +22,13 @@
             * 1개의 이미지 파일을 등록할 수 있습니다
             </div>
             <div class="btns">
-              <label for="inputImage" title="Upload image file">
-                <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
-                <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
-              </label>
-              <a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a>
+              <form id="img_save" method="post" action="./photo_upload.php" enctype="multipart/form-data">
+                <label for="inputImage" title="Upload image file">
+                  <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+                  <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
+                </label>
+                <a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a>
+              </form>
             </div>
           </div>
           <div id="img_div" class="pic_area">
