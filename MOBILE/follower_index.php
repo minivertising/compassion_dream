@@ -873,7 +873,7 @@
         </div>
         <div class="block_btn spon">
 <?
-	if ($iphone_banner_gubun == "N")
+	if ($iphone_banner_gubun == "Y")
 	{
 ?>
           <div class="bt"><a href="#" onclick="open_fb_ks_page('5');return false;"><img src="images/btn_spon.png" /></a></div>
@@ -958,7 +958,7 @@
         </div>
         <div class="block_btn spon">
 <?
-	if ($iphone_banner_gubun == "N")
+	if ($iphone_banner_gubun == "Y")
 	{
 ?>
           <div class="bt"><a href="#" onclick="open_fb_ks_page('7');return false;"><img src="images/btn_spon.png" /></a></div>
