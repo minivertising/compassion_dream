@@ -1231,15 +1231,7 @@ function readURL(input) {
             $($inputImage).val('');
         } else {
             window.alert('Please choose an image file.');
-                    // }
-                    // var reader = new FileReader();
-                    // reader.onload = function (e) {
-                    //     alert("onload");
-                    //     $($ori_image).attr('src', e.target.result);
-                    //     image_crop();
                 }
-                    // realFath = input.files[0].name;
-                    // reader.readAsDataURL(input.files[0]);
     }else if((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1)){
         $($ori_image).cropper('destroy');
         $('#f_ie_img_save').ajaxSubmit({
@@ -1272,6 +1264,8 @@ function readURL(input) {
     }
 }
                 $($inputImage).change(function(){
+			$("#img_div").show();
+			$(".btn_closeup").show();
                     inputImageCheck = "Y";
                     files = this.files;
                 // console.dir(this);
