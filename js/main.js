@@ -67,7 +67,7 @@ function next_page(param)
 	switch(param)
 	{
 		case '5':
-			$("#contents_div").fadeOut('fast', function(){
+			$(".storytelling").fadeOut('fast', function(){
 				$("body").removeClass("story");
 				$("#page_div"+param).fadeIn('fast');
 			});
@@ -75,7 +75,7 @@ function next_page(param)
 
 		case '6':
 			var fade_page	= prev_param-1;
-			$("#contents_div").fadeOut('fast', function(){
+			$(".storytelling").fadeOut('fast', function(){
 				$("body").removeClass("story");
 				$("#page_div"+param).fadeIn('fast');
 			});
@@ -83,14 +83,14 @@ function next_page(param)
 
 		case '7':
 			var fade_page	= prev_param-2;
-			$("#contents_div").fadeOut('fast', function(){
+			$(".storytelling").fadeOut('fast', function(){
 				$("body").removeClass("story");
 				$("#page_div"+param).fadeIn('fast');
 			});
 		break;
 
 		default:
-			$("#contents_div").fadeOut('fast', function(){
+			$(".storytelling").fadeOut('fast', function(){
 				$("body").removeClass("story");
 				$("#page_div"+param).fadeIn('fast');
 			});
