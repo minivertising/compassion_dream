@@ -526,7 +526,6 @@ function dream_next(){
 		}
 
 		if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
-			alert("ie8이하");
 			cropboxDataIE = $(ori_image).cropper('getData');
 			crop_image_url = $(ori_image).attr('src');
 			   $.ajax({
@@ -539,6 +538,7 @@ function dream_next(){
 					cropboxData     : cropboxDataIE,
 				},
 				success: function(res){
+					console.log(res);
 					var rs_ch = res.split("||");
 					if (rs_ch[0] == "Y")
 					{
