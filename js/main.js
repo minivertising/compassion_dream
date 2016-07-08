@@ -63,12 +63,11 @@ function checked_dream(param, param2, param3)
 function next_page(param)
 {
 	var prev_param	= param - 1;
-	// $("#page_div"+prev_param).hide();
-	// $("#page_div"+param).show();
+
 	switch(param)
 	{
 		case '5':
-			$("#page_div"+prev_param).fadeOut('fast', function(){
+			$("#contents_div").fadeOut('fast', function(){
 				$("body").addClass("bg_sub_page");
 				$("#page_div"+param).fadeIn('fast');
 			});
@@ -76,7 +75,7 @@ function next_page(param)
 
 		case '6':
 			var fade_page	= prev_param-1;
-			$("#page_div"+fade_page).fadeOut('fast', function(){
+			$("#contents_div").fadeOut('fast', function(){
 				$("body").addClass("bg_sub_page");
 				$("#page_div"+param).fadeIn('fast');
 			});
@@ -84,14 +83,14 @@ function next_page(param)
 
 		case '7':
 			var fade_page	= prev_param-2;
-			$("#page_div"+fade_page).fadeOut('fast', function(){
+			$("#contents_div").fadeOut('fast', function(){
 				$("body").addClass("bg_sub_page");
 				$("#page_div"+param).fadeIn('fast');
 			});
 		break;
 
 		default:
-			$("#page_div"+prev_param).fadeOut('fast', function(){
+			$("#contents_div").fadeOut('fast', function(){
 				$("#page_div"+param).fadeIn('fast');
 			});
 		break;

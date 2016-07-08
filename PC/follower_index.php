@@ -382,10 +382,10 @@
             <div class="content">
               <div class="chat clearfix">
                 <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
-                <div class="txt" onclick="next_page('7');return false;">
+                <div class="txt">
                   <?=$ch_data['ch_nick']?>을 다시 초대하기<br>
-                  <a href="#">mydream.compassion.or.kr</a>
-                  <a href="#"><img src="images/chat_8_img.png" /></a>
+                  <a href="#" onclick="next_page('7');return false;">mydream.compassion.or.kr</a>
+                  <a href="#" onclick="next_page('7');return false;"><img src="images/chat_8_img.png" /></a>
                 </div>
                 <div class="cnt v4"><img src="images/link_out.png" /></div>
               </div>
@@ -732,21 +732,22 @@
             <div class="content">
               <div class="chat clearfix">
                 <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
+                <div class="txt">
+                  <?=$ch_data['ch_nick']?>을 다시 초대하기<br>
 <?
 	if ($ch_data['ch_choice'] == "Y")
 	{
 ?>
-                <div class="txt" onclick="next_page('6');return false;">
+                  <a href="#" onclick="next_page('6');return false;">mydream.compassion.or.kr</a>
+                  <a href="#" onclick="next_page('5');return false;"><img src="images/chat_8_img.png" /></a>
 <?
 	}else{
 ?>
-                <div class="txt" onclick="next_page('5');return false;">
+                  <a href="#" onclick="next_page('6');return false;">mydream.compassion.or.kr</a>
+                  <a href="#" onclick="next_page('5');return false;"><img src="images/chat_8_img.png" /></a>
 <?
 	}
 ?>
-                  <?=$ch_data['ch_nick']?>을 다시 초대하기<br>
-                  <a href="#">mydream.compassion.or.kr</a>
-                  <a href="#"><img src="images/chat_8_img.png" /></a>
                 </div>
                 <div class="cnt v4"><img src="images/link_out.png" /></div>
               </div>
