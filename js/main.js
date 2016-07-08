@@ -68,7 +68,7 @@ function next_page(param)
 	{
 		case '5':
 			$("#contents_div").fadeOut('fast', function(){
-				$("body").addClass("bg_sub_page");
+				$("body").removeClass("story");
 				$("#page_div"+param).fadeIn('fast');
 			});
 		break;
@@ -76,7 +76,7 @@ function next_page(param)
 		case '6':
 			var fade_page	= prev_param-1;
 			$("#contents_div").fadeOut('fast', function(){
-				$("body").addClass("bg_sub_page");
+				$("body").removeClass("story");
 				$("#page_div"+param).fadeIn('fast');
 			});
 		break;
@@ -84,13 +84,14 @@ function next_page(param)
 		case '7':
 			var fade_page	= prev_param-2;
 			$("#contents_div").fadeOut('fast', function(){
-				$("body").addClass("bg_sub_page");
+				$("body").removeClass("story");
 				$("#page_div"+param).fadeIn('fast');
 			});
 		break;
 
 		default:
 			$("#contents_div").fadeOut('fast', function(){
+				$("body").removeClass("story");
 				$("#page_div"+param).fadeIn('fast');
 			});
 		break;
