@@ -478,6 +478,7 @@ function readURL(input, browser) {
 		$($ori_image).cropper('destroy');
 		$('#ie_img_save').ajaxSubmit({
 			success: function (data) {
+        console.log(data);
 				$($ori_image).attr('src', data);
 				image_crop();
 			}
