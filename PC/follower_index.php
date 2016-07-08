@@ -1138,15 +1138,6 @@ function zoom_action(type){
     }
 }
 
-function rotate_action(degree){
-  if(degree=="+")
-  {
-    $($ori_image).cropper('rotate', 90);
-  }else{
-    $($ori_image).cropper('rotate', -90);
-  }
-}
-
 function readURL(input) {
     if (input.files && input.files[0]) {
         file = files[0];

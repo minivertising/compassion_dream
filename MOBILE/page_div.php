@@ -98,7 +98,7 @@
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="images/ex_child_01.png" id="matching_child_pic" /></div>
           <div class="child_text">
-            <h2>"저도 <span id="m_rs_job">선생님</span><span id="jobPP" style="color:#fff">를</span> 꿈꿀 수 있을까요?"</h2> <!-- 을 를 -->
+            <h2>"저도 <span id="m_rs_job">선생님</span><span id="jobPP" style="color:#fff">를</span> 꿈꿀 수 있을까요?"</h2> <!-- 조사부분 컬러 검정으로 수정 -->
             <div class="bg_line">
               <p id="m_rs_desc">
               </p>
