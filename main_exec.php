@@ -270,9 +270,9 @@ switch ($_REQUEST['exec'])
 			die("파일을 지정한 디렉토리에 업로드하는데 실패했습니다.");
 		}else{
 			// 이미지 로테이트 
-			$ori_images	= str_replace("..",".",$dest_url);
-			@$image = imagecreatefromjpeg($ori_images) or die('Error opening file '.$ori_images);
-			$exif = exif_read_data($ori_images);
+			//$ori_images	= str_replace("..",".",$dest_url);
+			$image = imagecreatefromjpeg($dest_url) or die('Error opening file '.$dest_url);
+			$exif = exif_read_data($dest_urls);
 			 
 			if(!empty($exif['Orientation'])) {
 				switch($exif['Orientation']) {
