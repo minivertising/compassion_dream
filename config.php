@@ -1,6 +1,8 @@
 <?php
 	session_start();
     header("Content-Type: text/html; charset=UTF-8");
+	echo "COMMING SOON";
+	exit;
 	//환경설정 파일
 	include_once "include/global.php"; 			//변수정보
 	include_once "include/function.php"; 		//함수정보
