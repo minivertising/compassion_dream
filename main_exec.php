@@ -273,7 +273,7 @@ switch ($_REQUEST['exec'])
 			//$ori_images	= str_replace("..",".",$dest_url);
 			$image = imagecreatefromjpeg($dest_url) or die('Error opening file '.$dest_url);
 			$exif = exif_read_data($dest_url);
-			print_r($exif['IFD0']['Orientation']);
+			print_r($exif);
 /*
 			if(!empty($exif['Orientation'])) {
 				switch($exif['Orientation']) {
