@@ -1,11 +1,11 @@
 <?
-	include_once "./header.php";
-	// ins_share_cnt($rs);
-	// PC에서 유입시 PC로 이동
-	if ($gubun == "PC")
-		echo "<script>location.href='../PC/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
-	$ch_data	= sel_child_info($mb_data['mb_child']);
-	$convert_job = job_ko_add($mb_data['mb_job']);
+  include_once "./header.php";
+  // ins_share_cnt($rs);
+  // PC에서 유입시 PC로 이동
+  if ($gubun == "PC")
+    echo "<script>location.href='../PC/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
+  $ch_data  = sel_child_info($mb_data['mb_child']);
+  $convert_job = job_ko_add($mb_data['mb_job']);
 ?>
 <body class="bg_sub_page storytelling">
 <script>
@@ -39,8 +39,8 @@
 </div>
 <div id="contents_div">
 <?
-	if ($mb_data['mb_child'] == "")
-	{
+  if ($mb_data['mb_child'] == "")
+  {
 ?>
   <div class="wrap_page storytelling storytelling_m">
     <div class="inner">
@@ -431,7 +431,7 @@
       </div>
       <div id="talk_c_final_mask" class="mask_ending" onclick="close_c_mask();return false;" style="display:none;"></div>
 <?
-	}else{
+  }else{
 ?>
   <div class="wrap_page storytelling storytelling_m">
     <div class="inner">
@@ -791,18 +791,18 @@
                   <div class="txt end">
                     <?=$ch_data['ch_nick']?>을 다시 초대하기<br>
 <?
-	if ($ch_data['ch_choice'] == "Y")
-	{
+  if ($ch_data['ch_choice'] == "Y")
+  {
 ?>
                     <a href="#" onclick="next_page('6');return false;">www.compassion.or.kr</a>
                     <a href="#" onclick="next_page('6');return false;"><img src="images/img_link.png" width="130" /></a>
 <?
-	}else{
+  }else{
 ?>
                     <a href="#" onclick="next_page('5');return false;">www.compassion.or.kr</a>
                     <a href="#" onclick="next_page('5');return false;"><img src="images/img_link.png" width="130" /></a>
 <?
-	}
+  }
 ?>
                   </div>
                   <div class="cnt v6"><img src="images/icon_out.png" width="25" /></div>
@@ -824,18 +824,18 @@
                 <div class="txt end">
                   <?=$ch_data['ch_nick']?>를 다시 초대하기<br>
 <?
-	if ($ch_data['ch_choice'] == "Y")
-	{
+  if ($ch_data['ch_choice'] == "Y")
+  {
 ?>
                     <a href="#" onclick="next_page('6');return false;">www.compassion.or.kr</a>
                     <a href="#" onclick="next_page('6');return false;"><img src="images/img_link.png" width="130" /></a>
 <?
-	}else{
+  }else{
 ?>
                     <a href="#" onclick="next_page('5');return false;">www.compassion.or.kr</a>
                     <a href="#" onclick="next_page('5');return false;"><img src="images/img_link.png" width="130" /></a>
 <?
-	}
+  }
 ?>
                 </div>
                 <div class="cnt v6"><img src="images/icon_out.png" width="25" /></div>
@@ -847,7 +847,7 @@
       </div>
       <div id="talk_final_mask" class="mask_ending" onclick="close_mask();return false;" style="display:none;"></div>
 <?
-	}
+  }
 ?>
   <div id="page_div5" class="wrap_page share_match_child" style="display:none;">
     <div class="inner">
@@ -864,8 +864,8 @@
           <div class="img_child story_result">
             <img src="<?=$ch_data['ch_full_img_url']?>" />
           </div>
-          <div class="txt_child story_result">	
-            <div class="inner" style="margin-top:30px;">
+          <div class="txt_child story_result">  
+            <div class="inner">
               <?=$ch_data['ch_desc']?>
             </div>
           </div>
@@ -873,16 +873,16 @@
         </div>
         <div class="block_btn spon">
 <?
-	if ($iphone_banner_gubun == "Y")
-	{
+  if ($iphone_banner_gubun == "Y")
+  {
 ?>
           <div class="bt"><a href="#" onclick="open_fb_ks_page('5');return false;"><img src="images/btn_spon.png" /></a></div>
 <?
-	}else{
+  }else{
 ?>
           <div class="bt"><a href="http://www.compassion.or.kr/Mobile/cdspDetail3.aspx?ChildMasterID=<?=$ch_data['ch_id']?>&ChildID=<?=$ch_data['ch_key']?>" target="_blank"><img src="images/btn_spon.png" /></a></div>
 <?
-	}
+  }
 ?>
           <div class="txt">1:1후원으로 <?=$ch_data['ch_nick']?>의 꿈을 현실로 만들어주세요!</div>
         </div>
@@ -909,7 +909,7 @@
           <span><?=$ch_data['ch_nick']?></span>이
           후원자를 만나 꿈을 꿀 수 있게 됐어요
           <!-- "<span><?=$ch_data['ch_nick']?></span>아<br>
-          내꿈꿔!"	 -->
+          내꿈꿔!"  -->
         </div>
         <div class="block_child re">
           <div class="inner_block_child clearfix">
@@ -958,16 +958,16 @@
         </div>
         <div class="block_btn spon">
 <?
-	if ($iphone_banner_gubun == "Y")
-	{
+  if ($iphone_banner_gubun == "Y")
+  {
 ?>
           <div class="bt"><a href="#" onclick="open_fb_ks_page('7');return false;"><img src="images/btn_spon.png" /></a></div>
 <?
-	}else{
+  }else{
 ?>
           <div class="bt"><a href="http://www.compassion.or.kr/Mobile/cdspDetail3.aspx?ChildMasterID=<?=$ch_data['ch_id']?>&ChildID=<?=$ch_data['ch_key']?>" target="_blank"><img src="images/btn_spon.png" /></a></div>
 <?
-	}
+  }
 ?>
           <div class="txt">1:1후원으로 아이의 꿈을 현실로 만들어주세요!</div>
         </div>
@@ -993,14 +993,14 @@
     <div class="block_content">
       <div class="title follower">
 <?
-	if ($ch_data['ch_nick'] == "")
-	{
+  if ($ch_data['ch_nick'] == "")
+  {
 ?>
         여러분의 어린 시절의 꿈과 사진을 올려주세요<br>
         SNS에 사진과 함께 당신이 응원할<br>
         <span class="name">'꿈을 잃은 어린이</span>가 소개됩니다<br>
 <?
-	}else{
+  }else{
 ?>
         여러분의 어린 시절의 꿈과 사진을 올려주세요<br>
         SNS에 사진과 함께 당신이 응원할<br>
@@ -1008,31 +1008,31 @@
         <!-- 이미 결연된 아이의 링크 일 경우엔 텍스트? -->
         <span class="name">‘<?=$ch_data['ch_nick']?>’</span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 소개됩니다 <!-- 이 가 -->
 <?
-	}
+  }
 ?>
       </div>
                 <div class="block_input_dream">
-                	<div class="selec_job clearfix">
-                    	<!-- <div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div> -->
-                        <div class="txt_1"><span id="sel_job_txt">1. 내 어린시절 꿈 선택 </span> </div>
+                  <div class="selec_job clearfix">
+                      <!-- <div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div> -->
+                        <div class="txt_1">1. 선택한 꿈 : <span id="sel_job_txt">디자이너</span> </div>
                         <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="90" /></a></div><!--버튼 두개입니다-->
                     </div>
                     <div class="upload_pic">
-                    	<div class="title_pic clearfix">
-                        	<div class="txt_1">2. 사진업로드</div>
+                      <div class="title_pic clearfix">
+                          <div class="txt_1">2. 사진업로드</div>
                             <div class="txt_2">
               <label for="f_inputImage" title="Upload image file">
                 <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
                 <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
               </label>
-							</div>
-                        	<div class="txt_3"><a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a></div>
+              </div>
+                          <div class="txt_3"><a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a></div>
                         </div>
                         <div id="img_div" class="pic_area" style="display:none;">
-                        	<img id="f_ori_image" src="./images/picture.jpg" alt="Picture" />
+                          <img id="f_ori_image" src="./images/picture.jpg" alt="Picture" />
                         </div>
                         <div class="btn_closeup" style="display:none;">
-                        	<a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" width="80" /></a>
+                          <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" width="80" /></a>
                             <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" width="80" /></a>
                         </div>
                     </div>
@@ -1105,7 +1105,7 @@
       <div class="img_com">
         <div class="img_child">
           <div class="inner_img_child clearfix">
-	                    	<div class="one"><img src="images/ex_child_05.jpg" /></div>
+                        <div class="one"><img src="images/ex_child_05.jpg" /></div>
                             <div class="one"><img src="images/ex_child_06.jpg" /></div>
                             <div class="one"><img src="images/ex_child_07.jpg" /></div>
           </div>
@@ -1225,90 +1225,90 @@ var files;
 var flag_sel_dream  = 0;
 var mb_rs       = null;
 var inputImageCheck;
-var share_cnt			= 0;
-var s_ugu	= null;
-var scroll_end	= 0;
+var share_cnt     = 0;
+var s_ugu = null;
+var scroll_end  = 0;
 $(window).load(function() {
-	Kakao.init('59df63251be6d99256b63b98f4948e89');
-	$("#cboxTopLeft").hide();
-	$("#cboxTopRight").hide();
-	$("#cboxBottomLeft").hide();
-	$("#cboxBottomRight").hide();
-	$("#cboxMiddleLeft").hide();
-	$("#cboxMiddleRight").hide();
-	$("#cboxTopCenter").hide();
-	$("#cboxBottomCenter").hide();
+  Kakao.init('59df63251be6d99256b63b98f4948e89');
+  $("#cboxTopLeft").hide();
+  $("#cboxTopRight").hide();
+  $("#cboxBottomLeft").hide();
+  $("#cboxBottomRight").hide();
+  $("#cboxMiddleLeft").hide();
+  $("#cboxMiddleRight").hide();
+  $("#cboxTopCenter").hide();
+  $("#cboxBottomCenter").hide();
 
 <?
-	if ($mb_data['mb_child'] == "")
-	{
+  if ($mb_data['mb_child'] == "")
+  {
 ?>
-		talk_c_start();
+    talk_c_start();
 
-		$(".inner_story").scroll(function(){
-			console.log($(".inner_story").scrollTop());
-			if ($(".inner_story").scrollTop() == scroll_end){
-				$("#talk_c_final").show();
-				$("#talk_c_final_send").show();
-				$("#talk_c_final_mask").height($(document).height());
-				$("#talk_c_final_mask").show();
-			}
-		});
+    $(".inner_story").scroll(function(){
+      console.log($(".inner_story").scrollTop());
+      if ($(".inner_story").scrollTop() == scroll_end){
+        $("#talk_c_final").show();
+        $("#talk_c_final_send").show();
+        $("#talk_c_final_mask").height($(document).height());
+        $("#talk_c_final_mask").show();
+      }
+    });
 
 <?
-	}else{
+  }else{
 ?>
-		talk_start();
+    talk_start();
 
-		$(".inner_story").scroll(function(){
-			console.log($(".inner_story").scrollTop());
-			if ($(".inner_story").scrollTop() == scroll_end){
-				$("#talk_final").show();
-				$("#talk_final_send").show();
-				$("#talk_final_mask").height($(document).height());
-				$("#talk_final_mask").show();
-			}
-		});
+    $(".inner_story").scroll(function(){
+      console.log($(".inner_story").scrollTop());
+      if ($(".inner_story").scrollTop() == scroll_end){
+        $("#talk_final").show();
+        $("#talk_final_send").show();
+        $("#talk_final_mask").height($(document).height());
+        $("#talk_final_mask").show();
+      }
+    });
 
 <?
-	}
+  }
 ?>
 
-	Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
-	// 미리보기 제어
-	$(".preview").width($(document).width()*0.9);
-	s_ugu	= 'fol';
+  Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
+  // 미리보기 제어
+  $(".preview").width($(document).width()*0.9);
+  s_ugu = 'fol';
 });
 function image_crop(){
-	$($ori_image).cropper({
-		viewMode: 0,
-		dragMode: 'move',
-		autoCropArea: 0.8,
-		aspectRatio: 1200/630,
-		responsive: true,
-		restore: true,
-		guides: false,
-		highlight: true,
-		background: false,
-		cropBoxMovable: true,
-		cropBoxResizable: true,
-		preview: '.preview',
-		center:true,
-		zoomOnWheel:false,
-		toggleDragModeOnDblclick:false
-	});
+  $($ori_image).cropper({
+    viewMode: 0,
+    dragMode: 'move',
+    autoCropArea: 0.8,
+    aspectRatio: 1200/630,
+    responsive: true,
+    restore: true,
+    guides: false,
+    highlight: true,
+    background: false,
+    cropBoxMovable: true,
+    cropBoxResizable: true,
+    preview: '.preview',
+    center:true,
+    zoomOnWheel:false,
+    toggleDragModeOnDblclick:false
+  });
 }
 function f_preview_img()
 {
-	open_pop('f_preview_popup');
+  open_pop('f_preview_popup');
 }
 function zoom_action(type){
-	if(type=="up")
-	{
-		$($ori_image).cropper('zoom', 0.1);
-	}else{
-		$($ori_image).cropper('zoom', -0.1);
-	}
+  if(type=="up")
+  {
+    $($ori_image).cropper('zoom', 0.1);
+  }else{
+    $($ori_image).cropper('zoom', -0.1);
+  }
 }
 function rotate_action(degree){
   if(degree=="+")
@@ -1323,7 +1323,7 @@ function rotate_action(degree){
         $inputImage.change(function () {
           inputImageCheck = "Y";
           $("#img_div").show();
-		$(".btn_closeup").show();
+    $(".btn_closeup").show();
           var files = this.files;
           var file;
           if (!$ori_image.data('cropper')) {
@@ -1386,14 +1386,14 @@ function f_dream_next()
                 mb_job      : sel_dream
             },
             beforeSend: function(response){
-				$("#upload_page").fadeOut('fast', function(){
-					$("body").addClass("bg_sub_page bg_loading");
-					$("#loading_div").fadeIn('fast');
-				});
+        $("#upload_page").fadeOut('fast', function(){
+          $("body").addClass("bg_sub_page bg_loading");
+          $("#loading_div").fadeIn('fast');
+        });
             },
             success: function(res){
-				alert(res);
-                console.log(res);
+        alert(res);
+                // console.log(res);
                 //mb_image    = res;
                 var rs_ch = res.split("||");
                 mb_rs = rs_ch[1];
@@ -1402,29 +1402,29 @@ function f_dream_next()
                 if (rs_ch[0] == "Y")
                 {
                     $("#matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
-					setTimeout(function(){
-	                $("#loading_div").fadeOut('fast',function(){
+          setTimeout(function(){
+                  $("#loading_div").fadeOut('fast',function(){
 <?
-	if ($ch_data['ch_choice'] == "Y")
-	{
+  if ($ch_data['ch_choice'] == "Y")
+  {
 ?>
-						$("#no_matching_page").fadeIn("fast");
+            $("#no_matching_page").fadeIn("fast");
 <?
-	}else{
+  }else{
 ?>
-						$("body").removeClass("bg_loading");
-						$("#matching_share_page").fadeIn("fast");
+            $("body").removeClass("bg_loading");
+            $("#matching_share_page").fadeIn("fast");
 <?
-	}
+  }
 ?>
-					});
-					},1500);
+          });
+          },1500);
                 }else if (rs_ch[0] == "N"){
-					setTimeout(function(){
-	                $("#loading_div").fadeOut('fast',function(){
-						$("#no_matching_page").fadeIn("fast");
-					});
-					},1500);
+          setTimeout(function(){
+                  $("#loading_div").fadeOut('fast',function(){
+            $("#no_matching_page").fadeIn("fast");
+          });
+          },1500);
                 }else {
                     alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
                     location.reload();
@@ -1437,10 +1437,10 @@ function f_dream_next()
         $.ajax({
             type:"POST",
             data:{
-                "exec"			: "insert_share_cnt",
-                "serial"			: serial,
-                "parent_idx"	: parent_idx,
-                "ugu"				: ugu
+                "exec"      : "insert_share_cnt",
+                "serial"      : serial,
+                "parent_idx"  : parent_idx,
+                "ugu"       : ugu
             },
             url: "../main_exec.php",
             success: function(res){
