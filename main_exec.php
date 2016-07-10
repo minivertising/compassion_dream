@@ -308,7 +308,7 @@ switch ($_REQUEST['exec'])
 			}else{
 				$flag	= "E||null||null";
 			}
-			echo $exif;
+			echo $ori_images;
 		}
 
 	break;
