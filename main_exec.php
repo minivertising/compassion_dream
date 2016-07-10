@@ -272,7 +272,6 @@ switch ($_REQUEST['exec'])
 			// 이미지 로테이트 
 			$ori_images	= str_replace("..",".",$dest_url);
 			@$image = imagecreatefromjpeg($ori_images) or die('Error opening file '.$ori_images);
-			/*
 			$exif = exif_read_data($ori_images);
 			 
 			if(!empty($exif['Orientation'])) {
@@ -293,7 +292,7 @@ switch ($_REQUEST['exec'])
 			imagejpeg($image, $ori_images);
 			 
 			//imagedestroy($image);
-*/
+
 			$mb_serial	= create_serial("follower",$rs);
 			$dest_url	= ".".$dest_url;
 			$query 	= "INSERT INTO ".$_gl['follower_info_table']."(mb_ipaddr,mb_job,parent_idx,mb_child,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_job."','".$parent_idx."','".$mb_child."','".$dest_url."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
@@ -308,7 +307,7 @@ switch ($_REQUEST['exec'])
 			}else{
 				$flag	= "E||null||null";
 			}
-			echo $ori_images;
+			echo $exif;
 		}
 
 	break;
