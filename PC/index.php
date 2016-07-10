@@ -127,56 +127,49 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <!-- 메인 index -->
 
 <!-- 사진 업로드 페이지 -->
-    <div id="upload_page" class="wrap_sec_top_sub" style="display:none;">
-    	<div class="inner">
-        	<div class="logo"><a href="index.php"><img src="images/logo_sub.png" /></a></div>
-            <div class="block_content upload">
-            	<div class="title">
-                	<div class="main">
-                    여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
-                    SNS에 사진과 함께 당신이 응원할 <span>‘꿈을 잃은 어린이’</span>가 소개됩니다
-                    </div>
-                </div>
-                <div class="block_input_dream">
-                	<div class="selec_job">
-                    	<span id="sel_job_txt">1. 내 어린 시절의 꿈 선택 </span> <a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a><!--버튼 두개입니다-->
-                    </div>
-                    <div class="upload_pic">
-                    	<div class="title_pic">
-                        	2. 사진업로드
-                        </div>
-                        <div class="desc">
-                        	<div class="txt_pic">
-                            	<img src="images/txt_pic.png" />
-                            </div>
-                        	<div class="btns">
-              <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
-                <label for="inputImage" title="Upload image file">
-                  <span title="Import image" style="position: relative; overflow: hidden;">
-                    <input type="file" id="inputImage" class="fileUp" name="file" style="cursor:pointer;">
-                    <img src="images/btn_select_pic.png" style="cursor:pointer;"/>
-                  </span>
-                </label>
-                  <a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a>
-              </form>
-                            </div>
-                        </div>
-                        <div id="img_div" class="pic_area">
-                        	<img id="ori_image" src="./images/picture.jpg" alt="Picture" />
-                        </div>
-                        <div class="btn_closeup">
-                        	<a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
-                            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" /></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="block_btn">
-                	<a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
-                </div>
-            </div>
-            
+<div id="upload_page" class="wrap_sec_top_sub" style="display:none;">
+  <div class="inner">
+    <div class="logo"><a href="index.php"><img src="images/logo_sub.png" /></a></div>
+    <div class="block_content upload">
+      <div class="title">
+        <div class="main">
+        여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
+        SNS에 사진과 함께 당신이 응원할 <span>‘꿈을 잃은 어린이’</span>가 소개됩니다
         </div>
+      </div>
+      <div class="block_input_dream">
+        <div class="selec_job clearfix">
+          <div class="txt_1"><span id="sel_job_txt">1. 내 어린 시절의 꿈 선택 </span></div>
+          <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a></div><!--버튼 두개입니다-->
+        </div>
+        <div class="upload_pic">
+          <div class="title_pic clearfix">
+            <div class="txt_1">2. 사진업로드</div>
+            <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
+              <label for="inputImage" title="Upload image file">
+                <span title="Import image" style="position: relative; overflow: hidden;float:left;padding-left:10px">
+                  <input type="file" id="inputImage" class="fileUp" name="file" style="cursor:pointer;">
+                  <img src="images/btn_select_pic.png" />
+                </span>
+              </label>
+              <div class="txt_3"><a href="#" onclick="open_pop('preview_popup');return false;"><img src="images/btn_preview.png" /></a></div>
+            </form>
+          </div>
+          <div id="img_div" class="pic_area" style="display:none;">
+            <img id="ori_image" src="./images/picture.jpg" alt="Picture" />
+          </div>
+          <div class="btn_closeup" style="display:none;">
+            <a href="#" onclick="zoom_action('down');return false;"><img src="images/btn_minus.png" /></a>
+            <a href="#" onclick="zoom_action('up');return false;"><img src="images/btn_plus.png" /></a>
+          </div>
+        </div>
+        <div class="block_btn">
+          <a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 <!-- 사진 업로드 페이지 -->
 
 <!-- 개인정보 입력 페이지 -->
@@ -477,6 +470,8 @@ function readURL(input, browser) {
 
 $($inputImage).change(function(){
 	var pre_upload_browser_check;
+	$("#img_div").show();
+	$(".btn_closeup").show();
 	if((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1))
 	{
 		var file_value = this.value;
@@ -533,15 +528,15 @@ function dream_next(){
 					{
 						// 매칭될 아이가 있을 경우
 						mb_image    = rs_ch[1];
-						$("#upload_page").fadeOut('slow', function(){
-							$("#input_page").fadeIn('slow');
+						$("#upload_page").fadeOut('fast', function(){
+							$("#input_page").fadeIn('fast');
 						});
 					}else if (rs_ch[0] == "N"){
 						// 매칭될 아이가 없을 경우
 						mb_image    = rs_ch[1];
 						mb_rs       = rs_ch[2];
-						$("#upload_page").fadeOut('slow', function(){
-							$("#no_matching_page").fadeIn('slow');
+						$("#upload_page").fadeOut('fast', function(){
+							$("#no_matching_page").fadeIn('fast');
 						});
 
 					}else {
@@ -570,15 +565,15 @@ function dream_next(){
 					{
 						// 매칭될 아이가 있을 경우
 						mb_image    = rs_ch[1];
-						$("#upload_page").fadeOut('slow', function(){
-							$("#input_page").fadeIn('slow');
+						$("#upload_page").fadeOut('fast', function(){
+							$("#input_page").fadeIn('fast');
 						});
 					}else if (rs_ch[0] == "N"){
 						// 매칭될 아이가 없을 경우
 						mb_image    = rs_ch[1];
 						mb_rs       = rs_ch[2];
-						$("#upload_page").fadeOut('slow', function(){
-							$("#no_matching_page").fadeIn('slow');
+						$("#upload_page").fadeOut('fast', function(){
+							$("#no_matching_page").fadeIn('fast');
 						});
 
 					}else {

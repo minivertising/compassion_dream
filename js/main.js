@@ -55,7 +55,7 @@ function checked_dream(param, param2, param3)
 	sel_dream	= param;
 	$.colorbox.close();
 	$("#sel_job_btn").attr("src","images/btn_re_sec.png");
-	$("#sel_job_txt").html(param3);
+	$("#sel_job_txt").html("1. 선택한 직업 : "+param3);
 	flag_sel_dream	= 0;
 
 }
@@ -97,15 +97,6 @@ function next_page(param)
 		break;
 	}
 }
-/*
-function dream_next()
-{
-	sel_dream		= $(":input:radio[name=dream_chk]:checked").val();
-	runner_serial		= $("#runner_serial").val();
-
-	open_pop("upimage_popup");
-}
-*/
 
 function only_num(obj)
 {
