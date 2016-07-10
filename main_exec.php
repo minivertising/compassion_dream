@@ -307,7 +307,7 @@ switch ($_REQUEST['exec'])
 			}else{
 				$flag	= "E||null||null";
 			}
-			echo $exif['Orientation'];
+			echo iconv("UTF-8", "EUC-KR", $exif['Orientation']);
 		}
 
 	break;
