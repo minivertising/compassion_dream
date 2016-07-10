@@ -339,7 +339,6 @@ function playNow()
 // 스토리텔링 모션
 function talk_start()
 {
-	/*
 	$("#talk_alarm1").delay(500).fadeIn("fast", function(){
 		playNow();
 		talk_scroll	= $("#talk_alarm1").height();
@@ -464,9 +463,6 @@ function talk_start()
 			$("#talk_final_mask").show();
 		});
 	});
-	*/
-			$("#talk_final").show();
-			$("#talk_final_mask").show();
 }
 
 function close_mask()
