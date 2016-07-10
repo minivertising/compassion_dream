@@ -271,28 +271,6 @@ switch ($_REQUEST['exec'])
 		}else{
 			// 이미지 로테이트 
 			$ori_images	= str_replace("..",".",$dest_url);
-			@$image = imagecreatefromjpeg($ori_images) or die('Error opening file '.$ori_images);
-			
-			$exif = exif_read_data($ori_images);
-			 
-			if(!empty($exif['Orientation'])) {
-				switch($exif['Orientation']) {
-					case 8:
-						$image = imagerotate($image,90,0);
-						break;
-					case 3:
-						$image = imagerotate($image,180,0);
-						break;
-					case 6:
-						$image = imagerotate($image,-90,0);
-						break;
-				}
-			}
-			//header('Content-type: image/jpeg');
-			 
-			imagejpeg($image, $ori_images);
-			 
-			//imagedestroy($image);
 
 			$mb_serial	= create_serial("follower",$rs);
 			$dest_url	= ".".$dest_url;
