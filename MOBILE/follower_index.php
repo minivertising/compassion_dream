@@ -1354,8 +1354,11 @@ function rotate_action(degree){
         $(".btn_closeup").show();
         $($ori_image).cropper('destroy');
         $('#img_save').ajaxSubmit({
+            beforeSubmit: function (){
+                $($ori_image).attr('src', './images/bx_loader.gif');
+            },
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 $($ori_image).attr('src', data);
                 image_crop();
             }
