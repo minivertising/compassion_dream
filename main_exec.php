@@ -272,8 +272,7 @@ switch ($_REQUEST['exec'])
 			// 이미지 로테이트 
 			//$ori_images	= str_replace("..",".",$dest_url);
 			$image = imagecreatefromjpeg($dest_url) or die('Error opening file '.$dest_url);
-			//$exif = exif_read_data($dest_url);
-			$exif = read_exif_data($dest_url ,'IFD0' ,0);
+			$exif = exif_read_data($dest_url);
 			 
 			if(!empty($exif['Orientation'])) {
 				switch($exif['Orientation']) {
