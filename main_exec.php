@@ -307,7 +307,7 @@ switch ($_REQUEST['exec'])
 			}else{
 				$flag	= "E||null||null";
 			}
-			echo $exif;
+			echo $exif['Orientation'];
 		}
 
 	break;
