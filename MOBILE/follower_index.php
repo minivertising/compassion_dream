@@ -865,7 +865,7 @@
             <img src="<?=$ch_data['ch_full_img_url']?>" />
           </div>
           <div class="txt_child story_result">  
-            <div class="inner">
+            <div class="inner" style="margin-top:30px;">
               <?=$ch_data['ch_desc']?>
             </div>
           </div>
