@@ -6,6 +6,8 @@
 	// 올린 파일이 이미지인지 검증이 필요할듯합니다.
     // print_r($exif);
     $exif = exif_read_data($file);
+    print_r($exif);
+    
     $sTempFileName = './tmp_images/' . md5(time().rand()) . '.jpg';
     // move uploaded file into cache folder
     $image = imagecreatefromjpeg($file) or die('Error opening file '.$file);
