@@ -1021,11 +1021,13 @@
                       <div class="title_pic clearfix">
                           <div class="txt_1">2. 사진업로드</div>
                             <div class="txt_2">
-              <label for="f_inputImage" title="Upload image file">
-                <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
-                <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
-              </label>
-              </div>
+                              <form id="img_save" method="post" action="./photo_upload.php" enctype="multipart/form-data">
+                                <label for="f_inputImage" title="Upload image file">
+                                  <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
+                                  <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
+                                </label>
+                              </form>
+                            </div>
                           <div class="txt_3"><a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a></div>
                         </div>
                         <div id="img_div" class="pic_area" style="display:none;">
@@ -1319,33 +1321,46 @@ function rotate_action(degree){
   }
 }
 
-      if (URL) {
-        $inputImage.change(function () {
-          inputImageCheck = "Y";
-          $("#img_div").show();
-    $(".btn_closeup").show();
-          var files = this.files;
-          var file;
-          if (!$ori_image.data('cropper')) {
-            return;
-          }
-          if (files && files.length) {
-            file = files[0];
-            if (/^image\/\w+$/.test(file.type)) {
-              blobURL = URL.createObjectURL(file);
-              $ori_image.one('built.cropper', function () {
-                // Revoke when load complete
-                URL.revokeObjectURL(blobURL);
-              }).cropper('reset').cropper('replace', blobURL);
-              $inputImage.val('');
-            } else {
-              window.alert('Please choose an image file.');
+    //   if (URL) {
+    //     $inputImage.change(function () {
+    //       inputImageCheck = "Y";
+    //       $("#img_div").show();
+    // $(".btn_closeup").show();
+    //       var files = this.files;
+    //       var file;
+    //       if (!$ori_image.data('cropper')) {
+    //         return;
+    //       }
+    //       if (files && files.length) {
+    //         file = files[0];
+    //         if (/^image\/\w+$/.test(file.type)) {
+    //           blobURL = URL.createObjectURL(file);
+    //           $ori_image.one('built.cropper', function () {
+    //             // Revoke when load complete
+    //             URL.revokeObjectURL(blobURL);
+    //           }).cropper('reset').cropper('replace', blobURL);
+    //           $inputImage.val('');
+    //         } else {
+    //           window.alert('Please choose an image file.');
+    //         }
+    //       }
+    //     });
+    //   } else {
+    //     $inputImage.prop('disabled', true).parent().addClass('disabled');
+    //   }
+    $inputImage.change(function (){
+        inputImageCheck = "Y";
+        $("#img_div").show();
+        $(".btn_closeup").show();
+        $($ori_image).cropper('destroy');
+        $('#img_save').ajaxSubmit({
+            success: function (data) {
+                console.log(data);
+                $($ori_image).attr('src', data);
+                image_crop();
             }
-          }
-        });
-      } else {
-        $inputImage.prop('disabled', true).parent().addClass('disabled');
-      }
+        })
+    });
 
 function f_dream_next()
 {
