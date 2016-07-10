@@ -913,8 +913,8 @@
                 <div class="block_input_dream">
                 	<div class="selec_job clearfix">
                     	<!-- <div class="txt_1" id="sel_job_txt">1. 내 어린 시절의 꿈 선택 </div> -->
-						<div class="txt_1">1. 선택한 직업 : <span id="sel_job_txt">디자이너</span> </div>
-                        <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a></div><!--버튼 두개입니다-->
+          <div class="txt_1"><span id="sel_job_txt">1. 내 어린 시절의 꿈 선택 </span></div>
+          <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" id="sel_job_btn" /></a></div><!--버튼 두개입니다-->
                     </div>
                     <div class="upload_pic">
                     	<div class="title_pic clearfix">
@@ -1067,6 +1067,7 @@
 </html>
 <script type="text/javascript">
     var agent = navigator.userAgent.toLowerCase();
+	var trident = navigator.userAgent.match(/Trident\/(\d.\d)/i);
     var sel_dream       = null;
     var runner_serial   = null;
     var mb_job          = null;
@@ -1295,8 +1296,8 @@ function f_dream_next()
         //mb_job    = $("#mb_job").val();
     var job_lang_kor = job_ko_add(sel_dream);
     if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
-        cropboxDataIE = $(ori_image).cropper('getData');
-        crop_image_url = $(ori_image).attr('src');
+        cropboxDataIE = $($ori_image).cropper('getData');
+        crop_image_url = $($ori_image).attr('src');
            $.ajax({
             method: 'POST',
             url: '../main_exec.php',
