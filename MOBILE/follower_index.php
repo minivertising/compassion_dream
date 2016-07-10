@@ -865,7 +865,7 @@
             <img src="<?=$ch_data['ch_full_img_url']?>" />
           </div>
           <div class="txt_child story_result">	
-            <div class="inner">
+            <div class="inner" style="margin-top:30px;">
               <?=$ch_data['ch_desc']?>
             </div>
           </div>
@@ -1014,7 +1014,7 @@
                 <div class="block_input_dream">
                 	<div class="selec_job clearfix">
                     	<!-- <div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div> -->
-                        <div class="txt_1">1. 선택한 꿈 : <span id="sel_job_txt">디자이너</span> </div>
+                        <div class="txt_1"><span id="sel_job_txt">1. 내 어린시절 꿈 선택 </span> </div>
                         <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="90" /></a></div><!--버튼 두개입니다-->
                     </div>
                     <div class="upload_pic">
@@ -1393,7 +1393,7 @@ function f_dream_next()
             },
             success: function(res){
 				alert(res);
-                // console.log(res);
+                console.log(res);
                 //mb_image    = res;
                 var rs_ch = res.split("||");
                 mb_rs = rs_ch[1];

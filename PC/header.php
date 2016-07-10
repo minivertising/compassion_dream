@@ -45,7 +45,7 @@
 ?>
 <meta property="og:description" content="내 어린 시절 꿈과 사진으로 꿈이 필요한 어린이에게 후원자를 찾아주는 컴패션의 릴레이 캠페인입니다" />
 <link rel="shortcut icon" type="image/x-icon" href="./images/compassion.ico" />
-<title>PC MAIN</title>
+<title>컴패션 - 내꿈꿔</title>
 <!-- <link href="../lib/Cropper/css/bootstrap.min.css" rel="stylesheet"> -->
 <link href="../lib/bxslider/p_jquery.bxslider.css" rel="stylesheet" />
 <link href="../lib/Cropper/css/cropper.css" rel="stylesheet">

@@ -516,7 +516,6 @@ function dream_next(){
 		}
 
 		if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
-			alert("ie8이하");
 			cropboxDataIE = $(ori_image).cropper('getData');
 			crop_image_url = $(ori_image).attr('src');
 			   $.ajax({

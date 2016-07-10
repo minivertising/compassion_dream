@@ -55,7 +55,7 @@ function checked_dream(param, param2, param3)
 	sel_dream	= param;
 	$.colorbox.close();
 	$("#sel_job_btn").attr("src","images/btn_re_sec.png");
-	$("#sel_job_txt").html(param3);
+	$("#sel_job_txt").html("1. 선택한 꿈 : "+param3);
 	flag_sel_dream	= 0;
 
 }
