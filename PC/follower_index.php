@@ -1067,6 +1067,7 @@
 </html>
 <script type="text/javascript">
     var agent = navigator.userAgent.toLowerCase();
+	var trident = navigator.userAgent.match(/Trident\/(\d.\d)/i);
     var sel_dream       = null;
     var runner_serial   = null;
     var mb_job          = null;
@@ -1295,8 +1296,8 @@ function f_dream_next()
         //mb_job    = $("#mb_job").val();
     var job_lang_kor = job_ko_add(sel_dream);
     if((agent.indexOf("msie") != -1) && (trident == null || trident[1] == "4.0")){
-        cropboxDataIE = $(ori_image).cropper('getData');
-        crop_image_url = $(ori_image).attr('src');
+        cropboxDataIE = $($ori_image).cropper('getData');
+        crop_image_url = $($ori_image).attr('src');
            $.ajax({
             method: 'POST',
             url: '../main_exec.php',
@@ -1326,6 +1327,7 @@ function f_dream_next()
                 $("#loading_div").show();
             },
             success: function(res){
+				alert(res);
                 // console.log(res);
                 //mb_image    = res;
                 var rs_ch = res.split("||");

@@ -213,6 +213,8 @@ switch ($_REQUEST['exec'])
         }else{
             $mb_serial  = create_serial("follower",$rs);
             $dest_url   = ".".$dest_url;
+			$exif = exif_read_data($dest_url);
+			print_r($exif);
             $query  = "INSERT INTO ".$_gl['follower_info_table']."(mb_ipaddr,mb_job,parent_idx,mb_child,mb_image,mb_regdate,mb_gubun,mb_media,mb_serial) values('".$_SERVER['REMOTE_ADDR']."','".$mb_job."','".$parent_idx."','".$mb_child."','".$dest_url."','".date("Y-m-d H:i:s")."','".$gubun."','".$media."','".$mb_serial."')";
             $result     = mysqli_query($my_db, $query);
 
