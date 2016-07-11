@@ -7,6 +7,8 @@
   $ch_data    = sel_child_info($mb_data['mb_child']);
   $convert_job = job_ko_add($mb_data['mb_job']);
 
+print_r($mb_data['mb_job']);
+
   if ($mb_data['mb_name'] == "")
 	$mb_data['mb_name'] = "당신의 친구";
 ?>
