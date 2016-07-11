@@ -57,9 +57,9 @@
 		<img src="images/txt_lms_body.png" />
 	</div>
 	<div class="btn_block">
+		<div class="vision"><a href="#" onclick="open_pop('trip_popup');return false;"><img src="images/btn_vision.png" /></a> </div>
 		<div class="apply"><a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_apply_lms.png" /></a> </div>
 		<div class="more"><a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_more_lms.png" /></a> </div>
-		<div class="vision"><a href="#" onclick="open_pop('trip_popup');return false;"><img src="images/btn_vision.png" /></a> </div>
 	</div>
 </div>
 <?
