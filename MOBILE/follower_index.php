@@ -1234,7 +1234,7 @@ $(window).load(function() {
 		if ($("#talk_c_message21").css("display") == "block" && $(".inner_story").scrollTop() == scroll_end){
 			$("#talk_c_final").show();
 			$("#talk_c_final_send").show();
-			$("#talk_c_final_mask").height($(document).height());
+			$("#talk_c_final_mask").height($(window).height());
 			$("#talk_c_final_mask").show();
 		}
 	});
