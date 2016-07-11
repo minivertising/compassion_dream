@@ -84,7 +84,6 @@
               <div class="talk clearfix">
                 <div class="deco"><img src="images/talk_white.png" width="15" /></div>
                 <div class="txt">저희에요</div>
-                <div class="cnt">1</div>
               </div>
             </div>
           </div>
@@ -111,7 +110,6 @@
               내 어린 시절이야<br>
               우린 참 많이 닮은 것 같아
               </div>
-              <div class="cnt v2">1</div>
             </div>
           </div>
         </div>
@@ -128,7 +126,6 @@
               <div class="talk clearfix">
                 <div class="deco"><img src="images/talk_white.png" width="15" /></div>
                 <div class="txt">네?</div>
-                <div class="cnt">1</div>
               </div>
             </div>
           </div>
@@ -144,7 +141,6 @@
               <div class="txt">
               ^^
               </div>
-              <div class="cnt">1</div>
             </div>
           </div>
         </div>
@@ -159,7 +155,6 @@
               우리는 꿈 많은 어린 시절이 닮았어<br>
               나는 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이" : "가" ?> 꿈이었는데 넌? <!-- 공유한 사람의 직업 출력 -->
               </div>
-              <div class="cnt v2">1</div>
             </div>
           </div>
         </div>
@@ -176,7 +171,6 @@
               <div class="talk clearfix">
                 <div class="deco"><img src="images/talk_white.png" width="15" /></div>
                 <div class="txt">...</div>
-                <div class="cnt">1</div>
               </div>
             </div>
           </div>
@@ -198,7 +192,6 @@
               <div class="talk clearfix">
                 <div class="deco"><img src="images/talk_white.png" width="15" /></div>
                 <div class="txt">아니 둘은 달라</div>
-                <div class="cnt">1</div>
               </div>
             </div>
           </div>
@@ -236,7 +229,6 @@
                 나로 인해 계속<br>
                 꿈을 꿀 수 없을테니까
                 </div>
-                <div class="cnt v5">1</div>
               </div>
             </div>
           </div>
@@ -254,7 +246,6 @@
               <div class="talk clearfix">
                 <div class="deco"><img src="images/talk_white.png" width="15" /></div>
                 <div class="txt">ㅠㅠ</div>
-                <div class="cnt">1</div>
               </div>
             </div>
           </div>
@@ -275,7 +266,6 @@
               가난이 오늘도 너에게 거짓말을 하는구나!<br>
               가난해도 꿈꿀 수 있어
               </div>
-              <div class="cnt v2">1</div>
             </div>
           </div>
         </div>
@@ -289,7 +279,6 @@
               <div class="txt center">
                 <img src="images/angry.png" width="40" />
               </div>
-              <div class="cnt v3">1</div>
             </div>
           </div>
         </div>
@@ -309,7 +298,6 @@
                   정말 그럴까요? ㅠㅠ... <br>
                   전 일하러 갈게요...
                   </div>
-                  <div class="cnt">1</div>
                 </div>
               </div>
             </div>
@@ -329,7 +317,6 @@
                   <div class="txt">
                   우리 둘만 남았네요…
                   </div>
-                  <div class="cnt">1</div>
                 </div>
               </div>
             </div>
@@ -343,7 +330,6 @@
                   <div class="txt">
                   당신도 어린 시절 꾸었던 꿈이 있나요?
                   </div>
-                  <div class="cnt">1</div>
                 </div>
               </div>
             </div>
@@ -360,7 +346,6 @@
                   손을 잡아주세요 <br>
                   그리고 희망을 말해주세요.
                   </div>
-                  <div class="cnt v3">1</div>
                 </div>
               </div>
             </div>
@@ -374,7 +359,6 @@
                   <div class="txt">
                   “얘들아 너는 꿈을 꿀 자격이 있어.” 
                   </div>
-                  <div class="cnt">1</div>
                 </div>
               </div>
             </div>
@@ -388,7 +372,6 @@
                   <div class="txt">
                   “자, 여기 내꿈꿔.”
                   </div>
-                  <div class="cnt">1</div>
                 </div>
               </div>
             </div>
@@ -475,7 +458,6 @@
               <div class="talk clearfix">
                 <div class="deco"><img src="images/talk_white.png" width="15" /></div>
                 <div class="txt">저에요</div>
-                <div class="cnt">1</div>
               </div>
             </div>
           </div>
@@ -502,7 +484,6 @@
               내 어린 시절이야<br>
               우린 참 많이 닮은 것 같아
               </div>
-              <div class="cnt v2">1</div>
             </div>
           </div>
         </div>
@@ -519,7 +500,6 @@
               <div class="talk clearfix">
                 <div class="deco"><img src="images/talk_white.png" width="15" /></div>
                 <div class="txt">네?</div>
-                <div class="cnt">1</div>
               </div>
             </div>
           </div>
@@ -535,7 +515,6 @@
               <div class="txt">
               ^^
               </div>
-              <div class="cnt">1</div>
             </div>
           </div>
         </div>
@@ -550,7 +529,6 @@
               우리는 꿈 많은 어린 시절이 닮았어<br>
               나는 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이" : "가" ?> 꿈이었는데 넌?
               </div>
-              <div class="cnt v2">1</div>
             </div>
           </div>
         </div>
@@ -567,7 +545,6 @@
               <div class="talk clearfix">
                 <div class="deco"><img src="images/talk_white.png" width="15" /></div>
                 <div class="txt">...</div>
-                <div class="cnt">1</div>
               </div>
             </div>
           </div>
@@ -589,7 +566,6 @@
               <div class="talk clearfix">
                 <div class="deco"><img src="images/talk_white.png" width="15" /></div>
                 <div class="txt">아니 둘은 달라</div>
-                <div class="cnt">1</div>
               </div>
             </div>
           </div>
@@ -627,7 +603,6 @@
                 나로 인해 계속<br>
                 꿈을 꿀 수 없을테니까
                 </div>
-                <div class="cnt v5">1</div>
               </div>
             </div>
           </div>
@@ -645,7 +620,6 @@
               <div class="talk clearfix">
                 <div class="deco"><img src="images/talk_white.png" width="15" /></div>
                 <div class="txt">ㅠㅠ</div>
-                <div class="cnt">1</div>
               </div>
             </div>
           </div>
@@ -666,7 +640,6 @@
               가난이 오늘도 너에게 거짓말을 하는구나!<br>
               가난해도 꿈꿀 수 있어
               </div>
-              <div class="cnt v2">1</div>
             </div>
           </div>
         </div>
@@ -680,7 +653,6 @@
               <div class="txt center">
                 <img src="images/angry.png" width="40" />
               </div>
-              <div class="cnt v3">1</div>
             </div>
           </div>
         </div>
@@ -700,7 +672,6 @@
                   정말 그럴까요? ㅠㅠ... <br>
                   전 일하러 갈게요...
                   </div>
-                  <div class="cnt">1</div>
                 </div>
               </div>
             </div>
@@ -720,7 +691,6 @@
                   <div class="txt">
                   우리 둘만 남았네요…
                   </div>
-                  <div class="cnt">1</div>
                 </div>
               </div>
             </div>
@@ -734,7 +704,6 @@
                   <div class="txt">
                   당신도 어린 시절 꾸었던 꿈이 있나요?
                   </div>
-                  <div class="cnt">1</div>
                 </div>
               </div>
             </div>
@@ -751,7 +720,6 @@
                   손을 잡아주세요 <br>
                   그리고 희망을 말해주세요.
                   </div>
-                  <div class="cnt v3">1</div>
                 </div>
               </div>
             </div>
@@ -766,7 +734,6 @@
                   “[<?=$ch_data['ch_nick']?>]<br>
                   너는 꿈을 꿀 자격이 있어.” 
                   </div>
-                  <div class="cnt">1</div>
                 </div>
               </div>
             </div>
@@ -780,7 +747,6 @@
                   <div class="txt">
                   “자, 여기 내꿈꿔.”
                   </div>
-                  <div class="cnt">1</div>
                 </div>
               </div>
             </div>
