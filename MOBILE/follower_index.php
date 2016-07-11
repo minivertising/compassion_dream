@@ -153,7 +153,7 @@
               <div class="deco"><img src="images/talk_yellow.png" width="15" /></div>
               <div class="txt">
               우리는 꿈 많은 어린 시절이 닮았어<br>
-              나는 선생님이 꿈이었는데 넌?
+              나는 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이" : "가" ?> 꿈이었는데 넌? <!-- 공유한 사람의 직업 출력 -->
               </div>
               <div class="cnt v2">1</div>
             </div>
@@ -617,9 +617,9 @@
               <div class="talk clearfix">
                 <div class="deco"><img src="images/talk_white.png" width="15" /></div>
                 <div class="txt">
-                <?=$mb_data['mb_name']?>는 자유롭게 <br>
+                <?=$mb_data['mb_name']?><?= has_batchim($mb_data['mb_name']) > 0 ? "은" : "는" ?> 자유롭게 <br>
                 꿈꾸는 행복을 누렸지만,<br>
-                <?=$ch_data['ch_nick']?>는<br>
+                <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "은" : "는" ?><br>
                 나로 인해 계속<br>
                 꿈을 꿀 수 없을테니까
                 </div>
@@ -704,7 +704,7 @@
           <!--end 왼쪽대화-->
 
           <div id="talk_alarm4" class="chat_title" style="display:none;">
-          [<?=$ch_data['ch_nick']?>]이 퇴장하였습니다.
+          [<?=$ch_data['ch_nick']?>]<?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 퇴장하였습니다.
           </div>
 
           <!--오른쪽 대화 마지막 대화1-->
@@ -789,7 +789,7 @@
                   <div class="deco"><img src="images/talk_yellow.png" width="15" /></div>
                   <div class="here"><img src="images/icon_here.png" width="100" /></div>
                   <div class="txt end">
-                    <?=$ch_data['ch_nick']?>을 다시 초대하기<br>
+                    <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 다시 초대하기<br>
 <?
   if ($ch_data['ch_choice'] == "Y")
   {
@@ -822,7 +822,7 @@
                 <div class="deco"><img src="images/talk_yellow.png" width="15" /></div>
                 <div class="here"><img src="images/icon_here.png" width="100" /></div>
                 <div class="txt end">
-                  <?=$ch_data['ch_nick']?>를 다시 초대하기<br>
+                  <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 다시 초대하기<br>
 <?
   if ($ch_data['ch_choice'] == "Y")
   {
@@ -906,7 +906,7 @@
         <div class="title">
           감사합니다!<br>
           당신과 같이 꿈을 응원해주시는 분들 덕분에
-          <span><?=$ch_data['ch_nick']?></span>이
+          <span><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?>
           후원자를 만나 꿈을 꿀 수 있게 됐어요
           <!-- "<span><?=$ch_data['ch_nick']?></span>아<br>
           내꿈꿔!"  -->

@@ -145,7 +145,7 @@
                   <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                   <div class="txt">
                   우리는 꿈 많은 어린 시절이 닮았어<br>
-                  나는 선생님이 꿈이었는데 너희는?
+                  나는 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이" : "가" ?> 꿈이었는데 너희는?
                   </div>
                   <div class="cnt v2">1</div>
                 </div>
@@ -203,7 +203,7 @@
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_white.png" width="24" /></div>
                     <div class="txt">
-                    <?=$mb_data['mb_name']?>는 자유롭게 꿈꾸는 행복을 누렸지만,<br>
+                    <?=$mb_data['mb_name']?><?= has_batchim($mb_data['mb_name']) > 0 ? "은" : "는" ?> 자유롭게 꿈꾸는 행복을 누렸지만,<br>
                     너희들은 나로 인해 계속 꿈을 꿀 수 없을테니까.
                     </div>
                     <div class="cnt">1</div>
@@ -383,7 +383,7 @@
               <div class="chat clearfix">
                 <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                 <div class="txt">
-                  <?=$ch_data['ch_nick']?>을 다시 초대하기<br>
+                  <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 다시 초대하기<br>
                   <a href="#" onclick="next_page('7');return false;">mydream.compassion.or.kr</a>
                   <a href="#" onclick="next_page('7');return false;"><img src="images/chat_8_img.png" /></a>
                 </div>
@@ -407,7 +407,7 @@
       <div class="block_content story_1">
         <div class="inner_story">
 
-          <div id="talk_alarm1" class="top first" style="display:none;">[<?=$mb_data['mb_name']?>]님이 당신과 [<?=$ch_data['ch_nick']?>]를 초대했습니다.</div>
+          <div id="talk_alarm1" class="top first" style="display:none;">[<?=$mb_data['mb_name']?>]님이 당신과 [<?=$ch_data['ch_nick']?>]<?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 초대했습니다.</div>
 
           <!--왼쪽 글 레이아웃 한줄 아이콘+사진-->
           <div id="talk_message1" class="one_talk left" style="display:none;">
@@ -494,7 +494,7 @@
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
                     우리는 꿈 많은 어린 시절이 닮았어<br>
-                    나는 선생님이 꿈이었는데 넌?
+                    나는 <?=$conver_job?><?= has_batchim($conver_job) > 0 ? "이" : "가" ?> 꿈이었는데 넌?
                     </div>
                     <!-- <div class="cnt v2">1</div> -->
                   </div>
@@ -552,8 +552,8 @@
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_white.png" width="24" /></div>
                     <div class="txt">
-                    <?=$mb_data['mb_name']?>는 자유롭게 꿈꾸는 행복을 누렸지만,<br>
-                    <?=$ch_data['ch_nick']?>는<br>
+                    <?=$mb_data['mb_name']?><?= has_batchim($mb_data['mb_name']) > 0 ? "은" : "는" ?> 자유롭게 꿈꾸는 행복을 누렸지만,<br>
+                    <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "은" : "는" ?><br>
                     나로 인해 계속 꿈을 꿀 수 없을테니까.
                     </div>
                     <!-- <div class="cnt">1</div> -->
@@ -684,7 +684,7 @@
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
-                    “[<?=$ch_data['ch_nick']?>] 너는 꿈을 꿀 자격이 있어.”
+                    “[<?=$ch_data['ch_nick']?>]<?= has_batchim($ch_data['ch_nick']) > 0 ? "아" : "야" ?> 너는 꿈을 꿀 자격이 있어.”
                     </div>
                     <!-- <div class="cnt">1</div> -->
                   </div>
@@ -714,7 +714,7 @@
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt end">
-                      <?=$ch_data['ch_nick']?>을 다시 초대하기<br>
+                      <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 다시 초대하기<br>
 <?
 	if ($ch_data['ch_choice'] == "Y")
 	{
@@ -745,7 +745,7 @@
               <div class="chat clearfix">
                 <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                 <div class="txt">
-                  <?=$ch_data['ch_nick']?>을 다시 초대하기<br>
+                  <?=$ch_data['ch_nick']?><?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 다시 초대하기<br>
 <?
 	if ($ch_data['ch_choice'] == "Y")
 	{
@@ -898,7 +898,7 @@
 ?>
         여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
         SNS에 사진과 함께 당신이 응원할<br>
-        <span>‘꿈을 잃은 어린이</span>가 소개됩니다
+        <span>‘꿈을 잃은 어린이</span>’가 소개됩니다
 <?
   }else{
 ?>

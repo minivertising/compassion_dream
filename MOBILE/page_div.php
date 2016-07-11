@@ -96,7 +96,7 @@
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="images/ex_child_01.png" id="matching_child_pic" /></div>
           <div class="child_text">
-            <h2>"저도 <span id="m_rs_job">선생님</span><span id="jobPP" style="color:#fff">를</span> 꿈꿀 수 있을까요?"</h2> <!-- 조사부분 컬러 검정으로 수정 -->
+            <h2>"저도 <span id="m_rs_job">선생님</span><span id="jobPP" style="color:000000;">를</span> 꿈꿀 수 있을까요?"</h2> <!-- 조사부분 컬러 검정으로 수정 -->
             <div class="bg_line">
               <p id="m_rs_desc">
               </p>
@@ -106,7 +106,7 @@
       </div>
       <div class="block_txt">
         SNS에 공유하셔서<br>
-        <span id="m_rs_ch_name3">기타</span>의 후원자를 찾아주세요
+        <span id="m_rs_ch_name2">기타</span>의 후원자를 찾아주세요
       </div>
       <div class="block_btn sns">
         <!-- <a href="#" onclick="sns_share('fb','act');return false;"><img src="images/sns_f.png" /></a>
@@ -136,7 +136,7 @@
     <div class="block_content">
       <div class="title">
         <span id="act_name">000</span>님!<br>
-        <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span><span id="namePP" style="color:#fff">를</span> 위해<br> <!-- ~을 ~를 -->
+        <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span><span id="reNamePP" style="color:#000000">를</span> 위해<br> <!-- ~을 ~를 -->
         다시 한번 참여해주셔서 감사합니다 
       </div>
       <div class="block_child re">
@@ -146,7 +146,7 @@
       </div>
       <div class="block_txt">
         아래 SNS에 당신의 어린 시절 사진과 꿈을 공유하셔서<br>
-        <span id="re_ch_name2">'아비가일 마아 야아 암퐁'</span><span id="name2PP" style="color:#000000">가</span><br> <!-- ~이 ~가 -->
+        <span id="re_ch_name2">'아비가일 마아 야아 암퐁'</span><span id="reName2PP" style="color:#000000">가</span><br> <!-- ~이 ~가 -->
         후원자를 만날 수 있도록 해주세요!
       </div>
       <div class="block_btn sns">
