@@ -3,7 +3,7 @@
   <div class="inner">
     <div class="block_content">
 
-      <div class="title" style="line-height:3px">
+      <div class="title2">
         <span class="small">여러분의 어린 시절 꿈과 사진을 올려주세요<br>
         SNS에 사진과 함께 당신이 응원할<br>
         <span class="small" style="color:#E9DE51">'꿈을 잃은 어린이'</span>가 소개됩니다</span>
