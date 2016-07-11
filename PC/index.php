@@ -268,7 +268,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
       </div>
-      <div class="btn_block">
+      <div class="btn_block ok">
         <a href="#" onclick="go_main('re_matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
