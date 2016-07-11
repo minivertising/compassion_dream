@@ -6,8 +6,8 @@
 		$lms_flag = "N";
 	$total_runner_cnt   = total_runner_info();
 	$total_pic_cnt      = total_pic_info();
-	//$total_matching_cnt = total_matching_info();
-	$total_matching_cnt   = 1000;
+	$total_matching_cnt = total_matching_info();
+	//$total_matching_cnt   = 1000;
 	$total_remain_cnt     = 3000 - $total_matching_cnt;
 ?>
 <body>
