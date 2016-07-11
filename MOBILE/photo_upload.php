@@ -77,7 +77,7 @@
 
 
             //$sResultFileName = $sTempFileName;
-            imagejpeg($newimg, $sTempFileName, 85);
+            @imagejpeg($newimg, $sTempFileName, 85);
         }
              $sResultFileName = $sTempFileName;
 
