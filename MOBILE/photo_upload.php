@@ -4,9 +4,11 @@
 	$targ_src = $_FILES['file']['name'];
 	$file_type = $_FILES['file']['type'];
 	// 올린 파일이 이미지인지 검증이 필요할듯합니다.
-echo $file_type;
     switch ($file_type) {
         case 'jpg':
+            $ext = ".jpg";
+            break;
+        case 'jpeg':
             $ext = ".jpg";
             break;
         case 'png':
@@ -15,7 +17,8 @@ echo $file_type;
     }
 
     // $sTempFileName = './tmp_images/' . md5(time().rand()) . '.jpg';
-    $sTempFileName = './tmp_images/' . md5(time().rand()) . $ext;
+    //$sTempFileName = './tmp_images/' . md5(time().rand()) . $ext;
+    $sTempFileName = './tmp_images/' . md5(time().rand());
     if(move_uploaded_file($file, $sTempFileName))
     {
 
@@ -70,8 +73,8 @@ echo $file_type;
                 break;
             }
 
-            // $sResultFileName = $sTempFileName . ".jpg";
-            $sResultFileName = $sTempFileName;
+            $sResultFileName = $sTempFileName . ".jpg";
+            //$sResultFileName = $sTempFileName;
 
             imagejpeg($newimg, $sResultFileName, 85);
         }
