@@ -836,6 +836,7 @@
           </div>
           <div class="txt_child story_result">  
             <div class="inner" style="margin-top:30px;height:110px">
+              <p style="text-align:center;"><?=$ch_data['ch_nick']."/".$ch_data['ch_id']."/".$ch_data['ch_nation_name']."/".$ch_data['ch_gender']?></p>
               <p><?=$ch_data['ch_desc']?></p>
             </div>
           </div>
@@ -1077,9 +1078,9 @@
       <div class="img_com">
         <div class="img_child">
           <div class="inner_img_child clearfix">
-                        <div class="one"><img src="images/ex_child_05.jpg" /></div>
-                            <div class="one"><img src="images/ex_child_06.jpg" /></div>
-                            <div class="one"><img src="images/ex_child_07.jpg" /></div>
+            <div class="one"><img src="images/ex_child_05.jpg" /></div>
+            <div class="one"><img src="images/ex_child_06.jpg" /></div>
+            <div class="one"><img src="images/ex_child_07.jpg" /></div>
           </div>
         </div>
         <img src="images/bg_share_com.png" class="bg" />
