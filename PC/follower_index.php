@@ -7,8 +7,6 @@
   $ch_data    = sel_child_info($mb_data['mb_child']);
   $convert_job = job_ko_add($mb_data['mb_job']);
 
-print_r($convert_job);
-
   if ($mb_data['mb_name'] == "")
 	$mb_data['mb_name'] = "당신의 친구";
 ?>
@@ -499,7 +497,7 @@ print_r($convert_job);
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
                     우리는 꿈 많은 어린 시절이 닮았어<br>
-                    나는 <?=$conver_job?><?= has_batchim($conver_job) > 0 ? "이" : "가" ?> 꿈이었는데 넌?
+                    나는 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이" : "가" ?> 꿈이었는데 넌?
                     </div>
                     <!-- <div class="cnt v2">1</div> -->
                   </div>
