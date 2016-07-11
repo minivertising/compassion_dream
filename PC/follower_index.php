@@ -812,7 +812,7 @@
       </div>
     </div>
     <div class="example">
-      <img src="images/story_1.png" width="100" />
+      <img src="<?=$mb_data['mb_image']?>" width="100" />
     </div>
   </div>
 </div>
@@ -880,7 +880,7 @@
           </div>
         </div>
         <div class="example02">
-          <img src="images/story_1.png" width="100" />
+          <img src="<?=$mb_data['mb_image']?>" width="100" />
         </div>
       </div>
     </div>
