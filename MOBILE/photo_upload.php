@@ -4,7 +4,7 @@
 	$targ_src = $_FILES['file']['name'];
 	$file_type = $_FILES['file']['type'];
 	// 올린 파일이 이미지인지 검증이 필요할듯합니다.
-
+echo $file_type;
     switch ($file_type) {
         case 'jpg':
             $ext = ".jpg";
