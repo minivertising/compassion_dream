@@ -1023,7 +1023,7 @@
 <div id="matching_share_page" class="wrap_page share_match_child" style="display:none;">
   <div class="inner">
     <div class="block_content">
-      <div class="title">
+      <div class="title" style="font-size:18px">
         아래 SNS에 어린 시절 사진을 공유하여<br>
         <span style="color:#E9DE51"><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 후원자를<br>
         만날 수 있도록 해주세요!
