@@ -873,7 +873,7 @@
   <div id="page_div6" class="wrap_page share_match_child" style="display:none;">
     <div class="inner">
       <div class="block_content">
-        <div class="title">
+        <div class="title end">
           감사합니다!<br>
           당신과 같이 꿈을 응원해주시는 분들 덕분에
           <span><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?>

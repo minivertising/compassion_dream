@@ -36,18 +36,15 @@
                 // check for image type
                 switch($aSize[mime]) {
                     case "image/jpeg":
-						print_r("jpeg");
                         // create a new image from file 
                         $img = imagecreatefromjpeg($sTempFileName);
                         break;
                     case "image/png":
-						print_r("png");
                         // create a new image from file 
                         $img = imagecreatefrompng($sTempFileName);
                         imagejpeg($img, $sTempFileName, 90);
                         break;
                     default:
-						print_r("unlink");
                         @unlink($sTempFileName);
                         return;
                 }
@@ -80,7 +77,7 @@
 
 
             //$sResultFileName = $sTempFileName;
-            imagejpeg($newimg, $sTempFileName, 85);
+            imagejpeg($newimg, "./test.jpg", 85);
         }
             // $sResultFileName = $sTempFileName;
 

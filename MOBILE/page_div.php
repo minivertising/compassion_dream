@@ -88,7 +88,7 @@
 <div id="matching_share_page" class="wrap_page share_match_child" style="display:none;">
   <div class="inner">
     <div class="block_content">
-      <div class="title">
+      <div class="title end">
         당신의 도움이 필요한 어린이는<br>
         '<span id="m_rs_ch_name">아비가일 마아 야아 암퐁</span>'입니다
       </div>
@@ -134,7 +134,7 @@
 <div id="re_matching_share_page" class="wrap_page share_match_child" style="display:none;">
   <div class="inner">
     <div class="block_content">
-      <div class="title">
+      <div class="title end">
         <span id="act_name">000</span>님!<br>
         <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span><span id="reNamePP" style="color:#fff">를</span> 위해<br> <!-- ~을 ~를 -->
         다시 한번 참여해주셔서 감사합니다 
