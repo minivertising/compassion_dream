@@ -1419,17 +1419,24 @@ function f_dream_next()
   if ($ch_data['ch_choice'] == "Y")
   {
 ?>
-            $("#no_matching_page").fadeIn("fast");
+			$("#upload_page").fadeOut('fast',function(){
+				$("#no_matching_page").fadeIn("fast");
+			});
 <?
   }else{
 ?>
             $("body").removeClass("bg_loading");
-            $("#matching_share_page").fadeIn("fast");
+			$("#upload_page").fadeOut('fast',function(){
+				$("#matching_share_page").fadeIn("fast");
+			});
 <?
   }
 ?>
                 }else if (rs_ch[0] == "N"){
-            $("#no_matching_page").fadeIn("fast");
+					$("#upload_page").fadeOut('fast',function(){
+						$("#no_matching_page").fadeIn("fast");
+					});
+
                 }else {
                     alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
                     location.reload();
