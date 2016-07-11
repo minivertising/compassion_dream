@@ -1233,12 +1233,12 @@ body.storytelling{
 	width:80%;
 	line-height:32px;
 	height:90px;
-	background:url(../images/txt_line.png) 0 0 repeat-y;
 	margin:0 auto;
 	overflow:scroll;
 }
 .wrap_page.share_match_child .block_content .block_child .inner_block_child .child_text div p{
 	padding:0;
+	background:url(../images/txt_line.png) 0 0 repeat-y;
 }
 
 
