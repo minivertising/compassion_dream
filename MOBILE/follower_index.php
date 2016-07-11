@@ -994,7 +994,7 @@
                             <div class="txt_2">
                               <form id="img_save" method="post" action="./photo_upload.php" enctype="multipart/form-data">
                                 <label for="f_inputImage" title="Upload image file">
-                                  <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
+                                  <input type="file" class="sr-only" id="f_inputImage" name="file"  accept="image/*;capture=camera">
                                   <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
                                 </label>
                               </form>
@@ -1338,6 +1338,7 @@ function rotate_action(degree){
                 $($ori_image).attr('src', './images/bx_loader.gif');
             },
             success: function (data) {
+              console.log(data);
                 $($ori_image).attr('src', data);
                 image_crop();
             }

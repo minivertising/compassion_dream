@@ -4,28 +4,26 @@
 	$targ_src = $_FILES['file']['name'];
 	$file_type = $_FILES['file']['type'];
 	// 올린 파일이 이미지인지 검증이 필요할듯합니다.
-
-	switch ($file_type) {
-        case 'jpg':
+    switch ($file_type) {
+        case 'image/jpg':
             $ext = ".jpg";
             break;
-        case 'jpeg':
+        case 'image/jpeg':
             $ext = ".jpg";
             break;
-        case 'png':
+        case 'image/png':
             $ext = ".png";
             break;
         default:
             return;
     }
 
-
-
+    // $sTempFileName = './tmp_images/' . md5(time().rand());
     $sTempFileName = './tmp_images/' . md5(time().rand());
     if(move_uploaded_file($file, $sTempFileName))
     {
 
-        @chmod($sTempFileName, 0644);
+        @chmod($sTempFileName, 0777);
 
         if (file_exists($sTempFileName) && filesize($sTempFileName) > 0) {
             $aSize = getimagesize($sTempFileName); // try to obtain image info
@@ -33,14 +31,13 @@
                 @unlink($sTempFileName);
                 return;
             }
-
                 // check for image type
                 switch($aSize[mime]) {
-                    case "image/jpeg":
+                    case 'image/jpeg':
                         // create a new image from file 
                         $img = imagecreatefromjpeg($sTempFileName);
                         break;
-                    case "image/png":
+                    case 'image/png':
                         // create a new image from file 
                         $img = imagecreatefrompng($sTempFileName);
                         imagejpeg($img, $sTempFileName, 90);
@@ -57,7 +54,6 @@
                 $orientation = $exif['IFD0']['Orientation'];
             else
                 $orientation = 0;
-            //echo "====>".$orientation;exit;
             switch($orientation)
             {
                 case 3: // 180 rotate left
@@ -78,16 +74,16 @@
             }
 
 
-            $sResultFileName = $sTempFileName.".jpg";
-            imagejpeg($newimg, $sResultFileName, 85);
+            // $sResultFileName = $sTempFileName.".jpg";
+            // $sResultFileName = "test.jpg";
+
+            imagejpeg($newimg, $sTempFileName, 85);
         }
+            $sResultFileName = $sTempFileName.'.jpg';
 
-    }else{
-        echo $error_message = 'Error: Upload Unsuccessful<br />Please Try Again';
     }
-   
-
     echo $sResultFileName;
+
 
 
 
