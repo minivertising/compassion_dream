@@ -6,6 +6,7 @@
     echo "<script>location.href='../PC/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
   $ch_data  = sel_child_info($mb_data['mb_child']);
   $convert_job = job_ko_add($mb_data['mb_job']);
+  print_r($convert_job);
 ?>
 <body class="bg_sub_page storytelling">
 <script>

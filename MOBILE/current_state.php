@@ -295,6 +295,7 @@ function dream_next()
 
 function go_other_sns()
 {
+	mb_rs		= "<?=$rs?>";
 	$("#re_matching_child_pic").attr("src","<?=$ch_data['ch_full_img_url']?>");
 	$("#thx_ch_img").attr("src","<?=$ch_data['ch_full_img_url']?>");
 	//var job_add		= job_ko_add(sel_dream);
