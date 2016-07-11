@@ -20,11 +20,11 @@
     }
 
     // $sTempFileName = './tmp_images/' . md5(time().rand());
-    $sTempFileName = './tmp_images/' . md5(time().rand());
+    $sTempFileName = './tmp_images/' . md5(time().rand()).$ext;
     if(move_uploaded_file($file, $sTempFileName))
     {
 
-        @chmod($sTempFileName, 0644);
+        @chmod($sTempFileName, 0777);
 
         if (file_exists($sTempFileName) && filesize($sTempFileName) > 0) {
             $aSize = getimagesize($sTempFileName); // try to obtain image info
@@ -76,9 +76,8 @@
             }
 
 
-            $sResultFileName = $sTempFileName;
-print_r($sResultFileName);
-            imagejpeg($newimg, $sResultFileName, 85);
+            //$sResultFileName = $sTempFileName;
+            imagejpeg($newimg, $sTempFileName, 85);
         }
             // $sResultFileName = $sTempFileName;
 
