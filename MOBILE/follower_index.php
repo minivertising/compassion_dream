@@ -1399,12 +1399,12 @@ function f_dream_next()
 ?>
                 mb_job      : sel_dream
             },
-            beforeSend: function(response){
+            /*beforeSend: function(response){
         $("#upload_page").fadeOut('fast', function(){
           $("body").addClass("bg_sub_page bg_loading");
           $("#loading_div").fadeIn('fast');
         });
-            },
+            },*/
             success: function(res){
                 // console.log(res);
                 //mb_image    = res;
@@ -1415,8 +1415,6 @@ function f_dream_next()
                 if (rs_ch[0] == "Y")
                 {
                     $("#matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
-          setTimeout(function(){
-                  $("#loading_div").fadeOut('fast',function(){
 <?
   if ($ch_data['ch_choice'] == "Y")
   {
@@ -1430,14 +1428,8 @@ function f_dream_next()
 <?
   }
 ?>
-          });
-          },1500);
                 }else if (rs_ch[0] == "N"){
-          setTimeout(function(){
-                  $("#loading_div").fadeOut('fast',function(){
             $("#no_matching_page").fadeIn("fast");
-          });
-          },1500);
                 }else {
                     alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
                     location.reload();
