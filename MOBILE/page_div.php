@@ -76,7 +76,7 @@
       <div class="sub_title add">
       추첨에 선정 되신 분께는 개별 연락 드립니다
       </div>
-      <div class="block_btn">
+      <div class="block_btn ok">
         <a href="#" onclick="input_submit();return false;"><img src="images/btn_next.png" /></a>
       </div>
     </div>
@@ -229,7 +229,7 @@
 <div id="thanks_page" class="wrap_page share_match_child" style="display:none">
   <div class="inner">
     <div class="block_content">
-      <div class="title">
+      <div class="title end">
         참여해주셔서 감사합니다<br>
         <span id="thx_ch_name">'아비가일 마아 야아 암퐁'</span><span id="thxNamePP" style="color:#fff">가</span><br> <!-- 이 가 -->
         꿈을 꿀 수 있도록 끝까지 함께 응원해주세요

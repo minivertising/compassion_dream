@@ -836,6 +836,7 @@
           </div>
           <div class="txt_child story_result">  
             <div class="inner" style="margin-top:30px;height:110px">
+              <p style="text-align:center;"><?=$ch_data['ch_nick']." / ".$ch_data['ch_id']." / ".$ch_data['ch_nation_name']." / ".$ch_data['ch_gender']?></p>
               <p><?=$ch_data['ch_desc']?></p>
             </div>
           </div>
@@ -862,7 +863,7 @@
         </div>
         <div class="friends_pic">
           <div class="inner_friends_pic clearfix">
-            <div class="img"><img src="images/ex_friend.png" /></div>
+            <div class="img"><img src="<?=$mb_data['mb_image']?>" /></div>
             <div class="txt">어린 시절  꿈과 사진을 등록하고<br> SNS공유하면 응원 완료!</div>
           </div>
         </div>
@@ -947,7 +948,7 @@
         </div>
         <div class="friends_pic">
           <div class="inner_friends_pic clearfix">
-            <div class="img"><img src="images/ex_friend.png" /></div>
+            <div class="img"><img src="<?=$mb_data['mb_image']?>" /></div>
             <div class="txt">어린 시절  꿈과 사진을 등록하고<br> SNS공유하면 응원 완료!</div>
           </div>
         </div>
@@ -1077,9 +1078,9 @@
       <div class="img_com">
         <div class="img_child">
           <div class="inner_img_child clearfix">
-                        <div class="one"><img src="images/ex_child_05.jpg" /></div>
-                            <div class="one"><img src="images/ex_child_06.jpg" /></div>
-                            <div class="one"><img src="images/ex_child_07.jpg" /></div>
+            <div class="one"><img src="images/ex_child_05.jpg" /></div>
+            <div class="one"><img src="images/ex_child_06.jpg" /></div>
+            <div class="one"><img src="images/ex_child_07.jpg" /></div>
           </div>
         </div>
         <img src="images/bg_share_com.png" class="bg" />
@@ -1153,7 +1154,20 @@
       후원자님의 어린이 양육을 돕기 위해 <br>
       전화연결을 진행하고 있습니다
       </div>
-
+<?
+  if ($mb_data['mb_child'] != "")
+  {
+?>
+      <div class="sub_title3">
+        후원자님이 양육하실 어린이 이름과 아이디는<br>
+        <span><?=$ch_data['ch_nick']?>(<?=$ch_data['ch_id']?>)</span> 입니다.<br>
+      </div>
+      <div class="sub_title2">
+      (전화 연결 전 어린이 이름과 아이디를 다시 한번 확인해주세요)
+      </div>
+<?
+  }
+?>
       <div class="block_btn">
         <a href="tel:02-740-1000"><img src="images/btn_phone.png" /></a>
       </div>
@@ -1324,7 +1338,6 @@ function rotate_action(degree){
                 $($ori_image).attr('src', './images/bx_loader.gif');
             },
             success: function (data) {
-                // console.log(data);
                 $($ori_image).attr('src', data);
                 image_crop();
             }

@@ -790,6 +790,7 @@
           <div class="inner_block_child clearfix">
             <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
             <div class="child_text">
+              <?=$ch_data['ch_nick']." / ".$ch_data['ch_id']." / ".$ch_data['ch_nation_name']." / ".$ch_data['ch_gender']?>
               <p>
               <?=$ch_data['ch_desc']?>
               </p>
@@ -1044,7 +1045,7 @@
   <div class="inner">
     <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content follower">
-      <div class="title">
+      <div class="title end">
       참여해주셔서 감사합니다<br>
       <!-- 아이 id 속성 삭제 -->
       <span id="thx_ch_name"><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 꿈을 꿀 수 있도록<br> <!-- ~이 ~가 -->
@@ -1055,7 +1056,7 @@
           <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" id="thx_ch_img" /></div>
         </div>
       </div>
-      <div class="block_btn">
+      <div class="block_btn ok">
         <a href="#" onclick="location.reload();"><img src="images/btn_ok.png" /></a>
       </div>
     </div>

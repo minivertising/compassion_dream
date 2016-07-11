@@ -397,8 +397,7 @@ body.main{
 	border-radius:0;
 }
 .wrap_sec_top_sub.match_child .block_content.follower{
-	/*background:url(../images/bg_share_child_follower.png) center top no-repeat;*/
-	background:url(../images/bg_share_child_follower_02.png) center top no-repeat;
+	background:url(../images/bg_share_child_follower.png) center top no-repeat;
 	border-radius:0;
 }
 .wrap_sec_top_sub.match_child .block_content.exshare{
