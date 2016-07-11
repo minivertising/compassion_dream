@@ -870,7 +870,7 @@
           </div>
           <div class="txt_child story_result">  
             <div class="inner" style="margin-top:30px;height:110px">
-              <?=$ch_data['ch_desc']?>
+              <p><?=$ch_data['ch_desc']?></p>
             </div>
           </div>
           <img src="images/bg_story_result.jpg" class="bg" />
