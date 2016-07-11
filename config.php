@@ -9,8 +9,8 @@
 	include_once "include/phprandom.php";		//난수번호 생성 CLASS
 
 	mysqli_query ($my_db,"set names utf8");
-	if ($_SERVER['REMOTE_ADDR'] != "61.40.46.41")
-		exit;
+	//if ($_SERVER['REMOTE_ADDR'] != "61.40.46.41")
+		//exit;
 
 
 	$mobile_agent = array("iPhone","iPod","iPad","Android","Blackberry","SymbianOS|SCH-M\d+","Opera Mini", "Windows ce", "Nokia", "sony" );

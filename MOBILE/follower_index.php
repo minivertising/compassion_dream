@@ -1247,31 +1247,27 @@ $(window).load(function() {
 ?>
     talk_c_start();
 
-	if($("#talk_c_message21").css("display") == "block"){
-		$(".inner_story").scroll(function(){
-			if ($(".inner_story").scrollTop() == scroll_end){
-				$("#talk_c_final").show();
-				$("#talk_c_final_send").show();
-				$("#talk_c_final_mask").height($(document).height());
-				$("#talk_c_final_mask").show();
-			}
-		});
-	}
+	$(".inner_story").scroll(function(){
+		if ($("#talk_c_message21").css("display") == "block" && $(".inner_story").scrollTop() == scroll_end){
+			$("#talk_c_final").show();
+			$("#talk_c_final_send").show();
+			$("#talk_c_final_mask").height($(document).height());
+			$("#talk_c_final_mask").show();
+		}
+	});
 <?
   }else{
 ?>
     talk_start();
 
-	if($("#talk_message21").css("display") == "block"){
-		$(".inner_story").scroll(function(){
-			if ($(".inner_story").scrollTop() == scroll_end){
-				$("#talk_final").show();
-				$("#talk_final_send").show();
-				$("#talk_final_mask").height($(document).height());
-				$("#talk_final_mask").show();
-			}
-		});
-	}
+	$(".inner_story").scroll(function(){
+		if ($("#talk_message21").css("display") == "block" && $(".inner_story").scrollTop() == scroll_end){
+			$("#talk_final").show();
+			$("#talk_final_send").show();
+			$("#talk_final_mask").height($(document).height());
+			$("#talk_final_mask").show();
+		}
+	});
 <?
   }
 ?>
