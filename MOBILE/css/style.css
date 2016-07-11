@@ -733,7 +733,23 @@ body.storytelling{
 	font-size:15px;
 	color:#076d8c;
 	line-height:20px;
-	padding:15px 0;
+	padding:25px 0;
+}
+.wrap_page.phone .block_content .sub_title2{
+	text-align:center;
+	font-size:12px;
+	color:#076d8c;
+	line-height:20px;
+}
+.wrap_page.phone .block_content .sub_title3{
+	text-align:center;
+	font-size:15px;
+	color:#076d8c;
+	line-height:20px;
+	padding:5px 0;
+}
+.wrap_page.phone .block_content .sub_title3 span{
+	font-weight:bold;
 }
 .wrap_page.phone .block_content .txt_desc{
 	text-align:center;

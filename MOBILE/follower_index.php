@@ -1154,7 +1154,20 @@
       후원자님의 어린이 양육을 돕기 위해 <br>
       전화연결을 진행하고 있습니다
       </div>
-
+<?
+  if ($mb_data['mb_child'] != "")
+  {
+?>
+      <div class="sub_title3">
+        후원자님이 양육하실 어린이 이름과 아이디는<br>
+        <span><?=$ch_data['ch_nick']?>(<?=$ch_data['ch_id']?>)</span> 입니다.<br>
+      </div>
+      <div class="sub_title2">
+      (전화 연결 전 어린이 이름과 아이디를 다시 한번 확인해주세요)
+      </div>
+<?
+  }
+?>
       <div class="block_btn">
         <a href="tel:02-740-1000"><img src="images/btn_phone.png" /></a>
       </div>
