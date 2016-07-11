@@ -188,9 +188,9 @@
 
 		$('.inner_people_list').bxSlider({
 			ticker: true,
-			speed: 40000,
-			minSlide: 3,
-			maxSilde: 3,
+			speed: 20000,
+			//minSlide: 3,
+			//maxSilde: 3,
 			slideWidth: 120,
 			slideMargin: 2
 			// responsive: true,
