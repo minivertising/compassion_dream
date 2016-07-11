@@ -1121,7 +1121,7 @@
 <div id="thanks_page" class="wrap_page share_match_child" style="display:none">
   <div class="inner">
     <div class="block_content">
-      <div class="title">
+      <div class="title" style="font-size:15px">
         참여해주셔서 감사합니다<br>
         <span id="thx_ch_name">'<?=$ch_data['ch_nick']?>'</span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?><br>
         꿈을 꿀 수 있도록 끝까지 함께 응원해주세요 <!-- 이 가 -->
