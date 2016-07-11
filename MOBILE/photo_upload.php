@@ -3,6 +3,7 @@
    $file = $_FILES['file']['tmp_name'];
    $targ_src = $_FILES['file']['name'];
    $file_type = $_FILES['file']['type'];
+echo $file_type;
    // 올린 파일이 이미지인지 검증이 필요할듯합니다.
     switch ($file_type) {
         case 'image/jpg':
@@ -47,7 +48,7 @@
                         @unlink($sTempFileName);
                         return;
                 }
-
+echo $aSize[mime];
             $exif = exif_read_data($sTempFileName);
             if( isset($exif['Orientation']) )
                 $orientation = $exif['Orientation'];
