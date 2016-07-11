@@ -20,7 +20,7 @@
                             <div class="txt_2">
               <label for="inputImage" title="Upload image file">
                 <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
-                <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
+                <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="90" /></span>
               </label>
 							</div>
                         	<div class="txt_3"><a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a></div>

@@ -994,7 +994,7 @@
                               <form id="img_save" method="post" action="./photo_upload.php" enctype="multipart/form-data">
                                 <label for="f_inputImage" title="Upload image file">
                                   <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
-                                  <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
+                                  <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="90" /></span>
                                 </label>
                               </form>
                             </div>
