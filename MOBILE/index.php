@@ -416,8 +416,6 @@ function input_submit()
 						$("#matching_share_page").fadeIn('fast');
 					});
 				}else if (rs_ch[0] == "C"){
-					$("body").removeClass("bg_sub_page bg_loading");
-					$("#loading_div").css("display","none");
 					// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
 					$("#matching_child_pic").attr("src",rs_ch[1]);
 					$("#re_matching_child_pic").attr("src",rs_ch[1]);
@@ -440,7 +438,11 @@ function input_submit()
 					{
 						$("#jobPP").html("을");
 					}
-					$("#re_matching_share_page").fadeIn('fast');
+					if ($("#loading_div").css("display") == "block"){
+						$("body").removeClass("bg_sub_page bg_loading");
+						$("#loading_div").css("display","none");
+						$("#re_matching_share_page").show();
+					}
 /*
 					\$("#loading_div").fadeOut('fast', function(){
 						$("body").removeClass("bg_sub_page bg_loading");
