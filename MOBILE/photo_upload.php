@@ -76,7 +76,7 @@
             }
 
 
-            $sResultFileName = $sTempFileName.".jpg";
+            $sResultFileName = $sTempFileName;
 print_r($sResultFileName);
             imagejpeg($newimg, $sResultFileName, 85);
         }
