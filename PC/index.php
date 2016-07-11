@@ -49,7 +49,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
         <div><a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_partin.png" /></a></div>
         <div class="status">
           <div class="people">
-            <div class="num"><?=number_format($total_matching_cnt)?></div>
+            <div class="num"><?=number_format($total_runner_cnt)?></div>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
           </div>
           <div class="num">
             <div class="txt"><img src="images/txt_waiting_child.png" /></div>
-            <div class="cnt"><span><?=number_format($total_remain_cnt)?></span>명</div>
+            <div class="cnt"><span><?=number_format($total_runner_cnt)?></span>명</div>
           </div>
         </div>
       </div>
@@ -396,7 +396,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 		$("#ytplayer").height(yt_height);
 
 		// gage 스타일 적용
-		var gage_w	= (<?=$total_matching_cnt?>/3000)*100;
+		var gage_w	= (<?=$total_matching_cnt?>/<?=$total_runner_cnt?>)*100;
 		$(".g").css("width",gage_w+"%");
 		$(".heart").css("left",gage_w+"%");
 		Ins_tracking();
