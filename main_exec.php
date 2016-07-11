@@ -232,7 +232,7 @@ switch ($_REQUEST['exec'])
         
     break;
 
-	case "input_follower" : // IE8 이하도 추가할것
+	case "input_follower" : 
 		$data			= $_REQUEST['canvasurl'];
 		$mb_child	= $_REQUEST['mb_child'];
 		$mb_job		= $_REQUEST['mb_job'];
