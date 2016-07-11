@@ -301,12 +301,6 @@ function dream_next()
 			crop_image_url  : crop_image_url,
 			mb_job          : sel_dream
 		},
-		beforeSend: function(response){
-			$("#upload_page").fadeOut('fast', function(){
-				$("body").addClass("bg_sub_page bg_loading");
-				$("#loading_div").fadeIn('fast');
-			});
-		},
 		success: function (res) {
 			// console.log(data);
 			//mb_image    = data;
@@ -317,8 +311,7 @@ function dream_next()
 				// 매칭될 아이가 있을 경우
 				mb_image    = rs_ch[1];
 				setTimeout(function(){
-					$("#loading_div").fadeOut('slow', function(){
-						$("body").removeClass("bg_sub_page bg_loading");
+					$("#upload_div").fadeOut('slow', function(){
 							$("#input_page").fadeIn('slow');
 					});
 				},1500);
@@ -327,8 +320,7 @@ function dream_next()
 				mb_image    = rs_ch[1];
 				mb_rs       = rs_ch[2];
 				setTimeout(function(){
-					$("#loading_div").fadeOut('slow', function(){
-						$("body").removeClass("bg_sub_page bg_loading");
+					$("#upload_div").fadeOut('slow', function(){
 						$("#no_matching_page").fadeIn('slow');
 					});
 				},1500);
