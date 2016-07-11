@@ -201,7 +201,7 @@
 		return $total_pic_cnt['total_share_cnt'];
 	}
 
-/*
+
 	function total_matching_info()
 	{
 		global $_gl;
@@ -213,7 +213,6 @@
 
 		return $total_pic_cnt['total_share_cnt'];
 	}
-*/
 
 	function create_serial($flag, $serial)
 	{
