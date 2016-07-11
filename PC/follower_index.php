@@ -302,7 +302,7 @@
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
-                    당신도 어린 시절 꾸웠던 꿈이 있나요?
+                    당신도 어린 시절 꾸었던 꿈이 있나요?
                     </div>
                     <div class="cnt">1</div>
                   </div>
@@ -652,7 +652,7 @@
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
-                    당신도 어린 시절 꾸웠던 꿈이 있나요?
+                    당신도 어린 시절 꾸었던 꿈이 있나요?
                     </div>
                     <!-- <div class="cnt">1</div> -->
                   </div>
