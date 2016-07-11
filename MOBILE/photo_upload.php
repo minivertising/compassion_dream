@@ -4,18 +4,22 @@
 	$targ_src = $_FILES['file']['name'];
 	$file_type = $_FILES['file']['type'];
 	// 올린 파일이 이미지인지 검증이 필요할듯합니다.
-
     switch ($file_type) {
-        case 'jpg':
+        case 'image/jpg':
             $ext = ".jpg";
             break;
-        case 'png':
+        case 'image/jpeg':
+            $ext = ".jpg";
+            break;
+        case 'image/png':
             $ext = ".png";
             break;
+        default:
+            return;
     }
 
-    // $sTempFileName = './tmp_images/' . md5(time().rand()) . '.jpg';
-    $sTempFileName = './tmp_images/' . md5(time().rand()) . $ext;
+    // $sTempFileName = './tmp_images/' . md5(time().rand());
+    $sTempFileName = './tmp_images/' . md5(time().rand());
     if(move_uploaded_file($file, $sTempFileName))
     {
 
@@ -29,14 +33,15 @@
             }
 
                 // check for image type
-                switch($aSize[2]) {
-                    case IMAGETYPE_JPEG:
+                switch($aSize[mime]) {
+                    case "image/jpeg":
                         // create a new image from file 
-                        $img = @imagecreatefromjpeg($sTempFileName);
+                        $img = imagecreatefromjpeg($sTempFileName);
                         break;
-                    case IMAGETYPE_PNG:
+                    case "image/png":
                         // create a new image from file 
-                        $img = @imagecreatefrompng($sTempFileName);
+                        $img = imagecreatefrompng($sTempFileName);
+                        imagejpeg($img, $sTempFileName, 90);
                         break;
                     default:
                         @unlink($sTempFileName);
@@ -70,11 +75,11 @@
                 break;
             }
 
-            // $sResultFileName = $sTempFileName . ".jpg";
-            $sResultFileName = $sTempFileName;
 
+            $sResultFileName = $sTempFileName.".jpg";
             imagejpeg($newimg, $sResultFileName, 85);
         }
+            // $sResultFileName = $sTempFileName;
 
     }else{
         echo $error_message = 'Error: Upload Unsuccessful<br />Please Try Again';
