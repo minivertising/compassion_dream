@@ -450,7 +450,7 @@
                 <div class="content">
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
-                    <div class="txt">내 어린 시절이야 우린 참 많이 닮은 것 같아</div>
+                    <div class="txt end">내 어린 시절이야 우린 참 많이 닮은 것 같아</div>
                     <!-- <div class="cnt">1</div> -->
                   </div>
                 </div>

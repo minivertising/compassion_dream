@@ -788,7 +788,7 @@ body.main{
 	font-size:17px;
 	color:#333;
 	line-height:20px;
-	padding-top:20px; border:0px red solid;
+	padding-top:0px; border:0px red solid;
 	letter-spacing:0px;
 }
 .wrap_sec_top_sub.match_child .block_btn.howtotag{
@@ -1316,7 +1316,7 @@ body.main{
 }
 .bx-viewport {
 	width: 100% !important;
-	height: 113.55px !important;
+	height: 95px !important;
 }
 
 /* 약관 */

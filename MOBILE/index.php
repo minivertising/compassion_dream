@@ -109,8 +109,8 @@
 		<div class="title_movie"><img src="images/title_movie.png" /></div>
 		<div class="youtube yt_player"><iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe></div>
 		<div class="btn_movie_block">
-			<a href="#" class="apply" onclick="javascript:show_dream_sel();return false;"><img src="images/btn_apply_movie.png" /></a>
-			<a href="#" class="howto" onclick="javascript:open_pop('use_popup');return false;"><img src="images/btn_howto_movie.png" /></a>
+			<div onclick="show_dream_sel();return false;"><a href="#" class="apply"><img src="images/btn_apply_movie.png" /></a></div>
+			<div onclick="open_pop('use_popup');return false;"><a href="#" class="howto"><img src="images/btn_howto_movie.png" /></a></div>
 			<img src="images/bg_sec_movie.jpg" class="bg" />
 		</div>
 	</div>
