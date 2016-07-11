@@ -862,7 +862,7 @@
         </div>
         <div class="friends_pic">
           <div class="inner_friends_pic clearfix">
-            <div class="img"><img src="images/ex_friend.png" /></div>
+            <div class="img"><img src="<?=$mb_data['mb_image']?>" /></div>
             <div class="txt">어린 시절  꿈과 사진을 등록하고<br> SNS공유하면 응원 완료!</div>
           </div>
         </div>
@@ -947,7 +947,7 @@
         </div>
         <div class="friends_pic">
           <div class="inner_friends_pic clearfix">
-            <div class="img"><img src="images/ex_friend.png" /></div>
+            <div class="img"><img src="<?=$mb_data['mb_image']?>" /></div>
             <div class="txt">어린 시절  꿈과 사진을 등록하고<br> SNS공유하면 응원 완료!</div>
           </div>
         </div>

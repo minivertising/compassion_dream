@@ -1055,7 +1055,7 @@
           <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" id="thx_ch_img" /></div>
         </div>
       </div>
-      <div class="block_btn">
+      <div class="block_btn ok">
         <a href="#" onclick="location.reload();"><img src="images/btn_ok.png" /></a>
       </div>
     </div>

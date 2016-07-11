@@ -196,7 +196,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       <div class="txt_notice">
       * 선정 되신 분께는 개별 연락 드립니다
       </div>
-      <div class="block_btn">
+      <div class="block_btn ok">
         <a href="#" onclick="input_submit();return false;"><img src="images/btn_next.png" /></a>
       </div>
     </div>
@@ -234,7 +234,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       <div class="block_btn howtotag">
         <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
       </div>
-      <div class="btn_block" style="margin-top:15px;">
+      <div class="btn_block ok" style="margin-top:15px;">
         <a href="#" onclick="go_main('matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
@@ -322,7 +322,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
       아래의 예시를 참고하셔서<br>
       지인들에게 공유해주세요
       </div>
-      <div class="block_btn_again">
+      <div class="block_btn_again ok">
         <a href="#" id="go_share_func"><img src="images/btn_again.png" /></a>
       </div>
     </div>
@@ -345,7 +345,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
           <div class="child_pic"><img src="images/ex_child.png" id="thx_ch_img" /></div>
         </div>
       </div>
-      <div class="block_btn">
+      <div class="block_btn ok">
         <a href="#" onclick="location.reload();"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
