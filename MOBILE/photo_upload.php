@@ -4,7 +4,7 @@
 	$targ_src = $_FILES['file']['name'];
 	$file_type = $_FILES['file']['type'];
 	// 올린 파일이 이미지인지 검증이 필요할듯합니다.
-    
+
     $sTempFileName = './tmp_images/' . md5(time().rand()) . '.jpg';
     if(move_uploaded_file($file, $sTempFileName))
     {
