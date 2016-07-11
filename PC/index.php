@@ -249,7 +249,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     <div class="block_content follower" style="height:830px">
       <div class="title">
         미니버님!<br> 
-        <span id="re_ch_name">아비가일 마아 야아 암퐁</span><span id="re_namePP" style="color:white;">를</span> 위해<br>
+        <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span><span id="re_namePP" style="color:white;">를</span> 위해<br>
         다시 한번 참여해주셔서 감사합니다 
       </div>
       <div class="block_child">
