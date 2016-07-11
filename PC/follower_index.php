@@ -6,6 +6,9 @@
     echo "<script>location.href='../MOBILE/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
   $ch_data    = sel_child_info($mb_data['mb_child']);
   $convert_job = job_ko_add($mb_data['mb_job']);
+
+  if ($mb_data['mb_name'] == "")
+	$mb_data['mb_name'] = "당신의 친구";
 ?>
 <body class="bg_sub_page story">
 <script>

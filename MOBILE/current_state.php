@@ -117,6 +117,7 @@
 	var file;
 	var files;
 	var inputImageCheck;
+	var s_ugu	= null;
 
 	$(document).ready(function() {
 		Kakao.init('59df63251be6d99256b63b98f4948e89');
@@ -128,6 +129,7 @@
 		$("#cboxMiddleRight").hide();
 		$("#cboxTopCenter").hide();
 		$("#cboxBottomCenter").hide();
+		s_ugu	= 'act';
     });
       if (URL) {
         $inputImage.change(function () {
