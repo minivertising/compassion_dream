@@ -40,8 +40,8 @@
         <div class="text"><a href="#" onclick="checked_dream('president','','대통령');return false;">대통령</a></div>
       </div>
       <div class="one_job">
-        <div class="img"><a href="#" onclick="checked_dream('minister','','목사');return false;"><img src="images/job_10.png" /></a></div>
-        <div class="text"><a href="#" onclick="checked_dream('minister','','목사');return false;">목사</a></div>
+        <div class="img"><a href="#" onclick="checked_dream('minister','','목사님');return false;"><img src="images/job_10.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('minister','','목사님');return false;">목사님</a></div>
       </div>
       <div class="one_job">
         <div class="img"><a href="#" onclick="checked_dream('model','','모델');return false;"><img src="images/job_11.png" /></a></div>

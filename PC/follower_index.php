@@ -497,7 +497,7 @@
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
                     우리는 꿈 많은 어린 시절이 닮았어<br>
-                    나는 <?=$conver_job?><?= has_batchim($conver_job) > 0 ? "이" : "가" ?> 꿈이었는데 넌?
+                    나는 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이" : "가" ?> 꿈이었는데 넌?
                     </div>
                     <!-- <div class="cnt v2">1</div> -->
                   </div>

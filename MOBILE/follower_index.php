@@ -6,7 +6,6 @@
     echo "<script>location.href='../PC/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
   $ch_data  = sel_child_info($mb_data['mb_child']);
   $convert_job = job_ko_add($mb_data['mb_job']);
-
   if ($mb_data['mb_name'] == "")
 	$mb_data['mb_name'] = "당신의 친구";
 
@@ -874,7 +873,7 @@
   <div id="page_div6" class="wrap_page share_match_child" style="display:none;">
     <div class="inner">
       <div class="block_content">
-        <div class="title">
+        <div class="title end">
           감사합니다!<br>
           당신과 같이 꿈을 응원해주시는 분들 덕분에
           <span><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?>
@@ -1146,7 +1145,7 @@
     <div class="block_content">
       <div class="title">
       참여하신 분 중 추첨을 통해<br>
-      컴패션 현지 센터를 방문할 수 있는<br>
+      컴패션 현지 어린이센터를 방문할 수 있는<br>
       기회를 드립니다
       </div>
 
@@ -1235,7 +1234,7 @@ $(window).load(function() {
 		if ($("#talk_c_message21").css("display") == "block" && $(".inner_story").scrollTop() == scroll_end){
 			$("#talk_c_final").show();
 			$("#talk_c_final_send").show();
-			$("#talk_c_final_mask").height($(document).height());
+			$("#talk_c_final_mask").height($(window).height());
 			$("#talk_c_final_mask").show();
 		}
 	});

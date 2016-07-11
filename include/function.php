@@ -146,8 +146,8 @@
 			// 과학자
 			$convert_job	= "과학자";
 		}else if ($engJob == "minister"){
-			// 목사
-			$convert_job	= "목사";
+			// 목사님
+			$convert_job	= "목사님";
 		}else if ($engJob == "policeman"){
 			// 경찰관
 			$convert_job	= "경찰관";
@@ -181,10 +181,16 @@
 		$total_runner_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE shareYN='Y'";
 		$total_runner_result 	= mysqli_query($my_db, $total_runner_query);
 		if ($total_runner_result)
+		{
 			$total_runner_cnt	= mysqli_num_rows($total_runner_result);
-		else
-			$total_runner_cnt	= 0;
-		return $total_runner_cnt;
+			$total_f_runner_query 	= "SELECT * FROM ".$_gl['follower_info_table']." WHERE shareYN='Y'";
+			$total_f_runner_result 	= mysqli_query($my_db, $total_f_runner_query);
+			$total_f_runner_cnt	= mysqli_num_rows($total_f_runner_result);
+			$total_cnt	= $total_runner_cnt + $total_f_runner_cnt;
+		}else{
+			$total_cnt	= 0;
+		}
+		return $total_cnt;
 	}
 
 	function total_pic_info()
@@ -201,7 +207,21 @@
 		return $total_pic_cnt['total_share_cnt'];
 	}
 
+	function total_matching_info()
+	{
+		global $_gl;
+		global $my_db;
 
+		$total_matching_query 	= "SELECT * FROM ".$_gl['child_info_table']." WHERE ch_choice='Y'";
+		$total_matching_result 	= mysqli_query($my_db, $total_matching_query);
+		$total_matching_cnt	= mysqli_num_rows($total_matching_result);
+		
+		$t_cnt	= $total_matching_cnt;
+		return $t_cnt;
+	}
+
+
+/*
 	function total_matching_info()
 	{
 		global $_gl;
@@ -218,7 +238,7 @@
 		}
 		return $t_cnt;
 	}
-
+*/
 	function create_serial($flag, $serial)
 	{
 		global $_gl;
