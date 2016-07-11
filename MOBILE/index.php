@@ -442,6 +442,7 @@ function input_submit()
 					$("#loading_div").fadeOut('fast', function(){
 						$("body").removeClass("bg_sub_page bg_loading");
 						$("#re_matching_share_page").fadeIn('fast',function(){
+							$("body").removeClass("bg_sub_page bg_loading");
 							$("#loading_div").hide();
 						});
 
