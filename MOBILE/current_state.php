@@ -202,6 +202,8 @@ function image_crop(){
 }
 
 $($inputImage).change(function(){
+	$("#img_div").show();
+	$(".btn_closeup").show();
 	inputImageCheck = "Y";
 	//files = this.files;
 // console.dir(this);
