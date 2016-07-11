@@ -1283,6 +1283,9 @@ body.main{
 #re_matching_share_page .btn_block.ok{
 	padding-top:20px;
 }
+.btn_block.matching_page{
+	padding-top:20px;
+}
 
 
 .btn_block{
