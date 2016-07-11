@@ -1032,7 +1032,7 @@
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" id="f_matching_child_pic" /></div>
           <div class="child_text">
-            <h2>"저도 <span id="m_rs_job"><?=$convert_job?></span><?= has_batchim($convert_job) > 0 ? "을" : "를" ?> 꿈꿀 수 있을까요?"</h2> <!-- 을 를 -->
+            <h2>"저도 <span id="m_rs_job"></span><span id="jobPP">를</span> 꿈꿀 수 있을까요?"</h2> <!-- 을 를 -->
             <div class="bg_line">
               <p>
              <?=$ch_data['ch_desc']?>
@@ -1359,6 +1359,8 @@ function f_dream_next()
         // 사진 저장할 내용 추가
         var croppedImg = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
         var canvasImageURL = croppedImg.toDataURL("image/jpeg");
+		var job_lang_kor = job_ko_add(sel_dream);
+
         $.ajax({
             method: 'POST',
             url: '../main_exec.php',
@@ -1379,7 +1381,8 @@ function f_dream_next()
 <?
     }
 ?>
-                mb_job      : sel_dream
+                mb_job      : sel_dream,
+				mb_job_kor    : job_lang_kor
             },
             /*beforeSend: function(response){
         $("#upload_page").fadeOut('fast', function(){
@@ -1392,8 +1395,13 @@ function f_dream_next()
                 //mb_image    = res;
                 var rs_ch = res.split("||");
                 mb_rs = rs_ch[1];
-                //$("#loading_div").hide();
-                //$("#contents_div").show();
+
+                $("#m_rs_job").html(job_lang_kor);
+				if(rs_ch[2] > 0){
+					//받침 O
+					$("#jobPP").html("을");
+				}
+
                 if (rs_ch[0] == "Y")
                 {
                     $("#matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");
