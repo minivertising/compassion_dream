@@ -1,8 +1,6 @@
 <?php
 	session_start();
     header("Content-Type: text/html; charset=UTF-8");
-	echo "COMMING SOON";
-	exit;
 	//환경설정 파일
 	include_once "include/global.php"; 			//변수정보
 	include_once "include/function.php"; 		//함수정보
@@ -11,7 +9,6 @@
 	include_once "include/phprandom.php";		//난수번호 생성 CLASS
 
 	mysqli_query ($my_db,"set names utf8");
-	print_r($_SERVER['REMOTE_ADDR']);
 	if ($_SERVER['REMOTE_ADDR'] != "61.40.46.41")
 		exit;
 
