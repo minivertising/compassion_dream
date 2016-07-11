@@ -1337,6 +1337,7 @@ function rotate_action(degree){
                 $($ori_image).attr('src', './images/bx_loader.gif');
             },
             success: function (data) {
+				alert(data);
                 $($ori_image).attr('src', data);
                 image_crop();
             }
