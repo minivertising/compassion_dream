@@ -394,23 +394,23 @@ function input_submit()
 					// $("#input_page").fadeOut('slow', function(){
 					// 이름, 매칭된 아이 이름, 꿈 표시하는 부분
 
-						var job_add   = job_ko_add(sel_dream);
-						job_add_arr   = job_add.split("||");
+						// var job_add   = job_ko_add(sel_dream);
+						// job_add_arr   = job_add.split("||");
 						//$("#m_rs_name").html(mb_name);
 						$("#m_rs_ch_name").html(rs_ch[3]);
 						$("#m_rs_ch_name2").html(rs_ch[3]);
-						$("#m_rs_ch_name3").html(rs_ch[3]);
+						// $("#m_rs_ch_name3").html(rs_ch[3]);
 						$("#thx_ch_name").html("'"+rs_ch[3]+"'");
-						$("#m_rs_job").html(job_add_arr[0]);
-						$("#m_rs_job2").html(job_add_arr[1]);
+						// $("#m_rs_job").html(job_add_arr[0]);
+						// $("#m_rs_job2").html(job_add_arr[1]);
 						$("#m_rs_nation").html(rs_ch[4]);
 						$("#m_rs_desc").html(rs_ch[7]);
 
 						if(rs_ch[5] > 0) {
 							//받침 O
-							$("#name2PP").html("이에요");
-							$("#name3PP").html("이");
-							$("#thx_namePP").html("이");
+							// $("#name2PP").html("이에요");
+							// $("#name3PP").html("이");
+							$("#thxNamePP").html("이");
 						}
 
 						$("#m_rs_job").html(job_lang_kor);
@@ -419,7 +419,7 @@ function input_submit()
 						if(rs_ch[6] > 0){
 							//받침 O
 							$("#jobPP").html("을");
-							$("#job2PP").html("이");
+							// $("#job2PP").html("이");
 						}
 
 					$("#loading_div").fadeOut('fast', function(){
@@ -440,8 +440,8 @@ function input_submit()
 					$("#m_rs_desc").html(rs_ch[7]);
 					if(rs_ch[5] > 0)
 					{
-						$("#namePP").html("을");
-						$("#name2PP").html("이");
+						$("#reNamePP").html("을");
+						$("#reName2PP").html("이");
 						$("#thxNamePP").html("이");
 					}
 
