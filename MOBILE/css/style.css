@@ -418,6 +418,13 @@ body.storytelling{
 	padding:40px 0 20px;
 	line-height:24px;
 }
+.wrap_page .block_content .title2{
+	color:#fff;
+	font-weight:bold;
+	font-size:18px;
+	padding:40px 0 20px;
+	line-height:24px;
+}
 .wrap_page.share_match_child .block_content .title{
 	text-align:center;
 	background:url(../images/bg_share_title.jpg);
