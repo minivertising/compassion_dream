@@ -1044,7 +1044,7 @@
   <div class="inner">
     <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content follower">
-      <div class="title">
+      <div class="title end">
       참여해주셔서 감사합니다<br>
       <!-- 아이 id 속성 삭제 -->
       <span id="thx_ch_name"><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 꿈을 꿀 수 있도록<br> <!-- ~이 ~가 -->

@@ -335,7 +335,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
   <div class="inner">
     <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content follower" style="margin-top:35px;">
-      <div class="title">
+      <div class="title end">
       참여해주셔서 감사합니다!<br>
       <span id="thx_ch_name">아비가일 마아 야아 암퐁</span><span id="thx_namePP" style="color:#fff">가</span> 꿈을 꿀 수 있도록<br>  <!-- ~이 ~가 -->
       끝까지 함께 응원해주세요
