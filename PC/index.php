@@ -346,7 +346,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
         </div>
       </div>
       <div class="block_btn ok">
-        <a href="#" onclick="location.reload();"><img src="images/btn_ok.png" /></a>
+        <div onclick="location.reload();"><a href="#"><img src="images/btn_ok.png" /></a></div>
       </div>
     </div>
   </div>
