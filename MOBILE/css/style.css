@@ -423,10 +423,11 @@ body.storytelling{
 	background:url(../images/bg_share_title.jpg);
 	background-size:cover;
 	padding:45px 0 40px;
-	font-size:18px;
+	font-size:24px;
+	line-height:30px;
 }
 .wrap_page.share_match_child .block_content .title span{
-	font-size:18px;
+	font-size:24px;
 	color:#fed90b;
 }
 
@@ -480,7 +481,7 @@ body.storytelling{
 }
 
 .wrap_page.share_match_child .block_content .img_com .img_child.story_result img{
-	width:41%;
+	width:37%;
 	border: 5px solid #fff;
     box-shadow: 1px 2px 1px #888888;
 }
@@ -493,9 +494,12 @@ body.storytelling{
     width: 80%;
     line-height: 32px;
     height: 130px;
-    background: url(../images/txt_line.png) 0 0 repeat-y;
+	background-attachment:scroll;
     margin: 0 auto;
     overflow: scroll;
+}
+.wrap_page.share_match_child .block_content .img_com .txt_child.story_result .inner p {
+    background: url(../images/txt_line.png) 0 0 repeat-y;
 }
 .wrap_page.share_match_child .block_content .block_btn.spon,
 .wrap_page.share_match_child .block_content .block_btn.cheer{
