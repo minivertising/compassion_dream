@@ -17,8 +17,8 @@
     }
 
     // $sTempFileName = './tmp_images/' . md5(time().rand()) . '.jpg';
-    //$sTempFileName = './tmp_images/' . md5(time().rand()) . $ext;
-    $sTempFileName = './tmp_images/' . md5(time().rand());
+    $sTempFileName = './tmp_images/' . md5(time().rand()) . $ext;
+    //$sTempFileName = './tmp_images/' . md5(time().rand());
     if(move_uploaded_file($file, $sTempFileName))
     {
 
@@ -73,8 +73,8 @@
                 break;
             }
 
-            $sResultFileName = $sTempFileName . ".jpg";
-            //$sResultFileName = $sTempFileName;
+            //$sResultFileName = $sTempFileName . ".jpg";
+            $sResultFileName = $sTempFileName;
 
             imagejpeg($newimg, $sResultFileName, 85);
         }
