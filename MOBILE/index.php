@@ -372,7 +372,6 @@ function input_submit()
 
 		},
 		success: function(response){
-			alert(response);
 				var rs_ch = response.split("||");
 				mb_rs = rs_ch[2];
 				if (rs_ch[0] == "Y")
@@ -417,6 +416,8 @@ function input_submit()
 						$("#matching_share_page").fadeIn('fast');
 					});
 				}else if (rs_ch[0] == "C"){
+					$("body").removeClass("bg_sub_page bg_loading");
+					$("#loading_div").hide();
 					// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
 					$("#matching_child_pic").attr("src",rs_ch[1]);
 					$("#re_matching_child_pic").attr("src",rs_ch[1]);
@@ -439,11 +440,13 @@ function input_submit()
 					{
 						$("#jobPP").html("을");
 					}
-					
-					$("#loading_div").fadeOut('fast', function(){
+					$("#re_matching_share_page").fadeIn('fast');
+/*
+					\$("#loading_div").fadeOut('fast', function(){
 						$("body").removeClass("bg_sub_page bg_loading");
 						$("#re_matching_share_page").fadeIn('fast');
 					});
+*/
 				}else{
 					alert("참여자가 많아 처리가 지연되고 있습니다. 다시 참여해 주세요.");
 					location.reload();
