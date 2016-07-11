@@ -1014,7 +1014,7 @@
                 <div class="block_input_dream">
                   <div class="selec_job clearfix">
                       <!-- <div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div> -->
-                        <div class="txt_1"><span id="sel_job_txt">1. 선택한 꿈 : 디자이너</span> </div>
+                        <div class="txt_1"><span id="sel_job_txt">1. 내 어린시절 꿈 선택 </span> </div>
                         <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="90" /></a></div><!--버튼 두개입니다-->
                     </div>
                     <div class="upload_pic">
@@ -1247,31 +1247,27 @@ $(window).load(function() {
 ?>
     talk_c_start();
 
-    $(".inner_story").scroll(function(){
-      console.log($(".inner_story").scrollTop());
-      if ($(".inner_story").scrollTop() == scroll_end){
-        $("#talk_c_final").show();
-        $("#talk_c_final_send").show();
-        $("#talk_c_final_mask").height($(document).height());
-        $("#talk_c_final_mask").show();
-      }
-    });
-
+	$(".inner_story").scroll(function(){
+		if ($("#talk_c_message21").css("display") == "block" && $(".inner_story").scrollTop() == scroll_end){
+			$("#talk_c_final").show();
+			$("#talk_c_final_send").show();
+			$("#talk_c_final_mask").height($(document).height());
+			$("#talk_c_final_mask").show();
+		}
+	});
 <?
   }else{
 ?>
     talk_start();
 
-    $(".inner_story").scroll(function(){
-      console.log($(".inner_story").scrollTop());
-      if ($(".inner_story").scrollTop() == scroll_end){
-        $("#talk_final").show();
-        $("#talk_final_send").show();
-        $("#talk_final_mask").height($(document).height());
-        $("#talk_final_mask").show();
-      }
-    });
-
+	$(".inner_story").scroll(function(){
+		if ($("#talk_message21").css("display") == "block" && $(".inner_story").scrollTop() == scroll_end){
+			$("#talk_final").show();
+			$("#talk_final_send").show();
+			$("#talk_final_mask").height($(document).height());
+			$("#talk_final_mask").show();
+		}
+	});
 <?
   }
 ?>

@@ -109,8 +109,8 @@
 		<div class="title_movie"><img src="images/title_movie.png" /></div>
 		<div class="youtube yt_player"><iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe></div>
 		<div class="btn_movie_block">
-			<a href="#" class="apply" onclick="show_dream_sel();return false;"><img src="images/btn_apply_movie.png" /></a>
-			<a href="#" class="howto" onclick="open_pop('use_popup');return false;"><img src="images/btn_howto_movie.png" /></a>
+			<a href="#" class="apply" onclick="javascript:show_dream_sel();return false;"><img src="images/btn_apply_movie.png" /></a>
+			<a href="#" class="howto" onclick="javascript:open_pop('use_popup');return false;"><img src="images/btn_howto_movie.png" /></a>
 			<img src="images/bg_sec_movie.jpg" class="bg" />
 		</div>
 	</div>
@@ -188,9 +188,9 @@
 
 		$('.inner_people_list').bxSlider({
 			ticker: true,
-			speed: 40000,
-			minSlide: 3,
-			maxSilde: 3,
+			speed: 20000,
+			//minSlide: 3,
+			//maxSilde: 3,
 			slideWidth: 120,
 			slideMargin: 2
 			// responsive: true,

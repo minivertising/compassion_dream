@@ -302,7 +302,7 @@
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
-                    당신도 어린 시절 꾸웠던 꿈이 있나요?
+                    당신도 어린 시절 꾸었던 꿈이 있나요?
                     </div>
                     <div class="cnt">1</div>
                   </div>
@@ -652,7 +652,7 @@
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
-                    당신도 어린 시절 꾸웠던 꿈이 있나요?
+                    당신도 어린 시절 꾸었던 꿈이 있나요?
                     </div>
                     <!-- <div class="cnt">1</div> -->
                   </div>
@@ -1106,13 +1106,11 @@
 		talk_c_start();
 
 		$(".inner_story").scroll(function(){
-			console.log($(".inner_story").scrollTop()+"||"+talk_scroll);
-			if ($(".inner_story").scrollTop() == 1846){
+			if ($("#talk_c_message21").css("display") == "block" && $(".inner_story").scrollTop() == 1846){
 				$("#talk_c_final").show();
 				$("#talk_c_final_mask").show();
 			}
 		});
-
 <?
 	}else{
 ?>
@@ -1120,12 +1118,11 @@
 
 		$(".inner_story").scroll(function(){
 			console.log($(".inner_story").scrollTop()+"||"+talk_scroll);
-			if ($(".inner_story").scrollTop() == 1846){
+			if ($("#talk_message21").css("display") == "block" && $(".inner_story").scrollTop() == 1846){
 				$("#talk_final").show();
 				$("#talk_final_mask").show();
 			}
 		});
-
 <?
 	}
 ?>

@@ -210,8 +210,13 @@
 		$total_matching_query 	= "SELECT SUM(mb_share_cnt) total_share_cnt FROM ".$_gl['activator_info_table']." WHERE shareYN='Y'";
 		$total_matching_result 	= mysqli_query($my_db, $total_matching_query);
 		$total_matching_cnt	= mysqli_fetch_array($total_matching_result);
-
-		return $total_pic_cnt['total_share_cnt'];
+		if ($total_matching_cnt['total_share_cnt'] != "")
+		{
+			$t_cnt	= $total_matching_cnt['total_share_cnt'];
+		}else{
+			$t_cnt	= 0;
+		}
+		return $t_cnt;
 	}
 
 	function create_serial($flag, $serial)
