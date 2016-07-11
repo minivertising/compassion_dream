@@ -6,7 +6,6 @@
     echo "<script>location.href='../PC/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
   $ch_data  = sel_child_info($mb_data['mb_child']);
   $convert_job = job_ko_add($mb_data['mb_job']);
-  print_r($convert_job);
 ?>
 <body class="bg_sub_page storytelling">
 <script>
@@ -399,7 +398,7 @@
                   <div class="here"><img src="images/icon_here.png" width="100" /></div>
                   <div class="txt end">
                     어린이들을 다시 초대하기<br>
-                    <a href="#" onclick="next_page('7');return false;">www.compassion.or.kr</a>
+                    <a href="#" onclick="next_page('7');return false;">mydream.compassion.or.kr</a>
                     <a href="#" onclick="next_page('7');return false;"><img src="images/img_link.png" width="130" /></a>
                   </div>
                   <div class="cnt v6"><img src="images/icon_out.png" width="25" /></div>
@@ -420,7 +419,7 @@
                 <div class="here"><img src="images/icon_here.png" width="100" /></div>
                 <div class="txt end">
                   어린이들을 다시 초대하기<br>
-                  <a href="#" onclick="next_page('7');return false;">www.compassion.or.kr</a>
+                  <a href="#" onclick="next_page('7');return false;">mydream.compassion.or.kr</a>
                   <a href="#" onclick="next_page('7');return false;"><img src="images/img_link.png" width="130" /></a>
                 </div>
                 <div class="cnt v6"><img src="images/icon_out.png" width="25" /></div>
@@ -545,7 +544,7 @@
               <div class="deco"><img src="images/talk_yellow.png" width="15" /></div>
               <div class="txt">
               우리는 꿈 많은 어린 시절이 닮았어<br>
-              나는 선생님이 꿈이었는데 넌?
+              나는 <?=$convert_job?><?= has_batchim($convert_job) > 0 ? "이" : "가" ?> 꿈이었는데 넌?
               </div>
               <div class="cnt v2">1</div>
             </div>
@@ -795,12 +794,12 @@
   if ($ch_data['ch_choice'] == "Y")
   {
 ?>
-                    <a href="#" onclick="next_page('6');return false;">www.compassion.or.kr</a>
+                    <a href="#" onclick="next_page('6');return false;">mydream.compassion.or.kr</a>
                     <a href="#" onclick="next_page('6');return false;"><img src="images/img_link.png" width="130" /></a>
 <?
   }else{
 ?>
-                    <a href="#" onclick="next_page('5');return false;">www.compassion.or.kr</a>
+                    <a href="#" onclick="next_page('5');return false;">mydream.compassion.or.kr</a>
                     <a href="#" onclick="next_page('5');return false;"><img src="images/img_link.png" width="130" /></a>
 <?
   }
@@ -828,12 +827,12 @@
   if ($ch_data['ch_choice'] == "Y")
   {
 ?>
-                    <a href="#" onclick="next_page('6');return false;">www.compassion.or.kr</a>
+                    <a href="#" onclick="next_page('6');return false;">mydream.compassion.or.kr</a>
                     <a href="#" onclick="next_page('6');return false;"><img src="images/img_link.png" width="130" /></a>
 <?
   }else{
 ?>
-                    <a href="#" onclick="next_page('5');return false;">www.compassion.or.kr</a>
+                    <a href="#" onclick="next_page('5');return false;">mydream.compassion.or.kr</a>
                     <a href="#" onclick="next_page('5');return false;"><img src="images/img_link.png" width="130" /></a>
 <?
   }
