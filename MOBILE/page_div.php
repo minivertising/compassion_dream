@@ -136,7 +136,7 @@
     <div class="block_content">
       <div class="title">
         <span id="act_name">000</span>님!<br>
-        <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span><span id="reNamePP" style="color:#000000">를</span> 위해<br> <!-- ~을 ~를 -->
+        <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span><span id="reNamePP" style="color:#fff">를</span> 위해<br> <!-- ~을 ~를 -->
         다시 한번 참여해주셔서 감사합니다 
       </div>
       <div class="block_child re">

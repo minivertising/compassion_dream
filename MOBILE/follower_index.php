@@ -853,7 +853,7 @@
     <div class="inner">
       <div class="block_content">
         <div class="title compassion">
-          "<span style="color:#E9DE51"><?=$ch_data['ch_nick']?></span>아<br>
+          "<span style="color:#E9DE51"><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "아" : "야" ?><br>
           내꿈꿔!"<br>
         </div>
         <div class="sub_txt">
