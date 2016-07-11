@@ -670,7 +670,7 @@ body.main{
 	position:relative; border:0px red solid;
 }
 .wrap_sec_top_sub.match_child .block_content.follower .block_child{
-	padding:0px 0 20px; 
+	padding:0px 0 40px; 
 }
 .wrap_sec_top_sub.match_child .block_content.share_compassion .block_child{
 	padding:64px 0 45px;
@@ -1279,9 +1279,17 @@ body.main{
 	text-align:center;
 }
 
+
+#re_matching_share_page .btn_block.ok{
+	padding-top:20px;
+}
+
+
 .btn_block{
 	text-align:center;
 }
+
+
 
 .p_preview{
 	width:652px;
