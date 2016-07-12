@@ -26,6 +26,9 @@
 		if ($chk_flag == "N")
 		{
 			send_lms($data['mb_phone'], $data['mb_serial']);
+
+			$query 	= "UPDATE activator_info SET mb_lms='Y' WHERE mb_serial='".$data['mb_serial']."'";
+			$result 	= mysqli_query($my_db, $query);
 		}
 	}
 
