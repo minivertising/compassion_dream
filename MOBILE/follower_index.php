@@ -1141,6 +1141,7 @@
 
 <!-- 페북/카스 인앱브라우저에서 결연맺기 클릭시(팔로워) 페이지 -->
 <div id="fb_ks_page" class="wrap_page sub phone" style="display:none;">
+  <div class="btn_close"><a href="#" onclick="return_home();return false;"><img src="images/popup/btn_close.png" /></a></div>
   <div class="inner">
     <div class="block_content">
       <div class="title">
@@ -1213,6 +1214,7 @@ var inputImageCheck;
 var share_cnt     = 0;
 var s_ugu = null;
 var scroll_end  = 0;
+var ios_prev_page	= null;
 $(window).load(function() {
   Kakao.init('59df63251be6d99256b63b98f4948e89');
   $("#cboxTopLeft").hide();
