@@ -47,7 +47,7 @@
 	{
 ?>
 <div id="contents_div" class="wrap_page lms_landing">
-	<div class="logo"><img src="images/logo_lms.png" /></div>
+	<div class="logo"><a href="#" onclick="location.reload();"><img src="images/logo_lms.png" /></div>
 	<div class="title">
 		<img src="images/title_lms.png" />
 	</div>

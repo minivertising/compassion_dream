@@ -27,7 +27,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 </script>
 <div id="loading_div" class="wrap_sec_top_sub loading" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home('act');return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content">
       <div class="img_load">
       <!-- 꿈이 필요한 어린이 '베리'를 응원중입니다<br>
@@ -129,7 +129,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <!-- 사진 업로드 페이지 -->
 <div id="upload_page" class="wrap_sec_top_sub" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="index.php"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home('act');return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content upload">
       <div class="title">
         <div class="main">
@@ -175,7 +175,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <!-- 개인정보 입력 페이지 -->
 <div id="input_page" class="wrap_sec_top_sub input_data" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home('act');return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content">
       <div class="title">
       </div>
@@ -207,7 +207,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <!-- ACTIVATOR 매칭 결과 페이지 -->
 <div id="matching_share_page" class="wrap_sec_top_sub match_child" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="./index.php"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home('act');return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content">
       <div class="title">
 	  당신의 도움이 필요한 어린이는<br> <span id="m_rs_ch_name">기타</span> 입니다
@@ -245,7 +245,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <!-- ACTIVATOR 매칭 결과 페이지 (이미참여 결연X)-->
 <div id="re_matching_share_page" class="wrap_sec_top_sub match_child" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home('act');return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content follower" style="height:830px">
       <div class="title">
         미니버님!<br> 
@@ -279,7 +279,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <!-- ACTIVATOR 매칭없을시 컴페션 소개 페이지 -->
 <div id="no_matching_page" class="wrap_sec_top_sub match_child" style="display:none">
   <div class="inner">
-    <div class="logo"><a href="index.php"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home('act');return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content share_compassion">
       <div class="title">
       컴패션에는 당신의 어린시절처럼<br>
@@ -316,7 +316,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <!-- 공유버튼 클릭시 나오는 예시 페이지 -->
 <div id="sns_exam_page" class="wrap_sec_top_sub match_child" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home('act');return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content exshare">
       <div class="title">
       아래의 예시를 참고하셔서<br>
@@ -333,7 +333,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <!-- 공유 완료 페이지 -->
 <div id="thanks_page" class="wrap_sec_top_sub match_child" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home('act');return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content follower" style="margin-top:35px;background:url(./images/bg_share_child_follower_02.png) center top no-repeat;">
       <div class="title end">
       참여해주셔서 감사합니다!<br>
