@@ -283,6 +283,7 @@ function go_share(media, flag, page)
 
 function go_main(page)
 {
+	alert(share_cnt);
 	if (share_cnt == 0)
 	{
 		alert("공유를 완료해 주세요.\r\nSNS에 공유 해주셔야만 어린이들의 꿈을 도울 수 있습니다");
