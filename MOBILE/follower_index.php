@@ -5,6 +5,12 @@
   if ($gubun == "PC")
     echo "<script>location.href='../PC/follower_index.php?used=".$used."';</script>";
   $ch_data  = sel_child_info($mb_data['mb_child']);
+
+	if ($ch_data['ch_gender'] == "F")
+		$ch_data['ch_gender'] = "여";
+	else
+		$ch_data['ch_gender'] = "남";
+
   $convert_job = job_ko_add($mb_data['mb_job']);
   if ($mb_data['mb_name'] == "")
 	$mb_data['mb_name'] = "컴패션의 친구";
