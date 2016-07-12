@@ -14,6 +14,7 @@
   $convert_job = job_ko_add($mb_data['mb_job']);
   if ($mb_data['mb_name'] == "")
 	$mb_data['mb_name'] = "컴패션의 친구";
+
 ?>
 <body class="bg_sub_page storytelling">
 <script>
@@ -1232,6 +1233,8 @@ $(window).load(function() {
   $("#cboxTopCenter").hide();
   $("#cboxBottomCenter").hide();
 
+alert("<?=$iPhoneYN?>");
+
 <?
 	if ($mb_data['mb_child'] == "")
 	{
@@ -1343,6 +1346,7 @@ function rotate_action(degree){ // 현재 안쓰는 함수
 }
 
     $inputImage.change(function (){
+		alert("00");
 <?
 	if ($iPhoneYN == "Y")
 	{
