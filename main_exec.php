@@ -33,7 +33,7 @@ switch ($_REQUEST['exec'])
 
 			$a_query 	= "UPDATE ".$_gl['activator_info_table']." SET shareYN='Y' WHERE mb_serial='".$mb_serial."'";
 			$a_result 	= mysqli_query($my_db, $a_query);
-
+/*
 			$dupli_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE mb_phone='".$mb_data['mb_phone']."'";
 			$dupli_result 	= mysqli_query($my_db, $dupli_query);
 			while($dupli_data	= mysqli_fetch_array($dupli_result))
@@ -49,7 +49,7 @@ switch ($_REQUEST['exec'])
 
 			if ($dupli_flag == "N")
 				send_lms($mb_data['mb_phone'], $mb_serial);
-
+*/
 		}else{
 			$f_query 	= "UPDATE ".$_gl['follower_info_table']." SET shareYN='Y' WHERE mb_serial='".$mb_serial."'";
 			$f_result 	= mysqli_query($my_db, $f_query);

@@ -4,7 +4,7 @@
 		exit('Connect Error (' . mysqli_connect_errno() . ') '. mysqli_connect_error());
 	}
 
-	$query 	= "SELECT * FROM activator_info WHERE shareYN='Y' AND mb_lms='N' AND mb_phone='01030033965'";
+	$query 	= "SELECT * FROM activator_info WHERE shareYN='Y' AND mb_lms='N'";
 	$result 	= mysqli_query($my_db, $query);
 
 	while ($data = mysqli_fetch_array($result))
