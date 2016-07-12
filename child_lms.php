@@ -38,7 +38,7 @@
 		global $_gl;
 		global $my_db;
 
-		$s_url		= "http://mydream.compassion.or.kr/MOBILE/current_state.php?rs=".$serial."&ugu=act"; // URL 변경 해야함.
+		$s_url		= "http://mydream.compassion.or.kr/MOBILE/current_state.php?used=".$serial."_act"; // URL 변경 해야함.
 		$httpmethod = "POST";
 		$url = "http://api.openapi.io/ppurio/1/message/lms/minivertising";
 		$clientKey = "MTAyMC0xMzg3MzUwNzE3NTQ3LWNlMTU4OTRiLTc4MGItNDQ4MS05NTg5LTRiNzgwYjM0ODEyYw==";
