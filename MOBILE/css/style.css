@@ -313,8 +313,9 @@ body.storytelling{
 	width:96%;
 }
 .wrap_page.lms_landing .btn_block div.vision{
-	padding-top:10px;
-	padding-bottom:0;
+	/*padding-top:10px;
+	padding-bottom:0;*/
+	padding-top:0px;
 }
 .wrap_page.lms_landing .btn_block div.vision img{
 	width:100%;
