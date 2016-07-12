@@ -1137,38 +1137,7 @@
 
         Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
     });
-    /*
-        var $inputImage = $('#inputImage');
-        var URL = window.URL || window.webkitURL;
-        var blobURL;
-            if (URL) {
-                $inputImage.change(function () {
-                    var files = this.files;
-                    var file;
-                    if (!$ori_image.data('cropper')) {
-                        return;
-                    }
-                    if (files && files.length) {
-                        file = files[0];
-                        if (/^image\/\w+$/.test(file.type)) {
-                            blobURL = URL.createObjectURL(file);
-                            $ori_image.one('built.cropper', function () {
-                                // Revoke when load complete
-                                URL.revokeObjectURL(blobURL);
-                            }).cropper('reset').cropper('replace', blobURL);
-                            $inputImage.val('');
-                        } else {
-                            window.alert('Please choose an image file.');
-                        }
-                    }
-                });
-            } else {
-                $inputImage.prop('disabled', true).parent().addClass('disabled');
-            }
-            */
-// $(function () {
-//     image_crop();
-// });
+
 function image_crop(){
   $($ori_image).cropper({
     viewMode: 0,

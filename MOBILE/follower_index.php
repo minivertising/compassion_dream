@@ -836,7 +836,7 @@
           <div class="txt_child story_result">  
             <div class="inner" style="margin-top:30px;height:110px">
               <p style="text-align:center;"><?=$ch_data['ch_nick']." / ".$ch_data['ch_id']." / ".$ch_data['ch_nation_name']." / ".$ch_data['ch_gender']?></p>
-              <p><?=$ch_data['ch_desc']?></p>
+              <p id="p5_desc"><?=$ch_data['ch_desc']?></p>
             </div>
           </div>
           <img src="images/bg_story_result.jpg" class="bg" />
@@ -1034,7 +1034,7 @@
           <div class="child_text">
             <h2>"저도 <span id="m_rs_job"></span><span id="jobPP">를</span> 꿈꿀 수 있을까요?"</h2> <!-- 을 를 -->
             <div class="bg_line">
-              <p>
+              <p id="msp_desc">
              <?=$ch_data['ch_desc']?>
               </p>
             </div>
@@ -1261,6 +1261,10 @@ $(window).load(function() {
   // 미리보기 제어
   $(".preview").width($(document).width()*0.9);
   s_ugu = 'fol';
+
+	$("#p5_desc").niceScroll({cursorcolor:"gray",cursorborder:"gray"});
+	$("#msp_desc").niceScroll({cursorcolor:"gray",cursorborder:"gray"});
+
 });
 function image_crop(){
   $($ori_image).cropper({
