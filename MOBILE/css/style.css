@@ -270,7 +270,7 @@ body.storytelling{
 .wrap_page.main_page .sec_com a{
 	position:absolute;
 	display:block;
-	bottom:6%;
+	bottom:14%;
 	width:90%;
 	left:8%;
 }
@@ -1459,7 +1459,7 @@ body.storytelling{
 	width:100%;
 }
 .wrap_pop.howto_notice ul{
-	padding:0 10px;
+	padding: 0px 0px 50px 10px;
 	margin-left:10px;
 	color:#333;
 }
