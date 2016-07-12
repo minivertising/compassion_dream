@@ -33,6 +33,7 @@
                     case "image/jpeg":
                         // create a new image from file 
                         $img = imagecreatefromjpeg($sTempFileName);
+
                         break;
                     case "image/png":
                         // create a new image from file 
