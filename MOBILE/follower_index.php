@@ -830,7 +830,7 @@
           "<span style="color:#E9DE51"><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "아" : "야" ?><br>
           내꿈꿔!"<br>
         </div>
-        <div class="sub_txt">
+        <div class="sub_txt" style="font-weight:bold;">
         가난으로 인해 꿈을 잃어버린 <br>
         '<?=$ch_data['ch_nick']?>'의 후원자가 되어주세요
         </div>
