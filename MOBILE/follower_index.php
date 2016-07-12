@@ -1228,6 +1228,13 @@ $(window).load(function() {
 <?
 	if ($mb_data['mb_child'] == "")
 	{
+		if ($iphone_story_gubun == "Y")
+		{
+?>
+			alert("111");
+			return false;
+<?
+		}
 ?>
 	talk_c_start();
 
@@ -1243,6 +1250,11 @@ $(window).load(function() {
 	}else{
 		if ($iphone_story_gubun == "Y")
 		{
+?>
+			alert("111");
+			return false;
+<?
+		}
 ?>
     talk_start();
 

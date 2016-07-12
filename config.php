@@ -44,13 +44,13 @@
 			else
 				$iphone_banner_gubun	= "N";
 		}
-
-	}else{
-		$iphone_banner_gubun	= "N";
 		if(stripos( $_SERVER['HTTP_USER_AGENT'], "KAKAOSTORY" ))
 			$iphone_story_gubun	= "Y";
 		else
 			$iphone_story_gubun	= "N";
+
+	}else{
+		$iphone_banner_gubun	= "N";
 	}
 
 	if($check_mobile == "Y")
