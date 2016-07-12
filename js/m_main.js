@@ -621,7 +621,7 @@ function sns_share(media, flag, page)
 
 				Kakao.Link.sendTalkLink({
 				  //container: '#kakao-link-btn',
-				  label: "내꿈꿔 릴레이\n\r내 어린 시절 꿈과 사진으로 꿈이 필요한 어린이에게 후원자를 찾아주는 컴패션의 릴레이 캠페인입니다",
+				  label: '컴패션 "내꿈꿔" 릴레이\n\r\n\r어릴적 제 꿈이 뭔지 아시나요?\n\r오늘 제가 소개하는 이 어린이도 꿈을 이룰 수 있도록 "내꿈꿔" 릴레이에 함께해주세요!',
 				  image: {
 					src: img_url,
 					width: '1200',
