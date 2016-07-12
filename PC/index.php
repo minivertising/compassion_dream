@@ -292,10 +292,10 @@ $total_remain_cnt			= $total_runner_cnt - $total_matching_cnt;
       </div>
       <div class="block_child">
         <div class="inner_block_child clearfix">
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
+          <div class="child_pic"><img src="images/ex_child_01.png" /></div>
+          <div class="child_pic"><img src="images/ex_child_02.png" /></div>
+          <div class="child_pic"><img src="images/ex_child_03.png" /></div>
+          <div class="child_pic"><img src="images/ex_child_04.png" /></div>
         </div>
       </div>
       <div class="block_btn sns">
