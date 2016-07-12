@@ -1342,34 +1342,11 @@ function rotate_action(degree){ // 현재 안쓰는 함수
   }
 }
 
-    //   if (URL) {
-    //     $inputImage.change(function () {
-    //       inputImageCheck = "Y";
-    //       $("#img_div").show();
-    // $(".btn_closeup").show();
-    //       var files = this.files;
-    //       var file;
-    //       if (!$ori_image.data('cropper')) {
-    //         return;
-    //       }
-    //       if (files && files.length) {
-    //         file = files[0];
-    //         if (/^image\/\w+$/.test(file.type)) {
-    //           blobURL = URL.createObjectURL(file);
-    //           $ori_image.one('built.cropper', function () {
-    //             // Revoke when load complete
-    //             URL.revokeObjectURL(blobURL);
-    //           }).cropper('reset').cropper('replace', blobURL);
-    //           $inputImage.val('');
-    //         } else {
-    //           window.alert('Please choose an image file.');
-    //         }
-    //       }
-    //     });
-    //   } else {
-    //     $inputImage.prop('disabled', true).parent().addClass('disabled');
-    //   }
     $inputImage.change(function (){
+<?
+	if ($iPhoneYN == "N")
+	{
+?>
         inputImageCheck = "Y";
         $("#img_div").show();
         $(".btn_closeup").show();
@@ -1384,6 +1361,39 @@ function rotate_action(degree){ // 현재 안쓰는 함수
                 image_crop();
             }
         })
+<?
+	}else{
+?>
+       if (URL) {
+         $inputImage.change(function () {
+           inputImageCheck = "Y";
+           $("#img_div").show();
+	     $(".btn_closeup").show();
+           var files = this.files;
+           var file;
+           if (!$ori_image.data('cropper')) {
+             return;
+           }
+           if (files && files.length) {
+             file = files[0];
+             if (/^image\/\w+$/.test(file.type)) {
+               blobURL = URL.createObjectURL(file);
+               $ori_image.one('built.cropper', function () {
+                 // Revoke when load complete
+                 URL.revokeObjectURL(blobURL);
+               }).cropper('reset').cropper('replace', blobURL);
+               $inputImage.val('');
+             } else {
+               window.alert('Please choose an image file.');
+             }
+           }
+         });
+       } else {
+         $inputImage.prop('disabled', true).parent().addClass('disabled');
+       }
+<?
+	}
+?>
     });
 
 function f_dream_next()
