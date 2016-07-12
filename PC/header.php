@@ -35,7 +35,7 @@
 	{
 // PC, MOBILE 구분 ?
 ?>
-<meta property="og:url" content="http://mydream.compassion.or.kr/PC/index.php?rs=<?=$mb_data['mb_serial']?>&ugu=<?=$ugu?>" />
+<meta property="og:url" content="http://mydream.compassion.or.kr/PC/index.php?used=<?=$used?>" />
 <meta property="og:image" content="<?=$img_url?>" />
 <?
 	}else{
