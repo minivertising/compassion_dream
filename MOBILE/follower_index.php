@@ -1226,10 +1226,15 @@ $(window).load(function() {
   $("#cboxBottomCenter").hide();
 
 <?
-  if ($mb_data['mb_child'] == "")
-  {
+	if ($mb_data['mb_child'] == "")
+	{
+		if ($iphone_story_gubun == "Y")
+		{
 ?>
-    talk_c_start();
+			alert("111");
+			return false;
+		}
+	talk_c_start();
 
 	$(".inner_story").scroll(function(){
 		if ($("#talk_c_message21").css("display") == "block" && $(".inner_story").scrollTop() == scroll_end){
@@ -1240,7 +1245,7 @@ $(window).load(function() {
 		}
 	});
 <?
-  }else{
+	}else{
 ?>
     talk_start();
 
@@ -1253,7 +1258,7 @@ $(window).load(function() {
 		}
 	});
 <?
-  }
+	}
 ?>
 
   Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
