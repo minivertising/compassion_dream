@@ -71,7 +71,7 @@
         </div>
         <div class="check clearfix">
           <a href="#" class="box" onclick="mb_check();return false;"><img src="images/check.png" width="20" name="mb_agree" id="mb_agree" /></a>
-          <a href="#" class="txt">개인정보 수집 및 위탁에 관한 동의</a>
+          <a href="#" class="txt">개인정보 수집 및 제 3자 위탁에 관한 동의</a>
           <a href="#" class="bt" onclick="open_pop('agree_popup');return false;"><img src="images/btn_detail.png" width="60" /></a>
         </div>
       </div>

@@ -190,7 +190,7 @@ $total_remain_cnt			= $total_runner_cnt - $total_matching_cnt;
           <div class="input"><input type="text" id="mb_phone" placeholder="휴대폰번호 ('-' 없이 입력해주세요)" onkeyup="only_num(this);return false;"></div>
         </div>
         <div class="check">
-          <a href="#" onclick="mb_check();return false;"><img src="images/check.png" name="mb_agree" id="mb_agree" /></a><a href="#">개인정보 수집 및 위탁에 관한 동의</a> <a href="#" onclick="open_pop('agree_popup');return false;"><img src="images/btn_detail.png" /></a>
+          <a href="#" onclick="mb_check();return false;"><img src="images/check.png" name="mb_agree" id="mb_agree" /></a><a href="#">개인정보 수집 및 제 3자 위탁에 관한 동의</a> <a href="#" onclick="open_pop('agree_popup');return false;"><img src="images/btn_detail.png" /></a>
         </div>
       </div>
       <div class="txt_notice">
