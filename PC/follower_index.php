@@ -974,7 +974,7 @@
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
           <div class="child_text">
-            <h2>저도 <span><?=$convert_job?></span><?= has_batchim($convert_job) > 0 ? "을" : "를" ?> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
+            <h2>저도 <span id="m_rs_job"></span><span id="jobPP">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
             <p id="m_rs_desc"><?=$ch_data['ch_desc']?>
             </p>
           </div>
@@ -1349,6 +1349,11 @@ function f_dream_next()
 <?
   }else{
 ?>
+                $("#m_rs_job").html(job_lang_kor);
+				if(rs_ch[2] > 0){
+					//받침 O
+					$("#jobPP").html("을");
+				}
             if(rs_ch[2] > 0) {
               //받침 O
               $("#f_ch_job").html(job_lang_kor +"을");
@@ -1395,7 +1400,7 @@ function f_dream_next()
     }
 ?>
                 mb_job      : sel_dream,
-        mb_job_kor    : job_lang_kor
+				mb_job_kor    : job_lang_kor
             },
             beforeSend: function(response){
                 $("#upload_page").hide();
@@ -1421,6 +1426,12 @@ function f_dream_next()
 <?
   }else{
 ?>
+                $("#m_rs_job").html(job_lang_kor);
+				if(rs_ch[2] > 0){
+					//받침 O
+					$("#jobPP").html("을");
+				}
+
             if(rs_ch[2] > 0) {
               //받침 O
               $("#f_ch_job").html(job_lang_kor+"을");
