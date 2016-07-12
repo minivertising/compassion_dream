@@ -404,7 +404,10 @@ function input_submit()
 
 					$("#loading_div").fadeOut('fast', function(){
 						$("body").removeClass("bg_sub_page bg_loading");
-						$("#matching_share_page").fadeIn('fast');
+						$("#matching_share_page").fadeIn('fast',function(){
+							$("body").removeClass("bg_sub_page bg_loading");
+							$("#loading_div").hide();
+						});
 					});
 				}else if (rs_ch[0] == "C"){
 					// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
