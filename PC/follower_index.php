@@ -872,7 +872,7 @@
           </div>
         </div>
         <div class="block_btn apply">
-          <div class="inner_apply clearfix">
+          <div class="inner_apply clearfix" style="margin-top:30px">
             <div class="left">
               <div class="bt"><a href="#"><img src="images/btn_sponsor.png" /></a></div>
               <div class="txt">1:1후원으로<br>아이들의 꿈을<br>현실로 만들어주세요!</div>
