@@ -29,7 +29,7 @@
 </script>
 <div id="loading_div" class="wrap_sec_top_sub loading" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="#" onclick="return_home('fol');return false;"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home();return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content">
       <div class="img_load">
 <?
@@ -778,7 +778,7 @@
 
   <div id="page_div5" class="wrap_sec_top_sub match_child follower" style="display:none;">
     <div class="inner">
-      <div class="logo"><a href="#" onclick="return_home('fol');return false;"><img src="images/logo_sub.png" /></a></div>
+      <div class="logo"><a href="#" onclick="return_home();return false;"><img src="images/logo_sub.png" /></a></div>
       <div class="block_content result_story_child">
         <div class="title">
           <div class="main">"<span><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "아" : "야" ?> 내꿈꿔~!"</div>
@@ -823,7 +823,7 @@
 
   <div id="page_div6" class="wrap_sec_top_sub match_child" style="display:none;">
     <div class="inner">
-      <div class="logo"><a href="#" onclick="return_home('fol');return false;"><img src="images/logo_sub.png" /></a></div>
+      <div class="logo"><a href="#" onclick="return_home();return false;"><img src="images/logo_sub.png" /></a></div>
       <div class="block_content follower">
         <div class="title">
         감사합니다!<br>
@@ -850,7 +850,7 @@
 
   <div id="page_div7" class="wrap_sec_top_sub match_child follower" style="display:none;">
     <div class="inner">
-      <div class="logo"><a href="#" onclick="return_home('fol');return false;"><img src="images/logo_sub.png" /></a></div>
+      <div class="logo"><a href="#" onclick="return_home();return false;"><img src="images/logo_sub.png" /></a></div>
       <div class="block_content result_story_compassion">
         <div class="title">
           <div class="main">'얘들아 내 꿈꿔~!’</div>
@@ -892,7 +892,7 @@
 <!-- 사진 업로드 페이지 -->
 <div id="upload_page" class="wrap_sec_top_sub" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="#" onclick="return_home('fol');return false;"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home();return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content upload_02">
       <div class="title">
         <div class="main">
@@ -960,7 +960,7 @@
 <!-- 팔로워 사진업로드 완료 공유 페이지 -->
 <div id="f_share_page" class="wrap_sec_top_sub match_child" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="#" onclick="return_home('fol');return false;"<img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home();return false;"<img src="images/logo_sub.png" /></a></div>
     <div class="block_content">
       <div class="title">
       아래 SNS에 어린 시절 사진을 공유하여<br> <span><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 후원자를 만날 수 있도록 해주세요!
@@ -998,7 +998,7 @@
 <!-- 팔로워 사진업로드 완료 공유 페이지 ( 결연O) -->
 <div id="f_share_no_matching_page" class="wrap_sec_top_sub match_child" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="#" onclick="return_home('fol');return false;"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home();return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content share_compassion">
       <div class="title">
       컴패션에서는 당신의 어린시절처럼<br>
@@ -1026,7 +1026,7 @@
 <!-- 공유버튼 클릭시 나오는 예시 페이지 -->
 <div id="sns_exam_page" class="wrap_sec_top_sub match_child" style="display:none;">
   <div class="inner">
-    <div class="logo"><a href="#" onclick="return_home('fol');return false;"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home();return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content exshare">
       <div class="title">
       아래의 예시를 참고하셔서<br>
@@ -1043,7 +1043,7 @@
 <!-- 공유 완료 페이지 -->
 <div id="thanks_page" style="display:none" class="wrap_sec_top_sub match_child">
   <div class="inner">
-    <div class="logo"><a href="#" onclick="return_home('fol');return false;"><img src="images/logo_sub.png" /></a></div>
+    <div class="logo"><a href="#" onclick="return_home();return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content follower">
       <div class="title end">
       참여해주셔서 감사합니다<br>

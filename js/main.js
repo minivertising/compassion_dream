@@ -27,17 +27,11 @@ function open_pop(param)
 	}});
 }
 
-function return_home(user)
+function return_home()
 {
-	if(confirm("정말 닫으시겠어요?\r\n지금 닫으시면 처음부터 다시 참여하셔야 됩니다.\r\n어린이들의 꿈을 위해 공유까지 완료해주세요") == true) {
-		if(user=="act") {
-			location.href="../index.php";
-		}else{
-			location.reload();
-		}
-	}else{
-		return;
-	}
+	if(confirm("정말 닫으시겠어요?\r\n지금 닫으시면 처음부터 다시 참여하셔야 됩니다.\r\n어린이들의 꿈을 위해 공유까지 완료해주세요") == true)
+		location.reload();
+
 }
 
 // 직업선택 팝업 창 여는 함수// 미사용
