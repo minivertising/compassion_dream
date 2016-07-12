@@ -5,6 +5,8 @@
 	$used_arr	= explode('_',$used);
 	$rs	= $used_arr[0];
 	$ugu	= $used_arr[1];
+	print_r($rs);
+	print_r($ugu);
 	if (isset($rs))
 	{
 		if ($ugu	== "act")
