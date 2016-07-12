@@ -8,7 +8,6 @@
   $convert_job = job_ko_add($mb_data['mb_job']);
   if ($mb_data['mb_name'] == "")
 	$mb_data['mb_name'] = "컴패션의 친구";
-print_r($_SERVER['HTTP_USER_AGENT']);
 ?>
 <body class="bg_sub_page storytelling">
 <script>
