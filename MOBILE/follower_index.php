@@ -3,7 +3,7 @@
   // ins_share_cnt($rs);
   // PC에서 유입시 PC로 이동
   if ($gubun == "PC")
-    echo "<script>location.href='../PC/follower_index.php?used=".$used.";</script>";
+    echo "<script>location.href='../PC/follower_index.php?used=".$used."';</script>";
   $ch_data  = sel_child_info($mb_data['mb_child']);
   $convert_job = job_ko_add($mb_data['mb_job']);
   if ($mb_data['mb_name'] == "")
