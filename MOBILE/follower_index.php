@@ -427,7 +427,7 @@
       <div class="block_content inner_story">
 
         <div id="talk_alarm1" class="chat_title" style="display:none;">
-        [<?=$mb_data['mb_name']?>]님이 당신과 [<?=$ch_data['ch_nick']?>]를 초대했습니다.
+        [<?=$mb_data['mb_name']?>]님이 당신과 [<?=$ch_data['ch_nick']?>]<?= has_batchim($ch_data['ch_nick']) > 0 ? "을" : "를" ?> 초대했습니다.
         </div>
 
         <!--왼쪽대화 아이콘+이미지-->
