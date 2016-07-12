@@ -91,7 +91,7 @@
 		$choice_query		= "UPDATE ".$_gl['child_info_table']." SET ch_choice='M' WHERE idx='".$ch_data['idx']."'";
 		$choice_result		= mysqli_query($my_db, $choice_query);
 
-		return $ch_data['idx']."||".$ch_data['ch_full_img_url']."||".$ch_data['ch_nick']."||".$ch_data['ch_nation_name']."||".$ch_data['ch_desc'];
+		return $ch_data['idx']."||".$ch_data['ch_full_img_url']."||".$ch_data['ch_nick']."||".$ch_data['ch_nation_name']."||".$ch_data['ch_desc']."||".$ch_data['ch_id']."||".$ch_data['ch_gender'];
 	}
 
 	function sel_child_info($ch_idx)
@@ -334,7 +334,7 @@
 "
 내꿈꿔 릴레이를 시작하셨네요!
 
-더 많은 사람들이 참여해서 후원자 님의 어린이가 꿈을 찾아갈 수 있도록 결연이 되는 그날까지 힘내주세요
+더 많은 사람들이 참여해서 후원자 님의 어린이가 꿈을 찾아갈 수 있도록 결연이 되는 그날까지 힘내주세요 :)
 
 아래의 링크를 누르시면 내 어린이의 현황을 확인하실 수 있습니다.
 

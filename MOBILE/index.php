@@ -5,11 +5,11 @@
 	else
 		$lms_flag = "N";
 
-	$total_runner_cnt   = total_runner_info();
-	$total_pic_cnt      = total_pic_info();
-	$total_matching_cnt = total_matching_info();
+	$total_runner_cnt   = @total_runner_info();
+	$total_pic_cnt      = @total_pic_info();
+	$total_matching_cnt = @total_matching_info();
 	//$total_matching_cnt		= 1000;
-	$total_remain_cnt			= 3000 - $total_matching_cnt;
+	//$total_remain_cnt			= 3000 - $total_matching_cnt;
 ?>
 <body>
 <script>
@@ -55,13 +55,27 @@
 		<iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
 	</div>
 	<div class="sec_txt">
+      <img src="images/txt_lms_body_01.png" />
+    </div>
+    <div class="btn_block">
+      <div class="vision"><a href="#" onclick="open_pop('trip_popup');return false;"><img src="images/btn_vision.png" /></a> </div>
+    </div>
+    <div class="sec_txt">
+      <img src="images/txt_lms_body_02.png" />
+    </div>
+    <div class="btn_block">
+      <div class="apply"><a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_apply_lms.png" /></a> </div>
+      <div class="more"><a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_more_lms.png" /></a> </div>
+    </div>
+
+	<!-- <div class="sec_txt">
 		<img src="images/txt_lms_body.png" />
 	</div>
 	<div class="btn_block">
 		<div class="vision"><a href="#" onclick="open_pop('trip_popup');return false;"><img src="images/btn_vision.png" /></a> </div>
 		<div class="apply"><a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_apply_lms.png" /></a> </div>
 		<div class="more"><a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_more_lms.png" /></a> </div>
-	</div>
+	</div> -->
 </div>
 <?
 	}else{

@@ -1,11 +1,11 @@
 <?
 include_once "./header.php";
 
-$total_runner_cnt   = total_runner_info();
-$total_pic_cnt      = total_pic_info();
-$total_matching_cnt = total_matching_info();
+$total_runner_cnt   = @total_runner_info();
+$total_pic_cnt      = @total_pic_info();
+$total_matching_cnt = @total_matching_info();
 //$total_matching_cnt		= 1000;
-$total_remain_cnt			= 3000 - $total_matching_cnt;
+//$total_remain_cnt			= 3000 - $total_matching_cnt;
 ?>
 <body>
 <script>
@@ -218,6 +218,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
           <div class="child_pic"><img src="images/ex_child.png" id="matching_child_pic" /></div>
           <div class="child_text">
             <h2>저도 <span id="m_rs_job">운동선수</span><span id="jobPP">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
+            <h2><span id="ch_info" style="font-size:16px"></span></h2>
             <p id="m_rs_desc">
             </p>
           </div>
@@ -645,7 +646,7 @@ function dream_next(){
 						$("#m_rs_job").html(job_lang_kor);
 						$("#m_rs_job2").html(job_lang_kor);
 						$("#m_rs_nation").html(rs_ch[4]);
-
+						$("#ch_info").html(rs_ch[3]+" / "+rs_ch[8]+" / "+rs_ch[4]+" / "+rs_ch[9]);
 						if(rs_ch[5] > 0) {
 							//받침 O
 							$("#name2PP").html("이에요");
