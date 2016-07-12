@@ -1262,9 +1262,25 @@ $(window).load(function() {
   $(".preview").width($(document).width()*0.9);
   s_ugu = 'fol';
 
-	$("#p5_desc").niceScroll({cursorcolor:"gray",cursorborder:"gray",cursoropacitymin:1,autohidemode:false});
-	$("#msp_desc").niceScroll({cursorcolor:"gray",cursorborder:"gray",cursoropacitymin:1,autohidemode:false});
+	//$("#p5_desc").niceScroll({cursorcolor:"gray",cursorborder:"gray",cursoropacitymin:1,autohidemode:false});
+	//$("#msp_desc").niceScroll({cursorcolor:"gray",cursorborder:"gray",cursoropacitymin:1,autohidemode:false});
 
+    $("#p5_desc").niceScroll({
+        cursorcolor: "#333",
+        cursoropacitymin: 0.3,
+        background: "#bbb",
+        cursorborder: "0",
+        autohidemode: false,
+        cursorminheight: 30
+    });
+    $("#msp_desc").niceScroll({
+        cursorcolor: "#333",
+        cursoropacitymin: 0.3,
+        background: "#bbb",
+        cursorborder: "0",
+        autohidemode: false,
+        cursorminheight: 30
+    });
 });
 function image_crop(){
   $($ori_image).cropper({
