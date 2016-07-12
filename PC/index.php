@@ -249,7 +249,7 @@ $total_matching_cnt = @total_matching_info();
     <div class="logo"><a href="#" onclick="return_home();return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content follower" style="height:830px">
       <div class="title">
-        미니버님!<br> 
+        <span id="re_mb_name">미니버님</span>!<br> 
         <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span><span id="re_namePP" style="color:white;">를</span> 위해<br>
         다시 한번 참여해주셔서 감사합니다 
       </div>
@@ -668,7 +668,7 @@ function dream_next(){
 					$("#thx_ch_img").attr("src",rs_ch[1]);
 					$("#loading_div").fadeOut('fast', function(){
 						$("#m_rs_ch_name").html(rs_ch[3]);
-						
+						$("#re_mb_name").html(mb_name);
 						$("#m_rs_ch_name3").html(rs_ch[3]);
 						$("#thx_ch_name").html("'"+rs_ch[3]+"'");
 						$("#re_ch_name").html(rs_ch[3]);
