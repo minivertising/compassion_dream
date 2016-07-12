@@ -875,9 +875,9 @@
       <div class="block_content">
         <div class="title end">
           감사합니다!<br>
-          당신과 같이 꿈을 응원해주시는 분들 덕분에
+          당신과 같이 꿈을 응원해주시는 분들 덕분에<br>
           <span><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?>
-          후원자를 만나 꿈을 꿀 수 있게 됐어요
+          후원자를 만나<br>꿈을 꿀 수 있게 됐어요
           <!-- "<span><?=$ch_data['ch_nick']?></span>아<br>
           내꿈꿔!"  -->
         </div>
