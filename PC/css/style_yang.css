@@ -291,7 +291,7 @@ body.main{
 .wrap_sec_movie .bg_child .child .inner_child .bar .heart{
 	position:absolute;
 	z-index:119;
-	left:10%;
+	left:0%;
 	margin-left:-30px;
 	top:-5px;
 }
@@ -300,7 +300,7 @@ body.main{
 	position:absolute;
 	height:27px;
 	background:#fed90b;
-	width:10%;
+	width:0%;
 	z-index:118;
 	border-bottom-left-radius:100px;
 	border-top-left-radius:100px;
