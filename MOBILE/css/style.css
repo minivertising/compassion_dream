@@ -1420,6 +1420,16 @@ body.storytelling{
 	width:28px;
 }
 
+.wrap_page .btn_close{
+	position: absolute;
+	right:8px;
+	top:8px;
+	z-index:9;
+}
+.wrap_page .btn_close img{
+	width:28px;
+}
+
 .wrap_pop.howto_notice{
 }
 .wrap_pop.howto_notice .img{

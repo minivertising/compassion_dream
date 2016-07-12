@@ -103,8 +103,18 @@ function next_page(param)
 
 function open_fb_ks_page(param)
 {
+	ios_prev_page	= param;
 	$("#page_div"+param).hide();
 	$("#fb_ks_page").show();
+}
+
+function return_home()
+{
+	if(confirm("지금 닫으시면 이전페이지로 이동합니다.\r\n이동하시겠어요?") == true)
+	{
+		$("#fb_ks_page").hide();
+		$("#page_div"+ios_prev_page).show();
+	}
 }
 
 function only_num(obj)
