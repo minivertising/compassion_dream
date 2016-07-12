@@ -236,6 +236,7 @@
             <div id="talk_c_message13" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
+                  <div class="name"><?=$mb_data['mb_name']?>님</div>
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
