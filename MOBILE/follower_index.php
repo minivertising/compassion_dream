@@ -1291,7 +1291,7 @@ function zoom_action(type){
     $($ori_image).cropper('zoom', -0.1);
   }
 }
-function rotate_action(degree){
+function rotate_action(degree){ // 현재 안쓰는 함수
   if(degree=="+")
   {
     $($ori_image).cropper('rotate', 90);

@@ -214,26 +214,33 @@
 
 		Ins_tracking();
 		});
-
-
-	    $inputImage.change(function (){
-        inputImageCheck = "Y";
-        $("#img_div").show();
-        $(".btn_closeup").show();
-        $($ori_image).cropper('destroy');
-        $('#img_save').ajaxSubmit({
-            beforeSubmit: function (){
-                $($ori_image).attr('src', './images/bx_loader.gif');
-            },
-            success: function (data) {
-              console.log(data);
-                $($ori_image).attr('src', data);
-                image_crop();
-            }
-        })
-    });
-
-
+			if (URL) {
+				$inputImage.change(function () {
+					inputImageCheck = "Y";
+					$("#img_div").show();
+					$(".btn_closeup").show();
+					var files = this.files;
+					var file;
+					if (!$ori_image.data('cropper')) {
+						return;
+					}
+					if (files && files.length) {
+						file = files[0];
+						if (/^image\/\w+$/.test(file.type)) {
+							blobURL = URL.createObjectURL(file);
+							$ori_image.one('built.cropper', function () {
+								// Revoke when load complete
+								URL.revokeObjectURL(blobURL);
+							}).cropper('reset').cropper('replace', blobURL);
+							$inputImage.val('');
+						} else {
+							window.alert('Please choose an image file.');
+						}
+					}
+				});
+			} else {
+				$inputImage.prop('disabled', true).parent().addClass('disabled');
+			}
 function image_crop(){
 		$($ori_image).cropper({
 				viewMode: 0,
@@ -253,7 +260,23 @@ function image_crop(){
 				toggleDragModeOnDblclick:false,
 		});
 }
-
+$($inputImage).change(function(){
+	inputImageCheck = "Y";
+	//files = this.files;
+// console.dir(this);
+// if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+//  // $($ori_image).cropper('destroy');
+//  $('#ie_img_save').ajaxSubmit({
+//      success: function (data) {
+//          console.dir(data);
+//      }
+//  });
+//  // this.select();
+//  // realFath = document.selection.createRangeCollection()[0].text.toString();
+//  // this.blur();
+//  }
+	//readURL(this);
+});
 function zoom_action(type){
 	if(type=="up")
 	{
