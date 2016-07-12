@@ -288,6 +288,7 @@
             <div id="talk_c_message16" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
+                  <div class="name"><?=$mb_data['mb_name']?>님</div>
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
@@ -511,7 +512,7 @@
               <div class="inner_one_talk clearfix">
                 <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
                 <div class="content">
-                  <div class="name"><?=$ch_data['ch_name']?></div>
+                  <div class="name"><?=$ch_data['ch_nick']?></div>
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_white.png" width="24" /></div>
                     <div class="txt no_chat">...</div>
@@ -639,6 +640,7 @@
             <div id="talk_message16" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
+                  <div class="name"><?=$mb_data['mb_name']?>님</div>
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
