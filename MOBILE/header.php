@@ -5,8 +5,6 @@
 	$used_arr	= explode('_',$used);
 	$rs	= $used_arr[0];
 	$ugu	= $used_arr[1];
-	print_r($rs);
-	print_r($ugu);
 	if (isset($rs))
 	{
 		if ($ugu	== "act")
@@ -20,6 +18,7 @@
 			$mb_data	= mysqli_fetch_array($mb_result);
 		}
 		$img_url		= str_replace("..","http://mydream.compassion.or.kr",$mb_data['mb_image']);
+	print_r($img_url);
 	}
 ?>
 <!doctype html>
