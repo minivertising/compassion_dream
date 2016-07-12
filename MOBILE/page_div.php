@@ -12,7 +12,7 @@
                 	<div class="selec_job clearfix">
                     	<!-- <div class="txt_1" id="sel_job_txt">1. 내 어린시절 꿈 선택 </div> -->
                         <div class="txt_1"><span id="sel_job_txt">1. 내 어린시절 꿈 선택 </span> </div>
-                        <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="90" /></a></div><!--버튼 두개입니다-->
+                        <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="90" id="sel_job_btn" /></a></div><!--버튼 두개입니다-->
                     </div>
                     <div class="upload_pic">
                     	<div class="title_pic clearfix">
