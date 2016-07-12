@@ -1512,11 +1512,11 @@ body.storytelling{
 }
 .wrap_pop.p_preview .inner_p_preview .img{
 	position: absolute;
-	width:96.5%;
-	top:38%;
+	width:93.5%;
+	top:32%;
 	text-align:center;
 	padding-left:1.5%;
-	left:2%; /* 개발쪽 변경*/
+	left:1.2%; /* 개발쪽 변경*/
 }
 .wrap_pop.p_preview .inner_p_preview .img img{
 	width:100%;

@@ -125,7 +125,7 @@
         </a>
       </div>
       <div class="block_btn ok" onclick="go_main('matching_share_page');return false;">
-        <a href="#" onclick="go_main('matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
+        <a href="#"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
   </div>
@@ -163,7 +163,7 @@
         </a>
       </div>
       <div class="block_btn ok" onclick="go_main('re_matching_share_page');return false;">
-        <a href="#" onclick="go_main('re_matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
+        <a href="#"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
   </div>
@@ -205,7 +205,7 @@
         </a>
       </div>
       <div class="block_btn ok" onclick="go_main('no_matching_page');return false;">
-        <a href="#" onclick="go_main('no_matching_page');return false;"><img src="images/btn_ok.png" /></a>
+        <a href="#"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
   </div>
