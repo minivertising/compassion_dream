@@ -1241,6 +1241,14 @@ $(window).load(function() {
 			alert("잠시만요!\r\n혹시 아이폰 유저이신가요?\r\n아이폰 유저이시라면 우측 상단에 화살표를 누르시고 사파리에서 열기를 눌러주세요");
 			return false;
 <?
+		}else{
+			if ($android_story_gubun == "Y")
+			{
+?>
+			alert("잠시만요!\r\n혹시 안드로이드 유저이신가요?\r\n안드로이드 유저이시라면 우측 상단에 화살표를 누르시고 인터넷에서 열기를 눌러주세요");
+			return false;
+<?
+			}
 		}
 ?>
 	talk_c_start();

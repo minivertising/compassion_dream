@@ -51,6 +51,12 @@
 
 	}else{
 		$iphone_banner_gubun	= "N";
+
+		if(stripos( $_SERVER['HTTP_USER_AGENT'], "KAKAOSTORY" ))
+			$android_story_gubun	= "Y";
+		else
+			$android_story_gubun	= "N";
+
 	}
 
 	if($check_mobile == "Y")
