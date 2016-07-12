@@ -1,8 +1,10 @@
 <?
 	include_once "../config.php";
 
-	$rs	= $_REQUEST['rs'];
-	$ugu	= $_REQUEST['ugu'];
+	$used	= $_REQUEST['used'];
+	$used_arr	= explode('_',$used);
+	$rs	= $used_arr[0];
+	$ugu	= $used_arr[1];
 	if (isset($rs))
 	{
 		if ($ugu	== "act")
