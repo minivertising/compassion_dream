@@ -38,6 +38,7 @@
   </div>
 </div>
 <div id="contents_div" class="wrap_page mystatus">
+	<div class="logo"><a href="#" onclick="location.reload();"><img src="images/logo_lms.png" /></div>
   <div class="head_title">
     <img src="images/title_status.png" width="95" />
   </div>

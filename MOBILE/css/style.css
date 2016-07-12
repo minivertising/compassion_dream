@@ -395,6 +395,17 @@ body.storytelling{
 	width:100%;
 }
 
+.wrap_page.mystatus .logo{
+	width:47%;
+	float:left;
+	padding-left:3%;
+	padding-top:3%;
+	position:absolute;
+}
+.wrap_page.mystatus .logo img{
+	width:50%;
+}
+
 
 
 .wrap_page.sub{
