@@ -133,7 +133,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     <div class="block_content upload">
       <div class="title">
         <div class="main">
-        여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
+        여러분의 어린 시절 꿈과 사진을 올려주세요<br> 
         SNS에 사진과 함께 당신이 응원할 <span>‘꿈을 잃은 어린이’</span>가 소개됩니다
         </div>
       </div>
