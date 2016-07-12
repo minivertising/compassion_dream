@@ -1233,7 +1233,9 @@ $(window).load(function() {
 ?>
 			alert("111");
 			return false;
+<?
 		}
+?>
 	talk_c_start();
 
 	$(".inner_story").scroll(function(){
