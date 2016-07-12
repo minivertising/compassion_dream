@@ -5,7 +5,7 @@ $total_runner_cnt   = @total_runner_info();
 $total_pic_cnt      = @total_pic_info();
 $total_matching_cnt = @total_matching_info();
 //$total_matching_cnt		= 1000;
-//$total_remain_cnt			= 3000 - $total_matching_cnt;
+$total_remain_cnt			= $total_runner_cnt - $total_matching_cnt;
 ?>
 <body>
 <script>
@@ -104,7 +104,7 @@ $total_matching_cnt = @total_matching_info();
           </div>
           <div class="num">
             <div class="txt"><img src="images/txt_waiting_child.png" /></div>
-            <div class="cnt"><span><?=number_format($total_runner_cnt)?></span>명</div>
+            <div class="cnt"><span><?=number_format($total_remain_cnt)?></span>명</div>
           </div>
         </div>
       </div>
@@ -397,7 +397,7 @@ $total_matching_cnt = @total_matching_info();
 		$("#ytplayer").height(yt_height);
 
 		// gage 스타일 적용
-		var gage_w	= (<?=$total_matching_cnt?>/<?=$total_runner_cnt?>)*100;
+		var gage_w	= (<?=$total_matching_cnt?>/<?=$total_remain_cnt?>)*100;
 		$(".g").css("width",gage_w+"%");
 		$(".heart").css("left",gage_w+"%");
 		Ins_tracking();
