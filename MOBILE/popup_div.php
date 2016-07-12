@@ -268,6 +268,9 @@
 
             </ul>
         </div>
+    <div class="block_btn upload">
+      <a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_ok.png" /></a>
+    </div>
     </div>
   <!-- 유의사항 팝업-->
 
@@ -283,6 +286,10 @@
         <div class="img step">
         	<img src="images/img_step.png" class="bg"/>
         </div>
+      <div class="block_btn upload">
+        <a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_ok.png" /></a>
+      </div>
+
     </div> 
   <!-- 참여방법 팝업-->
 

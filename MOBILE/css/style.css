@@ -1422,6 +1422,16 @@ body.storytelling{
 	margin:0 auto;
 	position:relative;
 }
+
+.wrap_pop .block_btn{
+	width:100%;
+	text-align:center;
+	padding:15px 0;
+}
+.wrap_pop .block_btn img{
+	width:30%;
+}
+
 .wrap_pop .btn_close{
 	position: absolute;
 	right:8px;
