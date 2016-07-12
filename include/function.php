@@ -147,7 +147,7 @@
 			$convert_job	= "과학자";
 		}else if ($engJob == "minister"){
 			// 목사님
-			$convert_job	= "목사님";
+			$convert_job	= "목사";
 		}else if ($engJob == "policeman"){
 			// 경찰관
 			$convert_job	= "경찰관";
