@@ -385,6 +385,7 @@ function input_submit()
 						// $("#m_rs_job2").html(job_add_arr[1]);
 						$("#m_rs_nation").html(rs_ch[4]);
 						$("#m_rs_desc").html(rs_ch[7]);
+						$("#ch_info").html(rs_ch[3]+" / "+rs_ch[8]+" / "+rs_ch[4]+" / "+rs_ch[9]);
 
 						if(rs_ch[5] > 0) {
 							//받침 O
