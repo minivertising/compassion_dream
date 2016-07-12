@@ -295,7 +295,7 @@ function go_main(page)
 				$("#thanks_page").fadeIn('fast');
 			})
 		}
-	}else if (share_cnt == 3){
+	}else if (share_cnt >= 3){
 		$("#"+page).fadeOut('fast', function(){
 			$("#thanks_page").fadeIn('fast');
 		});
