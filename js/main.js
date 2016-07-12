@@ -140,9 +140,11 @@ function tab_click(param)
 	{
 		$("#s_tab1").attr("src","images/navi_fb_on.png");
 		$("#s_tab2").attr("src","images/navi_ks_off.png");
+		$("#s_contents").attr("src","images/img_howto_fb.png");
 	}else{
 		$("#s_tab1").attr("src","images/navi_fb_off.png");
 		$("#s_tab2").attr("src","images/navi_ks_on.png");
+		$("#s_contents").attr("src","images/img_howto_ks.png");
 	}
 }
 
