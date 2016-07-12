@@ -300,6 +300,9 @@
   <div id="trip_popup" class="wrap_pop about_campaign" style="background:#AFD5F8">
     <div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/popup/btn_close.png" /></a></div>
     <div class="img"><img src="images/popup/img_about_campaign.png" /></div>
+      <div class="block_btn upload">
+        <a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_ok.png" /></a>
+      </div>
   </div>
   <!-- 비전트립 설명 팝업-->
 
