@@ -3,6 +3,11 @@
 
 	$ch_data	= sel_child_info($mb_data['mb_child']);
 
+	if ($ch_data['ch_gender'] == "F")
+		$ch_data['ch_gender'] = "여";
+	else
+		$ch_data['ch_gender'] = "남";
+
 	$share_count	= $mb_data['mb_share_cnt'] + $mb_data['mb_f_share_cnt'];
 ?>
 <body class="bg_status">
@@ -47,7 +52,7 @@
     <span><?=number_format($share_count)?></span>명에 의해 공유되고 있습니다
   </div>
   <div class="pic_child">
-    <div><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
+    <div style="margin-top:-13px"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
 <?
 	if ($ch_data['ch_choice'] == "Y")
 	{
@@ -73,8 +78,9 @@
 <?
 	}else{
 ?>
-    <div class="txt_wating">
-    후원자님을 기다리고 있어요!
+    <div class="txt_wating" style="padding-top:2px">
+    후원자님을 기다리고 있어요!<br>
+	<?=$ch_data['ch_nick']." / ".$ch_data['ch_key']." / ".$ch_data['ch_nation_name']." / ".$ch_data['ch_gender']?>
     </div>
   </div>
   <div class="head_title t_2">
