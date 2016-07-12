@@ -91,6 +91,11 @@
 		$choice_query		= "UPDATE ".$_gl['child_info_table']." SET ch_choice='M' WHERE idx='".$ch_data['idx']."'";
 		$choice_result		= mysqli_query($my_db, $choice_query);
 
+		if ($ch_data['ch_gender'] == "F")
+			$ch_data['ch_gender'] = "여";
+		else
+			$ch_data['ch_gender'] = "남";
+
 		return $ch_data['idx']."||".$ch_data['ch_full_img_url']."||".$ch_data['ch_nick']."||".$ch_data['ch_nation_name']."||".$ch_data['ch_desc']."||".$ch_data['ch_key']."||".$ch_data['ch_gender'];
 	}
 
