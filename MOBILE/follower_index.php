@@ -1248,6 +1248,13 @@ $(window).load(function() {
 	});
 <?
 	}else{
+		if ($iphone_story_gubun == "Y")
+		{
+?>
+			alert("111");
+			return false;
+<?
+		}
 ?>
     talk_start();
 
