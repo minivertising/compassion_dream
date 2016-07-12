@@ -18,7 +18,6 @@
 			$mb_data	= mysqli_fetch_array($mb_result);
 		}
 		$img_url		= str_replace("..","http://mydream.compassion.or.kr",$mb_data['mb_image']);
-	print_r($img_url);
 	}
 ?>
 <!doctype html>
