@@ -3,7 +3,7 @@
 
   // MOBILE에서 유입시 MOBILE로 이동
   if ($gubun == "MOBILE")
-    echo "<script>location.href='../MOBILE/follower_index.php?rs=".$rs."&ugu=".$ugu."';</script>";
+    echo "<script>location.href='../MOBILE/follower_index.php?used=".$used.";</script>";
   $ch_data    = sel_child_info($mb_data['mb_child']);
   $convert_job = job_ko_add($mb_data['mb_job']);
 
