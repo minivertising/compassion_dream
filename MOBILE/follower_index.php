@@ -1178,7 +1178,7 @@
       </div>
 
       <div class="block_btn second">
-        <a href="#"><img src="images/btn_phone_num.png" /></a>
+        <a href="https://app.smartsheet.com/b/form?EQBCT=08d3e08b3361464ab2674d41cf8356fd" target="_blank"><img src="images/btn_phone_num.png" /></a>
       </div>
       <div class="txt_desc">
       저녁 6시 이후에는 상담이 어려운 관계로<br>
