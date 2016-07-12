@@ -1344,9 +1344,10 @@ function rotate_action(degree){ // 현재 안쓰는 함수
 
     $inputImage.change(function (){
 <?
-	if ($iPhoneYN == "N")
+	if ($iPhoneYN == "Y")
 	{
 ?>
+		alert('11');
         inputImageCheck = "Y";
         $("#img_div").show();
         $(".btn_closeup").show();
@@ -1364,6 +1365,7 @@ function rotate_action(degree){ // 현재 안쓰는 함수
 <?
 	}else{
 ?>
+		alert('22');
        if (URL) {
          $inputImage.change(function () {
            inputImageCheck = "Y";
