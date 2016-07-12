@@ -76,7 +76,7 @@
         </div>
       </div>
       <div class="sub_title add">
-      추첨에 선정 되신 분께는 개별 연락 드립니다
+      선정 되신 분께는 개별 연락 드립니다
       </div>
       <div class="block_btn ok">
         <a href="#" onclick="input_submit();return false;"><img src="images/btn_next.png" /></a>
