@@ -456,7 +456,7 @@
             <div class="content">
               <div class="talk clearfix">
                 <div class="deco"><img src="images/talk_white.png" width="15" /></div>
-                <div class="txt">저에요</div>
+                <div class="txt">저예요</div>
               </div>
             </div>
           </div>

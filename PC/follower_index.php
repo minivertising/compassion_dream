@@ -432,7 +432,7 @@
               <div class="content">
                 <div class="chat clearfix">
                   <div class="deco"><img src="images/deco_white.png" width="24" /></div>
-                  <div class="txt">저에요</div>
+                  <div class="txt">저예요</div>
                   <!-- <div class="cnt">1</div> -->
                 </div>
               </div>
