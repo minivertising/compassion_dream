@@ -14,7 +14,6 @@
   $convert_job = job_ko_add($mb_data['mb_job']);
   if ($mb_data['mb_name'] == "")
 	$mb_data['mb_name'] = "컴패션의 친구";
-
 ?>
 <body class="bg_sub_page storytelling">
 <script>
@@ -998,12 +997,12 @@
                       <div class="title_pic clearfix">
                           <div class="txt_1">2. 사진업로드</div>
                             <div class="txt_2">
-                              <!-- <form id="img_save" method="post" action="./photo_upload.php" enctype="multipart/form-data"> -->
-                                <!-- <label for="f_inputImage" title="Upload image file"> -->
-                                  <input type="file" id="f_inputImage" name="file" accept="image/*">
+                              <form id="img_save" method="post" action="./photo_upload.php" enctype="multipart/form-data">
+                                <label for="f_inputImage" title="Upload image file">
+                                  <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
                                   <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="90" /></span>
-                                <!-- </label> -->
-                              <!-- </form> -->
+                                </label>
+                              </form>
                             </div>
                           <div class="txt_3"><a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a></div>
                         </div>
@@ -1233,8 +1232,6 @@ $(window).load(function() {
   $("#cboxTopCenter").hide();
   $("#cboxBottomCenter").hide();
 
-alert("<?=$iPhoneYN?>");
-
 <?
 	if ($mb_data['mb_child'] == "")
 	{
@@ -1345,13 +1342,34 @@ function rotate_action(degree){ // 현재 안쓰는 함수
   }
 }
 
+    //   if (URL) {
+    //     $inputImage.change(function () {
+    //       inputImageCheck = "Y";
+    //       $("#img_div").show();
+    // $(".btn_closeup").show();
+    //       var files = this.files;
+    //       var file;
+    //       if (!$ori_image.data('cropper')) {
+    //         return;
+    //       }
+    //       if (files && files.length) {
+    //         file = files[0];
+    //         if (/^image\/\w+$/.test(file.type)) {
+    //           blobURL = URL.createObjectURL(file);
+    //           $ori_image.one('built.cropper', function () {
+    //             // Revoke when load complete
+    //             URL.revokeObjectURL(blobURL);
+    //           }).cropper('reset').cropper('replace', blobURL);
+    //           $inputImage.val('');
+    //         } else {
+    //           window.alert('Please choose an image file.');
+    //         }
+    //       }
+    //     });
+    //   } else {
+    //     $inputImage.prop('disabled', true).parent().addClass('disabled');
+    //   }
     $inputImage.change(function (){
-		alert("00");
-<?
-	if ($iPhoneYN == "Y")
-	{
-?>
-		alert('11');
         inputImageCheck = "Y";
         $("#img_div").show();
         $(".btn_closeup").show();
@@ -1366,40 +1384,6 @@ function rotate_action(degree){ // 현재 안쓰는 함수
                 image_crop();
             }
         })
-<?
-	}else{
-?>
-		alert('22');
-       if (URL) {
-         $inputImage.change(function () {
-           inputImageCheck = "Y";
-           $("#img_div").show();
-	     $(".btn_closeup").show();
-           var files = this.files;
-           var file;
-           if (!$ori_image.data('cropper')) {
-             return;
-           }
-           if (files && files.length) {
-             file = files[0];
-             if (/^image\/\w+$/.test(file.type)) {
-               blobURL = URL.createObjectURL(file);
-               $ori_image.one('built.cropper', function () {
-                 // Revoke when load complete
-                 URL.revokeObjectURL(blobURL);
-               }).cropper('reset').cropper('replace', blobURL);
-               $inputImage.val('');
-             } else {
-               window.alert('Please choose an image file.');
-             }
-           }
-         });
-       } else {
-         $inputImage.prop('disabled', true).parent().addClass('disabled');
-       }
-<?
-	}
-?>
     });
 
 function f_dream_next()
