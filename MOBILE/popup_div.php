@@ -236,6 +236,9 @@
                 <br>- 경찰청 사이버테러대응센터 (www.ctrc.go.kr / 02-392-0330)</dd>
                 </dl>
         </div>
+      <div class="block_btn upload">
+        <a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_ok.png" /></a>
+      </div>
     </div>
 
   <!--END : 약관 팝업-->
