@@ -9,7 +9,7 @@
 	$total_pic_cnt      = @total_pic_info();
 	$total_matching_cnt = @total_matching_info();
 	//$total_matching_cnt		= 1000;
-	//$total_remain_cnt			= 3000 - $total_matching_cnt;
+	$total_remain_cnt			= $total_runner_cnt - $total_matching_cnt;
 ?>
 <body>
 <script>
@@ -83,7 +83,7 @@
 <div id="contents_div" class="wrap_page main_page">
 	<div class="wrap_top_bg">
 		<div class="quick">
-			<a href="http://www.compassion.or.kr" target="_blank"><img src="images/quick.png" /></a>
+			<a href="http://www.compassion.or.kr/mobile/compassion_mobile.aspx" target="_blank"><img src="images/quick.png" /></a>
 		</div>
 		<div class="main_top clearfix">
 			<div class="logo"><a href="index.php"><img src="images/logo_main.png" /></a></div>
@@ -138,7 +138,7 @@
 			</div>
 		</div>
 		<div class="num">
-<?=number_format($total_runner_cnt)?>
+<?=number_format($total_remain_cnt)?>
 		</div>
 		<img src="images/bg_num_child.jpg" class="bg" />
 	</div>
@@ -194,7 +194,7 @@
 		$("#ytplayer").height(yt_height);
 		$(".yt_player").height(yt_height);
 		// gage 스타일 적용
-		var gage_w	= (<?=$total_matching_cnt?>/<?=$total_runner_cnt?>)*100;
+		var gage_w	= (<?=$total_matching_cnt?>/<?=$total_remain_cnt?>)*100;
 		$(".bar").css("width",gage_w+"%");
 		$(".icon").css("left",gage_w+"%");
 		// 미리보기 제어

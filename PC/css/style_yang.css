@@ -188,7 +188,7 @@ body.main{
 	position:absolute;	
 	font-size:30px;
 	right:60px;
-	bottom:23px;
+	bottom:49px;
 	color:#fed90b;
 	font-family:Arial, "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, sans-serif;
 }
@@ -1354,7 +1354,7 @@ body.main{
 .popup_wrap.main_page_pop .text{
 	overflow-y:scroll;
 	border:0px red solid;
-	margin-top:0px;
+	margin-top:10px;
 	height:380px;
 	padding:0 0px 0 50px;
 }

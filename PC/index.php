@@ -5,7 +5,7 @@ $total_runner_cnt   = @total_runner_info();
 $total_pic_cnt      = @total_pic_info();
 $total_matching_cnt = @total_matching_info();
 //$total_matching_cnt		= 1000;
-//$total_remain_cnt			= 3000 - $total_matching_cnt;
+$total_remain_cnt			= $total_runner_cnt - $total_matching_cnt;
 ?>
 <body>
 <script>
@@ -104,7 +104,7 @@ $total_matching_cnt = @total_matching_info();
           </div>
           <div class="num">
             <div class="txt"><img src="images/txt_waiting_child.png" /></div>
-            <div class="cnt"><span><?=number_format($total_runner_cnt)?></span>명</div>
+            <div class="cnt"><span><?=number_format($total_remain_cnt)?></span>명</div>
           </div>
         </div>
       </div>
@@ -249,7 +249,7 @@ $total_matching_cnt = @total_matching_info();
     <div class="logo"><a href="#" onclick="return_home();return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content follower" style="height:830px">
       <div class="title">
-        미니버님!<br> 
+        <span id="re_mb_name" style="color:white;">미니버</span>님!<br> 
         <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span><span id="re_namePP" style="color:white;">를</span> 위해<br>
         다시 한번 참여해주셔서 감사합니다 
       </div>
@@ -292,10 +292,10 @@ $total_matching_cnt = @total_matching_info();
       </div>
       <div class="block_child">
         <div class="inner_block_child clearfix">
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
+          <div class="child_pic"><img src="images/ex_child_01.png" /></div>
+          <div class="child_pic"><img src="images/ex_child_02.png" /></div>
+          <div class="child_pic"><img src="images/ex_child_03.png" /></div>
+          <div class="child_pic"><img src="images/ex_child_04.png" /></div>
         </div>
       </div>
       <div class="block_btn sns">
@@ -397,7 +397,7 @@ $total_matching_cnt = @total_matching_info();
 		$("#ytplayer").height(yt_height);
 
 		// gage 스타일 적용
-		var gage_w	= (<?=$total_matching_cnt?>/<?=$total_runner_cnt?>)*100;
+		var gage_w	= (<?=$total_matching_cnt?>/<?=$total_remain_cnt?>)*100;
 		$(".g").css("width",gage_w+"%");
 		$(".heart").css("left",gage_w+"%");
 		Ins_tracking();
@@ -668,7 +668,7 @@ function dream_next(){
 					$("#thx_ch_img").attr("src",rs_ch[1]);
 					$("#loading_div").fadeOut('fast', function(){
 						$("#m_rs_ch_name").html(rs_ch[3]);
-						
+						$("#re_mb_name").html(mb_name);
 						$("#m_rs_ch_name3").html(rs_ch[3]);
 						$("#thx_ch_name").html("'"+rs_ch[3]+"'");
 						$("#re_ch_name").html(rs_ch[3]);

@@ -85,7 +85,7 @@
         <a href="#" onclick="tab_click('2');return false;"><img src="images/navi_ks_off.png" id="s_tab2" /></a>
       </div>
       <div class="howto_img">
-        <img src="images/img_howto_fb.png" />
+        <img src="images/img_howto_fb.png" id="s_contents" />
       </div>
       <div class="btn_block">
         <a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_ok.png" /></a>

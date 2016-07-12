@@ -43,7 +43,7 @@
 ?>
 <meta property="og:description" content="내 어린 시절 꿈과 사진으로 꿈이 필요한 어린이에게 후원자를 찾아주는 컴패션의 릴레이 캠페인입니다" />
 <link rel="shortcut icon" type="image/x-icon" href="./images/compassion.ico" />
-<title>컴패션 - 내꿈꿔</title>
+<title>한국컴패션 - 내 꿈꿔 릴레이</title>
 <!--[if lt IE 9]><script src="./js/html5shiv.js"></script><![endif]-->
 <!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
 <link href="../lib/bxslider/m_jquery.bxslider.css" rel="stylesheet" />
@@ -58,6 +58,7 @@
 <script type="text/javascript" src="../js/canvas-to-blob.js"></script>
 <script type="text/javascript" src="../lib/colorbox/jquery.colorbox-min.js"></script>
 <script type="text/javascript" src="../js/jquery.form.js"></script>
+<script type="text/javascript" src="../js/jquery.nicescroll.js"></script>
 <script src="../lib/bxslider/jquery.bxslider.js"></script>
 <script src="../lib/load-image/load-image.all.min.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>

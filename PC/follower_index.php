@@ -236,6 +236,7 @@
             <div id="talk_c_message13" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
+                  <div class="name"><?=$mb_data['mb_name']?>님</div>
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
@@ -287,6 +288,7 @@
             <div id="talk_c_message16" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
+                  <div class="name"><?=$mb_data['mb_name']?>님</div>
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
@@ -430,7 +432,7 @@
               <div class="content">
                 <div class="chat clearfix">
                   <div class="deco"><img src="images/deco_white.png" width="24" /></div>
-                  <div class="txt">저에요</div>
+                  <div class="txt">저예요</div>
                   <!-- <div class="cnt">1</div> -->
                 </div>
               </div>
@@ -510,7 +512,7 @@
               <div class="inner_one_talk clearfix">
                 <div class="icon"><img src="<?=$ch_data['ch_full_img_url']?>" class="pic_icon" /></div>
                 <div class="content">
-                  <div class="name"><?=$ch_data['ch_name']?></div>
+                  <div class="name"><?=$ch_data['ch_nick']?></div>
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_white.png" width="24" /></div>
                     <div class="txt no_chat">...</div>
@@ -586,6 +588,7 @@
             <div id="talk_message13" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
+                  <div class="name"><?=$mb_data['mb_name']?>님</div>
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
@@ -637,6 +640,7 @@
             <div id="talk_message16" class="one_talk right" style="display:none;">
               <div class="inner_one_talk">
                 <div class="content">
+                  <div class="name"><?=$mb_data['mb_name']?>님</div>
                   <div class="chat clearfix">
                     <div class="deco"><img src="images/deco_yellow.png" width="24" /></div>
                     <div class="txt">
@@ -836,10 +840,10 @@
           </div>
         </div>
         <div class="img_waiting_child clearfix">
-          <div class="one_child"><img src="images/ex_child.png" /></div>
-          <div class="one_child"><img src="images/ex_child.png" /></div>
-          <div class="one_child"><img src="images/ex_child.png" /></div>
-          <div class="one_child"><img src="images/ex_child.png" /></div>
+          <div class="one_child"><img src="images/ex_child_01.png" /></div>
+          <div class="one_child"><img src="images/ex_child_02.png" /></div>
+          <div class="one_child"><img src="images/ex_child_03.png" /></div>
+          <div class="one_child"><img src="images/ex_child_04.png" /></div>
         </div>
         <div class="block_btn">
           <a href="index.php"><img src="images/btn_go_campaign.png" /></a>
@@ -861,10 +865,10 @@
         </div>
         <div class="block_child">
           <div class="inner_block_child clearfix">
-            <div class="child_pic"><img src="images/ex_child.png" /></div>
-            <div class="child_pic"><img src="images/ex_child.png" /></div>
-            <div class="child_pic"><img src="images/ex_child.png" /></div>
-            <div class="child_pic"><img src="images/ex_child.png" /></div>
+            <div class="child_pic"><img src="images/ex_child_01.png" /></div>
+            <div class="child_pic"><img src="images/ex_child_02.png" /></div>
+            <div class="child_pic"><img src="images/ex_child_03.png" /></div>
+            <div class="child_pic"><img src="images/ex_child_04.png" /></div>
           </div>
         </div>
         <div class="block_btn apply">
@@ -970,7 +974,7 @@
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
           <div class="child_text">
-            <h2>저도 <span><?=$convert_job?></span><?= has_batchim($convert_job) > 0 ? "을" : "를" ?> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
+            <h2>저도 <span id="m_rs_job"></span><span id="jobPP">를</span> 꿈꿀 수 있을까요?</h2> <!-- 조사 ~을, ~를 -->
             <p id="m_rs_desc"><?=$ch_data['ch_desc']?>
             </p>
           </div>
@@ -1006,10 +1010,10 @@
       </div>
       <div class="block_child">
         <div class="inner_block_child clearfix">
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
-          <div class="child_pic"><img src="images/ex_child.png" /></div>
+          <div class="child_pic"><img src="images/ex_child_01.png" /></div>
+          <div class="child_pic"><img src="images/ex_child_02.png" /></div>
+          <div class="child_pic"><img src="images/ex_child_03.png" /></div>
+          <div class="child_pic"><img src="images/ex_child_04.png" /></div>
         </div>
       </div>
       <div class="block_btn sns">
@@ -1133,38 +1137,7 @@
 
         Ins_share_cnt('<?=$rs?>','<?=$ugu?>','<?=$parent_idx?>');
     });
-    /*
-        var $inputImage = $('#inputImage');
-        var URL = window.URL || window.webkitURL;
-        var blobURL;
-            if (URL) {
-                $inputImage.change(function () {
-                    var files = this.files;
-                    var file;
-                    if (!$ori_image.data('cropper')) {
-                        return;
-                    }
-                    if (files && files.length) {
-                        file = files[0];
-                        if (/^image\/\w+$/.test(file.type)) {
-                            blobURL = URL.createObjectURL(file);
-                            $ori_image.one('built.cropper', function () {
-                                // Revoke when load complete
-                                URL.revokeObjectURL(blobURL);
-                            }).cropper('reset').cropper('replace', blobURL);
-                            $inputImage.val('');
-                        } else {
-                            window.alert('Please choose an image file.');
-                        }
-                    }
-                });
-            } else {
-                $inputImage.prop('disabled', true).parent().addClass('disabled');
-            }
-            */
-// $(function () {
-//     image_crop();
-// });
+
 function image_crop(){
   $($ori_image).cropper({
     viewMode: 0,
@@ -1345,6 +1318,11 @@ function f_dream_next()
 <?
   }else{
 ?>
+                $("#m_rs_job").html(job_lang_kor);
+				if(rs_ch[2] > 0){
+					//받침 O
+					$("#jobPP").html("을");
+				}
             if(rs_ch[2] > 0) {
               //받침 O
               $("#f_ch_job").html(job_lang_kor +"을");
@@ -1391,7 +1369,7 @@ function f_dream_next()
     }
 ?>
                 mb_job      : sel_dream,
-        mb_job_kor    : job_lang_kor
+				mb_job_kor    : job_lang_kor
             },
             beforeSend: function(response){
                 $("#upload_page").hide();
@@ -1417,6 +1395,12 @@ function f_dream_next()
 <?
   }else{
 ?>
+                $("#m_rs_job").html(job_lang_kor);
+				if(rs_ch[2] > 0){
+					//받침 O
+					$("#jobPP").html("을");
+				}
+
             if(rs_ch[2] > 0) {
               //받침 O
               $("#f_ch_job").html(job_lang_kor+"을");
