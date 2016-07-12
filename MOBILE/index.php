@@ -226,7 +226,7 @@
                 $($ori_image).attr('src', './images/bx_loader.gif');
             },
             success: function (data) {
-              console.log(data);
+              // console.log(data);
                 $($ori_image).attr('src', data);
                 image_crop();
             }
