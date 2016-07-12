@@ -3,7 +3,7 @@
   <div class="inner">
     <div class="block_content">
 
-      <div class="title">
+      <div class="title2">
         <span class="small">여러분의 어린 시절 꿈과 사진을 올려주세요<br>
         SNS에 사진과 함께 당신이 응원할<br>
         <span class="small" style="color:#E9DE51">'꿈을 잃은 어린이'</span>가 소개됩니다</span>
@@ -20,7 +20,7 @@
                             <div class="txt_2">
               <label for="inputImage" title="Upload image file">
                 <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
-                <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
+                <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="90" /></span>
               </label>
 							</div>
                         	<div class="txt_3"><a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a></div>
@@ -53,7 +53,7 @@
       <div class="title">
       참여하신 분 중 추첨을 통해<br>
       컴패션 현지 어린이센터를<br>
-      방문할 수 있는기회를 드립니다
+      방문할 수 있는 기회를 드립니다
       </div>
       <div class="block_input">
         <div class="sub_title">

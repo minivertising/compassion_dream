@@ -133,7 +133,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     <div class="block_content upload">
       <div class="title">
         <div class="main">
-        여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
+        여러분의 어린 시절 꿈과 사진을 올려주세요<br> 
         SNS에 사진과 함께 당신이 응원할 <span>‘꿈을 잃은 어린이’</span>가 소개됩니다
         </div>
       </div>
@@ -249,7 +249,7 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
     <div class="block_content follower" style="height:830px">
       <div class="title">
         미니버님!<br> 
-        <span id="re_ch_name">아비가일 마아 야아 암퐁</span><span id="re_namePP" style="color:white;">를</span> 위해<br>
+        <span id="re_ch_name">'아비가일 마아 야아 암퐁'</span><span id="re_namePP" style="color:white;">를</span> 위해<br>
         다시 한번 참여해주셔서 감사합니다 
       </div>
       <div class="block_child">
@@ -331,10 +331,10 @@ $total_remain_cnt			= 3000 - $total_matching_cnt;
 <!-- 공유버튼 클릭시 나오는 예시 페이지 -->
 
 <!-- 공유 완료 페이지 -->
-<div id="thanks_page" class="wrap_sec_top_sub match_child" style="display:none;background:url(./images/bg_share_child_follower_02.png) center top no-repeat;">
+<div id="thanks_page" class="wrap_sec_top_sub match_child" style="display:none;">
   <div class="inner">
     <div class="logo"><a href="#"><img src="images/logo_sub.png" /></a></div>
-    <div class="block_content follower" style="margin-top:35px;">
+    <div class="block_content follower" style="margin-top:35px;background:url(./images/bg_share_child_follower_02.png) center top no-repeat;">
       <div class="title end">
       참여해주셔서 감사합니다!<br>
       <span id="thx_ch_name">아비가일 마아 야아 암퐁</span><span id="thx_namePP" style="color:#fff">가</span> 꿈을 꿀 수 있도록<br>  <!-- ~이 ~가 -->

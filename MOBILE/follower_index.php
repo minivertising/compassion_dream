@@ -7,7 +7,7 @@
   $ch_data  = sel_child_info($mb_data['mb_child']);
   $convert_job = job_ko_add($mb_data['mb_job']);
   if ($mb_data['mb_name'] == "")
-	$mb_data['mb_name'] = "당신의 친구";
+	$mb_data['mb_name'] = "컴패션의 친구";
 
 ?>
 <body class="bg_sub_page storytelling">
@@ -966,13 +966,13 @@
   if ($ch_data['ch_nick'] == "")
   {
 ?>
-        여러분의 어린 시절의 꿈과 사진을 올려주세요<br>
+        여러분의 어린 시절 꿈과 사진을 올려주세요<br>
         SNS에 사진과 함께 당신이 응원할<br>
         <span class="name">'꿈을 잃은 어린이</span>가 소개됩니다<br>
 <?
   }else{
 ?>
-        여러분의 어린 시절의 꿈과 사진을 올려주세요<br>
+        여러분의 어린 시절 꿈과 사진을 올려주세요<br>
         SNS에 사진과 함께 당신이 응원할<br>
         꿈을 잃은 어린이<br>
         <!-- 이미 결연된 아이의 링크 일 경우엔 텍스트? -->
@@ -993,8 +993,8 @@
                             <div class="txt_2">
                               <form id="img_save" method="post" action="./photo_upload.php" enctype="multipart/form-data">
                                 <label for="f_inputImage" title="Upload image file">
-                                  <input type="file" class="sr-only" id="f_inputImage" name="file"  accept="image/*;capture=camera">
-                                  <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="80" /></span>
+                                  <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
+                                  <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="90" /></span>
                                 </label>
                               </form>
                             </div>
@@ -1023,7 +1023,7 @@
 <div id="matching_share_page" class="wrap_page share_match_child" style="display:none;">
   <div class="inner">
     <div class="block_content">
-      <div class="title">
+      <div class="title" style="font-size:18px">
         아래 SNS에 어린 시절 사진을 공유하여<br>
         <span style="color:#E9DE51"><?=$ch_data['ch_nick']?></span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?> 후원자를<br>
         만날 수 있도록 해주세요!
@@ -1032,7 +1032,7 @@
         <div class="inner_block_child clearfix">
           <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" id="f_matching_child_pic" /></div>
           <div class="child_text">
-            <h2>"저도 <span id="m_rs_job"><?=$convert_job?></span><?= has_batchim($convert_job) > 0 ? "을" : "를" ?> 꿈꿀 수 있을까요?"</h2> <!-- 을 를 -->
+            <h2>"저도 <span id="m_rs_job"></span><span id="jobPP">를</span> 꿈꿀 수 있을까요?"</h2> <!-- 을 를 -->
             <div class="bg_line">
               <p>
              <?=$ch_data['ch_desc']?>
@@ -1121,7 +1121,7 @@
 <div id="thanks_page" class="wrap_page share_match_child" style="display:none">
   <div class="inner">
     <div class="block_content">
-      <div class="title">
+      <div class="title" style="font-size:15px">
         참여해주셔서 감사합니다<br>
         <span id="thx_ch_name">'<?=$ch_data['ch_nick']?>'</span><?= has_batchim($ch_data['ch_nick']) > 0 ? "이" : "가" ?><br>
         꿈을 꿀 수 있도록 끝까지 함께 응원해주세요 <!-- 이 가 -->
@@ -1132,7 +1132,7 @@
         </div>
       </div>
       <div class="block_btn ok">
-        <a href="#" onclick="location.reload();"><img src="images/btn_ok.png" /></a>
+        <a href="index.php"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
   </div>
@@ -1360,6 +1360,8 @@ function f_dream_next()
         // 사진 저장할 내용 추가
         var croppedImg = $($ori_image).cropper('getCroppedCanvas', {width:1200, height:630});
         var canvasImageURL = croppedImg.toDataURL("image/jpeg");
+		var job_lang_kor = job_ko_add(sel_dream);
+
         $.ajax({
             method: 'POST',
             url: '../main_exec.php',
@@ -1380,7 +1382,8 @@ function f_dream_next()
 <?
     }
 ?>
-                mb_job      : sel_dream
+                mb_job      : sel_dream,
+				mb_job_kor    : job_lang_kor
             },
             /*beforeSend: function(response){
         $("#upload_page").fadeOut('fast', function(){
@@ -1393,8 +1396,13 @@ function f_dream_next()
                 //mb_image    = res;
                 var rs_ch = res.split("||");
                 mb_rs = rs_ch[1];
-                //$("#loading_div").hide();
-                //$("#contents_div").show();
+
+                $("#m_rs_job").html(job_lang_kor);
+				if(rs_ch[2] > 0){
+					//받침 O
+					$("#jobPP").html("을");
+				}
+
                 if (rs_ch[0] == "Y")
                 {
                     $("#matching_child_pic").attr("src","<?=$ch_data['ch_top_img_url']?>");

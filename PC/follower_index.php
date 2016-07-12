@@ -8,7 +8,7 @@
   $convert_job = job_ko_add($mb_data['mb_job']);
 
   if ($mb_data['mb_name'] == "")
-	$mb_data['mb_name'] = "당신의 친구";
+	$mb_data['mb_name'] = "컴패션의 친구";
 ?>
 <body class="bg_sub_page story">
 <script>
@@ -812,7 +812,7 @@
       </div>
     </div>
     <div class="example">
-      <img src="images/story_1.png" width="100" />
+      <img src="<?=$mb_data['mb_image']?>" width="100" />
     </div>
   </div>
 </div>
@@ -880,7 +880,7 @@
           </div>
         </div>
         <div class="example02">
-          <img src="images/story_1.png" width="100" />
+          <img src="<?=$mb_data['mb_image']?>" width="100" />
         </div>
       </div>
     </div>
@@ -900,7 +900,7 @@
   if ($ch_data['ch_nick'] == "")
   {
 ?>
-        여러분의 어린 시절의 꿈과 사진을 올려주세요<br> 
+        여러분의 어린 시절 꿈과 사진을 올려주세요<br> 
         SNS에 사진과 함께 당신이 응원할<br>
         <span>‘꿈을 잃은 어린이</span>’가 소개됩니다
 <?
@@ -1057,7 +1057,7 @@
         </div>
       </div>
       <div class="block_btn ok">
-        <a href="#" onclick="location.reload();"><img src="images/btn_ok.png" /></a>
+        <a href="index.php"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
   </div>
