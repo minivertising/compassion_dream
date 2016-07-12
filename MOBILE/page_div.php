@@ -99,7 +99,7 @@
           <div class="child_pic"><img src="images/ex_child_01.png" id="matching_child_pic" /></div>
           <div class="child_text">
             <h2>"저도 <span id="m_rs_job">선생님</span><span id="jobPP" style="color:000000;">를</span> 꿈꿀 수 있을까요?"</h2> <!-- 조사부분 컬러 검정으로 수정 -->
-			<h2><span id="ch_info" style="font-size:16px"></span></h2>
+			<h3 style="padding-left:10%;font-size:13px;font-weight:normal;margin-top:0px"><span id="ch_info"></span></h3>
             <div class="bg_line">
               <p id="m_rs_desc">
               </p>
