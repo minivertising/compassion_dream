@@ -1231,7 +1231,7 @@ $(window).load(function() {
 		if ($iphone_story_gubun == "Y")
 		{
 ?>
-			alert("111");
+			alert("iphone ks test");
 			return false;
 <?
 		}
@@ -1251,7 +1251,7 @@ $(window).load(function() {
 		if ($iphone_story_gubun == "Y")
 		{
 ?>
-			alert("111");
+			alert("iphone ks test");
 			return false;
 <?
 		}
