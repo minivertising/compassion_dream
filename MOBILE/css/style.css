@@ -218,7 +218,7 @@ body.storytelling{
 	position:relative;
 }
 .wrap_page.main_page .sec_child_num .bg_bar .inner_bg_bar .bar{
-	width:20%;
+	width:0%;
 	background:#fed90b;
 	height:20px;
 	border-radius:100px;
@@ -229,7 +229,7 @@ body.storytelling{
 .wrap_page.main_page .sec_child_num .bg_bar .inner_bg_bar .icon{
 	position:absolute;
 	top:0;
-	left:20%;
+	left:0%;
 	margin-left:-17px;
 }
 
