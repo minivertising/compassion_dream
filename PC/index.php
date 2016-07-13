@@ -6,6 +6,8 @@ $total_pic_cnt      = @total_pic_info();
 $total_matching_cnt = @total_matching_info();
 //$total_matching_cnt		= 1000;
 $total_remain_cnt			= $total_runner_cnt - $total_matching_cnt;
+if ($total_remain_cnt < 0)
+	$total_remain_cnt = 0;
 ?>
 <body>
 <script>
