@@ -794,7 +794,7 @@
           <div class="inner_block_child clearfix">
             <div class="child_pic"><img src="<?=$ch_data['ch_full_img_url']?>" /></div>
             <div class="child_text">
-              <?=$ch_data['ch_nick']." / ".$ch_data['ch_id']." / ".$ch_data['ch_nation_name']." / ".$ch_data['ch_gender']?>
+              <?=$ch_data['ch_nick']." / ".$ch_data['ch_key']." / ".$ch_data['ch_nation_name']." / ".$ch_data['ch_gender']?>
               <p>
               <?=$ch_data['ch_desc']?>
               </p>
