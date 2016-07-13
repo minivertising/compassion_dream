@@ -650,7 +650,7 @@ function dream_next(){
 						$("#m_rs_job2").html(job_lang_kor);
 						$("#m_rs_nation").html(rs_ch[4]);
 
-						$("#ch_info").html(rs_ch[3]+" / "+rs_ch[8]+" / "+rs_ch[4]+" / "+rs_ch[9]+" / "+rs_ch[10]);
+						$("#ch_info").html(rs_ch[3]+" / "+rs_ch[8]+"살 / "+rs_ch[4]+" / "+rs_ch[9]+" / "+rs_ch[10]);
 						if(rs_ch[5] > 0) {
 							//받침 O
 							$("#name2PP").html("이에요");

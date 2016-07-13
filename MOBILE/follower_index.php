@@ -860,7 +860,7 @@
           </div>
           <div class="txt_child story_result">  
             <div class="inner" style="margin-top:30px;height:110px">
-              <p style="text-align:center;"><?=$ch_data['ch_nick']." / ".$ch_data['ch_age']." / ".$ch_data['ch_key']." / ".$ch_data['ch_nation_name']." / ".$ch_data['ch_gender']?></p>
+              <p style="text-align:center;"><?=$ch_data['ch_nick']." / ".$ch_data['ch_age']."살 / ".$ch_data['ch_key']." / ".$ch_data['ch_nation_name']." / ".$ch_data['ch_gender']?></p>
               <p id="p5_desc"><?=$ch_data['ch_desc']?></p>
             </div>
           </div>
