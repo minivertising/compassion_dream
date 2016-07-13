@@ -8,6 +8,7 @@
 	$_gl['serial_info_table']		= "serial_info";			//난수번호 테이블
 	$_gl['child_info_table']		= "child_info";				//아이 정보 테이블
 	$_gl['tracking_info_table']	= "tracking_info";			//트래킹 정보 테이블
+	$_gl['login_info_table']		= "login_info";				//로그인 정보 테이블
 
 	// $_gl['job']['cook']		= "요리사였어요.";
 	// $_gl['job']['teacher']	= "선생님이었어요.";

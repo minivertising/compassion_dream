@@ -14,7 +14,7 @@ if (isset($_SESSION['ss_mb_name']) == false)
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>빌리프 - season2</title>
+    <title>컴패션 - 내꿈꿔!</title>
 	<!-- jQuery Version 1.11.0 -->
 	<script src="js/jquery-1.11.0.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
@@ -51,7 +51,7 @@ if (isset($_SESSION['ss_mb_name']) == false)
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="daily_influx_count.php">빌리프 - season2</a>
+          <a class="navbar-brand" href="daily_influx_count.php">컴패션 - 내꿈꿔!</a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -75,12 +75,6 @@ if (isset($_SESSION['ss_mb_name']) == false)
                   </li>
                   <li>
                     <a href="daily_share_count.php">일자별 SNS 공유 수</a>
-                  </li>
-                    <li>
-                    <a href="daily_coupon_count.php">일자별 쿠폰 사용자 수</a>
-                  </li>
-                    <li>
-                    <a href="daily_hidden_count.php">일자별 히든 쿠폰 사용자 수</a>
                   </li>
                     <!-- <li>
                     <a href="daily_event_count2.php">일자별 투표 이벤트 참여자 수</a>

@@ -8,13 +8,13 @@
 			$mb_id = $_REQUEST['mb_id'];
 			$mb_pw = $_REQUEST['mb_pw'];
 
-			$query = "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_name='".$mb_id."' AND mb_phone='".$mb_pw."'";
+			$query = "SELECT * FROM ".$_gl['login_info_table']." WHERE admin_id='".$mb_id."' AND admin_pw='".$mb_pw."'";
 			$result 		= mysqli_query($my_db, $query);
 			$member_info	= mysqli_fetch_array($result);
 			if ($member_info)
 			{
 				// 회원아이디 세션 생성
-				$_SESSION['ss_mb_name'] = $member_info['mb_ipaddr'];
+				$_SESSION['ss_mb_name'] = $member_info['admin_id'];
 				echo "<script>location.href='./entry_list.php';</script>";
 			}else{
 				echo "<script>alert('로그인에 실패하였습니다.');</script>";

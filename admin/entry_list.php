@@ -2,7 +2,6 @@
 
 	// 설정파일
 	include_once "../config.php";
-
 /*
 	if (isset($_SESSION['ss_mb_id']) == false)
 	{
@@ -101,18 +100,17 @@
             <thead>
               <tr>
                 <th>순번</th>
-                <th>IP주소</th>
                 <th>이름</th>
                 <th>전화번호</th>
-                <th>선택한 매장</th>
-                <th>당첨된 선물</th>
-                <th>유입경로</th>
-                <th>유입매체</th>
+                <th>선택한 꿈</th>
+                <th>매칭된 아이(child_info.idx)</th>
+                <th>업로드 이미지</th>
                 <th>참여일자</th>
-                <th>쿠폰 사용여부</th>
-                <th>쿠폰 사용일자</th>
-                <th>히든 쿠폰 사용여부</th>
-                <th>히든 쿠폰 사용일자</th>
+                <th>유입구분</th>
+                <th>난수번호</th>
+                <th>공유횟수</th>
+                <th>팔로우 공유횟수</th>
+                <th>공유여부</th>
               </tr>
             </thead>
             <tbody>
@@ -126,15 +124,14 @@
 	{
 		$where	.= " AND ".$search_type." like '%".$search_txt."%'";
 	}
-	$buyer_count_query = "SELECT count(*) FROM ".$_gl['member_info_table']." WHERE mb_name <> 'admin' ".$where."";
+	$buyer_count_query = "SELECT count(*) FROM ".$_gl['activator_info_table']." WHERE".$where."";
 
 	list($buyer_count) = @mysqli_fetch_array(mysqli_query($my_db, $buyer_count_query));
 	$PAGE_CLASS = new Page($pg,$buyer_count,$page_size,$block_size);
 
 	$BLOCK_LIST = $PAGE_CLASS->blockList();
 	$PAGE_UNCOUNT = $PAGE_CLASS->page_uncount;
-	$buyer_list_query = "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_name <> 'admin' ".$where." Order by idx DESC LIMIT $PAGE_CLASS->page_start, $page_size";
-
+	$buyer_list_query = "SELECT * FROM ".$_gl['activator_info_table']." WHERE 1 ".$where." Order by idx DESC LIMIT $PAGE_CLASS->page_start, $page_size";
 	$res = mysqli_query($my_db, $buyer_list_query);
 
 	while ($buyer_data = @mysqli_fetch_array($res))
@@ -144,24 +141,20 @@
 
 	foreach($buyer_info as $key => $val)
 	{
-		$shop_query = "SELECT shop_name FROM ".$_gl['shop_info_table']." WHERE idx='".$buyer_info[$key]['mb_shop']."'";
-		$shop_res = mysqli_query($my_db, $shop_query);
-		$shop_name = mysqli_fetch_array(mysqli_query($my_db, $shop_query));
 ?>
               <tr>
                 <td><?php echo $PAGE_UNCOUNT--?></td>	<!-- No. 하나씩 감소 -->
-                <td><?php echo $buyer_info[$key]['mb_ipaddr']?></td>
                 <td><?php echo $buyer_info[$key]['mb_name']?></td>
                 <td><?php echo $buyer_info[$key]['mb_phone']?></td>
-                <td><?php echo $shop_name['shop_name']?></td>
-                <td><?php echo $buyer_info[$key]['mb_winner']?></td>
-                <td><?php echo $buyer_info[$key]['mb_media']?></td>
-                <td><?php echo $buyer_info[$key]['mb_gubun']?></td>
+                <td><?php echo $buyer_info[$key]['mb_job']?></td>
+                <td><?php echo $buyer_info[$key]['mb_child']?></td>
+                <td><img src="<?php echo $buyer_info[$key]['mb_image']?>" style="width:75px;height:27px"></td>
                 <td><?php echo $buyer_info[$key]['mb_regdate']?></td>
-                <td><?php echo $buyer_info[$key]['mb_use']?></td>
-                <td><?php echo $buyer_info[$key]['mb_usedate']?></td>
-                <td><?php echo $buyer_info[$key]['mb_hidden_use']?></td>
-                <td><?php echo $buyer_info[$key]['mb_hidden_usedate']?></td>
+                <td><?php echo $buyer_info[$key]['mb_media']?></td>
+                <td><?php echo $buyer_info[$key]['mb_serial']?></td>
+                <td><?php echo $buyer_info[$key]['mb_share_cnt']?></td>
+                <td><?php echo $buyer_info[$key]['mb_f_share_cnt']?></td>
+                <td><?php echo $buyer_info[$key]['shareYN']?></td>
               </tr>
 <?php 
 	}

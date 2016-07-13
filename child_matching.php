@@ -18,7 +18,7 @@
 
 		if ($matchingYN == "Y")
 		{
-			$query2 	= "UPDATE child_info SET ch_choice='Y' WHERE ch_id='".$data['ch_id']."'";
+			$query2 	= "UPDATE child_info SET ch_choice='Y', ch_choice_date='".date("Y-m-d H:i:s")."' WHERE ch_id='".$data['ch_id']."'";
 			$result2 	= mysqli_query($my_db, $query2);
 		}
 	}
