@@ -618,8 +618,6 @@ function sns_share(media, flag, page)
 			url: "../main_exec.php",
 			success: function(response){
 				var img_url	= response;
-				if (img_url)
-				{
 				Kakao.Link.sendTalkLink({
 				  //container: '#kakao-link-btn',
 				  label: '컴패션 "내꿈꿔" 릴레이\n\r\n\r어릴적 제 꿈이 뭔지 아시나요?\n\r오늘 제가 소개하는 이 어린이도 꿈을 이룰 수 있도록 "내꿈꿔" 릴레이에 함께해주세요!',
@@ -633,10 +631,6 @@ function sns_share(media, flag, page)
 					url: 'http://mydream.compassion.or.kr/MOBILE/follower_index.php?used='+mb_rs+'_'+flag // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
 				  }
 				});
-				}else{
-					alert('다시 참여해 주세요!');
-				}
-
 			}
 		});
 
