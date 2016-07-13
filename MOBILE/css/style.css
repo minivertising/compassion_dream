@@ -1789,3 +1789,7 @@ margin-top:0px;
 height:800px;
 
 }
+
+.wrap_page.share_match_child .block_content .sub_txt img{
+	width:6%; border:0px red solid; 
+}

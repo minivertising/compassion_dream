@@ -306,4 +306,44 @@
   </div>
   <!-- 비전트립 설명 팝업-->
 
+  <!-- 아이폰 카스 알람 팝업-->
+  <div id="iphone_popup" class="wrap_page share_match_child" style="background:white;">
+    <div class="inner">
+      <div class="block_content">
+        <!--수정-->
+        <div class="title compassion">
+          잠시만요!<br>혹시 아이폰 유저이신가요?
+        </div>
+        <div class="sub_txt">
+          아이폰 유저이시라면 우측 상단에 화살표를 <img src="images/img_next_1.png">                    
+          <br> 누르시고 사파리에서 열기를 눌러주세요
+        </div>
+        <div class="block_btn ok">
+          <a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_ok.png" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 아이폰 카스 알람 팝업-->
+
+  <!-- 안드로이드 카스 알람 팝업-->
+  <div id="android_popup" class="wrap_page share_match_child" style="background:white;">
+    <div class="inner">
+      <div class="block_content">
+        <!--수정-->
+        <div class="title compassion">
+        잠시만요!<br>혹시 안드로이드 유저이신가요?
+        </div>
+        <div class="sub_txt">
+          안드로이드 유저이시라면 우측 상단에 화살표를  <img src="images/img_next_02.jpg">                    
+          <br>누르시고 인터넷에서 열기를 눌러주세요
+        </div>
+        <div class="block_btn ok">
+          <a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_ok.png" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 안드로이드 카스 알람 팝업-->
+
 </div>
