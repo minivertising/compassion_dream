@@ -8,7 +8,16 @@
 	else
 		$ch_data['ch_gender'] = "여";
 
-	$share_count	= $mb_data['mb_share_cnt'] + $mb_data['mb_f_share_cnt'];
+	$share_count	= 0;
+	$sum_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE mb_phone='".$mb_data['mb_phone']."'";
+	$sum_result 	= mysqli_query($my_db, $sum_query);
+
+	while($sum_data	= mysqli_fetch_array($sum_result))
+	{
+		$share_count	+= $sum_data['mb_share_cnt'] + $sum_data['mb_f_share_cnt'];
+	}
+	
+
 ?>
 <body class="bg_status">
 <script>
