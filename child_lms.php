@@ -4,12 +4,12 @@
 		exit('Connect Error (' . mysqli_connect_errno() . ') '. mysqli_connect_error());
 	}
 
-	$query 	= "SELECT * FROM activator_info WHERE shareYN='Y' AND mb_lms='N'";
+	$query 	= "SELECT * FROM activator_info WHERE shareYN='Y' AND mb_lms='N' ORDER BY idx ASC";
 	$result 	= mysqli_query($my_db, $query);
 
 	while ($data = mysqli_fetch_array($result))
 	{
-		$chk_query 	= "SELECT * FROM activator_info WHERE mb_phone='".$data['mb_phone']."'";
+		$chk_query 	= "SELECT * FROM activator_info WHERE mb_phone='".$data['mb_phone']."' AND mb_child='".$data['mb_child']."'";
 		$chk_result 	= mysqli_query($my_db, $chk_query);
 
 		while ($chk_data = mysqli_fetch_array($chk_result))
