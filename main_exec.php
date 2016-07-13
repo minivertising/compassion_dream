@@ -122,7 +122,7 @@ switch ($_REQUEST['exec'])
 				$result 	= mysqli_query($my_db, $query);
 
 				if ($result)
-					$flag	= "Y||".$child_arr[1]."||".$mb_serial."||".$child_arr[2]."||".$child_arr[3]."||".$cName_post_position."||".$job_post_position."||".$child_arr[4]."||".$child_arr[5]."||".$child_arr[6];
+					$flag	= "Y||".$child_arr[1]."||".$mb_serial."||".$child_arr[2]."||".$child_arr[3]."||".$cName_post_position."||".$job_post_position."||".$child_arr[4]."||".$child_arr[5]."||".$child_arr[6]."||".$child_arr[7];
 				else
 					$flag	= "N||fail||N";
 

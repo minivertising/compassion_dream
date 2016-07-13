@@ -89,7 +89,7 @@
 ?>
     <div class="txt_wating" style="padding-top:2px">
     후원자님을 기다리고 있어요!<br>
-	<?=$ch_data['ch_nick']." / ".$ch_data['ch_key']." / ".$ch_data['ch_nation_name']." / ".$ch_data['ch_gender']?>
+	<?=$ch_data['ch_nick']." / ".$ch_data['ch_age']." / ".$ch_data['ch_key']." / ".$ch_data['ch_nation_name']." / ".$ch_data['ch_gender']?>
     </div>
   </div>
   <div class="head_title t_2">

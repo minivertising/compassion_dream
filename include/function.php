@@ -96,7 +96,7 @@
 		else
 			$ch_data['ch_gender'] = "남";
 
-		return $ch_data['idx']."||".$ch_data['ch_full_img_url']."||".$ch_data['ch_nick']."||".$ch_data['ch_nation_name']."||".$ch_data['ch_desc']."||".$ch_data['ch_key']."||".$ch_data['ch_gender'];
+		return $ch_data['idx']."||".$ch_data['ch_full_img_url']."||".$ch_data['ch_nick']."||".$ch_data['ch_nation_name']."||".$ch_data['ch_desc']."||".$ch_data['ch_key']."||".$ch_data['ch_gender']."||".$ch_data['ch_age'];
 	}
 
 	function sel_child_info($ch_idx)
