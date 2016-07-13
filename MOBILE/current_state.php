@@ -3,10 +3,10 @@
 
 	$ch_data	= sel_child_info($mb_data['mb_child']);
 
-	if ($ch_data['ch_gender'] == "F")
-		$ch_data['ch_gender'] = "여";
-	else
+	if ($ch_data['ch_gender'] == "M")
 		$ch_data['ch_gender'] = "남";
+	else
+		$ch_data['ch_gender'] = "여";
 
 	$share_count	= $mb_data['mb_share_cnt'] + $mb_data['mb_f_share_cnt'];
 ?>
