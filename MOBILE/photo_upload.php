@@ -74,6 +74,7 @@
             @imagejpeg($newimg, $sTempFileName, 85);
         }
              $sResultFileName = $sTempFileName;
+			 @imagedestroy($newimg);
     }else{
         echo $error_message = 'Error: Upload Unsuccessful<br />Please Try Again';
     }

@@ -183,7 +183,7 @@
 		global $_gl;
 		global $my_db;
 
-		$total_runner_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE shareYN='Y'";
+		$total_runner_query 	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE shareYN='Y' GROUP BY mb_phone";
 		$total_runner_result 	= mysqli_query($my_db, $total_runner_query);
 		if ($total_runner_result)
 		{
