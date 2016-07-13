@@ -76,10 +76,10 @@ if (isset($_SESSION['ss_mb_name']) == false)
                   <li>
                     <a href="daily_share_count.php">일자별 SNS 공유 수</a>
                   </li>
-                    <!-- <li>
-                    <a href="daily_event_count2.php">일자별 투표 이벤트 참여자 수</a>
+                    <li>
+                    <a href="daily_success_child.php">일자별 결연된 아이 수</a>
                   </li>
-                   <li>
+                   <!-- <li>
                     <a href="daily_nominee_count.php">일자별 항목당 후보 지원 수</a>
                   </li> -->
                   <li>
