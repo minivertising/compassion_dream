@@ -9,6 +9,12 @@
 
   if ($mb_data['mb_name'] == "")
 	$mb_data['mb_name'] = "컴패션의 친구";
+
+	if ($ch_data['ch_gender'] == "F")
+		$ch_data['ch_gender'] = "여";
+	else
+		$ch_data['ch_gender'] = "남";
+
 ?>
 <body class="bg_sub_page story">
 <script>

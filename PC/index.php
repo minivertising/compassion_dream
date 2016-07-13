@@ -649,10 +649,6 @@ function dream_next(){
 						$("#m_rs_job").html(job_lang_kor);
 						$("#m_rs_job2").html(job_lang_kor);
 						$("#m_rs_nation").html(rs_ch[4]);
-						if (rs_ch[9] == "M")
-							rs_ch[9] = "남";
-						else
-							rs_ch[9] = "여";
 
 						$("#ch_info").html(rs_ch[3]+" / "+rs_ch[8]+" / "+rs_ch[4]+" / "+rs_ch[9]);
 						if(rs_ch[5] > 0) {
