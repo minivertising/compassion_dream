@@ -64,7 +64,7 @@ if ($total_remain_cnt < 0)
     </div>
     <div class="people_pic clearfix">
 <?
-	$slider_query = "SELECT * FROM ".$_gl['activator_info_table']." WHERE idx<>'88' AND idx<>'269' GROUP BY mb_phone order by idx DESC limit 20";
+	$slider_query = "SELECT * FROM ".$_gl['activator_info_table']." WHERE displayYN='Y' GROUP BY mb_phone order by idx DESC limit 20";
 	$slider_res = mysqli_query($my_db, $slider_query);
 
 	while ($slider_data = @mysqli_fetch_array($slider_res))
