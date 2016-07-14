@@ -1,6 +1,10 @@
 <?
 include_once "./header.php";
 
+// MOBILE에서 유입시 MOBILE로 이동
+if ($gubun == "MOBILE")
+	echo "<script>location.href='../MOBILE/index.php?used=".$used."';</script>";
+
 $total_runner_cnt   = @total_runner_info();
 $total_pic_cnt      = @total_pic_info();
 $total_matching_cnt = @total_matching_info();

@@ -1,5 +1,10 @@
 <?
 	include_once "./header.php";
+
+	// MOBILE에서 유입시 MOBILE로 이동
+	if ($gubun == "PC")
+		echo "<script>location.href='../PC/index.php?used=".$used."';</script>";
+
 	if (isset($_REQUEST['lmsflag']))
 		$lms_flag = $_REQUEST['lmsflag'];
 	else
