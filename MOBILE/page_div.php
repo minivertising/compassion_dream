@@ -15,17 +15,18 @@
                         <div class="txt_2"><a href="#" onclick="open_pop('job_popup');return false;"><img src="images/btn_sec.png" width="90" id="sel_job_btn" /></a></div><!--버튼 두개입니다-->
                     </div>
                     <div class="upload_pic">
-                    	<div class="title_pic clearfix">
-                        	<div class="txt_1">2. 사진업로드</div>
+                    	<div class="title_pic clearfix" style="">
+                        	<div class="txt_1">2. 어린시절 사진업로드</div>
                             <div class="txt_2">
                               <form id="img_save" method="post" action="./photo_upload.php" enctype="multipart/form-data">
                                 <label for="inputImage" title="Upload image file">
                                   <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
                                   <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="90" /></span>
                                 </label>
+							   <a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a>
                                </form>
                             </div>
-                        	<div class="txt_3"><a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a></div>
+                        	<!-- <div class="txt_3"><a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a></div> -->
                         </div>
                         <div id="img_div" class="pic_area" style="display:none;">
                         	<img id="ori_image" src="./images/picture.jpg" alt="Picture" />
