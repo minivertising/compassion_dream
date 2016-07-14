@@ -1167,7 +1167,7 @@
 ?>
       <div class="sub_title3">
         후원자님이 양육하실 어린이 이름과 아이디는<br>
-        <span><?=$ch_data['ch_nick']?>(<?=$ch_data['ch_id']?>)</span> 입니다.<br>
+        <span><?=$ch_data['ch_nick']?>(<?=$ch_data['ch_key']?>)</span> 입니다.<br>
       </div>
       <div class="sub_title2">
       (전화 연결 전 어린이 이름과 아이디를 다시 한번 확인해주세요)
