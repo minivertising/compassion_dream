@@ -124,7 +124,7 @@
 	{
 		$where	.= " AND ".$search_type." like '%".$search_txt."%'";
 	}
-	$buyer_count_query = "SELECT count(*) FROM ".$_gl['activator_info_table']." WHERE".$where."";
+	$buyer_count_query = "SELECT count(*) FROM ".$_gl['activator_info_table']." WHERE 1 ".$where."";
 
 	list($buyer_count) = @mysqli_fetch_array(mysqli_query($my_db, $buyer_count_query));
 	$PAGE_CLASS = new Page($pg,$buyer_count,$page_size,$block_size);
