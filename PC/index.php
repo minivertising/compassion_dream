@@ -714,8 +714,8 @@ function dream_next(){
 		$.ajax({
 			type:"POST",
 			data:{
-				"exec"          : "insert_tracking_info",
-				"media"     : "<?=$_REQUEST['media'];?>"
+				"exec"			: "insert_tracking_info",
+				"media"			: "<?=$_REQUEST['media'];?>"
 			},
 			url: "../main_exec.php"
 		});

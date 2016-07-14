@@ -18,7 +18,7 @@
     <!-- Page Heading -->
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="page-header">일자별 매체당 참여자 수 PC / Mobile</h1>
+          <h1 class="page-header">광고 채널별 캠페인 사이트 참여자 수(act) PC / Mobile</h1>
         </div>
       </div>
       <!-- /.row -->
