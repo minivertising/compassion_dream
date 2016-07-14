@@ -1359,6 +1359,7 @@ $(window).load(function() {
         autohidemode: false,
         cursorminheight: 30
     });
+
 });
 function image_crop(){
   $($ori_image).cropper({
@@ -1558,9 +1559,6 @@ function f_dream_next()
 		if (add_info_flag == 0)
 		{
 			$("#add_info_page").show();
-			$("#add_info_page").fadeIn("fast", function(){
-				$('#add_info_page').animate({scrollTop:$('#add_info_page').height()}, 500);
-			});
 			add_info_flag	= 1;
 		}else{
 			$("#add_info_page").hide();
