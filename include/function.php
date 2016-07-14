@@ -188,10 +188,7 @@
 		if ($total_runner_result)
 		{
 			$total_runner_cnt	= mysqli_num_rows($total_runner_result);
-			$total_f_runner_query 	= "SELECT * FROM ".$_gl['follower_info_table']." WHERE shareYN='Y'";
-			$total_f_runner_result 	= mysqli_query($my_db, $total_f_runner_query);
-			$total_f_runner_cnt	= mysqli_num_rows($total_f_runner_result);
-			$total_cnt	= $total_runner_cnt + $total_f_runner_cnt;
+			$total_cnt	= $total_runner_cnt;
 		}else{
 			$total_cnt	= 0;
 		}
