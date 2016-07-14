@@ -932,7 +932,7 @@
                     </div>
                     <div class="upload_pic">
                     	<div class="title_pic clearfix">
-                        	<div class="txt_1">2. 사진업로드</div>
+                        	<div class="txt_1">2. 어린시절 사진업로드</div>
                             <div class="txt_2">
               <form id="ie_img_save" method="post" action="./ie_photo_upload2.php" enctype="multipart/form-data">
                 <label for="f_inputImage" title="Upload image file">
