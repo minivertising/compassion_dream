@@ -723,6 +723,7 @@ body.storytelling{
 .wrap_page .inner .block_content .block_input_dream .upload_pic .title_pic .txt_2{
 	/*float:left;
 	padding-left:10px;*/
+	margin-top:10px;
 }
 .wrap_page .inner .block_content .block_input_dream .upload_pic .title_pic .txt_3{
 	float:left;
