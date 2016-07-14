@@ -498,5 +498,31 @@ switch ($_REQUEST['exec'])
 		$result	= ins_share_cnt($serial, $ugu,$parent_idx);
 		echo $result;
 	break;
+
+	case "insert_add_info" :
+		$remind_ch_info			= $_REQUEST['remind_ch_info'];
+		$remind_name			= $_REQUEST['remind_name'];
+		$remind_phone			= $_REQUEST['remind_phone'];
+		$remind_time				= $_REQUEST['remind_time'];
+
+		$query 	= "INSERT INTO ".$_gl['remind_info_table']."(remind_ch_info,remind_name,remind_phone,remind_time,remind_date) values('".$remind_ch_info."','".$remind_name."','".$remind_phone."','".$remind_time."','".date("Y-m-d H:i:s")."')";
+		$result 	= mysqli_query($my_db, $query);
+
+		if ($result)
+		{
+			if ($remind_ch_info)
+			{
+				$remind_ch_info_arr		= explode("/",$remind_ch_info);
+				$give_query 	= "UPDATE ".$_gl['child_info_table']." SET ch_choice='Y' WHERE ch_key='".$remind_ch_info_arr[1]."'";
+				$give_result 	= mysqli_query($my_db, $give_query);
+			}
+			$flag	= "Y";
+		}else{
+			$flag	= "N";
+		}
+
+		echo $flag;
+
+	break;
 }
 ?>

@@ -1147,7 +1147,7 @@
 <!-- 공유 완료 페이지 -->
 
 <!-- 페북/카스 인앱브라우저에서 결연맺기 클릭시(팔로워) 페이지 -->
-<div id="fb_ks_page" class="wrap_page sub phone" style="display:none;">
+<div id="fb_ks_page" class="wrap_page sub phone" style="display:none;overflow:auto;">
   <div class="btn_close"><a href="#" onclick="return_home();return false;"><img src="images/popup/btn_close.png" /></a></div>
   <div class="inner">
     <div class="block_content">
@@ -1185,12 +1185,49 @@
       </div>
 
       <div class="block_btn second">
-        <a href="https://app.smartsheet.com/b/form?EQBCT=08d3e08b3361464ab2674d41cf8356fd" target="_blank"><img src="images/btn_phone_num.png" /></a>
+        <!-- <a href="https://app.smartsheet.com/b/form?EQBCT=08d3e08b3361464ab2674d41cf8356fd" target="_blank"><img src="images/btn_phone_num.png" /></a> -->
+        <a href="#" onclick="show_info_area();return false;"><img src="images/btn_phone_num.png" /></a>
       </div>
       <div class="txt_desc">
       저녁 6시 이후에는 상담이 어려운 관계로<br>
       연락처를 남겨주시면 한국컴패션에서 전화를 드립니다.
       </div>
+      <!-- 추가 정보 입력 -->
+      <div id="add_info_page" class="block_input" style="display:none;">
+        <div class="input_one clearfix">
+<?
+	if ($mb_data['mb_child'] != "")
+	{
+?>
+          <div class="label">어린이 이름/번호</div>
+            <div class="input"><input type="text" id="remind_ch_info" value="<?=$ch_data['ch_nick']?>/<?=$ch_data['ch_key']?>" readonly></div>
+          </div>
+<?
+	}
+?>
+          <div class="input_one clearfix">
+            <div class="label">성함</div>
+            <div class="input"><input type="text" id="remind_name"></div>
+          </div>
+          <div class="input_one clearfix">
+            <div class="label">연락처</div>
+            <div class="input"><input type="tel" id="remind_phone"></div>
+          </div>
+          <div class="input_one clearfix">
+            <div class="label">연락 가능 시간</div>
+            <div class="input"><input type="text" id="remind_time"></div>
+          </div>
+          <div class="check clearfix">
+            <a href="#" class="box" onclick="mb_check();return false;"><img src="images/check.png" width="20" name="mb_agree" id="mb_agree" /></a>
+            <a href="#" class="txt">개인정보 수집 및 제 3자 위탁에 관한 동의</a>
+            <a href="#" class="bt" onclick="open_pop('agree_popup');return false;"><img src="images/btn_detail.png" width="60" /></a>
+          </div>
+          <div class="block_btn">
+            <a href="#" onclick="remind_info();return false;"><img src="images/btn_ok.png" style="width:50%" /></a>
+          </div>
+        </div>
+      </div>
+      <!-- 추가 정보 입력 -->
     </div>
   </div>
 </div>
@@ -1202,26 +1239,27 @@
 </body>
 </html>
 <script type="text/javascript">
-var agent = navigator.userAgent.toLowerCase();
-var sel_dream       = null;
-var runner_serial   = null;
-var mb_job          = null;
-var mb_image        = null;
-var $ori_image = $('#f_ori_image');
-var $inputImage = $('#f_inputImage');
-var URL = window.URL || window.webkitURL;
+var agent				= navigator.userAgent.toLowerCase();
+var sel_dream			= null;
+var runner_serial		= null;
+var mb_job				= null;
+var mb_image			= null;
+var $ori_image			= $('#f_ori_image');
+var $inputImage		= $('#f_inputImage');
+var URL					= window.URL || window.webkitURL;
 var realFath;
 var convertPath;
 var blobURL;
 var file;
 var files;
-var flag_sel_dream  = 0;
-var mb_rs       = null;
+var flag_sel_dream	= 0;
+var mb_rs				= null;
 var inputImageCheck;
-var share_cnt     = 0;
-var s_ugu = null;
-var scroll_end  = 0;
+var share_cnt			= 0;
+var s_ugu				= null;
+var scroll_end			= 0;
 var ios_prev_page	= null;
+var chk_mb_flag		= 0;
 $(window).load(function() {
   Kakao.init('59df63251be6d99256b63b98f4948e89');
   $("#cboxTopLeft").hide();
@@ -1513,6 +1551,75 @@ function f_dream_next()
             }
         });
     }
+
+	var add_info_flag	= 0;
+	function show_info_area()
+	{
+		if (add_info_flag == 0)
+		{
+			$("#add_info_page").show();
+			add_info_flag	= 1;
+		}else{
+			$("#add_info_page").hide();
+			add_info_flag	= 0;
+		}
+	}
+
+	function remind_info()
+	{
+		var remind_ch_info	= $("#remind_ch_info").val();
+		var remind_name		= $("#remind_name").val();
+		var remind_phone	= $("#remind_phone").val();
+		var remind_time		= $("#remind_time").val();
+
+		if (remind_name == "")
+		{
+			alert("성함을 입력해 주세요.");
+			$("#remind_name").focus();
+			return false;
+		}
+		if (remind_phone == "")
+		{
+			alert("연락처를 입력해 주세요.");
+			$("#remind_phone").focus();
+			return false;
+		}
+		if (remind_time == "")
+		{
+			alert("연락 가능 시간을 입력해 주세요.");
+			$("#remind_time").focus();
+			return false;
+		}
+		if (chk_mb_flag == 0)
+		{
+			alert("개인정보 수집 및 제3자 위탁에 관한 동의를 안 하셨습니다.");
+			return false;
+		}
+
+		$.ajax({
+			type:"POST",
+			data:{
+				"exec"					: "insert_add_info",
+				"remind_ch_info"		: remind_ch_info,
+				"remind_name"		: remind_name,
+				"remind_phone"		: remind_phone,
+				"remind_time"			: remind_time
+			},
+			url: "../main_exec.php",
+			success: function(res){
+				if (res == "Y")
+				{
+					alert("한국컴패션에서 곧 전화를 드리겠습니다. 감사합니다.");
+					$("#add_info_page").hide();
+					add_info_flag	= 0;
+				}else{
+					alert("접속자가 많아 처리가 지연되고 있습니다. 다시 시도해 주세요..");
+					location.reload();
+				}
+			}
+		});
+
+	}
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
