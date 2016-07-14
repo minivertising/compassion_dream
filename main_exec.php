@@ -19,7 +19,7 @@ switch ($_REQUEST['exec'])
 		$mb_serial		= $_REQUEST['mb_serial'];
 		$mb_gubun	= $_REQUEST['mb_gubun'];
 
-		$query 		= "INSERT INTO ".$_gl['share_info_table']."(sns_media, sns_ipaddr, sns_gubun, inner_media, sns_regdate) values('".$sns_media."','".$_SERVER['REMOTE_ADDR']."','".$gubun."','".$_SESSION['ss_media']."','".date("Y-m-d H:i:s")."')";
+		$query 		= "INSERT INTO ".$_gl['share_info_table']."(sns_media, sns_ipaddr, sns_gubun, sns_user, inner_media, sns_regdate) values('".$sns_media."','".$_SERVER['REMOTE_ADDR']."','".$gubun."','".$mb_gubun."','".$_SESSION['ss_media']."','".date("Y-m-d H:i:s")."')";
 		$result 	= mysqli_query($my_db, $query);
 
 		if ($mb_gubun == "act")

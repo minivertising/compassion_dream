@@ -71,7 +71,7 @@ if (isset($_SESSION['ss_mb_name']) == false)
                 <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Daily Count<i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="demo" class="collapse">
                   <li>
-                    <a href="daily_influx_count.php">일자별 매체 유입자 수</a>
+                    <a href="daily_influx_count.php">광고 채널별 캠페인 사이트 유입자 수</a>
                   </li>
                   <li>
                     <a href="daily_share_count.php">일자별 SNS 공유 수</a>
