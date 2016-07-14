@@ -1002,9 +1002,10 @@
                                   <input type="file" class="sr-only" id="f_inputImage" name="file" accept="image/*">
                                   <span title="Import image with Blob URLs"><img src="images/btn_select_pic.png" width="90" /></span>
                                 </label>
+								<a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a>
                               </form>
                             </div>
-                          <div class="txt_3"><a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a></div>
+                          <!-- <div class="txt_3"><a href="#" onclick="open_pop('preview_popup')"><img src="images/btn_preview.png" width="80"  /></a></div> -->
                         </div>
                         <div id="img_div" class="pic_area" style="display:none;">
                           <img id="f_ori_image" src="./images/picture.jpg" alt="Picture" />
