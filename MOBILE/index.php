@@ -141,7 +141,7 @@
 	<div class="sec_child_num">
 		<div class="bg_bar">
 			<div class="inner_bg_bar">
-				<div class="txt_num">결연된 어린이 <?=number_format($total_matching_cnt)?>명 </div>
+				<div class="txt_num">후원된 어린이 <?=number_format($total_matching_cnt)?>명 </div>
 				<div class="icon"><img src="images/icon_head.png" width="35" /></div>
 				<div class="bar"></div>
 			</div>
@@ -421,7 +421,7 @@ function input_submit()
 						});
 					});
 				}else if (rs_ch[0] == "C"){
-					// 아이가 매칭되었으나 결연은 안되었을 경우 ( 수정할수도 있음 )
+					// 아이가 매칭되었으나 후원은 안되었을 경우 ( 수정할수도 있음 )
 					$("#matching_child_pic").attr("src",rs_ch[1]);
 					$("#re_matching_child_pic").attr("src",rs_ch[1]);
 					$("#thx_ch_img").attr("src",rs_ch[1]);

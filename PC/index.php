@@ -103,7 +103,7 @@ if ($total_remain_cnt < 0)
         <div class="inner_child clearfix">
           <div class="bar">
             <div class="inner_bar">
-              <div class="figure">결연된 어린이 <?=number_format($total_matching_cnt)?>명</div>
+              <div class="figure">후원된 어린이 <?=number_format($total_matching_cnt)?>명</div>
               <div class="heart"><img src="images/bar_heart.png" /></div>
               <div class="g"></div>
             </div>
