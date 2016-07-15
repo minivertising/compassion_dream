@@ -141,7 +141,7 @@
 	<div class="sec_child_num">
 		<div class="bg_bar">
 			<div class="inner_bg_bar">
-				<div class="txt_num">후원 완료된 어린이 <?=number_format($total_matching_cnt)?>명 </div>
+				<div class="txt_num">후원이 매칭된 어린이 <?=number_format($total_matching_cnt)?>명 </div>
 				<div class="icon"><img src="images/icon_head.png" width="35" /></div>
 				<div class="bar"></div>
 			</div>
