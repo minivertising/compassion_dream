@@ -1,7 +1,8 @@
 function open_pop(param)
 {
 	// $('.preview > img').css('width', 'max-width');
-	$.colorbox({innerWidth:"100%",innerHeight: "95%", initialWidth:"95%", initialHeight: "70%", inline:true, opacity:"0.9", scrolling:true, reposition: false, closeButton:false, overlayClose: false, open:true, speed:20, transition: "fade", fadeOut: 300, href:"#"+param, onComplete: function(){
+	//$.colorbox({innerWidth:"100%",innerHeight: "95%", initialWidth:"95%", initialHeight: "70%", inline:true, opacity:"0.9", scrolling:true, reposition: false, closeButton:false, overlayClose: false, open:true, speed:20, transition: "fade", fadeOut: 300, href:"#"+param, onComplete: function(){
+	$.colorbox({innerWidth:"100%",innerHeight: $("#"+param).height(), initialWidth:"95%", initialHeight: $("#"+param).height(), inline:true, opacity:"0.9", scrolling:true, reposition: false, closeButton:false, overlayClose: false, open:true, speed:20, transition: "fade", fadeOut: 300, href:"#"+param, onComplete: function(){
 		$("#cboxContent").css("background","none");
 		$("#cboxContent").css("z-index","99999");
 		$('#cboxWrapper').css('backgroundColor', "");
