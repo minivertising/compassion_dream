@@ -71,7 +71,7 @@
     </div>
   </div>
   <div class="head_title t_2">
-    <img src="images/title_sponsor_ox.png" width="70" />
+    <img src="images/title_sponsor_ox.png" width="90" />
   </div>
   <div class="txt_status">
     <span><?=$mb_data['mb_name']?></span>님의 어린이는<br>
@@ -93,7 +93,7 @@
     </div>
   </div>
   <div class="head_title t_2">
-    <img src="images/title_sponsor_ox.png" width="70" />
+    <img src="images/title_sponsor_ox.png" width="90" />
   </div>
   <div class="txt_status">
     <span><?=$mb_data['mb_name']?></span>님의 어린이는<br>
