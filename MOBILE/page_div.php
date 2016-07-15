@@ -55,7 +55,7 @@
     <div class="block_content">
       <div class="title">
       참여하신 분 중 추첨을 통해<br>
-      컴패션 현지 어린이센터를<br>
+      필리핀 컴패션 센터를<br>
       방문할 수 있는 기회를 드립니다
       </div>
       <div class="block_input">
