@@ -26,7 +26,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=yes,initial-scale=1.0, maximum-scale=1.0"/>
 <meta property="fb:app_id" content="649187078561789" />
-<meta property="og:title" content="내꿈꿔 릴레이" />
+<meta property="og:title" content="내꿈꿔 릴레이 [클릭해서 참여]" />
 <meta property="og:type" content="website" />
 <?
 	if (isset($rs))

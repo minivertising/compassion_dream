@@ -28,7 +28,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta property="fb:app_id" content="649187078561789" />
-<meta property="og:title" content="내꿈꿔 릴레이" />
+<meta property="og:title" content="내꿈꿔 릴레이 [클릭해서 참여]" />
 <meta property="og:type" content="website" />
 <?
 	if (isset($rs))
