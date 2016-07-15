@@ -148,6 +148,39 @@ function tab_click(param)
 	}
 }
 
+function tab_main_click(param)
+{
+	if (param == "use_section")
+	{
+		$("#main_tab1").attr("src","images/navi_howto_on.png");
+		$("#main_tab2").attr("src","images/navi_notice.png");
+		$("#main_tab3").attr("src","images/navi_trip.png");
+		$("#use_popup").removeClass("main_page_pop");
+		$("#use_popup").addClass("main_page_pop_step");
+		$("#use_section").show();
+		$("#notice_section").hide();
+		$("#vision_section").hide();
+	}else if (param == "notice_section"){
+		$("#main_tab1").attr("src","images/navi_howto.png");
+		$("#main_tab2").attr("src","images/navi_notice_on.png");
+		$("#main_tab3").attr("src","images/navi_trip.png");
+		$("#use_popup").removeClass("main_page_pop_step");
+		$("#use_popup").addClass("main_page_pop");
+		$("#use_section").hide();
+		$("#notice_section").show();
+		$("#vision_section").hide();
+	}else{
+		$("#main_tab1").attr("src","images/navi_howto.png");
+		$("#main_tab2").attr("src","images/navi_notice.png");
+		$("#main_tab3").attr("src","images/navi_trip_on.png");
+		$("#use_popup").removeClass("main_page_pop");
+		$("#use_popup").addClass("main_page_pop_step");
+		$("#use_section").hide();
+		$("#notice_section").hide();
+		$("#vision_section").show();
+	}
+}
+
 // 직업 한글 변환
 function job_ko_add(job)
 {

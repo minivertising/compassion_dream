@@ -278,22 +278,45 @@
   <!-- 유의사항 팝업-->
 
   <!-- 참여방법 팝업-->
-    <div id="use_popup" class="wrap_pop howto_notice">
-    	<div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/popup/btn_close.png" /></a></div>
-        <div class="navi">
-        	<div class="inner_navi clearfix">
-        		<a href="#" onclick="open_pop('use_popup');return false;"><img src="images/navi_howto_on.png" /></a>
-            	<a href="#" onclick="open_pop('notice_popup');return false;"><img src="images/navi_notice.png" /></a>
-            </div>
-        </div>
-        <div class="img step">
-        	<img src="images/img_step.png" class="bg"/>
-        </div>
-      <div class="block_btn upload">
-        <a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_ok.png" /></a>
+  <div id="use_popup" class="wrap_pop howto_notice">
+    <div class="btn_close"><a href="#" onclick="$.colorbox.close();return false;"><img src="images/popup/btn_close.png" /></a></div>
+    <div class="navi">
+      <div class="inner_navi clearfix">
+        <!-- <a href="#" onclick="open_pop('use_popup');return false;"><img src="images/navi_howto_on.png" /></a>
+        <a href="#" onclick="open_pop('notice_popup');return false;"><img src="images/navi_notice.png" /></a> -->
+        <a href="#" onclick="tab_main_click('use_section');return false;"><img src="images/navi_howto_on.png" id="main_tab1" /></a>
+        <a href="#" onclick="tab_main_click('notice_section');return false;"><img src="images/navi_notice.png" id="main_tab2" /></a>
+        <a href="#" onclick="tab_main_click('vision_section');return false;"><img src="images/navi_trip.png" id="main_tab3" /></a>
       </div>
-
-    </div> 
+    </div>
+    <div class="img step" id="use_section">
+      <img src="images/img_step.png" class="bg"/>
+    </div>
+    <div class="img" id="notice_section" style="display:none;">
+      <ul>
+        <li>업로드해주신 사진은 이벤트의 목적 적합성에 따라 임의로 삭제 될 수 있습니다.</li>
+        <li>이벤트 참여는 7월 6일부터 7월 31일까지 가능합니다.</li>
+        <li>잘못된 개인 정보로 인한 불이익은 한국컴패션에서 책임지지 않습니다.</li>
+        <li>
+        본 캠페인은 미니버타이징(주)에서 대행하고 있으며, 이벤트 관련 문의사항은 전화(02-532-2475) 또는 이메일<span>(bk.park@minivertising.kr)</span>로 연락 주시기 바랍니다.<br>
+        (평일 오전 10:00~ 오후 6시, 주말은 불가)
+        </li>
+        <li>비전트립 일정은 한국컴패션 비전트립 일정에 맞춰서 진행되며 양도는 불가합니다.</li>
+        <li>비전트립 가능 국가는 필리핀으로 국한되며 비전트립은 2017년까지 유효합니다.</li>
+        <li>비전트립 당첨자는 공유해주신 링크로 결연을 이뤄주신 참여자들을 대상으로 추첨을 통해 선정됩니다.</li>
+        <li>당첨자 발표는 8월 중에 개별적으로 연락드릴 예정입니다. </li>
+        <li>
+        공유해주신 <1:1로 연결된 어린이 링크>로 3일간 활동이 없으실 경우, 해당 어린이의 링크가 다른 참여자들에게 오픈됩니다. 어린이의 소중한 꿈을 위해 이 점 양해 부탁드립니다.  
+        </li>
+      </ul>
+    </div>
+    <div class="img step" id="vision_section" style="display:none;">
+      <img src="images/img_step02.png" class="bg"/>
+    </div>
+    <div class="block_btn upload">
+      <a href="#" onclick="$.colorbox.close();return false;"><img src="images/btn_ok.png" /></a>
+    </div>
+  </div> 
   <!-- 참여방법 팝업-->
 
   <!-- 비전트립 설명 팝업-->

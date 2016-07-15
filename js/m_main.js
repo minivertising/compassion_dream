@@ -264,6 +264,37 @@ function tab_click(param)
 	}
 }
 
+function tab_main_click(param)
+{
+	if (param == "use_section")
+	{
+		$("#main_tab1").attr("src","images/navi_howto_on.png");
+		$("#main_tab2").attr("src","images/navi_notice.png");
+		$("#main_tab3").attr("src","images/navi_trip.png");
+		$("#"+param).removeClass("step");
+		$("#use_section").show();
+		$("#notice_section").hide();
+		$("#vision_section").hide();
+	}else if (param == "notice_section"){
+		$("#main_tab1").attr("src","images/navi_howto.png");
+		$("#main_tab2").attr("src","images/navi_notice_on.png");
+		$("#main_tab3").attr("src","images/navi_trip.png");
+		$("#"+param).addClass("step");
+		$("#use_section").hide();
+		$("#notice_section").show();
+		$("#vision_section").hide();
+	}else{
+		$("#main_tab1").attr("src","images/navi_howto.png");
+		$("#main_tab2").attr("src","images/navi_notice.png");
+		$("#main_tab3").attr("src","images/navi_trip_on.png");
+		$("#"+param).removeClass("step");
+		$("#use_section").hide();
+		$("#notice_section").hide();
+		$("#vision_section").show();
+	}
+}
+
+
 function f_show_dream_sel()
 {
 	$("body").addClass("bg_sub_page");
