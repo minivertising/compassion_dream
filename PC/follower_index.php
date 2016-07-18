@@ -1446,7 +1446,7 @@ function f_dream_next()
             },
             url: "../main_exec.php",
             success: function(res){
-                // console.log(res);
+                 console.log(res);
             }
         });
     }
