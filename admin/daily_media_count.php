@@ -86,7 +86,7 @@
 			$total_media_cnt		+= $media_cnt[$i];
 			$total_mobile_cnt		+= $mobile_cnt[$i];
 			$total_pc_cnt			+= $pc_cnt[$i];                  
-			$total_unique_cnt	+= $unique_cnt[$i];                  
+			$total_unique_cnt	+= $unique_cnt[0];                  
 			$i++;
 		}
 ?>
