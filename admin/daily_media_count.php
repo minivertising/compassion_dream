@@ -60,6 +60,7 @@
 			$unique_count	= mysqli_num_rows(mysqli_query($my_db, $unique_query));
 			$pc_cnt[]		= $pc_count;
 			$mobile_cnt[]	= $mobile_count;
+			$unique_cnt[]	= $unique_count;
 		}
 		$rowspan_cnt =  count($media_name);
 		$i = 0;
@@ -92,7 +93,7 @@
                     <td colspan="2">합계</td>
                     <td><?php echo number_format($total_pc_cnt)?></td>
                     <td><?php echo number_format($total_mobile_cnt)?></td>
-                    <td><?=number_format($unique_count[$i])?></td>
+                    <td><?=number_format($unique_cnt[$i])?></td>
                     <td><?php echo number_format($total_media_cnt)?></td>
                   </tr>
 
