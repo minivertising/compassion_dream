@@ -65,7 +65,7 @@
 			$unique_result	= mysqli_query($my_db, $unique_query);
 			while ($unique_data	= mysqli_fetch_array($unique_result))
 			{
-				$unique_du_query	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE 1 AND shareYN='Y' AND mb_regdate NOT LIKE  '%".$daily_date."%' AND mb_phone='".$unique_data['mb_phone']."'";
+				$unique_du_query	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE 1 AND shareYN='Y' AND mb_regdate < '%".$daily_date."%' AND mb_phone='".$unique_data['mb_phone']."'";
 				$unique_du_cnt		= mysqli_num_rows(mysqli_query($my_db, $unique_du_query));
 
 				if ($unique_du_cnt > 0)
