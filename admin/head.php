@@ -89,7 +89,10 @@ if (isset($_SESSION['ss_mb_name']) == false)
                     <a href="daily_nominee_count.php">일자별 항목당 후보 지원 수</a>
                   </li> -->
                   <li>
-                    <a href="daily_media_count.php">광고 채널별 캠페인 사이트 참여자 수(act)</a>
+                    <a href="daily_media_count.php">광고 채널별 캠페인 사이트 참여자 수(액티베이터)</a>
+                  </li>
+                  <li>
+                    <a href="daily_f_media_count.php">팔로워 캠페인 사이트 참여자 수(팔로워)</a>
                   </li>
                 </ul>
               </li>
