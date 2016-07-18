@@ -68,7 +68,7 @@
 				$unique_du_query	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE 1 AND shareYN='Y' AND mb_regdate < '%".$daily_date."%' AND mb_phone='".$unique_data['mb_phone']."'";
 				$unique_du_cnt		= mysqli_num_rows(mysqli_query($my_db, $unique_du_query));
 
-				if ($unique_du_cnt > 0)
+				if ($unique_du_cnt == 0)
 					$unique_count	= $unique_count + 1;
 			}
 			//$unique_count	= mysqli_num_rows(mysqli_query($my_db, $unique_query));
