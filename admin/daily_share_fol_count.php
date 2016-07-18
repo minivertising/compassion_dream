@@ -32,7 +32,7 @@
                 </thead>
                 <tbody>
 <?php
-	$daily_date_query	= "SELECT sns_regdate FROM ".$_gl['share_info_table']." Group by substr(sns_regdate,1,10) order by sns_regdate desc";
+	$daily_date_query	= "SELECT sns_regdate FROM ".$_gl['share_info_table']." WHERE sns_user='fol' Group by substr(sns_regdate,1,10) order by sns_regdate desc";
 	$date_res			= mysqli_query($my_db, $daily_date_query);
 	while($date_daily_data = mysqli_fetch_array($date_res))
 	{
@@ -63,7 +63,7 @@
 
 		$rowspan_cnt =  count($media_name);
 		$i = 0;
-		@foreach($media_name as $key => $val)
+		foreach($media_name as $key => $val)
 		{
 ?>
                   <tr>
