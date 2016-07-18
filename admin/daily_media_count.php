@@ -56,7 +56,7 @@
 			$pc_count		= mysqli_num_rows(mysqli_query($my_db, $pc_query));
 			$mobile_query	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE 1 AND shareYN='Y' AND mb_regdate LIKE  '%".$daily_date."%' AND mb_media='".$media_daily_data['mb_media']."' AND mb_gubun='MOBILE'";
 			$mobile_count	= mysqli_num_rows(mysqli_query($my_db, $mobile_query));
-			$unique_query	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE 1 AND shareYN='Y' AND mb_regdate LIKE  '%".$daily_date."%' AND mb_media='".$media_daily_data['mb_media']."' group by mb_phone";
+			$unique_query	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE 1 AND shareYN='Y' AND mb_regdate LIKE  '%".$daily_date."%' group by mb_phone";
 			$unique_count	= mysqli_num_rows(mysqli_query($my_db, $unique_query));
 			$pc_cnt[]		= $pc_count;
 			$mobile_cnt[]	= $mobile_count;
@@ -78,7 +78,7 @@
                     <td><?=$val?></td>
                     <td><?=number_format($pc_cnt[$i])?></td>
                     <td><?=number_format($mobile_cnt[$i])?></td>
-                    <td><?=number_format($unique_cnt[$i])?></td>
+                    <td>-</td>
                     <td><?=number_format($media_cnt[$i])?></td>
                   </tr>
 <?php
@@ -92,6 +92,7 @@
                     <td colspan="2">합계</td>
                     <td><?php echo number_format($total_pc_cnt)?></td>
                     <td><?php echo number_format($total_mobile_cnt)?></td>
+                    <td><?=number_format($unique_count[$i])?></td>
                     <td><?php echo number_format($total_media_cnt)?></td>
                   </tr>
 
