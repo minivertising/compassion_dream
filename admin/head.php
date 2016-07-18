@@ -74,7 +74,13 @@ if (isset($_SESSION['ss_mb_name']) == false)
                     <a href="daily_influx_count.php">광고 채널별 캠페인 사이트 유입자 수(act)</a>
                   </li>
                   <li>
-                    <a href="daily_share_count.php">일자별 SNS 공유 수(구분되는 데이터는 15일 이후 데이터부터)</a>
+                    <a href="daily_share_count.php">일자별 SNS 공유 수(전체)</a>
+                  </li>
+                  <li>
+                    <a href="daily_share_act_count.php">일자별 SNS 공유 수(액티베이터)</a>
+                  </li>
+                  <li>
+                    <a href="daily_share_fol_count.php">일자별 SNS 공유 수(팔로워)</a>
                   </li>
                     <li>
                     <a href="daily_success_child.php">일자별 결연된 아이 수</a>
