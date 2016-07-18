@@ -65,6 +65,9 @@
 			}
 
 		}
+		$cnt_query			= "INSERT INTO ".$_gl['share_cnt_info_table']."(cnt_ipaddr, cnt_serial, cnt_ugu, cnt_date) values('".$_SERVER['REMOTE_ADDR']."','".$rs."','".$ugu."','".date("Y-m-d H:i:s")."')";
+		$cnt_result			= mysqli_query($my_db, $cnt_query);
+
 		return $a_query;
 	}
 

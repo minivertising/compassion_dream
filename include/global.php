@@ -11,6 +11,7 @@
 	$_gl['login_info_table']		= "login_info";				//로그인 정보 테이블
 	$_gl['remind_info_table']	= "remind_info";			//연락받을 정보 테이블
 	$_gl['direct_info_table']		= "direct_info";			//메인 1:1 결연 정보 테이블
+	$_gl['share_cnt_info_table']= "share_cnt_info";		//공유 클릭 정보 테이블
 
 	// $_gl['job']['cook']		= "요리사였어요.";
 	// $_gl['job']['teacher']	= "선생님이었어요.";
