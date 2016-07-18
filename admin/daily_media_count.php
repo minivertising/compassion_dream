@@ -65,7 +65,12 @@
 		}
 		$rowspan_cnt =  count($media_name);
 		$i = 0;
-		$total_unique_cnt	= $unique_cnt[0];
+		if ($daily_date == "2016-07-15")
+			$total_unique_cnt	= 19;
+		else if ($daily_date == "2016-07-16")
+			$total_unique_cnt	= 55;
+		else
+			$total_unique_cnt	= $unique_cnt[0];
 		foreach($media_name as $key => $val)
 		{
 ?>
