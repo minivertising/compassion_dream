@@ -71,6 +71,12 @@ if (isset($_SESSION['ss_mb_name']) == false)
                 <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Daily Count<i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="demo" class="collapse">
                   <li>
+                    <a href="daily_media_count.php">광고 채널별 캠페인 사이트 참여자 수(액티베이터)</a>
+                  </li>
+                  <li>
+                    <a href="daily_f_media_count.php">팔로워 캠페인 사이트 참여자 수(팔로워)</a>
+                  </li>
+                  <li>
                     <a href="daily_influx_count.php">채널 및 소재별 유입건 수(액티베이터)</a>
                   </li>
                   <li>
@@ -85,15 +91,9 @@ if (isset($_SESSION['ss_mb_name']) == false)
                     <li>
                     <a href="daily_success_child.php">일자별 결연된 아이 수</a>
                   </li>
-                   <!-- <li>
-                    <a href="daily_nominee_count.php">일자별 항목당 후보 지원 수</a>
+                  <!-- <li>
+                    <a href="daily_f_media_count.php">공유된 URL 클릭수</a>
                   </li> -->
-                  <li>
-                    <a href="daily_media_count.php">광고 채널별 캠페인 사이트 참여자 수(액티베이터)</a>
-                  </li>
-                  <li>
-                    <a href="daily_f_media_count.php">팔로워 캠페인 사이트 참여자 수(팔로워)</a>
-                  </li>
                 </ul>
               </li>
               <li>
