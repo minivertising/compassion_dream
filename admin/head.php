@@ -71,16 +71,16 @@ if (isset($_SESSION['ss_mb_name']) == false)
                 <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Daily Count<i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="demo" class="collapse">
                   <li>
-                    <a href="daily_influx_count.php">광고 채널별 캠페인 사이트 유입자 수(act)</a>
+                    <a href="daily_influx_count.php">채널 및 소재별 유입건 수(액티베이터)</a>
                   </li>
                   <li>
-                    <a href="daily_share_count.php">일자별 SNS 공유 수(전체)</a>
+                    <a href="daily_share_count.php">일자별 SNS 공유 버튼 클릭 수(전체)</a>
                   </li>
                   <li>
-                    <a href="daily_share_act_count.php">일자별 SNS 공유 수(액티베이터)</a>
+                    <a href="daily_share_act_count.php">일자별 SNS 공유 버튼 클릭 수(액티베이터)</a>
                   </li>
                   <li>
-                    <a href="daily_share_fol_count.php">일자별 SNS 공유 수(팔로워)</a>
+                    <a href="daily_share_fol_count.php">일자별 SNS 공유 버튼 클릭 수(팔로워)</a>
                   </li>
                     <li>
                     <a href="daily_success_child.php">일자별 결연된 아이 수</a>

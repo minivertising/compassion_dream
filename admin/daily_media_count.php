@@ -18,7 +18,7 @@
     <!-- Page Heading -->
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="page-header">광고 채널별 캠페인 사이트 참여자 수(act) PC / Mobile</h1>
+          <h1 class="page-header">광고 채널별 캠페인 사이트 참여자 수(act)</h1>
         </div>
       </div>
       <!-- /.row -->
@@ -46,9 +46,10 @@
 		unset($pc_cnt);
 		unset($mobile_cnt);
 		unset($unique_cnt);
-		$total_media_cnt = 0;
-		$total_mobile_cnt = 0;
-		$total_pc_cnt = 0;    
+		$total_media_cnt		= 0;
+		$total_mobile_cnt		= 0;
+		$total_pc_cnt			= 0;
+		$unique_count		= 0;
 		while ($media_daily_data = mysqli_fetch_array($media_res))
 		{
 			$media_name[]	= $media_daily_data['mb_media'];
@@ -57,10 +58,20 @@
 			$pc_count		= mysqli_num_rows(mysqli_query($my_db, $pc_query));
 			$mobile_query	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE 1 AND shareYN='Y' AND mb_regdate LIKE  '%".$daily_date."%' AND mb_media='".$media_daily_data['mb_media']."' AND mb_gubun='MOBILE'";
 			$mobile_count	= mysqli_num_rows(mysqli_query($my_db, $mobile_query));
-			$unique_query	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE 1 AND shareYN='Y' AND mb_regdate LIKE  '%".$daily_date."%' group by mb_phone";
-			$unique_count	= mysqli_num_rows(mysqli_query($my_db, $unique_query));
 			$pc_cnt[]		= $pc_count;
 			$mobile_cnt[]	= $mobile_count;
+
+			$unique_query	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE 1 AND shareYN='Y' AND mb_regdate LIKE  '%".$daily_date."%' group by mb_phone";
+			$unique_result	= mysqli_query($my_db, $unique_query);
+			while ($unique_data	= mysqli_fetch_array($unique_result))
+			{
+				$unique_du_query	= "SELECT * FROM ".$_gl['activator_info_table']." WHERE 1 AND shareYN='Y' AND mb_regdate NOT LIKE  '%".$daily_date."%' AND mb_phone='".$unique_data['mb_phone']."'";
+				$unique_du_cnt		= mysqli_num_rows(mysqli_query($my_db, $unique_du_query));
+
+				if ($unique_du_cnt > 0)
+					$unique_count	= $unique_count + 1;
+			}
+			//$unique_count	= mysqli_num_rows(mysqli_query($my_db, $unique_query));
 			$unique_cnt[]	= $unique_count;
 		}
 		$rowspan_cnt =  count($media_name);

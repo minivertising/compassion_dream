@@ -18,7 +18,7 @@
   <!-- Page Heading -->
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="page-header">일자별 공유한 응모자 수 (액티베이터)</h1>
+        <h1 class="page-header">일자별 SNS 공유 버튼 클릭 수(액티베이터)</h1>
       </div>
     </div>
       <!-- /.row -->
