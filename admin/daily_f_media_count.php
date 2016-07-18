@@ -29,7 +29,7 @@
             <div id="daily_applicant_count_div1" style="display:block">
               <table class="table table-hover">
                 <thead>
-                  <tr><th>날짜</th><th>유입매체</th><th>PC</th><th>Mobile</th><th>유니크</th><th>Total</th></tr>
+                  <tr><th>날짜</th><th>유입매체</th><th>PC</th><th>Mobile</th><th>Total</th></tr>
                 </thead>
                 <tbody>
 <?php
