@@ -16,7 +16,7 @@ switch ($_REQUEST['exec'])
 	break;
 
 	case "insert_direct_info" :
-		$direct_query		= "INSERT INTO ".$_gl['direct_info_table']."(direct_media, direct_ipaddr, tracking_date, direct_gubun) values('".$_SESSION['ss_media']."','".$_SERVER['REMOTE_ADDR']."',now(),'".$gubun."')";
+		$direct_query		= "INSERT INTO ".$_gl['direct_info_table']."(direct_media, direct_ipaddr, direct_date, direct_gubun) values('".$_SESSION['ss_media']."','".$_SERVER['REMOTE_ADDR']."',now(),'".$gubun."')";
 		$direct_result		= mysqli_query($my_db, $direct_query);
 
 		if ($direct_result)
