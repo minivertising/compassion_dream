@@ -92,7 +92,7 @@
 <div id="contents_div" class="wrap_page main_page">
 	<div class="wrap_top_bg">
 		<div class="quick">
-			<a href="http://www.compassion.or.kr/mobile/compassion_mobile.aspx" target="_blank"><img src="images/quick.png" /></a>
+			<a href="http://www.compassion.or.kr/mobile/compassion_mobile.aspx" target="_blank" onclick="direct_give_cnt();return false;"><img src="images/quick.png" /></a>
 		</div>
 		<div class="main_top clearfix">
 			<div class="logo"><a href="index.php"><img src="images/logo_main.png" /></a></div>
@@ -471,6 +471,19 @@ function Ins_tracking()
 				url: "../main_exec.php"
 		});
 }
+
+	function direct_give_cnt()
+	{
+		$.ajax({
+			type:"POST",
+			data:{
+				"exec"			: "insert_direct_info",
+				"media"			: "<?=$_REQUEST['media'];?>"
+			},
+			url: "../main_exec.php"
+		});
+	}
+
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

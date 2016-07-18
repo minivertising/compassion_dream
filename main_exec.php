@@ -14,6 +14,18 @@ switch ($_REQUEST['exec'])
 
 		echo $flag;
 	break;
+
+	case "insert_direct_info" :
+		$direct_query		= "INSERT INTO ".$_gl['direct_info_table']."(direct_media, direct_ipaddr, tracking_date, direct_gubun) values('".$_SESSION['ss_media']."','".$_SERVER['REMOTE_ADDR']."',now(),'".$gubun."')";
+		$direct_result		= mysqli_query($my_db, $direct_query);
+
+		if ($direct_result)
+			$flag = "Y";
+		else
+			$flag = "N";
+
+		echo $flag;
+	break;
 	case "insert_share_info" :
 		$sns_media		= $_REQUEST['sns_media'];
 		$mb_serial		= $_REQUEST['mb_serial'];

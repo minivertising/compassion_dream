@@ -95,7 +95,7 @@ if ($total_remain_cnt < 0)
     </div>
     <div class="sec_q">
       <div class="inner">
-        <div class="btn"><a href="http://www.compassion.or.kr/Sponsor/CDSPList.aspx" target="_blank"><img src="images/btn_gift.png" alt=""/></a></div>
+        <div class="btn"><a href="http://www.compassion.or.kr/Sponsor/CDSPList.aspx" target="_blank" onclick="direct_give_cnt();return false;"><img src="images/btn_gift.png" alt=""/></a></div>
       </div>
     </div>
     <div class="bg_child">
@@ -715,6 +715,18 @@ function dream_next(){
 			type:"POST",
 			data:{
 				"exec"			: "insert_tracking_info",
+				"media"			: "<?=$_REQUEST['media'];?>"
+			},
+			url: "../main_exec.php"
+		});
+	}
+
+	function direct_give_cnt()
+	{
+		$.ajax({
+			type:"POST",
+			data:{
+				"exec"			: "insert_direct_info",
 				"media"			: "<?=$_REQUEST['media'];?>"
 			},
 			url: "../main_exec.php"
