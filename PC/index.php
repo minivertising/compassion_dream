@@ -95,7 +95,7 @@ if ($total_remain_cnt < 0)
     </div>
     <div class="sec_q">
       <div class="inner">
-        <div class="btn"><a href="http://www.compassion.or.kr/Sponsor/CDSPList.aspx" target="_blank" onclick="direct_give_cnt();return false;"><img src="images/btn_gift.png" alt=""/></a></div>
+        <div class="btn"><a href="http://www.compassion.or.kr/Sponsor/CDSPList.aspx" target="_blank" onclick="direct_give_cnt();"><img src="images/btn_gift.png" alt=""/></a></div>
       </div>
     </div>
     <div class="bg_child">
