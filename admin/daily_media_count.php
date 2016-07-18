@@ -45,6 +45,7 @@
 		unset($media_cnt);
 		unset($pc_cnt);
 		unset($mobile_cnt);
+		unset($unique_cnt);
 		$total_media_cnt = 0;
 		$total_mobile_cnt = 0;
 		$total_pc_cnt = 0;    
@@ -64,6 +65,7 @@
 		}
 		$rowspan_cnt =  count($media_name);
 		$i = 0;
+		$total_unique_cnt	= $unique_cnt[0];
 		foreach($media_name as $key => $val)
 		{
 ?>
@@ -86,7 +88,6 @@
 			$total_media_cnt		+= $media_cnt[$i];
 			$total_mobile_cnt		+= $mobile_cnt[$i];
 			$total_pc_cnt			+= $pc_cnt[$i];                  
-			$total_unique_cnt	+= $unique_cnt[0];                  
 			$i++;
 		}
 ?>
