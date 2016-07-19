@@ -29,12 +29,12 @@
 			while($data3	= mysqli_fetch_array($result3))
 			{
 				if ($data3['mb_lms'] == "Y")
-					send_lms($data3['mb_phone'],$data3['mb_serial']);
+					$lms_rs	= send_lms($data3['mb_phone'],$data3['mb_serial']);
 			}
 		}
 	}
 
-
+echo $lms_rs;
 	// LMS 발송 
 	function send_lms($phone, $serial)
 	{
