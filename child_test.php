@@ -24,7 +24,7 @@
 			//$result2 	= mysqli_query($my_db, $query2);
 
 			$query3 	= "SELECT * FROM activator_info WHERE mb_child='".$data['idx']."'";
-			$result3 	= mysqli_query($my_db, $query);
+			$result3 	= mysqli_query($my_db, $query3);
 
 			while($data3	= mysqli_fetch_array($result3))
 			{
