@@ -5,10 +5,9 @@
 	}
 
 	//$query 	= "SELECT * FROM child_info WHERE ch_choice<>'Y'";
-	$query 	= "SELECT * FROM child_info WHERE mb_phone='01030033965'";
+	$query 	= "SELECT * FROM child_info WHERE idx='49'";
 	$result 	= mysqli_query($my_db, $query);
 
-	$chk_cnt	= 0;
 	while ($data = mysqli_fetch_array($result))
 	{
 		$url = "http://www.compassion.or.kr/mydream/ReturnCommitment.aspx?ChildMasterID=".$data['ch_id'];
@@ -21,10 +20,17 @@
 		//if ($matchingYN == "Y")
 		if ($matchingYN == "N")
 		{
-			$query2 	= "UPDATE child_info SET ch_choice='T', ch_choice_date='".date("Y-m-d H:i:s")."' WHERE ch_id='".$data['ch_id']."'";
-			$result2 	= mysqli_query($my_db, $query2);
-			if ($chk_cnt == 0)
-				send_lms($data['mb_phone'],$data['mb_serial']);
+			//$query2 	= "UPDATE child_info SET ch_choice='Y', ch_choice_date='".date("Y-m-d H:i:s")."' WHERE ch_id='".$data['ch_id']."'";
+			//$result2 	= mysqli_query($my_db, $query2);
+
+			$query3 	= "SELECT * FROM activator_info WHERE mb_child='".$data['idx']."'";
+			$result3 	= mysqli_query($my_db, $query);
+
+			while($data3	= mysqli_fetch_array($result3))
+			{
+				if ($data3['mb_lms'] == "Y")
+					send_lms($data3['mb_phone'],$data3['mb_serial']);
+			}
 		}
 	}
 
