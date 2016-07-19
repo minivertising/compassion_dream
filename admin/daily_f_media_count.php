@@ -33,7 +33,7 @@
                 </thead>
                 <tbody>
 <?php
-	$cnt_query	= "SELECT cnt_date, count(cnt_date) cnt_num FROM ".$_gl['share_cnt_info_table']." WHERE 1 Group by substr(cnt_date,1,10) ORDER BY cnt_date DESC";
+	$cnt_query	= "SELECT substr(cnt_date,1,10), count(cnt_date) cnt_num FROM ".$_gl['share_cnt_info_table']." WHERE 1 Group by substr(cnt_date,1,10) ORDER BY cnt_date DESC";
 	$cnt_res			= mysqli_query($my_db, $cnt_query);
 	while($cnt_data = mysqli_fetch_array($cnt_res))
 	{
