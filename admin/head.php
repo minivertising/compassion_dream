@@ -91,9 +91,9 @@ if (isset($_SESSION['ss_mb_name']) == false)
                     <li>
                     <a href="daily_success_child.php">일자별 결연된 아이 수</a>
                   </li>
-                  <!-- <li>
+                  <li>
                     <a href="daily_f_media_count.php">공유된 URL 클릭수</a>
-                  </li> -->
+                  </li>
                 </ul>
               </li>
               <li>
