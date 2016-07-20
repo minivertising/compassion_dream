@@ -52,7 +52,7 @@
   </div>
 </div>
 <div id="contents_div" class="wrap_page mystatus">
-  <div class="logo"><a href="index.php"><img src="images/logo_lms.png" /></a></div>
+  <div class="logo"><a href="#" onclick="go_confirm_main();return false;"><img src="images/logo_lms.png" /></a></div>
   <div class="head_title">
     <img src="images/title_status.png" width="95" />
   </div>
@@ -85,7 +85,7 @@
     <a href="index.php"><img src="images/btn_help_oher.png"/></a> 
   </div>
   <div class="btn_block last">
-    <a href="index.php"><img src="images/btn_main.png"/></a> 
+    <a href="#" onclick="go_confirm_main();return false;"><img src="images/btn_main.png"/></a> 
   </div>
 <?
 	}else{
@@ -109,7 +109,7 @@
     <a href="#" onclick="show_dream_sel();$('body').attr('class','bg_sub_page');return false;"><img src="images/btn_new_pic.png"/></a> 
   </div>
   <div class="btn_block last">
-    <a href="index.php"><img src="images/btn_main.png"/></a> 
+    <a href="#" onclick="go_confirm_main();return false;"><img src="images/btn_main.png"/></a> 
   </div>
 <?
 	}
@@ -335,6 +335,14 @@ function go_other_sns()
 		$("body").attr("class","bg_sub_page");
 		$("#re_matching_share_page").fadeIn('fast');
 	});
+}
+
+function go_confirm_main()
+{
+	if (confirm("내꿈꿔 릴레이 페이지로 이동합니다. 이동하시겠어요?"))
+	{
+		location.href	= "index.php";
+	}
 }
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
