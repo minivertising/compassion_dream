@@ -81,6 +81,7 @@
       선정 되신 분께는 개별 연락 드립니다
       </div>
       <div class="block_btn ok">
+        <a href="#" onclick="history_upload_back();return false;"><img src="images/btn_back.png" style="margin-right:3%"/></a>
         <a href="#" onclick="input_submit();return false;"><img src="images/btn_next.png" /></a>
       </div>
     </div>
