@@ -999,6 +999,7 @@
         <a href="#" onclick="open_pop('exam_share_popup');return false;"><img src="images/btn_howto_tag.png" /></a>
       </div>
       <div class="btn_block" style="margin-top:15px;">
+        <a href="#" onclick="history_upload_back();return false;"><img src="images/btn_back.png" /></a>
         <a href="#" onclick="go_main('f_share_page');return false;"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
@@ -1461,7 +1462,7 @@ function f_dream_next()
 
 	function history_upload_back()
 	{
-		$("#input_page").fadeOut('fast', function(){
+		$("#f_share_page").fadeOut('fast', function(){
 			$("#upload_page").fadeIn('fast');
 		});
 	}
