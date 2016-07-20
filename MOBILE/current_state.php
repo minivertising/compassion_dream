@@ -52,7 +52,7 @@
   </div>
 </div>
 <div id="contents_div" class="wrap_page mystatus">
-	<!-- <div class="logo"><a href="#" onclick="location.reload();"><img src="images/logo_lms.png" /></div> -->
+  <div class="logo"><a href="index.php"><img src="images/logo_lms.png" /></a></div>
   <div class="head_title">
     <img src="images/title_status.png" width="95" />
   </div>
@@ -84,6 +84,9 @@
   <div class="btn_block last">
     <a href="index.php"><img src="images/btn_help_oher.png"/></a> 
   </div>
+  <div class="btn_block last">
+    <a href="index.php"><img src="images/btn_main.png"/></a> 
+  </div>
 <?
 	}else{
 ?>
@@ -104,6 +107,9 @@
   </div>
   <div class="btn_block last">
     <a href="#" onclick="show_dream_sel();$('body').attr('class','bg_sub_page');return false;"><img src="images/btn_new_pic.png"/></a> 
+  </div>
+  <div class="btn_block last">
+    <a href="index.php"><img src="images/btn_main.png"/></a> 
   </div>
 <?
 	}
