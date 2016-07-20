@@ -44,8 +44,8 @@
         <div class="text"><a href="#" onclick="checked_dream('minister','','목사');return false;">목사</a></div>
       </div>
       <div class="one_job">
-        <div class="img"><a href="#" onclick="checked_dream('model','','모델');return false;"><img src="images/popup/job_11.png" /></a></div>
-        <div class="text"><a href="#" onclick="checked_dream('model','','모델');return false;">모델</a></div>
+        <div class="img"><a href="#" onclick="checked_dream('musician','','뮤지션');return false;"><img src="images/popup/job_18.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('musician','','뮤지션');return false;">뮤지션</a></div>
       </div>
       <div class="one_job">
         <div class="img"><a href="#" onclick="checked_dream('lawyer','','변호사');return false;"><img src="images/popup/job_12.png" /></a></div>
@@ -71,6 +71,19 @@
         <div class="img"><a href="#" onclick="checked_dream('sportsman','','운동선수');return false;"><img src="images/popup/job_17.png" /></a></div>
         <div class="text"><a href="#" onclick="checked_dream('sportsman','','운동선수');return false;">운동선수</a></div>
       </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('comedian','','코미디언');return false;"><img src="images/popup/job_19.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('comedian','','코미디언');return false;">코미디언</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('writer','','작가');return false;"><img src="images/popup/job_20.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('writer','','작가');return false;">작가</a></div>
+      </div>
+      <div class="one_job">
+        <div class="img"><a href="#" onclick="checked_dream('painter','','화가');return false;"><img src="images/popup/job_21.png" /></a></div>
+        <div class="text"><a href="#" onclick="checked_dream('painter','','화가');return false;">화가</a></div>
+      </div>
+
   </div>
 </div>
   <!--직업선택팝업--> 

@@ -3,8 +3,8 @@ function open_pop(param)
 	if (param == "job_popup")
 	{
 		var pop_w	= "805px";
-		var pop_h	= "759px";
-		var pop_oh	= "717px";
+		var pop_h	= "925px";
+		var pop_oh	= "883px";
 		var transition_pop	= "fade";
 	}else if (param == "notice_popup"){
 		var pop_w	= "806px";

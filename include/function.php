@@ -168,6 +168,18 @@
 		}else if ($engJob == "cook"){
 			// 요리사
 			$convert_job	= "요리사";
+		}else if ($engJob == "musician"){
+			// 뮤지션
+			$convert_job	= "뮤지션";
+		}else if ($engJob == "comedian"){
+			// 코메디언
+			$convert_job	= "코메디언";
+		}else if ($engJob == "writer"){
+			// 작가
+			$convert_job	= "작가";
+		}else if ($engJob == "painter"){
+			// 화가
+			$convert_job	= "화가";
 		}
 	return $convert_job;
 	}
