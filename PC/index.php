@@ -170,6 +170,7 @@ if ($total_remain_cnt < 0)
           </div>
         </div>
         <div class="block_btn">
+          <a href="#" onclick="history_index_back();return false;"><img src="images/btn_upload_back.png" /></a>
           <a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
         </div>
       </div>
@@ -203,6 +204,7 @@ if ($total_remain_cnt < 0)
       * 선정 되신 분께는 개별 연락 드립니다
       </div>
       <div class="block_btn ok">
+        <a href="#" onclick="history_upload_back();return false;"><img src="images/btn_upload_back.png" /></a>
         <a href="#" onclick="input_submit();return false;"><img src="images/btn_next.png" /></a>
       </div>
     </div>
@@ -730,6 +732,24 @@ function dream_next(){
 				"media"			: "<?=$_REQUEST['media'];?>"
 			},
 			url: "../main_exec.php"
+		});
+	}
+
+	function history_index_back()
+	{
+		$("#upload_page").fadeOut('fast', function(){
+			$("body").removeClass("bg_sub_page");
+			$(".wrap_sec_top").show();
+			$(".wrap_sec_com").show();
+			$(".wrap_sec_movie").show();
+			$(".wrap_sec_footer").show();
+		});
+	}
+
+	function history_upload_back()
+	{
+		$("#input_page").fadeOut('fast', function(){
+			$("#upload_page").fadeIn('fast');
 		});
 	}
 
