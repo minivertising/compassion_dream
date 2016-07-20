@@ -1000,7 +1000,7 @@
       </div>
       <div class="btn_block" style="margin-top:15px;">
         <a href="#" onclick="history_upload_back();return false;"><img src="images/btn_back.png" /></a>
-        <a href="#" onclick="go_main('f_share_page');return false;"><img src="images/btn_ok.png" /></a>
+        <a href="#" onclick="go_main('f_share_page');return false;"><img src="images/btn_ok2.png" /></a>
       </div>
     </div>
   </div>
