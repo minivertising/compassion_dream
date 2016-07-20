@@ -264,18 +264,6 @@ function show_dream_sel()
 
 function f_show_dream_sel()
 {
-	// $(".wrap_sec_top").hide();
-	// $(".wrap_sec_com").hide();
-	// $(".wrap_sec_movie").hide();
-	// $(".wrap_sec_footer").hide();
-/*
-	$(".wrap_sec_top").fadeOut('slow');
-	$(".wrap_sec_com").fadeOut('slow');
-	$(".wrap_sec_movie").fadeOut('slow');
-	$(".wrap_sec_footer").fadeOut('slow');
-*/
-
-
 	$("body").addClass("bg_sub_page");
 	$("#contents_div").hide(); // 임시 적용 
 	$("#upload_page").fadeIn('slow', 'swing');

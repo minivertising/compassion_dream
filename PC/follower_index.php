@@ -960,6 +960,7 @@
                 </div>
       </div>
       <div class="block_btn">
+        <a href="#" onclick="history_index_back();return false;"><img src="images/btn_upload_back.png" /></a>
         <a href="#" onclick="f_dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
       </div>
     </div>
@@ -1450,6 +1451,22 @@ function f_dream_next()
             }
         });
     }
+
+	function history_index_back()
+	{
+		$("#upload_page").fadeOut('fast', function(){
+			$("body").removeClass("bg_sub_page");
+			$("#contents_div").show();
+		});
+	}
+
+	function history_upload_back()
+	{
+		$("#input_page").fadeOut('fast', function(){
+			$("#upload_page").fadeIn('fast');
+		});
+	}
+
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
