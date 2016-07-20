@@ -960,7 +960,7 @@
                 </div>
       </div>
       <div class="block_btn">
-        <a href="#" onclick="history_index_back();return false;"><img src="images/btn_upload_back.png" /></a>
+        <!-- <a href="#" onclick="history_index_back();return false;"><img src="images/btn_upload_back.png" /></a> -->
         <a href="#" onclick="f_dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
       </div>
     </div>
