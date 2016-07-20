@@ -1021,7 +1021,8 @@
                     * 1개의 이미지 파일을 등록할 수 있습니다
                 </div>
       <div class="block_btn upload">
-        <a href="#" onclick="f_dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
+	    <a href="#" onclick="location.reload();return false;"><img src="images/btn_back_04.png" style="width:40%" /></a>
+        <a href="#" onclick="f_dream_next();return false;"><img src="images/btn_upload_comp.png" style="width:40%" /></a>
       </div>
     </div>
   </div>
@@ -1621,6 +1622,22 @@ function f_dream_next()
 		});
 
 	}
+
+	function history_index_back()
+	{
+		$("#upload_page").fadeOut('fast', function(){
+			$("#contents_div").show();
+		});
+	}
+
+	function history_upload_back()
+	{
+		$("#f_share_page").fadeOut('fast', function(){
+			$("#upload_page").fadeIn('fast');
+		});
+	}
+
+
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
