@@ -1065,6 +1065,7 @@
         </a>
       </div>
       <div class="block_btn ok">
+        <a href="#" onclick="history_upload_back('1');return false;"><img src="images/btn_back.png" /></a>
         <a href="#" onclick="go_main('matching_share_page');return false;"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
@@ -1104,6 +1105,7 @@
         </a>
       </div>
       <div class="block_btn ok">
+        <a href="#" onclick="history_upload_back('2');return false;"><img src="images/btn_back.png" /></a>
         <a href="#" onclick="go_main('no_matching_page');return false;"><img src="images/btn_ok.png" /></a>
       </div>
     </div>
@@ -1630,11 +1632,18 @@ function f_dream_next()
 		});
 	}
 
-	function history_upload_back()
+	function history_upload_back(param)
 	{
-		$("#f_share_page").fadeOut('fast', function(){
-			$("#upload_page").fadeIn('fast');
-		});
+		if (param == "1")
+		{
+			$("#matching_share_page").fadeOut('fast', function(){
+				$("#upload_page").fadeIn('fast');
+			});
+		}else{
+			$("#no_matching_page").fadeOut('fast', function(){
+				$("#upload_page").fadeIn('fast');
+			});
+		}
 	}
 
 
