@@ -236,6 +236,18 @@ function job_ko_add(job)
 	}else if (job == "cook"){
 		// 요리사
 		var job	= "요리사";
+	}else if (job == "musician"){
+		// 요리사
+		var job	= "뮤지션";
+	}else if (job == "comedian"){
+		// 요리사
+		var job	= "코미디언";
+	}else if (job == "writer"){
+		// 요리사
+		var job	= "작가";
+	}else if (job == "painter"){
+		// 요리사
+		var job	= "화가";
 	}
 
 	return job;
