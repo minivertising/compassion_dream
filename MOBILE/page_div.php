@@ -42,7 +42,8 @@
                     * 1개의 이미지 파일을 등록할 수 있습니다
                 </div>
       <div class="block_btn upload">
-        <a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" /></a>
+	    <a href="#" onclick="location.reload();return false;"><img src="images/btn_back_04.png" style="width:40%" /></a>
+        <a href="#" onclick="dream_next();return false;"><img src="images/btn_upload_comp.png" style="width:40%" /></a>
       </div>
     </div>
   </div>

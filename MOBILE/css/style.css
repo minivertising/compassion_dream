@@ -1874,4 +1874,26 @@ height:800px;
 .wrap_page.phone .block_btn img{
 	width:30%;
 }
+
+.block_content .block_ok{
+	border:0px red solid;
+	width: 100%;
+    padding-top: 25px;
+	padding-bottom:25px;
+	text-align: center;
+}
+
+.block_content .block_ok a{
+	width:40%;
+	display:block;
+	float:left;
+	border:0px green solid;
+	padding-left:20px;
+	padding-right:15px;
+}
+
+.block_content .block_ok img{
+	width:100%;
+}
+
 /* 아이폰 페북, 카스 추가 정보 입력 페이지 */
