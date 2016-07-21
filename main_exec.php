@@ -503,7 +503,7 @@ switch ($_REQUEST['exec'])
 	break;
 
 	case "insert_share_cnt" :
-		$serial			= $_REQUEST['serial'];
+		$serial			= $_REQUEST['serial'];*/1 * * * * /usr/local/bin/php -q /home/httpd/htdocs/compassion_dream/child_refresh.php
 		$ugu				= $_REQUEST['ugu'];
 		$parent_idx		= $_REQUEST['parent_idx'];
 
@@ -525,7 +525,7 @@ switch ($_REQUEST['exec'])
 			if ($remind_ch_info)
 			{
 				$remind_ch_info_arr		= explode("/",$remind_ch_info);
-				$give_query 	= "UPDATE ".$_gl['child_info_table']." SET ch_choice='Y' WHERE ch_key='".$remind_ch_info_arr[1]."'";
+				$give_query 	= "UPDATE ".$_gl['child_info_table']." SET ch_choice='Y', ch_choice_date='".date("Y-m-d H:i:s")."' WHERE ch_key='".$remind_ch_info_arr[1]."'";
 				$give_result 	= mysqli_query($my_db, $give_query);
 			}
 			$flag	= "Y";
