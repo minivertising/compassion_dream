@@ -503,7 +503,7 @@ switch ($_REQUEST['exec'])
 	break;
 
 	case "insert_share_cnt" :
-		$serial			= $_REQUEST['serial'];*/1 * * * * /usr/local/bin/php -q /home/httpd/htdocs/compassion_dream/child_refresh.php
+		$serial			= $_REQUEST['serial'];
 		$ugu				= $_REQUEST['ugu'];
 		$parent_idx		= $_REQUEST['parent_idx'];
 
