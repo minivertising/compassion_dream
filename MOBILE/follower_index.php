@@ -1616,6 +1616,7 @@ function f_dream_next()
 					alert("한국컴패션에서 곧 전화를 드리겠습니다. 감사합니다.");
 					$("#add_info_page").hide();
 					add_info_flag	= 0;
+					location.reload();
 				}else{
 					alert("접속자가 많아 처리가 지연되고 있습니다. 다시 시도해 주세요..");
 					location.reload();
