@@ -846,10 +846,6 @@
           </div>
         </div>
         <div class="img_waiting_child clearfix">
-          <div class="one_child"><img src="images/ex_child_01.png" /></div>
-          <div class="one_child"><img src="images/ex_child_02.png" /></div>
-          <div class="one_child"><img src="images/ex_child_03.png" /></div>
-          <div class="one_child"><img src="images/ex_child_04.png" /></div>
         </div>
         <div class="block_btn">
           <a href="index.php"><img src="images/btn_go_campaign.png" /></a>
