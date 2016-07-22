@@ -331,6 +331,17 @@ body.main{
 }
 
 
+.wrap_sec_vision{
+	background:url(../images/bg_vision.jpg);
+	background-size: cover;
+	width:100%;
+}
+.wrap_sec_vision .inner{
+	text-align:center;
+	padding:50px 0;
+}
+
+
 .wrap_sec_com{
 	background:url(../images/bg_com.jpg);
 	background-size: cover;

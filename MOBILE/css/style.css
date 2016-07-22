@@ -263,6 +263,12 @@ body.storytelling{
 }
 
 
+.wrap_page.main_page .sec_vision{
+	position:relative;
+	margin-top:-5px;
+}
+
+
 .wrap_page.main_page .sec_com{
 	position:relative;
 	margin-top:-5px;
