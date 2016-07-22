@@ -1,6 +1,7 @@
 <?php
 	// 설정파일
 	include_once "../config.php";
+ini_set('error_reporting','E_ALL ^ E_NOTICE');
 /*
 	if (isset($_SESSION['ss_mb_id']) == false)
 	{
@@ -144,6 +145,3 @@
 </body>
 
 </html>
-<?
-error_reporting(0);
-?>
