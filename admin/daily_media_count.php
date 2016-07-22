@@ -48,6 +48,7 @@
 		unset($unique_cnt);
 		$total_media_cnt		= 0;
 		$total_mobile_cnt		= 0;
+		$total_unique_cnt		= 0;
 		$total_pc_cnt			= 0;
 		$unique_count		= 0;
 		while ($media_daily_data = mysqli_fetch_array($media_res))
