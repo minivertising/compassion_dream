@@ -93,7 +93,7 @@
 				$total_unique_cnt	= $unique_cnt[0];
 			}
 		}
-		@foreach($media_name as $key => $val)
+		foreach($media_name as $key => $val)
 		{
 ?>
                   <tr>
