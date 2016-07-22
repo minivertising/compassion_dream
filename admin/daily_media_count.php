@@ -144,3 +144,6 @@
 </body>
 
 </html>
+<?
+error_reporting(0);
+?>
