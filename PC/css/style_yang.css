@@ -152,7 +152,7 @@ body.main{
 }
 .wrap_sec_top .inner .logo{
 	position:absolute;
-	top:0;
+	top:20px;
 	left:20px;
 	z-index:102;
 }
@@ -201,6 +201,12 @@ body.main{
 	right:20px;
 }
 
+.wrap_sec_top .inner .btn_logo{
+	text-align:right;
+	position:absolute;
+	top:7px;
+	right:130px;
+}
 .wrap_sec_top .people_pic{
 	background:#0e2941;
 	padding:1% 1% 1.5%;

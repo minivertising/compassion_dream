@@ -387,4 +387,57 @@
 		return $response;
 	}
 
+	function sendRequest_re($httpMethod, $url, $clientKey, $contentType, $phone, $s_url) {
+
+		//create basic authentication header
+		$headerValue = $clientKey;
+		$headers = array("x-waple-authorization:" . $headerValue);
+
+		$params = array(
+			'send_time' => '', 
+			'send_phone' => '025322475', 
+			'dest_phone' => $phone, 
+			'send_name' => '', 
+			'dest_name' => '', 
+			'subject' => '',
+			'msg_body' => 
+"
+어린이들의 꿈을 위해 함께 해주셔서 감사합니다.
+
+후원자님의 어린이가 결연이 이뤄지지 않고 있어요! 친구들이 어릴 적 사진으로 응원하거나 결연으로 어린이의 손을 잡아줄 수 있게 마지막까지 힘내서 공유해주세요!
+
+아래의 링크를 누르면 후원자님의 어린이 결연 및 공유 현황을 확인할 수 있습니다.
+
+현황 확인하기: 
+".$s_url."
+"
+		);
+
+		//curl initialization
+		$curl = curl_init();
+
+		//create request url
+		//$url = $url."?".$parameters;
+
+		curl_setopt ($curl, CURLOPT_URL , $url);
+		curl_setopt ($curl, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt ($curl, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt ($curl, CURLINFO_HEADER_OUT, true);
+		curl_setopt ($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+		curl_setopt($curl, CURLOPT_POST, 1);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
+		curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+
+		$response = curl_exec($curl);
+
+		$httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+		$responseHeaders = curl_getinfo($curl, CURLINFO_HEADER_OUT);
+
+
+		curl_close($curl);
+
+		return $response;
+	}
+
 ?>

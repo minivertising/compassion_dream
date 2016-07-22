@@ -95,7 +95,8 @@
 			<a href="http://www.compassion.or.kr/mobile/compassion_mobile.aspx" target="_blank" onclick="direct_give_cnt();"><img src="images/quick.png" /></a>
 		</div>
 		<div class="main_top clearfix">
-			<div class="logo"><a href="index.php"><img src="images/logo_main.png" /></a></div>
+			<div class="logo"><a href="index.php"><img src="images/logo_title.png" /></a></div>
+			<div class="btn_logo"><a href="http://www.compassion.or.kr" target="_blank"><img src="images/logo_02.png" /></a></div>
 			<div class="btn_how"><a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_howto.png" /></a></div>
 		</div>  
 		<div class="main_block">

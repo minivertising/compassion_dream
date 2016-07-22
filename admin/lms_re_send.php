@@ -1,7 +1,7 @@
 <?php
 
 	// 설정파일
-	include_once "../config.belif";
+	include_once "../config.php";
 
 	include "./head.php";
 ?>
@@ -18,7 +18,7 @@
       <div class="col-lg-12">
         <div class="table-responsive">
 		  <a href="#" onclick="re_send();return false;">문자 재전송하기</a>
-		  <a href="#" onclick="re_use();return false;">발송처리</a>
+		  <!-- <a href="#" onclick="re_use();return false;">발송처리</a> -->
         </div>
       </div>
       <!-- /.row -->

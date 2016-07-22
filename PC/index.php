@@ -36,8 +36,6 @@ if ($total_remain_cnt < 0)
     <div class="logo"><a href="#" onclick="return_home();return false;"><img src="images/logo_sub.png" /></a></div>
     <div class="block_content">
       <div class="img_load">
-      <!-- 꿈이 필요한 어린이 '베리'를 응원중입니다<br>
-      잠시만 기다려 주세요 --> 
       당신이 응원할 '꿈을 잃은 어린이'를 찾는 중이에요<br>
       잠시만 기다려 주세요
       </div>
@@ -49,7 +47,7 @@ if ($total_remain_cnt < 0)
 <div class="wrap_sec_top">
   <div class="bg_wrap_sec_top">
     <div class="inner">
-      <div class="logo"><a href="index.php"><img src="images/logo.png" /></a></div>
+      <div class="logo"><a href="index.php"><img src="images/logo_title.png" /></a></div>
       <div class="title"><img src="images/title_main.png" /></div>
       <div class="block_img">
         <div><a href="#" onclick="show_dream_sel();return false;"><img src="images/btn_partin.png" /></a></div>
@@ -61,6 +59,9 @@ if ($total_remain_cnt < 0)
       </div>
       <div class="main_child">
         <img src="images/main_child.png" />
+      </div>
+      <div class="btn_logo">
+        <a href="http://www.compassion.or.kr" target="_blank"><img src="images/logo_02.png" /></a>
       </div>
       <div class="btn_howto">
         <a href="#" onclick="open_pop('use_popup');return false;"><img src="images/btn_howto.png" /></a>

@@ -67,7 +67,7 @@
 		break;
 
 		case "all_send_sms" :
-			$query = "SELECT mb_phone,mb_serial,mb_winner FROM member_info_re WHERE mb_use='N'";
+			$query = "SELECT mb_phone, mb_serial FROM activator_info_re WHERE mb_phone='01030033965'";
 			$result 		= mysqli_query($my_db, $query);
 
 			$httpmethod = "POST";
@@ -78,16 +78,10 @@
 			while ($data = @mysqli_fetch_array($result))
 			{
 				$phone			= $data['mb_phone'];
-				$winner			= $data['mb_winner'];
-				$serial				= $data['mb_serial'];
-				$s_url		= "http://www.belif-play.com/MOBILE/coupon_page.php?serial=".$serial; // URL 변경 해야함.
+				$serial			= $data['mb_serial'];
+				$s_url		= "http://mydream.compassion.or.kr/MOBILE/current_state.php?used=".$serial."_act";
 
-				if ($winner == "Y||FIRST")
-					$response = sendRequest_first_re($httpmethod, $url, $clientKey, $contentType, $phone, $s_url);
-				else if ($winner == "Y||SECOND")
-					$response = sendRequest_second_re($httpmethod, $url, $clientKey, $contentType, $phone, $s_url);
-				else
-					$response = sendRequest_third_re($httpmethod, $url, $clientKey, $contentType, $phone, $s_url);
+				$response = sendRequest_re($httpmethod, $url, $clientKey, $contentType, $phone, $s_url);
 
 				echo("<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />");
 				$json_data = json_decode($response, true);
@@ -98,9 +92,6 @@
 				*/
 				$query3 = "INSERT INTO ".$_gl['sms_info_table']."(send_phone, send_status, cmid, send_regdate) values('".$phone."','".$json_data['result_code']."','".$json_data['cmid']."','".date("Y-m-d H:i:s")."')";
 				$result3 		= mysqli_query($my_db, $query3);
-
-				$query2 = "UPDATE member_info_re SET mb_use='Y' WHERE mb_phone='".$phone."'";
-				$result2 		= mysqli_query($my_db, $query2);
 			}
 
 			$flag = "N";
