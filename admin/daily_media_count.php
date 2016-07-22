@@ -83,6 +83,8 @@
 			$total_unique_cnt	= 55;
 		}else if ($daily_date == "2016-07-21"){
 			$total_unique_cnt	= 4;
+		}else if ($daily_date == "2016-07-22"){
+			$total_unique_cnt	= 0;
 		}else{
 			if ($daily_date != "2016-07-14" && $daily_date != "2016-07-13" && $daily_date != "2016-07-17")
 			{
