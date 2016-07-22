@@ -66,34 +66,23 @@ body.storytelling{
 	position:relative;
 }
 .wrap_page.main_page .main_top .logo{
-	width:30%;
+	width:47%;
 	float:left;
 	padding-left:3%;
 	padding-top:3%;
 }
 .wrap_page.main_page .main_top .logo img{
-	width:100%;
+	width:50%;
 }
 .wrap_page.main_page .main_top .btn_how{
-	width:27%;
+	width:47%;
 	padding-right:3%;
-	padding-top:7.7%;
-	float:right;
+	padding-top:3%;
+	float:left;
 	text-align:right;
 }
 .wrap_page.main_page .main_top .btn_how img{
-	width:90%;
-}
-
-.wrap_page.main_page .main_top .btn_logo{
-	width:30%; 
-	padding-left:6%;
-	padding-top:5%;
-	float:left; text-align:right;
-	text-align:right; 
-}
-.wrap_page.main_page .main_top .btn_logo img{
-	width:80%;
+	width:50%;
 }
 
 .wrap_page.main_page .title{
